@@ -1,0 +1,21 @@
+20 runs in plan, 20 to do
+[1/20] ok m0_k0_i3_mob0_d0_s6 eta 120.1 min
+[2/20] ok m0_k0_i3_mob0_d0_s5 eta 56.9 min
+[3/20] ok m0_k0_i3_mob0_d0_s1 eta 35.9 min
+[4/20] ok m0_k0_i3_mob0_d0_s3 eta 25.3 min
+[5/20] fail m0_k0_i3_mob0_d0_s4 eta 20.1 min
+[6/20] ok m0_k0_i3_mob0_d0_s10 eta 15.6 min
+[7/20] ok m0_k0_i3_mob0_d0_s2 eta 13.0 min
+[8/20] ok m0_k0_i3_mob3_d0_s1 eta 10.6 min
+[9/20] ok m0_k0_i3_mob0_d0_s8 eta 8.8 min
+[10/20] ok m0_k0_i3_mob0_d0_s7 eta 7.8 min
+[11/20] ok m0_k0_i3_mob0_d0_s9 eta 6.5 min
+[12/20] ok m0_k0_i3_mob3_d0_s2 eta 5.9 min
+[13/20] ok m0_k0_i3_mob3_d0_s9 eta 6.9 min
+[14/20] ok m0_k0_i3_mob3_d0_s7 eta 5.5 min
+[15/20] ok m0_k0_i3_mob3_d0_s8 eta 4.4 min
+[16/20] ok m0_k0_i3_mob3_d0_s6 eta 3.3 min
+[17/20] ok m0_k0_i3_mob3_d0_s5 eta 2.4 min
+[18/20] ok m0_k0_i3_mob3_d0_s3 eta 1.5 min
+[19/20] ok m0_k0_i3_mob3_d0_s10 eta 0.7 min
+[20/20] ok m0_k0_i3_mob3_d0_s4 eta 0.0 min

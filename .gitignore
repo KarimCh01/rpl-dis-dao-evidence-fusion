@@ -1,0 +1,7 @@
+.venv/
+build/
+__pycache__/
+*.pyc
+output/runs/*/COOJA.testlog
+output/runs/*/cooja.out
+output/plan/*.log

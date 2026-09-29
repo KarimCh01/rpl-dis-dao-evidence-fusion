@@ -1,0 +1,171 @@
+diff --git a/os/net/ipv6/uip6.c b/os/net/ipv6/uip6.c
+index 10c081c29..3b80a9bcf 100644
+--- a/os/net/ipv6/uip6.c
++++ b/os/net/ipv6/uip6.c
+@@ -97,6 +97,10 @@
+ #define LOG_MODULE "IPv6"
+ #define LOG_LEVEL LOG_LEVEL_IPV6
+ 
++#ifdef UIP_CONF_FORWARD_HOOK
++int UIP_CONF_FORWARD_HOOK(void);
++#endif
++
+ #if UIP_STATISTICS == 1
+ struct uip_stats uip_stat;
+ #endif /* UIP_STATISTICS == 1 */
+@@ -1481,6 +1485,13 @@ uip_process(uint8_t flag)
+         goto send;
+       }
+ 
++#ifdef UIP_CONF_FORWARD_HOOK
++      if(!UIP_CONF_FORWARD_HOOK()) {
++        UIP_STAT(++uip_stat.ip.drop);
++        goto drop;
++      }
++#endif
++
+       LOG_INFO("Forwarding packet to next hop, dest: ");
+       LOG_INFO_6ADDR(&UIP_IP_BUF->destipaddr);
+       LOG_INFO_("\n");
+diff --git a/os/net/routing/rpl-lite/rpl-icmp6.c b/os/net/routing/rpl-lite/rpl-icmp6.c
+index fd8aaa52c..5ec4bb583 100644
+--- a/os/net/routing/rpl-lite/rpl-icmp6.c
++++ b/os/net/routing/rpl-lite/rpl-icmp6.c
+@@ -68,6 +68,8 @@ static void dis_input(void);
+ static void dio_input(void);
+ static void dao_input(void);
+ 
++rpl_ctrl_stats_t rpl_ctrl_stats;
++
+ /*---------------------------------------------------------------------------*/
+ /* Initialize RPL ICMPv6 message handlers */
+ UIP_ICMP6_HANDLER(dis_handler, ICMP6_RPL, RPL_CODE_DIS, dis_input);
+@@ -140,6 +142,14 @@ dis_input(void)
+   LOG_INFO("received a DIS from ");
+   LOG_INFO_6ADDR(&UIP_IP_BUF->srcipaddr);
+   LOG_INFO_("\n");
++  rpl_ctrl_stats.dis_rx++;
++
++#ifdef RPL_CONF_DIS_INPUT_HOOK
++  if(!RPL_CONF_DIS_INPUT_HOOK(&UIP_IP_BUF->srcipaddr,
++                              uip_is_addr_mcast(&UIP_IP_BUF->destipaddr))) {
++    goto discard;
++  }
++#endif
+ 
+   rpl_process_dis(&UIP_IP_BUF->srcipaddr, uip_is_addr_mcast(&UIP_IP_BUF->destipaddr));
+ 
+@@ -166,6 +176,7 @@ rpl_icmp6_dis_output(uip_ipaddr_t *addr)
+   LOG_INFO_6ADDR(addr);
+   LOG_INFO_("\n");
+ 
++  rpl_ctrl_stats.dis_tx++;
+   uip_icmp6_send(addr, ICMP6_RPL, RPL_CODE_DIS, 2);
+ }
+ /*---------------------------------------------------------------------------*/
+@@ -197,6 +208,7 @@ dio_input(void)
+   uip_ipaddr_t from;
+ 
+   memset(&dio, 0, sizeof(dio));
++  rpl_ctrl_stats.dio_rx++;
+ 
+   /* Set default values in case the DIO configuration option is missing. */
+   dio.dag_intdoubl = RPL_DIO_INTERVAL_DOUBLINGS;
+@@ -498,6 +510,7 @@ rpl_icmp6_dio_output(uip_ipaddr_t *uc_addr)
+   LOG_INFO_6ADDR(addr);
+   LOG_INFO_("\n");
+ 
++  rpl_ctrl_stats.dio_tx++;
+   uip_icmp6_send(addr, ICMP6_RPL, RPL_CODE_DIO, pos);
+ }
+ /*---------------------------------------------------------------------------*/
+@@ -673,6 +686,13 @@ dao_input(void)
+   LOG_INFO_6ADDR(&dao.parent_addr);
+   LOG_INFO_(" \n");
+ 
++  rpl_ctrl_stats.dao_rx++;
++#ifdef RPL_CONF_DAO_INPUT_HOOK
++  if(!RPL_CONF_DAO_INPUT_HOOK(&from, &dao.parent_addr, dao.lifetime)) {
++    goto discard;
++  }
++#endif
++
+   rpl_process_dao(&from, &dao);
+ 
+   discard:
+@@ -755,6 +775,7 @@ rpl_icmp6_dao_output(uint8_t lifetime)
+   LOG_INFO_("\n");
+ 
+   /* Send DAO to root (IPv6 address is DAG ID) */
++  rpl_ctrl_stats.dao_tx++;
+   uip_icmp6_send(&curr_instance.dag.dag_id, ICMP6_RPL, RPL_CODE_DAO, pos);
+ }
+ #if RPL_WITH_DAO_ACK
+@@ -815,6 +836,7 @@ rpl_icmp6_dao_ack_output(uip_ipaddr_t *dest, uint8_t sequence, uint8_t status)
+   LOG_INFO_6ADDR(dest);
+   LOG_INFO_(" with status %d\n", status);
+ 
++  rpl_ctrl_stats.daoack_tx++;
+   uip_icmp6_send(dest, ICMP6_RPL, RPL_CODE_DAO_ACK, 4);
+ }
+ #endif /* RPL_WITH_DAO_ACK */
+diff --git a/os/net/routing/rpl-lite/rpl-icmp6.h b/os/net/routing/rpl-lite/rpl-icmp6.h
+index fc877b948..1cf0090b9 100644
+--- a/os/net/routing/rpl-lite/rpl-icmp6.h
++++ b/os/net/routing/rpl-lite/rpl-icmp6.h
+@@ -136,6 +136,20 @@ void rpl_icmp6_dao_ack_output(uip_ipaddr_t *dest, uint8_t sequence, uint8_t stat
+ */
+ void rpl_icmp6_init(void);
+ 
++typedef struct {
++  uint32_t dio_tx, dis_tx, dao_tx, daoack_tx;
++  uint32_t dio_rx, dis_rx, dao_rx;
++} rpl_ctrl_stats_t;
++extern rpl_ctrl_stats_t rpl_ctrl_stats;
++
++#ifdef RPL_CONF_DIS_INPUT_HOOK
++int RPL_CONF_DIS_INPUT_HOOK(const uip_ipaddr_t *from, int is_multicast);
++#endif
++#ifdef RPL_CONF_DAO_INPUT_HOOK
++int RPL_CONF_DAO_INPUT_HOOK(const uip_ipaddr_t *from, uip_ipaddr_t *parent,
++                            uint8_t lifetime);
++#endif
++
+  /** @} */
+ 
+ #endif /* RPL_ICMP6_H_ */
+diff --git a/os/net/routing/rpl-lite/rpl-timers.c b/os/net/routing/rpl-lite/rpl-timers.c
+index cc3abf31a..c790eb888 100644
+--- a/os/net/routing/rpl-lite/rpl-timers.c
++++ b/os/net/routing/rpl-lite/rpl-timers.c
+@@ -166,6 +166,17 @@ new_dio_interval(void)
+ }
+ /*---------------------------------------------------------------------------*/
+ void
++rpl_timers_dio_readjust(uint8_t intcurrent)
++{
++  if(rpl_dag_ready_to_advertise() && !rpl_get_leaf_only() &&
++     curr_instance.dag.dio_intcurrent > intcurrent) {
++    curr_instance.dag.dio_counter = 0;
++    curr_instance.dag.dio_intcurrent = intcurrent;
++    new_dio_interval();
++  }
++}
++/*---------------------------------------------------------------------------*/
++void
+ rpl_timers_dio_reset(const char *str)
+ {
+   if(rpl_dag_ready_to_advertise() &&
+diff --git a/os/net/routing/rpl-lite/rpl-timers.h b/os/net/routing/rpl-lite/rpl-timers.h
+index be993baa1..684123528 100644
+--- a/os/net/routing/rpl-lite/rpl-timers.h
++++ b/os/net/routing/rpl-lite/rpl-timers.h
+@@ -84,6 +84,8 @@ void rpl_timers_stop_dag_timers(void);
+ */
+ void rpl_timers_dio_reset(const char *str);
+ 
++void rpl_timers_dio_readjust(uint8_t intcurrent);
++
+ /**
+  * Schedule unicast DIO with no delay
+ */

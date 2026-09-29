@@ -1,0 +1,20 @@
+{
+ "source": "Prajisha and Vasudevan, Ad Hoc Networks 179 (2025) 104002, Section 6.1 and 6.2 text",
+ "interval": {
+  "x": [3, 30],
+  "attackers": 5,
+  "pdr_pct": {"RPL": [97.0, 98.0], "RPL-DIS": [70.9, 88.37], "DIS-FDM": [92.0, 96.21]},
+  "delay_ms": {"RPL": [120, 110], "RPL-DIS": [362, null], "DIS-FDM": [140, 120]},
+  "dio": {"RPL": [590, 520], "RPL-DIS": [4080, 2971], "RPL-MRC": [692, 630], "DIS-FDM": [673, 596]},
+  "power_mw": {"RPL": [1.9, 1.5], "RPL-DIS": [5.1, null], "DIS-FDM": [2.6, 1.36]}
+ },
+ "attackers": {
+  "x": [2, 10],
+  "interval": 3,
+  "pdr_pct": {"RPL": [98.0, 95.0], "RPL-DIS": [83.0, 67.0], "DIS-FDM": [95.61, 87.45]},
+  "delay_ms": {"RPL": [99, 107], "RPL-DIS": [null, 304], "DIS-FDM": [132, 173]},
+  "dio": {"RPL": [500, 550], "RPL-DIS": [null, 4627]},
+  "fdm_vs_mrc_dio_reduction_pct": {"2": 6.86, "5": 21.05, "10": 36.27},
+  "power_mw": {"RPL": [1.5, 2.3], "RPL-DIS": [null, 6.05], "RPL-MRC": [1.9, 2.7], "DIS-FDM": [1.8, 2.64]}
+ }
+}

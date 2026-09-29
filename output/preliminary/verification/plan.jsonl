@@ -1,0 +1,12 @@
+{"run_id": "verify_m2_k5_i3_mob0_d0_s1", "seed": 1, "nodes": 30, "attackers": 5, "attack_mode": 2, "dis_interval": 3, "defense": 0, "mobile_frac": 0.0, "duration_min": 20}
+{"run_id": "verify_m2_k5_i3_mob0_d0_s2", "seed": 2, "nodes": 30, "attackers": 5, "attack_mode": 2, "dis_interval": 3, "defense": 0, "mobile_frac": 0.0, "duration_min": 20}
+{"run_id": "verify_m2_k5_i3_mob0_d3_s1", "seed": 1, "nodes": 30, "attackers": 5, "attack_mode": 2, "dis_interval": 3, "defense": 3, "mobile_frac": 0.0, "duration_min": 20}
+{"run_id": "verify_m2_k5_i3_mob0_d3_s2", "seed": 2, "nodes": 30, "attackers": 5, "attack_mode": 2, "dis_interval": 3, "defense": 3, "mobile_frac": 0.0, "duration_min": 20}
+{"run_id": "verify_m2_k5_i3_mob0_d4_s1", "seed": 1, "nodes": 30, "attackers": 5, "attack_mode": 2, "dis_interval": 3, "defense": 4, "mobile_frac": 0.0, "duration_min": 20}
+{"run_id": "verify_m2_k5_i3_mob0_d4_s2", "seed": 2, "nodes": 30, "attackers": 5, "attack_mode": 2, "dis_interval": 3, "defense": 4, "mobile_frac": 0.0, "duration_min": 20}
+{"run_id": "verify_m3_k5_i3_mob0_d0_s1", "seed": 1, "nodes": 30, "attackers": 5, "attack_mode": 3, "dis_interval": 3, "defense": 0, "mobile_frac": 0.0, "duration_min": 20}
+{"run_id": "verify_m3_k5_i3_mob0_d0_s2", "seed": 2, "nodes": 30, "attackers": 5, "attack_mode": 3, "dis_interval": 3, "defense": 0, "mobile_frac": 0.0, "duration_min": 20}
+{"run_id": "verify_m3_k5_i3_mob0_d3_s1", "seed": 1, "nodes": 30, "attackers": 5, "attack_mode": 3, "dis_interval": 3, "defense": 3, "mobile_frac": 0.0, "duration_min": 20}
+{"run_id": "verify_m3_k5_i3_mob0_d3_s2", "seed": 2, "nodes": 30, "attackers": 5, "attack_mode": 3, "dis_interval": 3, "defense": 3, "mobile_frac": 0.0, "duration_min": 20}
+{"run_id": "verify_m3_k5_i3_mob0_d4_s1", "seed": 1, "nodes": 30, "attackers": 5, "attack_mode": 3, "dis_interval": 3, "defense": 4, "mobile_frac": 0.0, "duration_min": 20}
+{"run_id": "verify_m3_k5_i3_mob0_d4_s2", "seed": 2, "nodes": 30, "attackers": 5, "attack_mode": 3, "dis_interval": 3, "defense": 4, "mobile_frac": 0.0, "duration_min": 20}

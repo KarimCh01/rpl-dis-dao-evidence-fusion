@@ -1,0 +1,1 @@
+{"run_id": "mrccheck_m1_k5_i3_mob0_d2_s1", "seed": 1, "nodes": 30, "attackers": 5, "attack_mode": 1, "dis_interval": 3, "defense": 2, "mobile_frac": 0.0, "duration_min": 20}

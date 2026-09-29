@@ -1,0 +1,8 @@
+{"run_id": "tsch100_m0_k0_i3_mob0_d0_s1", "seed": 1, "nodes": 30, "attackers": 0, "attack_mode": 0, "dis_interval": 3, "defense": 0, "mobile_frac": 0.0, "duration_min": 20, "rx_ratio": 1.0}
+{"run_id": "tsch100_m0_k0_i3_mob0_d0_s2", "seed": 2, "nodes": 30, "attackers": 0, "attack_mode": 0, "dis_interval": 3, "defense": 0, "mobile_frac": 0.0, "duration_min": 20, "rx_ratio": 1.0}
+{"run_id": "tsch100_m1_k5_i3_mob0_d0_s1", "seed": 1, "nodes": 30, "attackers": 5, "attack_mode": 1, "dis_interval": 3, "defense": 0, "mobile_frac": 0.0, "duration_min": 20, "rx_ratio": 1.0}
+{"run_id": "tsch100_m1_k5_i3_mob0_d0_s2", "seed": 2, "nodes": 30, "attackers": 5, "attack_mode": 1, "dis_interval": 3, "defense": 0, "mobile_frac": 0.0, "duration_min": 20, "rx_ratio": 1.0}
+{"run_id": "tsch90_m0_k0_i3_mob0_d0_s1", "seed": 1, "nodes": 30, "attackers": 0, "attack_mode": 0, "dis_interval": 3, "defense": 0, "mobile_frac": 0.0, "duration_min": 20, "rx_ratio": 0.9}
+{"run_id": "tsch90_m0_k0_i3_mob0_d0_s2", "seed": 2, "nodes": 30, "attackers": 0, "attack_mode": 0, "dis_interval": 3, "defense": 0, "mobile_frac": 0.0, "duration_min": 20, "rx_ratio": 0.9}
+{"run_id": "tsch90_m1_k5_i3_mob0_d0_s1", "seed": 1, "nodes": 30, "attackers": 5, "attack_mode": 1, "dis_interval": 3, "defense": 0, "mobile_frac": 0.0, "duration_min": 20, "rx_ratio": 0.9}
+{"run_id": "tsch90_m1_k5_i3_mob0_d0_s2", "seed": 2, "nodes": 30, "attackers": 5, "attack_mode": 1, "dis_interval": 3, "defense": 0, "mobile_frac": 0.0, "duration_min": 20, "rx_ratio": 0.9}

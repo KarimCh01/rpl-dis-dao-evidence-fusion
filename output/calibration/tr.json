@@ -1,0 +1,18 @@
+{
+ "runs": 20,
+ "settle_s": 120,
+ "alpha": 1.0,
+ "static": {
+  "n_intervals": 7484,
+  "mu_s": 18.618397582041688,
+  "sigma_s": 97.7244651571496
+ },
+ "mobile": {
+  "n_intervals": 9153,
+  "mu_s": 32.951728173058015,
+  "sigma_s": 61.54513175145952
+ },
+ "rule": "mu - alpha*sigma was <= 0, so the threshold falls back to mu / 2",
+ "tr_static_ms": 9309,
+ "tr_mobile_ms": 16476
+}
