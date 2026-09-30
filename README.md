@@ -7,6 +7,7 @@ Networks 179 (2025) 104002, which proposes DIS-FDM.
 
 * Full step-by-step account of what was built and why: `docs/WALKTHROUGH.md`
 * How to rebuild everything and get the same numbers: `docs/REPRODUCE.md`
+* Every source file, every log line and every data column explained: `docs/CODE_AND_DATA.md`
 * Readable results tables: `output/results/summary.md`
 
 ## Research questions and where each one is answered
