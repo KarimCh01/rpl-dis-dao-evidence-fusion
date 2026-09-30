@@ -17,7 +17,7 @@ Multicast DIS flooding attacks in RPL-based IoT networks," Ad Hoc Networks 179
 
 | Item | Value | Why |
 |---|---|---|
-| Docker image | `contiker/contiki-ng`, ID `b14d5afb0a2a` | Official Contiki-NG toolchain. Pinning the ID fixes compiler, Java and libraries. |
+| Docker image | `contiker/contiki-ng`, created 2026-07-10 (ID `b14d5afb0a2a` in Docker Desktop, `0e20b334617f` in the native engine; same layers) | Official Contiki-NG toolchain. Pinning the image fixes compiler, Java and libraries. |
 | Contiki-NG | commit `385d72a76` | Same OS family the paper states (Table 7: Contiki-NG/Cooja). |
 | Cooja | commit `fabff3ee`, run headless with `--no-gui` | Scripted, repeatable runs, as the proposal requires. |
 | Mote type | Cooja native motes | Fast enough to run about 1300 one-hour simulations on a laptop. |
@@ -372,6 +372,11 @@ not give alpha; alpha = 1 was used.
    `twinrpl-<run>`, checks that the log ends with `TEST OK` at exactly 3600 s,
    parses the metrics into `result.json` and compresses the raw log.
 4. `analysis/aggregate.py` builds all tables, figures and tests.
+5. `scripts/verify_sample.py` re-runs a random sample of published runs into a
+   separate folder and checks that every metric is identical. A check of one
+   random run (`m1_k14_i3_mob0_d3_s10`) and a cross-engine check of
+   `m1_k5_i3_mob0_d3_s1` (Docker Desktop against the native engine) both gave
+   identical results.
 
 Speed on this laptop (16 threads): about 6 minutes of wall time per 60-minute
 simulation with 12 in parallel, about 11 to 12 hours for the whole matrix.
@@ -427,6 +432,8 @@ Measured on legitimate nodes over the attack phase (300 s to 3600 s):
 | 10 | Shared runs could start twice | Runner did not remove duplicates across plan files | Runs deduplicated by run ID |
 | 11 | Matrix used 2/5/10 attackers | Drift from the proposal, which states 0/10/25/50% | Main matrix changed to 3/7/14 attackers; 2/5/10 kept only for RQ1 |
 | 12 | RPL-MRC far weaker than the paper reports | First version was an approximation, original paper not yet available | Exact rule from Medjek et al. (2021) implemented; old RPL-MRC runs deleted and re-run (D.2) |
+| 13 | 11 runs failed overnight and the matrix stalled | The laptop suspended itself from 04:15 to 07:42; Docker Desktop's virtual machine did not recover | Docker Desktop restarted, incomplete runs deleted and re-run, matrix relaunched under `systemd-inhibit` so the machine cannot sleep while simulations run |
+| 14 | Docker stopped responding again after the restart and the same runs failed | Docker Desktop's file-sharing layer stalled ("unable to inject events") under 12 parallel simulations after the suspend | The exact same image was exported from Docker Desktop and loaded into the native Docker Engine (identical layers). One finished simulation was re-run on the native engine and gave identical results. The rest of the matrix ran on the native engine, about five times faster |
 
 ---
 

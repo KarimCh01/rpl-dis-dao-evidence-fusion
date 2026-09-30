@@ -18,7 +18,7 @@ generated from the same seed.
 
 | Item | Value |
 |---|---|
-| Docker image | `contiker/contiki-ng`, image ID `sha256:b14d5afb0a2a852d9e72bbed607ead03f6ccc5f4d4dee44f0799110be2f4b609` |
+| Docker image | `contiker/contiki-ng`, created 2026-07-10T12:13:21Z. Image ID `sha256:b14d5afb0a2a...` as reported by Docker Desktop (containerd store, manifest digest) and `sha256:0e20b334617f...` as reported by the native Docker Engine (config digest). Both are the same image: identical filesystem layers. |
 | Contiki-NG commit | `385d72a76` |
 | Cooja commit (submodule) | `fabff3ee` |
 | Cooja build version | `2023090701` |
@@ -44,8 +44,19 @@ docker pull contiker/contiki-ng
 docker image inspect contiker/contiki-ng --format '{{.Id}}'
 ```
 
-The ID must match the one in section 2. If Docker Hub has moved the `latest`
-tag, pull by digest instead.
+The ID must match one of the two in section 2. If Docker Hub has moved the
+`latest` tag, pull by digest instead.
+
+The native Docker Engine is recommended over Docker Desktop. It runs
+containers without a virtual machine and without Docker Desktop's file-sharing
+layer, which stalled under 12 parallel simulations in this study. It is also
+about five times faster. Results are identical on both engines (checked by
+re-running a finished simulation on each). To use the native engine for every
+command below, set:
+
+```bash
+export DOCKER_HOST=unix:///var/run/docker.sock
+```
 
 ### 4.2 Get Contiki-NG at the pinned commit and apply the patch
 
@@ -123,6 +134,18 @@ The runner skips any run that already has `output/runs/<run>/result.json`, so
 it can be stopped and restarted at any time. Lower `--workers` on a smaller
 machine.
 
+On a laptop, stop the machine from sleeping during the matrix, because Docker
+Desktop does not always survive a suspend:
+
+```bash
+systemd-inhibit --what=sleep:idle --why="simulations" \
+  python3 scripts/run_matrix.py output/plan/reproduction.jsonl output/plan/main.jsonl --workers 12
+```
+
+If Docker Desktop stops responding (`docker info` hangs), restart it with
+`systemctl --user restart docker-desktop`, delete run folders that have no
+`result.json`, and start the runner again.
+
 ### 4.9 Analysis, tables and figures
 
 ```bash
@@ -142,14 +165,37 @@ machine.
 | `output/results/summary.md` | readable summary tables |
 | `output/figures/*.png` | all figures |
 
-## 6. Checking that you got the same results
+## 6. Checking the published results without re-running everything
 
-Every run is deterministic. To check one run, delete its folder and run it again:
+A full re-run takes about 11 to 12 hours. It is not needed to verify the
+results. There are three levels of checking.
+
+### 6.1 Re-compute every table and figure from the raw logs (seconds)
+
+Every published run keeps its exact input (`sim.csc`), its ground truth
+(`meta.json`) and its raw log (`COOJA.testlog.gz`). This re-derives every metric
+from the logs and rebuilds all tables, figures and tests:
 
 ```bash
-rm -rf output/runs/m3_k5_i3_mob0_d4_s1
-python3 scripts/run_matrix.py output/plan/main.jsonl --workers 1
+.venv/bin/python analysis/reparse_all.py
+.venv/bin/python analysis/aggregate.py
 ```
 
-Then compare the new `result.json` with the published one. They must be
-identical apart from the `wall_s` field (wall-clock time).
+### 6.2 Re-run a random sample of simulations (about 10 to 20 minutes)
+
+Every run is deterministic, so a re-run must give exactly the published numbers.
+This picks 10 published runs at random, re-runs them into `output/verify/`
+(the published results are never touched) and compares every metric:
+
+```bash
+python3 scripts/verify_sample.py --n 10 --workers 4
+```
+
+Use `--seed` to draw a different sample, or `--runs <run_id> ...` to choose
+specific runs. The script prints `IDENTICAL` or `DIFFERENT` for each run, and
+exits with an error if any run differs. Only the `wall_s` field (wall-clock
+time) is ignored.
+
+### 6.3 Re-run everything (about 11 to 12 hours on a 16-thread laptop)
+
+Follow section 4 from the beginning in a fresh copy.

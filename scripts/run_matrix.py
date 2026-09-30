@@ -20,9 +20,10 @@ IMAGE = "contiker/contiki-ng"
 RUNS = ROOT / "output" / "runs"
 
 
-def run_one(cfg):
+def run_one(cfg, runs_dir=RUNS):
     rid = cfg["run_id"]
-    d = RUNS / rid
+    d = runs_dir / rid
+    rel = d.relative_to(ROOT).as_posix()
     res_file = d / "result.json"
     if res_file.exists():
         return rid, "skip"
@@ -36,8 +37,8 @@ def run_one(cfg):
            IMAGE, "bash", "-c",
            "cd /home/user/contiki-ng/tools/cooja && "
            f"java -jar build/libs/cooja-full.jar --no-gui "
-           f"--logdir=/home/user/project/output/runs/{rid} "
-           f"/home/user/project/output/runs/{rid}/sim.csc > /home/user/project/output/runs/{rid}/cooja.out 2>&1"]
+           f"--logdir=/home/user/project/{rel} "
+           f"/home/user/project/{rel}/sim.csc > /home/user/project/{rel}/cooja.out 2>&1"]
     t0 = time.time()
     subprocess.run(cmd)
     wall = time.time() - t0

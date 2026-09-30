@@ -5,3 +5,4 @@ __pycache__/
 output/runs/*/COOJA.testlog
 output/runs/*/cooja.out
 output/plan/*.log
+output/verify/
