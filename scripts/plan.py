@@ -51,6 +51,17 @@ def main_matrix(seeds):
     return out
 
 
+def sensitivity(seeds):
+    out = []
+    for interval in (3, 6, 10, 15, 30):
+        for s in seeds:
+            c = cfg(1, 5, interval, 0.0, 3, s)
+            c["run_id"] = c["run_id"].replace("_d3_", "_d3w30_")
+            c["fdm_window"] = 30
+            out.append(c)
+    return out
+
+
 def write(name, rows):
     seen = set()
     uniq = []
@@ -71,6 +82,7 @@ def main():
     write("calibration", calibration(seeds))
     write("reproduction", reproduction(seeds))
     write("main", main_matrix(seeds))
+    write("sensitivity", sensitivity(seeds))
 
 
 if __name__ == "__main__":

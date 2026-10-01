@@ -75,6 +75,7 @@ def parse(run_dir):
 
     res = {k: meta[k] for k in ("run_id", "seed", "attackers", "attack_mode", "dis_interval",
                                 "defense", "mobile_frac", "duration_min")}
+    res["fdm_window"] = meta.get("fdm_window", 10)
 
     def pdr_window(t_from):
         sent = [(k, v) for k, v in tx.items() if k[0] in legit and v >= t_from]

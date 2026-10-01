@@ -154,11 +154,12 @@ def waypoint_path(r, start, duration_s):
     return segs
 
 
-def variant_names(defense, attack_mode, dis_interval):
+def variant_names(defense, attack_mode, dis_interval, window=10):
+    w = "" if window == 10 else f"_w{window}"
     return {
-        "root": f"v_root_d{defense}",
-        "cli0": f"v_cli_d{defense}_m0",
-        "cli1": f"v_cli_d{defense}_m1",
+        "root": f"v_root_d{defense}{w}",
+        "cli0": f"v_cli_d{defense}_m0{w}",
+        "cli1": f"v_cli_d{defense}_m1{w}",
         "atk": f"v_atk_a{attack_mode}_i{dis_interval}",
     }
 
@@ -177,7 +178,8 @@ def build(cfg):
     for mid in mobile:
         segments[str(mid)] = waypoint_path(r, pts[mid - 1], duration_s)
 
-    v = variant_names(cfg["defense"], cfg["attack_mode"], cfg["dis_interval"])
+    v = variant_names(cfg["defense"], cfg["attack_mode"], cfg["dis_interval"],
+                      cfg.get("fdm_window", 10))
     groups = {v["root"]: [1]}
     for nid in others:
         if nid in attackers:

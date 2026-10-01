@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import argparse
 import json
+import math
 import random
 import shutil
 import sys
@@ -26,10 +27,16 @@ def load_plans():
     return cfgs
 
 
+def same(x, y):
+    if isinstance(x, float) and isinstance(y, float) and math.isnan(x) and math.isnan(y):
+        return True
+    return x == y
+
+
 def compare(rid):
     a = json.loads((RUNS / rid / "result.json").read_text())
     b = json.loads((VERIFY / rid / "result.json").read_text())
-    return [k for k in a if k not in IGNORED and a[k] != b.get(k)]
+    return [k for k in a if k not in IGNORED and not same(a[k], b.get(k))]
 
 
 def main():

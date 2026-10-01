@@ -26,6 +26,10 @@ def all_variants(tr_static, tr_mobile):
         v[f"v_atk_a{a}_i3"] = f"ROLE=2,ATTACK_MODE={a},ATTACK_DIS_INTERVAL=3"
     for i in (6, 10, 15, 30):
         v[f"v_atk_a1_i{i}"] = f"ROLE=2,ATTACK_MODE=1,ATTACK_DIS_INTERVAL={i}"
+    v["v_root_d3_w30"] = "ROLE=0,DEFENSE=3,DEF_WINDOW_SEC=30"
+    for m in (0, 1):
+        v[f"v_cli_d3_m{m}_w30"] = (f"ROLE=1,DEFENSE=3,NODE_MOBILE={m},DEF_WINDOW_SEC=30,"
+                                   f"TR_STATIC_MS={tr_static},TR_MOBILE_MS={tr_mobile}")
     return v
 
 

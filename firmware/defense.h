@@ -15,7 +15,9 @@
 #define DEFENSE DEF_NONE
 #endif
 
+#ifndef DEF_WINDOW_SEC
 #define DEF_WINDOW_SEC 10
+#endif
 
 extern uint32_t defense_parent_switches;
 

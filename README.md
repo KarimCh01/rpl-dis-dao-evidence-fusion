@@ -18,6 +18,7 @@ Networks 179 (2025) 104002, which proposes DIS-FDM.
 | RQ2. Is the combined DIS + DAO attack worse than either attack alone? | O2 | `output/plan/main.jsonl`, defense 0 | `output/figures/rq2_attack_damage.png`, `output/results/stats_rq2_combined_vs_single.csv` |
 | RQ3. Does the self-calibrated DAO-consistency evidence source improve detection? | O3, O4 | `output/plan/main.jsonl`, defenses 3 and 4 | `output/figures/main_detection_*.png`, `output/figures/main_network_*.png` |
 | RQ4. Are the improvements statistically significant across seeds, static and mobile? | O5 | all of `main.jsonl` (10 seeds per cell) | `output/results/stats_rq3_rq4_proposed_vs_baselines.csv` |
+| Sensitivity of DIS-FDM to its evidence window (supports RQ1) | O1 | `output/plan/sensitivity.jsonl` | `output/figures/sensitivity_fdm_window.png`, `output/results/sensitivity_fdm_window.csv` |
 
 ## Folder map
 

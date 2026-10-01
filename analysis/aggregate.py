@@ -37,6 +37,9 @@ def load():
         rows.append({k: v for k, v in r.items() if not k.startswith("_")})
     df = pd.DataFrame(rows)
     df["mobile_frac"] = df["mobile_frac"].round(1)
+    if "fdm_window" not in df:
+        df["fdm_window"] = 10
+    df["fdm_window"] = df["fdm_window"].fillna(10).astype(int)
     return df.sort_values(["attack_mode", "attackers", "dis_interval", "mobile_frac", "defense", "seed"])
 
 
@@ -259,7 +262,7 @@ def rq2_tests(df):
                                  "metric": metric, "alternative": f"combined {better}", "n_pairs": n,
                                  "median_diff": med, "p": p, "rank_biserial": r})
     t = pd.DataFrame(rows)
-    t["p_holm"] = holm(t["p"])
+    t["p_holm"] = t.groupby(["comparison", "metric"])["p"].transform(holm)
     return t
 
 
@@ -297,7 +300,7 @@ def rq34_tests(df):
                              "sd_baseline": np.nanstd(b, ddof=1) if len(b) > 1 else np.nan,
                              "median_diff": med, "p": p, "rank_biserial": r})
     t = pd.DataFrame(rows)
-    t["p_holm"] = holm(t["p"])
+    t["p_holm"] = t.groupby(["baseline", "attack", "metric"])["p"].transform(holm)
     return t
 
 
@@ -382,7 +385,7 @@ def markdown(summ, t2, t34, rt):
     for _, r in rt.iterrows():
         L.append(f"| {r.experiment} | {r.x} | {r.condition} | {r.metric} | {r.paper} | {r.ours} |")
     L.append("")
-    L.append("## RQ2: combined attack vs each single attack, no defense (one-sided Wilcoxon, Holm-adjusted)")
+    L.append("## RQ2: combined attack vs each single attack, no defense (one-sided Wilcoxon, Holm-adjusted within each comparison and metric)")
     L.append("")
     L.append("| Malicious | Mobility | Comparison | Metric | Median diff | p (Holm) | r_rb |")
     L.append("|---|---|---|---|---|---|---|")
@@ -390,7 +393,7 @@ def markdown(summ, t2, t34, rt):
         L.append(f"| {r.malicious_pct}% | {r.mobility} | {r.comparison} | {r.metric} | {r.median_diff:.4g} | "
                  f"{r.p_holm:.3g} | {r.rank_biserial:.2f} |")
     L.append("")
-    L.append("## RQ3/RQ4: proposed defense vs each baseline (two-sided Wilcoxon, Holm-adjusted p < 0.05)")
+    L.append("## RQ3/RQ4: proposed defense vs each baseline (two-sided Wilcoxon, Holm-adjusted within each baseline, attack and metric, p < 0.05)")
     L.append("")
     L.append("| Baseline | Attack | Malicious | Mobility | Metric | Proposed | Baseline | Median diff | p (Holm) | r_rb |")
     L.append("|---|---|---|---|---|---|---|---|---|---|")
@@ -401,12 +404,55 @@ def markdown(summ, t2, t34, rt):
     (RES / "summary.md").write_text("\n".join(L) + "\n")
 
 
+def window_sensitivity(full):
+    base = full[(full.attack_mode == 1) & (full.attackers == 5) & (full.mobile_frac == 0.0)]
+    rows = []
+    for interval in (3, 6, 10, 15, 30):
+        b = base[base.dis_interval == interval]
+        for label, sel in (("RPL (no defense)", (b.defense == 0) & (b.fdm_window == 10)),
+                           ("DIS-FDM, 10 s window", (b.defense == 3) & (b.fdm_window == 10)),
+                           ("DIS-FDM, 30 s window", (b.defense == 3) & (b.fdm_window == 30))):
+            g = b[sel]
+            if g.empty:
+                continue
+            row = {"dis_interval": interval, "condition": label, "n": len(g)}
+            for m in ("dio_total", "tpr", "fpr", "detect_latency_s", "pdr_up", "tx_power_mw"):
+                row[m] = g[m].mean()
+                row[m + "_sd"] = g[m].std(ddof=1)
+            rows.append(row)
+    t = pd.DataFrame(rows)
+    if t.empty:
+        return t
+    fig, axes = plt.subplots(1, 3, figsize=(15, 4.2))
+    colors = {"RPL (no defense)": COL[0], "DIS-FDM, 10 s window": COL[3], "DIS-FDM, 30 s window": "#e8590c"}
+    for ax, (metric, label, scale) in zip(axes, (("dio_total", "DIO messages", 1),
+                                                 ("tpr", "True positive rate (%)", 100),
+                                                 ("fpr", "False positive rate (%)", 100))):
+        for cond, g in t.groupby("condition"):
+            if metric in ("tpr", "fpr") and cond.startswith("RPL"):
+                continue
+            ax.errorbar(g.dis_interval, g[metric] * scale, yerr=g[metric + "_sd"] * scale, marker="o",
+                        capsize=3, color=colors[cond], label=cond)
+        ax.set_xlabel("Attack DIS interval (s)")
+        ax.set_ylabel(label)
+        ax.grid(alpha=0.3)
+    axes[0].legend(fontsize=8)
+    fig.suptitle("Sensitivity of DIS-FDM to its evidence window (5 attackers, static, mean ± SD)")
+    fig.tight_layout()
+    fig.savefig(FIG / "sensitivity_fdm_window.png", dpi=200)
+    plt.close(fig)
+    return t
+
+
 def main():
     RES.mkdir(parents=True, exist_ok=True)
     FIG.mkdir(parents=True, exist_ok=True)
     ref = json.loads((Path(__file__).parent / "paper_reference.json").read_text())
-    df = load()
-    df.to_csv(RES / "all_runs.csv", index=False)
+    full = load()
+    full.to_csv(RES / "all_runs.csv", index=False)
+    sens = window_sensitivity(full)
+    sens.to_csv(RES / "sensitivity_fdm_window.csv", index=False)
+    df = full[full.fdm_window == 10]
     summ = summarize(df)
     summ.to_csv(RES / "summary_by_condition.csv", index=False)
     repro_figures(summ, ref)
@@ -418,7 +464,17 @@ def main():
     rt = repro_table(summ, ref)
     rt.to_csv(RES / "reproduction_vs_paper.csv", index=False)
     markdown(summ, t2, t34, rt)
-    print(f"{len(df)} runs aggregated")
+    if not sens.empty:
+        L = ["", "## Sensitivity: DIS-FDM evidence window (5 attackers, static, mean ± SD)", "",
+             "| Interval (s) | Condition | DIO msgs | TPR (%) | FPR (%) | Latency (s) |",
+             "|---|---|---|---|---|---|"]
+        for _, r in sens.iterrows():
+            L.append(f"| {r.dis_interval} | {r.condition} | {fmt(r.dio_total, r.dio_total_sd, 1, 0)} | "
+                     f"{fmt(r.tpr, r.tpr_sd, 100)} | {fmt(r.fpr, r.fpr_sd, 100)} | "
+                     f"{fmt(r.detect_latency_s, r.detect_latency_s_sd)} |")
+        with open(RES / "summary.md", "a") as f:
+            f.write("\n".join(L) + "\n")
+    print(f"{len(df)} runs in the main analysis, {int((full.fdm_window != 10).sum())} sensitivity runs")
 
 
 if __name__ == "__main__":

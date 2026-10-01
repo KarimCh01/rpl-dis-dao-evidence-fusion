@@ -345,6 +345,22 @@ not give alpha; alpha = 1 was used.
   secondary source. The fallback `TR = mu / 2` was used: 9.3 s static, 16.5 s
   mobile. The rule applied is written into `output/calibration/tr.json`.
 
+### E2. Sensitivity test on DIS-FDM's evidence window
+
+The reproduction showed that with a 10 s window DIS-FDM stops working once
+attackers send a DIS only every 15 s or 30 s: some windows then contain no
+DIS, the consecutive counter `u` resets, and five consecutive violations are
+never reached. The paper does not give its sample size, so this is a
+consequence of a parameter the paper leaves open.
+
+To measure how much this one parameter matters, the DIS-FDM interval sweep
+(5 attackers, static, intervals 3 to 30 s, 10 seeds) is repeated with a 30 s
+window (`DEF_WINDOW_SEC=30`, variants `v_*_d3*_w30`, plan
+`output/plan/sensitivity.jsonl`, 50 runs). Everything else is unchanged.
+These runs are kept out of the main analysis and reported separately in
+`output/results/sensitivity_fdm_window.csv` and
+`output/figures/sensitivity_fdm_window.png`.
+
 ---
 
 ## Part F. Places where the paper is ambiguous, and the choice made
@@ -353,7 +369,7 @@ not give alpha; alpha = 1 was used.
 |---|---|---|
 | Algorithm 1 counts a violation when `T_PC > TR`, but the text says frequent parent changes indicate an attack | Violation when `TPC < TR` (changes more frequent than normal) | Only this direction matches the paper's own reasoning in Section 4.2. |
 | Table 7 lists 0/10/25/50% malicious nodes, but Sections 6.1 and 6.2 use 2, 5 and 10 attackers | Reproduction uses 2/5/10 and the interval sweep; the main matrix uses 0/10/25/50% as the proposal states | Published numbers exist only for the Section 6 settings. |
-| "Traffic samples of size n" is not defined in time | 10 s windows | Equal to the normal DIS interval. |
+| "Traffic samples of size n" is not defined in time | 10 s windows | Equal to the normal DIS interval. Because the reproduction showed this choice decides whether slow floods (15 s and 30 s) are caught, a sensitivity test repeats the interval sweep with a 30 s window (Part E2). |
 | alpha in `TR = mu - alpha*sigma` not given | alpha = 1, fallback mu/2 (Part E) | Data-driven, recorded. |
 | Belief tables have no row for 0 violations | 0 means no evidence (vacuous) | Zero violations is absence of evidence, not evidence of an attack. |
 | MAC layer, link loss, traffic rate, attack start, mobility speeds not given | CSMA, Cooja default link success, 10 s traffic, attack at 300 s, 0.5 to 2 m/s | See B.2, B.3, B.5, B.8. |
@@ -434,6 +450,8 @@ Measured on legitimate nodes over the attack phase (300 s to 3600 s):
 | 12 | RPL-MRC far weaker than the paper reports | First version was an approximation, original paper not yet available | Exact rule from Medjek et al. (2021) implemented; old RPL-MRC runs deleted and re-run (D.2) |
 | 13 | 11 runs failed overnight and the matrix stalled | The laptop suspended itself from 04:15 to 07:42; Docker Desktop's virtual machine did not recover | Docker Desktop restarted, incomplete runs deleted and re-run, matrix relaunched under `systemd-inhibit` so the machine cannot sleep while simulations run |
 | 14 | Docker stopped responding again after the restart and the same runs failed | Docker Desktop's file-sharing layer stalled ("unable to inject events") under 12 parallel simulations after the suspend | The exact same image was exported from Docker Desktop and loaded into the native Docker Engine (identical layers). One finished simulation was re-run on the native engine and gave identical results. The rest of the matrix ran on the native engine, about five times faster |
+| 15 | No test was significant | The Holm correction was applied across all 418 tests at once. With 10 seeds the smallest possible Wilcoxon p is 0.00195, so multiplying by up to 418 removed every result | Holm applied within each family of related tests: one comparison and one metric across its 6 conditions (3 malicious levels x 2 topologies), the usual definition of a family |
+| 16 | Verification reported 6 of 10 runs as different | Defenses that do not detect (none, RPL-MRC) have empty detection fields, and an empty value never equals another empty value in Python | Two empty values now count as equal; all 10 re-runs identical |
 
 ---
 
@@ -457,4 +475,135 @@ decisions only, not results.
 
 ## Part L. Results
 
-This part is filled in from `output/results/` once the full matrix has finished.
+All 1330 runs finished: 1280 unique runs from the calibration (20), reproduction
+(320) and main (1000) plans, where runs shared between plans were executed once,
+plus 50 sensitivity runs.
+Every run is complete and has the planned number of attackers and mobile nodes.
+Ten published runs drawn at random were re-run from scratch and all ten gave
+identical metrics. Full tables: `output/results/summary.md`; every number below
+comes from `output/results/summary_by_condition.csv` and the `stats_*.csv`
+files. Values are means over 10 seeds.
+
+A note on mobility. With 30% of nodes moving, even the attack-free network
+delivers only about 70% of the packets nodes would send if always connected
+(static: 100%), because a node that walks out of range has no route for a
+while. This affects every defense equally, so comparisons inside the same
+topology remain fair.
+
+### L.1 RQ1 and H1: reproduction of DIS-FDM
+
+| Setting (static) | Paper | This study |
+|---|---|---|
+| DIO, no attack | 590 | 1245 |
+| DIO, 5 attackers at 3 s, no defense | 4080 (6.9 x no attack) | 10451 (8.4 x) |
+| DIS-FDM reduction of that overhead | 83.5% (673) | 77.5% (2348) |
+| RPL-MRC reduction | 83.0% (692) | 65.6% (3597) |
+| DIS-FDM below RPL-MRC, 2 / 5 / 10 attackers | 6.9% / 21.1% / 36.3% | 35.0% / 34.7% / 20.7% |
+| Upward delivery under attack | falls to 67% to 83% | stays at 100% |
+| Delay under attack | rises to 304 to 362 ms | stays at about 70 ms |
+
+* Reproduced: the attack multiplies control overhead several times; DIS-FDM
+  removes most of it and does better than RPL-MRC at every attacker count.
+* Not reproduced: the loss of delivery and the rise in delay (Part B.8: with the
+  default CSMA MAC the network absorbs the DIO storm); absolute DIO counts are
+  about twice the paper's, so ratios are compared, not raw counts.
+* DIS-FDM with a 10 s window stops working against slow floods: at 15 s and 30 s
+  intervals it detects no attacker and the overhead equals no defense. With a
+  30 s window it detects 98% (15 s) and 88% (30 s) of attackers and cuts the
+  overhead to 3139 and 4147 DIO (no defense: 8549 and 6665), while behaving like
+  the 10 s window at 3 to 10 s. The paper's claim of success at every interval
+  therefore depends on a sample size it does not report.
+* H1 is partly supported: the overhead trends and the ranking of the defenses
+  are reproduced; the delivery and delay effects are not.
+
+### L.2 RQ2 and H2: combined attack against single attacks (no defense)
+
+Static network, 25% malicious nodes:
+
+| Attack | Downward delivery | DIO messages | Transmit power (mW) |
+|---|---|---|---|
+| DIS flooding | 99.8% | 11684 | 0.146 |
+| DAO manipulation | 80.1% | 1901 | 0.294 |
+| Combined | 79.6% | 10151 | 0.322 |
+
+One-sided Wilcoxon, Holm-corrected within each comparison and metric:
+
+* Combined against DIS-only: downward delivery significantly lower in 6 of 6
+  conditions and transmit power significantly higher in 6 of 6.
+* Combined against DAO-only: DIO overhead significantly higher in 5 of 6.
+* Combined is not worse than DAO-only on downward delivery, and not worse than
+  DIS-only on DIO overhead.
+
+H2 is supported in a qualified form: the combined attack causes both kinds of
+damage at once, so it is significantly worse than each single attack on the
+kind of damage that attack does not cause. It does not amplify either kind of
+damage beyond what the corresponding single attack already causes.
+
+### L.3 RQ3 and H3: proposed defense against DIS-FDM
+
+| Condition | Metric | DIS-FDM | Proposed |
+|---|---|---|---|
+| Combined, 25%, static | downward delivery | 77.2% | 97.4% |
+| Combined, 25%, static | transmit power | 0.284 mW | 0.153 mW |
+| Combined, 25%, static | detection latency | 50 s | 33 s |
+| Combined, 25%, static | TPR / FPR | 97% / 9% | 97% / 8% |
+| Combined, 50%, static | downward delivery | 67.5% | 88.5% |
+| Combined, 25%, mobile | downward delivery | 80.8% | 98.1% |
+| DAO only, 25%, static | TPR | 11% | 96% |
+| DAO only, 25%, static | precision | 14% | 90% |
+| DAO only, 25%, static | downward delivery | 81.1% | 98.4% |
+
+Two-sided Wilcoxon, Holm-corrected within each attack and metric (6 conditions):
+
+* Combined attack: the proposed defense is significantly better in downward
+  delivery (6 of 6), transmit power (6 of 6) and detection latency (6 of 6).
+  TPR, FPR and precision do not differ significantly, because DIS-FDM already
+  catches the combined attackers through their DIS flood.
+* DAO-only attack: significantly better TPR (4 of 6), precision (4 of 6),
+  downward delivery (6 of 6) and transmit power (6 of 6).
+* DIS-only attack: no significant difference in any metric, as designed: with no
+  DAO evidence the proposed defense makes exactly DIS-FDM's decisions.
+* Cost: upward delivery is significantly lower in 3 of 6 combined conditions, by
+  about 1 to 1.6 percentage points (for example 98.2% against 99.8%). The cause
+  was not isolated.
+
+H3 as worded ("higher detection accuracy against the combined attack") is not
+supported for TPR and FPR, which are already near their limit for DIS-FDM. It is
+supported for detection speed and for the outcome of the defense (restored
+downward delivery, lower energy), and detection accuracy is clearly higher
+against DAO manipulation alone, which DIS-FDM cannot see.
+
+### L.4 RQ4 and H4: consistency across seeds and topologies
+
+* With 10 seeds the strongest possible Wilcoxon result is p = 0.00195 with all ten
+  seeds in favor (rank-biserial r = 1). The downward-delivery, transmit-power and
+  latency gains under the combined attack reach this in most conditions and stay
+  significant after correction in all six, static and mobile.
+* H4 is supported for these gains.
+
+### L.5 Further findings
+
+* DIS-FDM raises many false alarms under mobility: with no attacker at all it
+  blacklists 43.4% of legitimate nodes in the mobile topology (0% when static).
+  A moving node that loses its parent keeps sending DIS and looks like a slow
+  flood. The proposed defense inherits this (42.4%). The paper evaluates
+  mobility but reports no false-positive rate, which is Gap 3 of the proposal.
+* Secure-RPL is strong against fast DIS floods: no false alarms anywhere and
+  faster detection (12 to 25 s) than DIS-FDM or the proposed defense. It does
+  nothing against floods slower than its 5 s gap (6 s and above) and nothing
+  against DAO manipulation.
+* RPL-MRC, implemented exactly as published, cuts overhead strongly, including
+  under mobility (5326 against 9321 DIO with no attack), but it identifies no
+  attacker and does not help against DAO manipulation.
+
+### L.6 Limitations
+
+* The MAC layer: results use Contiki-NG's CSMA. The paper's delivery and power
+  effects need a duty-cycled MAC it does not name; TSCH with the minimal
+  schedule could not form a usable baseline.
+* Parameters the paper leaves open (Part F) influence DIS-FDM's absolute
+  performance, as the window sensitivity test shows.
+* RPL-lite non-storing mode only; 30 nodes; 10 seeds per condition, which limits
+  the smallest attainable p-value to 0.00195.
+* The DAO-consistency check relies on the first hop being an honest node; an
+  attacker whose parent is also an attacker is not caught by it.

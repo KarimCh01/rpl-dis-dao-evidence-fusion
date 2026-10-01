@@ -184,6 +184,7 @@ Each line is `<time in microseconds> <node ID> <tag> <values>`:
 | `reproduction_vs_paper.csv` | experiment, x value, condition, metric, paper's value, our value |
 | `stats_rq2_combined_vs_single.csv` | combined vs each single attack, no defense: pairs, median difference, p, Holm-adjusted p, rank-biserial effect size |
 | `stats_rq3_rq4_proposed_vs_baselines.csv` | proposed vs DIS-FDM, Secure-RPL and RPL-MRC for every condition and metric, with the same statistics plus means and SDs |
+| `sensitivity_fdm_window.csv` | DIS-FDM window test: DIO, TPR, FPR, latency per interval and window |
 | `summary.md` | readable tables built from the files above |
 
 ### 3.6 Figures (`output/figures/`)
@@ -196,3 +197,4 @@ Each line is `<time in microseconds> <node ID> <tag> <values>`:
 | `main_network_k{3,7,14}.png` | downward delivery, DIO overhead and transmit power per attack and defense |
 | `main_detection_k{3,7,14}.png` | TPR, FPR and detection latency per attack and defense |
 | `false_positives_no_attack.png` | false alarms when no attacker is present |
+| `sensitivity_fdm_window.png` | DIS-FDM with a 10 s and a 30 s evidence window against attack interval |

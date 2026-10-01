@@ -127,10 +127,11 @@ the thresholds into the DIS-FDM and proposed-defense firmware.
 ### 4.8 Run everything
 
 ```bash
-python3 scripts/run_matrix.py output/plan/reproduction.jsonl output/plan/main.jsonl --workers 12
+python3 scripts/run_matrix.py output/plan/reproduction.jsonl output/plan/main.jsonl output/plan/sensitivity.jsonl --workers 12
 ```
 
-The runner skips any run that already has `output/runs/<run>/result.json`, so
+The first build in 4.7 also compiles the three 30 s-window variants used by
+`sensitivity.jsonl`. The runner skips any run that already has `output/runs/<run>/result.json`, so
 it can be stopped and restarted at any time. Lower `--workers` on a smaller
 machine.
 
