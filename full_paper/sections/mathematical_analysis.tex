@@ -43,7 +43,7 @@ If a benign pair produces an eligible inconsistency in each window independently
 \begin{proof}
 A false alarm requires $r$ consecutive hit windows. There are at most $(L-r+1)_+$ starting positions, each with probability $q^r$, and the union bound sums them.
 \end{proof}
-A 60-minute run has $L=336$ post-calibration windows. With $\epsilon=.5$ ($r=6$) and $q=.1$, the bound is $3.3\times10^{-4}$. The persistence rule is what makes the bound small: without it ($p=1$), $r=5$ and the bound grows tenfold. The bound concerns the DAO channel; mobility-induced parent changes act through another channel and are measured directly in Section~\ref{sec:results}.
+A 60-minute run has $L=336$ post-calibration windows. With $\epsilon=.5$ ($r=6$) and $q=.1$, the bound is $3.3\times10^{-4}$. The persistence rule is what makes the bound small: without it ($p=1$), $r=5$ and the bound grows tenfold. The bound concerns the DAO channel; the DIS solicitations of moving nodes act through the DIS channel and are measured directly in Section~\ref{sec:results}.
 
 Fig.~\ref{fig:mathbounds} plots \eqref{eq:delay} and \eqref{eq:fa}.
 \begin{figure*}[t]

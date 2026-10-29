@@ -86,7 +86,17 @@
   ],
   "benign_fresh_fpr_fixed_pct": 42.07,
   "benign_fresh_fpr_learning_pct": 42.41,
-  "benign_fresh_wilcoxon_p": 1.0
+  "benign_fresh_wilcoxon_p": 1.0,
+  "policy_changes_last_10min": {
+   "no_attack_static": 0.0,
+   "no_attack_mobile": 1.74,
+   "combined_static": 0.28,
+   "combined_mobile": 1.87
+  },
+  "policy_changes_max_mobile_combined": {
+   "first_version": 6.06,
+   "final": 2.7
+  }
  },
  "H5": {
   "static_pdr_down": [

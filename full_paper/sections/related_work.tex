@@ -1,10 +1,5 @@
 \section{Related Work}\label{sec:related}
-We organize prior work into four strands, moving from the attacks to the defenses closest to AEF-RPL: DIS flooding and its defenses, DAO attacks and combined attacks, adaptive and cooperative detection, and learning-based RPL security. Fig.~\ref{fig:lrmap} maps the reviewed studies to the gaps they expose, and Table~\ref{tab:positioning} contrasts the closest methods with this study. The review covers mainly 2018--2026 work, with earlier foundational sources for RPL and the underlying methods.
-
-\begin{figure*}[t]
-\centering\includegraphics[width=\textwidth]{full_paper/figures/lr_map.png}
-\caption{Literature map. Studies are grouped by strand (rows) and linked to the four research gaps and to the proposed AEF-RPL (right).}\label{fig:lrmap}
-\end{figure*}
+We organize prior work into four strands, moving from the attacks to the defenses closest to AEF-RPL: DIS flooding and its defenses, DAO attacks and combined attacks, adaptive and cooperative detection, and learning-based RPL security. Table~\ref{tab:positioning} contrasts the closest methods with this study, and Section~\ref{sec:gaps} states the gaps they leave open. The review covers mainly 2018--2026 work, with earlier foundational sources for RPL and the underlying methods.
 
 \subsection{RPL Control-Plane Attacks and DIS Flooding}
 RFC~6550 defines the DIS, DIO, and DAO messages and leaves their authentication optional \cite{rfc6550}. Surveys by Raoof et al.\ \cite{raoof2019} and by Albinali and Azzedin \cite{albinali2024} classify the resulting insider attacks by the resource they exhaust or the topology they corrupt. Many of these attacks have been studied on their own, among them Sybil \cite{khan2023}, black hole \cite{sharma2022}, and flooding attacks in cloud-connected low-power networks \cite{ankam2023}.

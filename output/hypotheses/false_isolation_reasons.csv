@@ -1,0 +1,33 @@
+defense,attack_mode,mobile_frac,runs,rule,honest_nodes_isolated,share
+3,0,0,10,DIS counter saturated,0,
+3,0,0,10,DIS-FDM counter rule (DIS and parent changes),0,
+3,0,0,10,DIS-FDM fused rule,0,
+3,0,0,10,DAO belief rule,0,
+3,0,0.3,10,DIS counter saturated,98,0.777778
+3,0,0.3,10,DIS-FDM counter rule (DIS and parent changes),28,0.222222
+3,0,0.3,10,DIS-FDM fused rule,0,0
+3,0,0.3,10,DAO belief rule,0,0
+3,3,0,30,DIS counter saturated,79,0.782178
+3,3,0,30,DIS-FDM counter rule (DIS and parent changes),22,0.217822
+3,3,0,30,DIS-FDM fused rule,0,0
+3,3,0,30,DAO belief rule,0,0
+3,3,0.3,30,DIS counter saturated,263,0.677835
+3,3,0.3,30,DIS-FDM counter rule (DIS and parent changes),125,0.322165
+3,3,0.3,30,DIS-FDM fused rule,0,0
+3,3,0.3,30,DAO belief rule,0,0
+4,0,0,10,DIS counter saturated,0,
+4,0,0,10,DIS-FDM counter rule (DIS and parent changes),0,
+4,0,0,10,DIS-FDM fused rule,0,
+4,0,0,10,DAO belief rule,0,
+4,0,0.3,10,DIS counter saturated,92,0.747967
+4,0,0.3,10,DIS-FDM counter rule (DIS and parent changes),29,0.235772
+4,0,0.3,10,DIS-FDM fused rule,0,0
+4,0,0.3,10,DAO belief rule,2,0.0162602
+4,3,0,30,DIS counter saturated,42,0.65625
+4,3,0,30,DIS-FDM counter rule (DIS and parent changes),14,0.21875
+4,3,0,30,DIS-FDM fused rule,0,0
+4,3,0,30,DAO belief rule,8,0.125
+4,3,0.3,30,DIS counter saturated,238,0.687861
+4,3,0.3,30,DIS-FDM counter rule (DIS and parent changes),83,0.239884
+4,3,0.3,30,DIS-FDM fused rule,1,0.00289017
+4,3,0.3,30,DAO belief rule,24,0.0693642

@@ -43,7 +43,9 @@ make reproduce-paper
 ```
 
 This runs step 2, reparses the 740 logs of the second campaign and the 20 fresh
-benign runs, decides hypotheses H1 to H5 (`analysis/test_hypotheses.py`), and
+benign runs, decides hypotheses H1 to H5 with the decision rules fixed in the
+proposal (`analysis/test_hypotheses.py`), counts which rule isolated each honest
+node (`analysis/false_isolation_reasons.py`), and
 rebuilds every table and figure used by the paper in `full_paper/generated/`.
 Expected last line:
 
@@ -80,6 +82,8 @@ Section V, without simulation.
 | ARI and recovery time per run | `output/results/resilience.csv` |
 | Fresh-seed replication, ablations, rate and reception loss | `output/experiments/journal_extension/analysis/summary.csv`, `paired_comparisons.csv` |
 | Benign learning comparison | `output/preliminary/learning_fp_extension_summary.csv` |
+| Policy stabilization (greedy-action changes per 10 minutes) | `output/hypotheses/evidence.json`, key `H4.policy_changes_last_10min` |
+| Rule that isolated each honest node (Sec. VII-D) | `output/hypotheses/false_isolation_reasons.csv` |
 
 ## Notes
 

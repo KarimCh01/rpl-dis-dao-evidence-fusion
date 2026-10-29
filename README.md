@@ -22,15 +22,15 @@ Q-learning decision layer.
   * 1960 runs in the main campaign (seeds 1 to 10);
   * 20 benign mobile runs on fresh seeds (11 to 20);
   * 740 runs in a second campaign on fresh seeds (21 to 45): attack rate, ablations, reception loss, CPU profiling.
-* Hypothesis decisions (`output/hypotheses/evidence.json`):
+* Hypothesis decisions, using the decision rules fixed in the proposal (`output/hypotheses/evidence.json`):
 
 | Hypothesis | Decision |
 |---|---|
 | H1 reproduction of DIS-FDM | Partly supported: overhead trends reproduced; delivery losses not (always-on MAC) |
 | H2 combined attack worse than each single attack | Partly supported: damage is additive (DIS overhead plus DAO route loss) |
-| H3 AEF-RPL vs DIS-FDM | Supported for service: downward PDR and ARI higher in 6/6 conditions (Holm p = .012); detection equal |
+| H3 AEF-RPL has higher detection accuracy than DIS-FDM | Not supported: TPR and precision equal (0/6). For RQ3, downward PDR and ARI are higher in 6/6 conditions (Holm p = .012) |
 | H4 learning vs fixed rule | Not supported for FPR; detection latency 20 to 73% lower in 6/6 conditions |
-| H5 consistency | Supported for service across topologies, attacker fractions, attack rates and reception loss |
+| H5 consistency (static, mobile, 500 and 1000 nodes) | Partly supported: service and latency gains hold in static and mobile networks, attack rates and reception loss at 30 nodes; 500 and 1000 nodes not tested |
 
 ## Regenerate everything from the logs (no simulation)
 
@@ -74,7 +74,8 @@ runs Cooja or Docker. Details and expected outputs are in
 | `analysis/calibrate_tr.py`, `analysis/calibrate_limsd.py` | DIS-FDM parent-change thresholds and the Li-MSD threshold from attack-free runs. |
 | `analysis/metrics.py` | Attack Resilience Index (ARI) and Downward Recovery Time (DRT). |
 | `analysis/aggregate.py` | Summary tables, figures, Wilcoxon signed-rank tests with Holm correction. |
-| `analysis/test_hypotheses.py` | Decides H1 to H5 and writes the paper's hypothesis and primary-test tables. |
+| `analysis/test_hypotheses.py` | Decides H1 to H5 with the proposal's decision rules and writes the paper's hypothesis and primary-test tables. |
+| `analysis/false_isolation_reasons.py` | Which decision rule first isolated each honest node, read from the blacklist lines of the stored logs. |
 | `analysis/check_theory.py` | Numerical checks of the delay, false-alarm and Q-value bounds. |
 | `analysis/reproduce_from_logs.py`, `scripts/reproduce_paper_from_logs.py` | `make reproduce` and `make reproduce-paper`. |
 | `full_paper/` | Paper sections, generated tables and figures, literature map. |

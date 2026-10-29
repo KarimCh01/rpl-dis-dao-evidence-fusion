@@ -1,61 +1,66 @@
 {
   "complete": true,
-  "seconds": 729.3,
+  "seconds": 478.0,
   "steps": [
     {
       "step": "main_logs",
       "exit_code": 0,
-      "seconds": 314.9
+      "seconds": 192.0
     },
     {
       "step": "journal_logs",
       "exit_code": 0,
-      "seconds": 261.4
+      "seconds": 140.7
     },
     {
       "step": "benign_learning",
       "exit_code": 0,
-      "seconds": 6.1
+      "seconds": 4.6
     },
     {
       "step": "journal_analysis",
       "exit_code": 0,
-      "seconds": 61.9
+      "seconds": 65.4
     },
     {
       "step": "journal_figures",
       "exit_code": 0,
-      "seconds": 7.3
+      "seconds": 6.6
     },
     {
       "step": "paper_assets",
       "exit_code": 0,
-      "seconds": 8.4
+      "seconds": 8.0
     },
     {
       "step": "hypothesis_tests",
       "exit_code": 0,
-      "seconds": 3.6
+      "seconds": 2.9
+    },
+    {
+      "step": "false_isolation_reasons",
+      "exit_code": 0,
+      "seconds": 3.5
     },
     {
       "step": "analytical_figure",
       "exit_code": 0,
-      "seconds": 9.1
+      "seconds": 7.1
     },
     {
       "step": "scale_logs",
       "exit_code": 0,
-      "seconds": 36.7
+      "seconds": 33.0
     },
     {
       "step": "scale_figures",
       "exit_code": 0,
-      "seconds": 2.5
+      "seconds": 1.6
     },
     {
       "step": "followup_logs_and_table",
       "exit_code": 0,
-      "seconds": 17.5
+      "seconds": 12.7
     }
   ]
 }

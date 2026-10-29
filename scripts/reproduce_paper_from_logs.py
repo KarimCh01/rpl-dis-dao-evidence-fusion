@@ -22,6 +22,7 @@ STEPS=[
     ('journal_figures',['analysis/plot_journal_extension.py']),
     ('paper_assets',['scripts/build_full_paper_assets.py']),
     ('hypothesis_tests',['analysis/test_hypotheses.py']),
+    ('false_isolation_reasons',['analysis/false_isolation_reasons.py']),
     ('analytical_figure',['analysis/check_manuscript_math.py']),
     ('scale_logs',['analysis/reproduce_scale_diagnostics.py']),
     ('scale_figures',['analysis/plot_scale_corrections.py']),

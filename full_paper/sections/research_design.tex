@@ -4,7 +4,7 @@ The research questions translate into seven objectives.
 \begin{enumerate}
 \item[O1:] Reproduce DIS-FDM's method and its reported performance trends in an independent Contiki-NG/Cooja implementation, to validate the environment before extending it.
 \item[O2:] Implement an attack model in which the same node executes multicast DIS flooding and false-parent DAO manipulation concurrently.
-\item[O3:] Extend DIS-FDM's evidence fusion with a self-calibrated DAO-consistency source, and calibrate its DIS and parent-change thresholds on each node instead of fixing them by hand.
+\item[O3:] Extend DIS-FDM's evidence fusion with a self-calibrated DAO-consistency source, calibrate the DIS threshold on each node, and derive the parent-change thresholds from attack-free runs instead of fixing them by hand.
 \item[O4:] Evaluate the extension against DIS-FDM, Secure-RPL, RPL-MRC, and Li-MSD in detection, service, and cost, including robustness to attack rate and reception loss.
 \item[O5:] Validate every comparison statistically across independent paired seeds in static and mobile networks.
 \item[O6:] Give each node a tabular Q-learning decision layer, specified and analyzed mathematically before simulation.
@@ -31,17 +31,17 @@ Gap & RQ & Objectives & Hypothesis and contribution \\
 \end{table}
 
 \subsection{Hypotheses and Their Development}
-Each hypothesis was fixed in the research proposal before the main experiments, together with its test and decision rule. We state each as a null ($H_0$) and alternative ($H_1$) pair.
+Each hypothesis, its measurement, and its decision rule were fixed in the research proposal before the main experiments, and they are decided here exactly as stated there. We give each as a null ($H_0$) and alternative ($H_1$) pair and explain why it was expected. Where the evaluation adds a measurement that the proposal did not tie to a hypothesis (ARI in H2 and H3, attack rate and reception loss in H5), it is reported next to the hypothesis as additional evidence and does not change the decision.
 
 \emph{H1 (reproduction).} DIS-FDM reduced DIO overhead by suppressing the DIO responses that floods trigger \cite{prajisha2025}. An implementation of the same rules in the same simulator family should reproduce the direction of these effects, although absolute values depend on unreported settings. $H1_0$: the reproduced effects differ in direction from the published ones. $H1_1$: they have the same direction and the defenses rank in the same order.
 
-\emph{H2 (combined damage).} DIS flooding consumes control-plane capacity, and false-parent DAOs break downward routes \cite{rajasekar2022,limsd2024}. Because the two mechanisms act on different routing functions, a node that runs both should impose both costs. $H2_0$: the combined attack is no worse than each single attack. $H2_1$: it significantly lowers delivery and ARI, or raises DIO overhead, compared with each single attack.
+\emph{H2 (combined damage).} DIS flooding consumes control-plane capacity, and false-parent DAOs break downward routes \cite{rajasekar2022,limsd2024}. Because the two mechanisms act on different routing functions, a node that runs both should impose both costs. $H2_0$: the combined attack is no worse than each single attack. $H2_1$: it is significantly worse than each single attack in downward delivery, DIO overhead, radio power, or delay. ARI is added because O7 defines it as the service measure of the study.
 
-\emph{H3 (DAO evidence and repair).} DIS-FDM observes no DAO field, so it cannot see, or undo, a false parent \cite{prajisha2025}. Adding a DAO-consistency source should reveal the manipulation, and repairing the advertised parent should restore the route. $H3_0$: AEF-RPL's TPR, precision, delivery, and ARI do not differ from DIS-FDM's. $H3_1$: AEF-RPL improves detection or resilience without a significantly higher FPR.
+\emph{H3 (DAO evidence and repair).} DIS-FDM observes no DAO field, so it cannot see, or undo, a false parent \cite{prajisha2025}. Adding a DAO-consistency source should reveal the manipulation, and repairing the advertised parent should restore the route. $H3_0$: AEF-RPL's TPR and precision do not differ from DIS-FDM's. $H3_1$: AEF-RPL has a significantly higher TPR or precision and no significantly higher FPR. Because RQ3 asks about resilience as well as accuracy, downward delivery and ARI are tested in the same way and reported with H3.
 
-\emph{H4 (on-node learning).} A fixed rule treats a mobility-induced parent change the same in every node, whereas a learner can adjust its action to the outcomes it observes locally \cite{watkins1992,qsecrpl2023}. Learning was therefore expected to isolate fewer honest nodes, especially under mobility. $H4_0$: learning does not change FPR. $H4_1$: learning lowers FPR without significantly lowering ARI.
+\emph{H4 (on-node learning).} A fixed rule treats the legitimate DIS bursts and parent changes of a moving node the same in every node, whereas a learner can adjust its action to the outcomes it observes locally \cite{watkins1992,qsecrpl2023}. Learning was therefore expected to isolate fewer honest nodes, especially under mobility. $H4_0$: learning does not change FPR. $H4_1$: learning lowers FPR without significantly lowering ARI.
 
-\emph{H5 (consistency).} An effect that comes from the protocol mechanism, rather than from one topology, should hold across seeds, attacker fractions, mobility, attack rates, and reception loss. $H5_0$: the H3 and H4 effects appear only in some conditions. $H5_1$: they hold in both static and mobile networks and keep their direction across rates and loss levels.
+\emph{H5 (consistency).} An effect that comes from the protocol mechanism, rather than from one topology, should hold across seeds, attacker fractions, mobility, and network size. $H5_0$: the H3 and H4 effects appear only in some conditions. $H5_1$: they are significant in both static and mobile networks and keep their direction at 500 and 1000 nodes. The 500- and 1000-node part could not be tested (Section~\ref{sec:limitations}), so the evaluation added attack rate and reception loss as further conditions at 30 nodes.
 
 H2 uses one-sided tests because it predicts a direction; H3 and H4 use two-sided tests because the added mechanisms could also make detection worse.
 

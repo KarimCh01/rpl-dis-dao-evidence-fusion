@@ -15,7 +15,7 @@ these files.
 - `generated/`: tables and figures produced from the stored results by
   `scripts/build_full_paper_assets.py`, `analysis/test_hypotheses.py` and
   `analysis/check_manuscript_math.py`. Do not edit these by hand.
-- `figures/`: the literature map (`gen_lrmap.py` renders `lr_map.png` with headless Chrome).
+- `figures/`: the literature map for the course version (`gen_lrmap.py` renders `lr_map.png` with headless Chrome); the journal version does not include it.
 
 ## Build
 

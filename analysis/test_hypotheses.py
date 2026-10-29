@@ -62,6 +62,7 @@ def main():
     s2 = pd.read_csv(RES / "stats_rq2_combined_vs_single.csv")
     rep = pd.read_csv(RES / "reproduction_vs_paper.csv")
     res = pd.read_csv(RES / "resilience.csv")
+    runs = pd.read_csv(RES / "all_runs.csv")
     ari = ari_tests(res)
     ext = pd.read_csv(EXT / "paired_comparisons.csv")
     benign = pd.read_csv(ROOT / "output" / "preliminary" / "learning_fp_extension_summary.csv").iloc[0]
@@ -133,6 +134,17 @@ def main():
                 "benign_fresh_fpr_fixed_pct": round(float(benign.fixed_mean_fpr_pct), 2),
                 "benign_fresh_fpr_learning_pct": round(float(benign.learning_mean_fpr_pct), 2),
                 "benign_fresh_wilcoxon_p": float(benign.wilcoxon_two_sided_p)}
+    # Policy stability: states (of 96) whose greedy action changed in the last 10-minute report, per node.
+    pol = runs[(runs.defense == AEF) & (runs.dis_interval == 3) & (runs.fdm_window == 10)
+               & runs.attack_mode.isin([0, 3])]
+    ev["H4"]["policy_changes_last_10min"] = {
+        f"{'combined' if a == 3 else 'no_attack'}_{'static' if m == 0 else 'mobile'}": round(float(g.mean()), 2)
+        for (a, m), g in pol.groupby(["attack_mode", "mobile_frac"]).policy_changes_last}
+    # Largest per-run value under the mobile combined attack: first learning version (6) vs final (7).
+    mc = runs[(runs.attack_mode == 3) & (runs.mobile_frac == 0.3) & (runs.dis_interval == 3) & (runs.fdm_window == 10)]
+    ev["H4"]["policy_changes_max_mobile_combined"] = {
+        "first_version": round(float(mc[mc.defense == 6].policy_changes_last.max()), 2),
+        "final": round(float(mc[mc.defense == AEF].policy_changes_last.max()), 2)}
 
     # H5: consistency of the H3 service effect across topology, attack rate and reception loss.
     e = ext[(ext.reference == "AEF learning") & (ext.comparison == "DIS-FDM") & (ext.metric == "pdr_down")
@@ -182,17 +194,18 @@ def main():
          f"Down PDR vs DIS {f(h2['pdr_down_vs_dis'])}; DIO vs DAO {f(h2['dio_vs_dao'])}; "
          f"ARI vs DIS {f(h2['ari_vs_dis'])}, vs DAO {f(h2['ari_vs_dao'])}",
          "Partly supported"),
-        ("H3", "AEF-RPL outperforms DIS-FDM against the combined attack",
-         f"Down PDR {f(h3['pdr_down_higher'])}; ARI {f(h3['ari_higher'])}; TPR {f(h3['tpr_higher'])}; "
-         f"FPR higher {f(h3['fpr_higher'])}; DAO-only TPR {f(h3['dao_only_tpr_higher'])}",
-         "Supported for service; detection at parity"),
+        ("H3", "AEF-RPL has higher detection accuracy than DIS-FDM against the combined attack",
+         f"TPR higher {f(h3['tpr_higher'])}; precision higher {f(h3['precision_higher'])}; "
+         f"FPR higher {f(h3['fpr_higher'])}. RQ3 resilience: down PDR {f(h3['pdr_down_higher'])}, "
+         f"ARI {f(h3['ari_higher'])}; DAO-only TPR {f(h3['dao_only_tpr_higher'])}",
+         "Not supported for detection; resilience improved"),
         ("H4", "Learning lowers FPR without lowering ARI",
          f"FPR lower {f(h4['fpr_lower'])}; ARI lower {f(h4['ari_lower'])}; latency lower {f(h4['latency_lower'])}",
          "Not supported (FPR); latency gain"),
-        ("H5", "Effects hold across seeds, topologies, rates and radio loss",
-         f"Static {f(h5['static_pdr_down'])}, mobile {f(h5['mobile_pdr_down'])}; "
-         f"extension cells with CI $>0$ {f(h5['extension_cells_ci_above_zero'])}",
-         "Supported for service"),
+        ("H5", "The improvements hold across seeds in static and mobile networks, and at 500 and 1000 nodes",
+         f"Service gain static {f(h5['static_pdr_down'])}, mobile {f(h5['mobile_pdr_down'])}; "
+         f"rate and loss cells with CI $>0$ {f(h5['extension_cells_ci_above_zero'])}; 500 and 1000 nodes not tested",
+         "Partly supported (service gain, 30 nodes)"),
     ]
     (TEX / "hypothesis_table.tex").write_text(
         "\\begin{tabularx}{\\textwidth}{@{}l>{\\raggedright}p{0.24\\textwidth}X>{\\raggedright\\arraybackslash}p{0.17\\textwidth}@{}}\n"
