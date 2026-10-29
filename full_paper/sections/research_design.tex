@@ -23,7 +23,7 @@ Gap & RQ & Objectives & Hypothesis and contribution \\
 \midrule
 3 (no accuracy evidence) & RQ1 & O1, O5 & H1; reproduction with TPR, FPR, and tests (C4, C5) \\
 1 (single vector) & RQ2 & O2, O7 & H2; combined threat model, ARI and DRT (C3, C4) \\
-1, 2 (hand-set evidence) & RQ3 & O3, O4, O7 & H3; calibrated DAO evidence and repair (C1, C4) \\
+1, 2 (fixed evidence) & RQ3 & O3, O4, O7 & H3; calibrated DAO evidence and repair (C1, C4) \\
 4 (no on-node learning) & RQ4 & O6 & H4; Q-learning layer and analysis (C1, C2) \\
 3 & RQ5 & O4, O5 & H5; robustness across conditions (C4) \\
 \bottomrule
@@ -33,9 +33,9 @@ Gap & RQ & Objectives & Hypothesis and contribution \\
 \subsection{Hypotheses and Their Development}
 Each hypothesis, its measurement, and its decision rule were fixed in the research proposal before the main experiments, and they are decided here exactly as stated there. Each is written as a null ($H_0$) and alternative ($H_1$) pair after the reasoning that led to it. Where the evaluation adds a measurement that the proposal did not tie to a hypothesis (ARI in H2 and H3, attack rate and reception loss in H5), it is reported next to the hypothesis as additional evidence and does not change the decision.
 
-DIS-FDM reduced DIO overhead by suppressing the DIO responses that floods trigger \cite{prajisha2025}. When the same rules run in the same simulator family, the direction of these effects should be reproduced, even though absolute values may differ because some settings were not reported. $H1_0$: the reproduced effects differ in direction from the published ones. $H1_1$: they have the same direction and the defenses rank in the same order.
+DIS-FDM reduced DIO overhead by blacklisting flooders, so that their DIS messages no longer trigger DIO responses \cite{prajisha2025}. When the same rules run in the same simulator family, the direction of these effects should be reproduced, even though absolute values may differ because some settings were not reported. $H1_0$: the reproduced effects differ in direction from the published ones. $H1_1$: they have the same direction and the defenses rank in the same order.
 
-DIS flooding uses up control-plane capacity, while false-parent DAOs break downward routes \cite{rajasekar2022,limsd2024}. Because the two act on different routing functions, a node that performs both should cause both kinds of damage. $H2_0$: the combined attack is no worse than each single attack. $H2_1$: it is significantly worse than each single attack in downward delivery, DIO overhead, radio power, or delay. ARI is also reported for H2, since O7 introduces it as our service measure.
+DIS flooding uses up control-plane capacity, while forged DAOs break downward routes \cite{rajasekar2022,pu2018}. Because the two act on different routing functions, a node that performs both should cause both kinds of damage. $H2_0$: the combined attack is no worse than each single attack. $H2_1$: it is significantly worse than each single attack in downward delivery, DIO overhead, radio power, or delay. ARI is also reported for H2, since O7 introduces it as our service measure.
 
 DIS-FDM does not inspect any DAO field, so it can neither detect nor undo a false parent \cite{prajisha2025}. A DAO-consistency source makes the manipulation visible, and rewriting the advertised parent can restore the route. $H3_0$: AEF-RPL's TPR and precision do not differ from DIS-FDM's. $H3_1$: AEF-RPL reaches a significantly higher TPR or precision while its FPR does not rise significantly. Since RQ3 covers resilience as well, downward delivery and ARI were tested the same way, and their results appear under H3.
 
