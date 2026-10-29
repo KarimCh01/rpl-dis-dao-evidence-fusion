@@ -55,7 +55,7 @@ def false_alarms(eps, q_values, horizon, rng, runs=20000):
         for t in range(horizon):
             streak = np.where(bad[:, t], streak + 1, 0)
             alarm |= streak >= need
-        bound = min(1.0, horizon * q ** need)
+        bound = min(1.0, (horizon - need + 1) * q ** need)
         rate = float(alarm.mean())
         rows.append({"eps": eps, "q": q, "windows": horizon, "needed_in_a_row": need,
                      "measured": rate, "bound": bound, "holds": bool(rate <= bound + 3 * math.sqrt(bound / runs))})

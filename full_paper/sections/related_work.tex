@@ -33,7 +33,7 @@ Li-MSD \cite{limsd2024} & DAO insider (volume) & DAO counting and blacklisting &
 Garcia Ribera et al.\ \cite{garciaribera2022} & Several attacks, concurrent flooding & Hybrid distributed and central IDS & One attack per node; central component & Same node runs both attacks; fully local decisions \\
 DE2RA-RPL \cite{de2rarpl2024}, Abdulkareem et al.\ \cite{abdulkareem2024} & DAO flood with rank/version; joint rank, wormhole, version & Combined detection rules; collaborative IDS & Different vector combinations & Targets the DIS plus DAO-parent combination \\
 QSec-RPL \cite{qsecrpl2023}, iTRPL \cite{itrpl2024} & Version number; trust & Q-learning; multi-agent RL with root & Other attacks; root involvement & Per-node tabular learner over fused DIS and DAO evidence \\
-CRRDS \cite{haqdad2026} & Decreased rank & Deep RL at the root & Root resources and central view & 768-byte learner on every constrained node \\
+CRRDS \cite{haqdad2026} & Decreased rank & Deep RL at the root & Root resources and central view & 780-byte learner on every constrained node \\
 \midrule
 AEF-RPL (this study) & Same-node DIS flood and false-parent DAO & Fused DIS, parent, energy, and calibrated DAO evidence; selective repair; on-node Q-learning & Evaluated in 30-node simulation & Paired comparison against all of the above, with learning isolated by ablation \\
 \bottomrule

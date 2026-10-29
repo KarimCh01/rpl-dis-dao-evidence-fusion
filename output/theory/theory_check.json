@@ -58,7 +58,7 @@
    "windows": 336,
    "needed_in_a_row": 6,
    "measured": 0.0,
-   "bound": 5.250000000000002e-06,
+   "bound": 5.171875000000002e-06,
    "holds": true
   },
   {
@@ -67,7 +67,7 @@
    "windows": 336,
    "needed_in_a_row": 6,
    "measured": 0.00015,
-   "bound": 0.00033600000000000014,
+   "bound": 0.00033100000000000013,
    "holds": true
   },
   {
@@ -76,7 +76,7 @@
    "windows": 336,
    "needed_in_a_row": 6,
    "measured": 0.01685,
-   "bound": 0.02150400000000001,
+   "bound": 0.02118400000000001,
    "holds": true
   },
   {
@@ -85,7 +85,7 @@
    "windows": 336,
    "needed_in_a_row": 6,
    "measured": 0.1586,
-   "bound": 0.24494399999999994,
+   "bound": 0.24129899999999993,
    "holds": true
   }
  ],
