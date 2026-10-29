@@ -1,0 +1,33 @@
+[
+  {
+    "run_id": "acktrace_n500_s1_t8",
+    "parent_updates": 29403,
+    "updates_with_resulting_path_into_cycle": 23881,
+    "updates_with_changed_node_in_cycle": 16916,
+    "distinct_observed_cycles": 1604,
+    "cycle_length_update_counts": {
+      "2": 10897,
+      "6": 175,
+      "3": 3974,
+      "4": 1406,
+      "5": 407,
+      "7": 38,
+      "8": 14,
+      "10": 2,
+      "12": 2,
+      "9": 1
+    },
+    "first_cycle_member_update_s": 158.420056,
+    "last_cycle_member_update_s": 479.930296
+  },
+  {
+    "run_id": "chain30_depth29_t15",
+    "parent_updates": 29,
+    "updates_with_resulting_path_into_cycle": 0,
+    "updates_with_changed_node_in_cycle": 0,
+    "distinct_observed_cycles": 0,
+    "cycle_length_update_counts": {},
+    "first_cycle_member_update_s": null,
+    "last_cycle_member_update_s": null
+  }
+]

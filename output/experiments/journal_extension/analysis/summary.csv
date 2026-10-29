@@ -1,0 +1,1729 @@
+experiment,attack_mode,mobile_frac,dis_interval,dao_interval,rx_ratio,nodes,duration_min,native_dis_interval_s,variant,metric,n,mean,ci95_low,ci95_high
+ablation,0,0.0,3,2,1,30,60,10,fixed_calibration,pdr_up,10,0.999759758197996,0.9995665270236765,0.9999529893723155
+ablation,0,0.0,3,2,1,30,60,10,fixed_calibration,pdr_down,10,0.9984228377980827,0.9981984546645207,0.9986472209316447
+ablation,0,0.0,3,2,1,30,60,10,fixed_calibration,delivery_up,10,1.000491118077325,0.9998509493599217,1.0011312867947284
+ablation,0,0.0,3,2,1,30,60,10,fixed_calibration,fpr,10,0.0,0.0,0.0
+ablation,0,0.0,3,2,1,30,60,10,fixed_calibration,tpr,0,nan,nan,nan
+ablation,0,0.0,3,2,1,30,60,10,fixed_calibration,precision,0,nan,nan,nan
+ablation,0,0.0,3,2,1,30,60,10,fixed_calibration,macro_f1,0,nan,nan,nan
+ablation,0,0.0,3,2,1,30,60,10,fixed_calibration,event_recall_new_alert,0,nan,nan,nan
+ablation,0,0.0,3,2,1,30,60,10,fixed_calibration,detected_delay_mean_s,0,nan,nan,nan
+ablation,0,0.0,3,2,1,30,60,10,fixed_calibration,missed_new_alerts,10,0.0,0.0,0.0
+ablation,0,0.0,3,2,1,30,60,10,fixed_calibration,false_blacklists_per_hour,10,0.0,0.0,0.0
+ablation,0,0.0,3,2,1,30,60,10,fixed_calibration,legit_isolated_frac,10,0.0,0.0,0.0
+ablation,0,0.0,3,2,1,30,60,10,fixed_calibration,radio_power_mw,10,59.97743277202873,59.97569645709686,59.979169086960596
+ablation,0,0.0,3,2,1,30,60,10,fixed_calibration,legit_join_fraction,10,1.0,1.0,1.0
+ablation,0,0.0,3,2,1,30,60,10,fixed_calibration,ari,0,nan,nan,nan
+ablation,0,0.0,3,2,1,30,60,10,fixed_calibration,drt_s,10,0.0,0.0,0.0
+ablation,0,0.0,3,2,1,30,60,10,fixed_calibration,callback_cpu_median_us,0,nan,nan,nan
+ablation,0,0.0,3,2,1,30,60,10,fixed_calibration,callback_cpu_p95_us,0,nan,nan,nan
+ablation,0,0.0,3,2,1,30,60,10,full,pdr_up,10,0.999759758197996,0.9995665270236765,0.9999529893723155
+ablation,0,0.0,3,2,1,30,60,10,full,pdr_down,10,0.9984228377980827,0.9981984546645207,0.9986472209316447
+ablation,0,0.0,3,2,1,30,60,10,full,delivery_up,10,1.000491118077325,0.9998509493599217,1.0011312867947284
+ablation,0,0.0,3,2,1,30,60,10,full,fpr,10,0.0,0.0,0.0
+ablation,0,0.0,3,2,1,30,60,10,full,tpr,0,nan,nan,nan
+ablation,0,0.0,3,2,1,30,60,10,full,precision,0,nan,nan,nan
+ablation,0,0.0,3,2,1,30,60,10,full,macro_f1,0,nan,nan,nan
+ablation,0,0.0,3,2,1,30,60,10,full,event_recall_new_alert,0,nan,nan,nan
+ablation,0,0.0,3,2,1,30,60,10,full,detected_delay_mean_s,0,nan,nan,nan
+ablation,0,0.0,3,2,1,30,60,10,full,missed_new_alerts,10,0.0,0.0,0.0
+ablation,0,0.0,3,2,1,30,60,10,full,false_blacklists_per_hour,10,0.0,0.0,0.0
+ablation,0,0.0,3,2,1,30,60,10,full,legit_isolated_frac,10,0.0,0.0,0.0
+ablation,0,0.0,3,2,1,30,60,10,full,radio_power_mw,10,59.97743277202873,59.97569645709686,59.979169086960596
+ablation,0,0.0,3,2,1,30,60,10,full,legit_join_fraction,10,1.0,1.0,1.0
+ablation,0,0.0,3,2,1,30,60,10,full,ari,0,nan,nan,nan
+ablation,0,0.0,3,2,1,30,60,10,full,drt_s,10,0.0,0.0,0.0
+ablation,0,0.0,3,2,1,30,60,10,full,callback_cpu_median_us,0,nan,nan,nan
+ablation,0,0.0,3,2,1,30,60,10,full,callback_cpu_p95_us,0,nan,nan,nan
+ablation,0,0.0,3,2,1,30,60,10,immediate_dao_evidence,pdr_up,10,0.999759758197996,0.9995665270236765,0.9999529893723155
+ablation,0,0.0,3,2,1,30,60,10,immediate_dao_evidence,pdr_down,10,0.9984228377980827,0.9981984546645207,0.9986472209316447
+ablation,0,0.0,3,2,1,30,60,10,immediate_dao_evidence,delivery_up,10,1.000491118077325,0.9998509493599217,1.0011312867947284
+ablation,0,0.0,3,2,1,30,60,10,immediate_dao_evidence,fpr,10,0.0,0.0,0.0
+ablation,0,0.0,3,2,1,30,60,10,immediate_dao_evidence,tpr,0,nan,nan,nan
+ablation,0,0.0,3,2,1,30,60,10,immediate_dao_evidence,precision,0,nan,nan,nan
+ablation,0,0.0,3,2,1,30,60,10,immediate_dao_evidence,macro_f1,0,nan,nan,nan
+ablation,0,0.0,3,2,1,30,60,10,immediate_dao_evidence,event_recall_new_alert,0,nan,nan,nan
+ablation,0,0.0,3,2,1,30,60,10,immediate_dao_evidence,detected_delay_mean_s,0,nan,nan,nan
+ablation,0,0.0,3,2,1,30,60,10,immediate_dao_evidence,missed_new_alerts,10,0.0,0.0,0.0
+ablation,0,0.0,3,2,1,30,60,10,immediate_dao_evidence,false_blacklists_per_hour,10,0.0,0.0,0.0
+ablation,0,0.0,3,2,1,30,60,10,immediate_dao_evidence,legit_isolated_frac,10,0.0,0.0,0.0
+ablation,0,0.0,3,2,1,30,60,10,immediate_dao_evidence,radio_power_mw,10,59.97743277202873,59.97569645709686,59.979169086960596
+ablation,0,0.0,3,2,1,30,60,10,immediate_dao_evidence,legit_join_fraction,10,1.0,1.0,1.0
+ablation,0,0.0,3,2,1,30,60,10,immediate_dao_evidence,ari,0,nan,nan,nan
+ablation,0,0.0,3,2,1,30,60,10,immediate_dao_evidence,drt_s,10,0.0,0.0,0.0
+ablation,0,0.0,3,2,1,30,60,10,immediate_dao_evidence,callback_cpu_median_us,0,nan,nan,nan
+ablation,0,0.0,3,2,1,30,60,10,immediate_dao_evidence,callback_cpu_p95_us,0,nan,nan,nan
+ablation,0,0.0,3,2,1,30,60,10,learning_off,pdr_up,10,0.999759758197996,0.9995665270236765,0.9999529893723155
+ablation,0,0.0,3,2,1,30,60,10,learning_off,pdr_down,10,0.9984228377980827,0.9981984546645207,0.9986472209316447
+ablation,0,0.0,3,2,1,30,60,10,learning_off,delivery_up,10,1.000491118077325,0.9998509493599217,1.0011312867947284
+ablation,0,0.0,3,2,1,30,60,10,learning_off,fpr,10,0.0,0.0,0.0
+ablation,0,0.0,3,2,1,30,60,10,learning_off,tpr,0,nan,nan,nan
+ablation,0,0.0,3,2,1,30,60,10,learning_off,precision,0,nan,nan,nan
+ablation,0,0.0,3,2,1,30,60,10,learning_off,macro_f1,0,nan,nan,nan
+ablation,0,0.0,3,2,1,30,60,10,learning_off,event_recall_new_alert,0,nan,nan,nan
+ablation,0,0.0,3,2,1,30,60,10,learning_off,detected_delay_mean_s,0,nan,nan,nan
+ablation,0,0.0,3,2,1,30,60,10,learning_off,missed_new_alerts,10,0.0,0.0,0.0
+ablation,0,0.0,3,2,1,30,60,10,learning_off,false_blacklists_per_hour,10,0.0,0.0,0.0
+ablation,0,0.0,3,2,1,30,60,10,learning_off,legit_isolated_frac,10,0.0,0.0,0.0
+ablation,0,0.0,3,2,1,30,60,10,learning_off,radio_power_mw,10,59.97743277202873,59.97569645709686,59.979169086960596
+ablation,0,0.0,3,2,1,30,60,10,learning_off,legit_join_fraction,10,1.0,1.0,1.0
+ablation,0,0.0,3,2,1,30,60,10,learning_off,ari,0,nan,nan,nan
+ablation,0,0.0,3,2,1,30,60,10,learning_off,drt_s,10,0.0,0.0,0.0
+ablation,0,0.0,3,2,1,30,60,10,learning_off,callback_cpu_median_us,0,nan,nan,nan
+ablation,0,0.0,3,2,1,30,60,10,learning_off,callback_cpu_p95_us,0,nan,nan,nan
+ablation,0,0.0,3,2,1,30,60,10,no_dao_evidence,pdr_up,10,0.999759758197996,0.9995665270236765,0.9999529893723155
+ablation,0,0.0,3,2,1,30,60,10,no_dao_evidence,pdr_down,10,0.9984228377980827,0.9981984546645207,0.9986472209316447
+ablation,0,0.0,3,2,1,30,60,10,no_dao_evidence,delivery_up,10,1.000491118077325,0.9998509493599217,1.0011312867947284
+ablation,0,0.0,3,2,1,30,60,10,no_dao_evidence,fpr,10,0.0,0.0,0.0
+ablation,0,0.0,3,2,1,30,60,10,no_dao_evidence,tpr,0,nan,nan,nan
+ablation,0,0.0,3,2,1,30,60,10,no_dao_evidence,precision,0,nan,nan,nan
+ablation,0,0.0,3,2,1,30,60,10,no_dao_evidence,macro_f1,0,nan,nan,nan
+ablation,0,0.0,3,2,1,30,60,10,no_dao_evidence,event_recall_new_alert,0,nan,nan,nan
+ablation,0,0.0,3,2,1,30,60,10,no_dao_evidence,detected_delay_mean_s,0,nan,nan,nan
+ablation,0,0.0,3,2,1,30,60,10,no_dao_evidence,missed_new_alerts,10,0.0,0.0,0.0
+ablation,0,0.0,3,2,1,30,60,10,no_dao_evidence,false_blacklists_per_hour,10,0.0,0.0,0.0
+ablation,0,0.0,3,2,1,30,60,10,no_dao_evidence,legit_isolated_frac,10,0.0,0.0,0.0
+ablation,0,0.0,3,2,1,30,60,10,no_dao_evidence,radio_power_mw,10,59.97743277202873,59.97569645709686,59.979169086960596
+ablation,0,0.0,3,2,1,30,60,10,no_dao_evidence,legit_join_fraction,10,1.0,1.0,1.0
+ablation,0,0.0,3,2,1,30,60,10,no_dao_evidence,ari,0,nan,nan,nan
+ablation,0,0.0,3,2,1,30,60,10,no_dao_evidence,drt_s,10,0.0,0.0,0.0
+ablation,0,0.0,3,2,1,30,60,10,no_dao_evidence,callback_cpu_median_us,0,nan,nan,nan
+ablation,0,0.0,3,2,1,30,60,10,no_dao_evidence,callback_cpu_p95_us,0,nan,nan,nan
+ablation,0,0.0,3,2,1,30,60,10,no_route_repair,pdr_up,10,0.999759758197996,0.9995665270236765,0.9999529893723155
+ablation,0,0.0,3,2,1,30,60,10,no_route_repair,pdr_down,10,0.9984228377980827,0.9981984546645207,0.9986472209316447
+ablation,0,0.0,3,2,1,30,60,10,no_route_repair,delivery_up,10,1.000491118077325,0.9998509493599217,1.0011312867947284
+ablation,0,0.0,3,2,1,30,60,10,no_route_repair,fpr,10,0.0,0.0,0.0
+ablation,0,0.0,3,2,1,30,60,10,no_route_repair,tpr,0,nan,nan,nan
+ablation,0,0.0,3,2,1,30,60,10,no_route_repair,precision,0,nan,nan,nan
+ablation,0,0.0,3,2,1,30,60,10,no_route_repair,macro_f1,0,nan,nan,nan
+ablation,0,0.0,3,2,1,30,60,10,no_route_repair,event_recall_new_alert,0,nan,nan,nan
+ablation,0,0.0,3,2,1,30,60,10,no_route_repair,detected_delay_mean_s,0,nan,nan,nan
+ablation,0,0.0,3,2,1,30,60,10,no_route_repair,missed_new_alerts,10,0.0,0.0,0.0
+ablation,0,0.0,3,2,1,30,60,10,no_route_repair,false_blacklists_per_hour,10,0.0,0.0,0.0
+ablation,0,0.0,3,2,1,30,60,10,no_route_repair,legit_isolated_frac,10,0.0,0.0,0.0
+ablation,0,0.0,3,2,1,30,60,10,no_route_repair,radio_power_mw,10,59.97743277202873,59.97569645709686,59.979169086960596
+ablation,0,0.0,3,2,1,30,60,10,no_route_repair,legit_join_fraction,10,1.0,1.0,1.0
+ablation,0,0.0,3,2,1,30,60,10,no_route_repair,ari,0,nan,nan,nan
+ablation,0,0.0,3,2,1,30,60,10,no_route_repair,drt_s,10,0.0,0.0,0.0
+ablation,0,0.0,3,2,1,30,60,10,no_route_repair,callback_cpu_median_us,0,nan,nan,nan
+ablation,0,0.0,3,2,1,30,60,10,no_route_repair,callback_cpu_p95_us,0,nan,nan,nan
+ablation,0,0.3,3,2,1,30,60,10,fixed_calibration,pdr_up,10,0.9279123379006068,0.9071952240300037,0.9486294517712098
+ablation,0,0.3,3,2,1,30,60,10,fixed_calibration,pdr_down,10,0.9920767092771541,0.9905375760846247,0.9936158424696835
+ablation,0,0.3,3,2,1,30,60,10,fixed_calibration,delivery_up,10,0.6999791013584117,0.6093955966640167,0.7905626060528067
+ablation,0,0.3,3,2,1,30,60,10,fixed_calibration,fpr,10,0.4241379310344827,0.3363072310976783,0.5119686309712871
+ablation,0,0.3,3,2,1,30,60,10,fixed_calibration,tpr,0,nan,nan,nan
+ablation,0,0.3,3,2,1,30,60,10,fixed_calibration,precision,10,0.0,0.0,0.0
+ablation,0,0.3,3,2,1,30,60,10,fixed_calibration,macro_f1,0,nan,nan,nan
+ablation,0,0.3,3,2,1,30,60,10,fixed_calibration,event_recall_new_alert,0,nan,nan,nan
+ablation,0,0.3,3,2,1,30,60,10,fixed_calibration,detected_delay_mean_s,0,nan,nan,nan
+ablation,0,0.3,3,2,1,30,60,10,fixed_calibration,missed_new_alerts,10,0.0,0.0,0.0
+ablation,0,0.3,3,2,1,30,60,10,fixed_calibration,false_blacklists_per_hour,10,1442.4,1263.7884421203764,1621.0115578796238
+ablation,0,0.3,3,2,1,30,60,10,fixed_calibration,legit_isolated_frac,10,0.21145156853037766,0.14543645647675757,0.27746668058399776
+ablation,0,0.3,3,2,1,30,60,10,fixed_calibration,radio_power_mw,10,59.97320989984247,59.971598792068235,59.97482100761671
+ablation,0,0.3,3,2,1,30,60,10,fixed_calibration,legit_join_fraction,10,0.9965517241379309,0.9887511821972474,1.0043522660786144
+ablation,0,0.3,3,2,1,30,60,10,fixed_calibration,ari,0,nan,nan,nan
+ablation,0,0.3,3,2,1,30,60,10,fixed_calibration,drt_s,10,1692.0,721.0522089735217,2662.947791026478
+ablation,0,0.3,3,2,1,30,60,10,fixed_calibration,callback_cpu_median_us,0,nan,nan,nan
+ablation,0,0.3,3,2,1,30,60,10,fixed_calibration,callback_cpu_p95_us,0,nan,nan,nan
+ablation,0,0.3,3,2,1,30,60,10,full,pdr_up,10,0.9326226072743043,0.9215533617497023,0.9436918527989064
+ablation,0,0.3,3,2,1,30,60,10,full,pdr_down,10,0.9890759933159494,0.9823538210562636,0.9957981655756353
+ablation,0,0.3,3,2,1,30,60,10,full,delivery_up,10,0.7005433646812957,0.6094403529030198,0.7916463764595717
+ablation,0,0.3,3,2,1,30,60,10,full,fpr,10,0.4241379310344827,0.3363072310976783,0.5119686309712871
+ablation,0,0.3,3,2,1,30,60,10,full,tpr,0,nan,nan,nan
+ablation,0,0.3,3,2,1,30,60,10,full,precision,10,0.0,0.0,0.0
+ablation,0,0.3,3,2,1,30,60,10,full,macro_f1,0,nan,nan,nan
+ablation,0,0.3,3,2,1,30,60,10,full,event_recall_new_alert,0,nan,nan,nan
+ablation,0,0.3,3,2,1,30,60,10,full,detected_delay_mean_s,0,nan,nan,nan
+ablation,0,0.3,3,2,1,30,60,10,full,missed_new_alerts,10,0.0,0.0,0.0
+ablation,0,0.3,3,2,1,30,60,10,full,false_blacklists_per_hour,10,1394.0727272727277,1162.849260566381,1625.2961939790744
+ablation,0,0.3,3,2,1,30,60,10,full,legit_isolated_frac,10,0.21478126784072255,0.14532531399844806,0.28423722168299703
+ablation,0,0.3,3,2,1,30,60,10,full,radio_power_mw,10,59.97335191852486,59.971637746128074,59.97506609092165
+ablation,0,0.3,3,2,1,30,60,10,full,legit_join_fraction,10,0.9965517241379309,0.9887511821972474,1.0043522660786144
+ablation,0,0.3,3,2,1,30,60,10,full,ari,0,nan,nan,nan
+ablation,0,0.3,3,2,1,30,60,10,full,drt_s,10,1386.0,467.34134631223367,2304.658653687766
+ablation,0,0.3,3,2,1,30,60,10,full,callback_cpu_median_us,0,nan,nan,nan
+ablation,0,0.3,3,2,1,30,60,10,full,callback_cpu_p95_us,0,nan,nan,nan
+ablation,0,0.3,3,2,1,30,60,10,immediate_dao_evidence,pdr_up,10,0.9300446647321563,0.9187668098671369,0.9413225195971757
+ablation,0,0.3,3,2,1,30,60,10,immediate_dao_evidence,pdr_down,10,0.9921301210568139,0.9907535638443234,0.9935066782693043
+ablation,0,0.3,3,2,1,30,60,10,immediate_dao_evidence,delivery_up,10,0.6972727272727273,0.6052549602872566,0.789290494258198
+ablation,0,0.3,3,2,1,30,60,10,immediate_dao_evidence,fpr,10,0.4241379310344827,0.3363072310976783,0.5119686309712871
+ablation,0,0.3,3,2,1,30,60,10,immediate_dao_evidence,tpr,0,nan,nan,nan
+ablation,0,0.3,3,2,1,30,60,10,immediate_dao_evidence,precision,10,0.0,0.0,0.0
+ablation,0,0.3,3,2,1,30,60,10,immediate_dao_evidence,macro_f1,0,nan,nan,nan
+ablation,0,0.3,3,2,1,30,60,10,immediate_dao_evidence,event_recall_new_alert,0,nan,nan,nan
+ablation,0,0.3,3,2,1,30,60,10,immediate_dao_evidence,detected_delay_mean_s,0,nan,nan,nan
+ablation,0,0.3,3,2,1,30,60,10,immediate_dao_evidence,missed_new_alerts,10,0.0,0.0,0.0
+ablation,0,0.3,3,2,1,30,60,10,immediate_dao_evidence,false_blacklists_per_hour,10,1416.5454545454547,1161.605193722246,1671.4857153686635
+ablation,0,0.3,3,2,1,30,60,10,immediate_dao_evidence,legit_isolated_frac,10,0.21643097964696226,0.14581567988309008,0.28704627941083444
+ablation,0,0.3,3,2,1,30,60,10,immediate_dao_evidence,radio_power_mw,10,59.97312644505238,59.97173164557629,59.97452124452847
+ablation,0,0.3,3,2,1,30,60,10,immediate_dao_evidence,legit_join_fraction,10,1.0,1.0,1.0
+ablation,0,0.3,3,2,1,30,60,10,immediate_dao_evidence,ari,0,nan,nan,nan
+ablation,0,0.3,3,2,1,30,60,10,immediate_dao_evidence,drt_s,10,1428.0,535.9410465330243,2320.0589534669757
+ablation,0,0.3,3,2,1,30,60,10,immediate_dao_evidence,callback_cpu_median_us,0,nan,nan,nan
+ablation,0,0.3,3,2,1,30,60,10,immediate_dao_evidence,callback_cpu_p95_us,0,nan,nan,nan
+ablation,0,0.3,3,2,1,30,60,10,learning_off,pdr_up,10,0.9284356933121712,0.9143523073573483,0.9425190792669942
+ablation,0,0.3,3,2,1,30,60,10,learning_off,pdr_down,10,0.9920997765707751,0.9907343424196273,0.9934652107219228
+ablation,0,0.3,3,2,1,30,60,10,learning_off,delivery_up,10,0.6967189132706373,0.6043232849778357,0.7891145415634389
+ablation,0,0.3,3,2,1,30,60,10,learning_off,fpr,10,0.4241379310344827,0.3363072310976783,0.5119686309712871
+ablation,0,0.3,3,2,1,30,60,10,learning_off,tpr,0,nan,nan,nan
+ablation,0,0.3,3,2,1,30,60,10,learning_off,precision,10,0.0,0.0,0.0
+ablation,0,0.3,3,2,1,30,60,10,learning_off,macro_f1,0,nan,nan,nan
+ablation,0,0.3,3,2,1,30,60,10,learning_off,event_recall_new_alert,0,nan,nan,nan
+ablation,0,0.3,3,2,1,30,60,10,learning_off,detected_delay_mean_s,0,nan,nan,nan
+ablation,0,0.3,3,2,1,30,60,10,learning_off,missed_new_alerts,10,0.0,0.0,0.0
+ablation,0,0.3,3,2,1,30,60,10,learning_off,false_blacklists_per_hour,10,219.4909090909091,190.69323785910757,248.28858032271063
+ablation,0,0.3,3,2,1,30,60,10,learning_off,legit_isolated_frac,10,0.37787986425287357,0.2862240254261278,0.46953570307961934
+ablation,0,0.3,3,2,1,30,60,10,learning_off,radio_power_mw,10,59.97423383173334,59.97253439750309,59.9759332659636
+ablation,0,0.3,3,2,1,30,60,10,learning_off,legit_join_fraction,10,1.0,1.0,1.0
+ablation,0,0.3,3,2,1,30,60,10,learning_off,ari,0,nan,nan,nan
+ablation,0,0.3,3,2,1,30,60,10,learning_off,drt_s,10,1314.0,407.45339432035917,2220.546605679641
+ablation,0,0.3,3,2,1,30,60,10,learning_off,callback_cpu_median_us,0,nan,nan,nan
+ablation,0,0.3,3,2,1,30,60,10,learning_off,callback_cpu_p95_us,0,nan,nan,nan
+ablation,0,0.3,3,2,1,30,60,10,no_dao_evidence,pdr_up,10,0.9340329898741974,0.924541126085235,0.9435248536631597
+ablation,0,0.3,3,2,1,30,60,10,no_dao_evidence,pdr_down,10,0.991938601347216,0.990140160601974,0.9937370420924581
+ablation,0,0.3,3,2,1,30,60,10,no_dao_evidence,delivery_up,10,0.7001149425287357,0.6089187489461458,0.7913111361113256
+ablation,0,0.3,3,2,1,30,60,10,no_dao_evidence,fpr,10,0.4241379310344827,0.3363072310976783,0.5119686309712871
+ablation,0,0.3,3,2,1,30,60,10,no_dao_evidence,tpr,0,nan,nan,nan
+ablation,0,0.3,3,2,1,30,60,10,no_dao_evidence,precision,10,0.0,0.0,0.0
+ablation,0,0.3,3,2,1,30,60,10,no_dao_evidence,macro_f1,0,nan,nan,nan
+ablation,0,0.3,3,2,1,30,60,10,no_dao_evidence,event_recall_new_alert,0,nan,nan,nan
+ablation,0,0.3,3,2,1,30,60,10,no_dao_evidence,detected_delay_mean_s,0,nan,nan,nan
+ablation,0,0.3,3,2,1,30,60,10,no_dao_evidence,missed_new_alerts,10,0.0,0.0,0.0
+ablation,0,0.3,3,2,1,30,60,10,no_dao_evidence,false_blacklists_per_hour,10,1389.3818181818183,1139.4629624854538,1639.3006738781828
+ablation,0,0.3,3,2,1,30,60,10,no_dao_evidence,legit_isolated_frac,10,0.2121845486945813,0.14375171277568968,0.28061738461347296
+ablation,0,0.3,3,2,1,30,60,10,no_dao_evidence,radio_power_mw,10,59.97335987598823,59.97209081785182,59.97462893412464
+ablation,0,0.3,3,2,1,30,60,10,no_dao_evidence,legit_join_fraction,10,1.0,1.0,1.0
+ablation,0,0.3,3,2,1,30,60,10,no_dao_evidence,ari,0,nan,nan,nan
+ablation,0,0.3,3,2,1,30,60,10,no_dao_evidence,drt_s,10,1356.0,479.1229862361778,2232.877013763822
+ablation,0,0.3,3,2,1,30,60,10,no_dao_evidence,callback_cpu_median_us,0,nan,nan,nan
+ablation,0,0.3,3,2,1,30,60,10,no_dao_evidence,callback_cpu_p95_us,0,nan,nan,nan
+ablation,0,0.3,3,2,1,30,60,10,no_route_repair,pdr_up,10,0.931940426641618,0.9207999360336749,0.9430809172495611
+ablation,0,0.3,3,2,1,30,60,10,no_route_repair,pdr_down,10,0.9910340562592793,0.98849622175792,0.9935718907606387
+ablation,0,0.3,3,2,1,30,60,10,no_route_repair,delivery_up,10,0.7003030303030303,0.6091014383487312,0.7915046222573294
+ablation,0,0.3,3,2,1,30,60,10,no_route_repair,fpr,10,0.4241379310344827,0.3363072310976783,0.5119686309712871
+ablation,0,0.3,3,2,1,30,60,10,no_route_repair,tpr,0,nan,nan,nan
+ablation,0,0.3,3,2,1,30,60,10,no_route_repair,precision,10,0.0,0.0,0.0
+ablation,0,0.3,3,2,1,30,60,10,no_route_repair,macro_f1,0,nan,nan,nan
+ablation,0,0.3,3,2,1,30,60,10,no_route_repair,event_recall_new_alert,0,nan,nan,nan
+ablation,0,0.3,3,2,1,30,60,10,no_route_repair,detected_delay_mean_s,0,nan,nan,nan
+ablation,0,0.3,3,2,1,30,60,10,no_route_repair,missed_new_alerts,10,0.0,0.0,0.0
+ablation,0,0.3,3,2,1,30,60,10,no_route_repair,false_blacklists_per_hour,10,1396.4727272727275,1166.902201889257,1626.043252656198
+ablation,0,0.3,3,2,1,30,60,10,no_route_repair,legit_isolated_frac,10,0.21646016727422007,0.14637915770419718,0.28654117684424296
+ablation,0,0.3,3,2,1,30,60,10,no_route_repair,radio_power_mw,10,59.97358027422886,59.97195865918208,59.97520188927564
+ablation,0,0.3,3,2,1,30,60,10,no_route_repair,legit_join_fraction,10,1.0,1.0,1.0
+ablation,0,0.3,3,2,1,30,60,10,no_route_repair,ari,0,nan,nan,nan
+ablation,0,0.3,3,2,1,30,60,10,no_route_repair,drt_s,10,1386.0,467.34134631223367,2304.658653687766
+ablation,0,0.3,3,2,1,30,60,10,no_route_repair,callback_cpu_median_us,0,nan,nan,nan
+ablation,0,0.3,3,2,1,30,60,10,no_route_repair,callback_cpu_p95_us,0,nan,nan,nan
+ablation,3,0.0,3,2,1,30,60,10,fixed_calibration,pdr_up,10,0.9930343661758421,0.9905263186243632,0.9955424137273209
+ablation,3,0.0,3,2,1,30,60,10,fixed_calibration,pdr_down,10,0.9677203798487696,0.9469341313787986,0.9885066283187406
+ablation,3,0.0,3,2,1,30,60,10,fixed_calibration,delivery_up,10,0.9688842975206613,0.9426163450508551,0.9951522499904675
+ablation,3,0.0,3,2,1,30,60,10,fixed_calibration,fpr,10,0.09090909090909091,0.02770891353999519,0.15410926827818663
+ablation,3,0.0,3,2,1,30,60,10,fixed_calibration,tpr,10,1.0,1.0,1.0
+ablation,3,0.0,3,2,1,30,60,10,fixed_calibration,precision,10,0.8083158508158508,0.6935625109190634,0.9230691907126382
+ablation,3,0.0,3,2,1,30,60,10,fixed_calibration,macro_f1,10,0.9181231048757882,0.8641226656352343,0.972123544116342
+ablation,3,0.0,3,2,1,30,60,10,fixed_calibration,event_recall_new_alert,10,1.0,1.0,1.0
+ablation,3,0.0,3,2,1,30,60,10,fixed_calibration,detected_delay_mean_s,10,27.648171428571423,24.885704919502686,30.41063793764016
+ablation,3,0.0,3,2,1,30,60,10,fixed_calibration,missed_new_alerts,10,0.0,0.0,0.0
+ablation,3,0.0,3,2,1,30,60,10,fixed_calibration,false_blacklists_per_hour,10,6.327272727272728,0.6542959823070831,12.000249472238373
+ablation,3,0.0,3,2,1,30,60,10,fixed_calibration,legit_isolated_frac,10,0.0050529302056277065,-0.0005030464281597204,0.010608906839415132
+ablation,3,0.0,3,2,1,30,60,10,fixed_calibration,radio_power_mw,10,59.972093119970985,59.96943250527149,59.97475373467048
+ablation,3,0.0,3,2,1,30,60,10,fixed_calibration,legit_join_fraction,10,1.0,1.0,1.0
+ablation,3,0.0,3,2,1,30,60,10,fixed_calibration,ari,10,0.9391323274209824,0.9018442130778062,0.9764204417641587
+ablation,3,0.0,3,2,1,30,60,10,fixed_calibration,drt_s,10,738.0,23.201290197465937,1452.7987098025342
+ablation,3,0.0,3,2,1,30,60,10,fixed_calibration,callback_cpu_median_us,0,nan,nan,nan
+ablation,3,0.0,3,2,1,30,60,10,fixed_calibration,callback_cpu_p95_us,0,nan,nan,nan
+ablation,3,0.0,3,2,1,30,60,10,full,pdr_up,10,0.9950298239811499,0.9912835553278216,0.9987760926344782
+ablation,3,0.0,3,2,1,30,60,10,full,pdr_down,10,0.9761443469275589,0.9538883625704142,0.9984003312847036
+ablation,3,0.0,3,2,1,30,60,10,full,delivery_up,10,0.9626033057851242,0.9075858222204484,1.0176207893498002
+ablation,3,0.0,3,2,1,30,60,10,full,fpr,10,0.11818181818181817,0.005333918689757022,0.2310297176738793
+ablation,3,0.0,3,2,1,30,60,10,full,tpr,10,1.0,1.0,1.0
+ablation,3,0.0,3,2,1,30,60,10,full,precision,10,0.7998128342245989,0.6400759254126551,0.9595497430365427
+ablation,3,0.0,3,2,1,30,60,10,full,macro_f1,10,0.9007492330173422,0.8110094276810002,0.9904890383536843
+ablation,3,0.0,3,2,1,30,60,10,full,event_recall_new_alert,10,1.0,1.0,1.0
+ablation,3,0.0,3,2,1,30,60,10,full,detected_delay_mean_s,10,28.503200000000003,25.646429116263317,31.35997088373669
+ablation,3,0.0,3,2,1,30,60,10,full,missed_new_alerts,10,0.0,0.0,0.0
+ablation,3,0.0,3,2,1,30,60,10,full,false_blacklists_per_hour,10,7.309090909090908,0.7690121935064598,13.849169624675355
+ablation,3,0.0,3,2,1,30,60,10,full,legit_isolated_frac,10,0.007722955919913422,-0.0021334177390002745,0.017579329578827116
+ablation,3,0.0,3,2,1,30,60,10,full,radio_power_mw,10,59.972984180333505,59.97065656491332,59.97531179575369
+ablation,3,0.0,3,2,1,30,60,10,full,legit_join_fraction,10,1.0,1.0,1.0
+ablation,3,0.0,3,2,1,30,60,10,full,ari,10,0.9413035653177184,0.8799427769315997,1.002664353703837
+ablation,3,0.0,3,2,1,30,60,10,full,drt_s,10,408.0,-24.444935439249207,840.4449354392492
+ablation,3,0.0,3,2,1,30,60,10,full,callback_cpu_median_us,0,nan,nan,nan
+ablation,3,0.0,3,2,1,30,60,10,full,callback_cpu_p95_us,0,nan,nan,nan
+ablation,3,0.0,3,2,1,30,60,10,immediate_dao_evidence,pdr_up,10,0.991224308372215,0.9829049374271729,0.9995436793172571
+ablation,3,0.0,3,2,1,30,60,10,immediate_dao_evidence,pdr_down,10,0.9832162124999705,0.9709156127895906,0.9955168122103504
+ablation,3,0.0,3,2,1,30,60,10,immediate_dao_evidence,delivery_up,10,0.954779614325069,0.910254523118445,0.9993047055316929
+ablation,3,0.0,3,2,1,30,60,10,immediate_dao_evidence,fpr,10,0.20454545454545453,0.018541795304221287,0.3905491137866878
+ablation,3,0.0,3,2,1,30,60,10,immediate_dao_evidence,tpr,10,1.0,1.0,1.0
+ablation,3,0.0,3,2,1,30,60,10,immediate_dao_evidence,precision,10,0.7119542483660131,0.5358624417752144,0.8880460549568118
+ablation,3,0.0,3,2,1,30,60,10,immediate_dao_evidence,macro_f1,10,0.8330069411349857,0.6915376786790026,0.9744762035909689
+ablation,3,0.0,3,2,1,30,60,10,immediate_dao_evidence,event_recall_new_alert,10,1.0,1.0,1.0
+ablation,3,0.0,3,2,1,30,60,10,immediate_dao_evidence,detected_delay_mean_s,10,28.075771428571425,25.172642797922162,30.97890005922069
+ablation,3,0.0,3,2,1,30,60,10,immediate_dao_evidence,missed_new_alerts,10,0.0,0.0,0.0
+ablation,3,0.0,3,2,1,30,60,10,immediate_dao_evidence,false_blacklists_per_hour,10,19.30909090909091,-5.071190599528364,43.68937241771018
+ablation,3,0.0,3,2,1,30,60,10,immediate_dao_evidence,legit_isolated_frac,10,0.016629772846320348,-0.0035965475790622065,0.0368560932717029
+ablation,3,0.0,3,2,1,30,60,10,immediate_dao_evidence,radio_power_mw,10,59.97012383005385,59.96436301165592,59.97588464845178
+ablation,3,0.0,3,2,1,30,60,10,immediate_dao_evidence,legit_join_fraction,10,1.0,1.0,1.0
+ablation,3,0.0,3,2,1,30,60,10,immediate_dao_evidence,ari,10,0.9405630901072751,0.8888938475564493,0.992232332658101
+ablation,3,0.0,3,2,1,30,60,10,immediate_dao_evidence,drt_s,10,270.0,-43.61690589190033,583.6169058919004
+ablation,3,0.0,3,2,1,30,60,10,immediate_dao_evidence,callback_cpu_median_us,0,nan,nan,nan
+ablation,3,0.0,3,2,1,30,60,10,immediate_dao_evidence,callback_cpu_p95_us,0,nan,nan,nan
+ablation,3,0.0,3,2,1,30,60,10,learning_off,pdr_up,10,0.9815578938576387,0.9641233025817454,0.998992485133532
+ablation,3,0.0,3,2,1,30,60,10,learning_off,pdr_down,10,0.9769063058141333,0.9575853678430587,0.9962272437852079
+ablation,3,0.0,3,2,1,30,60,10,learning_off,delivery_up,10,0.9725619834710745,0.944227832838002,1.000896134104147
+ablation,3,0.0,3,2,1,30,60,10,learning_off,fpr,10,0.031818181818181815,-0.016775171222686472,0.0804115348590501
+ablation,3,0.0,3,2,1,30,60,10,learning_off,tpr,10,1.0,1.0,1.0
+ablation,3,0.0,3,2,1,30,60,10,learning_off,precision,10,0.9336363636363636,0.8329795255082787,1.0342932017644484
+ablation,3,0.0,3,2,1,30,60,10,learning_off,macro_f1,10,0.9714068228917583,0.9278533356423261,1.0149603101411906
+ablation,3,0.0,3,2,1,30,60,10,learning_off,event_recall_new_alert,10,1.0,1.0,1.0
+ablation,3,0.0,3,2,1,30,60,10,learning_off,detected_delay_mean_s,10,34.07597622857143,31.981668154323962,36.17028430281889
+ablation,3,0.0,3,2,1,30,60,10,learning_off,missed_new_alerts,10,0.0,0.0,0.0
+ablation,3,0.0,3,2,1,30,60,10,learning_off,false_blacklists_per_hour,10,0.7636363636363637,-0.4026041093444752,1.9298768366172026
+ablation,3,0.0,3,2,1,30,60,10,learning_off,legit_isolated_frac,10,0.01572854031385281,-0.008233212843586454,0.039690293471292076
+ablation,3,0.0,3,2,1,30,60,10,learning_off,radio_power_mw,10,59.97284580873763,59.97061413701715,59.97507748045811
+ablation,3,0.0,3,2,1,30,60,10,learning_off,legit_join_fraction,10,1.0,1.0,1.0
+ablation,3,0.0,3,2,1,30,60,10,learning_off,ari,10,0.9514650697515554,0.9161149158461657,0.9868152236569452
+ablation,3,0.0,3,2,1,30,60,10,learning_off,drt_s,10,294.0,-30.649109318641422,618.6491093186414
+ablation,3,0.0,3,2,1,30,60,10,learning_off,callback_cpu_median_us,0,nan,nan,nan
+ablation,3,0.0,3,2,1,30,60,10,learning_off,callback_cpu_p95_us,0,nan,nan,nan
+ablation,3,0.0,3,2,1,30,60,10,no_dao_evidence,pdr_up,10,0.988626479794843,0.9811554203979306,0.9960975391917554
+ablation,3,0.0,3,2,1,30,60,10,no_dao_evidence,pdr_down,10,0.9705211854102206,0.9482926140785991,0.9927497567418421
+ablation,3,0.0,3,2,1,30,60,10,no_dao_evidence,delivery_up,10,0.9592286501377411,0.9061882405972154,1.0122690596782666
+ablation,3,0.0,3,2,1,30,60,10,no_dao_evidence,fpr,10,0.08636363636363635,-0.011124798808160169,0.18385207153543287
+ablation,3,0.0,3,2,1,30,60,10,no_dao_evidence,tpr,10,1.0,1.0,1.0
+ablation,3,0.0,3,2,1,30,60,10,no_dao_evidence,precision,10,0.8389542483660131,0.7108660400122465,0.9670424567197796
+ablation,3,0.0,3,2,1,30,60,10,no_dao_evidence,macro_f1,10,0.9253632698116114,0.8493150196152477,1.0014115200079752
+ablation,3,0.0,3,2,1,30,60,10,no_dao_evidence,event_recall_new_alert,10,1.0,1.0,1.0
+ablation,3,0.0,3,2,1,30,60,10,no_dao_evidence,detected_delay_mean_s,10,35.88188617142857,31.12954409497892,40.63422824787822
+ablation,3,0.0,3,2,1,30,60,10,no_dao_evidence,missed_new_alerts,10,0.0,0.0,0.0
+ablation,3,0.0,3,2,1,30,60,10,no_dao_evidence,false_blacklists_per_hour,10,4.036363636363637,-0.23879635718078873,8.311523629908063
+ablation,3,0.0,3,2,1,30,60,10,no_dao_evidence,legit_isolated_frac,10,0.005900871212121212,-0.0038494988341158084,0.015651241258358234
+ablation,3,0.0,3,2,1,30,60,10,no_dao_evidence,radio_power_mw,10,59.97264734661836,59.96911903183773,59.97617566139899
+ablation,3,0.0,3,2,1,30,60,10,no_dao_evidence,legit_join_fraction,10,1.0,1.0,1.0
+ablation,3,0.0,3,2,1,30,60,10,no_dao_evidence,ari,10,0.9325822430732652,0.8738770585934675,0.9912874275530629
+ablation,3,0.0,3,2,1,30,60,10,no_dao_evidence,drt_s,10,306.0,-87.61534632688762,699.6153463268877
+ablation,3,0.0,3,2,1,30,60,10,no_dao_evidence,callback_cpu_median_us,0,nan,nan,nan
+ablation,3,0.0,3,2,1,30,60,10,no_dao_evidence,callback_cpu_p95_us,0,nan,nan,nan
+ablation,3,0.0,3,2,1,30,60,10,no_route_repair,pdr_up,10,0.9885609638118884,0.9675507691952433,1.0095711584285336
+ablation,3,0.0,3,2,1,30,60,10,no_route_repair,pdr_down,10,0.8178577879870395,0.7531120486954822,0.8826035272785967
+ablation,3,0.0,3,2,1,30,60,10,no_route_repair,delivery_up,10,0.9502479338842974,0.904367497055415,0.9961283707131798
+ablation,3,0.0,3,2,1,30,60,10,no_route_repair,fpr,10,0.15909090909090912,0.1012278661880319,0.21695395199378634
+ablation,3,0.0,3,2,1,30,60,10,no_route_repair,tpr,10,1.0,1.0,1.0
+ablation,3,0.0,3,2,1,30,60,10,no_route_repair,precision,10,0.6809090909090909,0.6130038683452794,0.7488143134729024
+ablation,3,0.0,3,2,1,30,60,10,no_route_repair,macro_f1,10,0.8590346822394885,0.8150311373272253,0.9030382271517517
+ablation,3,0.0,3,2,1,30,60,10,no_route_repair,event_recall_new_alert,10,1.0,1.0,1.0
+ablation,3,0.0,3,2,1,30,60,10,no_route_repair,detected_delay_mean_s,10,28.35808571428571,25.014803959305567,31.701367469265854
+ablation,3,0.0,3,2,1,30,60,10,no_route_repair,missed_new_alerts,10,0.0,0.0,0.0
+ablation,3,0.0,3,2,1,30,60,10,no_route_repair,false_blacklists_per_hour,10,11.236363636363636,5.632392825683041,16.84033444704423
+ablation,3,0.0,3,2,1,30,60,10,no_route_repair,legit_isolated_frac,10,0.014453756764069264,0.0006648927499997657,0.028242620778138765
+ablation,3,0.0,3,2,1,30,60,10,no_route_repair,radio_power_mw,10,59.96346743224942,59.96130654015333,59.965628324345516
+ablation,3,0.0,3,2,1,30,60,10,no_route_repair,legit_join_fraction,10,1.0,1.0,1.0
+ablation,3,0.0,3,2,1,30,60,10,no_route_repair,ari,10,0.7801587431877471,0.6977636714049243,0.8625538149705699
+ablation,3,0.0,3,2,1,30,60,10,no_route_repair,drt_s,10,2676.0,1979.725811158982,3372.2741888410183
+ablation,3,0.0,3,2,1,30,60,10,no_route_repair,callback_cpu_median_us,0,nan,nan,nan
+ablation,3,0.0,3,2,1,30,60,10,no_route_repair,callback_cpu_p95_us,0,nan,nan,nan
+ablation,3,0.3,3,2,1,30,60,10,fixed_calibration,pdr_up,10,0.944164083728052,0.9352662015950006,0.9530619658611035
+ablation,3,0.3,3,2,1,30,60,10,fixed_calibration,pdr_down,10,0.9830690874823433,0.970530199802768,0.9956079751619187
+ablation,3,0.3,3,2,1,30,60,10,fixed_calibration,delivery_up,10,0.7382231404958678,0.6769988568904372,0.7994474241012984
+ablation,3,0.3,3,2,1,30,60,10,fixed_calibration,fpr,10,0.38636363636363635,0.32850059346075916,0.44422667926651355
+ablation,3,0.3,3,2,1,30,60,10,fixed_calibration,tpr,10,1.0,1.0,1.0
+ablation,3,0.3,3,2,1,30,60,10,fixed_calibration,precision,10,0.45686472969754705,0.420235893911341,0.4934935654837531
+ablation,3,0.3,3,2,1,30,60,10,fixed_calibration,macro_f1,10,0.69167130502253,0.651585843112049,0.7317567669330111
+ablation,3,0.3,3,2,1,30,60,10,fixed_calibration,event_recall_new_alert,10,1.0,1.0,1.0
+ablation,3,0.3,3,2,1,30,60,10,fixed_calibration,detected_delay_mean_s,10,24.132657714285713,19.79163312787537,28.473682300696055
+ablation,3,0.3,3,2,1,30,60,10,fixed_calibration,missed_new_alerts,10,0.0,0.0,0.0
+ablation,3,0.3,3,2,1,30,60,10,fixed_calibration,false_blacklists_per_hour,10,848.1818181818182,753.9399530857103,942.4236832779262
+ablation,3,0.3,3,2,1,30,60,10,fixed_calibration,legit_isolated_frac,10,0.179427248495671,0.13491352072537088,0.2239409762659711
+ablation,3,0.3,3,2,1,30,60,10,fixed_calibration,radio_power_mw,10,59.97025147531853,59.96775249674189,59.972750453895166
+ablation,3,0.3,3,2,1,30,60,10,fixed_calibration,legit_join_fraction,10,1.0,1.0,1.0
+ablation,3,0.3,3,2,1,30,60,10,fixed_calibration,ari,10,0.9858570699658437,0.9628028233894959,1.0089113165421915
+ablation,3,0.3,3,2,1,30,60,10,fixed_calibration,drt_s,10,1644.0,725.1742475870786,2562.8257524129212
+ablation,3,0.3,3,2,1,30,60,10,fixed_calibration,callback_cpu_median_us,0,nan,nan,nan
+ablation,3,0.3,3,2,1,30,60,10,fixed_calibration,callback_cpu_p95_us,0,nan,nan,nan
+ablation,3,0.3,3,2,1,30,60,10,full,pdr_up,10,0.9430917824723183,0.9338463086052062,0.9523372563394303
+ablation,3,0.3,3,2,1,30,60,10,full,pdr_down,10,0.9831375883339936,0.9713377044892769,0.9949374721787102
+ablation,3,0.3,3,2,1,30,60,10,full,delivery_up,10,0.7355509641873278,0.6736918073322935,0.7974101210423621
+ablation,3,0.3,3,2,1,30,60,10,full,fpr,10,0.38181818181818183,0.3201229864691399,0.4435133771672238
+ablation,3,0.3,3,2,1,30,60,10,full,tpr,10,1.0,1.0,1.0
+ablation,3,0.3,3,2,1,30,60,10,full,precision,10,0.4607108835437009,0.4206354857618769,0.5007862813255248
+ablation,3,0.3,3,2,1,30,60,10,full,macro_f1,10,0.6949026943065508,0.6520863666381602,0.7377190219749414
+ablation,3,0.3,3,2,1,30,60,10,full,event_recall_new_alert,10,1.0,1.0,1.0
+ablation,3,0.3,3,2,1,30,60,10,full,detected_delay_mean_s,10,24.39164285714286,19.198914937360584,29.584370776925134
+ablation,3,0.3,3,2,1,30,60,10,full,missed_new_alerts,10,0.0,0.0,0.0
+ablation,3,0.3,3,2,1,30,60,10,full,false_blacklists_per_hour,10,776.1818181818182,699.5646539774575,852.798982386179
+ablation,3,0.3,3,2,1,30,60,10,full,legit_isolated_frac,10,0.17074781465367964,0.13044105744920687,0.2110545718581524
+ablation,3,0.3,3,2,1,30,60,10,full,radio_power_mw,10,59.97002977453932,59.96767552740264,59.972384021676
+ablation,3,0.3,3,2,1,30,60,10,full,legit_join_fraction,10,1.0,1.0,1.0
+ablation,3,0.3,3,2,1,30,60,10,full,ari,10,0.9821608020783955,0.9594024596813138,1.0049191444754773
+ablation,3,0.3,3,2,1,30,60,10,full,drt_s,10,1524.0,727.8749316241203,2320.12506837588
+ablation,3,0.3,3,2,1,30,60,10,full,callback_cpu_median_us,0,nan,nan,nan
+ablation,3,0.3,3,2,1,30,60,10,full,callback_cpu_p95_us,0,nan,nan,nan
+ablation,3,0.3,3,2,1,30,60,10,immediate_dao_evidence,pdr_up,10,0.9444528560040897,0.9373222490248538,0.9515834629833255
+ablation,3,0.3,3,2,1,30,60,10,immediate_dao_evidence,pdr_down,10,0.9809739981861828,0.9648477381701108,0.9971002582022548
+ablation,3,0.3,3,2,1,30,60,10,immediate_dao_evidence,delivery_up,10,0.7341873278236914,0.6675620501413643,0.8008126055060186
+ablation,3,0.3,3,2,1,30,60,10,immediate_dao_evidence,fpr,10,0.39545454545454545,0.30090244806237,0.4900066428467209
+ablation,3,0.3,3,2,1,30,60,10,immediate_dao_evidence,tpr,10,1.0,1.0,1.0
+ablation,3,0.3,3,2,1,30,60,10,immediate_dao_evidence,precision,10,0.4572202275559053,0.40745700200252855,0.5069834531092821
+ablation,3,0.3,3,2,1,30,60,10,immediate_dao_evidence,macro_f1,10,0.6846209531008964,0.6174688044302366,0.7517731017715563
+ablation,3,0.3,3,2,1,30,60,10,immediate_dao_evidence,event_recall_new_alert,10,1.0,1.0,1.0
+ablation,3,0.3,3,2,1,30,60,10,immediate_dao_evidence,detected_delay_mean_s,10,22.969268,19.59007137074514,26.34846462925486
+ablation,3,0.3,3,2,1,30,60,10,immediate_dao_evidence,missed_new_alerts,10,0.0,0.0,0.0
+ablation,3,0.3,3,2,1,30,60,10,immediate_dao_evidence,false_blacklists_per_hour,10,778.8,681.7590730694317,875.8409269305682
+ablation,3,0.3,3,2,1,30,60,10,immediate_dao_evidence,legit_isolated_frac,10,0.17476621275974025,0.12743435224812927,0.22209807327135123
+ablation,3,0.3,3,2,1,30,60,10,immediate_dao_evidence,radio_power_mw,10,59.970153092942176,59.96778071411391,59.972525471770446
+ablation,3,0.3,3,2,1,30,60,10,immediate_dao_evidence,legit_join_fraction,10,1.0,1.0,1.0
+ablation,3,0.3,3,2,1,30,60,10,immediate_dao_evidence,ari,10,0.9777643817603696,0.9407509860167088,1.0147777775040305
+ablation,3,0.3,3,2,1,30,60,10,immediate_dao_evidence,drt_s,10,1734.0,816.4561154997874,2651.5438845002127
+ablation,3,0.3,3,2,1,30,60,10,immediate_dao_evidence,callback_cpu_median_us,0,nan,nan,nan
+ablation,3,0.3,3,2,1,30,60,10,immediate_dao_evidence,callback_cpu_p95_us,0,nan,nan,nan
+ablation,3,0.3,3,2,1,30,60,10,learning_off,pdr_up,10,0.9479609843892666,0.9433450400161122,0.952576928762421
+ablation,3,0.3,3,2,1,30,60,10,learning_off,pdr_down,10,0.9808480357155677,0.9616573640658127,1.0000387073653225
+ablation,3,0.3,3,2,1,30,60,10,learning_off,delivery_up,10,0.7339118457300275,0.6721754892185712,0.7956482022414839
+ablation,3,0.3,3,2,1,30,60,10,learning_off,fpr,10,0.38181818181818183,0.3201229864691399,0.4435133771672238
+ablation,3,0.3,3,2,1,30,60,10,learning_off,tpr,10,1.0,1.0,1.0
+ablation,3,0.3,3,2,1,30,60,10,learning_off,precision,10,0.4607108835437009,0.4206354857618769,0.5007862813255248
+ablation,3,0.3,3,2,1,30,60,10,learning_off,macro_f1,10,0.6949026943065508,0.6520863666381602,0.7377190219749414
+ablation,3,0.3,3,2,1,30,60,10,learning_off,event_recall_new_alert,10,1.0,1.0,1.0
+ablation,3,0.3,3,2,1,30,60,10,learning_off,detected_delay_mean_s,10,35.14651851428571,31.975634872649188,38.31740215592223
+ablation,3,0.3,3,2,1,30,60,10,learning_off,missed_new_alerts,10,0.0,0.0,0.0
+ablation,3,0.3,3,2,1,30,60,10,learning_off,false_blacklists_per_hour,10,90.87272727272727,78.96315732999274,102.78229721546181
+ablation,3,0.3,3,2,1,30,60,10,learning_off,legit_isolated_frac,10,0.3197949512987013,0.2649907161414079,0.37459918645599466
+ablation,3,0.3,3,2,1,30,60,10,learning_off,radio_power_mw,10,59.97121413543043,59.96856581496171,59.97386245589915
+ablation,3,0.3,3,2,1,30,60,10,learning_off,legit_join_fraction,10,1.0,1.0,1.0
+ablation,3,0.3,3,2,1,30,60,10,learning_off,ari,10,0.9775690139553678,0.9537251532986084,1.0014128746121271
+ablation,3,0.3,3,2,1,30,60,10,learning_off,drt_s,10,1686.0,683.7954421820331,2688.204557817967
+ablation,3,0.3,3,2,1,30,60,10,learning_off,callback_cpu_median_us,0,nan,nan,nan
+ablation,3,0.3,3,2,1,30,60,10,learning_off,callback_cpu_p95_us,0,nan,nan,nan
+ablation,3,0.3,3,2,1,30,60,10,no_dao_evidence,pdr_up,10,0.9451049222456372,0.9352832402621833,0.9549266042290911
+ablation,3,0.3,3,2,1,30,60,10,no_dao_evidence,pdr_down,10,0.9804395017436056,0.9624182708380026,0.9984607326492086
+ablation,3,0.3,3,2,1,30,60,10,no_dao_evidence,delivery_up,10,0.727465564738292,0.6604844319972069,0.7944466974793772
+ablation,3,0.3,3,2,1,30,60,10,no_dao_evidence,fpr,10,0.4,0.3057590324326426,0.49424096756735747
+ablation,3,0.3,3,2,1,30,60,10,no_dao_evidence,tpr,10,1.0,1.0,1.0
+ablation,3,0.3,3,2,1,30,60,10,no_dao_evidence,precision,10,0.4543035608892386,0.4044178947753073,0.5041892270031699
+ablation,3,0.3,3,2,1,30,60,10,no_dao_evidence,macro_f1,10,0.6814915221453786,0.6145614554612568,0.7484215888295003
+ablation,3,0.3,3,2,1,30,60,10,no_dao_evidence,event_recall_new_alert,10,1.0,1.0,1.0
+ablation,3,0.3,3,2,1,30,60,10,no_dao_evidence,detected_delay_mean_s,10,28.266700571428565,21.904941845728516,34.628459297128614
+ablation,3,0.3,3,2,1,30,60,10,no_dao_evidence,missed_new_alerts,10,0.0,0.0,0.0
+ablation,3,0.3,3,2,1,30,60,10,no_dao_evidence,false_blacklists_per_hour,10,822.8727272727272,746.0748987840993,899.670555761355
+ablation,3,0.3,3,2,1,30,60,10,no_dao_evidence,legit_isolated_frac,10,0.18047503409090906,0.13387126695458357,0.22707880122723456
+ablation,3,0.3,3,2,1,30,60,10,no_dao_evidence,radio_power_mw,10,59.970291663381296,59.96789572602816,59.97268760073443
+ablation,3,0.3,3,2,1,30,60,10,no_dao_evidence,legit_join_fraction,10,0.9954545454545455,0.9851720128963718,1.005737078012719
+ablation,3,0.3,3,2,1,30,60,10,no_dao_evidence,ari,10,0.968332006792715,0.927246097885056,1.009417915700374
+ablation,3,0.3,3,2,1,30,60,10,no_dao_evidence,drt_s,10,1584.0,563.428604543958,2604.571395456042
+ablation,3,0.3,3,2,1,30,60,10,no_dao_evidence,callback_cpu_median_us,0,nan,nan,nan
+ablation,3,0.3,3,2,1,30,60,10,no_dao_evidence,callback_cpu_p95_us,0,nan,nan,nan
+ablation,3,0.3,3,2,1,30,60,10,no_route_repair,pdr_up,10,0.9492811027957722,0.9395942136348883,0.958967991956656
+ablation,3,0.3,3,2,1,30,60,10,no_route_repair,pdr_down,10,0.8151676735759393,0.7083509674537941,0.9219843796980846
+ablation,3,0.3,3,2,1,30,60,10,no_route_repair,delivery_up,10,0.7044628099173553,0.6369146311880981,0.7720109886466126
+ablation,3,0.3,3,2,1,30,60,10,no_route_repair,fpr,10,0.4318181818181818,0.3434309238038778,0.5202054398324858
+ablation,3,0.3,3,2,1,30,60,10,no_route_repair,tpr,10,1.0,1.0,1.0
+ablation,3,0.3,3,2,1,30,60,10,no_route_repair,precision,10,0.4341649376595197,0.3856227130861806,0.48270716223285876
+ablation,3,0.3,3,2,1,30,60,10,no_route_repair,macro_f1,10,0.6598415623170928,0.5979409090629643,0.7217422155712213
+ablation,3,0.3,3,2,1,30,60,10,no_route_repair,event_recall_new_alert,10,1.0,1.0,1.0
+ablation,3,0.3,3,2,1,30,60,10,no_route_repair,detected_delay_mean_s,10,25.2485,20.364056382904927,30.132943617095073
+ablation,3,0.3,3,2,1,30,60,10,no_route_repair,missed_new_alerts,10,0.0,0.0,0.0
+ablation,3,0.3,3,2,1,30,60,10,no_route_repair,false_blacklists_per_hour,10,811.2,706.8907460791986,915.5092539208015
+ablation,3,0.3,3,2,1,30,60,10,no_route_repair,legit_isolated_frac,10,0.18265176686147186,0.1375572663849528,0.22774626733799092
+ablation,3,0.3,3,2,1,30,60,10,no_route_repair,radio_power_mw,10,59.962950297738224,59.95892055618427,59.96698003929218
+ablation,3,0.3,3,2,1,30,60,10,no_route_repair,legit_join_fraction,10,1.0,1.0,1.0
+ablation,3,0.3,3,2,1,30,60,10,no_route_repair,ari,10,0.7823776894073525,0.6640423198051773,0.9007130590095278
+ablation,3,0.3,3,2,1,30,60,10,no_route_repair,drt_s,10,3120.0,2885.782054673397,3354.217945326603
+ablation,3,0.3,3,2,1,30,60,10,no_route_repair,callback_cpu_median_us,0,nan,nan,nan
+ablation,3,0.3,3,2,1,30,60,10,no_route_repair,callback_cpu_p95_us,0,nan,nan,nan
+host_callback_cost,0,0.0,3,2,1,30,60,10,AEF learning,pdr_up,5,0.999832795492188,0.999563592823578,1.000101998160798
+host_callback_cost,0,0.0,3,2,1,30,60,10,AEF learning,pdr_down,5,0.9981821775734725,0.9976436306750981,0.9987207244718469
+host_callback_cost,0,0.0,3,2,1,30,60,10,AEF learning,delivery_up,5,1.000083594566353,0.9990399700048633,1.0011272191278429
+host_callback_cost,0,0.0,3,2,1,30,60,10,AEF learning,fpr,5,0.0,0.0,0.0
+host_callback_cost,0,0.0,3,2,1,30,60,10,AEF learning,tpr,0,nan,nan,nan
+host_callback_cost,0,0.0,3,2,1,30,60,10,AEF learning,precision,0,nan,nan,nan
+host_callback_cost,0,0.0,3,2,1,30,60,10,AEF learning,macro_f1,0,nan,nan,nan
+host_callback_cost,0,0.0,3,2,1,30,60,10,AEF learning,event_recall_new_alert,0,nan,nan,nan
+host_callback_cost,0,0.0,3,2,1,30,60,10,AEF learning,detected_delay_mean_s,0,nan,nan,nan
+host_callback_cost,0,0.0,3,2,1,30,60,10,AEF learning,missed_new_alerts,5,0.0,0.0,0.0
+host_callback_cost,0,0.0,3,2,1,30,60,10,AEF learning,false_blacklists_per_hour,5,0.0,0.0,0.0
+host_callback_cost,0,0.0,3,2,1,30,60,10,AEF learning,legit_isolated_frac,5,0.0,0.0,0.0
+host_callback_cost,0,0.0,3,2,1,30,60,10,AEF learning,radio_power_mw,5,59.97922330654795,59.978145261692895,59.98030135140301
+host_callback_cost,0,0.0,3,2,1,30,60,10,AEF learning,legit_join_fraction,5,1.0,1.0,1.0
+host_callback_cost,0,0.0,3,2,1,30,60,10,AEF learning,ari,0,nan,nan,nan
+host_callback_cost,0,0.0,3,2,1,30,60,10,AEF learning,drt_s,5,0.0,0.0,0.0
+host_callback_cost,0,0.0,3,2,1,30,60,10,AEF learning,callback_cpu_median_us,5,1.6777000000000002,1.5108407309348868,1.8445592690651136
+host_callback_cost,0,0.0,3,2,1,30,60,10,AEF learning,callback_cpu_p95_us,5,5.39735,5.040403933831517,5.754296066168483
+host_callback_cost,0,0.0,3,2,1,30,60,10,DIS-FDM,pdr_up,5,0.999832795492188,0.999563592823578,1.000101998160798
+host_callback_cost,0,0.0,3,2,1,30,60,10,DIS-FDM,pdr_down,5,0.9981821775734725,0.9976436306750981,0.9987207244718469
+host_callback_cost,0,0.0,3,2,1,30,60,10,DIS-FDM,delivery_up,5,1.000083594566353,0.9990399700048633,1.0011272191278429
+host_callback_cost,0,0.0,3,2,1,30,60,10,DIS-FDM,fpr,5,0.0,0.0,0.0
+host_callback_cost,0,0.0,3,2,1,30,60,10,DIS-FDM,tpr,0,nan,nan,nan
+host_callback_cost,0,0.0,3,2,1,30,60,10,DIS-FDM,precision,0,nan,nan,nan
+host_callback_cost,0,0.0,3,2,1,30,60,10,DIS-FDM,macro_f1,0,nan,nan,nan
+host_callback_cost,0,0.0,3,2,1,30,60,10,DIS-FDM,event_recall_new_alert,0,nan,nan,nan
+host_callback_cost,0,0.0,3,2,1,30,60,10,DIS-FDM,detected_delay_mean_s,0,nan,nan,nan
+host_callback_cost,0,0.0,3,2,1,30,60,10,DIS-FDM,missed_new_alerts,5,0.0,0.0,0.0
+host_callback_cost,0,0.0,3,2,1,30,60,10,DIS-FDM,false_blacklists_per_hour,5,0.0,0.0,0.0
+host_callback_cost,0,0.0,3,2,1,30,60,10,DIS-FDM,legit_isolated_frac,5,0.0,0.0,0.0
+host_callback_cost,0,0.0,3,2,1,30,60,10,DIS-FDM,radio_power_mw,5,59.97922330654795,59.978145261692895,59.98030135140301
+host_callback_cost,0,0.0,3,2,1,30,60,10,DIS-FDM,legit_join_fraction,5,1.0,1.0,1.0
+host_callback_cost,0,0.0,3,2,1,30,60,10,DIS-FDM,ari,0,nan,nan,nan
+host_callback_cost,0,0.0,3,2,1,30,60,10,DIS-FDM,drt_s,5,0.0,0.0,0.0
+host_callback_cost,0,0.0,3,2,1,30,60,10,DIS-FDM,callback_cpu_median_us,5,1.3886,1.3091305940182478,1.4680694059817523
+host_callback_cost,0,0.0,3,2,1,30,60,10,DIS-FDM,callback_cpu_p95_us,5,4.402259999999999,4.076862234513305,4.727657765486693
+host_callback_cost,0,0.0,3,2,1,30,60,10,Secure-RPL,pdr_up,5,0.999832795492188,0.999563592823578,1.000101998160798
+host_callback_cost,0,0.0,3,2,1,30,60,10,Secure-RPL,pdr_down,5,0.9981821775734725,0.9976436306750981,0.9987207244718469
+host_callback_cost,0,0.0,3,2,1,30,60,10,Secure-RPL,delivery_up,5,1.000083594566353,0.9990399700048633,1.0011272191278429
+host_callback_cost,0,0.0,3,2,1,30,60,10,Secure-RPL,fpr,5,0.0,0.0,0.0
+host_callback_cost,0,0.0,3,2,1,30,60,10,Secure-RPL,tpr,0,nan,nan,nan
+host_callback_cost,0,0.0,3,2,1,30,60,10,Secure-RPL,precision,0,nan,nan,nan
+host_callback_cost,0,0.0,3,2,1,30,60,10,Secure-RPL,macro_f1,0,nan,nan,nan
+host_callback_cost,0,0.0,3,2,1,30,60,10,Secure-RPL,event_recall_new_alert,0,nan,nan,nan
+host_callback_cost,0,0.0,3,2,1,30,60,10,Secure-RPL,detected_delay_mean_s,0,nan,nan,nan
+host_callback_cost,0,0.0,3,2,1,30,60,10,Secure-RPL,missed_new_alerts,5,0.0,0.0,0.0
+host_callback_cost,0,0.0,3,2,1,30,60,10,Secure-RPL,false_blacklists_per_hour,5,0.0,0.0,0.0
+host_callback_cost,0,0.0,3,2,1,30,60,10,Secure-RPL,legit_isolated_frac,5,0.0,0.0,0.0
+host_callback_cost,0,0.0,3,2,1,30,60,10,Secure-RPL,radio_power_mw,5,59.97922330654795,59.978145261692895,59.98030135140301
+host_callback_cost,0,0.0,3,2,1,30,60,10,Secure-RPL,legit_join_fraction,5,1.0,1.0,1.0
+host_callback_cost,0,0.0,3,2,1,30,60,10,Secure-RPL,ari,0,nan,nan,nan
+host_callback_cost,0,0.0,3,2,1,30,60,10,Secure-RPL,drt_s,5,0.0,0.0,0.0
+host_callback_cost,0,0.0,3,2,1,30,60,10,Secure-RPL,callback_cpu_median_us,5,0.5776999999999999,0.5499925245326357,0.6054074754673641
+host_callback_cost,0,0.0,3,2,1,30,60,10,Secure-RPL,callback_cpu_p95_us,5,1.5281299999999995,1.3501615710160173,1.7060984289839818
+host_callback_cost,0,0.3,3,2,1,30,60,10,AEF learning,pdr_up,5,0.9368023459714674,0.912220092047172,0.9613845998957627
+host_callback_cost,0,0.3,3,2,1,30,60,10,AEF learning,pdr_down,5,0.991706243191852,0.9878455045050207,0.9955669818786832
+host_callback_cost,0,0.3,3,2,1,30,60,10,AEF learning,delivery_up,5,0.7289655172413794,0.6152844559057579,0.8426465785770009
+host_callback_cost,0,0.3,3,2,1,30,60,10,AEF learning,fpr,5,0.3931034482758621,0.2774209867266671,0.5087859098250571
+host_callback_cost,0,0.3,3,2,1,30,60,10,AEF learning,tpr,0,nan,nan,nan
+host_callback_cost,0,0.3,3,2,1,30,60,10,AEF learning,precision,5,0.0,0.0,0.0
+host_callback_cost,0,0.3,3,2,1,30,60,10,AEF learning,macro_f1,0,nan,nan,nan
+host_callback_cost,0,0.3,3,2,1,30,60,10,AEF learning,event_recall_new_alert,0,nan,nan,nan
+host_callback_cost,0,0.3,3,2,1,30,60,10,AEF learning,detected_delay_mean_s,0,nan,nan,nan
+host_callback_cost,0,0.3,3,2,1,30,60,10,AEF learning,missed_new_alerts,5,0.0,0.0,0.0
+host_callback_cost,0,0.3,3,2,1,30,60,10,AEF learning,false_blacklists_per_hour,5,1438.909090909091,1023.3525252252238,1854.465656592958
+host_callback_cost,0,0.3,3,2,1,30,60,10,AEF learning,legit_isolated_frac,5,0.18930408729064038,0.11978162480372681,0.2588265497775539
+host_callback_cost,0,0.3,3,2,1,30,60,10,AEF learning,radio_power_mw,5,59.97255023092472,59.966263844799855,59.97883661704958
+host_callback_cost,0,0.3,3,2,1,30,60,10,AEF learning,legit_join_fraction,5,1.0,1.0,1.0
+host_callback_cost,0,0.3,3,2,1,30,60,10,AEF learning,ari,0,nan,nan,nan
+host_callback_cost,0,0.3,3,2,1,30,60,10,AEF learning,drt_s,5,1572.0,-235.6001026094077,3379.6001026094077
+host_callback_cost,0,0.3,3,2,1,30,60,10,AEF learning,callback_cpu_median_us,5,4.3924,3.9544472682980727,4.830352731701928
+host_callback_cost,0,0.3,3,2,1,30,60,10,AEF learning,callback_cpu_p95_us,5,10.345209999999998,9.66725317870277,11.023166821297226
+host_callback_cost,0,0.3,3,2,1,30,60,10,DIS-FDM,pdr_up,5,0.9324383827139149,0.8998003672499417,0.965076398177888
+host_callback_cost,0,0.3,3,2,1,30,60,10,DIS-FDM,pdr_down,5,0.9923354497934126,0.990111672890419,0.9945592266964062
+host_callback_cost,0,0.3,3,2,1,30,60,10,DIS-FDM,delivery_up,5,0.7237826541274818,0.6009920469196363,0.8465732613353273
+host_callback_cost,0,0.3,3,2,1,30,60,10,DIS-FDM,fpr,5,0.3931034482758621,0.2774209867266671,0.5087859098250571
+host_callback_cost,0,0.3,3,2,1,30,60,10,DIS-FDM,tpr,0,nan,nan,nan
+host_callback_cost,0,0.3,3,2,1,30,60,10,DIS-FDM,precision,5,0.0,0.0,0.0
+host_callback_cost,0,0.3,3,2,1,30,60,10,DIS-FDM,macro_f1,0,nan,nan,nan
+host_callback_cost,0,0.3,3,2,1,30,60,10,DIS-FDM,event_recall_new_alert,0,nan,nan,nan
+host_callback_cost,0,0.3,3,2,1,30,60,10,DIS-FDM,detected_delay_mean_s,0,nan,nan,nan
+host_callback_cost,0,0.3,3,2,1,30,60,10,DIS-FDM,missed_new_alerts,5,0.0,0.0,0.0
+host_callback_cost,0,0.3,3,2,1,30,60,10,DIS-FDM,false_blacklists_per_hour,5,227.1272727272727,175.03987192812184,279.21467352642355
+host_callback_cost,0,0.3,3,2,1,30,60,10,DIS-FDM,legit_isolated_frac,5,0.3421951806239737,0.2422872529744284,0.44210310827351895
+host_callback_cost,0,0.3,3,2,1,30,60,10,DIS-FDM,radio_power_mw,5,59.97348608645295,59.96983143671,59.9771407361959
+host_callback_cost,0,0.3,3,2,1,30,60,10,DIS-FDM,legit_join_fraction,5,1.0,1.0,1.0
+host_callback_cost,0,0.3,3,2,1,30,60,10,DIS-FDM,ari,0,nan,nan,nan
+host_callback_cost,0,0.3,3,2,1,30,60,10,DIS-FDM,drt_s,5,1968.0,66.13712954285802,3869.862870457142
+host_callback_cost,0,0.3,3,2,1,30,60,10,DIS-FDM,callback_cpu_median_us,5,2.4713000000000003,2.325769775394988,2.6168302246050126
+host_callback_cost,0,0.3,3,2,1,30,60,10,DIS-FDM,callback_cpu_p95_us,5,5.995719999999998,5.750725346471088,6.240714653528907
+host_callback_cost,0,0.3,3,2,1,30,60,10,Secure-RPL,pdr_up,5,0.9244357703825387,0.8718519975988372,0.9770195431662401
+host_callback_cost,0,0.3,3,2,1,30,60,10,Secure-RPL,pdr_down,5,0.9915569050443317,0.9888035374006696,0.9943102726879938
+host_callback_cost,0,0.3,3,2,1,30,60,10,Secure-RPL,delivery_up,5,0.7334169278996865,0.6132608891898003,0.8535729666095727
+host_callback_cost,0,0.3,3,2,1,30,60,10,Secure-RPL,fpr,5,0.0,0.0,0.0
+host_callback_cost,0,0.3,3,2,1,30,60,10,Secure-RPL,tpr,0,nan,nan,nan
+host_callback_cost,0,0.3,3,2,1,30,60,10,Secure-RPL,precision,0,nan,nan,nan
+host_callback_cost,0,0.3,3,2,1,30,60,10,Secure-RPL,macro_f1,0,nan,nan,nan
+host_callback_cost,0,0.3,3,2,1,30,60,10,Secure-RPL,event_recall_new_alert,0,nan,nan,nan
+host_callback_cost,0,0.3,3,2,1,30,60,10,Secure-RPL,detected_delay_mean_s,0,nan,nan,nan
+host_callback_cost,0,0.3,3,2,1,30,60,10,Secure-RPL,missed_new_alerts,5,0.0,0.0,0.0
+host_callback_cost,0,0.3,3,2,1,30,60,10,Secure-RPL,false_blacklists_per_hour,5,0.0,0.0,0.0
+host_callback_cost,0,0.3,3,2,1,30,60,10,Secure-RPL,legit_isolated_frac,5,0.0,0.0,0.0
+host_callback_cost,0,0.3,3,2,1,30,60,10,Secure-RPL,radio_power_mw,5,59.97240698506714,59.96827794354001,59.97653602659427
+host_callback_cost,0,0.3,3,2,1,30,60,10,Secure-RPL,legit_join_fraction,5,1.0,1.0,1.0
+host_callback_cost,0,0.3,3,2,1,30,60,10,Secure-RPL,ari,0,nan,nan,nan
+host_callback_cost,0,0.3,3,2,1,30,60,10,Secure-RPL,drt_s,5,1608.0,-185.72966069523295,3401.729660695233
+host_callback_cost,0,0.3,3,2,1,30,60,10,Secure-RPL,callback_cpu_median_us,5,0.7039,0.6807686961549226,0.7270313038450773
+host_callback_cost,0,0.3,3,2,1,30,60,10,Secure-RPL,callback_cpu_p95_us,5,1.8491299999999995,1.7090568681742384,1.9892031318257606
+host_callback_cost,3,0.0,3,2,1,30,60,10,AEF learning,pdr_up,5,0.9902752621565953,0.9702610257319613,1.0102894985812294
+host_callback_cost,3,0.0,3,2,1,30,60,10,AEF learning,pdr_down,5,0.9572006997565529,0.9176268321593526,0.9967745673537531
+host_callback_cost,3,0.0,3,2,1,30,60,10,AEF learning,delivery_up,5,0.9774931129476585,0.9434369132629086,1.0115493126324084
+host_callback_cost,3,0.0,3,2,1,30,60,10,AEF learning,fpr,5,0.03636363636363636,-0.02546248915075052,0.09818976187802325
+host_callback_cost,3,0.0,3,2,1,30,60,10,AEF learning,tpr,5,0.9714285714285715,0.8921015684229203,1.0507555744342227
+host_callback_cost,3,0.0,3,2,1,30,60,10,AEF learning,precision,5,0.9111111111111111,0.7599805820759432,1.062241640146279
+host_callback_cost,3,0.0,3,2,1,30,60,10,AEF learning,macro_f1,5,0.9555616605616606,0.9018595658680404,1.0092637552552808
+host_callback_cost,3,0.0,3,2,1,30,60,10,AEF learning,event_recall_new_alert,5,0.9714285714285715,0.8921015684229203,1.0507555744342227
+host_callback_cost,3,0.0,3,2,1,30,60,10,AEF learning,detected_delay_mean_s,5,27.146853333333333,22.37097914724754,31.922727519419126
+host_callback_cost,3,0.0,3,2,1,30,60,10,AEF learning,missed_new_alerts,5,0.2,-0.3552890210395588,0.7552890210395589
+host_callback_cost,3,0.0,3,2,1,30,60,10,AEF learning,false_blacklists_per_hour,5,2.618181818181818,-2.680140386319392,7.9165040226830286
+host_callback_cost,3,0.0,3,2,1,30,60,10,AEF learning,legit_isolated_frac,5,0.006083641774891776,-0.0065780890699199185,0.01874537261970347
+host_callback_cost,3,0.0,3,2,1,30,60,10,AEF learning,radio_power_mw,5,59.9744519650342,59.9722604090448,59.9766435210236
+host_callback_cost,3,0.0,3,2,1,30,60,10,AEF learning,legit_join_fraction,5,1.0,1.0,1.0
+host_callback_cost,3,0.0,3,2,1,30,60,10,AEF learning,ari,5,0.9373471342841638,0.877572416364267,0.9971218522040607
+host_callback_cost,3,0.0,3,2,1,30,60,10,AEF learning,drt_s,5,24.0,-16.805242839495335,64.80524283949534
+host_callback_cost,3,0.0,3,2,1,30,60,10,AEF learning,callback_cpu_median_us,5,2.5689,2.3134680311330986,2.8243319688669017
+host_callback_cost,3,0.0,3,2,1,30,60,10,AEF learning,callback_cpu_p95_us,5,7.0629199999999965,6.335442753091036,7.790397246908957
+host_callback_cost,3,0.0,3,2,1,30,60,10,DIS-FDM,pdr_up,5,0.9991326712591457,0.998243358202737,1.0000219843155544
+host_callback_cost,3,0.0,3,2,1,30,60,10,DIS-FDM,pdr_down,5,0.8328143327458027,0.7267364995650719,0.9388921659265336
+host_callback_cost,3,0.0,3,2,1,30,60,10,DIS-FDM,delivery_up,5,0.9354545454545455,0.8080817433882287,1.0628273475208625
+host_callback_cost,3,0.0,3,2,1,30,60,10,DIS-FDM,fpr,5,0.045454545454545456,-0.034362639371371156,0.12527173028046207
+host_callback_cost,3,0.0,3,2,1,30,60,10,DIS-FDM,tpr,5,0.9714285714285715,0.8921015684229203,1.0507555744342227
+host_callback_cost,3,0.0,3,2,1,30,60,10,DIS-FDM,precision,5,0.8955555555555555,0.7147244408990879,1.0763866702120233
+host_callback_cost,3,0.0,3,2,1,30,60,10,DIS-FDM,macro_f1,5,0.9478594333293042,0.880152344907514,1.0155665217510945
+host_callback_cost,3,0.0,3,2,1,30,60,10,DIS-FDM,event_recall_new_alert,5,0.9714285714285715,0.8921015684229203,1.0507555744342227
+host_callback_cost,3,0.0,3,2,1,30,60,10,DIS-FDM,detected_delay_mean_s,5,50.18807619047619,50.120915932802504,50.25523644814987
+host_callback_cost,3,0.0,3,2,1,30,60,10,DIS-FDM,missed_new_alerts,5,0.2,-0.3552890210395588,0.7552890210395589
+host_callback_cost,3,0.0,3,2,1,30,60,10,DIS-FDM,false_blacklists_per_hour,5,2.181818181818182,-2.510454830875703,6.874091194512067
+host_callback_cost,3,0.0,3,2,1,30,60,10,DIS-FDM,legit_isolated_frac,5,0.023183598484848484,-0.01746281132875312,0.06383000829845009
+host_callback_cost,3,0.0,3,2,1,30,60,10,DIS-FDM,radio_power_mw,5,59.9580246732739,59.95196679812683,59.96408254842096
+host_callback_cost,3,0.0,3,2,1,30,60,10,DIS-FDM,legit_join_fraction,5,1.0,1.0,1.0
+host_callback_cost,3,0.0,3,2,1,30,60,10,DIS-FDM,ari,5,0.7833458682415663,0.610646552945083,0.9560451835380496
+host_callback_cost,3,0.0,3,2,1,30,60,10,DIS-FDM,drt_s,5,2592.0,792.0925023119371,4391.907497688063
+host_callback_cost,3,0.0,3,2,1,30,60,10,DIS-FDM,callback_cpu_median_us,5,2.0228,1.716802998177908,2.3287970018220925
+host_callback_cost,3,0.0,3,2,1,30,60,10,DIS-FDM,callback_cpu_p95_us,5,5.259899999999999,4.903049549928768,5.616750450071231
+host_callback_cost,3,0.0,3,2,1,30,60,10,Secure-RPL,pdr_up,5,0.9993068655799947,0.9988037750009828,0.9998099561590066
+host_callback_cost,3,0.0,3,2,1,30,60,10,Secure-RPL,pdr_down,5,0.805373050679246,0.6703168444423877,0.9404292569161044
+host_callback_cost,3,0.0,3,2,1,30,60,10,Secure-RPL,delivery_up,5,0.9449586776859504,0.8402331436640198,1.049684211707881
+host_callback_cost,3,0.0,3,2,1,30,60,10,Secure-RPL,fpr,5,0.0,0.0,0.0
+host_callback_cost,3,0.0,3,2,1,30,60,10,Secure-RPL,tpr,5,0.9714285714285715,0.8921015684229203,1.0507555744342227
+host_callback_cost,3,0.0,3,2,1,30,60,10,Secure-RPL,precision,5,1.0,1.0,1.0
+host_callback_cost,3,0.0,3,2,1,30,60,10,Secure-RPL,macro_f1,5,0.9900854700854701,0.9625583220339364,1.0176126181370038
+host_callback_cost,3,0.0,3,2,1,30,60,10,Secure-RPL,event_recall_new_alert,5,0.9714285714285715,0.8921015684229203,1.0507555744342227
+host_callback_cost,3,0.0,3,2,1,30,60,10,Secure-RPL,detected_delay_mean_s,5,14.26009645714286,12.109655679778216,16.4105372345075
+host_callback_cost,3,0.0,3,2,1,30,60,10,Secure-RPL,missed_new_alerts,5,0.2,-0.3552890210395588,0.7552890210395589
+host_callback_cost,3,0.0,3,2,1,30,60,10,Secure-RPL,false_blacklists_per_hour,5,0.0,0.0,0.0
+host_callback_cost,3,0.0,3,2,1,30,60,10,Secure-RPL,legit_isolated_frac,5,0.0,0.0,0.0
+host_callback_cost,3,0.0,3,2,1,30,60,10,Secure-RPL,radio_power_mw,5,59.95737058805545,59.95155357784823,59.963187598262664
+host_callback_cost,3,0.0,3,2,1,30,60,10,Secure-RPL,legit_join_fraction,5,1.0,1.0,1.0
+host_callback_cost,3,0.0,3,2,1,30,60,10,Secure-RPL,ari,5,0.7650075233642586,0.5862417743099989,0.9437732724185183
+host_callback_cost,3,0.0,3,2,1,30,60,10,Secure-RPL,drt_s,5,2592.0,1455.5416313383112,3728.458368661689
+host_callback_cost,3,0.0,3,2,1,30,60,10,Secure-RPL,callback_cpu_median_us,5,0.8513000000000002,0.7783587128965208,0.9242412871034795
+host_callback_cost,3,0.0,3,2,1,30,60,10,Secure-RPL,callback_cpu_p95_us,5,2.087189999999997,2.0032023588850816,2.1711776411149124
+host_callback_cost,3,0.3,3,2,1,30,60,10,AEF learning,pdr_up,5,0.919784407558101,0.8617714183470182,0.9777973967691838
+host_callback_cost,3,0.3,3,2,1,30,60,10,AEF learning,pdr_down,5,0.9892128208791444,0.9837513423513446,0.9946742994069442
+host_callback_cost,3,0.3,3,2,1,30,60,10,AEF learning,delivery_up,5,0.6744077134986226,0.5476494444545414,0.8011659825427038
+host_callback_cost,3,0.3,3,2,1,30,60,10,AEF learning,fpr,5,0.4363636363636364,0.2891880195719361,0.5835392531553367
+host_callback_cost,3,0.3,3,2,1,30,60,10,AEF learning,tpr,5,1.0,1.0,1.0
+host_callback_cost,3,0.3,3,2,1,30,60,10,AEF learning,precision,5,0.4304700854700855,0.34274710862564906,0.5181930623145219
+host_callback_cost,3,0.3,3,2,1,30,60,10,AEF learning,macro_f1,5,0.6571041199695514,0.5547920355881992,0.7594162043509036
+host_callback_cost,3,0.3,3,2,1,30,60,10,AEF learning,event_recall_new_alert,5,1.0,1.0,1.0
+host_callback_cost,3,0.3,3,2,1,30,60,10,AEF learning,detected_delay_mean_s,5,28.918702628571424,-3.6548589879561746,61.49226424509902
+host_callback_cost,3,0.3,3,2,1,30,60,10,AEF learning,missed_new_alerts,5,0.0,0.0,0.0
+host_callback_cost,3,0.3,3,2,1,30,60,10,AEF learning,false_blacklists_per_hour,5,947.7818181818182,602.4632529025275,1293.1003834611088
+host_callback_cost,3,0.3,3,2,1,30,60,10,AEF learning,legit_isolated_frac,5,0.21539960504329003,0.11649805530419151,0.31430115478238857
+host_callback_cost,3,0.3,3,2,1,30,60,10,AEF learning,radio_power_mw,5,59.96972186346992,59.95780109845881,59.98164262848103
+host_callback_cost,3,0.3,3,2,1,30,60,10,AEF learning,legit_join_fraction,5,1.0,1.0,1.0
+host_callback_cost,3,0.3,3,2,1,30,60,10,AEF learning,ari,5,0.988405484055555,0.9791541765320281,0.9976567915790818
+host_callback_cost,3,0.3,3,2,1,30,60,10,AEF learning,drt_s,5,660.0,-373.643329545401,1693.643329545401
+host_callback_cost,3,0.3,3,2,1,30,60,10,AEF learning,callback_cpu_median_us,5,5.1531,4.5773497962520135,5.728850203747987
+host_callback_cost,3,0.3,3,2,1,30,60,10,AEF learning,callback_cpu_p95_us,5,10.279919999999994,8.670763374823558,11.889076625176429
+host_callback_cost,3,0.3,3,2,1,30,60,10,DIS-FDM,pdr_up,5,0.9350474576730283,0.9009990771610351,0.9690958381850215
+host_callback_cost,3,0.3,3,2,1,30,60,10,DIS-FDM,pdr_down,5,0.8978265610680298,0.776273307896994,1.0193798142390655
+host_callback_cost,3,0.3,3,2,1,30,60,10,DIS-FDM,delivery_up,5,0.6331955922865014,0.4829759553339158,0.7834152292390869
+host_callback_cost,3,0.3,3,2,1,30,60,10,DIS-FDM,fpr,5,0.5,0.2850856526354618,0.7149143473645382
+host_callback_cost,3,0.3,3,2,1,30,60,10,DIS-FDM,tpr,5,1.0,1.0,1.0
+host_callback_cost,3,0.3,3,2,1,30,60,10,DIS-FDM,precision,5,0.40383965068747674,0.2923023341862323,0.5153769671887212
+host_callback_cost,3,0.3,3,2,1,30,60,10,DIS-FDM,macro_f1,5,0.6114726499902553,0.459042678241378,0.7639026217391326
+host_callback_cost,3,0.3,3,2,1,30,60,10,DIS-FDM,event_recall_new_alert,5,1.0,1.0,1.0
+host_callback_cost,3,0.3,3,2,1,30,60,10,DIS-FDM,detected_delay_mean_s,5,55.48342857142857,12.680310431161935,98.2865467116952
+host_callback_cost,3,0.3,3,2,1,30,60,10,DIS-FDM,missed_new_alerts,5,0.0,0.0,0.0
+host_callback_cost,3,0.3,3,2,1,30,60,10,DIS-FDM,false_blacklists_per_hour,5,114.10909090909092,60.655265391365596,167.56291642681626
+host_callback_cost,3,0.3,3,2,1,30,60,10,DIS-FDM,legit_isolated_frac,5,0.4511039312770563,0.24792280379678186,0.6542850587573307
+host_callback_cost,3,0.3,3,2,1,30,60,10,DIS-FDM,radio_power_mw,5,59.95887487365062,59.94533180713289,59.972417940168356
+host_callback_cost,3,0.3,3,2,1,30,60,10,DIS-FDM,legit_join_fraction,5,0.990909090909091,0.9656686808618383,1.0161495009563437
+host_callback_cost,3,0.3,3,2,1,30,60,10,DIS-FDM,ari,5,0.8415622677413053,0.688801591942924,0.9943229435396865
+host_callback_cost,3,0.3,3,2,1,30,60,10,DIS-FDM,drt_s,5,2412.0,740.8106643338292,4083.189335666171
+host_callback_cost,3,0.3,3,2,1,30,60,10,DIS-FDM,callback_cpu_median_us,5,3.5143999999999997,3.2013817022701687,3.8274182977298308
+host_callback_cost,3,0.3,3,2,1,30,60,10,DIS-FDM,callback_cpu_p95_us,5,7.064279999999997,6.587034940440022,7.541525059559971
+host_callback_cost,3,0.3,3,2,1,30,60,10,Secure-RPL,pdr_up,5,0.9335102299101294,0.8887064823098154,0.9783139775104435
+host_callback_cost,3,0.3,3,2,1,30,60,10,Secure-RPL,pdr_down,5,0.8951104457478735,0.8151365680439306,0.9750843234518163
+host_callback_cost,3,0.3,3,2,1,30,60,10,Secure-RPL,delivery_up,5,0.6604407713498622,0.5241741724370789,0.7967073702626456
+host_callback_cost,3,0.3,3,2,1,30,60,10,Secure-RPL,fpr,5,0.0,0.0,0.0
+host_callback_cost,3,0.3,3,2,1,30,60,10,Secure-RPL,tpr,5,1.0,1.0,1.0
+host_callback_cost,3,0.3,3,2,1,30,60,10,Secure-RPL,precision,5,1.0,1.0,1.0
+host_callback_cost,3,0.3,3,2,1,30,60,10,Secure-RPL,macro_f1,5,1.0,1.0,1.0
+host_callback_cost,3,0.3,3,2,1,30,60,10,Secure-RPL,event_recall_new_alert,5,1.0,1.0,1.0
+host_callback_cost,3,0.3,3,2,1,30,60,10,Secure-RPL,detected_delay_mean_s,5,25.0853936,-7.531193909451826,57.70198110945182
+host_callback_cost,3,0.3,3,2,1,30,60,10,Secure-RPL,missed_new_alerts,5,0.0,0.0,0.0
+host_callback_cost,3,0.3,3,2,1,30,60,10,Secure-RPL,false_blacklists_per_hour,5,0.0,0.0,0.0
+host_callback_cost,3,0.3,3,2,1,30,60,10,Secure-RPL,legit_isolated_frac,5,0.0,0.0,0.0
+host_callback_cost,3,0.3,3,2,1,30,60,10,Secure-RPL,radio_power_mw,5,59.95838747662126,59.941498830305214,59.97527612293731
+host_callback_cost,3,0.3,3,2,1,30,60,10,Secure-RPL,legit_join_fraction,5,0.990909090909091,0.9656686808618383,1.0161495009563437
+host_callback_cost,3,0.3,3,2,1,30,60,10,Secure-RPL,ari,5,0.8748169141303457,0.784347734748237,0.9652860935124543
+host_callback_cost,3,0.3,3,2,1,30,60,10,Secure-RPL,drt_s,5,2232.0,439.0440656318817,4024.9559343681185
+host_callback_cost,3,0.3,3,2,1,30,60,10,Secure-RPL,callback_cpu_median_us,5,0.9612999999999999,0.8731029534097406,1.0494970465902593
+host_callback_cost,3,0.3,3,2,1,30,60,10,Secure-RPL,callback_cpu_p95_us,5,2.209109999999998,2.053112809643249,2.3651071903567473
+radio_loss,0,0.0,3,2,0.8,30,60,10,AEF learning,pdr_up,5,0.9998118794516329,0.9995623090756469,1.0000614498276188
+radio_loss,0,0.0,3,2,0.8,30,60,10,AEF learning,pdr_down,5,0.9956315919292742,0.9945800846859782,0.9966830991725701
+radio_loss,0,0.0,3,2,0.8,30,60,10,AEF learning,delivery_up,5,0.999853709508882,0.9989064788294895,1.0008009401882745
+radio_loss,0,0.0,3,2,0.8,30,60,10,AEF learning,fpr,5,0.0,0.0,0.0
+radio_loss,0,0.0,3,2,0.8,30,60,10,AEF learning,tpr,0,nan,nan,nan
+radio_loss,0,0.0,3,2,0.8,30,60,10,AEF learning,precision,0,nan,nan,nan
+radio_loss,0,0.0,3,2,0.8,30,60,10,AEF learning,macro_f1,0,nan,nan,nan
+radio_loss,0,0.0,3,2,0.8,30,60,10,AEF learning,event_recall_new_alert,0,nan,nan,nan
+radio_loss,0,0.0,3,2,0.8,30,60,10,AEF learning,detected_delay_mean_s,0,nan,nan,nan
+radio_loss,0,0.0,3,2,0.8,30,60,10,AEF learning,missed_new_alerts,5,0.0,0.0,0.0
+radio_loss,0,0.0,3,2,0.8,30,60,10,AEF learning,false_blacklists_per_hour,5,0.0,0.0,0.0
+radio_loss,0,0.0,3,2,0.8,30,60,10,AEF learning,legit_isolated_frac,5,0.0,0.0,0.0
+radio_loss,0,0.0,3,2,0.8,30,60,10,AEF learning,radio_power_mw,5,59.97541427821848,59.973977987568475,59.976850568868485
+radio_loss,0,0.0,3,2,0.8,30,60,10,AEF learning,legit_join_fraction,5,1.0,1.0,1.0
+radio_loss,0,0.0,3,2,0.8,30,60,10,AEF learning,ari,0,nan,nan,nan
+radio_loss,0,0.0,3,2,0.8,30,60,10,AEF learning,drt_s,5,0.0,0.0,0.0
+radio_loss,0,0.0,3,2,0.8,30,60,10,AEF learning,callback_cpu_median_us,0,nan,nan,nan
+radio_loss,0,0.0,3,2,0.8,30,60,10,AEF learning,callback_cpu_p95_us,0,nan,nan,nan
+radio_loss,0,0.0,3,2,0.8,30,60,10,DIS-FDM,pdr_up,5,0.9998118794516329,0.9995623090756469,1.0000614498276188
+radio_loss,0,0.0,3,2,0.8,30,60,10,DIS-FDM,pdr_down,5,0.9956315919292742,0.9945800846859782,0.9966830991725701
+radio_loss,0,0.0,3,2,0.8,30,60,10,DIS-FDM,delivery_up,5,0.999853709508882,0.9989064788294895,1.0008009401882745
+radio_loss,0,0.0,3,2,0.8,30,60,10,DIS-FDM,fpr,5,0.0,0.0,0.0
+radio_loss,0,0.0,3,2,0.8,30,60,10,DIS-FDM,tpr,0,nan,nan,nan
+radio_loss,0,0.0,3,2,0.8,30,60,10,DIS-FDM,precision,0,nan,nan,nan
+radio_loss,0,0.0,3,2,0.8,30,60,10,DIS-FDM,macro_f1,0,nan,nan,nan
+radio_loss,0,0.0,3,2,0.8,30,60,10,DIS-FDM,event_recall_new_alert,0,nan,nan,nan
+radio_loss,0,0.0,3,2,0.8,30,60,10,DIS-FDM,detected_delay_mean_s,0,nan,nan,nan
+radio_loss,0,0.0,3,2,0.8,30,60,10,DIS-FDM,missed_new_alerts,5,0.0,0.0,0.0
+radio_loss,0,0.0,3,2,0.8,30,60,10,DIS-FDM,false_blacklists_per_hour,5,0.0,0.0,0.0
+radio_loss,0,0.0,3,2,0.8,30,60,10,DIS-FDM,legit_isolated_frac,5,0.0,0.0,0.0
+radio_loss,0,0.0,3,2,0.8,30,60,10,DIS-FDM,radio_power_mw,5,59.97541427821848,59.973977987568475,59.976850568868485
+radio_loss,0,0.0,3,2,0.8,30,60,10,DIS-FDM,legit_join_fraction,5,1.0,1.0,1.0
+radio_loss,0,0.0,3,2,0.8,30,60,10,DIS-FDM,ari,0,nan,nan,nan
+radio_loss,0,0.0,3,2,0.8,30,60,10,DIS-FDM,drt_s,5,0.0,0.0,0.0
+radio_loss,0,0.0,3,2,0.8,30,60,10,DIS-FDM,callback_cpu_median_us,0,nan,nan,nan
+radio_loss,0,0.0,3,2,0.8,30,60,10,DIS-FDM,callback_cpu_p95_us,0,nan,nan,nan
+radio_loss,0,0.0,3,2,0.95,30,60,10,AEF learning,pdr_up,5,0.9998537204210969,0.9997826435335669,0.9999247973086268
+radio_loss,0,0.0,3,2,0.95,30,60,10,AEF learning,pdr_down,5,0.9982862064576248,0.9980686046963423,0.9985038082189073
+radio_loss,0,0.0,3,2,0.95,30,60,10,AEF learning,delivery_up,5,0.9999582027168235,0.9996076498030381,1.000308755630609
+radio_loss,0,0.0,3,2,0.95,30,60,10,AEF learning,fpr,5,0.0,0.0,0.0
+radio_loss,0,0.0,3,2,0.95,30,60,10,AEF learning,tpr,0,nan,nan,nan
+radio_loss,0,0.0,3,2,0.95,30,60,10,AEF learning,precision,0,nan,nan,nan
+radio_loss,0,0.0,3,2,0.95,30,60,10,AEF learning,macro_f1,0,nan,nan,nan
+radio_loss,0,0.0,3,2,0.95,30,60,10,AEF learning,event_recall_new_alert,0,nan,nan,nan
+radio_loss,0,0.0,3,2,0.95,30,60,10,AEF learning,detected_delay_mean_s,0,nan,nan,nan
+radio_loss,0,0.0,3,2,0.95,30,60,10,AEF learning,missed_new_alerts,5,0.0,0.0,0.0
+radio_loss,0,0.0,3,2,0.95,30,60,10,AEF learning,false_blacklists_per_hour,5,0.0,0.0,0.0
+radio_loss,0,0.0,3,2,0.95,30,60,10,AEF learning,legit_isolated_frac,5,0.0,0.0,0.0
+radio_loss,0,0.0,3,2,0.95,30,60,10,AEF learning,radio_power_mw,5,59.97842577243746,59.97728396402766,59.97956758084726
+radio_loss,0,0.0,3,2,0.95,30,60,10,AEF learning,legit_join_fraction,5,1.0,1.0,1.0
+radio_loss,0,0.0,3,2,0.95,30,60,10,AEF learning,ari,0,nan,nan,nan
+radio_loss,0,0.0,3,2,0.95,30,60,10,AEF learning,drt_s,5,0.0,0.0,0.0
+radio_loss,0,0.0,3,2,0.95,30,60,10,AEF learning,callback_cpu_median_us,0,nan,nan,nan
+radio_loss,0,0.0,3,2,0.95,30,60,10,AEF learning,callback_cpu_p95_us,0,nan,nan,nan
+radio_loss,0,0.0,3,2,0.95,30,60,10,DIS-FDM,pdr_up,5,0.9998537204210969,0.9997826435335669,0.9999247973086268
+radio_loss,0,0.0,3,2,0.95,30,60,10,DIS-FDM,pdr_down,5,0.9982862064576248,0.9980686046963423,0.9985038082189073
+radio_loss,0,0.0,3,2,0.95,30,60,10,DIS-FDM,delivery_up,5,0.9999582027168235,0.9996076498030381,1.000308755630609
+radio_loss,0,0.0,3,2,0.95,30,60,10,DIS-FDM,fpr,5,0.0,0.0,0.0
+radio_loss,0,0.0,3,2,0.95,30,60,10,DIS-FDM,tpr,0,nan,nan,nan
+radio_loss,0,0.0,3,2,0.95,30,60,10,DIS-FDM,precision,0,nan,nan,nan
+radio_loss,0,0.0,3,2,0.95,30,60,10,DIS-FDM,macro_f1,0,nan,nan,nan
+radio_loss,0,0.0,3,2,0.95,30,60,10,DIS-FDM,event_recall_new_alert,0,nan,nan,nan
+radio_loss,0,0.0,3,2,0.95,30,60,10,DIS-FDM,detected_delay_mean_s,0,nan,nan,nan
+radio_loss,0,0.0,3,2,0.95,30,60,10,DIS-FDM,missed_new_alerts,5,0.0,0.0,0.0
+radio_loss,0,0.0,3,2,0.95,30,60,10,DIS-FDM,false_blacklists_per_hour,5,0.0,0.0,0.0
+radio_loss,0,0.0,3,2,0.95,30,60,10,DIS-FDM,legit_isolated_frac,5,0.0,0.0,0.0
+radio_loss,0,0.0,3,2,0.95,30,60,10,DIS-FDM,radio_power_mw,5,59.97842577243746,59.97728396402766,59.97956758084726
+radio_loss,0,0.0,3,2,0.95,30,60,10,DIS-FDM,legit_join_fraction,5,1.0,1.0,1.0
+radio_loss,0,0.0,3,2,0.95,30,60,10,DIS-FDM,ari,0,nan,nan,nan
+radio_loss,0,0.0,3,2,0.95,30,60,10,DIS-FDM,drt_s,5,0.0,0.0,0.0
+radio_loss,0,0.0,3,2,0.95,30,60,10,DIS-FDM,callback_cpu_median_us,0,nan,nan,nan
+radio_loss,0,0.0,3,2,0.95,30,60,10,DIS-FDM,callback_cpu_p95_us,0,nan,nan,nan
+radio_loss,0,0.0,3,2,1.0,30,60,10,AEF learning,pdr_up,5,0.999832795492188,0.999563592823578,1.000101998160798
+radio_loss,0,0.0,3,2,1.0,30,60,10,AEF learning,pdr_down,5,0.9981821775734725,0.9976436306750981,0.9987207244718469
+radio_loss,0,0.0,3,2,1.0,30,60,10,AEF learning,delivery_up,5,1.000083594566353,0.9990399700048633,1.0011272191278429
+radio_loss,0,0.0,3,2,1.0,30,60,10,AEF learning,fpr,5,0.0,0.0,0.0
+radio_loss,0,0.0,3,2,1.0,30,60,10,AEF learning,tpr,0,nan,nan,nan
+radio_loss,0,0.0,3,2,1.0,30,60,10,AEF learning,precision,0,nan,nan,nan
+radio_loss,0,0.0,3,2,1.0,30,60,10,AEF learning,macro_f1,0,nan,nan,nan
+radio_loss,0,0.0,3,2,1.0,30,60,10,AEF learning,event_recall_new_alert,0,nan,nan,nan
+radio_loss,0,0.0,3,2,1.0,30,60,10,AEF learning,detected_delay_mean_s,0,nan,nan,nan
+radio_loss,0,0.0,3,2,1.0,30,60,10,AEF learning,missed_new_alerts,5,0.0,0.0,0.0
+radio_loss,0,0.0,3,2,1.0,30,60,10,AEF learning,false_blacklists_per_hour,5,0.0,0.0,0.0
+radio_loss,0,0.0,3,2,1.0,30,60,10,AEF learning,legit_isolated_frac,5,0.0,0.0,0.0
+radio_loss,0,0.0,3,2,1.0,30,60,10,AEF learning,radio_power_mw,5,59.97922330654795,59.978145261692895,59.98030135140301
+radio_loss,0,0.0,3,2,1.0,30,60,10,AEF learning,legit_join_fraction,5,1.0,1.0,1.0
+radio_loss,0,0.0,3,2,1.0,30,60,10,AEF learning,ari,0,nan,nan,nan
+radio_loss,0,0.0,3,2,1.0,30,60,10,AEF learning,drt_s,5,0.0,0.0,0.0
+radio_loss,0,0.0,3,2,1.0,30,60,10,AEF learning,callback_cpu_median_us,0,nan,nan,nan
+radio_loss,0,0.0,3,2,1.0,30,60,10,AEF learning,callback_cpu_p95_us,0,nan,nan,nan
+radio_loss,0,0.0,3,2,1.0,30,60,10,DIS-FDM,pdr_up,5,0.999832795492188,0.999563592823578,1.000101998160798
+radio_loss,0,0.0,3,2,1.0,30,60,10,DIS-FDM,pdr_down,5,0.9981821775734725,0.9976436306750981,0.9987207244718469
+radio_loss,0,0.0,3,2,1.0,30,60,10,DIS-FDM,delivery_up,5,1.000083594566353,0.9990399700048633,1.0011272191278429
+radio_loss,0,0.0,3,2,1.0,30,60,10,DIS-FDM,fpr,5,0.0,0.0,0.0
+radio_loss,0,0.0,3,2,1.0,30,60,10,DIS-FDM,tpr,0,nan,nan,nan
+radio_loss,0,0.0,3,2,1.0,30,60,10,DIS-FDM,precision,0,nan,nan,nan
+radio_loss,0,0.0,3,2,1.0,30,60,10,DIS-FDM,macro_f1,0,nan,nan,nan
+radio_loss,0,0.0,3,2,1.0,30,60,10,DIS-FDM,event_recall_new_alert,0,nan,nan,nan
+radio_loss,0,0.0,3,2,1.0,30,60,10,DIS-FDM,detected_delay_mean_s,0,nan,nan,nan
+radio_loss,0,0.0,3,2,1.0,30,60,10,DIS-FDM,missed_new_alerts,5,0.0,0.0,0.0
+radio_loss,0,0.0,3,2,1.0,30,60,10,DIS-FDM,false_blacklists_per_hour,5,0.0,0.0,0.0
+radio_loss,0,0.0,3,2,1.0,30,60,10,DIS-FDM,legit_isolated_frac,5,0.0,0.0,0.0
+radio_loss,0,0.0,3,2,1.0,30,60,10,DIS-FDM,radio_power_mw,5,59.97922330654795,59.978145261692895,59.98030135140301
+radio_loss,0,0.0,3,2,1.0,30,60,10,DIS-FDM,legit_join_fraction,5,1.0,1.0,1.0
+radio_loss,0,0.0,3,2,1.0,30,60,10,DIS-FDM,ari,0,nan,nan,nan
+radio_loss,0,0.0,3,2,1.0,30,60,10,DIS-FDM,drt_s,5,0.0,0.0,0.0
+radio_loss,0,0.0,3,2,1.0,30,60,10,DIS-FDM,callback_cpu_median_us,0,nan,nan,nan
+radio_loss,0,0.0,3,2,1.0,30,60,10,DIS-FDM,callback_cpu_p95_us,0,nan,nan,nan
+radio_loss,0,0.3,3,2,0.8,30,60,10,AEF learning,pdr_up,5,0.9316505021303019,0.891674806839692,0.9716261974209117
+radio_loss,0,0.3,3,2,0.8,30,60,10,AEF learning,pdr_down,5,0.9906940285584757,0.985924561506486,0.9954634956104653
+radio_loss,0,0.3,3,2,0.8,30,60,10,AEF learning,delivery_up,5,0.7258725182863114,0.6033902461020312,0.8483547904705916
+radio_loss,0,0.3,3,2,0.8,30,60,10,AEF learning,fpr,5,0.39999999999999997,0.284317538450805,0.515682461549195
+radio_loss,0,0.3,3,2,0.8,30,60,10,AEF learning,tpr,0,nan,nan,nan
+radio_loss,0,0.3,3,2,0.8,30,60,10,AEF learning,precision,5,0.0,0.0,0.0
+radio_loss,0,0.3,3,2,0.8,30,60,10,AEF learning,macro_f1,0,nan,nan,nan
+radio_loss,0,0.3,3,2,0.8,30,60,10,AEF learning,event_recall_new_alert,0,nan,nan,nan
+radio_loss,0,0.3,3,2,0.8,30,60,10,AEF learning,detected_delay_mean_s,0,nan,nan,nan
+radio_loss,0,0.3,3,2,0.8,30,60,10,AEF learning,missed_new_alerts,5,0.0,0.0,0.0
+radio_loss,0,0.3,3,2,0.8,30,60,10,AEF learning,false_blacklists_per_hour,5,1411.2,891.8670816249754,1930.5329183750246
+radio_loss,0,0.3,3,2,0.8,30,60,10,AEF learning,legit_isolated_frac,5,0.1930694022167488,0.10039346813891684,0.28574533629458077
+radio_loss,0,0.3,3,2,0.8,30,60,10,AEF learning,radio_power_mw,5,59.97005175289862,59.965967939927545,59.974135565869695
+radio_loss,0,0.3,3,2,0.8,30,60,10,AEF learning,legit_join_fraction,5,1.0,1.0,1.0
+radio_loss,0,0.3,3,2,0.8,30,60,10,AEF learning,ari,0,nan,nan,nan
+radio_loss,0,0.3,3,2,0.8,30,60,10,AEF learning,drt_s,5,1392.0,-96.50605530234247,2880.5060553023422
+radio_loss,0,0.3,3,2,0.8,30,60,10,AEF learning,callback_cpu_median_us,0,nan,nan,nan
+radio_loss,0,0.3,3,2,0.8,30,60,10,AEF learning,callback_cpu_p95_us,0,nan,nan,nan
+radio_loss,0,0.3,3,2,0.8,30,60,10,DIS-FDM,pdr_up,5,0.9376645767096271,0.9139627164300411,0.9613664369892131
+radio_loss,0,0.3,3,2,0.8,30,60,10,DIS-FDM,pdr_down,5,0.9917485729455462,0.9909714485018375,0.9925256973892549
+radio_loss,0,0.3,3,2,0.8,30,60,10,DIS-FDM,delivery_up,5,0.7272518286311389,0.6088983907068064,0.8456052665554714
+radio_loss,0,0.3,3,2,0.8,30,60,10,DIS-FDM,fpr,5,0.39999999999999997,0.284317538450805,0.515682461549195
+radio_loss,0,0.3,3,2,0.8,30,60,10,DIS-FDM,tpr,0,nan,nan,nan
+radio_loss,0,0.3,3,2,0.8,30,60,10,DIS-FDM,precision,5,0.0,0.0,0.0
+radio_loss,0,0.3,3,2,0.8,30,60,10,DIS-FDM,macro_f1,0,nan,nan,nan
+radio_loss,0,0.3,3,2,0.8,30,60,10,DIS-FDM,event_recall_new_alert,0,nan,nan,nan
+radio_loss,0,0.3,3,2,0.8,30,60,10,DIS-FDM,detected_delay_mean_s,0,nan,nan,nan
+radio_loss,0,0.3,3,2,0.8,30,60,10,DIS-FDM,missed_new_alerts,5,0.0,0.0,0.0
+radio_loss,0,0.3,3,2,0.8,30,60,10,DIS-FDM,false_blacklists_per_hour,5,200.07272727272726,147.22299718917247,252.92245735628205
+radio_loss,0,0.3,3,2,0.8,30,60,10,DIS-FDM,legit_isolated_frac,5,0.35293310755336615,0.23934218141054114,0.46652403369619116
+radio_loss,0,0.3,3,2,0.8,30,60,10,DIS-FDM,radio_power_mw,5,59.96965764767267,59.96493394317726,59.97438135216808
+radio_loss,0,0.3,3,2,0.8,30,60,10,DIS-FDM,legit_join_fraction,5,1.0,1.0,1.0
+radio_loss,0,0.3,3,2,0.8,30,60,10,DIS-FDM,ari,0,nan,nan,nan
+radio_loss,0,0.3,3,2,0.8,30,60,10,DIS-FDM,drt_s,5,1428.0,17.019448099632655,2838.9805519003676
+radio_loss,0,0.3,3,2,0.8,30,60,10,DIS-FDM,callback_cpu_median_us,0,nan,nan,nan
+radio_loss,0,0.3,3,2,0.8,30,60,10,DIS-FDM,callback_cpu_p95_us,0,nan,nan,nan
+radio_loss,0,0.3,3,2,0.95,30,60,10,AEF learning,pdr_up,5,0.9304960808791888,0.888750288290406,0.9722418734679715
+radio_loss,0,0.3,3,2,0.95,30,60,10,AEF learning,pdr_down,5,0.9934883384116734,0.9922452916296144,0.9947313851937324
+radio_loss,0,0.3,3,2,0.95,30,60,10,AEF learning,delivery_up,5,0.7287774294670847,0.603231534907193,0.8543233240269764
+radio_loss,0,0.3,3,2,0.95,30,60,10,AEF learning,fpr,5,0.3931034482758621,0.2774209867266671,0.5087859098250571
+radio_loss,0,0.3,3,2,0.95,30,60,10,AEF learning,tpr,0,nan,nan,nan
+radio_loss,0,0.3,3,2,0.95,30,60,10,AEF learning,precision,5,0.0,0.0,0.0
+radio_loss,0,0.3,3,2,0.95,30,60,10,AEF learning,macro_f1,0,nan,nan,nan
+radio_loss,0,0.3,3,2,0.95,30,60,10,AEF learning,event_recall_new_alert,0,nan,nan,nan
+radio_loss,0,0.3,3,2,0.95,30,60,10,AEF learning,detected_delay_mean_s,0,nan,nan,nan
+radio_loss,0,0.3,3,2,0.95,30,60,10,AEF learning,missed_new_alerts,5,0.0,0.0,0.0
+radio_loss,0,0.3,3,2,0.95,30,60,10,AEF learning,false_blacklists_per_hour,5,1368.0,964.9149030833271,1771.085096916673
+radio_loss,0,0.3,3,2,0.95,30,60,10,AEF learning,legit_isolated_frac,5,0.19060076981937601,0.09759868454704855,0.28360285509170347
+radio_loss,0,0.3,3,2,0.95,30,60,10,AEF learning,radio_power_mw,5,59.97309425121671,59.97055518765659,59.97563331477682
+radio_loss,0,0.3,3,2,0.95,30,60,10,AEF learning,legit_join_fraction,5,1.0,1.0,1.0
+radio_loss,0,0.3,3,2,0.95,30,60,10,AEF learning,ari,0,nan,nan,nan
+radio_loss,0,0.3,3,2,0.95,30,60,10,AEF learning,drt_s,5,1176.0,-360.3955151683067,2712.3955151683067
+radio_loss,0,0.3,3,2,0.95,30,60,10,AEF learning,callback_cpu_median_us,0,nan,nan,nan
+radio_loss,0,0.3,3,2,0.95,30,60,10,AEF learning,callback_cpu_p95_us,0,nan,nan,nan
+radio_loss,0,0.3,3,2,0.95,30,60,10,DIS-FDM,pdr_up,5,0.9243798025960102,0.872888827686196,0.9758707775058243
+radio_loss,0,0.3,3,2,0.95,30,60,10,DIS-FDM,pdr_down,5,0.9925544454932392,0.9906435209861818,0.9944653700002967
+radio_loss,0,0.3,3,2,0.95,30,60,10,DIS-FDM,delivery_up,5,0.7256635318704284,0.601247396108985,0.8500796676318718
+radio_loss,0,0.3,3,2,0.95,30,60,10,DIS-FDM,fpr,5,0.3931034482758621,0.2774209867266671,0.5087859098250571
+radio_loss,0,0.3,3,2,0.95,30,60,10,DIS-FDM,tpr,0,nan,nan,nan
+radio_loss,0,0.3,3,2,0.95,30,60,10,DIS-FDM,precision,5,0.0,0.0,0.0
+radio_loss,0,0.3,3,2,0.95,30,60,10,DIS-FDM,macro_f1,0,nan,nan,nan
+radio_loss,0,0.3,3,2,0.95,30,60,10,DIS-FDM,event_recall_new_alert,0,nan,nan,nan
+radio_loss,0,0.3,3,2,0.95,30,60,10,DIS-FDM,detected_delay_mean_s,0,nan,nan,nan
+radio_loss,0,0.3,3,2,0.95,30,60,10,DIS-FDM,missed_new_alerts,5,0.0,0.0,0.0
+radio_loss,0,0.3,3,2,0.95,30,60,10,DIS-FDM,false_blacklists_per_hour,5,224.50909090909096,177.26098491053014,271.75719690765175
+radio_loss,0,0.3,3,2,0.95,30,60,10,DIS-FDM,legit_isolated_frac,5,0.34707806650246303,0.2313053080210256,0.46285082498390046
+radio_loss,0,0.3,3,2,0.95,30,60,10,DIS-FDM,radio_power_mw,5,59.972367547408204,59.96805688880037,59.97667820601604
+radio_loss,0,0.3,3,2,0.95,30,60,10,DIS-FDM,legit_join_fraction,5,1.0,1.0,1.0
+radio_loss,0,0.3,3,2,0.95,30,60,10,DIS-FDM,ari,0,nan,nan,nan
+radio_loss,0,0.3,3,2,0.95,30,60,10,DIS-FDM,drt_s,5,1236.0,-280.3966141632095,2752.3966141632095
+radio_loss,0,0.3,3,2,0.95,30,60,10,DIS-FDM,callback_cpu_median_us,0,nan,nan,nan
+radio_loss,0,0.3,3,2,0.95,30,60,10,DIS-FDM,callback_cpu_p95_us,0,nan,nan,nan
+radio_loss,0,0.3,3,2,1.0,30,60,10,AEF learning,pdr_up,5,0.9368023459714674,0.912220092047172,0.9613845998957627
+radio_loss,0,0.3,3,2,1.0,30,60,10,AEF learning,pdr_down,5,0.991706243191852,0.9878455045050207,0.9955669818786832
+radio_loss,0,0.3,3,2,1.0,30,60,10,AEF learning,delivery_up,5,0.7289655172413794,0.6152844559057579,0.8426465785770009
+radio_loss,0,0.3,3,2,1.0,30,60,10,AEF learning,fpr,5,0.3931034482758621,0.2774209867266671,0.5087859098250571
+radio_loss,0,0.3,3,2,1.0,30,60,10,AEF learning,tpr,0,nan,nan,nan
+radio_loss,0,0.3,3,2,1.0,30,60,10,AEF learning,precision,5,0.0,0.0,0.0
+radio_loss,0,0.3,3,2,1.0,30,60,10,AEF learning,macro_f1,0,nan,nan,nan
+radio_loss,0,0.3,3,2,1.0,30,60,10,AEF learning,event_recall_new_alert,0,nan,nan,nan
+radio_loss,0,0.3,3,2,1.0,30,60,10,AEF learning,detected_delay_mean_s,0,nan,nan,nan
+radio_loss,0,0.3,3,2,1.0,30,60,10,AEF learning,missed_new_alerts,5,0.0,0.0,0.0
+radio_loss,0,0.3,3,2,1.0,30,60,10,AEF learning,false_blacklists_per_hour,5,1438.909090909091,1023.3525252252238,1854.465656592958
+radio_loss,0,0.3,3,2,1.0,30,60,10,AEF learning,legit_isolated_frac,5,0.18930408729064038,0.11978162480372681,0.2588265497775539
+radio_loss,0,0.3,3,2,1.0,30,60,10,AEF learning,radio_power_mw,5,59.97255023092472,59.966263844799855,59.97883661704958
+radio_loss,0,0.3,3,2,1.0,30,60,10,AEF learning,legit_join_fraction,5,1.0,1.0,1.0
+radio_loss,0,0.3,3,2,1.0,30,60,10,AEF learning,ari,0,nan,nan,nan
+radio_loss,0,0.3,3,2,1.0,30,60,10,AEF learning,drt_s,5,1572.0,-235.6001026094077,3379.6001026094077
+radio_loss,0,0.3,3,2,1.0,30,60,10,AEF learning,callback_cpu_median_us,0,nan,nan,nan
+radio_loss,0,0.3,3,2,1.0,30,60,10,AEF learning,callback_cpu_p95_us,0,nan,nan,nan
+radio_loss,0,0.3,3,2,1.0,30,60,10,DIS-FDM,pdr_up,5,0.9324383827139149,0.8998003672499417,0.965076398177888
+radio_loss,0,0.3,3,2,1.0,30,60,10,DIS-FDM,pdr_down,5,0.9923354497934126,0.990111672890419,0.9945592266964062
+radio_loss,0,0.3,3,2,1.0,30,60,10,DIS-FDM,delivery_up,5,0.7237826541274818,0.6009920469196363,0.8465732613353273
+radio_loss,0,0.3,3,2,1.0,30,60,10,DIS-FDM,fpr,5,0.3931034482758621,0.2774209867266671,0.5087859098250571
+radio_loss,0,0.3,3,2,1.0,30,60,10,DIS-FDM,tpr,0,nan,nan,nan
+radio_loss,0,0.3,3,2,1.0,30,60,10,DIS-FDM,precision,5,0.0,0.0,0.0
+radio_loss,0,0.3,3,2,1.0,30,60,10,DIS-FDM,macro_f1,0,nan,nan,nan
+radio_loss,0,0.3,3,2,1.0,30,60,10,DIS-FDM,event_recall_new_alert,0,nan,nan,nan
+radio_loss,0,0.3,3,2,1.0,30,60,10,DIS-FDM,detected_delay_mean_s,0,nan,nan,nan
+radio_loss,0,0.3,3,2,1.0,30,60,10,DIS-FDM,missed_new_alerts,5,0.0,0.0,0.0
+radio_loss,0,0.3,3,2,1.0,30,60,10,DIS-FDM,false_blacklists_per_hour,5,227.1272727272727,175.03987192812184,279.21467352642355
+radio_loss,0,0.3,3,2,1.0,30,60,10,DIS-FDM,legit_isolated_frac,5,0.3421951806239737,0.2422872529744284,0.44210310827351895
+radio_loss,0,0.3,3,2,1.0,30,60,10,DIS-FDM,radio_power_mw,5,59.97348608645295,59.96983143671,59.9771407361959
+radio_loss,0,0.3,3,2,1.0,30,60,10,DIS-FDM,legit_join_fraction,5,1.0,1.0,1.0
+radio_loss,0,0.3,3,2,1.0,30,60,10,DIS-FDM,ari,0,nan,nan,nan
+radio_loss,0,0.3,3,2,1.0,30,60,10,DIS-FDM,drt_s,5,1968.0,66.13712954285802,3869.862870457142
+radio_loss,0,0.3,3,2,1.0,30,60,10,DIS-FDM,callback_cpu_median_us,0,nan,nan,nan
+radio_loss,0,0.3,3,2,1.0,30,60,10,DIS-FDM,callback_cpu_p95_us,0,nan,nan,nan
+radio_loss,3,0.0,3,2,0.8,30,60,10,AEF learning,pdr_up,5,0.9900237564724176,0.9835693910024098,0.9964781219424254
+radio_loss,3,0.0,3,2,0.8,30,60,10,AEF learning,pdr_down,5,0.9816073254076356,0.9659422132438104,0.9972724375714609
+radio_loss,3,0.0,3,2,0.8,30,60,10,AEF learning,delivery_up,5,0.9080716253443526,0.7400199775435629,1.0761232731451424
+radio_loss,3,0.0,3,2,0.8,30,60,10,AEF learning,fpr,5,0.26363636363636356,-0.2511690098117354,0.7784417370844625
+radio_loss,3,0.0,3,2,0.8,30,60,10,AEF learning,tpr,5,0.9714285714285715,0.8921015684229203,1.0507555744342227
+radio_loss,3,0.0,3,2,0.8,30,60,10,AEF learning,precision,5,0.69272030651341,0.3452330086652083,1.0402076043616117
+radio_loss,3,0.0,3,2,0.8,30,60,10,AEF learning,macro_f1,5,0.7698412698412699,0.3633263973672451,1.1763561423152946
+radio_loss,3,0.0,3,2,0.8,30,60,10,AEF learning,event_recall_new_alert,5,0.9714285714285715,0.8921015684229203,1.0507555744342227
+radio_loss,3,0.0,3,2,0.8,30,60,10,AEF learning,detected_delay_mean_s,5,27.833593142857143,23.991031183705225,31.676155102009062
+radio_loss,3,0.0,3,2,0.8,30,60,10,AEF learning,missed_new_alerts,5,0.2,-0.3552890210395588,0.7552890210395589
+radio_loss,3,0.0,3,2,0.8,30,60,10,AEF learning,false_blacklists_per_hour,5,66.98181818181817,-109.92631262515627,243.8899489887926
+radio_loss,3,0.0,3,2,0.8,30,60,10,AEF learning,legit_isolated_frac,5,0.040018685887445886,-0.056739256198866155,0.13677662797375792
+radio_loss,3,0.0,3,2,0.8,30,60,10,AEF learning,radio_power_mw,5,59.96664706176254,59.95792765134537,59.9753664721797
+radio_loss,3,0.0,3,2,0.8,30,60,10,AEF learning,legit_join_fraction,5,1.0,1.0,1.0
+radio_loss,3,0.0,3,2,0.8,30,60,10,AEF learning,ari,5,0.8956374517931026,0.7236971133331321,1.067577790253073
+radio_loss,3,0.0,3,2,0.8,30,60,10,AEF learning,drt_s,5,528.0,-280.2460127615535,1336.2460127615536
+radio_loss,3,0.0,3,2,0.8,30,60,10,AEF learning,callback_cpu_median_us,0,nan,nan,nan
+radio_loss,3,0.0,3,2,0.8,30,60,10,AEF learning,callback_cpu_p95_us,0,nan,nan,nan
+radio_loss,3,0.0,3,2,0.8,30,60,10,DIS-FDM,pdr_up,5,0.9900989185750779,0.9754126381973944,1.0047851989527614
+radio_loss,3,0.0,3,2,0.8,30,60,10,DIS-FDM,pdr_down,5,0.7766858673135151,0.6493915749176571,0.9039801597093731
+radio_loss,3,0.0,3,2,0.8,30,60,10,DIS-FDM,delivery_up,5,0.800275482093664,0.5681214530040983,1.0324295111832296
+radio_loss,3,0.0,3,2,0.8,30,60,10,DIS-FDM,fpr,5,0.41818181818181815,-0.19151908199198014,1.0278827183556165
+radio_loss,3,0.0,3,2,0.8,30,60,10,DIS-FDM,tpr,5,0.9714285714285715,0.8921015684229203,1.0507555744342227
+radio_loss,3,0.0,3,2,0.8,30,60,10,DIS-FDM,precision,5,0.611111111111111,0.18658158130677288,1.0356406409154493
+radio_loss,3,0.0,3,2,0.8,30,60,10,DIS-FDM,macro_f1,5,0.6529529649094866,0.18844856410990618,1.117457365709067
+radio_loss,3,0.0,3,2,0.8,30,60,10,DIS-FDM,event_recall_new_alert,5,0.9714285714285715,0.8921015684229203,1.0507555744342227
+radio_loss,3,0.0,3,2,0.8,30,60,10,DIS-FDM,detected_delay_mean_s,5,50.238147619047616,50.16661176859454,50.30968346950069
+radio_loss,3,0.0,3,2,0.8,30,60,10,DIS-FDM,missed_new_alerts,5,0.2,-0.3552890210395588,0.7552890210395589
+radio_loss,3,0.0,3,2,0.8,30,60,10,DIS-FDM,false_blacklists_per_hour,5,32.727272727272734,-20.46332084242446,85.91786629696992
+radio_loss,3,0.0,3,2,0.8,30,60,10,DIS-FDM,legit_isolated_frac,5,0.2508154491341991,-0.1029681630659024,0.6045990613343006
+radio_loss,3,0.0,3,2,0.8,30,60,10,DIS-FDM,radio_power_mw,5,59.94867156646408,59.94021734815165,59.95712578477651
+radio_loss,3,0.0,3,2,0.8,30,60,10,DIS-FDM,legit_join_fraction,5,1.0,1.0,1.0
+radio_loss,3,0.0,3,2,0.8,30,60,10,DIS-FDM,ari,5,0.6232299566050433,0.429330791548776,0.8171291216613106
+radio_loss,3,0.0,3,2,0.8,30,60,10,DIS-FDM,drt_s,5,2928.0,2308.261628457188,3547.738371542812
+radio_loss,3,0.0,3,2,0.8,30,60,10,DIS-FDM,callback_cpu_median_us,0,nan,nan,nan
+radio_loss,3,0.0,3,2,0.8,30,60,10,DIS-FDM,callback_cpu_p95_us,0,nan,nan,nan
+radio_loss,3,0.0,3,2,0.95,30,60,10,AEF learning,pdr_up,5,0.9872628637592861,0.9574155314207925,1.0171101960977798
+radio_loss,3,0.0,3,2,0.95,30,60,10,AEF learning,pdr_down,5,0.957063734617182,0.8984377037512785,1.0156897654830854
+radio_loss,3,0.0,3,2,0.95,30,60,10,AEF learning,delivery_up,5,0.975289256198347,0.9342030524372207,1.0163754599594734
+radio_loss,3,0.0,3,2,0.95,30,60,10,AEF learning,fpr,5,0.07272727272727272,-0.044307693996776226,0.18976223945132167
+radio_loss,3,0.0,3,2,0.95,30,60,10,AEF learning,tpr,5,0.9714285714285715,0.8921015684229203,1.0507555744342227
+radio_loss,3,0.0,3,2,0.95,30,60,10,AEF learning,precision,5,0.8472222222222221,0.6304517438241348,1.0639927006203094
+radio_loss,3,0.0,3,2,0.95,30,60,10,AEF learning,macro_f1,5,0.9246950149673528,0.8328929907497127,1.016497039184993
+radio_loss,3,0.0,3,2,0.95,30,60,10,AEF learning,event_recall_new_alert,5,0.9714285714285715,0.8921015684229203,1.0507555744342227
+radio_loss,3,0.0,3,2,0.95,30,60,10,AEF learning,detected_delay_mean_s,5,25.81778247619048,21.84351922804307,29.79204572433789
+radio_loss,3,0.0,3,2,0.95,30,60,10,AEF learning,missed_new_alerts,5,0.2,-0.3552890210395588,0.7552890210395589
+radio_loss,3,0.0,3,2,0.95,30,60,10,AEF learning,false_blacklists_per_hour,5,2.618181818181818,-1.2842174012401202,6.5205810376037565
+radio_loss,3,0.0,3,2,0.95,30,60,10,AEF learning,legit_isolated_frac,5,0.0034889826839826837,-0.0024009803024665037,0.009378945670431871
+radio_loss,3,0.0,3,2,0.95,30,60,10,AEF learning,radio_power_mw,5,59.97408865186495,59.971979012407466,59.97619829132244
+radio_loss,3,0.0,3,2,0.95,30,60,10,AEF learning,legit_join_fraction,5,1.0,1.0,1.0
+radio_loss,3,0.0,3,2,0.95,30,60,10,AEF learning,ari,5,0.9346659956786931,0.8697579870756666,0.9995740042817196
+radio_loss,3,0.0,3,2,0.95,30,60,10,AEF learning,drt_s,5,720.0,-1035.8902650717746,2475.8902650717746
+radio_loss,3,0.0,3,2,0.95,30,60,10,AEF learning,callback_cpu_median_us,0,nan,nan,nan
+radio_loss,3,0.0,3,2,0.95,30,60,10,AEF learning,callback_cpu_p95_us,0,nan,nan,nan
+radio_loss,3,0.0,3,2,0.95,30,60,10,DIS-FDM,pdr_up,5,0.9988408406774754,0.9974201790126028,1.0002615023423478
+radio_loss,3,0.0,3,2,0.95,30,60,10,DIS-FDM,pdr_down,5,0.8355775042543148,0.7086753047950588,0.9624797037135707
+radio_loss,3,0.0,3,2,0.95,30,60,10,DIS-FDM,delivery_up,5,0.932617079889807,0.7970667426900958,1.0681674170895183
+radio_loss,3,0.0,3,2,0.95,30,60,10,DIS-FDM,fpr,5,0.02727272727272727,-0.02320809282177806,0.0777535473672326
+radio_loss,3,0.0,3,2,0.95,30,60,10,DIS-FDM,tpr,5,0.9714285714285715,0.8921015684229203,1.0507555744342227
+radio_loss,3,0.0,3,2,0.95,30,60,10,DIS-FDM,precision,5,0.9305555555555556,0.8050076339932388,1.0561034771178723
+radio_loss,3,0.0,3,2,0.95,30,60,10,DIS-FDM,macro_f1,5,0.9638313172615497,0.9182628128582591,1.0093998216648403
+radio_loss,3,0.0,3,2,0.95,30,60,10,DIS-FDM,event_recall_new_alert,5,0.9714285714285715,0.8921015684229203,1.0507555744342227
+radio_loss,3,0.0,3,2,0.95,30,60,10,DIS-FDM,detected_delay_mean_s,5,50.21896190476191,50.165177010472156,50.27274679905167
+radio_loss,3,0.0,3,2,0.95,30,60,10,DIS-FDM,missed_new_alerts,5,0.2,-0.3552890210395588,0.7552890210395589
+radio_loss,3,0.0,3,2,0.95,30,60,10,DIS-FDM,false_blacklists_per_hour,5,1.090909090909091,-0.824703344912908,3.00652152673109
+radio_loss,3,0.0,3,2,0.95,30,60,10,DIS-FDM,legit_isolated_frac,5,0.013958252164502163,-0.011648061499797888,0.03956456582880222
+radio_loss,3,0.0,3,2,0.95,30,60,10,DIS-FDM,radio_power_mw,5,59.95561505743368,59.94946610818837,59.961764006679
+radio_loss,3,0.0,3,2,0.95,30,60,10,DIS-FDM,legit_join_fraction,5,1.0,1.0,1.0
+radio_loss,3,0.0,3,2,0.95,30,60,10,DIS-FDM,ari,5,0.7830247480521871,0.5961419022971163,0.969907593807258
+radio_loss,3,0.0,3,2,0.95,30,60,10,DIS-FDM,drt_s,5,2340.0,753.4857213724283,3926.514278627572
+radio_loss,3,0.0,3,2,0.95,30,60,10,DIS-FDM,callback_cpu_median_us,0,nan,nan,nan
+radio_loss,3,0.0,3,2,0.95,30,60,10,DIS-FDM,callback_cpu_p95_us,0,nan,nan,nan
+radio_loss,3,0.0,3,2,1.0,30,60,10,AEF learning,pdr_up,5,0.9902752621565953,0.9702610257319613,1.0102894985812294
+radio_loss,3,0.0,3,2,1.0,30,60,10,AEF learning,pdr_down,5,0.9572006997565529,0.9176268321593526,0.9967745673537531
+radio_loss,3,0.0,3,2,1.0,30,60,10,AEF learning,delivery_up,5,0.9774931129476585,0.9434369132629086,1.0115493126324084
+radio_loss,3,0.0,3,2,1.0,30,60,10,AEF learning,fpr,5,0.03636363636363636,-0.02546248915075052,0.09818976187802325
+radio_loss,3,0.0,3,2,1.0,30,60,10,AEF learning,tpr,5,0.9714285714285715,0.8921015684229203,1.0507555744342227
+radio_loss,3,0.0,3,2,1.0,30,60,10,AEF learning,precision,5,0.9111111111111111,0.7599805820759432,1.062241640146279
+radio_loss,3,0.0,3,2,1.0,30,60,10,AEF learning,macro_f1,5,0.9555616605616606,0.9018595658680404,1.0092637552552808
+radio_loss,3,0.0,3,2,1.0,30,60,10,AEF learning,event_recall_new_alert,5,0.9714285714285715,0.8921015684229203,1.0507555744342227
+radio_loss,3,0.0,3,2,1.0,30,60,10,AEF learning,detected_delay_mean_s,5,27.146853333333333,22.37097914724754,31.922727519419126
+radio_loss,3,0.0,3,2,1.0,30,60,10,AEF learning,missed_new_alerts,5,0.2,-0.3552890210395588,0.7552890210395589
+radio_loss,3,0.0,3,2,1.0,30,60,10,AEF learning,false_blacklists_per_hour,5,2.618181818181818,-2.680140386319392,7.9165040226830286
+radio_loss,3,0.0,3,2,1.0,30,60,10,AEF learning,legit_isolated_frac,5,0.006083641774891776,-0.0065780890699199185,0.01874537261970347
+radio_loss,3,0.0,3,2,1.0,30,60,10,AEF learning,radio_power_mw,5,59.9744519650342,59.9722604090448,59.9766435210236
+radio_loss,3,0.0,3,2,1.0,30,60,10,AEF learning,legit_join_fraction,5,1.0,1.0,1.0
+radio_loss,3,0.0,3,2,1.0,30,60,10,AEF learning,ari,5,0.9373471342841638,0.877572416364267,0.9971218522040607
+radio_loss,3,0.0,3,2,1.0,30,60,10,AEF learning,drt_s,5,24.0,-16.805242839495335,64.80524283949534
+radio_loss,3,0.0,3,2,1.0,30,60,10,AEF learning,callback_cpu_median_us,0,nan,nan,nan
+radio_loss,3,0.0,3,2,1.0,30,60,10,AEF learning,callback_cpu_p95_us,0,nan,nan,nan
+radio_loss,3,0.0,3,2,1.0,30,60,10,DIS-FDM,pdr_up,5,0.9991326712591457,0.998243358202737,1.0000219843155544
+radio_loss,3,0.0,3,2,1.0,30,60,10,DIS-FDM,pdr_down,5,0.8328143327458027,0.7267364995650719,0.9388921659265336
+radio_loss,3,0.0,3,2,1.0,30,60,10,DIS-FDM,delivery_up,5,0.9354545454545455,0.8080817433882287,1.0628273475208625
+radio_loss,3,0.0,3,2,1.0,30,60,10,DIS-FDM,fpr,5,0.045454545454545456,-0.034362639371371156,0.12527173028046207
+radio_loss,3,0.0,3,2,1.0,30,60,10,DIS-FDM,tpr,5,0.9714285714285715,0.8921015684229203,1.0507555744342227
+radio_loss,3,0.0,3,2,1.0,30,60,10,DIS-FDM,precision,5,0.8955555555555555,0.7147244408990879,1.0763866702120233
+radio_loss,3,0.0,3,2,1.0,30,60,10,DIS-FDM,macro_f1,5,0.9478594333293042,0.880152344907514,1.0155665217510945
+radio_loss,3,0.0,3,2,1.0,30,60,10,DIS-FDM,event_recall_new_alert,5,0.9714285714285715,0.8921015684229203,1.0507555744342227
+radio_loss,3,0.0,3,2,1.0,30,60,10,DIS-FDM,detected_delay_mean_s,5,50.18807619047619,50.120915932802504,50.25523644814987
+radio_loss,3,0.0,3,2,1.0,30,60,10,DIS-FDM,missed_new_alerts,5,0.2,-0.3552890210395588,0.7552890210395589
+radio_loss,3,0.0,3,2,1.0,30,60,10,DIS-FDM,false_blacklists_per_hour,5,2.181818181818182,-2.510454830875703,6.874091194512067
+radio_loss,3,0.0,3,2,1.0,30,60,10,DIS-FDM,legit_isolated_frac,5,0.023183598484848484,-0.01746281132875312,0.06383000829845009
+radio_loss,3,0.0,3,2,1.0,30,60,10,DIS-FDM,radio_power_mw,5,59.9580246732739,59.95196679812683,59.96408254842096
+radio_loss,3,0.0,3,2,1.0,30,60,10,DIS-FDM,legit_join_fraction,5,1.0,1.0,1.0
+radio_loss,3,0.0,3,2,1.0,30,60,10,DIS-FDM,ari,5,0.7833458682415663,0.610646552945083,0.9560451835380496
+radio_loss,3,0.0,3,2,1.0,30,60,10,DIS-FDM,drt_s,5,2592.0,792.0925023119371,4391.907497688063
+radio_loss,3,0.0,3,2,1.0,30,60,10,DIS-FDM,callback_cpu_median_us,0,nan,nan,nan
+radio_loss,3,0.0,3,2,1.0,30,60,10,DIS-FDM,callback_cpu_p95_us,0,nan,nan,nan
+radio_loss,3,0.3,3,2,0.8,30,60,10,AEF learning,pdr_up,5,0.9138388962724274,0.8589044230058942,0.9687733695389606
+radio_loss,3,0.3,3,2,0.8,30,60,10,AEF learning,pdr_down,5,0.9811011894440824,0.9701361377082086,0.9920662411799562
+radio_loss,3,0.3,3,2,0.8,30,60,10,AEF learning,delivery_up,5,0.6073553719008264,0.39905056858780197,0.8156601752138509
+radio_loss,3,0.3,3,2,0.8,30,60,10,AEF learning,fpr,5,0.5545454545454545,0.2126333782285178,0.8964575308623911
+radio_loss,3,0.3,3,2,0.8,30,60,10,AEF learning,tpr,5,1.0,1.0,1.0
+radio_loss,3,0.3,3,2,0.8,30,60,10,AEF learning,precision,5,0.391245947539051,0.2552587097001631,0.5272331853779388
+radio_loss,3,0.3,3,2,0.8,30,60,10,AEF learning,macro_f1,5,0.5608377293553347,0.28701793022414274,0.8346575284865267
+radio_loss,3,0.3,3,2,0.8,30,60,10,AEF learning,event_recall_new_alert,5,1.0,1.0,1.0
+radio_loss,3,0.3,3,2,0.8,30,60,10,AEF learning,detected_delay_mean_s,5,27.805285714285713,-4.21052870212711,59.82110013069854
+radio_loss,3,0.3,3,2,0.8,30,60,10,AEF learning,missed_new_alerts,5,0.0,0.0,0.0
+radio_loss,3,0.3,3,2,0.8,30,60,10,AEF learning,false_blacklists_per_hour,5,1098.3272727272729,619.0810089659094,1577.5735364886364
+radio_loss,3,0.3,3,2,0.8,30,60,10,AEF learning,legit_isolated_frac,5,0.25670481638528136,0.10204718406029706,0.41136244871026567
+radio_loss,3,0.3,3,2,0.8,30,60,10,AEF learning,radio_power_mw,5,59.966754009739034,59.9553092664893,59.97819875298877
+radio_loss,3,0.3,3,2,0.8,30,60,10,AEF learning,legit_join_fraction,5,1.0,1.0,1.0
+radio_loss,3,0.3,3,2,0.8,30,60,10,AEF learning,ari,5,0.9695388769591385,0.9428772164713471,0.9962005374469299
+radio_loss,3,0.3,3,2,0.8,30,60,10,AEF learning,drt_s,5,1608.0,-249.57250025522853,3465.5725002552285
+radio_loss,3,0.3,3,2,0.8,30,60,10,AEF learning,callback_cpu_median_us,0,nan,nan,nan
+radio_loss,3,0.3,3,2,0.8,30,60,10,AEF learning,callback_cpu_p95_us,0,nan,nan,nan
+radio_loss,3,0.3,3,2,0.8,30,60,10,DIS-FDM,pdr_up,5,0.9080249819373577,0.7984258292625728,1.0176241346121426
+radio_loss,3,0.3,3,2,0.8,30,60,10,DIS-FDM,pdr_down,5,0.8760261464770547,0.7705017394027136,0.9815505535513958
+radio_loss,3,0.3,3,2,0.8,30,60,10,DIS-FDM,delivery_up,5,0.5658677685950414,0.28961541865144386,0.8421201185386389
+radio_loss,3,0.3,3,2,0.8,30,60,10,DIS-FDM,fpr,5,0.5727272727272726,0.22344158117065255,0.9220129642838928
+radio_loss,3,0.3,3,2,0.8,30,60,10,DIS-FDM,tpr,5,1.0,1.0,1.0
+radio_loss,3,0.3,3,2,0.8,30,60,10,DIS-FDM,precision,5,0.3848823111754146,0.2441117254726501,0.5256528968781791
+radio_loss,3,0.3,3,2,0.8,30,60,10,DIS-FDM,macro_f1,5,0.5474730855123816,0.27010336462568973,0.8248428063990735
+radio_loss,3,0.3,3,2,0.8,30,60,10,DIS-FDM,event_recall_new_alert,5,1.0,1.0,1.0
+radio_loss,3,0.3,3,2,0.8,30,60,10,DIS-FDM,detected_delay_mean_s,5,53.78754285714285,20.171394755500664,87.40369095878503
+radio_loss,3,0.3,3,2,0.8,30,60,10,DIS-FDM,missed_new_alerts,5,0.0,0.0,0.0
+radio_loss,3,0.3,3,2,0.8,30,60,10,DIS-FDM,false_blacklists_per_hour,5,130.6909090909091,44.832783605084344,216.54903457673385
+radio_loss,3,0.3,3,2,0.8,30,60,10,DIS-FDM,legit_isolated_frac,5,0.5082281195887446,0.1745854249446021,0.841870814232887
+radio_loss,3,0.3,3,2,0.8,30,60,10,DIS-FDM,radio_power_mw,5,59.95909929853492,59.95290231510298,59.965296281966864
+radio_loss,3,0.3,3,2,0.8,30,60,10,DIS-FDM,legit_join_fraction,5,0.9818181818181818,0.9509051190609884,1.0127312445753751
+radio_loss,3,0.3,3,2,0.8,30,60,10,DIS-FDM,ari,5,0.7764910107840837,0.5751931042520926,0.9777889173160748
+radio_loss,3,0.3,3,2,0.8,30,60,10,DIS-FDM,drt_s,5,2628.0,927.999190246144,4328.000809753856
+radio_loss,3,0.3,3,2,0.8,30,60,10,DIS-FDM,callback_cpu_median_us,0,nan,nan,nan
+radio_loss,3,0.3,3,2,0.8,30,60,10,DIS-FDM,callback_cpu_p95_us,0,nan,nan,nan
+radio_loss,3,0.3,3,2,0.95,30,60,10,AEF learning,pdr_up,5,0.9348424068487013,0.9109660525474539,0.9587187611499488
+radio_loss,3,0.3,3,2,0.95,30,60,10,AEF learning,pdr_down,5,0.9716729855817373,0.9212117315766019,1.0221342395868727
+radio_loss,3,0.3,3,2,0.95,30,60,10,AEF learning,delivery_up,5,0.6740495867768594,0.546121163264186,0.8019780102895329
+radio_loss,3,0.3,3,2,0.95,30,60,10,AEF learning,fpr,5,0.4363636363636364,0.2891880195719361,0.5835392531553367
+radio_loss,3,0.3,3,2,0.95,30,60,10,AEF learning,tpr,5,1.0,1.0,1.0
+radio_loss,3,0.3,3,2,0.95,30,60,10,AEF learning,precision,5,0.4304700854700855,0.34274710862564906,0.5181930623145219
+radio_loss,3,0.3,3,2,0.95,30,60,10,AEF learning,macro_f1,5,0.6571041199695514,0.5547920355881992,0.7594162043509036
+radio_loss,3,0.3,3,2,0.95,30,60,10,AEF learning,event_recall_new_alert,5,1.0,1.0,1.0
+radio_loss,3,0.3,3,2,0.95,30,60,10,AEF learning,detected_delay_mean_s,5,28.104514285714288,-1.2376472027023055,57.44667577413088
+radio_loss,3,0.3,3,2,0.95,30,60,10,AEF learning,missed_new_alerts,5,0.0,0.0,0.0
+radio_loss,3,0.3,3,2,0.95,30,60,10,AEF learning,false_blacklists_per_hour,5,934.909090909091,614.8584620808426,1254.9597197373394
+radio_loss,3,0.3,3,2,0.95,30,60,10,AEF learning,legit_isolated_frac,5,0.22133551253246758,0.1140236412901848,0.32864738377475033
+radio_loss,3,0.3,3,2,0.95,30,60,10,AEF learning,radio_power_mw,5,59.969232425163156,59.95871072070425,59.979754129622066
+radio_loss,3,0.3,3,2,0.95,30,60,10,AEF learning,legit_join_fraction,5,1.0,1.0,1.0
+radio_loss,3,0.3,3,2,0.95,30,60,10,AEF learning,ari,5,0.9784663748517224,0.925594972345269,1.0313377773581758
+radio_loss,3,0.3,3,2,0.95,30,60,10,AEF learning,drt_s,5,1968.0,-30.62396558563637,3966.623965585636
+radio_loss,3,0.3,3,2,0.95,30,60,10,AEF learning,callback_cpu_median_us,0,nan,nan,nan
+radio_loss,3,0.3,3,2,0.95,30,60,10,AEF learning,callback_cpu_p95_us,0,nan,nan,nan
+radio_loss,3,0.3,3,2,0.95,30,60,10,DIS-FDM,pdr_up,5,0.9372809449063432,0.9034620546826523,0.9710998351300341
+radio_loss,3,0.3,3,2,0.95,30,60,10,DIS-FDM,pdr_down,5,0.8928120233674374,0.7867955983988028,0.998828448336072
+radio_loss,3,0.3,3,2,0.95,30,60,10,DIS-FDM,delivery_up,5,0.6384022038567492,0.48688919386121765,0.7899152138522807
+radio_loss,3,0.3,3,2,0.95,30,60,10,DIS-FDM,fpr,5,0.5545454545454545,0.2126333782285178,0.8964575308623911
+radio_loss,3,0.3,3,2,0.95,30,60,10,DIS-FDM,tpr,5,1.0,1.0,1.0
+radio_loss,3,0.3,3,2,0.95,30,60,10,DIS-FDM,precision,5,0.391245947539051,0.2552587097001631,0.5272331853779388
+radio_loss,3,0.3,3,2,0.95,30,60,10,DIS-FDM,macro_f1,5,0.5608377293553347,0.28701793022414274,0.8346575284865267
+radio_loss,3,0.3,3,2,0.95,30,60,10,DIS-FDM,event_recall_new_alert,5,1.0,1.0,1.0
+radio_loss,3,0.3,3,2,0.95,30,60,10,DIS-FDM,detected_delay_mean_s,5,59.70547931428571,19.292253635120858,100.11870499345056
+radio_loss,3,0.3,3,2,0.95,30,60,10,DIS-FDM,missed_new_alerts,5,0.0,0.0,0.0
+radio_loss,3,0.3,3,2,0.95,30,60,10,DIS-FDM,false_blacklists_per_hour,5,112.36363636363635,54.12618277316767,170.60108995410502
+radio_loss,3,0.3,3,2,0.95,30,60,10,DIS-FDM,legit_isolated_frac,5,0.43235806006493505,0.24576462198221402,0.618951498147656
+radio_loss,3,0.3,3,2,0.95,30,60,10,DIS-FDM,radio_power_mw,5,59.959454494535315,59.94739269593769,59.97151629313294
+radio_loss,3,0.3,3,2,0.95,30,60,10,DIS-FDM,legit_join_fraction,5,1.0,1.0,1.0
+radio_loss,3,0.3,3,2,0.95,30,60,10,DIS-FDM,ari,5,0.8513273293818638,0.7009965152391681,1.0016581435245597
+radio_loss,3,0.3,3,2,0.95,30,60,10,DIS-FDM,drt_s,5,2604.0,917.767259968411,4290.232740031589
+radio_loss,3,0.3,3,2,0.95,30,60,10,DIS-FDM,callback_cpu_median_us,0,nan,nan,nan
+radio_loss,3,0.3,3,2,0.95,30,60,10,DIS-FDM,callback_cpu_p95_us,0,nan,nan,nan
+radio_loss,3,0.3,3,2,1.0,30,60,10,AEF learning,pdr_up,5,0.919784407558101,0.8617714183470182,0.9777973967691838
+radio_loss,3,0.3,3,2,1.0,30,60,10,AEF learning,pdr_down,5,0.9892128208791444,0.9837513423513446,0.9946742994069442
+radio_loss,3,0.3,3,2,1.0,30,60,10,AEF learning,delivery_up,5,0.6744077134986226,0.5476494444545414,0.8011659825427038
+radio_loss,3,0.3,3,2,1.0,30,60,10,AEF learning,fpr,5,0.4363636363636364,0.2891880195719361,0.5835392531553367
+radio_loss,3,0.3,3,2,1.0,30,60,10,AEF learning,tpr,5,1.0,1.0,1.0
+radio_loss,3,0.3,3,2,1.0,30,60,10,AEF learning,precision,5,0.4304700854700855,0.34274710862564906,0.5181930623145219
+radio_loss,3,0.3,3,2,1.0,30,60,10,AEF learning,macro_f1,5,0.6571041199695514,0.5547920355881992,0.7594162043509036
+radio_loss,3,0.3,3,2,1.0,30,60,10,AEF learning,event_recall_new_alert,5,1.0,1.0,1.0
+radio_loss,3,0.3,3,2,1.0,30,60,10,AEF learning,detected_delay_mean_s,5,28.918702628571424,-3.6548589879561746,61.49226424509902
+radio_loss,3,0.3,3,2,1.0,30,60,10,AEF learning,missed_new_alerts,5,0.0,0.0,0.0
+radio_loss,3,0.3,3,2,1.0,30,60,10,AEF learning,false_blacklists_per_hour,5,947.7818181818182,602.4632529025275,1293.1003834611088
+radio_loss,3,0.3,3,2,1.0,30,60,10,AEF learning,legit_isolated_frac,5,0.21539960504329003,0.11649805530419151,0.31430115478238857
+radio_loss,3,0.3,3,2,1.0,30,60,10,AEF learning,radio_power_mw,5,59.96972186346992,59.95780109845881,59.98164262848103
+radio_loss,3,0.3,3,2,1.0,30,60,10,AEF learning,legit_join_fraction,5,1.0,1.0,1.0
+radio_loss,3,0.3,3,2,1.0,30,60,10,AEF learning,ari,5,0.988405484055555,0.9791541765320281,0.9976567915790818
+radio_loss,3,0.3,3,2,1.0,30,60,10,AEF learning,drt_s,5,660.0,-373.643329545401,1693.643329545401
+radio_loss,3,0.3,3,2,1.0,30,60,10,AEF learning,callback_cpu_median_us,0,nan,nan,nan
+radio_loss,3,0.3,3,2,1.0,30,60,10,AEF learning,callback_cpu_p95_us,0,nan,nan,nan
+radio_loss,3,0.3,3,2,1.0,30,60,10,DIS-FDM,pdr_up,5,0.9350474576730283,0.9009990771610351,0.9690958381850215
+radio_loss,3,0.3,3,2,1.0,30,60,10,DIS-FDM,pdr_down,5,0.8978265610680298,0.776273307896994,1.0193798142390655
+radio_loss,3,0.3,3,2,1.0,30,60,10,DIS-FDM,delivery_up,5,0.6331955922865014,0.4829759553339158,0.7834152292390869
+radio_loss,3,0.3,3,2,1.0,30,60,10,DIS-FDM,fpr,5,0.5,0.2850856526354618,0.7149143473645382
+radio_loss,3,0.3,3,2,1.0,30,60,10,DIS-FDM,tpr,5,1.0,1.0,1.0
+radio_loss,3,0.3,3,2,1.0,30,60,10,DIS-FDM,precision,5,0.40383965068747674,0.2923023341862323,0.5153769671887212
+radio_loss,3,0.3,3,2,1.0,30,60,10,DIS-FDM,macro_f1,5,0.6114726499902553,0.459042678241378,0.7639026217391326
+radio_loss,3,0.3,3,2,1.0,30,60,10,DIS-FDM,event_recall_new_alert,5,1.0,1.0,1.0
+radio_loss,3,0.3,3,2,1.0,30,60,10,DIS-FDM,detected_delay_mean_s,5,55.48342857142857,12.680310431161935,98.2865467116952
+radio_loss,3,0.3,3,2,1.0,30,60,10,DIS-FDM,missed_new_alerts,5,0.0,0.0,0.0
+radio_loss,3,0.3,3,2,1.0,30,60,10,DIS-FDM,false_blacklists_per_hour,5,114.10909090909092,60.655265391365596,167.56291642681626
+radio_loss,3,0.3,3,2,1.0,30,60,10,DIS-FDM,legit_isolated_frac,5,0.4511039312770563,0.24792280379678186,0.6542850587573307
+radio_loss,3,0.3,3,2,1.0,30,60,10,DIS-FDM,radio_power_mw,5,59.95887487365062,59.94533180713289,59.972417940168356
+radio_loss,3,0.3,3,2,1.0,30,60,10,DIS-FDM,legit_join_fraction,5,0.990909090909091,0.9656686808618383,1.0161495009563437
+radio_loss,3,0.3,3,2,1.0,30,60,10,DIS-FDM,ari,5,0.8415622677413053,0.688801591942924,0.9943229435396865
+radio_loss,3,0.3,3,2,1.0,30,60,10,DIS-FDM,drt_s,5,2412.0,740.8106643338292,4083.189335666171
+radio_loss,3,0.3,3,2,1.0,30,60,10,DIS-FDM,callback_cpu_median_us,0,nan,nan,nan
+radio_loss,3,0.3,3,2,1.0,30,60,10,DIS-FDM,callback_cpu_p95_us,0,nan,nan,nan
+rate_robustness,3,0.0,3,2,1,30,60,10,AEF learning,pdr_up,10,0.9928346528216327,0.9876796493990744,0.9979896562441911
+rate_robustness,3,0.0,3,2,1,30,60,10,AEF learning,pdr_down,10,0.957322513426259,0.9257917110513589,0.988853315801159
+rate_robustness,3,0.0,3,2,1,30,60,10,AEF learning,delivery_up,10,0.9618044077134986,0.9202219390194077,1.0033868764075895
+rate_robustness,3,0.0,3,2,1,30,60,10,AEF learning,fpr,10,0.09545454545454546,0.013695658247619313,0.1772134326614716
+rate_robustness,3,0.0,3,2,1,30,60,10,AEF learning,tpr,10,0.9857142857142858,0.9533977548171686,1.018030816611403
+rate_robustness,3,0.0,3,2,1,30,60,10,AEF learning,precision,10,0.816969696969697,0.6775022910431632,0.9564371028962309
+rate_robustness,3,0.0,3,2,1,30,60,10,AEF learning,macro_f1,10,0.9117630325992531,0.8457119440035032,0.9778141211950029
+rate_robustness,3,0.0,3,2,1,30,60,10,AEF learning,event_recall_new_alert,10,0.9857142857142858,0.9533977548171686,1.018030816611403
+rate_robustness,3,0.0,3,2,1,30,60,10,AEF learning,detected_delay_mean_s,10,27.484095238095243,24.716008463961366,30.25218201222912
+rate_robustness,3,0.0,3,2,1,30,60,10,AEF learning,missed_new_alerts,10,0.1,-0.12621571627982048,0.3262157162798205
+rate_robustness,3,0.0,3,2,1,30,60,10,AEF learning,false_blacklists_per_hour,10,6.436363636363636,-1.915787607953808,14.78851488068108
+rate_robustness,3,0.0,3,2,1,30,60,10,AEF learning,legit_isolated_frac,10,0.0074832291666666675,-0.0005943940235403188,0.015560852356873654
+rate_robustness,3,0.0,3,2,1,30,60,10,AEF learning,radio_power_mw,10,59.967811037289856,59.965011156066815,59.9706109185129
+rate_robustness,3,0.0,3,2,1,30,60,10,AEF learning,legit_join_fraction,10,1.0,1.0,1.0
+rate_robustness,3,0.0,3,2,1,30,60,10,AEF learning,ari,10,0.9213773925328954,0.876637635276883,0.9661171497889078
+rate_robustness,3,0.0,3,2,1,30,60,10,AEF learning,drt_s,10,1002.0,266.03714379694225,1737.9628562030578
+rate_robustness,3,0.0,3,2,1,30,60,10,AEF learning,callback_cpu_median_us,0,nan,nan,nan
+rate_robustness,3,0.0,3,2,1,30,60,10,AEF learning,callback_cpu_p95_us,0,nan,nan,nan
+rate_robustness,3,0.0,3,2,1,30,60,10,DIS-FDM,pdr_up,10,0.9982274492640844,0.9971760959579237,0.999278802570245
+rate_robustness,3,0.0,3,2,1,30,60,10,DIS-FDM,pdr_down,10,0.7869538569899327,0.7109974304529617,0.8629102835269037
+rate_robustness,3,0.0,3,2,1,30,60,10,DIS-FDM,delivery_up,10,0.9386776859504131,0.8775907007403492,0.9997646711604771
+rate_robustness,3,0.0,3,2,1,30,60,10,DIS-FDM,fpr,10,0.06363636363636363,-0.006940404451378279,0.13421313172410554
+rate_robustness,3,0.0,3,2,1,30,60,10,DIS-FDM,tpr,10,0.9857142857142858,0.9533977548171686,1.018030816611403
+rate_robustness,3,0.0,3,2,1,30,60,10,DIS-FDM,precision,10,0.8749825174825174,0.7455618969200831,1.0044031380449518
+rate_robustness,3,0.0,3,2,1,30,60,10,DIS-FDM,macro_f1,10,0.9390586970613803,0.8800233671556188,0.9980940269671419
+rate_robustness,3,0.0,3,2,1,30,60,10,DIS-FDM,event_recall_new_alert,10,0.9857142857142858,0.9533977548171686,1.018030816611403
+rate_robustness,3,0.0,3,2,1,30,60,10,DIS-FDM,detected_delay_mean_s,10,50.99124464761905,49.34386930231223,52.63861999292587
+rate_robustness,3,0.0,3,2,1,30,60,10,DIS-FDM,missed_new_alerts,10,0.1,-0.12621571627982048,0.3262157162798205
+rate_robustness,3,0.0,3,2,1,30,60,10,DIS-FDM,false_blacklists_per_hour,10,4.581818181818182,-2.521201694887214,11.684838058523578
+rate_robustness,3,0.0,3,2,1,30,60,10,DIS-FDM,legit_isolated_frac,10,0.03200117153679653,-0.003415593375161105,0.06741793644875417
+rate_robustness,3,0.0,3,2,1,30,60,10,DIS-FDM,radio_power_mw,10,59.94996022360319,59.943650783685406,59.95626966352098
+rate_robustness,3,0.0,3,2,1,30,60,10,DIS-FDM,legit_join_fraction,10,1.0,1.0,1.0
+rate_robustness,3,0.0,3,2,1,30,60,10,DIS-FDM,ari,10,0.7412260901925146,0.6463549169919512,0.836097263393078
+rate_robustness,3,0.0,3,2,1,30,60,10,DIS-FDM,drt_s,10,2706.0,2027.8205247839555,3384.1794752160445
+rate_robustness,3,0.0,3,2,1,30,60,10,DIS-FDM,callback_cpu_median_us,0,nan,nan,nan
+rate_robustness,3,0.0,3,2,1,30,60,10,DIS-FDM,callback_cpu_p95_us,0,nan,nan,nan
+rate_robustness,3,0.0,3,2,1,30,60,10,Li-MSD,pdr_up,10,0.9976724354416792,0.9956235871161556,0.9997212837672027
+rate_robustness,3,0.0,3,2,1,30,60,10,Li-MSD,pdr_down,10,0.8463811036917386,0.7800143713484886,0.9127478360349885
+rate_robustness,3,0.0,3,2,1,30,60,10,Li-MSD,delivery_up,10,0.9285812672176309,0.8722278678557314,0.9849346665795304
+rate_robustness,3,0.0,3,2,1,30,60,10,Li-MSD,fpr,10,0.004545454545454545,-0.00573707801271911,0.0148279871036282
+rate_robustness,3,0.0,3,2,1,30,60,10,Li-MSD,tpr,10,0.9428571428571428,0.8441285101675303,1.0415857755467555
+rate_robustness,3,0.0,3,2,1,30,60,10,Li-MSD,precision,10,0.9875,0.9592230354650225,1.0157769645349777
+rate_robustness,3,0.0,3,2,1,30,60,10,Li-MSD,macro_f1,10,0.9737187580136615,0.9353512064558049,1.012086309571518
+rate_robustness,3,0.0,3,2,1,30,60,10,Li-MSD,event_recall_new_alert,10,0.9428571428571428,0.8441285101675303,1.0415857755467555
+rate_robustness,3,0.0,3,2,1,30,60,10,Li-MSD,detected_delay_mean_s,10,406.0995456857143,267.7204064443495,544.478684927079
+rate_robustness,3,0.0,3,2,1,30,60,10,Li-MSD,missed_new_alerts,10,0.4,-0.2911004288272876,1.0911004288272876
+rate_robustness,3,0.0,3,2,1,30,60,10,Li-MSD,false_blacklists_per_hour,10,0.1090909090909091,-0.1376898723052587,0.3558716904870769
+rate_robustness,3,0.0,3,2,1,30,60,10,Li-MSD,legit_isolated_frac,10,0.0026560876515151514,-0.0033524000543797092,0.008664575357410012
+rate_robustness,3,0.0,3,2,1,30,60,10,Li-MSD,radio_power_mw,10,59.95887965954146,59.95596688515462,59.961792433928295
+rate_robustness,3,0.0,3,2,1,30,60,10,Li-MSD,legit_join_fraction,10,1.0,1.0,1.0
+rate_robustness,3,0.0,3,2,1,30,60,10,Li-MSD,ari,10,0.7913836577027994,0.6910841542844643,0.8916831611211344
+rate_robustness,3,0.0,3,2,1,30,60,10,Li-MSD,drt_s,10,2394.0,1524.5661523191125,3263.4338476808875
+rate_robustness,3,0.0,3,2,1,30,60,10,Li-MSD,callback_cpu_median_us,0,nan,nan,nan
+rate_robustness,3,0.0,3,2,1,30,60,10,Li-MSD,callback_cpu_p95_us,0,nan,nan,nan
+rate_robustness,3,0.0,3,2,1,30,60,10,RPL,pdr_up,10,0.9981779140071051,0.9967018160136192,0.999654012000591
+rate_robustness,3,0.0,3,2,1,30,60,10,RPL,pdr_down,10,0.8080627259555723,0.7330979769357908,0.8830274749753537
+rate_robustness,3,0.0,3,2,1,30,60,10,RPL,delivery_up,10,0.9489807162534436,0.8945380987552551,1.003423333751632
+rate_robustness,3,0.0,3,2,1,30,60,10,RPL,fpr,0,nan,nan,nan
+rate_robustness,3,0.0,3,2,1,30,60,10,RPL,tpr,0,nan,nan,nan
+rate_robustness,3,0.0,3,2,1,30,60,10,RPL,precision,0,nan,nan,nan
+rate_robustness,3,0.0,3,2,1,30,60,10,RPL,macro_f1,0,nan,nan,nan
+rate_robustness,3,0.0,3,2,1,30,60,10,RPL,event_recall_new_alert,0,nan,nan,nan
+rate_robustness,3,0.0,3,2,1,30,60,10,RPL,detected_delay_mean_s,0,nan,nan,nan
+rate_robustness,3,0.0,3,2,1,30,60,10,RPL,missed_new_alerts,0,nan,nan,nan
+rate_robustness,3,0.0,3,2,1,30,60,10,RPL,false_blacklists_per_hour,0,nan,nan,nan
+rate_robustness,3,0.0,3,2,1,30,60,10,RPL,legit_isolated_frac,0,nan,nan,nan
+rate_robustness,3,0.0,3,2,1,30,60,10,RPL,radio_power_mw,10,59.94650493708532,59.941104630364194,59.95190524380645
+rate_robustness,3,0.0,3,2,1,30,60,10,RPL,legit_join_fraction,10,1.0,1.0,1.0
+rate_robustness,3,0.0,3,2,1,30,60,10,RPL,ari,10,0.7704246613981349,0.6736743259736968,0.867174996822573
+rate_robustness,3,0.0,3,2,1,30,60,10,RPL,drt_s,10,2454.0,1637.7530058973437,3270.2469941026566
+rate_robustness,3,0.0,3,2,1,30,60,10,RPL,callback_cpu_median_us,0,nan,nan,nan
+rate_robustness,3,0.0,3,2,1,30,60,10,RPL,callback_cpu_p95_us,0,nan,nan,nan
+rate_robustness,3,0.0,10,10,1,30,60,10,AEF learning,pdr_up,10,0.9975739131997126,0.9954861036780106,0.9996617227214145
+rate_robustness,3,0.0,10,10,1,30,60,10,AEF learning,pdr_down,10,0.958434369345933,0.9175975600129234,0.9992711786789426
+rate_robustness,3,0.0,10,10,1,30,60,10,AEF learning,delivery_up,10,0.9713085399449037,0.9320565335471672,1.0105605463426404
+rate_robustness,3,0.0,10,10,1,30,60,10,AEF learning,fpr,10,0.07272727272727272,-0.007215330877915524,0.15266987633246099
+rate_robustness,3,0.0,10,10,1,30,60,10,AEF learning,tpr,10,0.9857142857142858,0.9533977548171686,1.018030816611403
+rate_robustness,3,0.0,10,10,1,30,60,10,AEF learning,precision,10,0.861111111111111,0.7280593007343664,0.9941629214878557
+rate_robustness,3,0.0,10,10,1,30,60,10,AEF learning,macro_f1,10,0.9317252573265424,0.8669100337779313,0.9965404808751536
+rate_robustness,3,0.0,10,10,1,30,60,10,AEF learning,event_recall_new_alert,10,0.9857142857142858,0.9533977548171686,1.018030816611403
+rate_robustness,3,0.0,10,10,1,30,60,10,AEF learning,detected_delay_mean_s,10,32.37248300952381,30.187085209190414,34.55788080985721
+rate_robustness,3,0.0,10,10,1,30,60,10,AEF learning,missed_new_alerts,10,0.1,-0.12621571627982048,0.3262157162798205
+rate_robustness,3,0.0,10,10,1,30,60,10,AEF learning,false_blacklists_per_hour,10,8.072727272727274,-3.5210094404823327,19.66646398593688
+rate_robustness,3,0.0,10,10,1,30,60,10,AEF learning,legit_isolated_frac,10,0.018517260551948054,-0.010780753991068974,0.04781527509496508
+rate_robustness,3,0.0,10,10,1,30,60,10,AEF learning,radio_power_mw,10,59.96892199596594,59.965940481838985,59.9719035100929
+rate_robustness,3,0.0,10,10,1,30,60,10,AEF learning,legit_join_fraction,10,1.0,1.0,1.0
+rate_robustness,3,0.0,10,10,1,30,60,10,AEF learning,ari,10,0.9315077986099904,0.882088904834077,0.9809266923859039
+rate_robustness,3,0.0,10,10,1,30,60,10,AEF learning,drt_s,10,1050.0,77.48287598798527,2022.5171240120148
+rate_robustness,3,0.0,10,10,1,30,60,10,AEF learning,callback_cpu_median_us,0,nan,nan,nan
+rate_robustness,3,0.0,10,10,1,30,60,10,AEF learning,callback_cpu_p95_us,0,nan,nan,nan
+rate_robustness,3,0.0,10,10,1,30,60,10,DIS-FDM,pdr_up,10,0.9986809908380396,0.9978661839246966,0.9994957977513826
+rate_robustness,3,0.0,10,10,1,30,60,10,DIS-FDM,pdr_down,10,0.7812537338926555,0.6841258406888475,0.8783816270964635
+rate_robustness,3,0.0,10,10,1,30,60,10,DIS-FDM,delivery_up,10,0.9530716253443525,0.907599818855305,0.9985434318334
+rate_robustness,3,0.0,10,10,1,30,60,10,DIS-FDM,fpr,10,0.05454545454545454,-0.020234003778868893,0.12932491286977799
+rate_robustness,3,0.0,10,10,1,30,60,10,DIS-FDM,tpr,10,0.9857142857142858,0.9533977548171686,1.018030816611403
+rate_robustness,3,0.0,10,10,1,30,60,10,DIS-FDM,precision,10,0.8996794871794872,0.7687233999231731,1.0306355744358013
+rate_robustness,3,0.0,10,10,1,30,60,10,DIS-FDM,macro_f1,10,0.9480837230225235,0.8857960225732852,1.010371423471762
+rate_robustness,3,0.0,10,10,1,30,60,10,DIS-FDM,event_recall_new_alert,10,0.9857142857142858,0.9533977548171686,1.018030816611403
+rate_robustness,3,0.0,10,10,1,30,60,10,DIS-FDM,detected_delay_mean_s,10,73.53885952380952,55.59613593711715,91.4815831105019
+rate_robustness,3,0.0,10,10,1,30,60,10,DIS-FDM,missed_new_alerts,10,0.1,-0.12621571627982048,0.3262157162798205
+rate_robustness,3,0.0,10,10,1,30,60,10,DIS-FDM,false_blacklists_per_hour,10,2.5090909090909093,-0.7409702373050133,5.759152055486831
+rate_robustness,3,0.0,10,10,1,30,60,10,DIS-FDM,legit_isolated_frac,10,0.02607632033549783,-0.009526998819829442,0.061679639490825104
+rate_robustness,3,0.0,10,10,1,30,60,10,DIS-FDM,radio_power_mw,10,59.95856409115763,59.95358073064553,59.96354745166974
+rate_robustness,3,0.0,10,10,1,30,60,10,DIS-FDM,legit_join_fraction,10,1.0,1.0,1.0
+rate_robustness,3,0.0,10,10,1,30,60,10,DIS-FDM,ari,10,0.7469730564196739,0.6401173917987948,0.8538287210405531
+rate_robustness,3,0.0,10,10,1,30,60,10,DIS-FDM,drt_s,10,2472.0,1717.700323766153,3226.299676233847
+rate_robustness,3,0.0,10,10,1,30,60,10,DIS-FDM,callback_cpu_median_us,0,nan,nan,nan
+rate_robustness,3,0.0,10,10,1,30,60,10,DIS-FDM,callback_cpu_p95_us,0,nan,nan,nan
+rate_robustness,3,0.0,10,10,1,30,60,10,Li-MSD,pdr_up,10,0.9984298953809161,0.9973072614069065,0.9995525293549257
+rate_robustness,3,0.0,10,10,1,30,60,10,Li-MSD,pdr_down,10,0.8370912856354771,0.7739484586015138,0.9002341126694403
+rate_robustness,3,0.0,10,10,1,30,60,10,Li-MSD,delivery_up,10,0.953168044077135,0.9165587735094312,0.9897773146448388
+rate_robustness,3,0.0,10,10,1,30,60,10,Li-MSD,fpr,10,0.013636363636363636,-0.00831041417878108,0.03558314145150835
+rate_robustness,3,0.0,10,10,1,30,60,10,Li-MSD,tpr,10,0.9142857142857143,0.8155570815961017,1.0130143469753268
+rate_robustness,3,0.0,10,10,1,30,60,10,Li-MSD,precision,10,0.9634920634920634,0.9068313683669594,1.0201527586171675
+rate_robustness,3,0.0,10,10,1,30,60,10,Li-MSD,macro_f1,10,0.9552110802908675,0.9142647563958785,0.9961574041858566
+rate_robustness,3,0.0,10,10,1,30,60,10,Li-MSD,event_recall_new_alert,10,0.9142857142857143,0.8155570815961017,1.0130143469753268
+rate_robustness,3,0.0,10,10,1,30,60,10,Li-MSD,detected_delay_mean_s,10,1170.2968474285715,998.9829503430819,1341.610744514061
+rate_robustness,3,0.0,10,10,1,30,60,10,Li-MSD,missed_new_alerts,10,0.6,-0.09110042882728764,1.2911004288272876
+rate_robustness,3,0.0,10,10,1,30,60,10,Li-MSD,false_blacklists_per_hour,10,0.6545454545454545,-0.5766133902876343,1.8857042993785433
+rate_robustness,3,0.0,10,10,1,30,60,10,Li-MSD,legit_isolated_frac,10,0.007279899859307359,-0.004121619247328073,0.01868141896594279
+rate_robustness,3,0.0,10,10,1,30,60,10,Li-MSD,radio_power_mw,10,59.95890187825917,59.954412172364606,59.96339158415373
+rate_robustness,3,0.0,10,10,1,30,60,10,Li-MSD,legit_join_fraction,10,1.0,1.0,1.0
+rate_robustness,3,0.0,10,10,1,30,60,10,Li-MSD,ari,10,0.8012978415939578,0.7205249361851996,0.8820707470027159
+rate_robustness,3,0.0,10,10,1,30,60,10,Li-MSD,drt_s,10,2190.0,1484.9469044558327,2895.0530955441673
+rate_robustness,3,0.0,10,10,1,30,60,10,Li-MSD,callback_cpu_median_us,0,nan,nan,nan
+rate_robustness,3,0.0,10,10,1,30,60,10,Li-MSD,callback_cpu_p95_us,0,nan,nan,nan
+rate_robustness,3,0.0,10,10,1,30,60,10,RPL,pdr_up,10,0.9986834025849687,0.997789102049908,0.9995777031200294
+rate_robustness,3,0.0,10,10,1,30,60,10,RPL,pdr_down,10,0.8066670193143726,0.7328060554743789,0.8805279831543662
+rate_robustness,3,0.0,10,10,1,30,60,10,RPL,delivery_up,10,0.9623002754820936,0.9145487556218068,1.0100517953423804
+rate_robustness,3,0.0,10,10,1,30,60,10,RPL,fpr,0,nan,nan,nan
+rate_robustness,3,0.0,10,10,1,30,60,10,RPL,tpr,0,nan,nan,nan
+rate_robustness,3,0.0,10,10,1,30,60,10,RPL,precision,0,nan,nan,nan
+rate_robustness,3,0.0,10,10,1,30,60,10,RPL,macro_f1,0,nan,nan,nan
+rate_robustness,3,0.0,10,10,1,30,60,10,RPL,event_recall_new_alert,0,nan,nan,nan
+rate_robustness,3,0.0,10,10,1,30,60,10,RPL,detected_delay_mean_s,0,nan,nan,nan
+rate_robustness,3,0.0,10,10,1,30,60,10,RPL,missed_new_alerts,0,nan,nan,nan
+rate_robustness,3,0.0,10,10,1,30,60,10,RPL,false_blacklists_per_hour,0,nan,nan,nan
+rate_robustness,3,0.0,10,10,1,30,60,10,RPL,legit_isolated_frac,0,nan,nan,nan
+rate_robustness,3,0.0,10,10,1,30,60,10,RPL,radio_power_mw,10,59.95557618536433,59.950585032024804,59.960567338703854
+rate_robustness,3,0.0,10,10,1,30,60,10,RPL,legit_join_fraction,10,1.0,1.0,1.0
+rate_robustness,3,0.0,10,10,1,30,60,10,RPL,ari,10,0.7800822248531337,0.685816290233709,0.8743481594725584
+rate_robustness,3,0.0,10,10,1,30,60,10,RPL,drt_s,10,2382.0,1638.840915973372,3125.159084026628
+rate_robustness,3,0.0,10,10,1,30,60,10,RPL,callback_cpu_median_us,0,nan,nan,nan
+rate_robustness,3,0.0,10,10,1,30,60,10,RPL,callback_cpu_p95_us,0,nan,nan,nan
+rate_robustness,3,0.0,30,30,1,30,60,10,AEF learning,pdr_up,10,0.9987685308837296,0.9982374658356432,0.999299595931816
+rate_robustness,3,0.0,30,30,1,30,60,10,AEF learning,pdr_down,10,0.8163266566667309,0.7279415341279175,0.9047117792055442
+rate_robustness,3,0.0,30,30,1,30,60,10,AEF learning,delivery_up,10,0.9596556473829201,0.9165787029483766,1.0027325918174634
+rate_robustness,3,0.0,30,30,1,30,60,10,AEF learning,fpr,10,0.06818181818181819,0.004518629660405893,0.1318450067032305
+rate_robustness,3,0.0,30,30,1,30,60,10,AEF learning,tpr,10,0.9857142857142858,0.9533977548171686,1.018030816611403
+rate_robustness,3,0.0,30,30,1,30,60,10,AEF learning,precision,10,0.860909090909091,0.7317851536806177,0.9900330281375642
+rate_robustness,3,0.0,30,30,1,30,60,10,AEF learning,macro_f1,10,0.9342273357122712,0.8795143100805538,0.9889403613439887
+rate_robustness,3,0.0,30,30,1,30,60,10,AEF learning,event_recall_new_alert,10,0.9857142857142858,0.9533977548171686,1.018030816611403
+rate_robustness,3,0.0,30,30,1,30,60,10,AEF learning,detected_delay_mean_s,10,332.7586208000001,203.27875990526357,462.2384816947366
+rate_robustness,3,0.0,30,30,1,30,60,10,AEF learning,missed_new_alerts,10,0.1,-0.12621571627982048,0.3262157162798205
+rate_robustness,3,0.0,30,30,1,30,60,10,AEF learning,false_blacklists_per_hour,10,3.1636363636363636,-0.010586599984868439,6.337859327257595
+rate_robustness,3,0.0,30,30,1,30,60,10,AEF learning,legit_isolated_frac,10,0.008752945075757575,-0.0007384875266261085,0.018244377678141258
+rate_robustness,3,0.0,30,30,1,30,60,10,AEF learning,radio_power_mw,10,59.95876227424294,59.95370844178827,59.963816106697614
+rate_robustness,3,0.0,30,30,1,30,60,10,AEF learning,legit_join_fraction,10,1.0,1.0,1.0
+rate_robustness,3,0.0,30,30,1,30,60,10,AEF learning,ari,10,0.7867008989376837,0.6834910287499114,0.889910769125456
+rate_robustness,3,0.0,30,30,1,30,60,10,AEF learning,drt_s,10,2436.0,1498.6476707804104,3373.3523292195896
+rate_robustness,3,0.0,30,30,1,30,60,10,AEF learning,callback_cpu_median_us,0,nan,nan,nan
+rate_robustness,3,0.0,30,30,1,30,60,10,AEF learning,callback_cpu_p95_us,0,nan,nan,nan
+rate_robustness,3,0.0,30,30,1,30,60,10,DIS-FDM,pdr_up,10,0.9988541804066123,0.9980792662500311,0.9996290945631936
+rate_robustness,3,0.0,30,30,1,30,60,10,DIS-FDM,pdr_down,10,0.803732556976547,0.7200578515060587,0.8874072624470353
+rate_robustness,3,0.0,30,30,1,30,60,10,DIS-FDM,delivery_up,10,0.9606611570247934,0.9124935737754811,1.0088287402741056
+rate_robustness,3,0.0,30,30,1,30,60,10,DIS-FDM,fpr,10,0.045454545454545456,-0.019577900542787685,0.1104869914518786
+rate_robustness,3,0.0,30,30,1,30,60,10,DIS-FDM,tpr,10,0.02857142857142857,-0.014517279291394378,0.07166013643425152
+rate_robustness,3,0.0,30,30,1,30,60,10,DIS-FDM,precision,3,0.21428571428571427,-0.4254775639306856,0.8540489925021142
+rate_robustness,3,0.0,30,30,1,30,60,10,DIS-FDM,macro_f1,10,0.4390188651218064,0.41244125977392493,0.46559647046968783
+rate_robustness,3,0.0,30,30,1,30,60,10,DIS-FDM,event_recall_new_alert,10,0.02857142857142857,-0.014517279291394378,0.07166013643425152
+rate_robustness,3,0.0,30,30,1,30,60,10,DIS-FDM,detected_delay_mean_s,2,1575.5755,1134.6003115286887,2016.550688471311
+rate_robustness,3,0.0,30,30,1,30,60,10,DIS-FDM,missed_new_alerts,10,6.8,6.498379044960239,7.101620955039761
+rate_robustness,3,0.0,30,30,1,30,60,10,DIS-FDM,false_blacklists_per_hour,10,3.2727272727272725,-2.8389388253283094,9.384393370782854
+rate_robustness,3,0.0,30,30,1,30,60,10,DIS-FDM,legit_isolated_frac,10,0.01962508793290043,-0.006911439980341983,0.04616161584614284
+rate_robustness,3,0.0,30,30,1,30,60,10,DIS-FDM,radio_power_mw,10,59.959143224878005,59.955493143000965,59.962793306755046
+rate_robustness,3,0.0,30,30,1,30,60,10,DIS-FDM,legit_join_fraction,10,1.0,1.0,1.0
+rate_robustness,3,0.0,30,30,1,30,60,10,DIS-FDM,ari,10,0.7752155700390958,0.6752568293947208,0.8751743106834708
+rate_robustness,3,0.0,30,30,1,30,60,10,DIS-FDM,drt_s,10,2694.0,1895.243869744687,3492.756130255313
+rate_robustness,3,0.0,30,30,1,30,60,10,DIS-FDM,callback_cpu_median_us,0,nan,nan,nan
+rate_robustness,3,0.0,30,30,1,30,60,10,DIS-FDM,callback_cpu_p95_us,0,nan,nan,nan
+rate_robustness,3,0.0,30,30,1,30,60,10,Li-MSD,pdr_up,10,0.99896111576229,0.9982539843589379,0.9996682471656421
+rate_robustness,3,0.0,30,30,1,30,60,10,Li-MSD,pdr_down,10,0.8034490542868713,0.7191762340294913,0.8877218745442513
+rate_robustness,3,0.0,30,30,1,30,60,10,Li-MSD,delivery_up,10,0.9616804407713498,0.9137463982382812,1.0096144833044185
+rate_robustness,3,0.0,30,30,1,30,60,10,Li-MSD,fpr,10,0.013636363636363636,-0.00831041417878108,0.03558314145150835
+rate_robustness,3,0.0,30,30,1,30,60,10,Li-MSD,tpr,10,0.014285714285714285,-0.01803081661140292,0.04660224518283149
+rate_robustness,3,0.0,30,30,1,30,60,10,Li-MSD,precision,2,0.16666666666666666,-1.9510341226957821,2.2843674560291154
+rate_robustness,3,0.0,30,30,1,30,60,10,Li-MSD,macro_f1,10,0.43876470588235295,0.4190177718440089,0.458511639920697
+rate_robustness,3,0.0,30,30,1,30,60,10,Li-MSD,event_recall_new_alert,10,0.014285714285714285,-0.01803081661140292,0.04660224518283149
+rate_robustness,3,0.0,30,30,1,30,60,10,Li-MSD,detected_delay_mean_s,1,2110.577008,nan,nan
+rate_robustness,3,0.0,30,30,1,30,60,10,Li-MSD,missed_new_alerts,10,6.9,6.67378428372018,7.1262157162798205
+rate_robustness,3,0.0,30,30,1,30,60,10,Li-MSD,false_blacklists_per_hour,10,0.3272727272727273,-0.19944994029074586,0.8539953948362005
+rate_robustness,3,0.0,30,30,1,30,60,10,Li-MSD,legit_isolated_frac,10,0.003472867932900433,-0.0032869690862098746,0.01023270495201074
+rate_robustness,3,0.0,30,30,1,30,60,10,Li-MSD,radio_power_mw,10,59.95959190984687,59.95625957266393,59.96292424702981
+rate_robustness,3,0.0,30,30,1,30,60,10,Li-MSD,legit_join_fraction,10,1.0,1.0,1.0
+rate_robustness,3,0.0,30,30,1,30,60,10,Li-MSD,ari,10,0.7755759034960196,0.6758833101976729,0.8752684967943662
+rate_robustness,3,0.0,30,30,1,30,60,10,Li-MSD,drt_s,10,2694.0,1895.243869744687,3492.756130255313
+rate_robustness,3,0.0,30,30,1,30,60,10,Li-MSD,callback_cpu_median_us,0,nan,nan,nan
+rate_robustness,3,0.0,30,30,1,30,60,10,Li-MSD,callback_cpu_p95_us,0,nan,nan,nan
+rate_robustness,3,0.0,30,30,1,30,60,10,RPL,pdr_up,10,0.9989754093779327,0.9982667823425385,0.9996840364133269
+rate_robustness,3,0.0,30,30,1,30,60,10,RPL,pdr_down,10,0.8033254127194699,0.7190052927612814,0.8876455326776583
+rate_robustness,3,0.0,30,30,1,30,60,10,RPL,delivery_up,10,0.9622176308539945,0.915020810766214,1.009414450941775
+rate_robustness,3,0.0,30,30,1,30,60,10,RPL,fpr,0,nan,nan,nan
+rate_robustness,3,0.0,30,30,1,30,60,10,RPL,tpr,0,nan,nan,nan
+rate_robustness,3,0.0,30,30,1,30,60,10,RPL,precision,0,nan,nan,nan
+rate_robustness,3,0.0,30,30,1,30,60,10,RPL,macro_f1,0,nan,nan,nan
+rate_robustness,3,0.0,30,30,1,30,60,10,RPL,event_recall_new_alert,0,nan,nan,nan
+rate_robustness,3,0.0,30,30,1,30,60,10,RPL,detected_delay_mean_s,0,nan,nan,nan
+rate_robustness,3,0.0,30,30,1,30,60,10,RPL,missed_new_alerts,0,nan,nan,nan
+rate_robustness,3,0.0,30,30,1,30,60,10,RPL,false_blacklists_per_hour,0,nan,nan,nan
+rate_robustness,3,0.0,30,30,1,30,60,10,RPL,legit_isolated_frac,0,nan,nan,nan
+rate_robustness,3,0.0,30,30,1,30,60,10,RPL,radio_power_mw,10,59.95915825282914,59.95552335358286,59.96279315207542
+rate_robustness,3,0.0,30,30,1,30,60,10,RPL,legit_join_fraction,10,1.0,1.0,1.0
+rate_robustness,3,0.0,30,30,1,30,60,10,RPL,ari,10,0.7758380676126367,0.6764926607517001,0.8751834744735734
+rate_robustness,3,0.0,30,30,1,30,60,10,RPL,drt_s,10,2694.0,1895.243869744687,3492.756130255313
+rate_robustness,3,0.0,30,30,1,30,60,10,RPL,callback_cpu_median_us,0,nan,nan,nan
+rate_robustness,3,0.0,30,30,1,30,60,10,RPL,callback_cpu_p95_us,0,nan,nan,nan
+rate_robustness,3,0.3,3,2,1,30,60,10,AEF learning,pdr_up,10,0.9281844521040672,0.905372135747436,0.9509967684606984
+rate_robustness,3,0.3,3,2,1,30,60,10,AEF learning,pdr_down,10,0.9804207632070687,0.961110334093393,0.9997311923207445
+rate_robustness,3,0.3,3,2,1,30,60,10,AEF learning,delivery_up,10,0.6648760330578513,0.5464610273828416,0.7832910387328609
+rate_robustness,3,0.3,3,2,1,30,60,10,AEF learning,fpr,10,0.45,0.3400522045047497,0.5599477954952503
+rate_robustness,3,0.3,3,2,1,30,60,10,AEF learning,tpr,10,1.0,1.0,1.0
+rate_robustness,3,0.3,3,2,1,30,60,10,AEF learning,precision,10,0.42913963296989277,0.36854711954396036,0.4897321463958252
+rate_robustness,3,0.3,3,2,1,30,60,10,AEF learning,macro_f1,10,0.6468706686005448,0.5691607486395853,0.7245805885615042
+rate_robustness,3,0.3,3,2,1,30,60,10,AEF learning,event_recall_new_alert,10,1.0,1.0,1.0
+rate_robustness,3,0.3,3,2,1,30,60,10,AEF learning,detected_delay_mean_s,10,21.426456342857147,17.029099859857734,25.82381282585656
+rate_robustness,3,0.3,3,2,1,30,60,10,AEF learning,missed_new_alerts,10,0.0,0.0,0.0
+rate_robustness,3,0.3,3,2,1,30,60,10,AEF learning,false_blacklists_per_hour,10,846.6545454545455,690.2806462944638,1003.0284446146272
+rate_robustness,3,0.3,3,2,1,30,60,10,AEF learning,legit_isolated_frac,10,0.21249799102813852,0.13756682544258775,0.2874291566136893
+rate_robustness,3,0.3,3,2,1,30,60,10,AEF learning,radio_power_mw,10,59.96894584899669,59.96661712666716,59.97127457132622
+rate_robustness,3,0.3,3,2,1,30,60,10,AEF learning,legit_join_fraction,10,1.0,1.0,1.0
+rate_robustness,3,0.3,3,2,1,30,60,10,AEF learning,ari,10,0.9855722941385257,0.9643989550180097,1.0067456332590417
+rate_robustness,3,0.3,3,2,1,30,60,10,AEF learning,drt_s,10,1494.0,536.9283826136395,2451.0716173863602
+rate_robustness,3,0.3,3,2,1,30,60,10,AEF learning,callback_cpu_median_us,0,nan,nan,nan
+rate_robustness,3,0.3,3,2,1,30,60,10,AEF learning,callback_cpu_p95_us,0,nan,nan,nan
+rate_robustness,3,0.3,3,2,1,30,60,10,DIS-FDM,pdr_up,10,0.9469006334588247,0.9352753948814475,0.9585258720362019
+rate_robustness,3,0.3,3,2,1,30,60,10,DIS-FDM,pdr_down,10,0.8280813033824327,0.7252864913428322,0.9308761154220332
+rate_robustness,3,0.3,3,2,1,30,60,10,DIS-FDM,delivery_up,10,0.6355096418732783,0.5239954166140206,0.747023867132536
+rate_robustness,3,0.3,3,2,1,30,60,10,DIS-FDM,fpr,10,0.459090909090909,0.3513012782888527,0.5668805398929653
+rate_robustness,3,0.3,3,2,1,30,60,10,DIS-FDM,tpr,10,1.0,1.0,1.0
+rate_robustness,3,0.3,3,2,1,30,60,10,DIS-FDM,precision,10,0.423518717937213,0.36416373669200947,0.48287369918241657
+rate_robustness,3,0.3,3,2,1,30,60,10,DIS-FDM,macro_f1,10,0.6405764144533495,0.5643783249079526,0.7167745039987463
+rate_robustness,3,0.3,3,2,1,30,60,10,DIS-FDM,event_recall_new_alert,10,1.0,1.0,1.0
+rate_robustness,3,0.3,3,2,1,30,60,10,DIS-FDM,detected_delay_mean_s,10,46.590314285714285,43.27854959077188,49.90207898065669
+rate_robustness,3,0.3,3,2,1,30,60,10,DIS-FDM,missed_new_alerts,10,0.0,0.0,0.0
+rate_robustness,3,0.3,3,2,1,30,60,10,DIS-FDM,false_blacklists_per_hour,10,101.78181818181818,76.37138538612534,127.19225097751102
+rate_robustness,3,0.3,3,2,1,30,60,10,DIS-FDM,legit_isolated_frac,10,0.3956359361471861,0.2919725843963856,0.4992992878979866
+rate_robustness,3,0.3,3,2,1,30,60,10,DIS-FDM,radio_power_mw,10,59.95671084260774,59.950267187147965,59.96315449806752
+rate_robustness,3,0.3,3,2,1,30,60,10,DIS-FDM,legit_join_fraction,10,0.9954545454545455,0.9851720128963718,1.005737078012719
+rate_robustness,3,0.3,3,2,1,30,60,10,DIS-FDM,ari,10,0.8002359304083763,0.68853278941805,0.9119390713987026
+rate_robustness,3,0.3,3,2,1,30,60,10,DIS-FDM,drt_s,10,2796.0,2169.0273180409154,3422.9726819590846
+rate_robustness,3,0.3,3,2,1,30,60,10,DIS-FDM,callback_cpu_median_us,0,nan,nan,nan
+rate_robustness,3,0.3,3,2,1,30,60,10,DIS-FDM,callback_cpu_p95_us,0,nan,nan,nan
+rate_robustness,3,0.3,3,2,1,30,60,10,Li-MSD,pdr_up,10,0.9389318538855091,0.9218118585774928,0.9560518491935255
+rate_robustness,3,0.3,3,2,1,30,60,10,Li-MSD,pdr_down,10,0.8994285368236701,0.8423777991554277,0.9564792744919125
+rate_robustness,3,0.3,3,2,1,30,60,10,Li-MSD,delivery_up,10,0.6150964187327823,0.5009761479509087,0.7292166895146559
+rate_robustness,3,0.3,3,2,1,30,60,10,Li-MSD,fpr,10,0.0,0.0,0.0
+rate_robustness,3,0.3,3,2,1,30,60,10,Li-MSD,tpr,10,0.8,0.6800461139604903,0.9199538860395098
+rate_robustness,3,0.3,3,2,1,30,60,10,Li-MSD,precision,10,1.0,1.0,1.0
+rate_robustness,3,0.3,3,2,1,30,60,10,Li-MSD,macro_f1,10,0.9249080249589039,0.8782524428915333,0.9715636070262745
+rate_robustness,3,0.3,3,2,1,30,60,10,Li-MSD,event_recall_new_alert,10,0.8,0.6800461139604903,0.9199538860395098
+rate_robustness,3,0.3,3,2,1,30,60,10,Li-MSD,detected_delay_mean_s,10,842.6412588152382,565.9025034254435,1119.380014205033
+rate_robustness,3,0.3,3,2,1,30,60,10,Li-MSD,missed_new_alerts,10,1.4,0.560322797723432,2.239677202276568
+rate_robustness,3,0.3,3,2,1,30,60,10,Li-MSD,false_blacklists_per_hour,10,0.0,0.0,0.0
+rate_robustness,3,0.3,3,2,1,30,60,10,Li-MSD,legit_isolated_frac,10,0.0,0.0,0.0
+rate_robustness,3,0.3,3,2,1,30,60,10,Li-MSD,radio_power_mw,10,59.96015400993544,59.95719167818182,59.96311634168905
+rate_robustness,3,0.3,3,2,1,30,60,10,Li-MSD,legit_join_fraction,10,1.0,1.0,1.0
+rate_robustness,3,0.3,3,2,1,30,60,10,Li-MSD,ari,10,0.8467826833322999,0.7398820925261019,0.9536832741384978
+rate_robustness,3,0.3,3,2,1,30,60,10,Li-MSD,drt_s,10,2610.0,1816.953385299083,3403.046614700917
+rate_robustness,3,0.3,3,2,1,30,60,10,Li-MSD,callback_cpu_median_us,0,nan,nan,nan
+rate_robustness,3,0.3,3,2,1,30,60,10,Li-MSD,callback_cpu_p95_us,0,nan,nan,nan
+rate_robustness,3,0.3,3,2,1,30,60,10,RPL,pdr_up,10,0.9434171699714066,0.929396492655542,0.9574378472872711
+rate_robustness,3,0.3,3,2,1,30,60,10,RPL,pdr_down,10,0.8430191773774227,0.7587747495508116,0.9272636052040338
+rate_robustness,3,0.3,3,2,1,30,60,10,RPL,delivery_up,10,0.622809917355372,0.4981380389605714,0.7474817957501725
+rate_robustness,3,0.3,3,2,1,30,60,10,RPL,fpr,0,nan,nan,nan
+rate_robustness,3,0.3,3,2,1,30,60,10,RPL,tpr,0,nan,nan,nan
+rate_robustness,3,0.3,3,2,1,30,60,10,RPL,precision,0,nan,nan,nan
+rate_robustness,3,0.3,3,2,1,30,60,10,RPL,macro_f1,0,nan,nan,nan
+rate_robustness,3,0.3,3,2,1,30,60,10,RPL,event_recall_new_alert,0,nan,nan,nan
+rate_robustness,3,0.3,3,2,1,30,60,10,RPL,detected_delay_mean_s,0,nan,nan,nan
+rate_robustness,3,0.3,3,2,1,30,60,10,RPL,missed_new_alerts,0,nan,nan,nan
+rate_robustness,3,0.3,3,2,1,30,60,10,RPL,false_blacklists_per_hour,0,nan,nan,nan
+rate_robustness,3,0.3,3,2,1,30,60,10,RPL,legit_isolated_frac,0,nan,nan,nan
+rate_robustness,3,0.3,3,2,1,30,60,10,RPL,radio_power_mw,10,59.956191784383215,59.950252562935745,59.962131005830685
+rate_robustness,3,0.3,3,2,1,30,60,10,RPL,legit_join_fraction,10,1.0,1.0,1.0
+rate_robustness,3,0.3,3,2,1,30,60,10,RPL,ari,10,0.7970183523146275,0.6860633259684232,0.9079733786608317
+rate_robustness,3,0.3,3,2,1,30,60,10,RPL,drt_s,10,2802.0,2105.769910312785,3498.230089687215
+rate_robustness,3,0.3,3,2,1,30,60,10,RPL,callback_cpu_median_us,0,nan,nan,nan
+rate_robustness,3,0.3,3,2,1,30,60,10,RPL,callback_cpu_p95_us,0,nan,nan,nan
+rate_robustness,3,0.3,10,10,1,30,60,10,AEF learning,pdr_up,10,0.924889707450637,0.904476656540999,0.9453027583602751
+rate_robustness,3,0.3,10,10,1,30,60,10,AEF learning,pdr_down,10,0.9844824601084623,0.9754946752874185,0.9934702449295061
+rate_robustness,3,0.3,10,10,1,30,60,10,AEF learning,delivery_up,10,0.6627823691460055,0.5445486948739787,0.7810160434180323
+rate_robustness,3,0.3,10,10,1,30,60,10,AEF learning,fpr,10,0.4590909090909091,0.353503545819437,0.5646782723623812
+rate_robustness,3,0.3,10,10,1,30,60,10,AEF learning,tpr,10,1.0,1.0,1.0
+rate_robustness,3,0.3,10,10,1,30,60,10,AEF learning,precision,10,0.42288963296989274,0.3648576268755603,0.4809216390642252
+rate_robustness,3,0.3,10,10,1,30,60,10,AEF learning,macro_f1,10,0.6405744344782237,0.5658488028724056,0.7153000660840418
+rate_robustness,3,0.3,10,10,1,30,60,10,AEF learning,event_recall_new_alert,10,1.0,1.0,1.0
+rate_robustness,3,0.3,10,10,1,30,60,10,AEF learning,detected_delay_mean_s,10,29.015572114285714,24.022403000642754,34.008741227928674
+rate_robustness,3,0.3,10,10,1,30,60,10,AEF learning,missed_new_alerts,10,0.0,0.0,0.0
+rate_robustness,3,0.3,10,10,1,30,60,10,AEF learning,false_blacklists_per_hour,10,889.8545454545454,700.9408350210317,1078.768255888059
+rate_robustness,3,0.3,10,10,1,30,60,10,AEF learning,legit_isolated_frac,10,0.2221772350324675,0.13788428629145205,0.30647018377348295
+rate_robustness,3,0.3,10,10,1,30,60,10,AEF learning,radio_power_mw,10,59.96989190987169,59.96761925681357,59.97216456292981
+rate_robustness,3,0.3,10,10,1,30,60,10,AEF learning,legit_join_fraction,10,1.0,1.0,1.0
+rate_robustness,3,0.3,10,10,1,30,60,10,AEF learning,ari,10,0.986754974373077,0.9729727335183894,1.0005372152277647
+rate_robustness,3,0.3,10,10,1,30,60,10,AEF learning,drt_s,10,1584.0,577.3629385613136,2590.6370614386865
+rate_robustness,3,0.3,10,10,1,30,60,10,AEF learning,callback_cpu_median_us,0,nan,nan,nan
+rate_robustness,3,0.3,10,10,1,30,60,10,AEF learning,callback_cpu_p95_us,0,nan,nan,nan
+rate_robustness,3,0.3,10,10,1,30,60,10,DIS-FDM,pdr_up,10,0.9418294692315478,0.9248358439891375,0.958823094473958
+rate_robustness,3,0.3,10,10,1,30,60,10,DIS-FDM,pdr_down,10,0.8461074489933538,0.757884178373305,0.9343307196134025
+rate_robustness,3,0.3,10,10,1,30,60,10,DIS-FDM,delivery_up,10,0.6245179063360882,0.5084883007851675,0.7405475118870088
+rate_robustness,3,0.3,10,10,1,30,60,10,DIS-FDM,fpr,10,0.47272727272727266,0.363046925440087,0.5824076200144583
+rate_robustness,3,0.3,10,10,1,30,60,10,DIS-FDM,tpr,10,1.0,1.0,1.0
+rate_robustness,3,0.3,10,10,1,30,60,10,DIS-FDM,precision,10,0.41671316238165745,0.35637184883468753,0.4770544759286274
+rate_robustness,3,0.3,10,10,1,30,60,10,DIS-FDM,macro_f1,10,0.6310718341549404,0.5535964954823863,0.7085471728274945
+rate_robustness,3,0.3,10,10,1,30,60,10,DIS-FDM,event_recall_new_alert,10,1.0,1.0,1.0
+rate_robustness,3,0.3,10,10,1,30,60,10,DIS-FDM,detected_delay_mean_s,10,72.57745771428573,63.31862952114221,81.83628590742924
+rate_robustness,3,0.3,10,10,1,30,60,10,DIS-FDM,missed_new_alerts,10,0.0,0.0,0.0
+rate_robustness,3,0.3,10,10,1,30,60,10,DIS-FDM,false_blacklists_per_hour,10,123.49090909090907,95.20294625453565,151.7788719272825
+rate_robustness,3,0.3,10,10,1,30,60,10,DIS-FDM,legit_isolated_frac,10,0.4025189948593074,0.2921523203383227,0.5128856693802921
+rate_robustness,3,0.3,10,10,1,30,60,10,DIS-FDM,radio_power_mw,10,59.96312999931956,59.95859966749757,59.96766033114155
+rate_robustness,3,0.3,10,10,1,30,60,10,DIS-FDM,legit_join_fraction,10,1.0,1.0,1.0
+rate_robustness,3,0.3,10,10,1,30,60,10,DIS-FDM,ari,10,0.8025196147466506,0.6982396986389343,0.9067995308543668
+rate_robustness,3,0.3,10,10,1,30,60,10,DIS-FDM,drt_s,10,2718.0,1940.6469584108127,3495.3530415891873
+rate_robustness,3,0.3,10,10,1,30,60,10,DIS-FDM,callback_cpu_median_us,0,nan,nan,nan
+rate_robustness,3,0.3,10,10,1,30,60,10,DIS-FDM,callback_cpu_p95_us,0,nan,nan,nan
+rate_robustness,3,0.3,10,10,1,30,60,10,Li-MSD,pdr_up,10,0.9409145416055761,0.9298780307338548,0.9519510524772974
+rate_robustness,3,0.3,10,10,1,30,60,10,Li-MSD,pdr_down,10,0.8783052850468973,0.796788550593362,0.9598220195004327
+rate_robustness,3,0.3,10,10,1,30,60,10,Li-MSD,delivery_up,10,0.6234297520661156,0.5177550150281699,0.7291044891040613
+rate_robustness,3,0.3,10,10,1,30,60,10,Li-MSD,fpr,10,0.00909090909090909,-0.011474156025438227,0.029655974207256408
+rate_robustness,3,0.3,10,10,1,30,60,10,Li-MSD,tpr,10,0.5428571428571428,0.3773718202663052,0.7083424654479804
+rate_robustness,3,0.3,10,10,1,30,60,10,Li-MSD,precision,10,0.975,0.9184460709300448,1.0315539290699551
+rate_robustness,3,0.3,10,10,1,30,60,10,Li-MSD,macro_f1,10,0.7967392280823765,0.7217005741408016,0.8717778820239515
+rate_robustness,3,0.3,10,10,1,30,60,10,Li-MSD,event_recall_new_alert,10,0.5428571428571428,0.3773718202663052,0.7083424654479804
+rate_robustness,3,0.3,10,10,1,30,60,10,Li-MSD,detected_delay_mean_s,10,1116.4828573466666,894.6170659591784,1338.3486487341547
+rate_robustness,3,0.3,10,10,1,30,60,10,Li-MSD,missed_new_alerts,10,3.2,2.0416027418641374,4.358397258135863
+rate_robustness,3,0.3,10,10,1,30,60,10,Li-MSD,false_blacklists_per_hour,10,0.2181818181818182,-0.2753797446105174,0.7117433809741538
+rate_robustness,3,0.3,10,10,1,30,60,10,Li-MSD,legit_isolated_frac,10,0.0061495196428571425,-0.007761660265000399,0.020060699550714683
+rate_robustness,3,0.3,10,10,1,30,60,10,Li-MSD,radio_power_mw,10,59.96258914101437,59.95902295284142,59.966155329187316
+rate_robustness,3,0.3,10,10,1,30,60,10,Li-MSD,legit_join_fraction,10,1.0,1.0,1.0
+rate_robustness,3,0.3,10,10,1,30,60,10,Li-MSD,ari,10,0.836050040611951,0.7367721660579826,0.9353279151659194
+rate_robustness,3,0.3,10,10,1,30,60,10,Li-MSD,drt_s,10,2784.0,2084.4994506993485,3483.5005493006515
+rate_robustness,3,0.3,10,10,1,30,60,10,Li-MSD,callback_cpu_median_us,0,nan,nan,nan
+rate_robustness,3,0.3,10,10,1,30,60,10,Li-MSD,callback_cpu_p95_us,0,nan,nan,nan
+rate_robustness,3,0.3,10,10,1,30,60,10,RPL,pdr_up,10,0.9455345273373575,0.935736819037122,0.9553322356375931
+rate_robustness,3,0.3,10,10,1,30,60,10,RPL,pdr_down,10,0.8397607444349298,0.7500591462889745,0.929462342580885
+rate_robustness,3,0.3,10,10,1,30,60,10,RPL,delivery_up,10,0.6315289256198346,0.5201831463528034,0.7428747048868659
+rate_robustness,3,0.3,10,10,1,30,60,10,RPL,fpr,0,nan,nan,nan
+rate_robustness,3,0.3,10,10,1,30,60,10,RPL,tpr,0,nan,nan,nan
+rate_robustness,3,0.3,10,10,1,30,60,10,RPL,precision,0,nan,nan,nan
+rate_robustness,3,0.3,10,10,1,30,60,10,RPL,macro_f1,0,nan,nan,nan
+rate_robustness,3,0.3,10,10,1,30,60,10,RPL,event_recall_new_alert,0,nan,nan,nan
+rate_robustness,3,0.3,10,10,1,30,60,10,RPL,detected_delay_mean_s,0,nan,nan,nan
+rate_robustness,3,0.3,10,10,1,30,60,10,RPL,missed_new_alerts,0,nan,nan,nan
+rate_robustness,3,0.3,10,10,1,30,60,10,RPL,false_blacklists_per_hour,0,nan,nan,nan
+rate_robustness,3,0.3,10,10,1,30,60,10,RPL,legit_isolated_frac,0,nan,nan,nan
+rate_robustness,3,0.3,10,10,1,30,60,10,RPL,radio_power_mw,10,59.96193181151383,59.95750672173785,59.96635690128981
+rate_robustness,3,0.3,10,10,1,30,60,10,RPL,legit_join_fraction,10,1.0,1.0,1.0
+rate_robustness,3,0.3,10,10,1,30,60,10,RPL,ari,10,0.8087324581786154,0.7015875810458123,0.9158773353114185
+rate_robustness,3,0.3,10,10,1,30,60,10,RPL,drt_s,10,2784.0,2084.4994506993485,3483.5005493006515
+rate_robustness,3,0.3,10,10,1,30,60,10,RPL,callback_cpu_median_us,0,nan,nan,nan
+rate_robustness,3,0.3,10,10,1,30,60,10,RPL,callback_cpu_p95_us,0,nan,nan,nan
+rate_robustness,3,0.3,30,30,1,30,60,10,AEF learning,pdr_up,10,0.9343386555588836,0.9139580757659982,0.9547192353517691
+rate_robustness,3,0.3,30,30,1,30,60,10,AEF learning,pdr_down,10,0.8549377080330075,0.7679449259981411,0.9419304900678739
+rate_robustness,3,0.3,30,30,1,30,60,10,AEF learning,delivery_up,10,0.6431680440771349,0.5346060191968711,0.7517300689573987
+rate_robustness,3,0.3,30,30,1,30,60,10,AEF learning,fpr,10,0.47727272727272724,0.36437278816549884,0.5901726663799556
+rate_robustness,3,0.3,30,30,1,30,60,10,AEF learning,tpr,10,1.0,1.0,1.0
+rate_robustness,3,0.3,30,30,1,30,60,10,AEF learning,precision,10,0.4150464957149908,0.35355071077875055,0.47654228065123105
+rate_robustness,3,0.3,30,30,1,30,60,10,AEF learning,macro_f1,10,0.627780316831165,0.548012569053447,0.707548064608883
+rate_robustness,3,0.3,30,30,1,30,60,10,AEF learning,event_recall_new_alert,10,1.0,1.0,1.0
+rate_robustness,3,0.3,30,30,1,30,60,10,AEF learning,detected_delay_mean_s,10,120.65553577142857,67.65992152838865,173.6511500144685
+rate_robustness,3,0.3,30,30,1,30,60,10,AEF learning,missed_new_alerts,10,0.0,0.0,0.0
+rate_robustness,3,0.3,30,30,1,30,60,10,AEF learning,false_blacklists_per_hour,10,642.8727272727273,501.65361254888523,784.0918419965693
+rate_robustness,3,0.3,30,30,1,30,60,10,AEF learning,legit_isolated_frac,10,0.19515259088744588,0.12779293188136326,0.2625122498935285
+rate_robustness,3,0.3,30,30,1,30,60,10,AEF learning,radio_power_mw,10,59.96298398877438,59.95896355333708,59.96700442421169
+rate_robustness,3,0.3,30,30,1,30,60,10,AEF learning,legit_join_fraction,10,1.0,1.0,1.0
+rate_robustness,3,0.3,30,30,1,30,60,10,AEF learning,ari,10,0.8387709890859203,0.7372082103392199,0.9403337678326207
+rate_robustness,3,0.3,30,30,1,30,60,10,AEF learning,drt_s,10,2586.0,1806.438191130695,3365.561808869305
+rate_robustness,3,0.3,30,30,1,30,60,10,AEF learning,callback_cpu_median_us,0,nan,nan,nan
+rate_robustness,3,0.3,30,30,1,30,60,10,AEF learning,callback_cpu_p95_us,0,nan,nan,nan
+rate_robustness,3,0.3,30,30,1,30,60,10,DIS-FDM,pdr_up,10,0.944244584245417,0.9329394626984918,0.9555497057923422
+rate_robustness,3,0.3,30,30,1,30,60,10,DIS-FDM,pdr_down,10,0.8571220229861776,0.7696865460004424,0.9445574999719127
+rate_robustness,3,0.3,30,30,1,30,60,10,DIS-FDM,delivery_up,10,0.6292148760330579,0.5118695312897408,0.7465602207763751
+rate_robustness,3,0.3,30,30,1,30,60,10,DIS-FDM,fpr,10,0.47272727272727266,0.35086974142137284,0.5945848040331725
+rate_robustness,3,0.3,30,30,1,30,60,10,DIS-FDM,tpr,10,0.4428571428571429,0.27287505748183094,0.6128392282324548
+rate_robustness,3,0.3,30,30,1,30,60,10,DIS-FDM,precision,10,0.23263870632291686,0.14560104024692655,0.31967637239890717
+rate_robustness,3,0.3,30,30,1,30,60,10,DIS-FDM,macro_f1,10,0.4518334644759454,0.36797388600003494,0.5356930429518558
+rate_robustness,3,0.3,30,30,1,30,60,10,DIS-FDM,event_recall_new_alert,10,0.4428571428571429,0.27287505748183094,0.6128392282324548
+rate_robustness,3,0.3,30,30,1,30,60,10,DIS-FDM,detected_delay_mean_s,9,326.0138333333333,235.65430500655822,416.3733616601084
+rate_robustness,3,0.3,30,30,1,30,60,10,DIS-FDM,missed_new_alerts,10,3.9,2.7101254023728165,5.089874597627183
+rate_robustness,3,0.3,30,30,1,30,60,10,DIS-FDM,false_blacklists_per_hour,10,124.25454545454545,95.38025660754566,153.12883430154523
+rate_robustness,3,0.3,30,30,1,30,60,10,DIS-FDM,legit_isolated_frac,10,0.39987890016233774,0.28971076691720443,0.510047033407471
+rate_robustness,3,0.3,30,30,1,30,60,10,DIS-FDM,radio_power_mw,10,59.963441830163916,59.95921114075663,59.9676725195712
+rate_robustness,3,0.3,30,30,1,30,60,10,DIS-FDM,legit_join_fraction,10,1.0,1.0,1.0
+rate_robustness,3,0.3,30,30,1,30,60,10,DIS-FDM,ari,10,0.8199896063922137,0.7118019261411617,0.9281772866432658
+rate_robustness,3,0.3,30,30,1,30,60,10,DIS-FDM,drt_s,10,2706.0,1911.0971571409475,3500.9028428590527
+rate_robustness,3,0.3,30,30,1,30,60,10,DIS-FDM,callback_cpu_median_us,0,nan,nan,nan
+rate_robustness,3,0.3,30,30,1,30,60,10,DIS-FDM,callback_cpu_p95_us,0,nan,nan,nan
+rate_robustness,3,0.3,30,30,1,30,60,10,Li-MSD,pdr_up,10,0.9406351849634887,0.9258378977200084,0.9554324722069691
+rate_robustness,3,0.3,30,30,1,30,60,10,Li-MSD,pdr_down,10,0.853873767666968,0.7619789950792822,0.9457685402546537
+rate_robustness,3,0.3,30,30,1,30,60,10,Li-MSD,delivery_up,10,0.6269834710743801,0.5100611666292785,0.7439057755194818
+rate_robustness,3,0.3,30,30,1,30,60,10,Li-MSD,fpr,10,0.013636363636363636,-0.00831041417878108,0.03558314145150835
+rate_robustness,3,0.3,30,30,1,30,60,10,Li-MSD,tpr,10,0.0,0.0,0.0
+rate_robustness,3,0.3,30,30,1,30,60,10,Li-MSD,precision,2,0.0,0.0,0.0
+rate_robustness,3,0.3,30,30,1,30,60,10,Li-MSD,macro_f1,10,0.4279143657462986,0.4223302251709253,0.4334985063216719
+rate_robustness,3,0.3,30,30,1,30,60,10,Li-MSD,event_recall_new_alert,10,0.0,0.0,0.0
+rate_robustness,3,0.3,30,30,1,30,60,10,Li-MSD,detected_delay_mean_s,0,nan,nan,nan
+rate_robustness,3,0.3,30,30,1,30,60,10,Li-MSD,missed_new_alerts,10,7.0,7.0,7.0
+rate_robustness,3,0.3,30,30,1,30,60,10,Li-MSD,false_blacklists_per_hour,10,0.3272727272727273,-0.19944994029074586,0.8539953948362005
+rate_robustness,3,0.3,30,30,1,30,60,10,Li-MSD,legit_isolated_frac,10,0.007160846742424243,-0.007374104911170877,0.021695798396019362
+rate_robustness,3,0.3,30,30,1,30,60,10,Li-MSD,radio_power_mw,10,59.963610943247865,59.95963780305085,59.967584083444876
+rate_robustness,3,0.3,30,30,1,30,60,10,Li-MSD,legit_join_fraction,10,1.0,1.0,1.0
+rate_robustness,3,0.3,30,30,1,30,60,10,Li-MSD,ari,10,0.8154419028732433,0.700502774071978,0.9303810316745085
+rate_robustness,3,0.3,30,30,1,30,60,10,Li-MSD,drt_s,10,2676.0,1952.6188723322985,3399.3811276677015
+rate_robustness,3,0.3,30,30,1,30,60,10,Li-MSD,callback_cpu_median_us,0,nan,nan,nan
+rate_robustness,3,0.3,30,30,1,30,60,10,Li-MSD,callback_cpu_p95_us,0,nan,nan,nan
+rate_robustness,3,0.3,30,30,1,30,60,10,RPL,pdr_up,10,0.9402921351286431,0.9255322238017822,0.9550520464555039
+rate_robustness,3,0.3,30,30,1,30,60,10,RPL,pdr_down,10,0.8546977931806043,0.7618836742126386,0.9475119121485701
+rate_robustness,3,0.3,30,30,1,30,60,10,RPL,delivery_up,10,0.6278925619834711,0.5108482853681939,0.7449368385987483
+rate_robustness,3,0.3,30,30,1,30,60,10,RPL,fpr,0,nan,nan,nan
+rate_robustness,3,0.3,30,30,1,30,60,10,RPL,tpr,0,nan,nan,nan
+rate_robustness,3,0.3,30,30,1,30,60,10,RPL,precision,0,nan,nan,nan
+rate_robustness,3,0.3,30,30,1,30,60,10,RPL,macro_f1,0,nan,nan,nan
+rate_robustness,3,0.3,30,30,1,30,60,10,RPL,event_recall_new_alert,0,nan,nan,nan
+rate_robustness,3,0.3,30,30,1,30,60,10,RPL,detected_delay_mean_s,0,nan,nan,nan
+rate_robustness,3,0.3,30,30,1,30,60,10,RPL,missed_new_alerts,0,nan,nan,nan
+rate_robustness,3,0.3,30,30,1,30,60,10,RPL,false_blacklists_per_hour,0,nan,nan,nan
+rate_robustness,3,0.3,30,30,1,30,60,10,RPL,legit_isolated_frac,0,nan,nan,nan
+rate_robustness,3,0.3,30,30,1,30,60,10,RPL,radio_power_mw,10,59.96363983487428,59.95945844262337,59.967821227125185
+rate_robustness,3,0.3,30,30,1,30,60,10,RPL,legit_join_fraction,10,1.0,1.0,1.0
+rate_robustness,3,0.3,30,30,1,30,60,10,RPL,ari,10,0.8174567933941527,0.7016018267795301,0.9333117600087752
+rate_robustness,3,0.3,30,30,1,30,60,10,RPL,drt_s,10,2742.0,2011.340745582334,3472.659254417666
+rate_robustness,3,0.3,30,30,1,30,60,10,RPL,callback_cpu_median_us,0,nan,nan,nan
+rate_robustness,3,0.3,30,30,1,30,60,10,RPL,callback_cpu_p95_us,0,nan,nan,nan
+resilience_reference,0,0.0,3,2,0.8,30,60,10,RPL,pdr_up,5,0.9998118794516329,0.9995623090756469,1.0000614498276188
+resilience_reference,0,0.0,3,2,0.8,30,60,10,RPL,pdr_down,5,0.9956315919292742,0.9945800846859782,0.9966830991725701
+resilience_reference,0,0.0,3,2,0.8,30,60,10,RPL,delivery_up,5,0.999853709508882,0.9989064788294895,1.0008009401882745
+resilience_reference,0,0.0,3,2,0.8,30,60,10,RPL,fpr,0,nan,nan,nan
+resilience_reference,0,0.0,3,2,0.8,30,60,10,RPL,tpr,0,nan,nan,nan
+resilience_reference,0,0.0,3,2,0.8,30,60,10,RPL,precision,0,nan,nan,nan
+resilience_reference,0,0.0,3,2,0.8,30,60,10,RPL,macro_f1,0,nan,nan,nan
+resilience_reference,0,0.0,3,2,0.8,30,60,10,RPL,event_recall_new_alert,0,nan,nan,nan
+resilience_reference,0,0.0,3,2,0.8,30,60,10,RPL,detected_delay_mean_s,0,nan,nan,nan
+resilience_reference,0,0.0,3,2,0.8,30,60,10,RPL,missed_new_alerts,0,nan,nan,nan
+resilience_reference,0,0.0,3,2,0.8,30,60,10,RPL,false_blacklists_per_hour,0,nan,nan,nan
+resilience_reference,0,0.0,3,2,0.8,30,60,10,RPL,legit_isolated_frac,0,nan,nan,nan
+resilience_reference,0,0.0,3,2,0.8,30,60,10,RPL,radio_power_mw,5,59.97541427821848,59.973977987568475,59.976850568868485
+resilience_reference,0,0.0,3,2,0.8,30,60,10,RPL,legit_join_fraction,5,1.0,1.0,1.0
+resilience_reference,0,0.0,3,2,0.8,30,60,10,RPL,ari,0,nan,nan,nan
+resilience_reference,0,0.0,3,2,0.8,30,60,10,RPL,drt_s,5,0.0,0.0,0.0
+resilience_reference,0,0.0,3,2,0.8,30,60,10,RPL,callback_cpu_median_us,0,nan,nan,nan
+resilience_reference,0,0.0,3,2,0.8,30,60,10,RPL,callback_cpu_p95_us,0,nan,nan,nan
+resilience_reference,0,0.0,3,2,0.95,30,60,10,RPL,pdr_up,5,0.9998537204210969,0.9997826435335669,0.9999247973086268
+resilience_reference,0,0.0,3,2,0.95,30,60,10,RPL,pdr_down,5,0.9982862064576248,0.9980686046963423,0.9985038082189073
+resilience_reference,0,0.0,3,2,0.95,30,60,10,RPL,delivery_up,5,0.9999582027168235,0.9996076498030381,1.000308755630609
+resilience_reference,0,0.0,3,2,0.95,30,60,10,RPL,fpr,0,nan,nan,nan
+resilience_reference,0,0.0,3,2,0.95,30,60,10,RPL,tpr,0,nan,nan,nan
+resilience_reference,0,0.0,3,2,0.95,30,60,10,RPL,precision,0,nan,nan,nan
+resilience_reference,0,0.0,3,2,0.95,30,60,10,RPL,macro_f1,0,nan,nan,nan
+resilience_reference,0,0.0,3,2,0.95,30,60,10,RPL,event_recall_new_alert,0,nan,nan,nan
+resilience_reference,0,0.0,3,2,0.95,30,60,10,RPL,detected_delay_mean_s,0,nan,nan,nan
+resilience_reference,0,0.0,3,2,0.95,30,60,10,RPL,missed_new_alerts,0,nan,nan,nan
+resilience_reference,0,0.0,3,2,0.95,30,60,10,RPL,false_blacklists_per_hour,0,nan,nan,nan
+resilience_reference,0,0.0,3,2,0.95,30,60,10,RPL,legit_isolated_frac,0,nan,nan,nan
+resilience_reference,0,0.0,3,2,0.95,30,60,10,RPL,radio_power_mw,5,59.97842577243746,59.97728396402766,59.97956758084726
+resilience_reference,0,0.0,3,2,0.95,30,60,10,RPL,legit_join_fraction,5,1.0,1.0,1.0
+resilience_reference,0,0.0,3,2,0.95,30,60,10,RPL,ari,0,nan,nan,nan
+resilience_reference,0,0.0,3,2,0.95,30,60,10,RPL,drt_s,5,0.0,0.0,0.0
+resilience_reference,0,0.0,3,2,0.95,30,60,10,RPL,callback_cpu_median_us,0,nan,nan,nan
+resilience_reference,0,0.0,3,2,0.95,30,60,10,RPL,callback_cpu_p95_us,0,nan,nan,nan
+resilience_reference,0,0.0,3,2,1.0,30,60,10,RPL,pdr_up,25,0.9997367616971773,0.9995952726774107,0.9998782507169439
+resilience_reference,0,0.0,3,2,1.0,30,60,10,RPL,pdr_down,25,0.9983078235245608,0.998125333740455,0.9984903133086667
+resilience_reference,0,0.0,3,2,1.0,30,60,10,RPL,delivery_up,25,1.000367816091954,1.0000204886703843,1.0007151435135238
+resilience_reference,0,0.0,3,2,1.0,30,60,10,RPL,fpr,0,nan,nan,nan
+resilience_reference,0,0.0,3,2,1.0,30,60,10,RPL,tpr,0,nan,nan,nan
+resilience_reference,0,0.0,3,2,1.0,30,60,10,RPL,precision,0,nan,nan,nan
+resilience_reference,0,0.0,3,2,1.0,30,60,10,RPL,macro_f1,0,nan,nan,nan
+resilience_reference,0,0.0,3,2,1.0,30,60,10,RPL,event_recall_new_alert,0,nan,nan,nan
+resilience_reference,0,0.0,3,2,1.0,30,60,10,RPL,detected_delay_mean_s,0,nan,nan,nan
+resilience_reference,0,0.0,3,2,1.0,30,60,10,RPL,missed_new_alerts,0,nan,nan,nan
+resilience_reference,0,0.0,3,2,1.0,30,60,10,RPL,false_blacklists_per_hour,0,nan,nan,nan
+resilience_reference,0,0.0,3,2,1.0,30,60,10,RPL,legit_isolated_frac,0,nan,nan,nan
+resilience_reference,0,0.0,3,2,1.0,30,60,10,RPL,radio_power_mw,25,59.97654965724064,59.974979117048306,59.97812019743297
+resilience_reference,0,0.0,3,2,1.0,30,60,10,RPL,legit_join_fraction,25,1.0,1.0,1.0
+resilience_reference,0,0.0,3,2,1.0,30,60,10,RPL,ari,0,nan,nan,nan
+resilience_reference,0,0.0,3,2,1.0,30,60,10,RPL,drt_s,25,0.0,0.0,0.0
+resilience_reference,0,0.0,3,2,1.0,30,60,10,RPL,callback_cpu_median_us,0,nan,nan,nan
+resilience_reference,0,0.0,3,2,1.0,30,60,10,RPL,callback_cpu_p95_us,0,nan,nan,nan
+resilience_reference,0,0.3,3,2,0.8,30,60,10,RPL,pdr_up,5,0.8728012417774824,0.7602841809609316,0.9853183025940332
+resilience_reference,0,0.3,3,2,0.8,30,60,10,RPL,pdr_down,5,0.9866154822602013,0.977234445199566,0.9959965193208367
+resilience_reference,0,0.3,3,2,0.8,30,60,10,RPL,delivery_up,5,0.596405433646813,0.4184162185851408,0.7743946487084852
+resilience_reference,0,0.3,3,2,0.8,30,60,10,RPL,fpr,0,nan,nan,nan
+resilience_reference,0,0.3,3,2,0.8,30,60,10,RPL,tpr,0,nan,nan,nan
+resilience_reference,0,0.3,3,2,0.8,30,60,10,RPL,precision,0,nan,nan,nan
+resilience_reference,0,0.3,3,2,0.8,30,60,10,RPL,macro_f1,0,nan,nan,nan
+resilience_reference,0,0.3,3,2,0.8,30,60,10,RPL,event_recall_new_alert,0,nan,nan,nan
+resilience_reference,0,0.3,3,2,0.8,30,60,10,RPL,detected_delay_mean_s,0,nan,nan,nan
+resilience_reference,0,0.3,3,2,0.8,30,60,10,RPL,missed_new_alerts,0,nan,nan,nan
+resilience_reference,0,0.3,3,2,0.8,30,60,10,RPL,false_blacklists_per_hour,0,nan,nan,nan
+resilience_reference,0,0.3,3,2,0.8,30,60,10,RPL,legit_isolated_frac,0,nan,nan,nan
+resilience_reference,0,0.3,3,2,0.8,30,60,10,RPL,radio_power_mw,5,59.9696005574173,59.959329022615094,59.97987209221951
+resilience_reference,0,0.3,3,2,0.8,30,60,10,RPL,legit_join_fraction,5,1.0,1.0,1.0
+resilience_reference,0,0.3,3,2,0.8,30,60,10,RPL,ari,0,nan,nan,nan
+resilience_reference,0,0.3,3,2,0.8,30,60,10,RPL,drt_s,5,876.0,-254.58262898191833,2006.5826289819183
+resilience_reference,0,0.3,3,2,0.8,30,60,10,RPL,callback_cpu_median_us,0,nan,nan,nan
+resilience_reference,0,0.3,3,2,0.8,30,60,10,RPL,callback_cpu_p95_us,0,nan,nan,nan
+resilience_reference,0,0.3,3,2,0.95,30,60,10,RPL,pdr_up,5,0.9175422529749527,0.8866347929290271,0.9484497130208783
+resilience_reference,0,0.3,3,2,0.95,30,60,10,RPL,pdr_down,5,0.9903375600378854,0.9866241661216629,0.9940509539541079
+resilience_reference,0,0.3,3,2,0.95,30,60,10,RPL,delivery_up,5,0.6529989550679206,0.5855150776238743,0.7204828325119669
+resilience_reference,0,0.3,3,2,0.95,30,60,10,RPL,fpr,0,nan,nan,nan
+resilience_reference,0,0.3,3,2,0.95,30,60,10,RPL,tpr,0,nan,nan,nan
+resilience_reference,0,0.3,3,2,0.95,30,60,10,RPL,precision,0,nan,nan,nan
+resilience_reference,0,0.3,3,2,0.95,30,60,10,RPL,macro_f1,0,nan,nan,nan
+resilience_reference,0,0.3,3,2,0.95,30,60,10,RPL,event_recall_new_alert,0,nan,nan,nan
+resilience_reference,0,0.3,3,2,0.95,30,60,10,RPL,detected_delay_mean_s,0,nan,nan,nan
+resilience_reference,0,0.3,3,2,0.95,30,60,10,RPL,missed_new_alerts,0,nan,nan,nan
+resilience_reference,0,0.3,3,2,0.95,30,60,10,RPL,false_blacklists_per_hour,0,nan,nan,nan
+resilience_reference,0,0.3,3,2,0.95,30,60,10,RPL,legit_isolated_frac,0,nan,nan,nan
+resilience_reference,0,0.3,3,2,0.95,30,60,10,RPL,radio_power_mw,5,59.97261017852444,59.96503307317541,59.98018728387347
+resilience_reference,0,0.3,3,2,0.95,30,60,10,RPL,legit_join_fraction,5,1.0,1.0,1.0
+resilience_reference,0,0.3,3,2,0.95,30,60,10,RPL,ari,0,nan,nan,nan
+resilience_reference,0,0.3,3,2,0.95,30,60,10,RPL,drt_s,5,1404.0,-458.94294271798435,3266.9429427179844
+resilience_reference,0,0.3,3,2,0.95,30,60,10,RPL,callback_cpu_median_us,0,nan,nan,nan
+resilience_reference,0,0.3,3,2,0.95,30,60,10,RPL,callback_cpu_p95_us,0,nan,nan,nan
+resilience_reference,0,0.3,3,2,1.0,30,60,10,RPL,pdr_up,25,0.9256007585950238,0.9167071407547844,0.9344943764352631
+resilience_reference,0,0.3,3,2,1.0,30,60,10,RPL,pdr_down,25,0.9900700687073735,0.9861510863650755,0.9939890510496714
+resilience_reference,0,0.3,3,2,1.0,30,60,10,RPL,delivery_up,25,0.6920668756530826,0.6446125037430284,0.7395212475631368
+resilience_reference,0,0.3,3,2,1.0,30,60,10,RPL,fpr,0,nan,nan,nan
+resilience_reference,0,0.3,3,2,1.0,30,60,10,RPL,tpr,0,nan,nan,nan
+resilience_reference,0,0.3,3,2,1.0,30,60,10,RPL,precision,0,nan,nan,nan
+resilience_reference,0,0.3,3,2,1.0,30,60,10,RPL,macro_f1,0,nan,nan,nan
+resilience_reference,0,0.3,3,2,1.0,30,60,10,RPL,event_recall_new_alert,0,nan,nan,nan
+resilience_reference,0,0.3,3,2,1.0,30,60,10,RPL,detected_delay_mean_s,0,nan,nan,nan
+resilience_reference,0,0.3,3,2,1.0,30,60,10,RPL,missed_new_alerts,0,nan,nan,nan
+resilience_reference,0,0.3,3,2,1.0,30,60,10,RPL,false_blacklists_per_hour,0,nan,nan,nan
+resilience_reference,0,0.3,3,2,1.0,30,60,10,RPL,legit_isolated_frac,0,nan,nan,nan
+resilience_reference,0,0.3,3,2,1.0,30,60,10,RPL,radio_power_mw,25,59.97237028233405,59.97113548569993,59.97360507896816
+resilience_reference,0,0.3,3,2,1.0,30,60,10,RPL,legit_join_fraction,25,0.9972413793103447,0.9933002232085835,1.001182535412106
+resilience_reference,0,0.3,3,2,1.0,30,60,10,RPL,ari,0,nan,nan,nan
+resilience_reference,0,0.3,3,2,1.0,30,60,10,RPL,drt_s,25,1224.0,799.8801444506954,1648.1198555493047
+resilience_reference,0,0.3,3,2,1.0,30,60,10,RPL,callback_cpu_median_us,0,nan,nan,nan
+resilience_reference,0,0.3,3,2,1.0,30,60,10,RPL,callback_cpu_p95_us,0,nan,nan,nan
+scale_feasibility,0,0.0,3,2,1,500,15,10,RPL,pdr_up,2,0.799222349013144,0.5326503515896579,1.0657943464366302
+scale_feasibility,0,0.0,3,2,1,500,15,10,RPL,pdr_down,2,0.9603593940357011,0.9007117752665142,1.020007012804888
+scale_feasibility,0,0.0,3,2,1,500,15,10,RPL,delivery_up,2,0.07795591182364729,0.03466824037776159,0.121243583269533
+scale_feasibility,0,0.0,3,2,1,500,15,10,RPL,fpr,0,nan,nan,nan
+scale_feasibility,0,0.0,3,2,1,500,15,10,RPL,tpr,0,nan,nan,nan
+scale_feasibility,0,0.0,3,2,1,500,15,10,RPL,precision,0,nan,nan,nan
+scale_feasibility,0,0.0,3,2,1,500,15,10,RPL,macro_f1,0,nan,nan,nan
+scale_feasibility,0,0.0,3,2,1,500,15,10,RPL,event_recall_new_alert,0,nan,nan,nan
+scale_feasibility,0,0.0,3,2,1,500,15,10,RPL,detected_delay_mean_s,0,nan,nan,nan
+scale_feasibility,0,0.0,3,2,1,500,15,10,RPL,missed_new_alerts,0,nan,nan,nan
+scale_feasibility,0,0.0,3,2,1,500,15,10,RPL,false_blacklists_per_hour,0,nan,nan,nan
+scale_feasibility,0,0.0,3,2,1,500,15,10,RPL,legit_isolated_frac,0,nan,nan,nan
+scale_feasibility,0,0.0,3,2,1,500,15,10,RPL,radio_power_mw,2,59.9329912909951,59.885152375347054,59.98083020664314
+scale_feasibility,0,0.0,3,2,1,500,15,10,RPL,legit_join_fraction,2,0.5891783567134269,0.3600083314116787,0.8183483820151751
+scale_feasibility,0,0.0,3,2,1,500,15,10,RPL,ari,0,nan,nan,nan
+scale_feasibility,0,0.0,3,2,1,500,15,10,RPL,drt_s,2,600.0,600.0,600.0
+scale_feasibility,0,0.0,3,2,1,500,15,10,RPL,callback_cpu_median_us,0,nan,nan,nan
+scale_feasibility,0,0.0,3,2,1,500,15,10,RPL,callback_cpu_p95_us,0,nan,nan,nan
+scale_feasibility,0,0.0,3,2,1,500,15,60,RPL,pdr_up,2,0.8119404520093589,0.6031160859958636,1.0207648180228541
+scale_feasibility,0,0.0,3,2,1,500,15,60,RPL,pdr_down,2,0.9372522395979648,0.8219377898354152,1.0525666893605143
+scale_feasibility,0,0.0,3,2,1,500,15,60,RPL,delivery_up,2,0.07174348697394789,0.061558152516092465,0.08192882143180331
+scale_feasibility,0,0.0,3,2,1,500,15,60,RPL,fpr,0,nan,nan,nan
+scale_feasibility,0,0.0,3,2,1,500,15,60,RPL,tpr,0,nan,nan,nan
+scale_feasibility,0,0.0,3,2,1,500,15,60,RPL,precision,0,nan,nan,nan
+scale_feasibility,0,0.0,3,2,1,500,15,60,RPL,macro_f1,0,nan,nan,nan
+scale_feasibility,0,0.0,3,2,1,500,15,60,RPL,event_recall_new_alert,0,nan,nan,nan
+scale_feasibility,0,0.0,3,2,1,500,15,60,RPL,detected_delay_mean_s,0,nan,nan,nan
+scale_feasibility,0,0.0,3,2,1,500,15,60,RPL,missed_new_alerts,0,nan,nan,nan
+scale_feasibility,0,0.0,3,2,1,500,15,60,RPL,false_blacklists_per_hour,0,nan,nan,nan
+scale_feasibility,0,0.0,3,2,1,500,15,60,RPL,legit_isolated_frac,0,nan,nan,nan
+scale_feasibility,0,0.0,3,2,1,500,15,60,RPL,radio_power_mw,2,59.93423191931473,59.91450617626258,59.95395766236689
+scale_feasibility,0,0.0,3,2,1,500,15,60,RPL,legit_join_fraction,2,0.6132264529058116,0.5368364444718962,0.689616461339727
+scale_feasibility,0,0.0,3,2,1,500,15,60,RPL,ari,0,nan,nan,nan
+scale_feasibility,0,0.0,3,2,1,500,15,60,RPL,drt_s,2,600.0,600.0,600.0
+scale_feasibility,0,0.0,3,2,1,500,15,60,RPL,callback_cpu_median_us,0,nan,nan,nan
+scale_feasibility,0,0.0,3,2,1,500,15,60,RPL,callback_cpu_p95_us,0,nan,nan,nan
+scale_feasibility,0,0.0,3,2,1,1000,15,10,RPL,pdr_up,2,0.6925706704765793,0.5051998587226001,0.8799414822305585
+scale_feasibility,0,0.0,3,2,1,1000,15,10,RPL,pdr_down,2,0.9780757769263516,0.942915993705775,1.0132355601469283
+scale_feasibility,0,0.0,3,2,1,1000,15,10,RPL,delivery_up,2,0.02117117117117117,-0.041787500945009735,0.08412984328735207
+scale_feasibility,0,0.0,3,2,1,1000,15,10,RPL,fpr,0,nan,nan,nan
+scale_feasibility,0,0.0,3,2,1,1000,15,10,RPL,tpr,0,nan,nan,nan
+scale_feasibility,0,0.0,3,2,1,1000,15,10,RPL,precision,0,nan,nan,nan
+scale_feasibility,0,0.0,3,2,1,1000,15,10,RPL,macro_f1,0,nan,nan,nan
+scale_feasibility,0,0.0,3,2,1,1000,15,10,RPL,event_recall_new_alert,0,nan,nan,nan
+scale_feasibility,0,0.0,3,2,1,1000,15,10,RPL,detected_delay_mean_s,0,nan,nan,nan
+scale_feasibility,0,0.0,3,2,1,1000,15,10,RPL,missed_new_alerts,0,nan,nan,nan
+scale_feasibility,0,0.0,3,2,1,1000,15,10,RPL,false_blacklists_per_hour,0,nan,nan,nan
+scale_feasibility,0,0.0,3,2,1,1000,15,10,RPL,legit_isolated_frac,0,nan,nan,nan
+scale_feasibility,0,0.0,3,2,1,1000,15,10,RPL,radio_power_mw,2,59.948158364657424,59.94636217695694,59.94995455235791
+scale_feasibility,0,0.0,3,2,1,1000,15,10,RPL,legit_join_fraction,2,0.3113113113113113,0.08237068543428969,0.5402519371883329
+scale_feasibility,0,0.0,3,2,1,1000,15,10,RPL,ari,0,nan,nan,nan
+scale_feasibility,0,0.0,3,2,1,1000,15,10,RPL,drt_s,2,600.0,600.0,600.0
+scale_feasibility,0,0.0,3,2,1,1000,15,10,RPL,callback_cpu_median_us,0,nan,nan,nan
+scale_feasibility,0,0.0,3,2,1,1000,15,10,RPL,callback_cpu_p95_us,0,nan,nan,nan
+scale_feasibility,0,0.0,3,2,1,1000,15,60,RPL,pdr_up,2,0.7359594773944418,0.4433899210246486,1.028529033764235
+scale_feasibility,0,0.0,3,2,1,1000,15,60,RPL,pdr_down,2,0.9431372790691942,0.8223144803170213,1.0639600778213671
+scale_feasibility,0,0.0,3,2,1,1000,15,60,RPL,delivery_up,2,0.02927927927927928,-0.055301563058620336,0.1138601216171789
+scale_feasibility,0,0.0,3,2,1,1000,15,60,RPL,fpr,0,nan,nan,nan
+scale_feasibility,0,0.0,3,2,1,1000,15,60,RPL,tpr,0,nan,nan,nan
+scale_feasibility,0,0.0,3,2,1,1000,15,60,RPL,precision,0,nan,nan,nan
+scale_feasibility,0,0.0,3,2,1,1000,15,60,RPL,macro_f1,0,nan,nan,nan
+scale_feasibility,0,0.0,3,2,1,1000,15,60,RPL,event_recall_new_alert,0,nan,nan,nan
+scale_feasibility,0,0.0,3,2,1,1000,15,60,RPL,detected_delay_mean_s,0,nan,nan,nan
+scale_feasibility,0,0.0,3,2,1,1000,15,60,RPL,missed_new_alerts,0,nan,nan,nan
+scale_feasibility,0,0.0,3,2,1,1000,15,60,RPL,false_blacklists_per_hour,0,nan,nan,nan
+scale_feasibility,0,0.0,3,2,1,1000,15,60,RPL,legit_isolated_frac,0,nan,nan,nan
+scale_feasibility,0,0.0,3,2,1,1000,15,60,RPL,radio_power_mw,2,59.947957925681635,59.94362186075019,59.95229399061308
+scale_feasibility,0,0.0,3,2,1,1000,15,60,RPL,legit_join_fraction,2,0.3098098098098098,0.2144178823610509,0.4052017372585688
+scale_feasibility,0,0.0,3,2,1,1000,15,60,RPL,ari,0,nan,nan,nan
+scale_feasibility,0,0.0,3,2,1,1000,15,60,RPL,drt_s,2,600.0,600.0,600.0
+scale_feasibility,0,0.0,3,2,1,1000,15,60,RPL,callback_cpu_median_us,0,nan,nan,nan
+scale_feasibility,0,0.0,3,2,1,1000,15,60,RPL,callback_cpu_p95_us,0,nan,nan,nan
+timing_validation,3,0.0,3,2,1,30,10,10,AEF learning,pdr_up,1,1.0,nan,nan
+timing_validation,3,0.0,3,2,1,30,10,10,AEF learning,pdr_down,1,0.942684766214178,nan,nan
+timing_validation,3,0.0,3,2,1,30,10,10,AEF learning,delivery_up,1,1.0045454545454546,nan,nan
+timing_validation,3,0.0,3,2,1,30,10,10,AEF learning,fpr,1,0.0,nan,nan
+timing_validation,3,0.0,3,2,1,30,10,10,AEF learning,tpr,1,0.8571428571428571,nan,nan
+timing_validation,3,0.0,3,2,1,30,10,10,AEF learning,precision,1,1.0,nan,nan
+timing_validation,3,0.0,3,2,1,30,10,10,AEF learning,macro_f1,1,0.9504273504273504,nan,nan
+timing_validation,3,0.0,3,2,1,30,10,10,AEF learning,event_recall_new_alert,1,0.8571428571428571,nan,nan
+timing_validation,3,0.0,3,2,1,30,10,10,AEF learning,detected_delay_mean_s,1,30.68966666666667,nan,nan
+timing_validation,3,0.0,3,2,1,30,10,10,AEF learning,missed_new_alerts,1,1.0,nan,nan
+timing_validation,3,0.0,3,2,1,30,10,10,AEF learning,false_blacklists_per_hour,1,0.0,nan,nan
+timing_validation,3,0.0,3,2,1,30,10,10,AEF learning,legit_isolated_frac,1,0.0,nan,nan
+timing_validation,3,0.0,3,2,1,30,10,10,AEF learning,radio_power_mw,1,59.91919249348421,nan,nan
+timing_validation,3,0.0,3,2,1,30,10,10,AEF learning,legit_join_fraction,1,1.0,nan,nan
+timing_validation,3,0.0,3,2,1,30,10,10,AEF learning,ari,0,nan,nan,nan
+timing_validation,3,0.0,3,2,1,30,10,10,AEF learning,drt_s,1,0.0,nan,nan
+timing_validation,3,0.0,3,2,1,30,10,10,AEF learning,callback_cpu_median_us,0,nan,nan,nan
+timing_validation,3,0.0,3,2,1,30,10,10,AEF learning,callback_cpu_p95_us,0,nan,nan,nan
+timing_validation,3,0.3,3,2,1,30,10,10,AEF learning,pdr_up,1,0.9173076923076923,nan,nan
+timing_validation,3,0.3,3,2,1,30,10,10,AEF learning,pdr_down,1,0.9140461215932913,nan,nan
+timing_validation,3,0.3,3,2,1,30,10,10,AEF learning,delivery_up,1,0.7227272727272728,nan,nan
+timing_validation,3,0.3,3,2,1,30,10,10,AEF learning,fpr,1,0.4090909090909091,nan,nan
+timing_validation,3,0.3,3,2,1,30,10,10,AEF learning,tpr,1,1.0,nan,nan
+timing_validation,3,0.3,3,2,1,30,10,10,AEF learning,precision,1,0.4375,nan,nan
+timing_validation,3,0.3,3,2,1,30,10,10,AEF learning,macro_f1,1,0.675776397515528,nan,nan
+timing_validation,3,0.3,3,2,1,30,10,10,AEF learning,event_recall_new_alert,1,1.0,nan,nan
+timing_validation,3,0.3,3,2,1,30,10,10,AEF learning,detected_delay_mean_s,1,17.793297142857153,nan,nan
+timing_validation,3,0.3,3,2,1,30,10,10,AEF learning,missed_new_alerts,1,0.0,nan,nan
+timing_validation,3,0.3,3,2,1,30,10,10,AEF learning,false_blacklists_per_hour,1,456.0,nan,nan
+timing_validation,3,0.3,3,2,1,30,10,10,AEF learning,legit_isolated_frac,1,0.10330505050505048,nan,nan
+timing_validation,3,0.3,3,2,1,30,10,10,AEF learning,radio_power_mw,1,59.91042877928554,nan,nan
+timing_validation,3,0.3,3,2,1,30,10,10,AEF learning,legit_join_fraction,1,1.0,nan,nan
+timing_validation,3,0.3,3,2,1,30,10,10,AEF learning,ari,0,nan,nan,nan
+timing_validation,3,0.3,3,2,1,30,10,10,AEF learning,drt_s,1,0.0,nan,nan
+timing_validation,3,0.3,3,2,1,30,10,10,AEF learning,callback_cpu_median_us,0,nan,nan,nan
+timing_validation,3,0.3,3,2,1,30,10,10,AEF learning,callback_cpu_p95_us,0,nan,nan,nan

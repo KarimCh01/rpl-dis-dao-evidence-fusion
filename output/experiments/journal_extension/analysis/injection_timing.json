@@ -1,0 +1,282 @@
+[
+  {
+    "run_id": "jtrace_m3_k7_i3_mob0_d7_s21_t10",
+    "attacker": 8,
+    "message": "DIS",
+    "boot_s": 0.726,
+    "scheduled_activation_after_boot_s": 300,
+    "first_injection_attempt_s": 303.727,
+    "last_injection_attempt_s": 597.727,
+    "pass": true
+  },
+  {
+    "run_id": "jtrace_m3_k7_i3_mob0_d7_s21_t10",
+    "attacker": 8,
+    "message": "DAO",
+    "boot_s": 0.726,
+    "scheduled_activation_after_boot_s": 300,
+    "first_injection_attempt_s": 302.729016,
+    "last_injection_attempt_s": 598.727,
+    "pass": true
+  },
+  {
+    "run_id": "jtrace_m3_k7_i3_mob0_d7_s21_t10",
+    "attacker": 15,
+    "message": "DIS",
+    "boot_s": 0.554,
+    "scheduled_activation_after_boot_s": 300,
+    "first_injection_attempt_s": 303.555,
+    "last_injection_attempt_s": 597.555,
+    "pass": true
+  },
+  {
+    "run_id": "jtrace_m3_k7_i3_mob0_d7_s21_t10",
+    "attacker": 15,
+    "message": "DAO",
+    "boot_s": 0.554,
+    "scheduled_activation_after_boot_s": 300,
+    "first_injection_attempt_s": 302.554008,
+    "last_injection_attempt_s": 598.555,
+    "pass": true
+  },
+  {
+    "run_id": "jtrace_m3_k7_i3_mob0_d7_s21_t10",
+    "attacker": 16,
+    "message": "DIS",
+    "boot_s": 0.584,
+    "scheduled_activation_after_boot_s": 300,
+    "first_injection_attempt_s": 303.585,
+    "last_injection_attempt_s": 597.585,
+    "pass": true
+  },
+  {
+    "run_id": "jtrace_m3_k7_i3_mob0_d7_s21_t10",
+    "attacker": 16,
+    "message": "DAO",
+    "boot_s": 0.584,
+    "scheduled_activation_after_boot_s": 300,
+    "first_injection_attempt_s": 302.585,
+    "last_injection_attempt_s": 598.585,
+    "pass": true
+  },
+  {
+    "run_id": "jtrace_m3_k7_i3_mob0_d7_s21_t10",
+    "attacker": 22,
+    "message": "DIS",
+    "boot_s": 0.426,
+    "scheduled_activation_after_boot_s": 300,
+    "first_injection_attempt_s": 303.427,
+    "last_injection_attempt_s": 597.427,
+    "pass": true
+  },
+  {
+    "run_id": "jtrace_m3_k7_i3_mob0_d7_s21_t10",
+    "attacker": 22,
+    "message": "DAO",
+    "boot_s": 0.426,
+    "scheduled_activation_after_boot_s": 300,
+    "first_injection_attempt_s": 302.427,
+    "last_injection_attempt_s": 598.427,
+    "pass": true
+  },
+  {
+    "run_id": "jtrace_m3_k7_i3_mob0_d7_s21_t10",
+    "attacker": 24,
+    "message": "DIS",
+    "boot_s": 0.95,
+    "scheduled_activation_after_boot_s": 300,
+    "first_injection_attempt_s": 303.951,
+    "last_injection_attempt_s": 597.951,
+    "pass": true
+  },
+  {
+    "run_id": "jtrace_m3_k7_i3_mob0_d7_s21_t10",
+    "attacker": 24,
+    "message": "DAO",
+    "boot_s": 0.95,
+    "scheduled_activation_after_boot_s": 300,
+    "first_injection_attempt_s": 302.951,
+    "last_injection_attempt_s": 598.951,
+    "pass": true
+  },
+  {
+    "run_id": "jtrace_m3_k7_i3_mob0_d7_s21_t10",
+    "attacker": 25,
+    "message": "DIS",
+    "boot_s": 0.547,
+    "scheduled_activation_after_boot_s": 300,
+    "first_injection_attempt_s": 303.548,
+    "last_injection_attempt_s": 597.548,
+    "pass": true
+  },
+  {
+    "run_id": "jtrace_m3_k7_i3_mob0_d7_s21_t10",
+    "attacker": 25,
+    "message": "DAO",
+    "boot_s": 0.547,
+    "scheduled_activation_after_boot_s": 300,
+    "first_injection_attempt_s": 302.548,
+    "last_injection_attempt_s": 598.548,
+    "pass": true
+  },
+  {
+    "run_id": "jtrace_m3_k7_i3_mob0_d7_s21_t10",
+    "attacker": 27,
+    "message": "DIS",
+    "boot_s": 0.061,
+    "scheduled_activation_after_boot_s": 300,
+    "first_injection_attempt_s": 303.062,
+    "last_injection_attempt_s": 597.062,
+    "pass": true
+  },
+  {
+    "run_id": "jtrace_m3_k7_i3_mob0_d7_s21_t10",
+    "attacker": 27,
+    "message": "DAO",
+    "boot_s": 0.061,
+    "scheduled_activation_after_boot_s": 300,
+    "first_injection_attempt_s": 302.062,
+    "last_injection_attempt_s": 598.062,
+    "pass": true
+  },
+  {
+    "run_id": "jtrace_m3_k7_i3_mob3_d7_s21_t10",
+    "attacker": 8,
+    "message": "DIS",
+    "boot_s": 0.726,
+    "scheduled_activation_after_boot_s": 300,
+    "first_injection_attempt_s": 303.727,
+    "last_injection_attempt_s": 597.727,
+    "pass": true
+  },
+  {
+    "run_id": "jtrace_m3_k7_i3_mob3_d7_s21_t10",
+    "attacker": 8,
+    "message": "DAO",
+    "boot_s": 0.726,
+    "scheduled_activation_after_boot_s": 300,
+    "first_injection_attempt_s": 302.727,
+    "last_injection_attempt_s": 598.727,
+    "pass": true
+  },
+  {
+    "run_id": "jtrace_m3_k7_i3_mob3_d7_s21_t10",
+    "attacker": 15,
+    "message": "DIS",
+    "boot_s": 0.554,
+    "scheduled_activation_after_boot_s": 300,
+    "first_injection_attempt_s": 303.555,
+    "last_injection_attempt_s": 597.555,
+    "pass": true
+  },
+  {
+    "run_id": "jtrace_m3_k7_i3_mob3_d7_s21_t10",
+    "attacker": 15,
+    "message": "DAO",
+    "boot_s": 0.554,
+    "scheduled_activation_after_boot_s": 300,
+    "first_injection_attempt_s": 302.555,
+    "last_injection_attempt_s": 598.555,
+    "pass": true
+  },
+  {
+    "run_id": "jtrace_m3_k7_i3_mob3_d7_s21_t10",
+    "attacker": 16,
+    "message": "DIS",
+    "boot_s": 0.584,
+    "scheduled_activation_after_boot_s": 300,
+    "first_injection_attempt_s": 303.585,
+    "last_injection_attempt_s": 597.585,
+    "pass": true
+  },
+  {
+    "run_id": "jtrace_m3_k7_i3_mob3_d7_s21_t10",
+    "attacker": 16,
+    "message": "DAO",
+    "boot_s": 0.584,
+    "scheduled_activation_after_boot_s": 300,
+    "first_injection_attempt_s": 302.585,
+    "last_injection_attempt_s": 598.585,
+    "pass": true
+  },
+  {
+    "run_id": "jtrace_m3_k7_i3_mob3_d7_s21_t10",
+    "attacker": 22,
+    "message": "DIS",
+    "boot_s": 0.426,
+    "scheduled_activation_after_boot_s": 300,
+    "first_injection_attempt_s": 303.426296,
+    "last_injection_attempt_s": 597.427,
+    "pass": true
+  },
+  {
+    "run_id": "jtrace_m3_k7_i3_mob3_d7_s21_t10",
+    "attacker": 22,
+    "message": "DAO",
+    "boot_s": 0.426,
+    "scheduled_activation_after_boot_s": 300,
+    "first_injection_attempt_s": 302.427,
+    "last_injection_attempt_s": 476.427,
+    "pass": true
+  },
+  {
+    "run_id": "jtrace_m3_k7_i3_mob3_d7_s21_t10",
+    "attacker": 24,
+    "message": "DIS",
+    "boot_s": 0.95,
+    "scheduled_activation_after_boot_s": 300,
+    "first_injection_attempt_s": 303.9502,
+    "last_injection_attempt_s": 597.951,
+    "pass": true
+  },
+  {
+    "run_id": "jtrace_m3_k7_i3_mob3_d7_s21_t10",
+    "attacker": 24,
+    "message": "DAO",
+    "boot_s": 0.95,
+    "scheduled_activation_after_boot_s": 300,
+    "first_injection_attempt_s": 302.951,
+    "last_injection_attempt_s": 420.951,
+    "pass": true
+  },
+  {
+    "run_id": "jtrace_m3_k7_i3_mob3_d7_s21_t10",
+    "attacker": 25,
+    "message": "DIS",
+    "boot_s": 0.547,
+    "scheduled_activation_after_boot_s": 300,
+    "first_injection_attempt_s": 303.548,
+    "last_injection_attempt_s": 597.548,
+    "pass": true
+  },
+  {
+    "run_id": "jtrace_m3_k7_i3_mob3_d7_s21_t10",
+    "attacker": 25,
+    "message": "DAO",
+    "boot_s": 0.547,
+    "scheduled_activation_after_boot_s": 300,
+    "first_injection_attempt_s": 302.548,
+    "last_injection_attempt_s": 598.548,
+    "pass": true
+  },
+  {
+    "run_id": "jtrace_m3_k7_i3_mob3_d7_s21_t10",
+    "attacker": 27,
+    "message": "DIS",
+    "boot_s": 0.061,
+    "scheduled_activation_after_boot_s": 300,
+    "first_injection_attempt_s": 303.062,
+    "last_injection_attempt_s": 597.062,
+    "pass": true
+  },
+  {
+    "run_id": "jtrace_m3_k7_i3_mob3_d7_s21_t10",
+    "attacker": 27,
+    "message": "DAO",
+    "boot_s": 0.061,
+    "scheduled_activation_after_boot_s": 300,
+    "first_injection_attempt_s": 302.062,
+    "last_injection_attempt_s": 598.062,
+    "pass": true
+  }
+]

@@ -1,0 +1,13 @@
+[32mINFO  [main] [Cooja.java:1147] - Loading /home/user/project/output/experiments/journal_extension/runs/jscale_dis60_m0_k0_i3_mob0_d0_s1_n500_t15_p60_r20/sim.csc random seed: null[0;39m
+> make -s -f /home/user/project/firmware/install.mk PREBUILT=v_jscale_dis60_root.cooja
+WARNING: A restricted method in java.lang.foreign.SymbolLookup has been called
+WARNING: java.lang.foreign.SymbolLookup::libraryLookup has been called by org.contikios.cooja.contikimote.CoreComm in an unnamed module (file:/home/user/contiki-ng/tools/cooja/build/libs/cooja-full.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+> make -s -f /home/user/project/firmware/install.mk PREBUILT=v_jscale_dis60_cli0.cooja
+[32mINFO  [main] [LogScriptEngine.java:231] - Script timeout in 900000 ms[0;39m
+[32mINFO  [sim] [LogScriptEngine.java:320] -  5% completed, 117.0 sec remaining[0;39m
+[32mINFO  [sim] [LogScriptEngine.java:320] - 10% completed, 263.2 sec remaining[0;39m
+[32mINFO  [sim] [LogScriptEngine.java:320] - 15% completed, 474.2 sec remaining[0;39m
+[32mINFO  [sim] [LogScriptEngine.java:320] - 20% completed, 991.3 sec remaining[0;39m

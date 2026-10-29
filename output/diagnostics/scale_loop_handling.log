@@ -1,0 +1,61 @@
+OK v_scale_fix_loopdrop_cli0
+OK v_scale_fix_loopdrop_cli1
+OK v_scale_fix_loopdrop_root
+[1/4] ok fix_loopdrop_n500_s1_t15
+[2/4] ok fix_loopdrop_n500_s2_t15
+[3/4] ok fix_loopdrop_n1000_s1_t15
+[4/4] ok fix_loopdrop_n1000_s2_t15
+[
+  {
+    "run_id": "fix_loopdrop_n500_s1_t15",
+    "setting": "loopdrop",
+    "nodes": 500,
+    "seed": 1,
+    "coverage": 0.7995991983967936,
+    "delivery_up": 0.02404809619238477,
+    "pdr_down": 0.9833333333333333,
+    "passes_gate": false,
+    "warnings": {
+      "dao_repairs": 20
+    }
+  },
+  {
+    "run_id": "fix_loopdrop_n500_s2_t15",
+    "setting": "loopdrop",
+    "nodes": 500,
+    "seed": 2,
+    "coverage": 0.7835671342685371,
+    "delivery_up": 0.02525050100200401,
+    "pdr_down": 0.9920634920634921,
+    "passes_gate": false,
+    "warnings": {
+      "dao_repairs": 34
+    }
+  },
+  {
+    "run_id": "fix_loopdrop_n1000_s1_t15",
+    "setting": "loopdrop",
+    "nodes": 1000,
+    "seed": 1,
+    "coverage": 0.4184184184184184,
+    "delivery_up": 0.00970970970970971,
+    "pdr_down": 0.979381443298969,
+    "passes_gate": false,
+    "warnings": {
+      "dao_repairs": 59
+    }
+  },
+  {
+    "run_id": "fix_loopdrop_n1000_s2_t15",
+    "setting": "loopdrop",
+    "nodes": 1000,
+    "seed": 2,
+    "coverage": 0.37737737737737737,
+    "delivery_up": 0.014514514514514515,
+    "pdr_down": 0.9862068965517241,
+    "passes_gate": false,
+    "warnings": {
+      "dao_repairs": 65
+    }
+  }
+]

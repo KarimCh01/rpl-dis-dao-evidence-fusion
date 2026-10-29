@@ -1,0 +1,74 @@
+{
+  "run_id": "loadiso_delayed300_n100_s1_t10",
+  "nodes": 100,
+  "profile": "delayed300",
+  "seed": 1,
+  "duration_min": 10,
+  "reachable_by_minute": [
+    {
+      "minute": 1,
+      "reports": 99,
+      "reachable": 43,
+      "fraction": 0.43434343434343436
+    },
+    {
+      "minute": 2,
+      "reports": 99,
+      "reachable": 99,
+      "fraction": 1.0
+    },
+    {
+      "minute": 3,
+      "reports": 99,
+      "reachable": 99,
+      "fraction": 1.0
+    },
+    {
+      "minute": 4,
+      "reports": 99,
+      "reachable": 99,
+      "fraction": 1.0
+    },
+    {
+      "minute": 5,
+      "reports": 99,
+      "reachable": 99,
+      "fraction": 1.0
+    },
+    {
+      "minute": 6,
+      "reports": 99,
+      "reachable": 99,
+      "fraction": 1.0
+    },
+    {
+      "minute": 7,
+      "reports": 99,
+      "reachable": 99,
+      "fraction": 1.0
+    },
+    {
+      "minute": 8,
+      "reports": 99,
+      "reachable": 99,
+      "fraction": 1.0
+    },
+    {
+      "minute": 9,
+      "reports": 99,
+      "reachable": 99,
+      "fraction": 1.0
+    }
+  ],
+  "parent_changes_by_minute": {
+    "0": 48,
+    "1": 51
+  },
+  "application_sent": 99,
+  "application_received": 99,
+  "application_pdr": 1.0,
+  "round_trip_completion": 1.0,
+  "warning_counts": {},
+  "interpretation": "Single-seed diagnostic; quiet-run delivery is undefined.",
+  "raw_log_sha256": "185bc0a730449c4d02f644f07631ad28cf2d9e3dc9c9e94bf74bd54f65a8d72e"
+}

@@ -1,0 +1,2 @@
+{"run_id": "m3_k125_i3_mob0_d7_s1_n500_t15_p60_r20", "seed": 1, "nodes": 500, "attackers": 125, "attack_mode": 3, "dis_interval": 3, "defense": 7, "mobile_frac": 0.0, "duration_min": 15, "send_s": 60, "rank_hops": 20}
+{"run_id": "m3_k250_i3_mob0_d7_s1_n1000_t15_p60_r20", "seed": 1, "nodes": 1000, "attackers": 250, "attack_mode": 3, "dis_interval": 3, "defense": 7, "mobile_frac": 0.0, "duration_min": 15, "send_s": 60, "rank_hops": 20}

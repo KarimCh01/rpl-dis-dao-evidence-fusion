@@ -1,0 +1,9 @@
+effect,paper_diff,ours_diff,ours_rel_change,reproduced
+DIS flooding raises DIO,3490,9205.6,7.39346,True
+DIS-FDM lowers DIO under attack,3407,8102.9,3.45127,True
+RPL-MRC lowers DIO under attack,3388,6853.3,1.90507,True
+DIS-FDM lowers DIO more than RPL-MRC,19,1249.6,0.532243,True
+DIS flooding lowers PDR,26.1,0.014,0.000140038,False
+DIS-FDM restores PDR,21.1,-0.003,-3.00081e-05,False
+DIS flooding raises delay,242,0,0,False
+DIS flooding raises power,3.2,-0.003,-5.002e-05,False

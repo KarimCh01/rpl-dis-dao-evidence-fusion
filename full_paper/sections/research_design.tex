@@ -1,0 +1,67 @@
+\section{Research Design, Objectives, and Hypotheses}\label{sec:design}
+\subsection{Objectives}
+The research questions translate into seven objectives.
+\begin{enumerate}
+\item[O1:] Reproduce DIS-FDM's method and its reported performance trends in an independent Contiki-NG/Cooja implementation, to validate the environment before extending it.
+\item[O2:] Implement an attack model in which the same node executes multicast DIS flooding and false-parent DAO manipulation concurrently.
+\item[O3:] Extend DIS-FDM's evidence fusion with a self-calibrated DAO-consistency source, and calibrate its DIS and parent-change thresholds on each node instead of fixing them by hand.
+\item[O4:] Evaluate the extension against DIS-FDM, Secure-RPL, RPL-MRC, and Li-MSD in detection, service, and cost, including robustness to attack rate and reception loss.
+\item[O5:] Validate every comparison statistically across independent paired seeds in static and mobile networks.
+\item[O6:] Give each node a tabular Q-learning decision layer, specified and analyzed mathematically before simulation.
+\item[O7:] Define the Attack Resilience Index and the Downward Recovery Time, and evaluate all defenses on them.
+\end{enumerate}
+
+Table~\ref{tab:chain} links each gap to the questions, objectives, hypotheses, and contributions that address it, so that every result in Section~\ref{sec:results} can be traced back to the gap it answers.
+
+\begin{table}[t]
+\caption{Gap, research question, objective, hypothesis, and contribution chain (contributions numbered as in Section~\ref{sec:introduction}).}\label{tab:chain}
+\centering\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\columnwidth}{@{}lllX@{}}
+\toprule
+Gap & RQ & Objectives & Hypothesis and contribution \\
+\midrule
+3 (no accuracy evidence) & RQ1 & O1, O5 & H1; reproduction with TPR, FPR, and tests (C4, C5) \\
+1 (single vector) & RQ2 & O2, O7 & H2; combined threat model, ARI and DRT (C3, C4) \\
+1, 2 (hand-set evidence) & RQ3 & O3, O4, O7 & H3; calibrated DAO evidence and repair (C1, C4) \\
+4 (no on-node learning) & RQ4 & O6 & H4; Q-learning layer and analysis (C1, C2) \\
+3 & RQ5 & O4, O5 & H5; robustness across conditions (C4) \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Hypotheses and Their Development}
+Each hypothesis was fixed in the research proposal before the main experiments, together with its test and decision rule. We state each as a null ($H_0$) and alternative ($H_1$) pair.
+
+\emph{H1 (reproduction).} DIS-FDM reduced DIO overhead by suppressing the DIO responses that floods trigger \cite{prajisha2025}. An implementation of the same rules in the same simulator family should reproduce the direction of these effects, although absolute values depend on unreported settings. $H1_0$: the reproduced effects differ in direction from the published ones. $H1_1$: they have the same direction and the defenses rank in the same order.
+
+\emph{H2 (combined damage).} DIS flooding consumes control-plane capacity, and false-parent DAOs break downward routes \cite{rajasekar2022,limsd2024}. Because the two mechanisms act on different routing functions, a node that runs both should impose both costs. $H2_0$: the combined attack is no worse than each single attack. $H2_1$: it significantly lowers delivery and ARI, or raises DIO overhead, compared with each single attack.
+
+\emph{H3 (DAO evidence and repair).} DIS-FDM observes no DAO field, so it cannot see, or undo, a false parent \cite{prajisha2025}. Adding a DAO-consistency source should reveal the manipulation, and repairing the advertised parent should restore the route. $H3_0$: AEF-RPL's TPR, precision, delivery, and ARI do not differ from DIS-FDM's. $H3_1$: AEF-RPL improves detection or resilience without a significantly higher FPR.
+
+\emph{H4 (on-node learning).} A fixed rule treats a mobility-induced parent change the same in every node, whereas a learner can adjust its action to the outcomes it observes locally \cite{watkins1992,qsecrpl2023}. Learning was therefore expected to isolate fewer honest nodes, especially under mobility. $H4_0$: learning does not change FPR. $H4_1$: learning lowers FPR without significantly lowering ARI.
+
+\emph{H5 (consistency).} An effect that comes from the protocol mechanism, rather than from one topology, should hold across seeds, attacker fractions, mobility, attack rates, and reception loss. $H5_0$: the H3 and H4 effects appear only in some conditions. $H5_1$: they hold in both static and mobile networks and keep their direction across rates and loss levels.
+
+H2 uses one-sided tests because it predicts a direction; H3 and H4 use two-sided tests because the added mechanisms could also make detection worse.
+
+\subsection{Conceptual Framework}
+Fig.~\ref{fig:framework} shows the framework that organizes the experiments. The defense configuration is the independent variable, varied in three dimensions: the evidence sources, the decision layer, and the DAO handling policy. Its effect on the dependent variables (detection, service, and cost) is examined under four moderators that change the difficulty of the attack. Seed, layout, traffic, duration, and radio parameters are held constant within each paired comparison. This structure is what makes the ablations interpretable: changing one dimension of the independent variable while holding the others fixed shows which mechanism causes an observed effect.
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[font=\scriptsize,
+  box/.style={draw=blue!60!black,rounded corners=2pt,fill=blue!4,align=left,inner sep=3pt,text width=2.35cm},
+  mod/.style={draw=orange!70!black,rounded corners=2pt,fill=orange!6,align=left,inner sep=3pt,text width=6.6cm},
+  arr/.style={-{Stealth[length=2mm]},thick}]
+\node[box] (iv) {\textbf{Independent: defense}\\ Evidence sources (DIS, parent, energy, DAO)\\ Decision layer (fixed, Q-learning)\\ DAO handling (drop, repair)};
+\node[box,right=1.9cm of iv,text width=2.6cm] (dv) {\textbf{Dependent}\\ Detection: TPR, FPR, precision, latency\\ Service: downward PDR, ARI, DRT\\ Cost: DIO, radio power, CPU time};
+\node[mod,above=0.45cm of $(iv.north)!0.5!(dv.north)$] (mo) {\textbf{Moderators:} attacker fraction (10, 25, 50\%), mobility (0, 30\%), attack interval (3 to 30\,s), reception success (1.0, .95, .8)};
+\node[mod,draw=gray,fill=gray!6,below=0.45cm of $(iv.south)!0.5!(dv.south)$] (co) {\textbf{Controls:} paired seed (layout, attackers, mobility), traffic, 60\,min duration, onset at 300\,s, radio ranges, MAC};
+\draw[arr] (iv) -- node[pos=.27,above]{H2--H4} (dv);
+\coordinate (hit) at ($(iv.east)!0.72!(dv.west)$);
+\draw[arr,orange!70!black] (mo.south -| hit) -- node[right]{H5} ($(hit)+(0,0.08)$);
+\draw[arr,gray] (co.north -| hit) -- ($(hit)-(0,0.08)$);
+\end{tikzpicture}
+\caption{Conceptual framework: the defense configuration (independent variable) affects detection, service, and cost (dependent variables) under four moderators, with paired controls.}\label{fig:framework}
+\end{figure}

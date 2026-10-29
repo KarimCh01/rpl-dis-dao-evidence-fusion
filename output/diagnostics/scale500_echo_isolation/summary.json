@@ -1,0 +1,472 @@
+[
+  {
+    "run_id": "echo500_echo_on_s1_t15",
+    "nodes": 500,
+    "profile": "echo_on",
+    "seed": 1,
+    "duration_min": 15,
+    "reachable_by_minute": [
+      {
+        "minute": 1,
+        "reports": 499,
+        "reachable": 46,
+        "fraction": 0.09218436873747494
+      },
+      {
+        "minute": 2,
+        "reports": 499,
+        "reachable": 204,
+        "fraction": 0.4088176352705411
+      },
+      {
+        "minute": 3,
+        "reports": 499,
+        "reachable": 419,
+        "fraction": 0.8396793587174348
+      },
+      {
+        "minute": 4,
+        "reports": 499,
+        "reachable": 494,
+        "fraction": 0.9899799599198397
+      },
+      {
+        "minute": 5,
+        "reports": 499,
+        "reachable": 499,
+        "fraction": 1.0
+      },
+      {
+        "minute": 6,
+        "reports": 499,
+        "reachable": 474,
+        "fraction": 0.9498997995991983
+      },
+      {
+        "minute": 7,
+        "reports": 499,
+        "reachable": 55,
+        "fraction": 0.11022044088176353
+      },
+      {
+        "minute": 8,
+        "reports": 499,
+        "reachable": 6,
+        "fraction": 0.012024048096192385
+      },
+      {
+        "minute": 9,
+        "reports": 499,
+        "reachable": 5,
+        "fraction": 0.01002004008016032
+      },
+      {
+        "minute": 10,
+        "reports": 499,
+        "reachable": 5,
+        "fraction": 0.01002004008016032
+      },
+      {
+        "minute": 11,
+        "reports": 499,
+        "reachable": 5,
+        "fraction": 0.01002004008016032
+      },
+      {
+        "minute": 12,
+        "reports": 499,
+        "reachable": 5,
+        "fraction": 0.01002004008016032
+      },
+      {
+        "minute": 13,
+        "reports": 499,
+        "reachable": 5,
+        "fraction": 0.01002004008016032
+      },
+      {
+        "minute": 14,
+        "reports": 499,
+        "reachable": 5,
+        "fraction": 0.01002004008016032
+      }
+    ],
+    "parent_changes_by_minute": {
+      "0": 59,
+      "1": 158,
+      "2": 213,
+      "3": 71,
+      "4": 5,
+      "5": 4341,
+      "6": 5425,
+      "7": 3823,
+      "8": 3656,
+      "9": 3803,
+      "10": 3572,
+      "11": 3448,
+      "12": 3486,
+      "13": 3559,
+      "14": 3510
+    },
+    "application_sent": 833,
+    "application_received": 163,
+    "application_pdr": 0.19567827130852342,
+    "round_trip_completion": 0.1908763505402161,
+    "warning_counts": {
+      "dropping": 22976,
+      "fragment": 5,
+      "local repair": 7
+    },
+    "interpretation": "Single-seed diagnostic; quiet-run delivery is undefined.",
+    "raw_log_sha256": "55e8fae982175da1d60b2bceaee04df304b63fac09f41dc72867cc047227dff8"
+  },
+  {
+    "run_id": "echo500_echo_on_s2_t15",
+    "nodes": 500,
+    "profile": "echo_on",
+    "seed": 2,
+    "duration_min": 15,
+    "reachable_by_minute": [
+      {
+        "minute": 1,
+        "reports": 499,
+        "reachable": 46,
+        "fraction": 0.09218436873747494
+      },
+      {
+        "minute": 2,
+        "reports": 499,
+        "reachable": 189,
+        "fraction": 0.3787575150300601
+      },
+      {
+        "minute": 3,
+        "reports": 499,
+        "reachable": 410,
+        "fraction": 0.8216432865731463
+      },
+      {
+        "minute": 4,
+        "reports": 499,
+        "reachable": 496,
+        "fraction": 0.9939879759519038
+      },
+      {
+        "minute": 5,
+        "reports": 499,
+        "reachable": 499,
+        "fraction": 1.0
+      },
+      {
+        "minute": 6,
+        "reports": 499,
+        "reachable": 495,
+        "fraction": 0.9919839679358717
+      },
+      {
+        "minute": 7,
+        "reports": 499,
+        "reachable": 147,
+        "fraction": 0.29458917835671344
+      },
+      {
+        "minute": 8,
+        "reports": 499,
+        "reachable": 35,
+        "fraction": 0.07014028056112225
+      },
+      {
+        "minute": 9,
+        "reports": 499,
+        "reachable": 11,
+        "fraction": 0.022044088176352707
+      },
+      {
+        "minute": 10,
+        "reports": 499,
+        "reachable": 2,
+        "fraction": 0.004008016032064128
+      },
+      {
+        "minute": 11,
+        "reports": 499,
+        "reachable": 2,
+        "fraction": 0.004008016032064128
+      },
+      {
+        "minute": 12,
+        "reports": 499,
+        "reachable": 2,
+        "fraction": 0.004008016032064128
+      },
+      {
+        "minute": 13,
+        "reports": 499,
+        "reachable": 2,
+        "fraction": 0.004008016032064128
+      },
+      {
+        "minute": 14,
+        "reports": 499,
+        "reachable": 2,
+        "fraction": 0.004008016032064128
+      }
+    ],
+    "parent_changes_by_minute": {
+      "0": 57,
+      "1": 151,
+      "2": 216,
+      "3": 77,
+      "4": 4,
+      "5": 3151,
+      "6": 5955,
+      "7": 3828,
+      "8": 3829,
+      "9": 3860,
+      "10": 3848,
+      "11": 3627,
+      "12": 3681,
+      "13": 3772,
+      "14": 3747
+    },
+    "application_sent": 979,
+    "application_received": 235,
+    "application_pdr": 0.24004085801838612,
+    "round_trip_completion": 0.23289070480081717,
+    "warning_counts": {
+      "dropping": 23143,
+      "fragment": 5
+    },
+    "interpretation": "Single-seed diagnostic; quiet-run delivery is undefined.",
+    "raw_log_sha256": "7eddf732abe68f42c72260eff493d2fd114aaa18e751a665c1e9235fbb087f6e"
+  },
+  {
+    "run_id": "echo500_up_only_s1_t15",
+    "nodes": 500,
+    "profile": "up_only",
+    "seed": 1,
+    "duration_min": 15,
+    "reachable_by_minute": [
+      {
+        "minute": 1,
+        "reports": 499,
+        "reachable": 46,
+        "fraction": 0.09218436873747494
+      },
+      {
+        "minute": 2,
+        "reports": 499,
+        "reachable": 204,
+        "fraction": 0.4088176352705411
+      },
+      {
+        "minute": 3,
+        "reports": 499,
+        "reachable": 419,
+        "fraction": 0.8396793587174348
+      },
+      {
+        "minute": 4,
+        "reports": 499,
+        "reachable": 494,
+        "fraction": 0.9899799599198397
+      },
+      {
+        "minute": 5,
+        "reports": 499,
+        "reachable": 499,
+        "fraction": 1.0
+      },
+      {
+        "minute": 6,
+        "reports": 499,
+        "reachable": 499,
+        "fraction": 1.0
+      },
+      {
+        "minute": 7,
+        "reports": 499,
+        "reachable": 499,
+        "fraction": 1.0
+      },
+      {
+        "minute": 8,
+        "reports": 499,
+        "reachable": 499,
+        "fraction": 1.0
+      },
+      {
+        "minute": 9,
+        "reports": 499,
+        "reachable": 499,
+        "fraction": 1.0
+      },
+      {
+        "minute": 10,
+        "reports": 499,
+        "reachable": 499,
+        "fraction": 1.0
+      },
+      {
+        "minute": 11,
+        "reports": 499,
+        "reachable": 499,
+        "fraction": 1.0
+      },
+      {
+        "minute": 12,
+        "reports": 499,
+        "reachable": 499,
+        "fraction": 1.0
+      },
+      {
+        "minute": 13,
+        "reports": 499,
+        "reachable": 499,
+        "fraction": 1.0
+      },
+      {
+        "minute": 14,
+        "reports": 499,
+        "reachable": 499,
+        "fraction": 1.0
+      }
+    ],
+    "parent_changes_by_minute": {
+      "0": 59,
+      "1": 158,
+      "2": 213,
+      "3": 71,
+      "4": 5,
+      "5": 4,
+      "6": 5,
+      "7": 7,
+      "8": 3,
+      "10": 3,
+      "11": 2,
+      "13": 3
+    },
+    "application_sent": 4987,
+    "application_received": 4987,
+    "application_pdr": 1.0,
+    "round_trip_completion": 0.0,
+    "warning_counts": {},
+    "interpretation": "Single-seed diagnostic; quiet-run delivery is undefined.",
+    "raw_log_sha256": "67c021ea4f709017f477badf9acb1bbd3c70eafb151d99070ab15b70980cf684"
+  },
+  {
+    "run_id": "echo500_up_only_s2_t15",
+    "nodes": 500,
+    "profile": "up_only",
+    "seed": 2,
+    "duration_min": 15,
+    "reachable_by_minute": [
+      {
+        "minute": 1,
+        "reports": 499,
+        "reachable": 46,
+        "fraction": 0.09218436873747494
+      },
+      {
+        "minute": 2,
+        "reports": 499,
+        "reachable": 189,
+        "fraction": 0.3787575150300601
+      },
+      {
+        "minute": 3,
+        "reports": 499,
+        "reachable": 410,
+        "fraction": 0.8216432865731463
+      },
+      {
+        "minute": 4,
+        "reports": 499,
+        "reachable": 496,
+        "fraction": 0.9939879759519038
+      },
+      {
+        "minute": 5,
+        "reports": 499,
+        "reachable": 499,
+        "fraction": 1.0
+      },
+      {
+        "minute": 6,
+        "reports": 499,
+        "reachable": 499,
+        "fraction": 1.0
+      },
+      {
+        "minute": 7,
+        "reports": 499,
+        "reachable": 499,
+        "fraction": 1.0
+      },
+      {
+        "minute": 8,
+        "reports": 499,
+        "reachable": 499,
+        "fraction": 1.0
+      },
+      {
+        "minute": 9,
+        "reports": 499,
+        "reachable": 499,
+        "fraction": 1.0
+      },
+      {
+        "minute": 10,
+        "reports": 499,
+        "reachable": 499,
+        "fraction": 1.0
+      },
+      {
+        "minute": 11,
+        "reports": 499,
+        "reachable": 499,
+        "fraction": 1.0
+      },
+      {
+        "minute": 12,
+        "reports": 499,
+        "reachable": 499,
+        "fraction": 1.0
+      },
+      {
+        "minute": 13,
+        "reports": 499,
+        "reachable": 499,
+        "fraction": 1.0
+      },
+      {
+        "minute": 14,
+        "reports": 499,
+        "reachable": 499,
+        "fraction": 1.0
+      }
+    ],
+    "parent_changes_by_minute": {
+      "0": 57,
+      "1": 151,
+      "2": 216,
+      "3": 77,
+      "4": 4,
+      "5": 1,
+      "6": 1,
+      "7": 2,
+      "9": 1,
+      "10": 5,
+      "11": 2,
+      "12": 1,
+      "13": 2
+    },
+    "application_sent": 4991,
+    "application_received": 4987,
+    "application_pdr": 0.999198557403326,
+    "round_trip_completion": 0.0,
+    "warning_counts": {},
+    "interpretation": "Single-seed diagnostic; quiet-run delivery is undefined.",
+    "raw_log_sha256": "91431485ba30a330e5ea42afef4ca6be87a095b0e7be1b023e54437e5f1e5636"
+  }
+]

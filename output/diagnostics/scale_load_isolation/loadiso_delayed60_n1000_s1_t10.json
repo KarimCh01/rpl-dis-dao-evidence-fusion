@@ -1,0 +1,86 @@
+{
+  "run_id": "loadiso_delayed60_n1000_s1_t10",
+  "nodes": 1000,
+  "profile": "delayed60",
+  "seed": 1,
+  "duration_min": 10,
+  "reachable_by_minute": [
+    {
+      "minute": 1,
+      "reports": 999,
+      "reachable": 46,
+      "fraction": 0.04604604604604605
+    },
+    {
+      "minute": 2,
+      "reports": 999,
+      "reachable": 207,
+      "fraction": 0.2072072072072072
+    },
+    {
+      "minute": 3,
+      "reports": 999,
+      "reachable": 463,
+      "fraction": 0.46346346346346345
+    },
+    {
+      "minute": 4,
+      "reports": 999,
+      "reachable": 750,
+      "fraction": 0.7507507507507507
+    },
+    {
+      "minute": 5,
+      "reports": 999,
+      "reachable": 877,
+      "fraction": 0.8778778778778779
+    },
+    {
+      "minute": 6,
+      "reports": 999,
+      "reachable": 521,
+      "fraction": 0.5215215215215215
+    },
+    {
+      "minute": 7,
+      "reports": 999,
+      "reachable": 53,
+      "fraction": 0.05305305305305305
+    },
+    {
+      "minute": 8,
+      "reports": 999,
+      "reachable": 18,
+      "fraction": 0.018018018018018018
+    },
+    {
+      "minute": 9,
+      "reports": 999,
+      "reachable": 12,
+      "fraction": 0.012012012012012012
+    }
+  ],
+  "parent_changes_by_minute": {
+    "0": 57,
+    "1": 165,
+    "2": 262,
+    "3": 363,
+    "4": 2166,
+    "5": 10037,
+    "6": 8090,
+    "7": 6786,
+    "8": 6787,
+    "9": 6792
+  },
+  "application_sent": 1122,
+  "application_received": 74,
+  "application_pdr": 0.0659536541889483,
+  "round_trip_completion": 0.06149732620320856,
+  "warning_counts": {
+    "fragment": 19,
+    "dropping": 23146,
+    "local repair": 13
+  },
+  "interpretation": "Single-seed diagnostic; quiet-run delivery is undefined.",
+  "raw_log_sha256": "43c2639df957886d9f7e0b124ea5b122e0327b937d7bfebde2b3c0239163485a"
+}

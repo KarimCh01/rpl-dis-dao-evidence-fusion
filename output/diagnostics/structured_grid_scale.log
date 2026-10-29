@@ -1,0 +1,68 @@
+1 grid_n500_mob30_s1_t15 ok
+2 grid_n500_mob0_s2_t15 ok
+3 grid_n500_mob0_s1_t15 ok
+4 grid_n500_mob30_s2_t15 ok
+5 grid_n1000_mob0_s1_t15 ok
+6 grid_n1000_mob0_s2_t15 ok
+[
+  {
+    "run_id": "grid_n500_mob0_s1_t15",
+    "nodes": 500,
+    "mobility": 0,
+    "seed": 1,
+    "coverage": 0.9178356713426854,
+    "delivery_up": 0.033867735470941886,
+    "pdr_down": 0.9763313609467456,
+    "passes_gate": false
+  },
+  {
+    "run_id": "grid_n500_mob0_s2_t15",
+    "nodes": 500,
+    "mobility": 0,
+    "seed": 2,
+    "coverage": 0.8356713426853707,
+    "delivery_up": 0.06953907815631262,
+    "pdr_down": 0.9654178674351584,
+    "passes_gate": false
+  },
+  {
+    "run_id": "grid_n500_mob30_s1_t15",
+    "nodes": 500,
+    "mobility": 0.3,
+    "seed": 1,
+    "coverage": 0.8557114228456913,
+    "delivery_up": 0.047895791583166335,
+    "pdr_down": 0.8117154811715481,
+    "passes_gate": false
+  },
+  {
+    "run_id": "grid_n500_mob30_s2_t15",
+    "nodes": 500,
+    "mobility": 0.3,
+    "seed": 2,
+    "coverage": 0.7014028056112225,
+    "delivery_up": 0.017635270541082163,
+    "pdr_down": 0.8409090909090909,
+    "passes_gate": false
+  },
+  {
+    "run_id": "grid_n1000_mob0_s1_t15",
+    "nodes": 1000,
+    "mobility": 0,
+    "seed": 1,
+    "coverage": 0.4244244244244244,
+    "delivery_up": 0.017317317317317317,
+    "pdr_down": 0.9942196531791907,
+    "passes_gate": false
+  },
+  {
+    "run_id": "grid_n1000_mob0_s2_t15",
+    "nodes": 1000,
+    "mobility": 0,
+    "seed": 2,
+    "coverage": 0.35935935935935936,
+    "delivery_up": 0.024124124124124124,
+    "pdr_down": 0.979253112033195,
+    "passes_gate": false
+  }
+]

@@ -1,0 +1,187 @@
+OK v_scale_fix_queues_root
+OK v_scale_fix_queues_cli1
+OK v_scale_fix_queues_cli0
+OK v_scale_fix_headers_cli0
+OK v_scale_fix_headers_cli1
+OK v_scale_fix_headers_root
+OK v_scale_fix_both_root
+OK v_scale_fix_both_cli1
+OK v_scale_fix_both_cli0
+[1/12] ok fix_queues_n500_s1_t15
+[2/12] ok fix_queues_n500_s2_t15
+[3/12] ok fix_queues_n1000_s1_t15
+[4/12] ok fix_headers_n500_s1_t15
+[5/12] ok fix_queues_n1000_s2_t15
+[6/12] ok fix_headers_n500_s2_t15
+[7/12] ok fix_headers_n1000_s2_t15
+[8/12] ok fix_headers_n1000_s1_t15
+[9/12] ok fix_both_n500_s1_t15
+[10/12] ok fix_both_n500_s2_t15
+[11/12] ok fix_both_n1000_s1_t15
+[12/12] ok fix_both_n1000_s2_t15
+[
+  {
+    "run_id": "fix_queues_n500_s1_t15",
+    "setting": "queues",
+    "nodes": 500,
+    "seed": 1,
+    "coverage": 0.6072144288577155,
+    "delivery_up": 0.09619238476953908,
+    "pdr_down": 0.975,
+    "passes_gate": false,
+    "warnings": {
+      "header_drops": 406,
+      "dao_repairs": 888
+    }
+  },
+  {
+    "run_id": "fix_queues_n500_s2_t15",
+    "setting": "queues",
+    "nodes": 500,
+    "seed": 2,
+    "coverage": 0.5791583166332666,
+    "delivery_up": 0.04188376753507014,
+    "pdr_down": 0.9760765550239234,
+    "passes_gate": false,
+    "warnings": {
+      "header_drops": 171,
+      "dao_repairs": 848
+    }
+  },
+  {
+    "run_id": "fix_queues_n1000_s1_t15",
+    "setting": "queues",
+    "nodes": 1000,
+    "seed": 1,
+    "coverage": 0.3303303303303303,
+    "delivery_up": 0.03913913913913914,
+    "pdr_down": 0.979539641943734,
+    "passes_gate": false,
+    "warnings": {
+      "header_drops": 208,
+      "dao_repairs": 949
+    }
+  },
+  {
+    "run_id": "fix_queues_n1000_s2_t15",
+    "setting": "queues",
+    "nodes": 1000,
+    "seed": 2,
+    "coverage": 0.23523523523523523,
+    "delivery_up": 0.02772772772772773,
+    "pdr_down": 0.9711191335740073,
+    "passes_gate": false,
+    "warnings": {
+      "header_drops": 139,
+      "dao_repairs": 666
+    }
+  },
+  {
+    "run_id": "fix_headers_n500_s1_t15",
+    "setting": "headers",
+    "nodes": 500,
+    "seed": 1,
+    "coverage": 0.749498997995992,
+    "delivery_up": 0.057515030060120244,
+    "pdr_down": 0.9651567944250871,
+    "passes_gate": false,
+    "warnings": {
+      "queue_drops": 4116,
+      "dao_repairs": 851
+    }
+  },
+  {
+    "run_id": "fix_headers_n500_s2_t15",
+    "setting": "headers",
+    "nodes": 500,
+    "seed": 2,
+    "coverage": 0.8156312625250501,
+    "delivery_up": 0.027254509018036072,
+    "pdr_down": 0.9926470588235294,
+    "passes_gate": false,
+    "warnings": {
+      "queue_drops": 4792,
+      "dao_repairs": 804
+    }
+  },
+  {
+    "run_id": "fix_headers_n1000_s1_t15",
+    "setting": "headers",
+    "nodes": 1000,
+    "seed": 1,
+    "coverage": 0.4014014014014014,
+    "delivery_up": 0.02002002002002002,
+    "pdr_down": 0.965,
+    "passes_gate": false,
+    "warnings": {
+      "queue_drops": 5348,
+      "dao_repairs": 929
+    }
+  },
+  {
+    "run_id": "fix_headers_n1000_s2_t15",
+    "setting": "headers",
+    "nodes": 1000,
+    "seed": 2,
+    "coverage": 0.2702702702702703,
+    "delivery_up": 0.02952952952952953,
+    "pdr_down": 0.9220338983050848,
+    "passes_gate": false,
+    "warnings": {
+      "queue_drops": 4270,
+      "dao_repairs": 784
+    }
+  },
+  {
+    "run_id": "fix_both_n500_s1_t15",
+    "setting": "both",
+    "nodes": 500,
+    "seed": 1,
+    "coverage": 0.7334669338677354,
+    "delivery_up": 0.0687374749498998,
+    "pdr_down": 0.9650145772594753,
+    "passes_gate": false,
+    "warnings": {
+      "dao_repairs": 854
+    }
+  },
+  {
+    "run_id": "fix_both_n500_s2_t15",
+    "setting": "both",
+    "nodes": 500,
+    "seed": 2,
+    "coverage": 0.6693386773547094,
+    "delivery_up": 0.04749498997995992,
+    "pdr_down": 0.9831223628691983,
+    "passes_gate": false,
+    "warnings": {
+      "dao_repairs": 754
+    }
+  },
+  {
+    "run_id": "fix_both_n1000_s1_t15",
+    "setting": "both",
+    "nodes": 1000,
+    "seed": 1,
+    "coverage": 0.32432432432432434,
+    "delivery_up": 0.014114114114114115,
+    "pdr_down": 0.9858156028368794,
+    "passes_gate": false,
+    "warnings": {
+      "dao_repairs": 791
+    }
+  },
+  {
+    "run_id": "fix_both_n1000_s2_t15",
+    "setting": "both",
+    "nodes": 1000,
+    "seed": 2,
+    "coverage": 0.3233233233233233,
+    "delivery_up": 0.02022022022022022,
+    "pdr_down": 0.9851485148514851,
+    "passes_gate": false,
+    "warnings": {
+      "dao_repairs": 783
+    }
+  }
+]

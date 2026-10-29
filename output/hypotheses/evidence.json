@@ -1,0 +1,303 @@
+{
+ "H1": {
+  "checks": [
+   {
+    "effect": "DIS flooding raises DIO",
+    "paper_diff": 3490.0,
+    "ours_diff": 9205.6,
+    "ours_rel_change": 7.393462372500202,
+    "reproduced": true
+   },
+   {
+    "effect": "DIS-FDM lowers DIO under attack",
+    "paper_diff": 3407.0,
+    "ours_diff": 8102.900000000001,
+    "ours_rel_change": 3.4512735326688815,
+    "reproduced": true
+   },
+   {
+    "effect": "RPL-MRC lowers DIO under attack",
+    "paper_diff": 3388.0,
+    "ours_diff": 6853.300000000001,
+    "ours_rel_change": 1.9050703285706345,
+    "reproduced": true
+   },
+   {
+    "effect": "DIS-FDM lowers DIO more than RPL-MRC",
+    "paper_diff": 19.0,
+    "ours_diff": 1249.6,
+    "ours_rel_change": 0.532242950847602,
+    "reproduced": true
+   },
+   {
+    "effect": "DIS flooding lowers PDR",
+    "paper_diff": 26.099999999999994,
+    "ours_diff": 0.013999999999995794,
+    "ours_rel_change": 0.0001400378102087143,
+    "reproduced": false
+   },
+   {
+    "effect": "DIS-FDM restores PDR",
+    "paper_diff": 21.099999999999994,
+    "ours_diff": -0.0030000000000001137,
+    "ours_rel_change": -3.0008102187591787e-05,
+    "reproduced": false
+   },
+   {
+    "effect": "DIS flooding raises delay",
+    "paper_diff": 242.0,
+    "ours_diff": 0.0,
+    "ours_rel_change": 0.0,
+    "reproduced": false
+   },
+   {
+    "effect": "DIS flooding raises power",
+    "paper_diff": 3.1999999999999997,
+    "ours_diff": -0.0030000000000001137,
+    "ours_rel_change": -5.0020008003203174e-05,
+    "reproduced": false
+   }
+  ],
+  "reproduced": 4,
+  "total": 8
+ },
+ "H2": {
+  "pdr_down_vs_dis": [
+   6,
+   6
+  ],
+  "dio_vs_dao": [
+   5,
+   6
+  ],
+  "pdr_down_vs_dao": [
+   0,
+   6
+  ],
+  "ari_vs_dis": [
+   6,
+   6
+  ],
+  "ari_vs_dao": [
+   0,
+   6
+  ]
+ },
+ "H3": {
+  "tpr_higher": [
+   0,
+   6
+  ],
+  "precision_higher": [
+   0,
+   6
+  ],
+  "fpr_higher": [
+   0,
+   6
+  ],
+  "pdr_down_higher": [
+   6,
+   6
+  ],
+  "ari_higher": [
+   6,
+   6
+  ],
+  "dao_only_tpr_higher": [
+   4,
+   6
+  ],
+  "pdr_down_higher_vs_Li-MSD": [
+   6,
+   6
+  ],
+  "pdr_down_higher_vs_Secure-RPL": [
+   6,
+   6
+  ],
+  "pdr_down_higher_vs_RPL-MRC": [
+   6,
+   6
+  ]
+ },
+ "H4": {
+  "fpr_lower": [
+   0,
+   8
+  ],
+  "ari_lower": [
+   0,
+   6
+  ],
+  "latency_lower": [
+   6,
+   6
+  ],
+  "latency_reduction_pct": [
+   20.6,
+   72.6,
+   20.2,
+   57.3,
+   27.3,
+   53.2
+  ],
+  "benign_fresh_fpr_fixed_pct": 42.07,
+  "benign_fresh_fpr_learning_pct": 42.41,
+  "benign_fresh_wilcoxon_p": 1.0
+ },
+ "H5": {
+  "static_pdr_down": [
+   3,
+   3
+  ],
+  "mobile_pdr_down": [
+   3,
+   3
+  ],
+  "extension_cells_positive": [
+   11,
+   12
+  ],
+  "extension_cells_ci_above_zero": [
+   10,
+   12
+  ],
+  "extension_cells": [
+   {
+    "experiment": "radio_loss",
+    "mobile_frac": 0.0,
+    "dis_interval": 3,
+    "rx_ratio": 0.8,
+    "difference_reference_minus_comparison": 0.2049,
+    "paired_bootstrap_ci95_low": 0.1286,
+    "paired_bootstrap_ci95_high": 0.2737
+   },
+   {
+    "experiment": "radio_loss",
+    "mobile_frac": 0.0,
+    "dis_interval": 3,
+    "rx_ratio": 0.95,
+    "difference_reference_minus_comparison": 0.1215,
+    "paired_bootstrap_ci95_low": 0.0731,
+    "paired_bootstrap_ci95_high": 0.2107
+   },
+   {
+    "experiment": "radio_loss",
+    "mobile_frac": 0.0,
+    "dis_interval": 3,
+    "rx_ratio": 1.0,
+    "difference_reference_minus_comparison": 0.1244,
+    "paired_bootstrap_ci95_low": 0.0817,
+    "paired_bootstrap_ci95_high": 0.1754
+   },
+   {
+    "experiment": "radio_loss",
+    "mobile_frac": 0.3,
+    "dis_interval": 3,
+    "rx_ratio": 0.8,
+    "difference_reference_minus_comparison": 0.1051,
+    "paired_bootstrap_ci95_low": 0.0395,
+    "paired_bootstrap_ci95_high": 0.1671
+   },
+   {
+    "experiment": "radio_loss",
+    "mobile_frac": 0.3,
+    "dis_interval": 3,
+    "rx_ratio": 0.95,
+    "difference_reference_minus_comparison": 0.0789,
+    "paired_bootstrap_ci95_low": 0.0253,
+    "paired_bootstrap_ci95_high": 0.1568
+   },
+   {
+    "experiment": "radio_loss",
+    "mobile_frac": 0.3,
+    "dis_interval": 3,
+    "rx_ratio": 1.0,
+    "difference_reference_minus_comparison": 0.0914,
+    "paired_bootstrap_ci95_low": 0.0232,
+    "paired_bootstrap_ci95_high": 0.174
+   },
+   {
+    "experiment": "rate_robustness",
+    "mobile_frac": 0.0,
+    "dis_interval": 3,
+    "rx_ratio": 1.0,
+    "difference_reference_minus_comparison": 0.1704,
+    "paired_bootstrap_ci95_low": 0.1315,
+    "paired_bootstrap_ci95_high": 0.2117
+   },
+   {
+    "experiment": "rate_robustness",
+    "mobile_frac": 0.0,
+    "dis_interval": 10,
+    "rx_ratio": 1.0,
+    "difference_reference_minus_comparison": 0.1772,
+    "paired_bootstrap_ci95_low": 0.1248,
+    "paired_bootstrap_ci95_high": 0.2318
+   },
+   {
+    "experiment": "rate_robustness",
+    "mobile_frac": 0.0,
+    "dis_interval": 30,
+    "rx_ratio": 1.0,
+    "difference_reference_minus_comparison": 0.0126,
+    "paired_bootstrap_ci95_low": -0.0015,
+    "paired_bootstrap_ci95_high": 0.0281
+   },
+   {
+    "experiment": "rate_robustness",
+    "mobile_frac": 0.3,
+    "dis_interval": 3,
+    "rx_ratio": 1.0,
+    "difference_reference_minus_comparison": 0.1523,
+    "paired_bootstrap_ci95_low": 0.0724,
+    "paired_bootstrap_ci95_high": 0.237
+   },
+   {
+    "experiment": "rate_robustness",
+    "mobile_frac": 0.3,
+    "dis_interval": 10,
+    "rx_ratio": 1.0,
+    "difference_reference_minus_comparison": 0.1384,
+    "paired_bootstrap_ci95_low": 0.0689,
+    "paired_bootstrap_ci95_high": 0.2087
+   },
+   {
+    "experiment": "rate_robustness",
+    "mobile_frac": 0.3,
+    "dis_interval": 30,
+    "rx_ratio": 1.0,
+    "difference_reference_minus_comparison": -0.0022,
+    "paired_bootstrap_ci95_low": -0.0197,
+    "paired_bootstrap_ci95_high": 0.0139
+   }
+  ]
+ },
+ "recovered_runs_aef_fdm": {
+  "k3_S": [
+   9,
+   6
+  ],
+  "k3_M": [
+   6,
+   4
+  ],
+  "k7_S": [
+   7,
+   3
+  ],
+  "k7_M": [
+   6,
+   1
+  ],
+  "k14_S": [
+   4,
+   0
+  ],
+  "k14_M": [
+   3,
+   0
+  ]
+ }
+}

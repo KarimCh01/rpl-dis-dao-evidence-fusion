@@ -1,0 +1,156 @@
+{
+ "run_id": "chain30_depth29_t15",
+ "seed": 1,
+ "nodes": 30,
+ "attackers": 0,
+ "attack_mode": 0,
+ "dis_interval": 3,
+ "defense": 0,
+ "mobile_frac": 0,
+ "duration_min": 15,
+ "send_s": 60,
+ "experiment": "deep_route_diagnostic",
+ "variant_overrides": {
+  "root": "v_scale_fix_both_root",
+  "cli0": "v_scale_fix_both_cli0",
+  "cli1": "v_scale_fix_both_cli1"
+ },
+ "attacker_ids": [],
+ "mobile_ids": [],
+ "honest_chosen_ids": [],
+ "area_m": 200.0,
+ "positions": {
+  "1": [
+   0,
+   0
+  ],
+  "2": [
+   40,
+   0
+  ],
+  "3": [
+   80,
+   0
+  ],
+  "4": [
+   120,
+   0
+  ],
+  "5": [
+   160,
+   0
+  ],
+  "6": [
+   200,
+   0
+  ],
+  "7": [
+   240,
+   0
+  ],
+  "8": [
+   280,
+   0
+  ],
+  "9": [
+   320,
+   0
+  ],
+  "10": [
+   360,
+   0
+  ],
+  "11": [
+   400,
+   0
+  ],
+  "12": [
+   440,
+   0
+  ],
+  "13": [
+   480,
+   0
+  ],
+  "14": [
+   520,
+   0
+  ],
+  "15": [
+   560,
+   0
+  ],
+  "16": [
+   600,
+   0
+  ],
+  "17": [
+   640,
+   0
+  ],
+  "18": [
+   680,
+   0
+  ],
+  "19": [
+   720,
+   0
+  ],
+  "20": [
+   760,
+   0
+  ],
+  "21": [
+   800,
+   0
+  ],
+  "22": [
+   840,
+   0
+  ],
+  "23": [
+   880,
+   0
+  ],
+  "24": [
+   920,
+   0
+  ],
+  "25": [
+   960,
+   0
+  ],
+  "26": [
+   1000,
+   0
+  ],
+  "27": [
+   1040,
+   0
+  ],
+  "28": [
+   1080,
+   0
+  ],
+  "29": [
+   1120,
+   0
+  ],
+  "30": [
+   1160,
+   0
+  ]
+ },
+ "variants": [
+  "v_scale_fix_both_cli0",
+  "v_scale_fix_both_root"
+ ],
+ "variant_definitions": {
+  "v_scale_fix_both_root": "ROLE=0,DEFENSE=0,SEND_INTERVAL_SEC=60,BIG_NET=1,SCALE_DIAGNOSTICS=1,APP_RPL_DIS_INTERVAL_SEC=10,ROOT_ROUTES=1100,ROOT_QUEUEBUF=128,APP_CSMA_NEIGHBOR_QUEUES=16,APP_COMPRESS_EXT_HDR=0",
+  "v_scale_fix_both_cli0": "ROLE=1,DEFENSE=0,SEND_INTERVAL_SEC=60,BIG_NET=1,SCALE_DIAGNOSTICS=1,APP_RPL_DIS_INTERVAL_SEC=10,ROOT_ROUTES=1100,ROOT_QUEUEBUF=128,APP_CSMA_NEIGHBOR_QUEUES=16,APP_COMPRESS_EXT_HDR=0"
+ },
+ "execution_environment": {
+  "docker_context": "default",
+  "docker_image": "sha256:0e20b334617f576a8e349262b796e5dc26b7b05f541d13e293637da7eaa3c3eb"
+ }
+}

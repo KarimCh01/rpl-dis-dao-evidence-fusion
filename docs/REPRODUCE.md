@@ -113,7 +113,14 @@ python3 scripts/run_matrix.py output/plan/calibration.jsonl --workers 12
 ```
 
 The last command writes `output/calibration/tr.json` with the parent-change
-thresholds for static and mobile nodes.
+thresholds for static and mobile nodes. Then compute Li-MSD's threshold from
+the same runs:
+
+```bash
+.venv/bin/python analysis/calibrate_limsd.py
+```
+
+It writes `output/calibration/limsd.json`.
 
 ### 4.7 Rebuild with the calibrated thresholds
 
@@ -121,14 +128,37 @@ thresholds for static and mobile nodes.
 python3 scripts/build_variants.py --mac csma
 ```
 
-The build script reads `output/calibration/tr.json` automatically and compiles
-the thresholds into the DIS-FDM and proposed-defense firmware.
+The build script reads `output/calibration/tr.json` and
+`output/calibration/limsd.json` automatically and compiles the thresholds into
+the DIS-FDM, proposed-defense and Li-MSD firmware.
 
 ### 4.8 Run everything
 
 ```bash
 python3 scripts/run_matrix.py output/plan/reproduction.jsonl output/plan/main.jsonl output/plan/sensitivity.jsonl --workers 12
 ```
+
+The runs added after the first 1330 are separate plans: Li-MSD (200 runs,
+defense 5), the first AEF-RPL learning version (200 runs, defense 6), the final
+AEF-RPL evaluated in the paper (200 runs, defense 7, `learning_v2.jsonl`), and 30 exact reference
+runs for the Attack Resilience Index in mobile networks:
+
+```bash
+python3 scripts/run_matrix.py output/plan/limsd.jsonl output/plan/learning.jsonl output/plan/learning_v2.jsonl output/plan/reference.jsonl --workers 12
+```
+
+Use `--workers 6` to keep the computer usable while it runs.
+
+### 4.9 Mathematical checks and resilience metrics
+
+```bash
+.venv/bin/python analysis/check_theory.py
+.venv/bin/python analysis/metrics.py 6
+```
+
+The first needs no simulation and prints `ALL HOLD` when every bound and the
+learned policy match the theory. The second reads the stored logs and writes
+`output/results/resilience.csv`.
 
 The first build in 4.7 also compiles the three 30 s-window variants used by
 `sensitivity.jsonl`. The runner skips any run that already has `output/runs/<run>/result.json`, so
@@ -147,7 +177,35 @@ If Docker Desktop stops responding (`docker info` hangs), restart it with
 `systemctl --user restart docker-desktop`, delete run folders that have no
 `result.json`, and start the runner again.
 
-### 4.9 Analysis, tables and figures
+### 4.10 Scale study (500 and 1000 nodes)
+
+The current `plan.py` generates large-network runs with a 60 s application
+interval, matching the large-network firmware, and plans six seeds at 1000
+nodes. The two corrected 15-minute pilot runs are in
+`output/preliminary/scale_checks/`. The initial combined-attack pilots joined
+216/374 and 243/749 legitimate nodes. Follow-up 20-hop diagnostics joined
+225/374 and 256/749; a matched no-attack 500-node control joined 300/499 and
+achieved only 4.45% of expected network-wide upward delivery. Increasing the
+maximum rank did not resolve reachability. **Do not start the 114-run scale
+matrix below until route coverage is fixed and validated.** The following commands
+are the run procedure after that gate is passed.
+
+Measure first, with few workers and a larger Java heap:
+
+```bash
+python3 scripts/run_matrix.py output/plan/timing.jsonl --workers 2 --heap 4g
+```
+
+Then, with the number of workers chosen from the memory and time of the timing
+runs:
+
+```bash
+python3 scripts/run_matrix.py output/plan/scale.jsonl --workers 3 --heap 4g --timeout 43200
+```
+
+A run that exceeds `--timeout` seconds is stopped and reported as `timeout`.
+
+### 4.11 Analysis, tables and figures
 
 ```bash
 .venv/bin/python analysis/aggregate.py

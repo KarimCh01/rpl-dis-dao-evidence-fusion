@@ -1,0 +1,18 @@
+OK v_loadiso_delayed60_root
+OK v_loadiso_quiet_cli0
+OK v_loadiso_quiet_root
+OK v_loadiso_delayed60_cli0
+OK v_loadiso_delayed300_cli0
+OK v_loadiso_delayed300_root
+[1/12] loadiso_quiet_n100_s1_t10: ok
+[2/12] loadiso_delayed300_n100_s1_t10: ok
+[3/12] loadiso_delayed60_n100_s1_t10: ok
+[4/12] loadiso_quiet_n250_s1_t10: ok
+[5/12] loadiso_delayed300_n250_s1_t10: ok
+[6/12] loadiso_delayed60_n250_s1_t10: ok
+[7/12] loadiso_quiet_n500_s1_t10: ok
+[8/12] loadiso_delayed60_n500_s1_t10: ok
+[9/12] loadiso_delayed300_n500_s1_t10: ok
+[10/12] loadiso_quiet_n1000_s1_t10: ok
+[11/12] loadiso_delayed300_n1000_s1_t10: ok
+[12/12] loadiso_delayed60_n1000_s1_t10: ok

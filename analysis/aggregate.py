@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import glob
 import json
+import os
 from pathlib import Path
 
 import matplotlib
@@ -11,13 +12,14 @@ import pandas as pd
 from scipy import stats
 
 ROOT = Path(__file__).resolve().parents[1]
-RES = ROOT / "output" / "results"
-FIG = ROOT / "output" / "figures"
+RUNS = Path(os.environ.get("AGG_RUNS", ROOT / "output" / "runs"))
+RES = Path(os.environ.get("AGG_RESULTS", ROOT / "output" / "results"))
+FIG = Path(os.environ.get("AGG_FIGURES", ROOT / "output" / "figures"))
 SKIP = ("smoke", "verify", "radio", "tsch")
 
-DEF = {0: "RPL (no defense)", 1: "Secure-RPL", 2: "RPL-MRC", 3: "DIS-FDM", 4: "DIS-FDM + DAO evidence"}
+DEF = {0: "RPL (no defense)", 1: "Secure-RPL", 2: "RPL-MRC", 3: "DIS-FDM", 4: "AEF-RPL, learning off", 5: "Li-MSD", 6: "AEF-RPL, first learning version", 7: "AEF-RPL"}
 ATK = {0: "No attack", 1: "DIS flooding", 2: "DAO manipulation", 3: "Combined DIS + DAO"}
-COL = {0: "#6c757d", 1: "#f08c00", 2: "#7048e8", 3: "#1971c2", 4: "#2f9e44"}
+COL = {0: "#6c757d", 1: "#f08c00", 2: "#7048e8", 3: "#1971c2", 4: "#74b816", 5: "#c2255c", 6: "#94d82d", 7: "#2f9e44"}
 MOB = {0.0: "static", 0.3: "30% mobile"}
 MAIN_K = (3, 7, 14)
 PCT = {3: 10, 7: 25, 14: 50}
@@ -29,18 +31,27 @@ METRICS = ["pdr_up", "pdr_down", "delay_up_ms", "rtt_ms", "dio_total", "dis_tota
 
 def load():
     rows = []
-    for f in glob.glob(str(ROOT / "output/runs/*/result.json")):
+    for f in sorted(glob.glob(str(RUNS / "*" / "result.json"))):
         rid = Path(f).parent.name
         if rid.startswith(SKIP):
             continue
         r = json.loads(Path(f).read_text())
-        rows.append({k: v for k, v in r.items() if not k.startswith("_")})
+        rows.append({k: v for k, v in r.items() if not k.startswith("_") and k != "wall_s"})
     df = pd.DataFrame(rows)
+    if "nodes" not in df:
+        df["nodes"] = 30
+    df["nodes"] = df["nodes"].fillna(30).astype(int)
+    df = df[(df.nodes == 30) & (df.duration_min == 60)].copy()
     df["mobile_frac"] = df["mobile_frac"].round(1)
     if "fdm_window" not in df:
         df["fdm_window"] = 10
     df["fdm_window"] = df["fdm_window"].fillna(10).astype(int)
-    return df.sort_values(["attack_mode", "attackers", "dis_interval", "mobile_frac", "defense", "seed"])
+    return df.sort_values(["attack_mode", "attackers", "dis_interval", "mobile_frac", "defense", "seed",
+                           "run_id"], kind="mergesort").reset_index(drop=True)
+
+
+def present(df, defenses):
+    return [d for d in defenses if (df.defense == d).any()]
 
 
 def ci(x):
@@ -181,7 +192,7 @@ def main_figures(summ):
                                                           ("dio_total", "DIO messages", 1),
                                                           ("tx_power_mw", "Transmit power (mW)", 1))):
                 ax = axes[row, col]
-                bar_panel(ax, sub, metric, [1, 2, 3], [0, 1, 2, 3, 4], scale)
+                bar_panel(ax, sub, metric, [1, 2, 3], present(main, [0, 1, 2, 5, 3, 4, 6, 7]), scale)
                 ax.set_ylabel(label)
                 ax.set_title(f"{PCT[k]}% malicious ({k} nodes), {MOB[mob]}")
         axes[0, 0].legend(fontsize=7)
@@ -196,7 +207,7 @@ def main_figures(summ):
                                                           ("fpr", "False positive rate (%)", 100),
                                                           ("detect_latency_s", "Detection latency (s)", 1))):
                 ax = axes[row, col]
-                bar_panel(ax, sub, metric, [1, 2, 3], [1, 3, 4], scale, width=0.25)
+                bar_panel(ax, sub, metric, [1, 2, 3], present(main, [1, 5, 3, 4, 6, 7]), scale, width=0.2)
                 ax.set_ylabel(label)
                 ax.set_title(f"{PCT[k]}% malicious ({k} nodes), {MOB[mob]}")
         axes[0, 0].legend(fontsize=7)
@@ -207,10 +218,12 @@ def main_figures(summ):
     na = summ[summ.attack_mode == 0]
     fig, ax = plt.subplots(figsize=(7, 4))
     xs = np.arange(2)
-    for j, d in enumerate([1, 3, 4]):
+    fpr_defs = present(na, [1, 5, 3, 4, 6, 7])
+    w = 0.75 / len(fpr_defs)
+    for j, d in enumerate(fpr_defs):
         vals = [na[(na.mobile_frac == m) & (na.defense == d)]["fpr"].mean() * 100 for m in (0.0, 0.3)]
         errs = [na[(na.mobile_frac == m) & (na.defense == d)]["fpr_ci95"].mean() * 100 for m in (0.0, 0.3)]
-        ax.bar(xs + (j - 1) * 0.25, vals, 0.25, yerr=errs, capsize=3, color=COL[d], label=DEF[d])
+        ax.bar(xs + (j - (len(fpr_defs) - 1) / 2) * w, vals, w, yerr=errs, capsize=3, color=COL[d], label=DEF[d])
     ax.set_xticks(xs)
     ax.set_xticklabels(["static, no attack", "30% mobile, no attack"])
     ax.set_ylabel("False positive rate (%)")
@@ -268,7 +281,8 @@ def rq2_tests(df):
 
 def rq34_tests(df):
     rows = []
-    for other in (3, 1, 2):
+    prop = next(d for d in (7, 6, 4) if (df.defense == d).any())
+    for other in present(df, [d for d in (3, 1, 2, 5, 4, 6) if d != prop]):
         for mode in (1, 2, 3):
             for k in MAIN_K:
                 for mob in (0.0, 0.3):
@@ -278,7 +292,7 @@ def rq34_tests(df):
                             continue
                         base = (f"attack_mode == {mode} and attackers == {k} and mobile_frac == {mob} "
                                 f"and dis_interval == 3")
-                        a, b = pair(df, base + " and defense == 4", base + f" and defense == {other}", metric)
+                        a, b = pair(df, base + f" and defense == {prop}", base + f" and defense == {other}", metric)
                         n, med, p, r = paired_test(a, b)
                         rows.append({"baseline": DEF[other], "attack": ATK[mode], "malicious_pct": PCT[k],
                                      "attackers": k, "mobility": MOB[mob], "metric": metric, "n_pairs": n,
@@ -287,10 +301,10 @@ def rq34_tests(df):
                                      "mean_baseline": np.nanmean(b) if len(b) else np.nan,
                                      "sd_baseline": np.nanstd(b, ddof=1) if len(b) > 1 else np.nan,
                                      "median_diff": med, "p": p, "rank_biserial": r})
-        if other in (3, 1):
+        if other in (3, 1, 5, 4, 6):
             for mob in (0.0, 0.3):
                 base = f"attack_mode == 0 and mobile_frac == {mob}"
-                a, b = pair(df, base + " and defense == 4", base + f" and defense == {other}", "fpr")
+                a, b = pair(df, base + f" and defense == {prop}", base + f" and defense == {other}", "fpr")
                 n, med, p, r = paired_test(a, b)
                 rows.append({"baseline": DEF[other], "attack": ATK[0], "malicious_pct": 0, "attackers": 0,
                              "mobility": MOB[mob], "metric": "fpr", "n_pairs": n,
@@ -352,7 +366,7 @@ def markdown(summ, t2, t34, rt):
             L.append("|---|---|---|---|---|---|---|---|---|---|---|")
             sub = main[(main.attackers == k) & (main.mobile_frac == mob)]
             for mode in (1, 2, 3):
-                for d in (0, 1, 2, 3, 4):
+                for d in (0, 1, 2, 5, 3, 4, 6, 7):
                     s = sub[(sub.attack_mode == mode) & (sub.defense == d)]
                     if s.empty:
                         continue
@@ -370,7 +384,7 @@ def markdown(summ, t2, t34, rt):
     L.append("|---|---|---|---|")
     na = summ[summ.attack_mode == 0]
     for mob in (0.0, 0.3):
-        for d in (1, 3, 4):
+        for d in (1, 5, 3, 4, 6, 7):
             s = na[(na.mobile_frac == mob) & (na.defense == d)]
             if s.empty:
                 continue

@@ -1,0 +1,81 @@
+{
+  "run_id": "loadiso_quiet_n500_s1_t10",
+  "nodes": 500,
+  "profile": "quiet",
+  "seed": 1,
+  "duration_min": 10,
+  "reachable_by_minute": [
+    {
+      "minute": 1,
+      "reports": 499,
+      "reachable": 46,
+      "fraction": 0.09218436873747494
+    },
+    {
+      "minute": 2,
+      "reports": 499,
+      "reachable": 204,
+      "fraction": 0.4088176352705411
+    },
+    {
+      "minute": 3,
+      "reports": 499,
+      "reachable": 419,
+      "fraction": 0.8396793587174348
+    },
+    {
+      "minute": 4,
+      "reports": 499,
+      "reachable": 494,
+      "fraction": 0.9899799599198397
+    },
+    {
+      "minute": 5,
+      "reports": 499,
+      "reachable": 499,
+      "fraction": 1.0
+    },
+    {
+      "minute": 6,
+      "reports": 499,
+      "reachable": 499,
+      "fraction": 1.0
+    },
+    {
+      "minute": 7,
+      "reports": 499,
+      "reachable": 499,
+      "fraction": 1.0
+    },
+    {
+      "minute": 8,
+      "reports": 499,
+      "reachable": 499,
+      "fraction": 1.0
+    },
+    {
+      "minute": 9,
+      "reports": 499,
+      "reachable": 499,
+      "fraction": 1.0
+    }
+  ],
+  "parent_changes_by_minute": {
+    "0": 59,
+    "1": 158,
+    "2": 213,
+    "3": 71,
+    "4": 5,
+    "5": 3,
+    "6": 3,
+    "7": 4,
+    "9": 1
+  },
+  "application_sent": 0,
+  "application_received": 0,
+  "application_pdr": null,
+  "round_trip_completion": null,
+  "warning_counts": {},
+  "interpretation": "Single-seed diagnostic; quiet-run delivery is undefined.",
+  "raw_log_sha256": "9c6d933fa8e01dfae6df25b9e7cc7caf9512bcdbead83a10b5d8405a0f64e16d"
+}

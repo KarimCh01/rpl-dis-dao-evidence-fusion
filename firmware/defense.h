@@ -10,10 +10,17 @@
 #define DEF_MRC       2
 #define DEF_FDM       3
 #define DEF_AEF       4
+#define DEF_LIMSD     5
+#define DEF_AEF_RL    6
+#define DEF_AEF_RL2   7
 
 #ifndef DEFENSE
 #define DEFENSE DEF_NONE
 #endif
+
+#define DEF_LEARNING (DEFENSE == DEF_AEF_RL || DEFENSE == DEF_AEF_RL2)
+#define DEF_FUSION (DEFENSE == DEF_FDM || DEFENSE == DEF_AEF || DEF_LEARNING)
+#define DEF_DAO_EVIDENCE (DEFENSE == DEF_AEF || DEF_LEARNING)
 
 #ifndef DEF_WINDOW_SEC
 #define DEF_WINDOW_SEC 10

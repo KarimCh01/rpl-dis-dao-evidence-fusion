@@ -10,6 +10,18 @@
 #include "attack.h"
 #include <stdio.h>
 #include <string.h>
+#ifdef HOST_PROFILE
+#include <time.h>
+
+/* Native Cooja callback CPU time, not target-mote execution time. */
+static uint64_t
+host_cpu_ns(void)
+{
+  struct timespec value;
+  clock_gettime(CLOCK_THREAD_CPUTIME_ID, &value);
+  return (uint64_t)value.tv_sec * 1000000000ULL + value.tv_nsec;
+}
+#endif
 
 #define ROLE_ROOT     0
 #define ROLE_CLIENT   1
@@ -24,7 +36,19 @@
 
 #define CLIENT_PORT 8765
 #define SERVER_PORT 5678
-#define SEND_INTERVAL (10 * CLOCK_SECOND)
+#ifndef SEND_INTERVAL_SEC
+#define SEND_INTERVAL_SEC 10
+#endif
+#define SEND_INTERVAL (SEND_INTERVAL_SEC * CLOCK_SECOND)
+#ifndef APP_TRAFFIC_ENABLED
+#define APP_TRAFFIC_ENABLED 1
+#endif
+#ifndef APP_TRAFFIC_START_SEC
+#define APP_TRAFFIC_START_SEC 0
+#endif
+#ifndef APP_ECHO_ENABLED
+#define APP_ECHO_ENABLED 1
+#endif
 #define REPORT_INTERVAL (60 * CLOCK_SECOND)
 
 static struct simple_udp_connection conn;
@@ -44,8 +68,10 @@ on_udp(struct simple_udp_connection *c, const uip_ipaddr_t *sender,
   }
   memcpy(&seq, data, sizeof(seq));
 #if ROLE == ROLE_ROOT
-  printf("#R %u %lu\n", sender->u8[15], (unsigned long)seq);
+  printf("#R %u %lu\n", ((unsigned)sender->u8[14] << 8) | sender->u8[15], (unsigned long)seq);
+#if APP_ECHO_ENABLED
   simple_udp_sendto(&conn, data, len, sender);
+#endif
 #else
   printf("#E %lu\n", (unsigned long)seq);
 #endif
@@ -54,6 +80,13 @@ on_udp(struct simple_udp_connection *c, const uip_ipaddr_t *sender,
 static void
 report(void)
 {
+#ifdef SCALE_DIAGNOSTICS
+  rpl_nbr_t *parent = curr_instance.dag.preferred_parent;
+  const uip_ipaddr_t *parent_addr = parent ? rpl_neighbor_get_ipaddr(parent) : NULL;
+  printf("#N %u %u %u\n", NETSTACK_ROUTING.node_is_reachable(),
+         curr_instance.dag.rank,
+         parent_addr ? ((unsigned)parent_addr->u8[14] << 8) | parent_addr->u8[15] : 0);
+#endif
   energest_flush();
   printf("#S %lu %lu %lu %lu %lu %lu %lu %lu %lu %lu %lu %lu %lu %lu\n",
          (unsigned long)rpl_ctrl_stats.dio_tx,
@@ -114,11 +147,18 @@ PROCESS_THREAD(node_process, ev, data)
       report();
       etimer_reset(&report_timer);
     } else if(data == &window_timer) {
+#ifdef HOST_PROFILE
+      uint64_t started = host_cpu_ns();
+#endif
       defense_window();
+#ifdef HOST_PROFILE
+      printf("#W %lu\n", (unsigned long)(host_cpu_ns() - started));
+#endif
       etimer_reset(&window_timer);
 #if ROLE != ROLE_ROOT
     } else if(data == &send_timer) {
-      if(NETSTACK_ROUTING.node_is_reachable() &&
+      if(APP_TRAFFIC_ENABLED && clock_seconds() >= APP_TRAFFIC_START_SEC &&
+         NETSTACK_ROUTING.node_is_reachable() &&
          NETSTACK_ROUTING.get_root_ipaddr(&root)) {
         printf("#T %lu\n", (unsigned long)seq);
         simple_udp_sendto(&conn, &seq, sizeof(seq), &root);

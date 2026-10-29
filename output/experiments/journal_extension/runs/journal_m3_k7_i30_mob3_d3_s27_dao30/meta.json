@@ -1,0 +1,176 @@
+{
+ "run_id": "journal_m3_k7_i30_mob3_d3_s27_dao30",
+ "seed": 27,
+ "nodes": 30,
+ "attackers": 7,
+ "attack_mode": 3,
+ "dis_interval": 30,
+ "defense": 3,
+ "mobile_frac": 0.3,
+ "duration_min": 60,
+ "dao_interval": 30,
+ "experiment": "rate_robustness",
+ "variant_overrides": {
+  "atk": "v_journal_atk_dis30_dao30"
+ },
+ "attacker_ids": [
+  9,
+  10,
+  12,
+  14,
+  20,
+  26,
+  29
+ ],
+ "mobile_ids": [
+  8,
+  10,
+  11,
+  13,
+  16,
+  20,
+  21,
+  26,
+  29
+ ],
+ "honest_chosen_ids": [],
+ "area_m": 200.0,
+ "positions": {
+  "1": [
+   100.0,
+   100.0
+  ],
+  "2": [
+   2.52,
+   186.84
+  ],
+  "3": [
+   105.4,
+   146.85
+  ],
+  "4": [
+   61.78,
+   115.95
+  ],
+  "5": [
+   53.24,
+   198.66
+  ],
+  "6": [
+   111.65,
+   170.22
+  ],
+  "7": [
+   22.3,
+   61.9
+  ],
+  "8": [
+   191.09,
+   44.22
+  ],
+  "9": [
+   163.89,
+   19.61
+  ],
+  "10": [
+   184.68,
+   4.93
+  ],
+  "11": [
+   82.71,
+   182.58
+  ],
+  "12": [
+   68.58,
+   103.86
+  ],
+  "13": [
+   109.56,
+   92.88
+  ],
+  "14": [
+   101.38,
+   139.93
+  ],
+  "15": [
+   68.62,
+   5.51
+  ],
+  "16": [
+   19.33,
+   159.42
+  ],
+  "17": [
+   93.41,
+   13.9
+  ],
+  "18": [
+   164.82,
+   188.01
+  ],
+  "19": [
+   174.07,
+   29.29
+  ],
+  "20": [
+   122.45,
+   23.3
+  ],
+  "21": [
+   66.98,
+   134.95
+  ],
+  "22": [
+   69.97,
+   29.59
+  ],
+  "23": [
+   142.5,
+   68.43
+  ],
+  "24": [
+   141.88,
+   174.65
+  ],
+  "25": [
+   27.62,
+   41.43
+  ],
+  "26": [
+   179.81,
+   60.98
+  ],
+  "27": [
+   102.23,
+   119.63
+  ],
+  "28": [
+   17.07,
+   117.77
+  ],
+  "29": [
+   193.37,
+   182.35
+  ],
+  "30": [
+   185.34,
+   147.32
+  ]
+ },
+ "variants": [
+  "v_cli_d3_m0",
+  "v_cli_d3_m1",
+  "v_journal_atk_dis30_dao30",
+  "v_root_d3"
+ ],
+ "variant_definitions": {
+  "v_root_d3": "ROLE=0,DEFENSE=3",
+  "v_cli_d3_m0": "ROLE=1,DEFENSE=3,NODE_MOBILE=0,TR_STATIC_MS=9309,TR_MOBILE_MS=16476",
+  "v_cli_d3_m1": "ROLE=1,DEFENSE=3,NODE_MOBILE=1,TR_STATIC_MS=9309,TR_MOBILE_MS=16476",
+  "v_journal_atk_dis30_dao30": "ROLE=2,ATTACK_MODE=3,ATTACK_DIS_INTERVAL=30,ATTACK_DAO_INTERVAL=30"
+ },
+ "execution_environment": {
+  "docker_context": "default",
+  "docker_image": "sha256:0e20b334617f576a8e349262b796e5dc26b7b05f541d13e293637da7eaa3c3eb"
+ }
+}

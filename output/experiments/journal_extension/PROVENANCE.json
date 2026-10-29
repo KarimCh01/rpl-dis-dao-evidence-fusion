@@ -1,0 +1,359 @@
+{
+  "recorded_utc": "2026-10-20T20:37:55.140348+00:00",
+  "python": "3.12.3",
+  "execution_engine": {
+    "docker_context": "default",
+    "docker_image": "sha256:0e20b334617f576a8e349262b796e5dc26b7b05f541d13e293637da7eaa3c3eb"
+  },
+  "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.39",
+  "contiki_git_commit": "385d72a7658a682e9c191d7ce7702f59973ace5f",
+  "docker_image_id": "sha256:0e20b334617f576a8e349262b796e5dc26b7b05f541d13e293637da7eaa3c3eb",
+  "docker_repo_digests": [],
+  "variants": [
+    {
+      "variant": "v_cli_d0_m0",
+      "definitions": "ROLE=1,DEFENSE=0,NODE_MOBILE=0",
+      "path": "build/variants/v_cli_d0_m0/build/cooja/v_cli_d0_m0.cooja",
+      "sha256": "7647c7f6b42b4e3cd7b7b50b4cad42d5c5b218e4496e1f6367c2561ee4bff41c",
+      "bytes": 371120
+    },
+    {
+      "variant": "v_cli_d0_m1",
+      "definitions": "ROLE=1,DEFENSE=0,NODE_MOBILE=1",
+      "path": "build/variants/v_cli_d0_m1/build/cooja/v_cli_d0_m1.cooja",
+      "sha256": "f865b0081e59228721f4cf125ffa2dab8d5e1e0481bbf59956497c925e3b0c46",
+      "bytes": 371120
+    },
+    {
+      "variant": "v_cli_d3_m0",
+      "definitions": "ROLE=1,DEFENSE=3,NODE_MOBILE=0,TR_STATIC_MS=9309,TR_MOBILE_MS=16476",
+      "path": "build/variants/v_cli_d3_m0/build/cooja/v_cli_d3_m0.cooja",
+      "sha256": "fb604e116573665f5af99d27a5d12f347c8eb5ab93f6ac986581f2f167f910a7",
+      "bytes": 376096
+    },
+    {
+      "variant": "v_cli_d3_m1",
+      "definitions": "ROLE=1,DEFENSE=3,NODE_MOBILE=1,TR_STATIC_MS=9309,TR_MOBILE_MS=16476",
+      "path": "build/variants/v_cli_d3_m1/build/cooja/v_cli_d3_m1.cooja",
+      "sha256": "bea86e2f93b825406e0b8f0627cac6a978cbca911b685c8c895e5e7fd936a59c",
+      "bytes": 376096
+    },
+    {
+      "variant": "v_cli_d5_m0",
+      "definitions": "ROLE=1,DEFENSE=5,NODE_MOBILE=0,LIMSD_BETA=94",
+      "path": "build/variants/v_cli_d5_m0/build/cooja/v_cli_d5_m0.cooja",
+      "sha256": "1d841167adca79e0e918a91a2504e900da771a2d5dcb04b0377ea5bd8bec6bf1",
+      "bytes": 371256
+    },
+    {
+      "variant": "v_cli_d5_m1",
+      "definitions": "ROLE=1,DEFENSE=5,NODE_MOBILE=1,LIMSD_BETA=94",
+      "path": "build/variants/v_cli_d5_m1/build/cooja/v_cli_d5_m1.cooja",
+      "sha256": "3eebc9de7bc8fad2e460e551bf6030e1b537609889d08a385d200e89d9dd363a",
+      "bytes": 371256
+    },
+    {
+      "variant": "v_cli_d7_m0",
+      "definitions": "ROLE=1,DEFENSE=7,NODE_MOBILE=0,TR_STATIC_MS=9309,TR_MOBILE_MS=16476",
+      "path": "build/variants/v_cli_d7_m0/build/cooja/v_cli_d7_m0.cooja",
+      "sha256": "7bb8bf63a103f7f763b40c09c5a1a54baf6411ffd848bd92e7c43716f45aac78",
+      "bytes": 376648
+    },
+    {
+      "variant": "v_cli_d7_m1",
+      "definitions": "ROLE=1,DEFENSE=7,NODE_MOBILE=1,TR_STATIC_MS=9309,TR_MOBILE_MS=16476",
+      "path": "build/variants/v_cli_d7_m1/build/cooja/v_cli_d7_m1.cooja",
+      "sha256": "9e4838435affddf4ce47fbdb212d1b4bd237310b61f65f960ebe9aec01b41e79",
+      "bytes": 376648
+    },
+    {
+      "variant": "v_jab_fixed_calibration_cli0",
+      "definitions": "ROLE=1,DEFENSE=7,NODE_MOBILE=0,TR_STATIC_MS=9309,TR_MOBILE_MS=16476,AEF_FIXED_CALIBRATION=1,AEF_FIXED_DTL_PPM=48082,AEF_FIXED_ENERGY_MEAN=10021061,AEF_FIXED_ENERGY_SD=9154,AEF_FIXED_INC_PPM=405797",
+      "path": "build/variants/v_jab_fixed_calibration_cli0/build/cooja/v_jab_fixed_calibration_cli0.cooja",
+      "sha256": "14dc9904487359362dbcbe62feb1f6a89484463acdc3f7e28271fb47a405d039",
+      "bytes": 376616
+    },
+    {
+      "variant": "v_jab_fixed_calibration_cli1",
+      "definitions": "ROLE=1,DEFENSE=7,NODE_MOBILE=1,TR_STATIC_MS=9309,TR_MOBILE_MS=16476,AEF_FIXED_CALIBRATION=1,AEF_FIXED_DTL_PPM=48297,AEF_FIXED_ENERGY_MEAN=10038280,AEF_FIXED_ENERGY_SD=40151,AEF_FIXED_INC_PPM=313345",
+      "path": "build/variants/v_jab_fixed_calibration_cli1/build/cooja/v_jab_fixed_calibration_cli1.cooja",
+      "sha256": "a9e7372d75317dd08537b8ee47ae15e271b4dd532a22cd76915b4a387263c7e4",
+      "bytes": 376616
+    },
+    {
+      "variant": "v_jab_fixed_calibration_root",
+      "definitions": "ROLE=0,DEFENSE=7,NODE_MOBILE=0,TR_STATIC_MS=9309,TR_MOBILE_MS=16476,AEF_FIXED_CALIBRATION=1,AEF_FIXED_DTL_PPM=8980,AEF_FIXED_ENERGY_MEAN=10133379,AEF_FIXED_ENERGY_SD=44456,AEF_FIXED_INC_PPM=112150",
+      "path": "build/variants/v_jab_fixed_calibration_root/build/cooja/v_jab_fixed_calibration_root.cooja",
+      "sha256": "ce8ed2c951909013935f7b8c2cad991daedf97a62a81446464a80288fd6c57d5",
+      "bytes": 376528
+    },
+    {
+      "variant": "v_jab_full_cli0",
+      "definitions": "ROLE=1,DEFENSE=7,NODE_MOBILE=0,TR_STATIC_MS=9309,TR_MOBILE_MS=16476",
+      "path": "build/variants/v_jab_full_cli0/build/cooja/v_jab_full_cli0.cooja",
+      "sha256": "94f394067a0ea44ee0e7f232b0a88084ac352f71d6f714958730a1d8544878d2",
+      "bytes": 376648
+    },
+    {
+      "variant": "v_jab_full_cli1",
+      "definitions": "ROLE=1,DEFENSE=7,NODE_MOBILE=1,TR_STATIC_MS=9309,TR_MOBILE_MS=16476",
+      "path": "build/variants/v_jab_full_cli1/build/cooja/v_jab_full_cli1.cooja",
+      "sha256": "7113369db4818e69bc2b267d6cd24587c43f05ec38120cbbb0a6fd9ce1bd98ce",
+      "bytes": 376648
+    },
+    {
+      "variant": "v_jab_full_root",
+      "definitions": "ROLE=0,DEFENSE=7,NODE_MOBILE=0,TR_STATIC_MS=9309,TR_MOBILE_MS=16476",
+      "path": "build/variants/v_jab_full_root/build/cooja/v_jab_full_root.cooja",
+      "sha256": "86cc55b779a0b5b5a503c71957d75895e797f7b4c858d2dc59cf6b51427ba722",
+      "bytes": 376560
+    },
+    {
+      "variant": "v_jab_immediate_dao_evidence_cli0",
+      "definitions": "ROLE=1,DEFENSE=7,NODE_MOBILE=0,TR_STATIC_MS=9309,TR_MOBILE_MS=16476,AEF_DAO_PERSIST_WINDOWS=1",
+      "path": "build/variants/v_jab_immediate_dao_evidence_cli0/build/cooja/v_jab_immediate_dao_evidence_cli0.cooja",
+      "sha256": "617f27ce98ef0ef72bc381addf4199b17455f5a56b86111c58cfea29ac9ec9f6",
+      "bytes": 376648
+    },
+    {
+      "variant": "v_jab_immediate_dao_evidence_cli1",
+      "definitions": "ROLE=1,DEFENSE=7,NODE_MOBILE=1,TR_STATIC_MS=9309,TR_MOBILE_MS=16476,AEF_DAO_PERSIST_WINDOWS=1",
+      "path": "build/variants/v_jab_immediate_dao_evidence_cli1/build/cooja/v_jab_immediate_dao_evidence_cli1.cooja",
+      "sha256": "faac62f1b5289a8dd0904c12f3eee7fea2d7a4f0138085d00dacdb3c9af719a1",
+      "bytes": 376648
+    },
+    {
+      "variant": "v_jab_immediate_dao_evidence_root",
+      "definitions": "ROLE=0,DEFENSE=7,NODE_MOBILE=0,TR_STATIC_MS=9309,TR_MOBILE_MS=16476,AEF_DAO_PERSIST_WINDOWS=1",
+      "path": "build/variants/v_jab_immediate_dao_evidence_root/build/cooja/v_jab_immediate_dao_evidence_root.cooja",
+      "sha256": "169deeb143f268165a1da84ec51b20764054f7bb8c5e614f54e4b92f0ed4011c",
+      "bytes": 376560
+    },
+    {
+      "variant": "v_jab_learning_off_cli0",
+      "definitions": "ROLE=1,DEFENSE=4,NODE_MOBILE=0,TR_STATIC_MS=9309,TR_MOBILE_MS=16476",
+      "path": "build/variants/v_jab_learning_off_cli0/build/cooja/v_jab_learning_off_cli0.cooja",
+      "sha256": "26c0e033d0cc5db46e95d450aa3fb2a0d72c689299800905fcb21246e6816326",
+      "bytes": 376184
+    },
+    {
+      "variant": "v_jab_learning_off_cli1",
+      "definitions": "ROLE=1,DEFENSE=4,NODE_MOBILE=1,TR_STATIC_MS=9309,TR_MOBILE_MS=16476",
+      "path": "build/variants/v_jab_learning_off_cli1/build/cooja/v_jab_learning_off_cli1.cooja",
+      "sha256": "87baac7d89336bbdf0a2f61295bbb1a51421ebba5f25e7e3d8a4cf4f3295e0f1",
+      "bytes": 376184
+    },
+    {
+      "variant": "v_jab_learning_off_root",
+      "definitions": "ROLE=0,DEFENSE=4,NODE_MOBILE=0,TR_STATIC_MS=9309,TR_MOBILE_MS=16476",
+      "path": "build/variants/v_jab_learning_off_root/build/cooja/v_jab_learning_off_root.cooja",
+      "sha256": "c06d1e73b1c14d962471b8e491b83b1b819440862a2456ba3459422c76c9e758",
+      "bytes": 376088
+    },
+    {
+      "variant": "v_jab_no_dao_evidence_cli0",
+      "definitions": "ROLE=1,DEFENSE=7,NODE_MOBILE=0,TR_STATIC_MS=9309,TR_MOBILE_MS=16476,AEF_DAO_FUSION=0",
+      "path": "build/variants/v_jab_no_dao_evidence_cli0/build/cooja/v_jab_no_dao_evidence_cli0.cooja",
+      "sha256": "b3f82eca62fd0b7be2a6d6e8baf630fadd8503e809046e9b592031b1b7c4e52d",
+      "bytes": 376648
+    },
+    {
+      "variant": "v_jab_no_dao_evidence_cli1",
+      "definitions": "ROLE=1,DEFENSE=7,NODE_MOBILE=1,TR_STATIC_MS=9309,TR_MOBILE_MS=16476,AEF_DAO_FUSION=0",
+      "path": "build/variants/v_jab_no_dao_evidence_cli1/build/cooja/v_jab_no_dao_evidence_cli1.cooja",
+      "sha256": "acb8d02edf34a269020cfe9cbec059e2d89238f0fec707cdf2865b76164b45b3",
+      "bytes": 376648
+    },
+    {
+      "variant": "v_jab_no_dao_evidence_root",
+      "definitions": "ROLE=0,DEFENSE=7,NODE_MOBILE=0,TR_STATIC_MS=9309,TR_MOBILE_MS=16476,AEF_DAO_FUSION=0",
+      "path": "build/variants/v_jab_no_dao_evidence_root/build/cooja/v_jab_no_dao_evidence_root.cooja",
+      "sha256": "56ea3237354765c13917acb83657892624bb00fc5d8325846ee61f5c8b11e4dd",
+      "bytes": 376560
+    },
+    {
+      "variant": "v_jab_no_route_repair_cli0",
+      "definitions": "ROLE=1,DEFENSE=7,NODE_MOBILE=0,TR_STATIC_MS=9309,TR_MOBILE_MS=16476,AEF_ROUTE_REPAIR=0",
+      "path": "build/variants/v_jab_no_route_repair_cli0/build/cooja/v_jab_no_route_repair_cli0.cooja",
+      "sha256": "584d776d60a214a3c23dca47999c3326144088bd2fcd14d59f93260f4d2dcffb",
+      "bytes": 376648
+    },
+    {
+      "variant": "v_jab_no_route_repair_cli1",
+      "definitions": "ROLE=1,DEFENSE=7,NODE_MOBILE=1,TR_STATIC_MS=9309,TR_MOBILE_MS=16476,AEF_ROUTE_REPAIR=0",
+      "path": "build/variants/v_jab_no_route_repair_cli1/build/cooja/v_jab_no_route_repair_cli1.cooja",
+      "sha256": "a4a7d433deb1e896ef6fa0c4d69140783de1aadc92665843073507b2b2081751",
+      "bytes": 376648
+    },
+    {
+      "variant": "v_jab_no_route_repair_root",
+      "definitions": "ROLE=0,DEFENSE=7,NODE_MOBILE=0,TR_STATIC_MS=9309,TR_MOBILE_MS=16476,AEF_ROUTE_REPAIR=0",
+      "path": "build/variants/v_jab_no_route_repair_root/build/cooja/v_jab_no_route_repair_root.cooja",
+      "sha256": "8f669a5d5898e7e73899ce2ee79ed0f1b4422ed677029a6f1972ff98fc8b3570",
+      "bytes": 376560
+    },
+    {
+      "variant": "v_journal_atk_dis10_dao10",
+      "definitions": "ROLE=2,ATTACK_MODE=3,ATTACK_DIS_INTERVAL=10,ATTACK_DAO_INTERVAL=10",
+      "path": "build/variants/v_journal_atk_dis10_dao10/build/cooja/v_journal_atk_dis10_dao10.cooja",
+      "sha256": "34c0e4a8d8e77398ecacaa9748df80a2f8e37ec7f76c55758de8d06b77f9b4b2",
+      "bytes": 371120
+    },
+    {
+      "variant": "v_journal_atk_dis30_dao30",
+      "definitions": "ROLE=2,ATTACK_MODE=3,ATTACK_DIS_INTERVAL=30,ATTACK_DAO_INTERVAL=30",
+      "path": "build/variants/v_journal_atk_dis30_dao30/build/cooja/v_journal_atk_dis30_dao30.cooja",
+      "sha256": "e749137fe134ea750dbba48a6b8c1096c92cc5e0b1b723359fba591218de1fa4",
+      "bytes": 371120
+    },
+    {
+      "variant": "v_journal_atk_dis3_dao2",
+      "definitions": "ROLE=2,ATTACK_MODE=3,ATTACK_DIS_INTERVAL=3,ATTACK_DAO_INTERVAL=2",
+      "path": "build/variants/v_journal_atk_dis3_dao2/build/cooja/v_journal_atk_dis3_dao2.cooja",
+      "sha256": "703ca4f0d6c83b02b9ca2993307d6bab1df013d9fe21f16c7231ac2605e39b0d",
+      "bytes": 371120
+    },
+    {
+      "variant": "v_journal_atk_trace",
+      "definitions": "ROLE=2,ATTACK_MODE=3,ATTACK_DIS_INTERVAL=3,ATTACK_DAO_INTERVAL=2,ATTACK_TRACE=1",
+      "path": "build/variants/v_journal_atk_trace/build/cooja/v_journal_atk_trace.cooja",
+      "sha256": "bfa25cd0f9001ac20d95cae6d30bfce8f6c8ea9fe62db77b5e18d368058189f6",
+      "bytes": 371120
+    },
+    {
+      "variant": "v_jprof_d1_cli0",
+      "definitions": "ROLE=1,DEFENSE=1,NODE_MOBILE=0,HOST_PROFILE=1,TR_STATIC_MS=9309,TR_MOBILE_MS=16476",
+      "path": "build/variants/v_jprof_d1_cli0/build/cooja/v_jprof_d1_cli0.cooja",
+      "sha256": "b1cdc6a4159f7a9a95ab3d54f9be339c0d99e586815752e8546466b3af6cf5d7",
+      "bytes": 371280
+    },
+    {
+      "variant": "v_jprof_d1_cli1",
+      "definitions": "ROLE=1,DEFENSE=1,NODE_MOBILE=1,HOST_PROFILE=1,TR_STATIC_MS=9309,TR_MOBILE_MS=16476",
+      "path": "build/variants/v_jprof_d1_cli1/build/cooja/v_jprof_d1_cli1.cooja",
+      "sha256": "44158669935d8ee8b24bec66eb4b688afcd341ee18f9d58a6bc753814a5724a9",
+      "bytes": 371280
+    },
+    {
+      "variant": "v_jprof_d1_root",
+      "definitions": "ROLE=0,DEFENSE=1,NODE_MOBILE=0,HOST_PROFILE=1,TR_STATIC_MS=9309,TR_MOBILE_MS=16476",
+      "path": "build/variants/v_jprof_d1_root/build/cooja/v_jprof_d1_root.cooja",
+      "sha256": "40d2e5cc3e540b08382a28c6a902c746c96ecefc310ba565f9f342887f4d8531",
+      "bytes": 371184
+    },
+    {
+      "variant": "v_jprof_d3_cli0",
+      "definitions": "ROLE=1,DEFENSE=3,NODE_MOBILE=0,HOST_PROFILE=1,TR_STATIC_MS=9309,TR_MOBILE_MS=16476",
+      "path": "build/variants/v_jprof_d3_cli0/build/cooja/v_jprof_d3_cli0.cooja",
+      "sha256": "87ef3285ae6cc0c0d80525c960af14eed46aa5379d8ec80d64b8c47d230209a8",
+      "bytes": 376208
+    },
+    {
+      "variant": "v_jprof_d3_cli1",
+      "definitions": "ROLE=1,DEFENSE=3,NODE_MOBILE=1,HOST_PROFILE=1,TR_STATIC_MS=9309,TR_MOBILE_MS=16476",
+      "path": "build/variants/v_jprof_d3_cli1/build/cooja/v_jprof_d3_cli1.cooja",
+      "sha256": "ec0fd65b625a89d0d72128adf39f465628ab7536b2f063d915e6e2f12fb6bb30",
+      "bytes": 376208
+    },
+    {
+      "variant": "v_jprof_d3_root",
+      "definitions": "ROLE=0,DEFENSE=3,NODE_MOBILE=0,HOST_PROFILE=1,TR_STATIC_MS=9309,TR_MOBILE_MS=16476",
+      "path": "build/variants/v_jprof_d3_root/build/cooja/v_jprof_d3_root.cooja",
+      "sha256": "093a0c734fe8b33f2583093338e812284708675661ae1038c2cc176db1f9cced",
+      "bytes": 376120
+    },
+    {
+      "variant": "v_jprof_d7_cli0",
+      "definitions": "ROLE=1,DEFENSE=7,NODE_MOBILE=0,HOST_PROFILE=1,TR_STATIC_MS=9309,TR_MOBILE_MS=16476",
+      "path": "build/variants/v_jprof_d7_cli0/build/cooja/v_jprof_d7_cli0.cooja",
+      "sha256": "dad44fa54bf8824da094e360155116cb0d131466bfd5f43529892fbaa19d699a",
+      "bytes": 376768
+    },
+    {
+      "variant": "v_jprof_d7_cli1",
+      "definitions": "ROLE=1,DEFENSE=7,NODE_MOBILE=1,HOST_PROFILE=1,TR_STATIC_MS=9309,TR_MOBILE_MS=16476",
+      "path": "build/variants/v_jprof_d7_cli1/build/cooja/v_jprof_d7_cli1.cooja",
+      "sha256": "818e6e3863b2d0c40c34eb15d2fcd85160dc5ec1acf0cbce46b635fcd6c9bde7",
+      "bytes": 376768
+    },
+    {
+      "variant": "v_jprof_d7_root",
+      "definitions": "ROLE=0,DEFENSE=7,NODE_MOBILE=0,HOST_PROFILE=1,TR_STATIC_MS=9309,TR_MOBILE_MS=16476",
+      "path": "build/variants/v_jprof_d7_root/build/cooja/v_jprof_d7_root.cooja",
+      "sha256": "ed111740db560ba8ed13315bdbf1bd8218ec27336b93b015bff0321b2c45ae31",
+      "bytes": 376672
+    },
+    {
+      "variant": "v_jscale_dis10_cli0",
+      "definitions": "ROLE=1,DEFENSE=0,SEND_INTERVAL_SEC=60,BIG_NET=1,SCALE_DIAGNOSTICS=1,APP_RPL_DIS_INTERVAL_SEC=10,ROOT_ROUTES=1100,ROOT_QUEUEBUF=128",
+      "path": "build/variants/v_jscale_dis10_cli0/build/cooja/v_jscale_dis10_cli0.cooja",
+      "sha256": "e340a82371d49e799b065808160c1e2488dd687bfd56e424bb84f4e071152d68",
+      "bytes": 371120
+    },
+    {
+      "variant": "v_jscale_dis10_root",
+      "definitions": "ROLE=0,DEFENSE=0,SEND_INTERVAL_SEC=60,BIG_NET=1,SCALE_DIAGNOSTICS=1,APP_RPL_DIS_INTERVAL_SEC=10,ROOT_ROUTES=1100,ROOT_QUEUEBUF=128",
+      "path": "build/variants/v_jscale_dis10_root/build/cooja/v_jscale_dis10_root.cooja",
+      "sha256": "7e7c02a6367037ea4122f66d73631d9a755b6d7591783531b30b393d3728a18d",
+      "bytes": 371032
+    },
+    {
+      "variant": "v_jscale_dis60_cli0",
+      "definitions": "ROLE=1,DEFENSE=0,SEND_INTERVAL_SEC=60,BIG_NET=1,SCALE_DIAGNOSTICS=1,APP_RPL_DIS_INTERVAL_SEC=60,ROOT_ROUTES=1100,ROOT_QUEUEBUF=128",
+      "path": "build/variants/v_jscale_dis60_cli0/build/cooja/v_jscale_dis60_cli0.cooja",
+      "sha256": "7bc69d030a72c25dd87d569107f9bdf2bda81bcb17ad3a52b92008cef7ed47e1",
+      "bytes": 371120
+    },
+    {
+      "variant": "v_jscale_dis60_root",
+      "definitions": "ROLE=0,DEFENSE=0,SEND_INTERVAL_SEC=60,BIG_NET=1,SCALE_DIAGNOSTICS=1,APP_RPL_DIS_INTERVAL_SEC=60,ROOT_ROUTES=1100,ROOT_QUEUEBUF=128",
+      "path": "build/variants/v_jscale_dis60_root/build/cooja/v_jscale_dis60_root.cooja",
+      "sha256": "701eaa0282893f4cdaed5e50feb6000bb4cab8895f9c3ab7b4d47318c1ab5e8e",
+      "bytes": 371032
+    },
+    {
+      "variant": "v_root_d0",
+      "definitions": "ROLE=0,DEFENSE=0",
+      "path": "build/variants/v_root_d0/build/cooja/v_root_d0.cooja",
+      "sha256": "3d7f71006ea1e35cc4fc420179e33677749619a2c027ac68042d06b28fad1047",
+      "bytes": 371032
+    },
+    {
+      "variant": "v_root_d3",
+      "definitions": "ROLE=0,DEFENSE=3",
+      "path": "build/variants/v_root_d3/build/cooja/v_root_d3.cooja",
+      "sha256": "01bbc3e8902b432c700e72db4a9027cacdc89a4a469f32c67d2b0ddb4b6bed9f",
+      "bytes": 376000
+    },
+    {
+      "variant": "v_root_d5",
+      "definitions": "ROLE=0,DEFENSE=5,LIMSD_BETA=94",
+      "path": "build/variants/v_root_d5/build/cooja/v_root_d5.cooja",
+      "sha256": "c0b94f673bff2a958eaa3140345d9b2a41cf45cd67fd10d54cd248d03c03041b",
+      "bytes": 371168
+    },
+    {
+      "variant": "v_root_d7",
+      "definitions": "ROLE=0,DEFENSE=7",
+      "path": "build/variants/v_root_d7/build/cooja/v_root_d7.cooja",
+      "sha256": "5e90c129db110941e23e507c71c658e1e45119c9ae1b4e4e57261a83f443e5c1",
+      "bytes": 376560
+    }
+  ],
+  "current_source_sha256": {
+    "firmware/node.c": "da4cfdd8210fd9a2b9f16eca90ba9f9e2971d135b7d448b29e187c89271fea73",
+    "firmware/rl.c": "3ac45da9153047bd41e443e37ba6ff78ed2fb2e98ce2df723a96e9e16110693b",
+    "firmware/attack.h": "4d2adef3de4ba63962201b36de00f31fa6b968d64e227dde1066afaaf83b5133",
+    "firmware/project-conf.h": "06cd615e211c5503f419198b155e518e0dcdaa14bed4e79077f55e37baa9277e",
+    "firmware/rl.h": "c0bdda3fefa0051e3b98465d424176f4d6e966f09234d60fa800685fefc18a4c",
+    "firmware/dst.c": "5a578aee63bcebf990092428a2e46c5b92457f875cc2449169c6d43e4a681908",
+    "firmware/attack.c": "fd6bd80fd83ce7f1567d4a4b846d54c5f3d28565d355a8f0e58fca2a8ff9929c",
+    "firmware/defense.c": "f4114d05efbd0872fe74b9ef3d0d72b3bcaa849b5415f9a0a89200c4a97b8519",
+    "firmware/dst.h": "a4953e8f2a60236df2377085e82f56d7fe6b246348ac0ac8f8b8501bf4f98b65",
+    "firmware/defense.h": "fa487da4b46a7bab89dd20fb2083f4284c672aa7cfc9be23edc008de7c21a3bc",
+    "firmware/Makefile": "62d431831310f10e4667c870d2a3a124c4eb158c1b8874d753b1c8e88b3819f6",
+    "scenarios/gen_csc.py": "7404ff29f2ff3261e31dc7fd80e090977e7e9315327470a171ec4c20151acf9e",
+    "scripts/run_matrix.py": "3adbd2afa887db0f8798b109233e219d95e24cd924e436557817e223b5e7cbdb",
+    "patches/contiki-ng-hooks.patch": "c7f01d1cadc1be0bd3236c327214a636a29e958571f12cf9b02effbdbd74a1d8"
+  }
+}

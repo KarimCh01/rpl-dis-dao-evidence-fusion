@@ -1,0 +1,13 @@
+{
+  "seeds": 10,
+  "fixed_mean_fpr_pct": 42.06896551724138,
+  "learning_mean_fpr_pct": 42.41379310344828,
+  "mean_paired_difference_pp": 0.3448275862068968,
+  "paired_difference_bootstrap_95ci_low_pp": 0.0,
+  "paired_difference_bootstrap_95ci_high_pp": 1.0344827586206904,
+  "wilcoxon_two_sided_p": 1.0,
+  "fixed_mean_blacklist_events": 204.1,
+  "learning_mean_blacklist_events": 1352.7,
+  "learning_first_q_flags_total": 112,
+  "learning_unique_flags_total": 123
+}

@@ -1,0 +1,135 @@
+{
+  "started_utc": "2026-10-20T16:29:27.089274+00:00",
+  "stages": [
+    {
+      "name": "robustness",
+      "exit_code": 0,
+      "finished_utc": "2026-10-20T17:10:52.683535+00:00"
+    },
+    {
+      "name": "analysis",
+      "exit_code": 0,
+      "finished_utc": "2026-10-20T17:11:01.601599+00:00"
+    },
+    {
+      "name": "references",
+      "exit_code": 0,
+      "finished_utc": "2026-10-20T17:29:23.122646+00:00"
+    },
+    {
+      "name": "analysis",
+      "exit_code": 0,
+      "finished_utc": "2026-10-20T17:29:34.601884+00:00"
+    },
+    {
+      "name": "reuse_ablation_variants.json",
+      "exit_code": 0
+    },
+    {
+      "name": "ablations",
+      "exit_code": 0,
+      "finished_utc": "2026-10-20T18:48:42.220436+00:00"
+    },
+    {
+      "name": "analysis",
+      "exit_code": 0,
+      "finished_utc": "2026-10-20T18:49:02.808796+00:00"
+    },
+    {
+      "name": "reuse_operational_variants.json",
+      "exit_code": 0
+    },
+    {
+      "name": "timing_validation",
+      "exit_code": 0,
+      "finished_utc": "2026-10-20T18:49:02.881150+00:00"
+    },
+    {
+      "name": "analysis",
+      "exit_code": 0,
+      "finished_utc": "2026-10-20T18:49:23.457064+00:00"
+    },
+    {
+      "name": "profiling",
+      "exit_code": 0,
+      "finished_utc": "2026-10-20T19:09:32.840428+00:00"
+    },
+    {
+      "name": "analysis",
+      "exit_code": 0,
+      "finished_utc": "2026-10-20T19:09:56.128246+00:00"
+    },
+    {
+      "name": "robservation",
+      "exit_code": 0,
+      "finished_utc": "2026-10-20T19:49:28.569083+00:00"
+    },
+    {
+      "name": "analysis",
+      "exit_code": 0,
+      "finished_utc": "2026-10-20T19:49:56.172187+00:00"
+    },
+    {
+      "name": "scale_diagnostics",
+      "exit_code": 0,
+      "finished_utc": "2026-10-20T20:36:53.513036+00:00"
+    },
+    {
+      "name": "analysis",
+      "exit_code": 0,
+      "finished_utc": "2026-10-20T20:37:21.404492+00:00"
+    },
+    {
+      "name": "scale_geometry",
+      "exit_code": 0,
+      "finished_utc": "2026-10-20T20:37:23.516808+00:00"
+    },
+    {
+      "name": "validation",
+      "exit_code": 0,
+      "finished_utc": "2026-10-20T20:37:23.605977+00:00"
+    },
+    {
+      "name": "scale_gate_release",
+      "exit_code": 0,
+      "finished_utc": "2026-10-20T20:37:23.638568+00:00"
+    },
+    {
+      "name": "resource_sizes",
+      "exit_code": 0,
+      "finished_utc": "2026-10-20T20:37:23.981091+00:00"
+    },
+    {
+      "name": "figures",
+      "exit_code": 0,
+      "finished_utc": "2026-10-20T20:37:27.056638+00:00"
+    },
+    {
+      "name": "validation",
+      "exit_code": 0,
+      "finished_utc": "2026-10-20T20:37:27.156377+00:00"
+    },
+    {
+      "name": "complete_analysis",
+      "exit_code": 0,
+      "finished_utc": "2026-10-20T20:37:55.041313+00:00"
+    },
+    {
+      "name": "provenance",
+      "exit_code": 0,
+      "finished_utc": "2026-10-20T20:37:55.154881+00:00"
+    },
+    {
+      "name": "log_reproduction",
+      "exit_code": 0,
+      "finished_utc": "2026-10-20T20:39:01.427436+00:00"
+    }
+  ],
+  "state": "complete",
+  "execution_environment": {
+    "docker_context": "default",
+    "docker_image": "sha256:0e20b334617f576a8e349262b796e5dc26b7b05f541d13e293637da7eaa3c3eb"
+  },
+  "current_stage": "complete",
+  "scale_feasibility_established": false
+}

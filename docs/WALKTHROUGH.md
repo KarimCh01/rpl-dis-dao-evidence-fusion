@@ -328,6 +328,144 @@ decisions as DIS-FDM.
    children. This restores the root's route immediately instead of waiting up
    to about 15 minutes for the attacker's next honest DAO.
 
+### D.5 Li-MSD (Verma et al. 2024), DEFENSE=5
+
+The DAO-specific baseline, implemented from Algorithms 1 to 3 of the paper.
+
+**Detection.** Every parent counts the DAOs it receives from each child. Only
+DAOs that the child itself created are counted (the link-layer sender equals
+the DAO's source address). This is the paper's solution to the "victim node
+problem": a parent that merely forwards an attacker's DAOs is never counted
+against. When a child's count has reached the DAO receive threshold `beta`, the
+next DAO from it puts it in the blacklist.
+
+**Mitigation.** Every DAO whose originator is blacklisted is dropped without
+further processing (the paper's SEARCH-BLACKLIST). DIS messages are not
+affected: Li-MSD only watches DAOs.
+
+**INITIALIZE.** As in the paper, Li-MSD becomes active at 120 s and clears all
+counts and the blacklist then and every 1800 s after it, so a 60-minute run
+has two periods (120 to 1920 s and 1920 s to the end).
+
+**Choice of beta.** The paper chooses `beta` from attack-free runs without
+giving a value for other networks. `analysis/calibrate_limsd.py` reads each
+node's own DAO count (`dao_tx` in the `#S` lines, reported every 60 s) in the
+20 attack-free calibration runs, measures how many DAOs each node sent in each
+period, and sets `beta` to the largest value seen, so no honest node in the
+calibration data exceeds it. The result is `beta = 94` (static nodes: mean 4,
+maximum 94; mobile nodes: mean 31, maximum 73). Because `#S` is printed once a
+minute, the period edges are accurate to about 60 s.
+
+**Differences from the paper.** The paper's pseudocode has each parent receive
+a DAO and forward it to its own preferred parent, as in storing mode. Here RPL runs in non-storing mode, so a
+parent sees its children's DAOs in the forwarding hook and the root in its DAO
+hook; the counting and blacklisting are the same. The paper's attacker replays
+captured DAOs, while the DAO attacker here sends a forged DAO every 2 s, so it
+also exceeds the count.
+
+### D.6 AEF-RPL decision layer: on-node Q-learning, DEFENSE=6
+
+The full proposed algorithm. Everything in D.4 is kept (evidence, self-calibration,
+route repair); only the final decision changes. Defense 4 is the same algorithm with
+the fixed decision rule, and serves as the ablation with learning switched off.
+
+**Math first.** Before any simulation, `analysis/check_theory.py` checks the
+proposal's claims numerically: the detection-delay bounds (every simulated delay
+lies between `T_w` and `(k*+2) T_w`), the false-alarm bound (measured rate below
+`L q^(k*+1)`), the learned policy with gamma = 0 (isolate when the probability that
+the anomaly persists is above 1/2), the bound `|Q| <= 4`, and the exploration
+schedule. All hold. One finding: because the learning rate never drops below 1/16,
+states whose probability is only slightly above 1/2 (up to about 0.65) may be learned
+as Accept. The error is always toward accepting, never toward isolating an honest
+node.
+
+**Per window, for each active neighbor** (it sent a DIS or an inconsistent DAO, has
+DIS or DAO evidence, or is isolated):
+
+1. Build the state `(c, beta, delta, iota)`: the DIS counter `u` (0 to 5), the fused
+   attack belief quantized at 0.5, 0.8 and 0.95, whether DAO evidence exists, and
+   whether the neighbor is isolated. 96 states.
+2. If the neighbor had a decision in the previous window, give that decision its
+   reward: +1 isolate and the anomaly persisted, -2 isolate and it did not, -1 accept
+   and it persisted, 0 accept and it did not. "Persisted" means the DIS Traffic Load
+   was above `T_DTL` or an inconsistent DAO arrived in this window. Then update
+   `Q(s,a) += (r + Q_max(s')/2 - Q(s,a)) / n`, with `n` the visit count capped at 16.
+3. Choose the action: Isolate if `c = 5`, Accept if the state is fully benign,
+   otherwise epsilon-greedy (0.10 at 240 s, halved every 10 minutes, at least 0.01).
+   When both actions have the same value, the fixed rule's action is taken, so an
+   empty table behaves exactly like defense 4.
+4. Isolate prints `#D` and applies the D.4 mitigation; Accept on an isolated
+   neighbor releases it and prints `#U`. Isolation is therefore reversible.
+
+Q values are 16-bit fixed point (8 fractional bits). The table and visit counts take
+768 bytes, plus 2 bytes per neighbor. Every 600 s the node prints `#G` with the
+number of states that changed their greedy action, which measures how fast the
+policy settles. The code is in `firmware/rl.c`; it was also compiled on the host
+and tested against the same theory (60 of 61 test states learned as predicted, the
+remaining one is the near-threshold case above).
+
+---
+
+## Part D2. Scaling to 500 and 1000 nodes (RQ5)
+
+**Node identifiers.** Cooja gives node `n` the link-layer address made of the
+bytes `n >> 8` and `n & 0xff` repeated, and the IPv6 interface identifier is that
+address with one bit flipped in its first byte. The firmware now reads a node's
+16-bit ID from the last two bytes of either address. For IDs below 256 these are
+exactly the bytes the 30-node version read, so nothing changes for the existing runs.
+
+**Neighbor table.** The per-neighbor records were an array indexed by node ID
+(at most 63 nodes). They are now 64 slots kept sorted by node ID. A slot is
+created only for a real neighbor: a node heard sending a DIS, or a node whose own
+DAO arrives directly. DAOs merely forwarded from further away are looked up but
+never create a slot, so the root does not need one record per node. When all
+slots are in use, an idle slot (no counts, no evidence, not isolated) is reused;
+if none is idle the new neighbor is not tracked. Because the slots are visited in
+ID order, the per-window processing happens in the same order as before, which
+keeps even the learning layer's random draws in the same sequence.
+
+**Attacker.** The forged parent is drawn from 1 to `NUM_NODES` (a build option,
+30 by default) and written as a 16-bit address.
+
+**Root.** In non-storing mode the root stores one downward route per node. The
+large-network root variants (`v_root_d*_big`) raise Contiki-NG's limit from 300
+to 1100 routes and the packet queue from 64 to 128.
+
+**Placement at constant density.** The area grows with the number of nodes,
+side `200 * sqrt(N / 30)`: 816 m at 500 nodes and 1155 m at 1000. Placing that
+many nodes uniformly at random almost never gives a connected network, so the
+nodes are added one at a time: a random point is kept only if it is within
+45 m of a node already placed and at least 27 m from every placed node. The
+spacing of 27 m was chosen so that the average number of neighbors within radio
+range matches the 30-node networks (4.9 at 30 nodes, 4.8 at 500, 4.95 at 1000).
+The 30-node layouts are generated exactly as before.
+
+**Regression check.** Four existing 30-node runs (no defense, Secure-RPL,
+DIS-FDM, AEF-RPL learning off; static and mobile; attackers forging DAOs) were
+re-run with the new firmware into `output/verify/` and compared metric by metric
+with the published results.
+
+**Runs.** `timing.jsonl` holds one 15-minute run at 500 and at 1000 nodes to
+measure wall time and memory first. `scale.jsonl` holds the combined attack with
+25% attackers: at 500 nodes, static and mobile, no defense, DIS-FDM, AEF-RPL
+learning off, Li-MSD and AEF-RPL, plus an exact reference run, 8 seeds; at 1000
+nodes, static, DIS-FDM and AEF-RPL plus the reference, 3 seeds. Run names end in
+`_n500` or `_n1000` (and `_t15` for 15-minute runs). The 30-node analysis in
+`aggregate.py` reads only 30-node, 60-minute runs.
+
+**Open issue found by the timing runs.** In the first 500- and 1000-node runs,
+only the nodes within about 7 hops of the root joined (98 of 374 honest nodes at
+500). A plain 500-node run with no attack and no defense showed the same limit,
+so it comes from the network, not from the defenses. Two changes were tried:
+sending data every 60 s instead of 10 s in the large networks (build option
+`SEND_INTERVAL_SEC`, run names ending in `_p60`), which raised joining to 293 of
+499 nodes and about 10 hops, and more 6LoWPAN reassembly buffers (`BIG_NET`),
+which changed nothing. Nodes 11 or more hops away join the DODAG and send DIOs,
+but none of their DAOs reaches the root, so they never become reachable. The
+cause is still being investigated; the checks are kept in
+`output/preliminary/scale_checks/`. The scale runs will start only once nodes at
+every depth can join.
+
 ---
 
 ## Part E. Calibrating DIS-FDM's parent-change thresholds
@@ -380,7 +518,7 @@ These runs are kept out of the main analysis and reported separately in
 ## Part G. Build and run pipeline
 
 1. `scripts/plan.py` writes the matrix as JSON lines.
-2. `scripts/build_variants.py` compiles 22 firmware variants (5 root, 10 sensor,
+2. `scripts/build_variants.py` compiles 28 firmware variants (7 root, 14 sensor,
    7 attacker), each in its own folder, cleaned before every build, inside the
    pinned Docker image.
 3. `scripts/run_matrix.py` runs 12 simulations in parallel. For each run it

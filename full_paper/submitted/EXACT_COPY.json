@@ -1,0 +1,4 @@
+{
+  "submitted_pdf_sha256": "ea2ba653f3ecc8785b6990a9305b4ea93482470829343921c418e92fe561fb98",
+  "verification": "Rebuilt recovered source produces identical pdftotext -layout output to submitted PDF. Introduction and LR copied without rewriting; submitted PDF unchanged."
+}

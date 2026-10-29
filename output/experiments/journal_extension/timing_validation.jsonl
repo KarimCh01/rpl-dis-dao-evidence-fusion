@@ -1,0 +1,2 @@
+{"run_id": "jtrace_m3_k7_i3_mob0_d7_s21_t10", "seed": 21, "nodes": 30, "attackers": 7, "attack_mode": 3, "dis_interval": 3, "defense": 7, "mobile_frac": 0.0, "duration_min": 10, "experiment": "timing_validation", "variant_overrides": {"atk": "v_journal_atk_trace"}}
+{"run_id": "jtrace_m3_k7_i3_mob3_d7_s21_t10", "seed": 21, "nodes": 30, "attackers": 7, "attack_mode": 3, "dis_interval": 3, "defense": 7, "mobile_frac": 0.3, "duration_min": 10, "experiment": "timing_validation", "variant_overrides": {"atk": "v_journal_atk_trace"}}

@@ -1,0 +1,16 @@
+[32mINFO  [main] [Cooja.java:1147] - Loading /home/user/project/output/experiments/journal_extension/runs/journal_m3_k7_i30_mob3_d3_s21_dao30/sim.csc random seed: null[0;39m
+> make -s -f /home/user/project/firmware/install.mk PREBUILT=v_root_d3.cooja
+WARNING: A restricted method in java.lang.foreign.SymbolLookup has been called
+WARNING: java.lang.foreign.SymbolLookup::libraryLookup has been called by org.contikios.cooja.contikimote.CoreComm in an unnamed module (file:/home/user/contiki-ng/tools/cooja/build/libs/cooja-full.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+> make -s -f /home/user/project/firmware/install.mk PREBUILT=v_cli_d3_m0.cooja
+> make -s -f /home/user/project/firmware/install.mk PREBUILT=v_cli_d3_m1.cooja
+> make -s -f /home/user/project/firmware/install.mk PREBUILT=v_journal_atk_dis30_dao30.cooja
+[32mINFO  [main] [LogScriptEngine.java:231] - Script timeout in 3600000 ms[0;39m
+[32mINFO  [sim] [LogScriptEngine.java:320] -  5% completed, 336.9 sec remaining[0;39m
+[32mINFO  [sim] [LogScriptEngine.java:320] - 10% completed, 395.1 sec remaining[0;39m
+[32mINFO  [sim] [LogScriptEngine.java:320] - 15% completed, 365.6 sec remaining[0;39m
+[32mINFO  [sim] [LogScriptEngine.java:320] - 20% completed, 343.8 sec remaining[0;39m
+[32mINFO  [sim] [LogScriptEngine.java:320] - 25% completed, 330.9 sec remaining[0;39m

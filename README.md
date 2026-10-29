@@ -1,60 +1,103 @@
 # Detecting Coordinated DIS Flooding and DAO Manipulation Attacks in RPL-Based IoT Networks via Adaptive Evidence Fusion
 
-Implementation and evaluation code for the research proposal of the same title
-(CSC 689, LAU). The base paper is Prajisha C. and Vasudevan A.R., "Detection and
-mitigation of Multicast DIS flooding attacks in RPL-based IoT networks," Ad Hoc
-Networks 179 (2025) 104002, which proposes DIS-FDM.
+Implementation, data and analysis for the AEF-RPL study (CSC 689, LAU). The base
+paper is Prajisha C. and Vasudevan A.R., "Detection and mitigation of Multicast
+DIS flooding attacks in RPL-based IoT networks," Ad Hoc Networks 179 (2025)
+104002, which proposes DIS-FDM. AEF-RPL extends DIS-FDM with a self-calibrated
+DAO-consistency evidence source, selective DAO repair, and an on-node tabular
+Q-learning decision layer.
 
-* Full step-by-step account of what was built and why: `docs/WALKTHROUGH.md`
-* How to rebuild everything and get the same numbers: `docs/REPRODUCE.md`
-* Every source file, every log line and every data column explained: `docs/CODE_AND_DATA.md`
-* Readable results tables: `output/results/summary.md`
+* Full paper: `manuscript_full.tex` / `manuscript_full.pdf` (IEEE two-column, 46 DOI-checked references)
+* Introduction and literature review course submission: `manuscript.tex` / `manuscript.pdf`
+* For the supervisor: [`docs/SUPERVISOR_README.md`](docs/SUPERVISOR_README.md) (regenerate every result from the stored logs)
+* Proposal promises and where each is delivered: [`docs/PROPOSAL_CHECKLIST.md`](docs/PROPOSAL_CHECKLIST.md)
+* What was built and why: `docs/WALKTHROUGH.md`
+* Every source file, log line and data column: `docs/CODE_AND_DATA.md`
+* Rerunning the simulations themselves (Docker and Cooja): `docs/REPRODUCE.md`
+* Readable result tables: `output/results/summary.md`
+
+## Study at a glance
+
+* 2720 simulation runs of 30-node networks (60 simulated minutes each, attack onset at 300 s), stored with their raw logs:
+  * 1960 runs in the main campaign (seeds 1 to 10);
+  * 20 benign mobile runs on fresh seeds (11 to 20);
+  * 740 runs in a second campaign on fresh seeds (21 to 45): attack rate, ablations, reception loss, CPU profiling.
+* Hypothesis decisions (`output/hypotheses/evidence.json`):
+
+| Hypothesis | Decision |
+|---|---|
+| H1 reproduction of DIS-FDM | Partly supported: overhead trends reproduced; delivery losses not (always-on MAC) |
+| H2 combined attack worse than each single attack | Partly supported: damage is additive (DIS overhead plus DAO route loss) |
+| H3 AEF-RPL vs DIS-FDM | Supported for service: downward PDR and ARI higher in 6/6 conditions (Holm p = .012); detection equal |
+| H4 learning vs fixed rule | Not supported for FPR; detection latency 20 to 73% lower in 6/6 conditions |
+| H5 consistency | Supported for service across topologies, attacker fractions, attack rates and reception loss |
+
+## Regenerate everything from the logs (no simulation)
+
+```bash
+python3 -m venv .venv
+.venv/bin/pip install -r requirements.txt
+make reproduce          # main campaign: checks 1960 log hashes, rebuilds 8 result files, compares byte for byte
+make reproduce-paper    # everything: both campaigns, hypothesis tests, every paper table and figure
+make theory             # numerical checks of the mathematical analysis
+```
+
+`make reproduce` ends with `ALL 8 OUTPUT FILES MATCH`. `make reproduce-paper`
+ends with `COMPLETE` and writes `output/paper_reproduction/report.json`. Neither
+runs Cooja or Docker. Details and expected outputs are in
+[`docs/SUPERVISOR_README.md`](docs/SUPERVISOR_README.md).
 
 ## Research questions and where each one is answered
 
-| Research question | Proposal objective | Experiments (plan file) | Main outputs |
+| Research question | Objective | Runs (plan file) | Main outputs |
 |---|---|---|---|
-| RQ1. How closely can DIS-FDM's reported performance be reproduced? | O1 | `output/plan/reproduction.jsonl` | `output/figures/repro_*.png`, `output/results/reproduction_vs_paper.csv` |
-| RQ2. Is the combined DIS + DAO attack worse than either attack alone? | O2 | `output/plan/main.jsonl`, defense 0 | `output/figures/rq2_attack_damage.png`, `output/results/stats_rq2_combined_vs_single.csv` |
-| RQ3. Does the self-calibrated DAO-consistency evidence source improve detection? | O3, O4 | `output/plan/main.jsonl`, defenses 3 and 4 | `output/figures/main_detection_*.png`, `output/figures/main_network_*.png` |
-| RQ4. Are the improvements statistically significant across seeds, static and mobile? | O5 | all of `main.jsonl` (10 seeds per cell) | `output/results/stats_rq3_rq4_proposed_vs_baselines.csv` |
-| Sensitivity of DIS-FDM to its evidence window (supports RQ1) | O1 | `output/plan/sensitivity.jsonl` | `output/figures/sensitivity_fdm_window.png`, `output/results/sensitivity_fdm_window.csv` |
+| RQ1. To what extent is DIS-FDM's reported performance reproduced? | O1 | `output/plan/reproduction.jsonl`, `sensitivity.jsonl` | `output/results/reproduction_vs_paper.csv`, `output/hypotheses/h1_reproduction_checks.csv` |
+| RQ2. How much more does the combined DIS + DAO attack degrade the network than either attack alone? | O2, O7 | `main.jsonl`, defense 0 | `output/results/stats_rq2_combined_vs_single.csv`, `output/hypotheses/ari_tests.csv` |
+| RQ3. To what extent do DAO-consistency evidence and repair change detection and resilience? | O3, O4 | `main.jsonl`, `limsd.jsonl`, `learning_v2.jsonl` | `output/results/stats_rq3_rq4_proposed_vs_baselines.csv`, `output/results/resilience.csv` |
+| RQ4. How does the Q-learning layer change false positives, latency and resilience? | O6 | `learning_v2.jsonl` (defense 7) against defense 4 (learning off); `learning_fp_extension.jsonl` | `output/results/stats_rq3_rq4_proposed_vs_baselines.csv`, `output/preliminary/learning_fp_extension_summary.csv` |
+| RQ5. How consistent are the effects across seeds, attacker fractions, mobility, attack rates and reception loss? | O4, O5 | all plans; `output/experiments/journal_extension/` | `output/experiments/journal_extension/analysis/paired_comparisons.csv` |
+| Mathematical checks before simulation | O6 | none | `output/theory/theory_check.json` |
 
 ## Folder map
 
-| Folder / file | What it contains | Proposal link |
-|---|---|---|
-| `firmware/node.c` | One program for every node: border router, legitimate sensor, or attacker (chosen at compile time). Sends data every 10 s, the root echoes it back, and every node prints compact log lines. | Methodology, Materials and Tools |
-| `firmware/attack.c` | The attack model: multicast DIS flooding, DAO manipulation (forged parent in the DAO transit option), or both from the same node. | Procedure step 2, O2 |
-| `firmware/defense.c` | All defenses: Secure-RPL, RPL-MRC, DIS-FDM (base paper), and the proposed extension (DIS-FDM plus the DAO-consistency evidence source). | Procedure steps 1 and 3, O1, O3 |
-| `firmware/dst.c` | Dempster's rule of combination and the base paper's belief tables (Tables 3 and 4). | O3 |
-| `firmware/project-conf.h`, `Makefile`, `install.mk` | Build configuration. | Materials and Tools |
-| `patches/contiki-ng-hooks.patch` | The only change to Contiki-NG: message counters and three optional hooks (DIS input, DAO input, packet forwarding). | Materials and Tools |
-| `scenarios/gen_csc.py` | Turns one experiment setting into a Cooja simulation file plus a ground-truth record. | Study Population / Sample |
-| `scripts/plan.py` | Writes the full experimental matrix. | Procedure step 4 |
-| `scripts/build_variants.py` | Compiles every firmware variant in its own folder inside the pinned Docker image. | Materials and Tools (Docker) |
-| `scripts/run_matrix.py` | Runs simulations in parallel Docker containers, resumable. | Data Collection Method |
-| `analysis/parse_run.py` | Computes every metric for one run from its log. | Data Analysis Methods 1 and 2 |
-| `analysis/calibrate_tr.py` | Computes DIS-FDM's parent-change thresholds from attack-free runs (base paper Eqs. 8 to 13). | O1 |
-| `analysis/aggregate.py` | Summary tables, figures, Wilcoxon signed-rank tests with Holm correction. | Data Analysis Methods 3, O5 |
-| `analysis/reparse_all.py` | Re-parses every saved log with the final parser. | Data Analysis Methods |
-| `analysis/paper_reference.json` | The base paper's published numbers, used for the RQ1 comparison. | O1 |
-| `output/runs/` | One folder per simulation: input file, ground truth, raw log, parsed metrics. | Data Collection Method |
-| `output/calibration/` | Calibrated thresholds. | O1 |
-| `output/results/` | CSV tables, statistics, readable summary. | Expected Results |
-| `output/figures/` | All figures. | Expected Results |
-| `output/preliminary/` | Engineering checks done while building the system (smoke test, DAO-check verification, radio-loss test, TSCH test). Not part of the reported results. | Validation of the environment |
-| `requirements.txt` | Pinned Python packages. | Materials and Tools |
+| Folder / file | What it contains |
+|---|---|
+| `firmware/node.c` | One program for every node: border router, legitimate client, or attacker (chosen at compile time). Clients send every 10 s and the root echoes each packet. |
+| `firmware/attack.c` | Attack model: multicast DIS flooding, DAO manipulation (false transit parent), or both from the same node. |
+| `firmware/defense.c` | All defenses: Secure-RPL, RPL-MRC, DIS-FDM, Li-MSD, and AEF-RPL (DAO-consistency evidence, persistence, selective repair). |
+| `firmware/rl.c` | AEF-RPL's Q-learning decision layer: 96-state table, safety rules, epsilon-greedy choice, Q8.8 update. |
+| `firmware/dst.c` | Dempster's rule and the base paper's belief tables. |
+| `patches/contiki-ng-hooks.patch` | The only change to Contiki-NG: message counters and three hooks (DIS input, DAO input, forwarding). |
+| `scenarios/gen_csc.py` | Turns one experiment setting into a Cooja simulation file plus a ground-truth record. |
+| `scripts/plan.py`, `scripts/build_variants.py`, `scripts/run_matrix.py` | Experiment matrix, firmware builds in the pinned Docker image, parallel resumable runs. |
+| `analysis/parse_run.py` | Every metric for one run from its log. |
+| `analysis/calibrate_tr.py`, `analysis/calibrate_limsd.py` | DIS-FDM parent-change thresholds and the Li-MSD threshold from attack-free runs. |
+| `analysis/metrics.py` | Attack Resilience Index (ARI) and Downward Recovery Time (DRT). |
+| `analysis/aggregate.py` | Summary tables, figures, Wilcoxon signed-rank tests with Holm correction. |
+| `analysis/test_hypotheses.py` | Decides H1 to H5 and writes the paper's hypothesis and primary-test tables. |
+| `analysis/check_theory.py` | Numerical checks of the delay, false-alarm and Q-value bounds. |
+| `analysis/reproduce_from_logs.py`, `scripts/reproduce_paper_from_logs.py` | `make reproduce` and `make reproduce-paper`. |
+| `full_paper/` | Paper sections, generated tables and figures, literature map. |
+| `output/runs/` | One folder per main-campaign run: scenario, ground truth, raw log, parsed metrics. |
+| `output/experiments/journal_extension/` | Second campaign: runs, analysis, figures. |
+| `output/results/`, `output/hypotheses/`, `output/figures/` | Result tables, hypothesis evidence, figures. |
+| `output/diagnostics/`, `output/preliminary/` | Engineering checks and the 500/1000-node feasibility pilots (not part of the reported comparison). |
 
 ## Experimental conditions
 
 | Factor | Levels |
 |---|---|
-| Network | 30 nodes (1 border router, 29 sensors), 200 m x 200 m, UDGM radio (50 m range, 100 m interference), connected placement |
-| Attack type | none, DIS flooding, DAO manipulation, combined DIS + DAO |
-| Malicious nodes (main matrix) | 0%, 10%, 25%, 50% of the 29 sensors (0, 3, 7, 14 nodes) |
-| Malicious nodes (reproduction) | 2, 5, 10 attackers and DIS intervals 3, 6, 10, 15, 30 s, as in the base paper Sections 6.1 and 6.2 |
-| Topology | static; 70% static / 30% mobile (Random Waypoint, 0.5 to 2 m/s, 0 to 10 s pause) |
-| Defense | 0 RPL (none), 1 Secure-RPL, 2 RPL-MRC, 3 DIS-FDM, 4 proposed |
-| Seeds | 1 to 10 for every cell |
-| Duration | 60 simulated minutes, attack starts at 300 s |
+| Network | 30 nodes (1 border router, 29 clients), 200 m x 200 m, unit-disk radio (50 m range, 100 m interference), connected placement, CSMA with always-on radio |
+| Attack | none, DIS flooding, DAO manipulation, combined DIS + DAO from the same node |
+| Malicious clients | 3, 7, 14 of 29 (10%, 25%, 50%); reproduction uses 2, 5, 10 attackers and DIS intervals of 3 to 30 s |
+| Topology | static; 30% mobile (random waypoint, 0.5 to 2 m/s, 0 to 10 s pause) |
+| Defense | 0 RPL (none), 1 Secure-RPL, 2 RPL-MRC, 3 DIS-FDM, 4 AEF-RPL with learning off, 5 Li-MSD, 7 AEF-RPL (final, evaluated in the paper). Defense 6 is an earlier learning version kept for traceability. |
+| Seeds | 1 to 10 for every main-campaign cell; fresh seeds 11 to 45 for the later studies |
+| Duration | 60 simulated minutes, attack onset at 300 s |
+
+## Scope note
+
+The proposal also planned 500- and 1000-node networks. Attack-free pilots at
+those sizes did not form stable bidirectional routes in the simulated stack, so
+the comparison was carried out at 30 nodes. The pilots and their diagnostics are
+kept in `output/diagnostics/` and documented in `docs/SCALE_FAILURE_DIAGNOSIS.md`.

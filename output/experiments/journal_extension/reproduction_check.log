@@ -1,0 +1,6 @@
+Reparsed 170 compressed logs; core mismatches: 0
+MATCH per_run.csv
+MATCH attacker_events.csv
+MATCH summary.csv
+MATCH paired_comparisons.csv
+All completed core results and four numerical tables reproduce from stored logs.

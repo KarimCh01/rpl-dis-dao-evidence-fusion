@@ -1,0 +1,50 @@
+{
+  "calibration_seeds": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "evaluation_seeds": [
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40
+  ],
+  "source_defense": 4,
+  "constants": {
+    "root": {
+      "nodes": 20,
+      "dtl_ppm": 8980,
+      "energy_mean": 10133379,
+      "energy_sd": 44456,
+      "inc_ppm": 112150
+    },
+    "static": {
+      "nodes": 290,
+      "dtl_ppm": 48082,
+      "energy_mean": 10021061,
+      "energy_sd": 9154,
+      "inc_ppm": 405797
+    },
+    "mobile": {
+      "nodes": 290,
+      "dtl_ppm": 48297,
+      "energy_mean": 10038280,
+      "energy_sd": 40151,
+      "inc_ppm": 313345
+    }
+  }
+}

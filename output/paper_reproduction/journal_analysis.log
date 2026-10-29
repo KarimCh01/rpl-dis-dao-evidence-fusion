@@ -1,0 +1,13 @@
+# Journal-extension experiment status
+
+Only completed runs contribute to numerical summaries. Partial cells are preliminary.
+
+| Experiment | Completed | Planned |
+|---|---:|---:|
+| ablation | 240 | 240 |
+| host_callback_cost | 60 | 60 |
+| radio_loss | 120 | 120 |
+| rate_robustness | 240 | 240 |
+| resilience_reference | 70 | 70 |
+| scale_feasibility | 8 | 8 |
+| timing_validation | 2 | 2 |

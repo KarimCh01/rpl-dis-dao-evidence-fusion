@@ -1,0 +1,1 @@
+{"run_id": "m0_k0_i3_mob0_d0_s1_n500_t10_p60_r20", "seed": 1, "nodes": 500, "attackers": 0, "attack_mode": 0, "dis_interval": 3, "defense": 0, "mobile_frac": 0.0, "duration_min": 10, "send_s": 60, "rank_hops": 20}

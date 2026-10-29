@@ -34,6 +34,8 @@ def parse(run_dir):
     flags = {}
     psw_times = {}
     calib = {}
+    releases = {}
+    policy = []
     energest_second = 1000000
 
     with open_log(run_dir) as f:
@@ -66,6 +68,10 @@ def parse(run_dir):
                     continue
                 rec = flags.setdefault(suspect, [])
                 rec.append((t, nid, int(args[1])))
+            elif tag == "#U":
+                releases.setdefault(int(args[0]), []).append((t, nid))
+            elif tag == "#G":
+                policy.append((t, nid, int(args[0]), int(args[1])))
             elif tag == "#P":
                 psw_times.setdefault(nid, []).append(t)
             elif tag == "#K":
@@ -73,7 +79,7 @@ def parse(run_dir):
             elif tag == "#B":
                 energest_second = int(args[4])
 
-    res = {k: meta[k] for k in ("run_id", "seed", "attackers", "attack_mode", "dis_interval",
+    res = {k: meta[k] for k in ("run_id", "seed", "nodes", "attackers", "attack_mode", "dis_interval",
                                 "defense", "mobile_frac", "duration_min")}
     res["fdm_window"] = meta.get("fdm_window", 10)
 
@@ -88,7 +94,7 @@ def parse(run_dir):
     res["delay_up_ms"] = 1000 * sum(delays) / len(delays) if delays else float("nan")
     reached = [k for k, _ in sent if k in rx]
     res["pdr_down"] = (sum(1 for k in reached if k in echo) / len(reached)) if reached else float("nan")
-    expected = len(legit) * (duration_s - ATTACK_START_S) / 10.0
+    expected = len(legit) * (duration_s - ATTACK_START_S) / meta.get("send_s", 10)
     res["delivery_up"] = got / expected if expected else float("nan")
     rtt = [echo[k] - tx[k] for k in reached if k in echo]
     res["rtt_ms"] = 1000 * sum(rtt) / len(rtt) if rtt else float("nan")
@@ -131,7 +137,7 @@ def parse(run_dir):
     res["legit_joined"] = sum(1 for i in legit if any(k[0] == i for k in tx))
     res["legit_total"] = len(legit)
 
-    if meta["defense"] in (1, 3, 4):
+    if meta["defense"] in (1, 3, 4, 5, 6, 7):
         flagged = set(flags)
         tp = len(attackers & flagged)
         fp = len(set(legit) & flagged)
@@ -153,6 +159,40 @@ def parse(run_dir):
                   "blacklist_entries_legit", "blacklist_entries_attacker"):
             res[k] = float("nan")
 
+    def isolated_frac(node):
+        start = 240.0
+        span = duration_s - start
+        if span <= 0:
+            return 0.0
+        events = sorted([(t, d, 1) for t, d, _ in flags.get(node, [])] +
+                        [(t, d, -1) for t, d in releases.get(node, [])])
+        holders = set()
+        since = None
+        total = 0.0
+        for t, d, kind in events:
+            if kind == 1:
+                if not holders:
+                    since = t
+                holders.add(d)
+            elif d in holders:
+                holders.discard(d)
+                if not holders:
+                    total += max(0.0, t - max(since, start))
+        if holders:
+            total += max(0.0, duration_s - max(since, start))
+        return total / span
+
+    if meta["defense"] in (1, 3, 4, 5, 6, 7):
+        res["legit_isolated_frac"] = sum(isolated_frac(i) for i in legit) / len(legit) if legit else float("nan")
+        res["attacker_isolated_frac"] = (sum(isolated_frac(a) for a in attackers) / len(attackers)
+                                         if attackers else float("nan"))
+    else:
+        res["legit_isolated_frac"] = res["attacker_isolated_frac"] = float("nan")
+    if policy:
+        by_report = {}
+        for t, nid, iso, changed in policy:
+            by_report.setdefault(round(t / 600), []).append(changed)
+        res["policy_changes_last"] = sum(by_report[max(by_report)]) / len(by_report[max(by_report)])
     res["_psw"] = {str(k): v for k, v in psw_times.items()}
     res["_calib"] = {str(k): v for k, v in calib.items()}
     res["_flags"] = {str(k): v for k, v in flags.items()}

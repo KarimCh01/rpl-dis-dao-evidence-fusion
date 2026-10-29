@@ -1,0 +1,32 @@
+[
+  {
+    "check": "all_planned_manifests",
+    "status": "pass",
+    "detail": "740 valid configurations"
+  },
+  {
+    "check": "invalid_manifest_rejection",
+    "status": "pass",
+    "detail": "10 nonfinite/out-of-range cases rejected"
+  },
+  {
+    "check": "privileged_ground_truth_source_check",
+    "status": "pass",
+    "detail": "No references to scheduling/attacker-label symbols in defense.c or rl.c"
+  },
+  {
+    "check": "injection_trace_jtrace_m3_k7_i3_mob0_d7_s21_t10",
+    "status": "pass",
+    "detail": "Trace records injection attempts after the activation timer, not confirmed packet reception"
+  },
+  {
+    "check": "injection_trace_jtrace_m3_k7_i3_mob3_d7_s21_t10",
+    "status": "pass",
+    "detail": "Trace records injection attempts after the activation timer, not confirmed packet reception"
+  },
+  {
+    "check": "scale_feasibility",
+    "status": "pending",
+    "detail": "0/8 completed; full scale comparisons require every matched pilot for a setting to pass"
+  }
+]

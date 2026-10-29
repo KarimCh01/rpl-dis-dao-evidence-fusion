@@ -1,0 +1,90 @@
+{
+  "predefined_thresholds": {
+    "application_participation": 0.95,
+    "expected_network_wide_upward_delivery": 0.8,
+    "conditional_downward_pdr": 0.9
+  },
+  "pilots": [
+    {
+      "run_id": "jscale_dis10_m0_k0_i3_mob0_d0_s1_n500_t15_p60_r20",
+      "nodes": 500,
+      "seed": 1,
+      "native_dis_interval_s": 10,
+      "coverage": 0.6072144288577155,
+      "expected_delivery_up": 0.07454909819639279,
+      "conditional_pdr_down": 0.9650537634408602,
+      "passes_gate": false
+    },
+    {
+      "run_id": "jscale_dis10_m0_k0_i3_mob0_d0_s2_n500_t15_p60_r20",
+      "nodes": 500,
+      "seed": 2,
+      "native_dis_interval_s": 10,
+      "coverage": 0.5711422845691383,
+      "expected_delivery_up": 0.0813627254509018,
+      "conditional_pdr_down": 0.9556650246305419,
+      "passes_gate": false
+    },
+    {
+      "run_id": "jscale_dis10_m0_k0_i3_mob0_d0_s1_n1000_t15_p60_r20",
+      "nodes": 1000,
+      "seed": 1,
+      "native_dis_interval_s": 10,
+      "coverage": 0.32932932932932935,
+      "expected_delivery_up": 0.026126126126126126,
+      "conditional_pdr_down": 0.9808429118773946,
+      "passes_gate": false
+    },
+    {
+      "run_id": "jscale_dis10_m0_k0_i3_mob0_d0_s2_n1000_t15_p60_r20",
+      "nodes": 1000,
+      "seed": 2,
+      "native_dis_interval_s": 10,
+      "coverage": 0.2932932932932933,
+      "expected_delivery_up": 0.016216216216216217,
+      "conditional_pdr_down": 0.9753086419753086,
+      "passes_gate": false
+    },
+    {
+      "run_id": "jscale_dis60_m0_k0_i3_mob0_d0_s1_n500_t15_p60_r20",
+      "nodes": 500,
+      "seed": 1,
+      "native_dis_interval_s": 60,
+      "coverage": 0.6072144288577155,
+      "expected_delivery_up": 0.07094188376753507,
+      "conditional_pdr_down": 0.9463276836158192,
+      "passes_gate": false
+    },
+    {
+      "run_id": "jscale_dis60_m0_k0_i3_mob0_d0_s2_n500_t15_p60_r20",
+      "nodes": 500,
+      "seed": 2,
+      "native_dis_interval_s": 60,
+      "coverage": 0.6192384769539078,
+      "expected_delivery_up": 0.07254509018036072,
+      "conditional_pdr_down": 0.9281767955801105,
+      "passes_gate": false
+    },
+    {
+      "run_id": "jscale_dis60_m0_k0_i3_mob0_d0_s1_n1000_t15_p60_r20",
+      "nodes": 1000,
+      "seed": 1,
+      "native_dis_interval_s": 60,
+      "coverage": 0.3173173173173173,
+      "expected_delivery_up": 0.035935935935935935,
+      "conditional_pdr_down": 0.9526462395543176,
+      "passes_gate": false
+    },
+    {
+      "run_id": "jscale_dis60_m0_k0_i3_mob0_d0_s2_n1000_t15_p60_r20",
+      "nodes": 1000,
+      "seed": 2,
+      "native_dis_interval_s": 60,
+      "coverage": 0.3023023023023023,
+      "expected_delivery_up": 0.022622622622622622,
+      "conditional_pdr_down": 0.9336283185840708,
+      "passes_gate": false
+    }
+  ],
+  "full_scale_matrix_authorized_by_evidence": false
+}

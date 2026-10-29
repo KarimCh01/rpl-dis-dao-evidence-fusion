@@ -1,0 +1,5 @@
+{
+  "state": "feasibility_not_established",
+  "planned_comparisons": 114,
+  "reason": "At least one predeclared grid control failed; attack matrix not released."
+}

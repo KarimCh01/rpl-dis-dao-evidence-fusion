@@ -1,0 +1,170 @@
+{
+ "run_id": "jab_learning_off_m0_k0_i3_mob3_d4_s35",
+ "seed": 35,
+ "nodes": 30,
+ "attackers": 0,
+ "attack_mode": 0,
+ "dis_interval": 3,
+ "defense": 4,
+ "mobile_frac": 0.3,
+ "duration_min": 60,
+ "experiment": "ablation",
+ "ablation": "learning_off",
+ "dao_interval": 2,
+ "variant_overrides": {
+  "root": "v_jab_learning_off_root",
+  "cli0": "v_jab_learning_off_cli0",
+  "cli1": "v_jab_learning_off_cli1",
+  "atk": "v_journal_atk_dis3_dao2"
+ },
+ "attacker_ids": [],
+ "mobile_ids": [
+  2,
+  3,
+  4,
+  7,
+  14,
+  18,
+  22,
+  27,
+  29
+ ],
+ "honest_chosen_ids": [],
+ "area_m": 200.0,
+ "positions": {
+  "1": [
+   100.0,
+   100.0
+  ],
+  "2": [
+   137.62,
+   122.61
+  ],
+  "3": [
+   32.81,
+   90.81
+  ],
+  "4": [
+   28.2,
+   97.78
+  ],
+  "5": [
+   35.67,
+   54.92
+  ],
+  "6": [
+   122.05,
+   37.39
+  ],
+  "7": [
+   23.54,
+   166.02
+  ],
+  "8": [
+   92.45,
+   64.21
+  ],
+  "9": [
+   58.34,
+   130.86
+  ],
+  "10": [
+   36.34,
+   155.67
+  ],
+  "11": [
+   89.83,
+   7.23
+  ],
+  "12": [
+   41.67,
+   145.25
+  ],
+  "13": [
+   63.4,
+   30.04
+  ],
+  "14": [
+   90.03,
+   116.43
+  ],
+  "15": [
+   31.36,
+   125.22
+  ],
+  "16": [
+   87.44,
+   11.46
+  ],
+  "17": [
+   113.0,
+   125.58
+  ],
+  "18": [
+   0.02,
+   100.8
+  ],
+  "19": [
+   111.01,
+   108.09
+  ],
+  "20": [
+   75.96,
+   155.72
+  ],
+  "21": [
+   150.13,
+   115.66
+  ],
+  "22": [
+   162.5,
+   133.5
+  ],
+  "23": [
+   197.42,
+   39.26
+  ],
+  "24": [
+   97.28,
+   109.38
+  ],
+  "25": [
+   9.41,
+   29.14
+  ],
+  "26": [
+   101.24,
+   128.69
+  ],
+  "27": [
+   75.31,
+   123.94
+  ],
+  "28": [
+   162.68,
+   28.24
+  ],
+  "29": [
+   125.5,
+   3.14
+  ],
+  "30": [
+   119.42,
+   56.4
+  ]
+ },
+ "variants": [
+  "v_jab_learning_off_cli0",
+  "v_jab_learning_off_cli1",
+  "v_jab_learning_off_root"
+ ],
+ "variant_definitions": {
+  "v_jab_learning_off_root": "ROLE=0,DEFENSE=4,NODE_MOBILE=0,TR_STATIC_MS=9309,TR_MOBILE_MS=16476",
+  "v_jab_learning_off_cli1": "ROLE=1,DEFENSE=4,NODE_MOBILE=1,TR_STATIC_MS=9309,TR_MOBILE_MS=16476",
+  "v_jab_learning_off_cli0": "ROLE=1,DEFENSE=4,NODE_MOBILE=0,TR_STATIC_MS=9309,TR_MOBILE_MS=16476"
+ },
+ "execution_environment": {
+  "docker_context": "default",
+  "docker_image": "sha256:0e20b334617f576a8e349262b796e5dc26b7b05f541d13e293637da7eaa3c3eb"
+ }
+}

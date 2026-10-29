@@ -1,0 +1,140 @@
+\documentclass[journal]{IEEEtran}
+\usepackage{cite}
+\usepackage{array,booktabs,tabularx}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,citecolor=blue,urlcolor=blue,linkcolor=blue}
+\title{Detecting Coordinated DIS Flooding and DAO Manipulation Attacks in RPL-Based IoT Networks via Adaptive Evidence Fusion}
+\author{Karim Chehab\\[0.5ex]
+\normalsize Department of Computer Science and Mathematics\\
+\normalsize Lebanese American University, Beirut, Lebanon\\
+\normalsize Email: \href{mailto:karim.chehab02@lau.edu}{karim.chehab02@lau.edu}}
+\date{}
+\begin{document}
+\maketitle
+
+\section{Introduction}\label{sec:introduction}
+In a constrained industrial Internet of Things (IIoT) network, identifying an attacker is only part of the routing problem. Legitimate nodes still need to communicate. Consider a compromised node that repeatedly requests routing information and also advertises an incorrect parent for downward routes. The requests consume control-plane resources, while the false parent information can disrupt delivery to a destination. We examine these two actions together, asking both whether a defense detects them and whether communication remains possible.
+
+The IPv6 Routing Protocol for Low-Power and Lossy Networks (RPL) organizes nodes into destination-oriented directed acyclic graphs (DODAGs) \cite{rfc6550}. DODAG Information Objects (DIOs) carry routing information, DODAG Information Solicitations (DISs) request it, and Destination Advertisement Objects (DAOs) advertise destination reachability. Albinali and Azzedin review attacks on these control messages \cite{albinali2024}. Previous work has studied repeated DIS solicitations \cite{rajasekar2022,vermaranga2020,medjek2021} and malicious DAO advertisements \cite{pu2018,limsd2024}. This study will examine a threat in which each compromised node performs both actions. Because the actions interfere with different routing functions, detection rate alone would provide an incomplete account of their effect.
+
+We propose Adaptive Evidence Fusion for RPL (AEF-RPL), an extension of DIS-FDM. DIS-FDM uses Dempster--Shafer fusion to combine local observations of DIS traffic and preferred-parent changes \cite{prajisha2025}. The proposed extension adds a DAO-consistency check: when a node receives a DAO directly from its originator, it will compare the advertised transit parent with the observed relationship. AEF-RPL will integrate a tabular Q-learning decision layer, whose contribution will be evaluated against a learning-disabled variant. Both variants will use the same DAO observation so that the comparison can distinguish the effect of added evidence from the effect of learning.
+
+Concurrent RPL attacks have been studied before. Garcia Ribera et al. ran Hello, DIS, and DAO floods together, with different nodes assigned to each attack \cite{garciaribera2022}. Other studies have examined complex attack combinations and joint-attack detection \cite{alsukayti2023,de2rarpl2024,abdulkareem2024}. These precedents motivate a more specific investigation: how a local detector responds when each malicious node executes DIS flooding and incorrect-parent DAO manipulation together, and how much DAO evidence and learning contribute separately. The proposed study will address this question through matched comparisons of the evidence and decision mechanisms. We use \emph{coordinated} in this limited same-node sense; the threat model will not require attackers to exchange plans through a separate protocol.
+
+AEF-RPL will make decisions locally after a designated benign calibration period. It will combine the available evidence, apply selective DAO handling, and use a learning layer to choose between accepting and isolating a neighbor within explicit decision rules. Q-learning has already been used in RPL defenses \cite{qsecrpl2023,itrpl2024}. Here, the question is what it adds to this detector: whether it changes false positives, alert delay, or communication performance when the underlying evidence is held constant.
+
+We will begin with an independent reproduction of DIS-FDM, then implement the combined attack and the DAO-aware extension. Paired simulations will allow us to compare these implementations under the same conditions. The design separates two changes that could otherwise be confused: adding DAO evidence and learning from that evidence. For local routing defense, the practical concern is whether either change helps preserve communication without isolating honest nodes.
+
+These objectives lead to five research questions:
+\begin{enumerate}
+\item[\emph{RQ1:}] To what extent does an independent Contiki-NG/Cooja implementation reproduce the network-performance trends reported for DIS-FDM under multicast DIS flooding?
+\item[\emph{RQ2:}] How does concurrent DIS flooding and DAO manipulation affect packet delivery, delay, control overhead, and resilience compared with either attack alone?
+\item[\emph{RQ3:}] To what extent does adding calibrated DAO-consistency evidence change detection performance and routing service compared with DIS-FDM and the selected DAO-focused defense?
+\item[\emph{RQ4:}] How does local Q-learning change false positives, detection delay, and resilience compared with the same detector using a fixed decision rule?
+\item[\emph{RQ5:}] How consistent are these outcomes across repeated seeds and static and mobile conditions, and what feasibility constraints arise when extending the evaluation from 30 to 500 and 1000 nodes?
+\end{enumerate}
+
+The planned contributions are:
+\begin{enumerate}
+\item A Contiki-NG/Cooja framework for examining multicast DIS flooding and transit-parent DAO manipulation from the same compromised nodes, with a local detector that combines observations of both behaviors under explicit first-hop consistency assumptions.
+\item A set of paired simulation runs covering single and combined attacks at different attacker fractions, in both static and mobile networks. For each repeated scenario, we will record detection, packet delivery in both directions, delay, and control traffic, and estimate power from radio time.
+\item A comparison of learned and fixed decisions with an unchanged DAO mechanism, supported by component ablations. Mobile runs without attackers will provide a separate check on the isolation of honest nodes.
+\item The files needed to repeat the study and regenerate its tables and figures: scenario manifests, firmware, configuration metadata, raw logs, and analysis scripts. Documentation will explain the implementation assumptions and where the reproductions differ from the published methods.
+\end{enumerate}
+
+We will start with 30 nodes. Runs with 500 or 1000 nodes will proceed only after the corresponding attack-free networks pass connectivity checks. At each size, the evaluation will ask whether legitimate nodes retain service and how often they are isolated, as well as whether attackers are detected. The scope remains limited to simulated networks, the specified DIS/DAO attack, and the local detector. Testing on physical devices or with other MAC protocols and attack families would require further experiments.
+
+Section~\ref{sec:related} develops the basis for these comparisons, beginning with DIS and DAO defenses and then considering adaptive and learning-based detection.
+
+\section{Literature Review}\label{sec:related}
+Our choice of baselines begins with the control messages each defense examines. We discuss DIS flooding first, then DAO attacks and concurrent threats, before turning to adaptation and learning. The application studies are drawn mainly from 2021--2026, with earlier references for RPL and the underlying methods. This is a narrative review of work relevant to the proposed detector; it is not intended as a comprehensive RPL security survey.
+
+\begin{table*}[t]
+\caption{Positioning of AEF-RPL relative to selected RPL security methods.}
+\label{tab:positioning}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.16}
+\begin{tabularx}{\textwidth}{@{}p{0.14\textwidth}p{0.21\textwidth}p{0.25\textwidth}X@{}}
+\toprule
+Method & Threat or task & Main mechanism & Relationship to this study \\
+\midrule
+DIS-FDM \cite{prajisha2025} & Multicast DIS flooding & Distributed fusion of DIS and parent-change evidence & Methodological foundation; the proposed extension will add DAO consistency and evaluate learning separately. \\
+Li-MSD \cite{limsd2024} & DAO insider attack & Lightweight blacklisting & DAO-focused comparator; attack semantics and implementation differences must be retained. \\
+Garcia Ribera et al.\ \cite{garciaribera2022} & Multiple RPL attacks, including concurrent flooding & Hybrid placement and several detection rules & Prior concurrent multi-vector detection; the proposed combination will originate from each malicious node. \\
+QSec-RPL \cite{qsecrpl2023} & Version-number attack under mobility & Q-learning-based detection & Prior learning-based RPL security for a different control-plane behavior. \\
+iTRPL \cite{itrpl2024} & Trust-based routing decisions & Trust and multi-agent reinforcement learning & Different decision architecture and reward organization. \\
+IMDRPL \cite{imdrpl2023} & DIO/DAO-related device security & Encrypted certificate attestation & Multi-message protection with different identity assumptions from local consistency checking. \\
+FLSec-RPL / DSAT-IDS \cite{flsecrpl2024,dsatids2024} & DIO suppression / selective forwarding & Fuzzy validation / adaptive forwarding thresholds & Adaptive detection precedents; their observed signals differ from the proposed DIS/DAO observation. \\
+CRRDS \cite{haqdad2026} & Decreased-rank attack & Deep reinforcement learning at the root & Contrasts centralized observation and resources with local tabular decisions. \\
+AEF-RPL (proposed) & Concurrent DIS flood and incorrect-parent DAO & Local evidence fusion, calibration, DAO handling, tabular Q-learning & Planned paired assessment of added evidence and adaptation, including false-positive controls. \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+\subsection{RPL Security and Operational Evaluation}
+DAO attacks need to be distinguished by what the attacker changes. Excessive advertisements may be visible in message counts. An incorrect transit parent, however, concerns the relationship described in the advertisement. RFC~6550 defines the roles of DIS, DIO, and DAO messages \cite{rfc6550}, and Albinali and Azzedin review attacks across these parts of the control plane \cite{albinali2024}. We will preserve the distinction between excessive traffic and incorrect routing information when selecting and interpreting DAO comparisons.
+
+A detector may flag an attacker while the affected destination remains unreachable. Packet delivery ratios can also leave part of the problem unreported: a ratio calculated from sent and received packets says nothing about a node that cannot transmit because it has no usable route. Our evaluation will therefore record application participation and network-wide service as well as detection and conditional delivery ratios. These measurements will show whether a detection decision is accompanied by usable routing.
+
+\subsection{DIS-Flooding Detection and Evidence Fusion}
+The DIS literature establishes the traffic burden that motivates the baseline comparisons. Rajasekar and Rajkumar examine flooding impact \cite{rajasekar2022}; the mitigation studies of Verma and Ranga \cite{vermaranga2020} and Medjek et al.\ \cite{medjek2021} address DIS abuse in RPL networks. For the proposed combined threat, reducing that burden will be only part of the task. The same malicious node will also change the transit-parent information carried by its DAOs, so downward delivery will need to be examined alongside control traffic.
+
+DIS-FDM provides the evidence-fusion foundation for the proposed AEF-RPL design \cite{prajisha2025}. The extension will add DAO-consistency observation and associated handling. Comparing AEF-RPL with DIS-FDM will therefore assess the extension as a whole. A separate learning-enabled versus learning-disabled comparison, retaining the same DAO mechanism, will be needed to isolate the decision layer's contribution.
+
+Mobility poses a difficulty for parent-change evidence. If a node moves away from its preferred parent, selecting a replacement is legitimate behavior. A detector that interprets this change as suspicious could isolate an honest node. We will measure how often this happens in mobile runs without attackers, where isolation cannot be counted as successful attack detection.
+
+\subsection{DAO Defenses and Concurrent Attacks}
+For DAO protection, the closest studies considered here are Pu's work on inconsistency \cite{pu2018} and Li-MSD's treatment of an insider attack \cite{limsd2024}. Li-MSD will be included in the experiments, with its attack definition and implementation differences documented. Our attack changes the transit parent advertised by the DAO originator. The proposed check has a narrow observation window: the receiver must obtain the DAO directly from that originator and compare the advertised parent with the observed relationship. We make no claim that this check covers DAO forgery in general.
+
+Garcia Ribera et al. combine distributed detectors with a central IDS component \cite{garciaribera2022}. They also test concurrent Hello, DIS, and DAO flooding, assigning the attacks to different nodes. In the scenario planned here, every compromised node will carry out both DIS flooding and DAO manipulation. Decisions will be local, and the evaluation will track delivery and routing service after those decisions, in addition to recording which attackers are flagged.
+
+Other relevant work includes Alsukayti and Alreshoodi's experiments with simple and complex routing attacks \cite{alsukayti2023}, DE2RA-RPL's treatment of resource-related attacks \cite{de2rarpl2024}, and the collaborative joint-attack IDS of Abdulkareem et al.\ \cite{abdulkareem2024}. Rouissat et al. study DIO inundation, which targets another control-message type \cite{rouissat2023}. These studies show that combining RPL attacks is an established research direction. The proposed contribution will concern the specified same-node DIS/DAO combination and a controlled assessment of the evidence and handling used against it.
+
+\subsection{Adaptive and Multi-Message Detection}
+Adaptation is broader than learning an action policy. FLSec-RPL uses fuzzy decisions with validation and blocking for DIO neighbor suppression and is evaluated under static and mobile conditions \cite{flsecrpl2024}. DSAT-IDS derives adaptive thresholds from group or subtree forwarding observations to detect selective forwarding \cite{dsatids2024}. These methods use evidence suited to their respective threats. Neither a forwarding-rate change nor a DIO-suppression indicator is the same observation as an incorrect DAO parent. This difference motivates evaluating AEF-RPL's additional evidence separately from the contribution of its learner.
+
+IMDRPL protects DIO/DAO exchanges through encrypted certificate attestation and is evaluated in Contiki/Cooja \cite{imdrpl2023}. Its use of authentication separates it from the behavioral check considered here. AEF-RPL will compare a locally observed sender-parent relationship without an equivalent certificate mechanism. We will consequently state the addressing and first-hop assumptions on which that comparison depends.
+
+\subsection{Learning, Adaptation, and Detection Assumptions}
+QSec-RPL uses Q-learning to detect version-number attacks in mobile RPL networks \cite{qsecrpl2023}. iTRPL combines trust with multi-agent reinforcement learning and divides responsibilities between nodes and the root \cite{itrpl2024}. Both provide precedents for learning-based RPL security, but their threats and decision structures differ from the proposed design. The planned learning comparison will examine changes to a local detector's accept/isolate decisions given the evidence available to AEF-RPL.
+
+CRRDS places a deep reinforcement learning agent at a resource-rich root and gathers observations from child nodes to detect decreased-rank attacks \cite{haqdad2026}. AEF-RPL instead proposes tabular decisions at individual nodes. A local node has different observations and resources from the root, which limits what can be inferred from CRRDS's performance for our design. We include it as an example of root-based learning and decision placement.
+
+The reward is a particular limitation of the proposed learner. Tabular Q-learning \cite{watkins1992} will receive a local anomaly indication, so an incorrect indication can enter the action-value updates without an independently verified attacker label to correct it. We will compare the learner with a fixed rule using the same DAO mechanism and measure false isolation separately in benign mobile runs. This design evaluates the effect of learning within the selected scenarios; lifelong retention and recognition of untested attack families remain open questions.
+
+Panda and Muthuraman train supervised classifiers on observations from a multiclass RPL dataset \cite{panda2026}. AEF-RPL will have a different role during a simulation: its decision to isolate a neighbor can change the traffic that is observed next. For this reason, the published classification scores are not a numerical baseline for our experiments. Such a comparison would first require the same dataset, observation unit, and labeling protocol. We discuss the work here as an example of dataset-based RPL attack classification.
+
+Evidence fusion and reinforcement learning have also been combined outside RPL. In vehicular networks, Gyawali et al. use Dempster--Shafer reasoning to aggregate feedback at edge servers and deep reinforcement learning to update reputation \cite{gyawali2021}. Jasti et al. combine Dempster--Shafer reasoning and reinforcement learning in a multi-level reputation system \cite{jasti2024}. Our contribution is thus not the pairing of these techniques. We focus on which RPL observations can support local accept/isolate decisions when the same node carries out DIS flooding and DAO manipulation.
+
+\subsection{Comparative Synthesis and Study Positioning}
+The comparisons in Table~\ref{tab:positioning} serve different purposes. DIS-FDM gives us a fusion baseline to reproduce and extend. Li-MSD addresses the DAO side of the threat, subject to the differences in attack semantics described above. The learning-based methods help identify assumptions about observation, reward, and decision placement that must be stated for AEF-RPL.
+
+The evaluation will separate the source of an attack from the source of any improvement in detection. Individual DIS and DAO attacks will be compared with their same-node combination. We will then add DAO evidence to the DIS-focused baseline and test the decision layer with learning enabled and disabled. Across these comparisons, false isolation in attack-free mobile runs and service available to legitimate nodes will be reported alongside detection results. Performance at larger network sizes will need its own evidence from the planned scale extensions.
+
+\begin{thebibliography}{99}
+\bibitem{rfc6550} T. Winter, P. Thubert, A. Brandt, J. Hui, R. Kelsey, P. Levis, K. Pister, R. Struik, J. P. Vasseur, and R. Alexander, ``RPL: IPv6 Routing Protocol for Low-Power and Lossy Networks,'' Internet Engineering Task Force, RFC 6550, Mar. 2012, doi: \href{https://doi.org/10.17487/RFC6550}{10.17487/RFC6550}.
+\bibitem{albinali2024} H. Albinali and F. Azzedin, ``Toward RPL attacks and mitigation taxonomy: Systematic literature review approach,'' \emph{IEEE Trans. Netw. Serv. Manag.}, vol. 21, no. 5, pp. 5215--5238, 2024, doi: \href{https://doi.org/10.1109/TNSM.2024.3386468}{10.1109/TNSM.2024.3386468}.
+\bibitem{rajasekar2022} V. R. Rajasekar and S. Rajkumar, ``A study on impact of DIS flooding attack on RPL-based 6LowPAN network,'' \emph{Microprocessors and Microsystems}, vol. 94, Art. no. 104675, 2022, doi: \href{https://doi.org/10.1016/j.micpro.2022.104675}{10.1016/j.micpro.2022.104675}.
+\bibitem{vermaranga2020} A. Verma and V. Ranga, ``Mitigation of DIS flooding attacks in RPL-based 6LoWPAN networks,'' \emph{Trans. Emerg. Telecommun. Technol.}, vol. 31, no. 2, Art. no. e3802, 2020, doi: \href{https://doi.org/10.1002/ett.3802}{10.1002/ett.3802}.
+\bibitem{medjek2021} F. Medjek, D. Tandjaoui, N. Djedjig, and I. Romdhani, ``Multicast DIS attack mitigation in RPL-based IoT-LLNs,'' \emph{J. Inf. Secur. Appl.}, vol. 61, Art. no. 102939, 2021, doi: \href{https://doi.org/10.1016/j.jisa.2021.102939}{10.1016/j.jisa.2021.102939}.
+\bibitem{pu2018} C. Pu, ``Mitigating DAO inconsistency attack in RPL-based low power and lossy networks,'' in \emph{Proc. IEEE 8th Annu. Comput. Commun. Workshop Conf. (CCWC)}, 2018, pp. 570--574, doi: \href{https://doi.org/10.1109/CCWC.2018.8301614}{10.1109/CCWC.2018.8301614}.
+\bibitem{limsd2024} A. Verma, S. K. Verma, A. C. Pandey, J. Grover, and G. Sharma, ``Li-MSD: A lightweight mitigation solution for DAO insider attack in RPL-based IoT,'' \emph{Future Gener. Comput. Syst.}, vol. 159, pp. 327--339, 2024, doi: \href{https://doi.org/10.1016/j.future.2024.05.032}{10.1016/j.future.2024.05.032}.
+\bibitem{prajisha2025} C. Prajisha and A. R. Vasudevan, ``Detection and mitigation of multicast DIS flooding attacks in RPL-based IoT networks,'' \emph{Ad Hoc Networks}, vol. 179, Art. no. 104002, 2025, doi: \href{https://doi.org/10.1016/j.adhoc.2025.104002}{10.1016/j.adhoc.2025.104002}.
+\bibitem{garciaribera2022} E. Garcia Ribera, B. Martinez Alvarez, C. Samuel, P. P. Ioulianou, and V. G. Vassilakis, ``An intrusion detection system for RPL-based IoT networks,'' \emph{Electronics}, vol. 11, no. 23, Art. no. 4041, 2022, doi: \href{https://doi.org/10.3390/electronics11234041}{10.3390/electronics11234041}.
+\bibitem{alsukayti2023} I. S. Alsukayti and M. Alreshoodi, ``RPL-based IoT networks under simple and complex routing security attacks: An experimental study,'' \emph{Applied Sciences}, vol. 13, no. 8, Art. no. 4878, 2023, doi: \href{https://doi.org/10.3390/app13084878}{10.3390/app13084878}.
+\bibitem{de2rarpl2024} D. Paganraj and M. Chelliah, ``DE2RA-RPL: Detection and elimination of resource-related attacks in IoT RPL-based protocol,'' \emph{J. Supercomput.}, vol. 80, no. 15, pp. 22397--22427, 2024, doi: \href{https://doi.org/10.1007/s11227-024-06256-w}{10.1007/s11227-024-06256-w}.
+\bibitem{abdulkareem2024} O. A. Abdulkareem, R. K. Kontham, and F. E. Mahmood, ``Collaborative intrusion detection system to identify joint attacks in routing protocol for low-power and lossy networks routing protocol on the Internet of Everything,'' \emph{Mesopotamian J. CyberSecurity}, vol. 4, no. 3, pp. 251--277, 2024, doi: \href{https://doi.org/10.58496/MJCS/2024/026}{10.58496/MJCS/2024/026}.
+\bibitem{qsecrpl2023} G. Sharma, J. Grover, and A. Verma, ``QSec-RPL: Detection of version number attacks in RPL based mobile IoT using Q-learning,'' \emph{Ad Hoc Networks}, vol. 142, Art. no. 103118, 2023, doi: \href{https://doi.org/10.1016/j.adhoc.2023.103118}{10.1016/j.adhoc.2023.103118}.
+\bibitem{itrpl2024} D. Dey and N. Ghosh, ``iTRPL: An intelligent and trusted RPL protocol based on multi-agent reinforcement learning,'' \emph{Ad Hoc Networks}, vol. 163, Art. no. 103586, 2024, doi: \href{https://doi.org/10.1016/j.adhoc.2024.103586}{10.1016/j.adhoc.2024.103586}.
+\bibitem{imdrpl2023} P. Deepavathi and C. Mala, ``IMDRPL: Identifying and eliminating malicious devices using DIO and DAO ICMP control messages in RPL-based protocol,'' \emph{Peer-to-Peer Netw. Appl.}, vol. 16, no. 5, pp. 2380--2398, 2023, doi: \href{https://doi.org/10.1007/s12083-023-01539-0}{10.1007/s12083-023-01539-0}.
+\bibitem{flsecrpl2024} C. Kim, C. So-In, Y. Kongsorot, and P. Aimtongkham, ``FLSec-RPL: A fuzzy logic-based intrusion detection scheme for securing RPL-based IoT networks against DIO neighbor suppression attacks,'' \emph{Cybersecurity}, vol. 7, Art. no. 27, 2024, doi: \href{https://doi.org/10.1186/s42400-024-00223-x}{10.1186/s42400-024-00223-x}.
+\bibitem{dsatids2024} V. R. Rajasekar and S. Rajkumar, ``DSAT-IDS: Dissimilarity and adaptive threshold-based intrusion detection system to mitigate selective forwarding attack in the RPL-based 6LoWPAN,'' \emph{Cluster Comput.}, vol. 27, no. 9, pp. 12029--12068, 2024, doi: \href{https://doi.org/10.1007/s10586-024-04564-7}{10.1007/s10586-024-04564-7}.
+\bibitem{haqdad2026} M. Haqdad, M. Fayaz, P. Khan, F. Ali, T. H. H. Aldhyani, A. K. Bashir, and D. Kwak, ``Intent-based networking with deep reinforcement learning for detecting decreased rank attacks in low-power and lossy IoT networks,'' \emph{IEEE Internet Things J.}, vol. 13, no. 9, pp. 17802--17814, 2026, doi: \href{https://doi.org/10.1109/JIOT.2025.3596097}{10.1109/JIOT.2025.3596097}.
+\bibitem{rouissat2023} M. Rouissat, M. Belkheir, I. S. Alsukayti, and A. Mokaddem, ``A lightweight mitigation approach against a new inundation attack in RPL-based IoT networks,'' \emph{Applied Sciences}, vol. 13, no. 18, Art. no. 10366, 2023, doi: \href{https://doi.org/10.3390/app131810366}{10.3390/app131810366}.
+\bibitem{watkins1992} C. J. C. H. Watkins and P. Dayan, ``Q-learning,'' \emph{Machine Learning}, vol. 8, nos. 3--4, pp. 279--292, 1992, doi: \href{https://doi.org/10.1007/BF00992698}{10.1007/BF00992698}.
+\bibitem{panda2026} N. Panda and S. Muthuraman, ``A multiclass machine learning framework for detecting routing attacks in RPL-based IoT networks using a novel simulation-driven dataset,'' \emph{Future Internet}, vol. 18, no. 1, Art. no. 35, 2026, doi: \href{https://doi.org/10.3390/fi18010035}{10.3390/fi18010035}.
+\bibitem{gyawali2021} S. Gyawali, Y. Qian, and R. Q. Hu, ``Deep reinforcement learning based dynamic reputation policy in 5G based vehicular communication networks,'' \emph{IEEE Trans. Veh. Technol.}, vol. 70, no. 6, pp. 6136--6146, 2021, doi: \href{https://doi.org/10.1109/TVT.2021.3079379}{10.1109/TVT.2021.3079379}.
+\bibitem{jasti2024} P. C. Jasti, H. Griffith, and H. Rathore, ``A multi-level Dempster-Shafer and reinforcement learning-based reputation system for connected vehicle security,'' in \emph{Proc. IEEE 21st Consum. Commun. Netw. Conf. (CCNC)}, 2024, pp. 714--720, doi: \href{https://doi.org/10.1109/CCNC51664.2024.10454856}{10.1109/CCNC51664.2024.10454856}.
+\end{thebibliography}
+\end{document}

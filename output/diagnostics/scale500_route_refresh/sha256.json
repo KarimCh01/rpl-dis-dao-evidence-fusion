@@ -1,0 +1,8 @@
+{
+  "scripts/diagnose_500_echo.py": "ec957009646b15e32ca479151f6ac0c4e0271fa2995318a804afdb508e3c663c",
+  "scripts/diagnose_scale_load.py": "5b1bd73fd8b81669ef2047ff56ac73da9b092664d9ed3902d271ce06f7243592",
+  "firmware/node.c": "987f782aabcd44944831165ef1de74f99e79129de482cf183a62928942360cd7",
+  "firmware/project-conf.h": "310b6e15e8b3fff9e5795c588a73fda0b3162e4c28bfb90669679b73b731eed5",
+  "build/variants/v_500refresh_echo_on_root/build/cooja/v_500refresh_echo_on_root.cooja": "2f8e8698ef7b22a4f466e1b8016e1a4e39cd58618ed8c28f7ae0913882d55f15",
+  "build/variants/v_500refresh_echo_on_cli0/build/cooja/v_500refresh_echo_on_cli0.cooja": "963f4d833d9fa5057190081ad22aa4dec377fba166e1f5db969c98a9f2308aee"
+}

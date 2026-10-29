@@ -1,0 +1,13 @@
+{
+  "firmware/project-conf.h": "73d5060daf85c8061aae48d31b89961b6cc0fd176b055fd4c5692cb18afa1efe",
+  "scripts/fix_scale_transport.py": "f94afeca07c2e42a12a562e9366e9e3a019dfae06f7276a5f01bb615a1bbe761",
+  "build/variants/v_scale_fix_paced_root/build/cooja/v_scale_fix_paced_root.cooja": "4e5eb1bba049f46561e55e4d50ace8a3b689bba1db8570652773fd958bff2598",
+  "build/variants/v_scale_fix_paced_cli0/build/cooja/v_scale_fix_paced_cli0.cooja": "88a9c4a14fca2d3f52329caa47c652d78a9490a0f89caf86b7cba8c7596c8079",
+  "build/variants/v_scale_fix_paced_cli1/build/cooja/v_scale_fix_paced_cli1.cooja": "88a9c4a14fca2d3f52329caa47c652d78a9490a0f89caf86b7cba8c7596c8079",
+  "build/variants/v_scale_fix_ack_root/build/cooja/v_scale_fix_ack_root.cooja": "adceff6427f882534fa030630e2de2d0c83bf61b9b9952bfede5e525f742fa6b",
+  "build/variants/v_scale_fix_ack_cli0/build/cooja/v_scale_fix_ack_cli0.cooja": "4cc396f58dc33ffc3148a2b0b22cac673764ce0f74e4e7e5665eeb5fa6ce25dd",
+  "build/variants/v_scale_fix_ack_cli1/build/cooja/v_scale_fix_ack_cli1.cooja": "4cc396f58dc33ffc3148a2b0b22cac673764ce0f74e4e7e5665eeb5fa6ce25dd",
+  "build/variants/v_scale_fix_paced_ack_root/build/cooja/v_scale_fix_paced_ack_root.cooja": "900dd10152c5463567c2f360d1122a146378d79b0cbb5b5f2149605dc6b32721",
+  "build/variants/v_scale_fix_paced_ack_cli0/build/cooja/v_scale_fix_paced_ack_cli0.cooja": "8386e556f06958a8c2a3fa41d43ca77854591104ba3162a309a40c2117204cef",
+  "build/variants/v_scale_fix_paced_ack_cli1/build/cooja/v_scale_fix_paced_ack_cli1.cooja": "8386e556f06958a8c2a3fa41d43ca77854591104ba3162a309a40c2117204cef"
+}

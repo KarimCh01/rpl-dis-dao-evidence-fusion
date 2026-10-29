@@ -16,7 +16,7 @@ Take the run `m3_k7_i3_mob3_d4_s5` as an example. Its name encodes its setting:
 | `k7` | 7 attackers (25% of the 29 sensors) |
 | `i3` | attackers send a DIS every 3 s |
 | `mob3` | 30% of sensors mobile (`mob0` = static) |
-| `d4` | defense 4 = proposed (0 none, 1 Secure-RPL, 2 RPL-MRC, 3 DIS-FDM, 4 proposed) |
+| `d4` | defense 4 = AEF-RPL with learning off (0 none, 1 Secure-RPL, 2 RPL-MRC, 3 DIS-FDM, 4 AEF-RPL learning off, 5 Li-MSD, 6 AEF-RPL) |
 | `s5` | seed 5 |
 
 What happens to it:
@@ -83,24 +83,24 @@ Applied to Contiki-NG commit `385d72a76`. Five files:
 
 The per-neighbor record `peer_t` holds, for each node ID: DIS and DAO counts in
 the current window, inconsistent DAOs in the window, the counter `u`, the
-blacklist flag, Secure-RPL's last-DIS time, and the accumulated DAO evidence
-`mdao`.
+blacklist flag, Secure-RPL's last-DIS time, Li-MSD's DAO count `lim_dao`, and
+the accumulated DAO evidence `mdao`.
 
 | Function | Used by | What it does |
 |---|---|---|
 | `defense_dis_input()` | all | the DIS hook. Counts the DIS, then: Secure-RPL checks `srpl_accept()`; RPL-MRC calls `rpl_timers_dio_readjust(15)` and drops the normal reset; DIS-FDM and proposed drop it if the sender is blacklisted |
 | `srpl_accept()` | Secure-RPL | drops a DIS arriving less than 5 s after the previous one from the same neighbor; after 3 in a row, blacklists it |
-| `defense_window()` | DIS-FDM, proposed | every 10 s. During the first 240 s calls `calibrate()`; at 240 s calls `finish_calibration()`; afterwards updates `v` (parent changes), `e` (energy), each neighbor's `u` (DIS load) and, for the proposed defense, `update_dao_evidence()`, then `decide()` |
+| `defense_window()` | DIS-FDM, proposed, Li-MSD | every 10 s. For Li-MSD it only runs INITIALIZE: at 120 s and every 1800 s after it clears every DAO count and the blacklist. During the first 240 s calls `calibrate()`; at 240 s calls `finish_calibration()`; afterwards updates `v` (parent changes), `e` (energy), each neighbor's `u` (DIS load) and, for the proposed defense, `update_dao_evidence()`, then `decide()` |
 | `calibrate()` / `finish_calibration()` | DIS-FDM, proposed | accumulates DIS and packet counts and energy per window; computes `T_DTL = (DIS+1)/(packets+2)`, energy mean and SD, and `eps = (inconsistent+1)/(first-hop DAOs+2)`; prints `#K` |
 | `recent_switches()` | DIS-FDM, proposed | number of this node's parent changes in the last 60 s |
 | `decide()` | DIS-FDM, proposed | the paper's Algorithm 1 on `u`, `v`, `e`; the proposed defense also fuses `mdao` and has the extra DAO path (fused attack belief >= 0.95) |
 | `update_dao_evidence()` | proposed | after two consecutive windows with inconsistent DAOs from a neighbor, combines `(1-eps, 0, eps)` into its `mdao`; resets it after any clean window |
-| `observe_dao()` | all | common DAO bookkeeping; decides first-hop consistency; for the proposed defense returns drop, pass or repair for a blacklisted sender |
+| `observe_dao()` | all | common DAO bookkeeping; decides first-hop consistency; for the proposed defense returns drop, pass or repair for a blacklisted sender; for Li-MSD drops DAOs from a blacklisted originator, counts DAOs that arrive directly from their originator, and blacklists the originator when its count has reached `LIMSD_BETA` |
 | `dao_transit()` | all | finds the transit option inside a DAO |
 | `defense_forward()` | all | the forwarding hook. Skips IPv6 extension headers, finds DAOs, calls `observe_dao()`; for a repair it writes the node's own address as the parent and calls `icmp6_fix_checksum()` |
 | `defense_dao_input()` | all | the root's DAO hook; same logic as forwarding, and the root repairs by setting the parent to itself |
 | `defense_parent_switch()` | all | the RPL parent-change callback; records the time and prints `#P` |
-| `blacklist()` | Secure-RPL, DIS-FDM, proposed | marks the neighbor and prints `#D` once |
+| `blacklist()` | Secure-RPL, DIS-FDM, proposed, Li-MSD | marks the neighbor and prints `#D` once (Li-MSD can print it again after a reset) |
 
 ### 2.6 Other firmware files
 
@@ -116,11 +116,14 @@ blacklist flag, Secure-RPL's last-DIS time, and the accumulated DAO evidence
 |---|---|
 | `scenarios/gen_csc.py` | `place_nodes()` draws a connected layout; `waypoint_path()` draws Random Waypoint paths; `build()` assembles `sim.csc` and `meta.json` |
 | `scripts/plan.py` | writes `calibration.jsonl` (20 runs), `reproduction.jsonl` (320) and `main.jsonl` (1000); `attackers_for()` turns 10/25/50% into 3/7/14 nodes |
-| `scripts/build_variants.py` | builds the 22 firmware variants in Docker, each in its own folder, with the calibrated thresholds |
+| `scripts/build_variants.py` | builds the 28 firmware variants in Docker, each in its own folder, with the calibrated thresholds |
 | `scripts/run_matrix.py` | runs plans in parallel containers, skips finished runs, validates, parses, compresses |
 | `scripts/verify_sample.py` | re-runs a random sample of published runs into `output/verify/` and compares every metric |
 | `analysis/parse_run.py` | computes all metrics of one run from its log (section 3.4) |
 | `analysis/calibrate_tr.py` | computes DIS-FDM's parent-change thresholds from the 20 attack-free runs |
+| `analysis/metrics.py` | writes `output/results/resilience.csv`: ARI and DRT per run (section 3.6) |
+| `analysis/check_theory.py` | checks the delay and false-alarm bounds, the learned policy and the Q-value bound numerically; writes `output/theory/theory_check.json` |
+| `analysis/calibrate_limsd.py` | computes Li-MSD's DAO receive threshold `beta` from the same 20 runs and writes `output/calibration/limsd.json` |
 | `analysis/reparse_all.py` | re-parses every saved log with the current parser |
 | `analysis/aggregate.py` | builds summary tables, figures, Wilcoxon tests with Holm correction, and `summary.md` |
 | `analysis/paper_reference.json` | the base paper's published numbers used for RQ1 |
@@ -151,7 +154,7 @@ Each line is `<time in microseconds> <node ID> <tag> <values>`:
 | `#E` | sensor receives its echo | sequence number |
 | `#P` | parent change | new parent ID (0 = none) |
 | `#K` | end of calibration (DIS-FDM, proposed) | T_DTL x 10^6, energy mean, energy SD, first-hop DAOs seen, inconsistent ones, eps x 1000 |
-| `#D` | a node blacklists a neighbor | suspect ID, reason (1 Secure-RPL, 2 u = 5, 3 Algorithm 1 rule, 4 fused decision, 5 DAO evidence), attack belief x 1000 |
+| `#D` | a node blacklists a neighbor | suspect ID, reason (1 Secure-RPL, 2 u = 5, 3 Algorithm 1 rule, 4 fused decision, 5 DAO evidence, 6 Li-MSD, 7 learned decision), attack belief x 1000 |
 | `#S` | every node every 60 s (cumulative) | DIO sent, DIS sent, DAO sent, DAO-ACK sent, DIO received, DIS received, DAO received, parent changes, attack DIS sent, forged DAO sent, CPU ticks, LPM ticks, transmit ticks, listen ticks |
 
 ### 3.4 `result.json` (metrics of one run)
@@ -198,3 +201,26 @@ Each line is `<time in microseconds> <node ID> <tag> <values>`:
 | `main_detection_k{3,7,14}.png` | TPR, FPR and detection latency per attack and defense |
 | `false_positives_no_attack.png` | false alarms when no attacker is present |
 | `sensitivity_fdm_window.png` | DIS-FDM with a 10 s and a 30 s evidence window against attack interval |
+
+### 3.6 Attack Resilience Index and Downward Recovery Time (`resilience.csv`)
+
+| Column | Meaning |
+|---|---|
+| `reference` | the run used as reference: same seed and mobility, no attack, no defense. When `output/runs/m0_k<k>_i3_mob<x>_d0_s<seed>` exists (plan `reference.jsonl`), it is used: the same nodes are chosen as attackers but run honest firmware, so the same nodes move on the same paths. Otherwise `m0_k0_...` is used |
+| `reference_exact` | 1 when the reference has the same moving nodes as the run (always true for static runs) |
+| `e_attacked`, `e_reference` | packets sent by the run's legitimate nodes after 300 s whose echo came back, in the run and in the reference |
+| `ari` | `e_attacked / e_reference` |
+| `pre_level` | mean fraction of expected round trips completed per minute between 120 and 300 s |
+| `drt_s` | Downward Recovery Time: from the first minute after 300 s in which the 3-minute trailing mean falls below 90% of `pre_level` to the start of 5 consecutive minutes back above it; 0 if it never falls |
+| `drt_censored` | 1 if service never recovered; `drt_s` is then the remaining run time |
+
+### 3.7 Learning-layer log lines (defenses 6 and 7)
+
+| Tag | Printed when | Fields |
+|---|---|---|
+| `#D` | a neighbor is isolated (also after a release) | as above; reason 7 is a decision made by the learned policy |
+| `#U` | an isolated neighbor is released | neighbor ID |
+| `#G` | every 600 s after calibration | number of states whose greedy action is Isolate, number of states whose greedy action changed since the last report |
+
+`parse_run.py` adds `legit_isolated_frac` and `attacker_isolated_frac` (average share of the time after 240 s during which a node is isolated by at least one neighbor) and `policy_changes_last` (mean of the last `#G` change count).
+

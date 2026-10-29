@@ -1,0 +1,8 @@
+OK v_500echo_echo_on_cli0
+OK v_500echo_up_only_root
+OK v_500echo_echo_on_root
+OK v_500echo_up_only_cli0
+1 echo500_up_only_s1_t15 ok
+2 echo500_up_only_s2_t15 ok
+3 echo500_echo_on_s1_t15 ok
+4 echo500_echo_on_s2_t15 ok

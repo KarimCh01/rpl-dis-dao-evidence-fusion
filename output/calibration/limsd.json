@@ -1,0 +1,17 @@
+{
+ "runs": 20,
+ "start_s": 120,
+ "period_s": 1800,
+ "rule": "beta = largest number of DAOs any node originated in one reset period in the attack-free runs, so no honest node in the calibration data exceeds it",
+ "static": {
+  "n": 980,
+  "max": 94,
+  "mean": 3.996938775510204
+ },
+ "mobile": {
+  "n": 180,
+  "max": 73,
+  "mean": 30.9
+ },
+ "beta": 94
+}

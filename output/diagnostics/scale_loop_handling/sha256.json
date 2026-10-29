@@ -1,0 +1,7 @@
+{
+  "firmware/project-conf.h": "310b6e15e8b3fff9e5795c588a73fda0b3162e4c28bfb90669679b73b731eed5",
+  "scripts/fix_scale_transport.py": "f94afeca07c2e42a12a562e9366e9e3a019dfae06f7276a5f01bb615a1bbe761",
+  "build/variants/v_scale_fix_loopdrop_root/build/cooja/v_scale_fix_loopdrop_root.cooja": "5b541ca5db6aeb1fa1221db88c16f78377ebe85b1e5800c74a0a1e079253aae1",
+  "build/variants/v_scale_fix_loopdrop_cli0/build/cooja/v_scale_fix_loopdrop_cli0.cooja": "15a6856fc2acef9f75a479269de33df43a397b3a9d6bd1398a5727f5d679a6f1",
+  "build/variants/v_scale_fix_loopdrop_cli1/build/cooja/v_scale_fix_loopdrop_cli1.cooja": "15a6856fc2acef9f75a479269de33df43a397b3a9d6bd1398a5727f5d679a6f1"
+}

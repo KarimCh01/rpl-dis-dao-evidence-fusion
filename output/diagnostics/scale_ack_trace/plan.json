@@ -1,0 +1,20 @@
+{
+  "run_id": "acktrace_n500_s1_t8",
+  "seed": 1,
+  "nodes": 500,
+  "attackers": 0,
+  "attack_mode": 0,
+  "dis_interval": 3,
+  "defense": 0,
+  "mobile_frac": 0.0,
+  "duration_min": 8,
+  "send_s": 60,
+  "rank_hops": 20,
+  "experiment": "scale_ack_diagnostic",
+  "native_dis_interval_s": 60,
+  "variant_overrides": {
+    "root": "v_acktrace_root",
+    "cli0": "v_acktrace_cli0",
+    "cli1": "v_acktrace_cli1"
+  }
+}

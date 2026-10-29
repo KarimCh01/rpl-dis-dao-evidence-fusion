@@ -1,0 +1,179 @@
+OK v_scale_fix_paced_cli1
+OK v_scale_fix_paced_root
+OK v_scale_fix_paced_cli0
+OK v_scale_fix_ack_cli0
+OK v_scale_fix_ack_cli1
+OK v_scale_fix_ack_root
+OK v_scale_fix_paced_ack_cli0
+OK v_scale_fix_paced_ack_root
+OK v_scale_fix_paced_ack_cli1
+[1/12] ok fix_paced_n500_s1_t15
+[2/12] ok fix_paced_n500_s2_t15
+[3/12] ok fix_paced_n1000_s1_t15
+[4/12] ok fix_paced_n1000_s2_t15
+[5/12] ok fix_ack_n500_s1_t15
+[6/12] ok fix_ack_n500_s2_t15
+[7/12] ok fix_paced_ack_n500_s1_t15
+[8/12] ok fix_ack_n1000_s1_t15
+[9/12] ok fix_ack_n1000_s2_t15
+[10/12] ok fix_paced_ack_n500_s2_t15
+[11/12] ok fix_paced_ack_n1000_s2_t15
+[12/12] ok fix_paced_ack_n1000_s1_t15
+[
+  {
+    "run_id": "fix_paced_n500_s1_t15",
+    "setting": "paced",
+    "nodes": 500,
+    "seed": 1,
+    "coverage": 0.6733466933867736,
+    "delivery_up": 0.0625250501002004,
+    "pdr_down": 0.9775641025641025,
+    "passes_gate": false,
+    "warnings": {
+      "dao_repairs": 908
+    }
+  },
+  {
+    "run_id": "fix_paced_n500_s2_t15",
+    "setting": "paced",
+    "nodes": 500,
+    "seed": 2,
+    "coverage": 0.7094188376753507,
+    "delivery_up": 0.054509018036072145,
+    "pdr_down": 0.9852941176470589,
+    "passes_gate": false,
+    "warnings": {
+      "dao_repairs": 822
+    }
+  },
+  {
+    "run_id": "fix_paced_n1000_s1_t15",
+    "setting": "paced",
+    "nodes": 1000,
+    "seed": 1,
+    "coverage": 0.32932932932932935,
+    "delivery_up": 0.015615615615615615,
+    "pdr_down": 1.0,
+    "passes_gate": false,
+    "warnings": {
+      "dao_repairs": 876
+    }
+  },
+  {
+    "run_id": "fix_paced_n1000_s2_t15",
+    "setting": "paced",
+    "nodes": 1000,
+    "seed": 2,
+    "coverage": 0.3053053053053053,
+    "delivery_up": 0.04284284284284284,
+    "pdr_down": 0.9789719626168224,
+    "passes_gate": false,
+    "warnings": {
+      "dao_repairs": 915
+    }
+  },
+  {
+    "run_id": "fix_ack_n500_s1_t15",
+    "setting": "ack",
+    "nodes": 500,
+    "seed": 1,
+    "coverage": 0.749498997995992,
+    "delivery_up": 0.0871743486973948,
+    "pdr_down": 0.9793103448275862,
+    "passes_gate": false,
+    "warnings": {
+      "dao_repairs": 328
+    }
+  },
+  {
+    "run_id": "fix_ack_n500_s2_t15",
+    "setting": "ack",
+    "nodes": 500,
+    "seed": 2,
+    "coverage": 0.7274549098196392,
+    "delivery_up": 0.12144288577154308,
+    "pdr_down": 0.976897689768977,
+    "passes_gate": false,
+    "warnings": {
+      "dao_repairs": 315
+    }
+  },
+  {
+    "run_id": "fix_ack_n1000_s1_t15",
+    "setting": "ack",
+    "nodes": 1000,
+    "seed": 1,
+    "coverage": 0.3433433433433433,
+    "delivery_up": 0.014814814814814815,
+    "pdr_down": 1.0,
+    "passes_gate": false,
+    "warnings": {
+      "dao_repairs": 384
+    }
+  },
+  {
+    "run_id": "fix_ack_n1000_s2_t15",
+    "setting": "ack",
+    "nodes": 1000,
+    "seed": 2,
+    "coverage": 0.31931931931931934,
+    "delivery_up": 0.022822822822822823,
+    "pdr_down": 0.9912280701754386,
+    "passes_gate": false,
+    "warnings": {
+      "dao_repairs": 302
+    }
+  },
+  {
+    "run_id": "fix_paced_ack_n500_s1_t15",
+    "setting": "paced_ack",
+    "nodes": 500,
+    "seed": 1,
+    "coverage": 0.6793587174348698,
+    "delivery_up": 0.04408817635270541,
+    "pdr_down": 0.9545454545454546,
+    "passes_gate": false,
+    "warnings": {
+      "dao_repairs": 346
+    }
+  },
+  {
+    "run_id": "fix_paced_ack_n500_s2_t15",
+    "setting": "paced_ack",
+    "nodes": 500,
+    "seed": 2,
+    "coverage": 0.6773547094188377,
+    "delivery_up": 0.06492985971943888,
+    "pdr_down": 0.9845679012345679,
+    "passes_gate": false,
+    "warnings": {
+      "dao_repairs": 350
+    }
+  },
+  {
+    "run_id": "fix_paced_ack_n1000_s1_t15",
+    "setting": "paced_ack",
+    "nodes": 1000,
+    "seed": 1,
+    "coverage": 0.35535535535535534,
+    "delivery_up": 0.030930930930930932,
+    "pdr_down": 0.9870550161812298,
+    "passes_gate": false,
+    "warnings": {
+      "dao_repairs": 315
+    }
+  },
+  {
+    "run_id": "fix_paced_ack_n1000_s2_t15",
+    "setting": "paced_ack",
+    "nodes": 1000,
+    "seed": 2,
+    "coverage": 0.3063063063063063,
+    "delivery_up": 0.012612612612612612,
+    "pdr_down": 0.9841269841269841,
+    "passes_gate": false,
+    "warnings": {
+      "dao_repairs": 366
+    }
+  }
+]

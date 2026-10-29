@@ -1,0 +1,81 @@
+\section{Mathematical Analysis}\label{sec:theory}
+This section derives the behavior of the DAO channel and the learning layer before any simulation, as required by Objective~O6. The results hold for the DAO channel under the stated assumptions; the full detector also contains DIS rules and learned actions, which Section~\ref{sec:results} evaluates empirically. A numerical checker (\texttt{make theory}) confirms each result on synthetic inputs.
+
+\subsection{Detection Delay of the DAO Channel}
+\begin{proposition}\label{prop:accum}
+Let one observer--neighbor pair have fixed uncertainty $0<\epsilon<1$, and let every window after the persistence requirement contain an eligible inconsistency. After $k$ contributions, the DAO mass is $m_k=(1-\epsilon^k,0,\epsilon^k)$, and the smallest $k$ that reaches threshold $\tau$ is
+\begin{equation}
+ k_\tau=\left\lceil\frac{\log(1-\tau)}{\log\epsilon}\right\rceil.
+ \label{eq:kstar}
+\end{equation}
+\end{proposition}
+\begin{proof}
+Repeated masses $(1-\epsilon,0,\epsilon)$ have no conflict, so Dempster's rule multiplies the uncertain masses: $x_{k+1}=\epsilon x_k$ with $x_0=1$, giving $x_k=\epsilon^k$. The threshold $1-\epsilon^k\ge\tau$ is equivalent to $k\ge\log(1-\tau)/\log\epsilon$, since both logarithms are negative.
+\end{proof}
+
+With persistence $p$, the alarm needs a run of $r=p+k_\tau-1$ hit windows. If $\delta\in(0,W]$ is the time from the first inconsistency to the next window boundary, the channel delay is $D=\delta+(r-1)W$, so
+\begin{equation}
+ (r-1)W<D\le rW.
+ \label{eq:delay}
+\end{equation}
+For $p=2$, $W=10$~s, and $\tau=.95$, the values $\epsilon=.1,.25,.5,.75,.9$ give $k_\tau=2,3,5,11,29$; at $\epsilon=.5$ the channel alarms 50--60~s after the first inconsistency. The delay thus grows with $\epsilon$, which is the intended trade-off: a network whose honest DAOs are often inconsistent needs more evidence before isolating.
+
+\subsection{Effect of Conflicting Evidence}
+Suppose the other three sources hold a fixed combined mass $(a,b,u)$ with $b<1$. Fusing it with $m_k$, with $x=\epsilon^k$ and conflict $K=b(1-x)$, gives
+\begin{equation}
+ M_k(A)=\frac{1-b-ux}{1-b+bx},\qquad M_k(N)=\frac{bx}{1-b+bx},
+\end{equation}
+and the threshold $M_k(A)\ge\tau$ is reached when
+\begin{equation}
+ x\le\frac{(1-b)(1-\tau)}{u+\tau b}.
+ \label{eq:fused}
+\end{equation}
+With vacuous other evidence ($b=0$, $u=1$), \eqref{eq:fused} reduces to $x\le1-\tau$, recovering Proposition~\ref{prop:accum}. With $b=.8$ and $u=.2$, it requires $x\le.0104$. Normal evidence from the other sources therefore raises the bar for a DAO-only alarm, which protects a neighbor whose DIS and parent behavior look honest.
+
+\subsection{False-Alarm Bound}
+\begin{proposition}\label{prop:fa}
+If a benign pair produces an eligible inconsistency in each window independently with probability $q$, the probability of a DAO-channel false alarm within $L$ windows satisfies
+\begin{equation}
+ P_{\mathrm{FA}}\le\min\{1,(L-r+1)_+\,q^r\}.
+ \label{eq:fa}
+\end{equation}
+\end{proposition}
+\begin{proof}
+A false alarm requires $r$ consecutive hit windows. There are at most $(L-r+1)_+$ starting positions, each with probability $q^r$, and the union bound sums them.
+\end{proof}
+A 60-minute run has $L=336$ post-calibration windows. With $\epsilon=.5$ ($r=6$) and $q=.1$, the bound is $3.3\times10^{-4}$. The persistence rule is what makes the bound small: without it ($p=1$), $r=5$ and the bound grows tenfold. The bound concerns the DAO channel; mobility-induced parent changes act through another channel and are measured directly in Section~\ref{sec:results}.
+
+Fig.~\ref{fig:mathbounds} plots \eqref{eq:delay} and \eqref{eq:fa}.
+\begin{figure*}[t]
+\centering\includegraphics[width=.88\textwidth]{full_paper/generated/conditional_math_bounds.pdf}
+\caption{DAO-channel analysis at $W=10$~s, $p=2$, and $\tau=.95$. Left: detection-delay interval versus calibrated uncertainty $\epsilon$. Right: false-alarm bound versus the benign inconsistency probability $q$.}\label{fig:mathbounds}
+\end{figure*}
+
+\subsection{Learning Threshold and Value Bounds}
+\begin{proposition}\label{prop:policy}
+Let $\pi=P(z=1)$ in a state. With the reward of Section~\ref{sec:method} and $\gamma=0$, isolation maximizes the expected reward if and only if $\pi>1/2$.
+\end{proposition}
+\begin{proof}
+$\mathbb{E}[r\mid\text{accept}]=-\pi$ and $\mathbb{E}[r\mid\text{isolate}]=\pi-2(1-\pi)=3\pi-2$. Their difference is $4\pi-2$, which is positive if and only if $\pi>1/2$.
+\end{proof}
+The reward thus encodes a majority rule: a node isolates a neighbor only when that neighbor is more likely than not to show an anomaly in the next window. With $\gamma=.5$, future states also matter, so the threshold is a guide to the learned policy rather than its exact form.
+
+\begin{proposition}\label{prop:qbound}
+For $0\le\gamma<1$, zero initialization, rewards in $[-2,1]$, and step sizes $0<\alpha\le1$, every Q-value stays in $[-2/(1-\gamma),\,1/(1-\gamma)]$.
+\end{proposition}
+\begin{proof}
+If all values lie in the interval, every target $r+\gamma\max Q$ also does, and an update is a convex combination of a value and its target. Induction completes the proof.
+\end{proof}
+At $\gamma=.5$ the interval is $[-4,2]$, or $[-1024,512]$ in Q8.8, well inside a signed 16-bit integer, so the fixed-point table cannot overflow. The firmware's integer division moves each value toward its target without overshoot and preserves the bound.
+
+Two properties limit what learning can achieve within one run. The step size stops decreasing after 16 visits and exploration never reaches zero, so the classical convergence conditions of Q-learning \cite{watkins1992} do not hold. Both choices are deliberate, to keep the learner responsive, and they mean that the learned policy must be judged by its measured effect, which RQ4 does.
+
+\subsection{Service Metrics}
+Let $\mathcal{L}$ be the legitimate clients, which excludes the root and every node that is an attacker in the paired scenario. For scenario $x$, let $E_x$ count the packets generated by clients in $\mathcal{L}$ after the attack onset whose echo returned. The Attack Resilience Index is
+\begin{equation}
+ \mathrm{ARI}=\frac{E_{\mathrm{attack}}}{E_{\mathrm{reference}}},
+ \label{eq:ari}
+\end{equation}
+where the reference is the same-seed run with the same layout, mobility, and radio settings but no attack and no defense. ARI is 1 when the attack costs no completed service and 0 when it costs all of it. It follows the resilience view of Sterbenz et al.\ \cite{sterbenz2013}, which measures service under challenge relative to normal operation. Unlike packet delivery ratio, it counts a node that loses its route and stops sending: such a node sends nothing, so it lowers $E_{\mathrm{attack}}$ but leaves the delivery ratio unchanged.
+
+The Downward Recovery Time (DRT) measures how long service stays degraded. With $e_m$ the completed round trips in minute $m$ normalized by the expected count, $\bar e_m$ its three-minute trailing mean, and $b$ the mean of $e_m$ over 120--300~s, let $m_f$ be the first post-onset minute with $\bar e_m<.9b$. DRT is $60(m_r-m_f)$~s, where $m_r$ is the first minute from which five consecutive values meet $.9b$. A run that never falls has DRT 0, and a run that never recovers is right-censored at the end of the run. We therefore report the number of runs that recovered, not the mean of censored values.

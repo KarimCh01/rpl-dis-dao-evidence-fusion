@@ -1,0 +1,26 @@
+[32mINFO  [main] [Cooja.java:1147] - Loading /home/user/project/output/experiments/journal_extension/runs/journal_m3_k7_i30_mob0_d3_s30_dao30/sim.csc random seed: null[0;39m
+> make -s -f /home/user/project/firmware/install.mk PREBUILT=v_root_d3.cooja
+WARNING: A restricted method in java.lang.foreign.SymbolLookup has been called
+WARNING: java.lang.foreign.SymbolLookup::libraryLookup has been called by org.contikios.cooja.contikimote.CoreComm in an unnamed module (file:/home/user/contiki-ng/tools/cooja/build/libs/cooja-full.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+> make -s -f /home/user/project/firmware/install.mk PREBUILT=v_cli_d3_m0.cooja
+> make -s -f /home/user/project/firmware/install.mk PREBUILT=v_journal_atk_dis30_dao30.cooja
+[32mINFO  [main] [LogScriptEngine.java:231] - Script timeout in 3600000 ms[0;39m
+[32mINFO  [sim] [LogScriptEngine.java:320] -  5% completed, 243.1 sec remaining[0;39m
+[32mINFO  [sim] [LogScriptEngine.java:320] - 10% completed, 231.3 sec remaining[0;39m
+[32mINFO  [sim] [LogScriptEngine.java:320] - 15% completed, 236.7 sec remaining[0;39m
+[32mINFO  [sim] [LogScriptEngine.java:320] - 20% completed, 223.1 sec remaining[0;39m
+[32mINFO  [sim] [LogScriptEngine.java:320] - 25% completed, 209.5 sec remaining[0;39m
+[32mINFO  [sim] [LogScriptEngine.java:320] - 30% completed, 200.5 sec remaining[0;39m
+[32mINFO  [sim] [LogScriptEngine.java:320] - 35% completed, 190.6 sec remaining[0;39m
+[32mINFO  [sim] [LogScriptEngine.java:320] - 40% completed, 180.3 sec remaining[0;39m
+[32mINFO  [sim] [LogScriptEngine.java:320] - 45% completed, 163.6 sec remaining[0;39m
+[32mINFO  [sim] [LogScriptEngine.java:320] - 50% completed, 151.9 sec remaining[0;39m
+[32mINFO  [sim] [LogScriptEngine.java:320] - 55% completed, 135.0 sec remaining[0;39m
+[32mINFO  [sim] [LogScriptEngine.java:320] - 60% completed, 121.6 sec remaining[0;39m
+[32mINFO  [sim] [LogScriptEngine.java:320] - 65% completed, 108.6 sec remaining[0;39m
+[32mINFO  [sim] [LogScriptEngine.java:320] - 70% completed, 93.2 sec remaining[0;39m
+[32mINFO  [sim] [LogScriptEngine.java:320] - 75% completed, 78.1 sec remaining[0;39m
+[32mINFO  [sim] [LogScriptEngine.java:320] - 80% completed, 63.6 sec remaining[0;39m

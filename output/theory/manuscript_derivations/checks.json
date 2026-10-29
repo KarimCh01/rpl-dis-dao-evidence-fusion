@@ -1,0 +1,73 @@
+{
+  "accumulation": [
+    {
+      "epsilon": 0.1,
+      "contributions": 2,
+      "hit_windows": 3,
+      "delay_lower_s": 20,
+      "delay_upper_s": 30
+    },
+    {
+      "epsilon": 0.25,
+      "contributions": 3,
+      "hit_windows": 4,
+      "delay_lower_s": 30,
+      "delay_upper_s": 40
+    },
+    {
+      "epsilon": 0.5,
+      "contributions": 5,
+      "hit_windows": 6,
+      "delay_lower_s": 50,
+      "delay_upper_s": 60
+    },
+    {
+      "epsilon": 0.75,
+      "contributions": 11,
+      "hit_windows": 12,
+      "delay_lower_s": 110,
+      "delay_upper_s": 120
+    },
+    {
+      "epsilon": 0.9,
+      "contributions": 29,
+      "hit_windows": 30,
+      "delay_lower_s": 290,
+      "delay_upper_s": 300
+    }
+  ],
+  "conflicting_mass_checks": 10000,
+  "false_alarm_exact_enumeration": [
+    {
+      "windows": 12,
+      "required_run": 6,
+      "q": 0.05,
+      "exact_probability": 1.046875e-07,
+      "union_bound": 1.0937500000000004e-07
+    },
+    {
+      "windows": 12,
+      "required_run": 6,
+      "q": 0.1,
+      "exact_probability": 6.400000000000003e-06,
+      "union_bound": 7.0000000000000024e-06
+    },
+    {
+      "windows": 12,
+      "required_run": 6,
+      "q": 0.2,
+      "exact_probability": 0.00037120000000000024,
+      "union_bound": 0.00044800000000000016
+    },
+    {
+      "windows": 12,
+      "required_run": 6,
+      "q": 0.3,
+      "exact_probability": 0.003790799999999998,
+      "union_bound": 0.005102999999999999
+    }
+  ],
+  "fixed_point_updates": 100000,
+  "all_checks_pass": true,
+  "scope": "Conditional mathematical properties; not whole-detector accuracy or convergence."
+}

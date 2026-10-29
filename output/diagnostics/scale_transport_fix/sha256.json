@@ -1,0 +1,13 @@
+{
+  "firmware/project-conf.h": "5eff3b769ca78851934ab8eb1eceb7c7ab3329a777bd18de32a353b7ae2353d3",
+  "scripts/fix_scale_transport.py": "b1775ac6d919af96a1eba677411679d552d4915d53c1d6f8a188004c3ef58dc4",
+  "build/variants/v_scale_fix_queues_root/build/cooja/v_scale_fix_queues_root.cooja": "5c2ad00fa5edd91ccce2967fddf9fc358db1745bb67dc50fff93d5a4199d0540",
+  "build/variants/v_scale_fix_queues_cli0/build/cooja/v_scale_fix_queues_cli0.cooja": "1e8e4e094ab6e0cf70a7a046ce9acd57148e07327db62d00210c7829cf442808",
+  "build/variants/v_scale_fix_queues_cli1/build/cooja/v_scale_fix_queues_cli1.cooja": "1e8e4e094ab6e0cf70a7a046ce9acd57148e07327db62d00210c7829cf442808",
+  "build/variants/v_scale_fix_headers_root/build/cooja/v_scale_fix_headers_root.cooja": "aab726baca5d25a116ef801c16756e01847d70e700791c0737ce5cb494171a1d",
+  "build/variants/v_scale_fix_headers_cli0/build/cooja/v_scale_fix_headers_cli0.cooja": "8a132ade9d0819b887e9884274bfacad66ec285c171a05a64f80683fda87cdfc",
+  "build/variants/v_scale_fix_headers_cli1/build/cooja/v_scale_fix_headers_cli1.cooja": "8a132ade9d0819b887e9884274bfacad66ec285c171a05a64f80683fda87cdfc",
+  "build/variants/v_scale_fix_both_root/build/cooja/v_scale_fix_both_root.cooja": "040a098d1537d520402561e1669009cd6c471897ace9a979ccb3f1187e1a2e09",
+  "build/variants/v_scale_fix_both_cli0/build/cooja/v_scale_fix_both_cli0.cooja": "c7fc0492bba08b33f416636fbf8c2757143a6892b8f45366f29c4e77cb7f38c6",
+  "build/variants/v_scale_fix_both_cli1/build/cooja/v_scale_fix_both_cli1.cooja": "c7fc0492bba08b33f416636fbf8c2757143a6892b8f45366f29c4e77cb7f38c6"
+}

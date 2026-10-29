@@ -1,7 +1,7 @@
 CONTIKI_PROJECT = node
 all: $(CONTIKI_PROJECT)
 
-PROJECT_SOURCEFILES += defense.c dst.c attack.c
+PROJECT_SOURCEFILES += defense.c dst.c attack.c rl.c
 
 MAC ?= csma
 ifeq ($(MAC),tsch)

@@ -1,0 +1,1040 @@
+robustness
+240 runs in plan, 44 to do
+[1/44] ok journal_m3_k7_i30_mob0_d3_s30_dao30 eta 69.1 min
+[2/44] ok journal_m3_k7_i30_mob0_d5_s30_dao30 eta 33.8 min
+[3/44] ok journal_m3_k7_i30_mob0_d0_s30_dao30 eta 22.1 min
+[4/44] ok journal_m3_k7_i30_mob0_d7_s30_dao30 eta 16.8 min
+[5/44] ok journal_m3_k7_i30_mob3_d3_s21_dao30 eta 15.0 min
+[6/44] ok journal_m3_k7_i30_mob3_d0_s21_dao30 eta 12.3 min
+[7/44] ok journal_m3_k7_i30_mob3_d7_s21_dao30 eta 19.8 min
+[8/44] ok journal_m3_k7_i30_mob3_d5_s21_dao30 eta 17.6 min
+[9/44] ok journal_m3_k7_i30_mob3_d3_s22_dao30 eta 16.9 min
+[10/44] ok journal_m3_k7_i30_mob3_d0_s22_dao30 eta 14.9 min
+[11/44] ok journal_m3_k7_i30_mob3_d7_s22_dao30 eta 13.8 min
+[12/44] ok journal_m3_k7_i30_mob3_d5_s22_dao30 eta 12.5 min
+[13/44] ok journal_m3_k7_i30_mob3_d0_s23_dao30 eta 13.4 min
+[14/44] ok journal_m3_k7_i30_mob3_d3_s23_dao30 eta 12.8 min
+[15/44] ok journal_m3_k7_i30_mob3_d5_s23_dao30 eta 12.0 min
+[16/44] ok journal_m3_k7_i30_mob3_d3_s24_dao30 eta 11.5 min
+[17/44] ok journal_m3_k7_i30_mob3_d0_s24_dao30 eta 10.5 min
+[18/44] ok journal_m3_k7_i30_mob3_d7_s23_dao30 eta 9.7 min
+[19/44] ok journal_m3_k7_i30_mob3_d5_s24_dao30 eta 10.1 min
+[20/44] ok journal_m3_k7_i30_mob3_d7_s24_dao30 eta 9.6 min
+[21/44] ok journal_m3_k7_i30_mob3_d0_s25_dao30 eta 9.1 min
+[22/44] ok journal_m3_k7_i30_mob3_d3_s25_dao30 eta 8.7 min
+[23/44] ok journal_m3_k7_i30_mob3_d5_s25_dao30 eta 8.0 min
+[24/44] ok journal_m3_k7_i30_mob3_d7_s25_dao30 eta 7.4 min
+[25/44] ok journal_m3_k7_i30_mob3_d0_s26_dao30 eta 6.9 min
+[26/44] ok journal_m3_k7_i30_mob3_d3_s26_dao30 eta 6.5 min
+[27/44] ok journal_m3_k7_i30_mob3_d5_s26_dao30 eta 6.1 min
+[28/44] ok journal_m3_k7_i30_mob3_d0_s27_dao30 eta 5.8 min
+[29/44] ok journal_m3_k7_i30_mob3_d3_s27_dao30 eta 5.3 min
+[30/44] ok journal_m3_k7_i30_mob3_d7_s26_dao30 eta 4.9 min
+[31/44] ok journal_m3_k7_i30_mob3_d5_s27_dao30 eta 4.4 min
+[32/44] ok journal_m3_k7_i30_mob3_d7_s27_dao30 eta 4.0 min
+[33/44] ok journal_m3_k7_i30_mob3_d0_s28_dao30 eta 3.9 min
+[34/44] ok journal_m3_k7_i30_mob3_d3_s28_dao30 eta 3.6 min
+[35/44] ok journal_m3_k7_i30_mob3_d5_s28_dao30 eta 3.2 min
+[36/44] ok journal_m3_k7_i30_mob3_d7_s28_dao30 eta 2.8 min
+[37/44] ok journal_m3_k7_i30_mob3_d0_s29_dao30 eta 2.4 min
+[38/44] ok journal_m3_k7_i30_mob3_d3_s29_dao30 eta 6.3 min
+[39/44] ok journal_m3_k7_i30_mob3_d5_s29_dao30 eta 5.2 min
+[40/44] ok journal_m3_k7_i30_mob3_d0_s30_dao30 eta 4.1 min
+[41/44] ok journal_m3_k7_i30_mob3_d3_s30_dao30 eta 3.0 min
+[42/44] ok journal_m3_k7_i30_mob3_d7_s29_dao30 eta 2.0 min
+[43/44] ok journal_m3_k7_i30_mob3_d5_s30_dao30 eta 1.0 min
+[44/44] ok journal_m3_k7_i30_mob3_d7_s30_dao30 eta 0.0 min
+analysis
+# Journal-extension experiment status
+
+Only completed runs contribute to numerical summaries. Partial cells are preliminary.
+
+| Experiment | Completed | Planned |
+|---|---:|---:|
+| ablation | 0 | 240 |
+| host_callback_cost | 0 | 60 |
+| radio_loss | 0 | 120 |
+| rate_robustness | 240 | 240 |
+| resilience_reference | 0 | 70 |
+| scale_feasibility | 1 | 8 |
+| timing_validation | 2 | 2 |
+references
+70 runs in plan, 70 to do
+[1/70] ok jref_m0_k7_i3_mob0_d0_s21_rx100 eta 75.1 min
+[2/70] ok jref_m0_k7_i3_mob0_d0_s22_rx100 eta 39.6 min
+[3/70] ok jref_m0_k7_i3_mob0_d0_s23_rx100 eta 27.4 min
+[4/70] ok jref_m0_k7_i3_mob3_d0_s21_rx100 eta 22.8 min
+[5/70] ok jref_m0_k7_i3_mob3_d0_s22_rx100 eta 19.0 min
+[6/70] ok jref_m0_k7_i3_mob3_d0_s23_rx100 eta 17.0 min
+[7/70] ok jref_m0_k7_i3_mob0_d0_s24_rx100 eta 20.9 min
+[8/70] ok jref_m0_k7_i3_mob0_d0_s25_rx100 eta 18.2 min
+[9/70] ok jref_m0_k7_i3_mob3_d0_s26_rx100 eta 17.8 min
+[10/70] ok jref_m0_k7_i3_mob3_d0_s24_rx100 eta 15.9 min
+[11/70] ok jref_m0_k7_i3_mob3_d0_s25_rx100 eta 14.8 min
+[12/70] ok jref_m0_k7_i3_mob0_d0_s26_rx100 eta 14.7 min
+[13/70] ok jref_m0_k7_i3_mob3_d0_s27_rx100 eta 14.9 min
+[14/70] ok jref_m0_k7_i3_mob0_d0_s27_rx100 eta 14.4 min
+[15/70] ok jref_m0_k7_i3_mob0_d0_s28_rx100 eta 13.8 min
+[16/70] ok jref_m0_k7_i3_mob0_d0_s29_rx100 eta 13.4 min
+[17/70] ok jref_m0_k7_i3_mob3_d0_s28_rx100 eta 13.0 min
+[18/70] ok jref_m0_k7_i3_mob3_d0_s29_rx100 eta 13.4 min
+[19/70] ok jref_m0_k7_i3_mob0_d0_s30_rx100 eta 12.5 min
+[20/70] ok jref_m0_k7_i3_mob0_d0_s31_rx100 eta 12.6 min
+[21/70] ok jref_m0_k7_i3_mob3_d0_s30_rx100 eta 12.1 min
+[22/70] ok jref_m0_k7_i3_mob0_d0_s32_rx100 eta 11.9 min
+[23/70] ok jref_m0_k7_i3_mob3_d0_s31_rx100 eta 11.6 min
+[24/70] ok jref_m0_k7_i3_mob3_d0_s32_rx100 eta 11.8 min
+[25/70] ok jref_m0_k7_i3_mob0_d0_s33_rx100 eta 11.3 min
+[26/70] ok jref_m0_k7_i3_mob0_d0_s34_rx100 eta 11.0 min
+[27/70] ok jref_m0_k7_i3_mob3_d0_s33_rx100 eta 10.7 min
+[28/70] ok jref_m0_k7_i3_mob0_d0_s35_rx100 eta 10.5 min
+[29/70] ok jref_m0_k7_i3_mob3_d0_s34_rx100 eta 9.9 min
+[30/70] ok jref_m0_k7_i3_mob0_d0_s36_rx100 eta 10.0 min
+[31/70] ok jref_m0_k7_i3_mob3_d0_s35_rx100 eta 10.1 min
+[32/70] ok jref_m0_k7_i3_mob3_d0_s36_rx100 eta 9.5 min
+[33/70] ok jref_m0_k7_i3_mob0_d0_s37_rx100 eta 9.0 min
+[34/70] ok jref_m0_k7_i3_mob0_d0_s38_rx100 eta 9.0 min
+[35/70] ok jref_m0_k7_i3_mob3_d0_s37_rx100 eta 8.7 min
+[36/70] ok jref_m0_k7_i3_mob3_d0_s38_rx100 eta 8.8 min
+[37/70] ok jref_m0_k7_i3_mob0_d0_s39_rx100 eta 8.3 min
+[38/70] ok jref_m0_k7_i3_mob0_d0_s40_rx100 eta 8.0 min
+[39/70] ok jref_m0_k7_i3_mob3_d0_s39_rx100 eta 7.7 min
+[40/70] ok jref_m0_k7_i3_mob0_d0_s41_rx80 eta 7.7 min
+[41/70] ok jref_m0_k7_i3_mob3_d0_s40_rx100 eta 7.4 min
+[42/70] ok jref_m0_k7_i3_mob0_d0_s41_rx100 eta 7.2 min
+[43/70] ok jref_m0_k7_i3_mob0_d0_s41_rx95 eta 6.8 min
+[44/70] ok jref_m0_k7_i3_mob0_d0_s42_rx80 eta 7.1 min
+[45/70] ok jref_m0_k7_i3_mob0_d0_s42_rx100 eta 6.8 min
+[46/70] ok jref_m0_k7_i3_mob0_d0_s42_rx95 eta 6.4 min
+[47/70] ok jref_m0_k7_i3_mob3_d0_s41_rx80 eta 6.0 min
+[48/70] ok jref_m0_k7_i3_mob3_d0_s41_rx95 eta 5.6 min
+[49/70] ok jref_m0_k7_i3_mob3_d0_s41_rx100 eta 5.5 min
+[50/70] ok jref_m0_k7_i3_mob0_d0_s43_rx95 eta 5.5 min
+[51/70] ok jref_m0_k7_i3_mob3_d0_s42_rx95 eta 5.2 min
+[52/70] ok jref_m0_k7_i3_mob3_d0_s42_rx100 eta 4.8 min
+[53/70] ok jref_m0_k7_i3_mob3_d0_s42_rx80 eta 4.5 min
+[54/70] ok jref_m0_k7_i3_mob0_d0_s43_rx80 eta 4.2 min
+[55/70] ok jref_m0_k7_i3_mob0_d0_s43_rx100 eta 3.9 min
+[56/70] ok jref_m0_k7_i3_mob0_d0_s44_rx95 eta 3.8 min
+[57/70] ok jref_m0_k7_i3_mob0_d0_s44_rx100 eta 3.5 min
+[58/70] ok jref_m0_k7_i3_mob3_d0_s43_rx100 eta 3.2 min
+[59/70] ok jref_m0_k7_i3_mob3_d0_s43_rx95 eta 2.9 min
+[60/70] ok jref_m0_k7_i3_mob3_d0_s43_rx80 eta 2.6 min
+[61/70] ok jref_m0_k7_i3_mob0_d0_s44_rx80 eta 2.3 min
+[62/70] ok jref_m0_k7_i3_mob0_d0_s45_rx100 eta 2.2 min
+[63/70] ok jref_m0_k7_i3_mob3_d0_s44_rx95 eta 1.9 min
+[64/70] ok jref_m0_k7_i3_mob0_d0_s45_rx95 eta 1.6 min
+[65/70] ok jref_m0_k7_i3_mob3_d0_s44_rx100 eta 1.3 min
+[66/70] ok jref_m0_k7_i3_mob3_d0_s44_rx80 eta 1.0 min
+[67/70] ok jref_m0_k7_i3_mob0_d0_s45_rx80 eta 0.8 min
+[68/70] ok jref_m0_k7_i3_mob3_d0_s45_rx95 eta 0.5 min
+[69/70] ok jref_m0_k7_i3_mob3_d0_s45_rx80 eta 0.3 min
+[70/70] ok jref_m0_k7_i3_mob3_d0_s45_rx100 eta 0.0 min
+analysis
+# Journal-extension experiment status
+
+Only completed runs contribute to numerical summaries. Partial cells are preliminary.
+
+| Experiment | Completed | Planned |
+|---|---:|---:|
+| ablation | 0 | 240 |
+| host_callback_cost | 0 | 60 |
+| radio_loss | 0 | 120 |
+| rate_robustness | 240 | 240 |
+| resilience_reference | 70 | 70 |
+| scale_feasibility | 1 | 8 |
+| timing_validation | 2 | 2 |
+ablations
+240 runs in plan, 240 to do
+[1/240] ok jab_learning_off_m0_k0_i3_mob0_d4_s31 eta 320.7 min
+[2/240] ok jab_immediate_dao_evidence_m0_k0_i3_mob0_d7_s31 eta 159.8 min
+[3/240] ok jab_full_m0_k0_i3_mob0_d7_s31 eta 106.1 min
+[4/240] ok jab_no_dao_evidence_m0_k0_i3_mob0_d7_s31 eta 79.9 min
+[5/240] ok jab_fixed_calibration_m0_k0_i3_mob0_d7_s31 eta 64.5 min
+[6/240] ok jab_no_route_repair_m0_k0_i3_mob0_d7_s31 eta 54.5 min
+[7/240] ok jab_learning_off_m0_k0_i3_mob0_d4_s32 eta 93.8 min
+[8/240] ok jab_full_m0_k0_i3_mob0_d7_s32 eta 82.0 min
+[9/240] ok jab_immediate_dao_evidence_m0_k0_i3_mob0_d7_s32 eta 73.0 min
+[10/240] ok jab_no_dao_evidence_m0_k0_i3_mob0_d7_s32 eta 65.4 min
+[11/240] ok jab_fixed_calibration_m0_k0_i3_mob0_d7_s32 eta 60.1 min
+[12/240] ok jab_no_route_repair_m0_k0_i3_mob0_d7_s32 eta 55.5 min
+[13/240] ok jab_learning_off_m0_k0_i3_mob0_d4_s33 eta 80.5 min
+[14/240] ok jab_full_m0_k0_i3_mob0_d7_s33 eta 74.8 min
+[15/240] ok jab_no_dao_evidence_m0_k0_i3_mob0_d7_s33 eta 69.8 min
+[16/240] ok jab_no_route_repair_m0_k0_i3_mob0_d7_s33 eta 65.6 min
+[17/240] ok jab_immediate_dao_evidence_m0_k0_i3_mob0_d7_s33 eta 61.8 min
+[18/240] ok jab_fixed_calibration_m0_k0_i3_mob0_d7_s33 eta 58.1 min
+[19/240] ok jab_full_m0_k0_i3_mob0_d7_s34 eta 71.0 min
+[20/240] ok jab_learning_off_m0_k0_i3_mob0_d4_s34 eta 67.2 min
+[21/240] ok jab_no_dao_evidence_m0_k0_i3_mob0_d7_s34 eta 64.4 min
+[22/240] ok jab_fixed_calibration_m0_k0_i3_mob0_d7_s34 eta 61.6 min
+[23/240] ok jab_no_route_repair_m0_k0_i3_mob0_d7_s34 eta 58.8 min
+[24/240] ok jab_immediate_dao_evidence_m0_k0_i3_mob0_d7_s34 eta 56.1 min
+[25/240] ok jab_learning_off_m0_k0_i3_mob0_d4_s35 eta 65.7 min
+[26/240] ok jab_full_m0_k0_i3_mob0_d7_s35 eta 63.0 min
+[27/240] ok jab_no_dao_evidence_m0_k0_i3_mob0_d7_s35 eta 60.6 min
+[28/240] ok jab_immediate_dao_evidence_m0_k0_i3_mob0_d7_s35 eta 58.6 min
+[29/240] ok jab_fixed_calibration_m0_k0_i3_mob0_d7_s35 eta 56.6 min
+[30/240] ok jab_no_route_repair_m0_k0_i3_mob0_d7_s35 eta 54.5 min
+[31/240] ok jab_learning_off_m0_k0_i3_mob0_d4_s36 eta 61.0 min
+[32/240] ok jab_full_m0_k0_i3_mob0_d7_s36 eta 59.0 min
+[33/240] ok jab_no_dao_evidence_m0_k0_i3_mob0_d7_s36 eta 57.3 min
+[34/240] ok jab_fixed_calibration_m0_k0_i3_mob0_d7_s36 eta 55.6 min
+[35/240] ok jab_no_route_repair_m0_k0_i3_mob0_d7_s36 eta 53.8 min
+[36/240] ok jab_immediate_dao_evidence_m0_k0_i3_mob0_d7_s36 eta 52.1 min
+[37/240] ok jab_full_m0_k0_i3_mob0_d7_s37 eta 58.2 min
+[38/240] ok jab_learning_off_m0_k0_i3_mob0_d4_s37 eta 56.4 min
+[39/240] ok jab_no_dao_evidence_m0_k0_i3_mob0_d7_s37 eta 54.7 min
+[40/240] ok jab_no_route_repair_m0_k0_i3_mob0_d7_s37 eta 53.5 min
+[41/240] ok jab_immediate_dao_evidence_m0_k0_i3_mob0_d7_s37 eta 52.0 min
+[42/240] ok jab_fixed_calibration_m0_k0_i3_mob0_d7_s37 eta 50.7 min
+[43/240] ok jab_no_dao_evidence_m0_k0_i3_mob0_d7_s38 eta 56.3 min
+[44/240] ok jab_full_m0_k0_i3_mob0_d7_s38 eta 54.7 min
+[45/240] ok jab_learning_off_m0_k0_i3_mob0_d4_s38 eta 53.3 min
+[46/240] ok jab_no_route_repair_m0_k0_i3_mob0_d7_s38 eta 52.1 min
+[47/240] ok jab_fixed_calibration_m0_k0_i3_mob0_d7_s38 eta 50.8 min
+[48/240] ok jab_immediate_dao_evidence_m0_k0_i3_mob0_d7_s38 eta 49.6 min
+[49/240] ok jab_learning_off_m0_k0_i3_mob0_d4_s39 eta 53.7 min
+[50/240] ok jab_full_m0_k0_i3_mob0_d7_s39 eta 52.4 min
+[51/240] ok jab_no_dao_evidence_m0_k0_i3_mob0_d7_s39 eta 51.3 min
+[52/240] ok jab_no_route_repair_m0_k0_i3_mob0_d7_s39 eta 50.2 min
+[53/240] ok jab_immediate_dao_evidence_m0_k0_i3_mob0_d7_s39 eta 49.1 min
+[54/240] ok jab_fixed_calibration_m0_k0_i3_mob0_d7_s39 eta 48.0 min
+[55/240] ok jab_full_m0_k0_i3_mob0_d7_s40 eta 52.2 min
+[56/240] ok jab_learning_off_m0_k0_i3_mob0_d4_s40 eta 51.0 min
+[57/240] ok jab_immediate_dao_evidence_m0_k0_i3_mob0_d7_s40 eta 50.2 min
+[58/240] ok jab_no_route_repair_m0_k0_i3_mob0_d7_s40 eta 49.0 min
+[59/240] ok jab_fixed_calibration_m0_k0_i3_mob0_d7_s40 eta 48.0 min
+[60/240] ok jab_no_dao_evidence_m0_k0_i3_mob0_d7_s40 eta 46.9 min
+[61/240] ok jab_learning_off_m0_k0_i3_mob3_d4_s31 eta 50.5 min
+[62/240] ok jab_no_dao_evidence_m0_k0_i3_mob3_d7_s31 eta 50.0 min
+[63/240] ok jab_full_m0_k0_i3_mob3_d7_s31 eta 49.2 min
+[64/240] ok jab_immediate_dao_evidence_m0_k0_i3_mob3_d7_s31 eta 48.5 min
+[65/240] ok jab_no_route_repair_m0_k0_i3_mob3_d7_s31 eta 47.5 min
+[66/240] ok jab_fixed_calibration_m0_k0_i3_mob3_d7_s31 eta 46.8 min
+[67/240] ok jab_learning_off_m0_k0_i3_mob3_d4_s32 eta 49.1 min
+[68/240] ok jab_full_m0_k0_i3_mob3_d7_s32 eta 48.1 min
+[69/240] ok jab_no_dao_evidence_m0_k0_i3_mob3_d7_s32 eta 47.7 min
+[70/240] ok jab_no_route_repair_m0_k0_i3_mob3_d7_s32 eta 46.9 min
+[71/240] ok jab_fixed_calibration_m0_k0_i3_mob3_d7_s32 eta 46.0 min
+[72/240] ok jab_immediate_dao_evidence_m0_k0_i3_mob3_d7_s32 eta 45.2 min
+[73/240] ok jab_learning_off_m0_k0_i3_mob3_d4_s33 eta 47.6 min
+[74/240] ok jab_full_m0_k0_i3_mob3_d7_s33 eta 47.1 min
+[75/240] ok jab_no_dao_evidence_m0_k0_i3_mob3_d7_s33 eta 46.8 min
+[76/240] ok jab_immediate_dao_evidence_m0_k0_i3_mob3_d7_s33 eta 45.9 min
+[77/240] ok jab_no_route_repair_m0_k0_i3_mob3_d7_s33 eta 45.1 min
+[78/240] ok jab_fixed_calibration_m0_k0_i3_mob3_d7_s33 eta 44.3 min
+[79/240] ok jab_full_m0_k0_i3_mob3_d7_s34 eta 46.5 min
+[80/240] ok jab_learning_off_m0_k0_i3_mob3_d4_s34 eta 46.1 min
+[81/240] ok jab_immediate_dao_evidence_m0_k0_i3_mob3_d7_s34 eta 46.0 min
+[82/240] ok jab_no_dao_evidence_m0_k0_i3_mob3_d7_s34 eta 45.2 min
+[83/240] ok jab_no_route_repair_m0_k0_i3_mob3_d7_s34 eta 44.4 min
+[84/240] ok jab_fixed_calibration_m0_k0_i3_mob3_d7_s34 eta 43.6 min
+[85/240] ok jab_full_m0_k0_i3_mob3_d7_s35 eta 45.7 min
+[86/240] ok jab_learning_off_m0_k0_i3_mob3_d4_s35 eta 45.3 min
+[87/240] ok jab_no_dao_evidence_m0_k0_i3_mob3_d7_s35 eta 44.9 min
+[88/240] ok jab_no_route_repair_m0_k0_i3_mob3_d7_s35 eta 44.2 min
+[89/240] ok jab_immediate_dao_evidence_m0_k0_i3_mob3_d7_s35 eta 43.5 min
+[90/240] ok jab_fixed_calibration_m0_k0_i3_mob3_d7_s35 eta 42.8 min
+[91/240] ok jab_full_m0_k0_i3_mob3_d7_s36 eta 43.8 min
+[92/240] ok jab_learning_off_m0_k0_i3_mob3_d4_s36 eta 43.4 min
+[93/240] ok jab_no_dao_evidence_m0_k0_i3_mob3_d7_s36 eta 43.1 min
+[94/240] ok jab_no_route_repair_m0_k0_i3_mob3_d7_s36 eta 42.4 min
+[95/240] ok jab_fixed_calibration_m0_k0_i3_mob3_d7_s36 eta 41.8 min
+[96/240] ok jab_immediate_dao_evidence_m0_k0_i3_mob3_d7_s36 eta 41.1 min
+[97/240] ok jab_full_m0_k0_i3_mob3_d7_s37 eta 42.2 min
+[98/240] ok jab_learning_off_m0_k0_i3_mob3_d4_s37 eta 41.9 min
+[99/240] ok jab_no_dao_evidence_m0_k0_i3_mob3_d7_s37 eta 41.6 min
+[100/240] ok jab_no_route_repair_m0_k0_i3_mob3_d7_s37 eta 40.9 min
+[101/240] ok jab_immediate_dao_evidence_m0_k0_i3_mob3_d7_s37 eta 40.2 min
+[102/240] ok jab_fixed_calibration_m0_k0_i3_mob3_d7_s37 eta 39.7 min
+[103/240] ok jab_full_m0_k0_i3_mob3_d7_s38 eta 40.3 min
+[104/240] ok jab_learning_off_m0_k0_i3_mob3_d4_s38 eta 39.9 min
+[105/240] ok jab_no_route_repair_m0_k0_i3_mob3_d7_s38 eta 39.6 min
+[106/240] ok jab_no_dao_evidence_m0_k0_i3_mob3_d7_s38 eta 39.0 min
+[107/240] ok jab_immediate_dao_evidence_m0_k0_i3_mob3_d7_s38 eta 38.3 min
+[108/240] ok jab_fixed_calibration_m0_k0_i3_mob3_d7_s38 eta 37.9 min
+[109/240] ok jab_full_m0_k0_i3_mob3_d7_s39 eta 38.8 min
+[110/240] ok jab_learning_off_m0_k0_i3_mob3_d4_s39 eta 38.3 min
+[111/240] ok jab_immediate_dao_evidence_m0_k0_i3_mob3_d7_s39 eta 38.1 min
+[112/240] ok jab_no_dao_evidence_m0_k0_i3_mob3_d7_s39 eta 37.4 min
+[113/240] ok jab_no_route_repair_m0_k0_i3_mob3_d7_s39 eta 36.9 min
+[114/240] ok jab_fixed_calibration_m0_k0_i3_mob3_d7_s39 eta 36.4 min
+[115/240] ok jab_full_m0_k0_i3_mob3_d7_s40 eta 37.1 min
+[116/240] ok jab_learning_off_m0_k0_i3_mob3_d4_s40 eta 36.7 min
+[117/240] ok jab_no_dao_evidence_m0_k0_i3_mob3_d7_s40 eta 36.5 min
+[118/240] ok jab_no_route_repair_m0_k0_i3_mob3_d7_s40 eta 35.9 min
+[119/240] ok jab_immediate_dao_evidence_m0_k0_i3_mob3_d7_s40 eta 35.3 min
+[120/240] ok jab_fixed_calibration_m0_k0_i3_mob3_d7_s40 eta 34.9 min
+[121/240] ok jab_full_m3_k7_i3_mob0_d7_s31 eta 35.8 min
+[122/240] ok jab_learning_off_m3_k7_i3_mob0_d4_s31 eta 35.3 min
+[123/240] ok jab_no_dao_evidence_m3_k7_i3_mob0_d7_s31 eta 35.1 min
+[124/240] ok jab_immediate_dao_evidence_m3_k7_i3_mob0_d7_s31 eta 34.6 min
+[125/240] ok jab_fixed_calibration_m3_k7_i3_mob0_d7_s31 eta 34.0 min
+[126/240] ok jab_no_route_repair_m3_k7_i3_mob0_d7_s31 eta 33.9 min
+[127/240] ok jab_full_m3_k7_i3_mob0_d7_s32 eta 34.2 min
+[128/240] ok jab_learning_off_m3_k7_i3_mob0_d4_s32 eta 33.8 min
+[129/240] ok jab_no_route_repair_m3_k7_i3_mob0_d7_s32 eta 33.5 min
+[130/240] ok jab_no_dao_evidence_m3_k7_i3_mob0_d7_s32 eta 33.2 min
+[131/240] ok jab_fixed_calibration_m3_k7_i3_mob0_d7_s32 eta 33.0 min
+[132/240] ok jab_immediate_dao_evidence_m3_k7_i3_mob0_d7_s32 eta 32.6 min
+[133/240] ok jab_learning_off_m3_k7_i3_mob0_d4_s33 eta 32.6 min
+[134/240] ok jab_full_m3_k7_i3_mob0_d7_s33 eta 32.2 min
+[135/240] ok jab_no_dao_evidence_m3_k7_i3_mob0_d7_s33 eta 31.8 min
+[136/240] ok jab_immediate_dao_evidence_m3_k7_i3_mob0_d7_s33 eta 31.7 min
+[137/240] ok jab_fixed_calibration_m3_k7_i3_mob0_d7_s33 eta 31.4 min
+[138/240] ok jab_no_route_repair_m3_k7_i3_mob0_d7_s33 eta 31.1 min
+[139/240] ok jab_full_m3_k7_i3_mob0_d7_s34 eta 30.9 min
+[140/240] ok jab_learning_off_m3_k7_i3_mob0_d4_s34 eta 30.5 min
+[141/240] ok jab_no_dao_evidence_m3_k7_i3_mob0_d7_s34 eta 30.2 min
+[142/240] ok jab_immediate_dao_evidence_m3_k7_i3_mob0_d7_s34 eta 30.0 min
+[143/240] ok jab_no_route_repair_m3_k7_i3_mob0_d7_s34 eta 29.9 min
+[144/240] ok jab_fixed_calibration_m3_k7_i3_mob0_d7_s34 eta 29.4 min
+[145/240] ok jab_full_m3_k7_i3_mob0_d7_s35 eta 29.3 min
+[146/240] ok jab_learning_off_m3_k7_i3_mob0_d4_s35 eta 28.9 min
+[147/240] ok jab_no_dao_evidence_m3_k7_i3_mob0_d7_s35 eta 28.5 min
+[148/240] ok jab_immediate_dao_evidence_m3_k7_i3_mob0_d7_s35 eta 28.4 min
+[149/240] ok jab_fixed_calibration_m3_k7_i3_mob0_d7_s35 eta 28.3 min
+[150/240] ok jab_no_route_repair_m3_k7_i3_mob0_d7_s35 eta 28.0 min
+[151/240] ok jab_full_m3_k7_i3_mob0_d7_s36 eta 27.7 min
+[152/240] ok jab_learning_off_m3_k7_i3_mob0_d4_s36 eta 27.2 min
+[153/240] ok jab_no_dao_evidence_m3_k7_i3_mob0_d7_s36 eta 26.9 min
+[154/240] ok jab_immediate_dao_evidence_m3_k7_i3_mob0_d7_s36 eta 26.7 min
+[155/240] ok jab_no_route_repair_m3_k7_i3_mob0_d7_s36 eta 26.7 min
+[156/240] ok jab_fixed_calibration_m3_k7_i3_mob0_d7_s36 eta 26.3 min
+[157/240] ok jab_full_m3_k7_i3_mob0_d7_s37 eta 25.9 min
+[158/240] ok jab_learning_off_m3_k7_i3_mob0_d4_s37 eta 25.5 min
+[159/240] ok jab_no_dao_evidence_m3_k7_i3_mob0_d7_s37 eta 25.1 min
+[160/240] ok jab_immediate_dao_evidence_m3_k7_i3_mob0_d7_s37 eta 24.9 min
+[161/240] ok jab_full_m3_k7_i3_mob0_d7_s38 eta 24.9 min
+[162/240] ok jab_fixed_calibration_m3_k7_i3_mob0_d7_s37 eta 24.5 min
+[163/240] ok jab_no_dao_evidence_m3_k7_i3_mob0_d7_s38 eta 24.1 min
+[164/240] ok jab_no_route_repair_m3_k7_i3_mob0_d7_s37 eta 23.7 min
+[165/240] ok jab_learning_off_m3_k7_i3_mob0_d4_s38 eta 23.3 min
+[166/240] ok jab_immediate_dao_evidence_m3_k7_i3_mob0_d7_s38 eta 23.3 min
+[167/240] ok jab_full_m3_k7_i3_mob0_d7_s39 eta 23.0 min
+[168/240] ok jab_learning_off_m3_k7_i3_mob0_d4_s39 eta 22.6 min
+[169/240] ok jab_no_route_repair_m3_k7_i3_mob0_d7_s38 eta 22.2 min
+[170/240] ok jab_no_dao_evidence_m3_k7_i3_mob0_d7_s39 eta 21.8 min
+[171/240] ok jab_fixed_calibration_m3_k7_i3_mob0_d7_s38 eta 21.5 min
+[172/240] ok jab_immediate_dao_evidence_m3_k7_i3_mob0_d7_s39 eta 21.4 min
+[173/240] ok jab_fixed_calibration_m3_k7_i3_mob0_d7_s39 eta 21.1 min
+[174/240] ok jab_no_route_repair_m3_k7_i3_mob0_d7_s39 eta 20.7 min
+[175/240] ok jab_full_m3_k7_i3_mob0_d7_s40 eta 20.4 min
+[176/240] ok jab_learning_off_m3_k7_i3_mob0_d4_s40 eta 20.0 min
+[177/240] ok jab_no_dao_evidence_m3_k7_i3_mob0_d7_s40 eta 19.7 min
+[178/240] ok jab_immediate_dao_evidence_m3_k7_i3_mob0_d7_s40 eta 19.6 min
+[179/240] ok jab_fixed_calibration_m3_k7_i3_mob0_d7_s40 eta 19.3 min
+[180/240] ok jab_no_route_repair_m3_k7_i3_mob0_d7_s40 eta 19.0 min
+[181/240] ok jab_full_m3_k7_i3_mob3_d7_s31 eta 18.7 min
+[182/240] ok jab_learning_off_m3_k7_i3_mob3_d4_s31 eta 18.3 min
+[183/240] ok jab_no_dao_evidence_m3_k7_i3_mob3_d7_s31 eta 18.0 min
+[184/240] ok jab_immediate_dao_evidence_m3_k7_i3_mob3_d7_s31 eta 17.9 min
+[185/240] ok jab_full_m3_k7_i3_mob3_d7_s32 eta 17.6 min
+[186/240] ok jab_learning_off_m3_k7_i3_mob3_d4_s32 eta 17.2 min
+[187/240] ok jab_fixed_calibration_m3_k7_i3_mob3_d7_s31 eta 16.8 min
+[188/240] ok jab_no_dao_evidence_m3_k7_i3_mob3_d7_s32 eta 16.5 min
+[189/240] ok jab_no_route_repair_m3_k7_i3_mob3_d7_s31 eta 16.1 min
+[190/240] ok jab_immediate_dao_evidence_m3_k7_i3_mob3_d7_s32 eta 16.0 min
+[191/240] ok jab_no_route_repair_m3_k7_i3_mob3_d7_s32 eta 15.7 min
+[192/240] ok jab_fixed_calibration_m3_k7_i3_mob3_d7_s32 eta 15.3 min
+[193/240] ok jab_learning_off_m3_k7_i3_mob3_d4_s33 eta 15.0 min
+[194/240] ok jab_full_m3_k7_i3_mob3_d7_s33 eta 14.6 min
+[195/240] ok jab_no_dao_evidence_m3_k7_i3_mob3_d7_s33 eta 14.3 min
+[196/240] ok jab_immediate_dao_evidence_m3_k7_i3_mob3_d7_s33 eta 14.1 min
+[197/240] ok jab_no_route_repair_m3_k7_i3_mob3_d7_s33 eta 13.9 min
+[198/240] ok jab_fixed_calibration_m3_k7_i3_mob3_d7_s33 eta 13.5 min
+[199/240] ok jab_learning_off_m3_k7_i3_mob3_d4_s34 eta 13.1 min
+[200/240] ok jab_full_m3_k7_i3_mob3_d7_s34 eta 12.8 min
+[201/240] ok jab_no_dao_evidence_m3_k7_i3_mob3_d7_s34 eta 12.4 min
+[202/240] ok jab_immediate_dao_evidence_m3_k7_i3_mob3_d7_s34 eta 12.2 min
+[203/240] ok jab_fixed_calibration_m3_k7_i3_mob3_d7_s34 eta 12.0 min
+[204/240] ok jab_no_route_repair_m3_k7_i3_mob3_d7_s34 eta 11.6 min
+[205/240] ok jab_full_m3_k7_i3_mob3_d7_s35 eta 11.3 min
+[206/240] ok jab_learning_off_m3_k7_i3_mob3_d4_s35 eta 11.0 min
+[207/240] ok jab_no_dao_evidence_m3_k7_i3_mob3_d7_s35 eta 10.6 min
+[208/240] ok jab_immediate_dao_evidence_m3_k7_i3_mob3_d7_s35 eta 10.4 min
+[209/240] ok jab_full_m3_k7_i3_mob3_d7_s36 eta 10.1 min
+[210/240] ok jab_learning_off_m3_k7_i3_mob3_d4_s36 eta 9.7 min
+[211/240] ok jab_no_dao_evidence_m3_k7_i3_mob3_d7_s36 eta 9.4 min
+[212/240] ok jab_fixed_calibration_m3_k7_i3_mob3_d7_s35 eta 9.1 min
+[213/240] ok jab_no_route_repair_m3_k7_i3_mob3_d7_s35 eta 8.7 min
+[214/240] ok jab_immediate_dao_evidence_m3_k7_i3_mob3_d7_s36 eta 8.4 min
+[215/240] ok jab_fixed_calibration_m3_k7_i3_mob3_d7_s36 eta 8.1 min
+[216/240] ok jab_no_route_repair_m3_k7_i3_mob3_d7_s36 eta 7.8 min
+[217/240] ok jab_full_m3_k7_i3_mob3_d7_s37 eta 7.5 min
+[218/240] ok jab_learning_off_m3_k7_i3_mob3_d4_s37 eta 7.2 min
+[219/240] ok jab_no_dao_evidence_m3_k7_i3_mob3_d7_s37 eta 6.8 min
+[220/240] ok jab_immediate_dao_evidence_m3_k7_i3_mob3_d7_s37 eta 6.5 min
+[221/240] ok jab_fixed_calibration_m3_k7_i3_mob3_d7_s37 eta 6.2 min
+[222/240] ok jab_no_route_repair_m3_k7_i3_mob3_d7_s37 eta 5.9 min
+[223/240] ok jab_learning_off_m3_k7_i3_mob3_d4_s38 eta 5.6 min
+[224/240] ok jab_no_dao_evidence_m3_k7_i3_mob3_d7_s38 eta 5.2 min
+[225/240] ok jab_full_m3_k7_i3_mob3_d7_s38 eta 4.9 min
+[226/240] ok jab_immediate_dao_evidence_m3_k7_i3_mob3_d7_s38 eta 4.6 min
+[227/240] ok jab_fixed_calibration_m3_k7_i3_mob3_d7_s38 eta 4.3 min
+[228/240] ok jab_no_route_repair_m3_k7_i3_mob3_d7_s38 eta 3.9 min
+[229/240] ok jab_full_m3_k7_i3_mob3_d7_s39 eta 3.6 min
+[230/240] ok jab_learning_off_m3_k7_i3_mob3_d4_s39 eta 3.3 min
+[231/240] ok jab_no_dao_evidence_m3_k7_i3_mob3_d7_s39 eta 2.9 min
+[232/240] ok jab_immediate_dao_evidence_m3_k7_i3_mob3_d7_s39 eta 2.6 min
+[233/240] ok jab_fixed_calibration_m3_k7_i3_mob3_d7_s39 eta 2.3 min
+[234/240] ok jab_no_route_repair_m3_k7_i3_mob3_d7_s39 eta 2.0 min
+[235/240] ok jab_full_m3_k7_i3_mob3_d7_s40 eta 1.7 min
+[236/240] ok jab_learning_off_m3_k7_i3_mob3_d4_s40 eta 1.3 min
+[237/240] ok jab_no_dao_evidence_m3_k7_i3_mob3_d7_s40 eta 1.0 min
+[238/240] ok jab_immediate_dao_evidence_m3_k7_i3_mob3_d7_s40 eta 0.7 min
+[239/240] ok jab_fixed_calibration_m3_k7_i3_mob3_d7_s40 eta 0.3 min
+[240/240] ok jab_no_route_repair_m3_k7_i3_mob3_d7_s40 eta 0.0 min
+analysis
+# Journal-extension experiment status
+
+Only completed runs contribute to numerical summaries. Partial cells are preliminary.
+
+| Experiment | Completed | Planned |
+|---|---:|---:|
+| ablation | 240 | 240 |
+| host_callback_cost | 0 | 60 |
+| radio_loss | 0 | 120 |
+| rate_robustness | 240 | 240 |
+| resilience_reference | 70 | 70 |
+| scale_feasibility | 1 | 8 |
+| timing_validation | 2 | 2 |
+timing_validation
+2 runs in plan, 0 to do
+analysis
+# Journal-extension experiment status
+
+Only completed runs contribute to numerical summaries. Partial cells are preliminary.
+
+| Experiment | Completed | Planned |
+|---|---:|---:|
+| ablation | 240 | 240 |
+| host_callback_cost | 0 | 60 |
+| radio_loss | 0 | 120 |
+| rate_robustness | 240 | 240 |
+| resilience_reference | 70 | 70 |
+| scale_feasibility | 1 | 8 |
+| timing_validation | 2 | 2 |
+profiling
+60 runs in plan, 60 to do
+[1/60] ok jprof_m0_k0_i3_mob0_d1_s44 eta 63.2 min
+[2/60] ok jprof_m0_k0_i3_mob0_d1_s41 eta 33.1 min
+[3/60] ok jprof_m0_k0_i3_mob0_d1_s42 eta 22.4 min
+[4/60] ok jprof_m0_k0_i3_mob0_d1_s43 eta 17.6 min
+[5/60] ok jprof_m0_k0_i3_mob0_d1_s45 eta 14.3 min
+[6/60] ok jprof_m0_k0_i3_mob3_d1_s41 eta 15.5 min
+[7/60] ok jprof_m0_k0_i3_mob3_d1_s44 eta 20.1 min
+[8/60] ok jprof_m0_k0_i3_mob3_d1_s43 eta 18.6 min
+[9/60] ok jprof_m0_k0_i3_mob3_d1_s42 eta 17.0 min
+[10/60] ok jprof_m0_k0_i3_mob3_d1_s45 eta 15.1 min
+[11/60] ok jprof_m3_k7_i3_mob0_d1_s41 eta 18.0 min
+[12/60] ok jprof_m3_k7_i3_mob0_d1_s42 eta 17.3 min
+[13/60] ok jprof_m3_k7_i3_mob0_d1_s44 eta 18.7 min
+[14/60] ok jprof_m3_k7_i3_mob0_d1_s43 eta 17.5 min
+[15/60] ok jprof_m3_k7_i3_mob0_d1_s45 eta 17.2 min
+[16/60] ok jprof_m3_k7_i3_mob3_d1_s42 eta 17.1 min
+[17/60] ok jprof_m3_k7_i3_mob3_d1_s43 eta 16.8 min
+[18/60] ok jprof_m3_k7_i3_mob3_d1_s41 eta 15.8 min
+[19/60] ok jprof_m0_k0_i3_mob0_d3_s41 eta 15.2 min
+[20/60] ok jprof_m0_k0_i3_mob0_d3_s42 eta 15.1 min
+[21/60] ok jprof_m3_k7_i3_mob3_d1_s44 eta 14.1 min
+[22/60] ok jprof_m0_k0_i3_mob0_d3_s44 eta 13.9 min
+[23/60] ok jprof_m0_k0_i3_mob0_d3_s43 eta 13.0 min
+[24/60] ok jprof_m3_k7_i3_mob3_d1_s45 eta 12.5 min
+[25/60] ok jprof_m0_k0_i3_mob0_d3_s45 eta 11.9 min
+[26/60] ok jprof_m0_k0_i3_mob3_d3_s41 eta 12.2 min
+[27/60] ok jprof_m0_k0_i3_mob3_d3_s42 eta 11.5 min
+[28/60] ok jprof_m0_k0_i3_mob3_d3_s44 eta 10.9 min
+[29/60] ok jprof_m0_k0_i3_mob3_d3_s43 eta 10.5 min
+[30/60] ok jprof_m0_k0_i3_mob3_d3_s45 eta 10.0 min
+[31/60] ok jprof_m3_k7_i3_mob0_d3_s41 eta 10.5 min
+[32/60] ok jprof_m3_k7_i3_mob0_d3_s44 eta 10.4 min
+[33/60] ok jprof_m3_k7_i3_mob0_d3_s42 eta 9.8 min
+[34/60] ok jprof_m3_k7_i3_mob0_d3_s43 eta 9.4 min
+[35/60] ok jprof_m3_k7_i3_mob0_d3_s45 eta 8.9 min
+[36/60] ok jprof_m3_k7_i3_mob3_d3_s41 eta 8.7 min
+[37/60] ok jprof_m3_k7_i3_mob3_d3_s42 eta 8.3 min
+[38/60] ok jprof_m0_k0_i3_mob0_d7_s41 eta 8.0 min
+[39/60] ok jprof_m3_k7_i3_mob3_d3_s43 eta 7.7 min
+[40/60] ok jprof_m3_k7_i3_mob3_d3_s44 eta 7.2 min
+[41/60] ok jprof_m0_k0_i3_mob0_d7_s42 eta 6.7 min
+[42/60] ok jprof_m0_k0_i3_mob0_d7_s43 eta 6.4 min
+[43/60] ok jprof_m0_k0_i3_mob0_d7_s44 eta 6.0 min
+[44/60] ok jprof_m3_k7_i3_mob3_d3_s45 eta 5.7 min
+[45/60] ok jprof_m0_k0_i3_mob0_d7_s45 eta 5.3 min
+[46/60] ok jprof_m0_k0_i3_mob3_d7_s42 eta 5.0 min
+[47/60] ok jprof_m0_k0_i3_mob3_d7_s41 eta 4.6 min
+[48/60] ok jprof_m0_k0_i3_mob3_d7_s43 eta 4.1 min
+[49/60] ok jprof_m0_k0_i3_mob3_d7_s44 eta 3.7 min
+[50/60] ok jprof_m0_k0_i3_mob3_d7_s45 eta 3.5 min
+[51/60] ok jprof_m3_k7_i3_mob0_d7_s41 eta 3.1 min
+[52/60] ok jprof_m3_k7_i3_mob0_d7_s42 eta 2.8 min
+[53/60] ok jprof_m3_k7_i3_mob0_d7_s44 eta 2.4 min
+[54/60] ok jprof_m3_k7_i3_mob0_d7_s43 eta 2.1 min
+[55/60] ok jprof_m3_k7_i3_mob0_d7_s45 eta 1.7 min
+[56/60] ok jprof_m3_k7_i3_mob3_d7_s42 eta 1.4 min
+[57/60] ok jprof_m3_k7_i3_mob3_d7_s43 eta 1.0 min
+[58/60] ok jprof_m3_k7_i3_mob3_d7_s44 eta 0.7 min
+[59/60] ok jprof_m3_k7_i3_mob3_d7_s41 eta 0.3 min
+[60/60] ok jprof_m3_k7_i3_mob3_d7_s45 eta 0.0 min
+analysis
+# Journal-extension experiment status
+
+Only completed runs contribute to numerical summaries. Partial cells are preliminary.
+
+| Experiment | Completed | Planned |
+|---|---:|---:|
+| ablation | 240 | 240 |
+| host_callback_cost | 60 | 60 |
+| radio_loss | 0 | 120 |
+| rate_robustness | 240 | 240 |
+| resilience_reference | 70 | 70 |
+| scale_feasibility | 1 | 8 |
+| timing_validation | 2 | 2 |
+robservation
+120 runs in plan, 120 to do
+[1/120] ok jradio_rx100_m0_k0_i3_mob0_d7_s41 eta 137.8 min
+[2/120] ok jradio_rx100_m0_k0_i3_mob0_d3_s41 eta 69.3 min
+[3/120] ok jradio_rx100_m0_k0_i3_mob0_d7_s42 eta 46.6 min
+[4/120] ok jradio_rx100_m0_k0_i3_mob0_d3_s42 eta 35.6 min
+[5/120] ok jradio_rx100_m0_k0_i3_mob0_d3_s43 eta 29.6 min
+[6/120] ok jradio_rx100_m0_k0_i3_mob0_d7_s43 eta 24.8 min
+[7/120] ok jradio_rx100_m0_k0_i3_mob0_d3_s44 eta 39.3 min
+[8/120] ok jradio_rx100_m0_k0_i3_mob0_d7_s44 eta 34.5 min
+[9/120] ok jradio_rx100_m0_k0_i3_mob0_d3_s45 eta 33.0 min
+[10/120] ok jradio_rx100_m0_k0_i3_mob0_d7_s45 eta 30.1 min
+[11/120] ok jradio_rx100_m0_k0_i3_mob3_d3_s41 eta 29.9 min
+[12/120] ok jradio_rx100_m0_k0_i3_mob3_d7_s41 eta 29.9 min
+[13/120] ok jradio_rx100_m0_k0_i3_mob3_d3_s42 eta 35.3 min
+[14/120] ok jradio_rx100_m0_k0_i3_mob3_d3_s43 eta 33.0 min
+[15/120] ok jradio_rx100_m0_k0_i3_mob3_d7_s42 eta 30.6 min
+[16/120] ok jradio_rx100_m0_k0_i3_mob3_d7_s43 eta 28.9 min
+[17/120] ok jradio_rx100_m0_k0_i3_mob3_d3_s44 eta 27.4 min
+[18/120] ok jradio_rx100_m0_k0_i3_mob3_d7_s44 eta 27.3 min
+[19/120] ok jradio_rx100_m0_k0_i3_mob3_d3_s45 eta 31.8 min
+[20/120] ok jradio_rx100_m0_k0_i3_mob3_d7_s45 eta 30.4 min
+[21/120] ok jradio_rx100_m3_k7_i3_mob0_d7_s41 eta 30.2 min
+[22/120] ok jradio_rx100_m3_k7_i3_mob0_d7_s42 eta 29.1 min
+[23/120] ok jradio_rx100_m3_k7_i3_mob0_d3_s41 eta 30.0 min
+[24/120] ok jradio_rx100_m3_k7_i3_mob0_d3_s42 eta 28.5 min
+[25/120] ok jradio_rx100_m3_k7_i3_mob0_d7_s43 eta 30.8 min
+[26/120] ok jradio_rx100_m3_k7_i3_mob0_d7_s44 eta 30.1 min
+[27/120] ok jradio_rx100_m3_k7_i3_mob0_d3_s44 eta 30.0 min
+[28/120] ok jradio_rx100_m3_k7_i3_mob0_d3_s43 eta 29.0 min
+[29/120] ok jradio_rx100_m3_k7_i3_mob0_d7_s45 eta 28.6 min
+[30/120] ok jradio_rx100_m3_k7_i3_mob0_d3_s45 eta 29.2 min
+[31/120] ok jradio_rx100_m3_k7_i3_mob3_d7_s42 eta 30.5 min
+[32/120] ok jradio_rx100_m3_k7_i3_mob3_d3_s42 eta 29.6 min
+[33/120] ok jradio_rx100_m3_k7_i3_mob3_d3_s41 eta 29.6 min
+[34/120] ok jradio_rx100_m3_k7_i3_mob3_d7_s41 eta 28.6 min
+[35/120] ok jradio_rx100_m3_k7_i3_mob3_d3_s43 eta 28.0 min
+[36/120] ok jradio_rx100_m3_k7_i3_mob3_d7_s43 eta 27.3 min
+[37/120] ok jradio_rx100_m3_k7_i3_mob3_d7_s44 eta 28.6 min
+[38/120] ok jradio_rx95_m0_k0_i3_mob0_d3_s41 eta 27.6 min
+[39/120] ok jradio_rx95_m0_k0_i3_mob0_d7_s41 eta 27.0 min
+[40/120] ok jradio_rx100_m3_k7_i3_mob3_d3_s44 eta 26.2 min
+[41/120] ok jradio_rx100_m3_k7_i3_mob3_d7_s45 eta 25.8 min
+[42/120] ok jradio_rx95_m0_k0_i3_mob0_d3_s42 eta 26.2 min
+[43/120] ok jradio_rx95_m0_k0_i3_mob0_d7_s42 eta 25.3 min
+[44/120] ok jradio_rx95_m0_k0_i3_mob0_d3_s43 eta 24.9 min
+[45/120] ok jradio_rx100_m3_k7_i3_mob3_d3_s45 eta 24.2 min
+[46/120] ok jradio_rx95_m0_k0_i3_mob0_d7_s43 eta 23.4 min
+[47/120] ok jradio_rx95_m0_k0_i3_mob0_d3_s44 eta 22.8 min
+[48/120] ok jradio_rx95_m0_k0_i3_mob0_d7_s44 eta 23.1 min
+[49/120] ok jradio_rx95_m0_k0_i3_mob0_d3_s45 eta 22.6 min
+[50/120] ok jradio_rx95_m0_k0_i3_mob0_d7_s45 eta 22.3 min
+[51/120] ok jradio_rx95_m0_k0_i3_mob3_d7_s41 eta 21.9 min
+[52/120] ok jradio_rx95_m0_k0_i3_mob3_d3_s41 eta 21.4 min
+[53/120] ok jradio_rx95_m0_k0_i3_mob3_d3_s42 eta 20.9 min
+[54/120] ok jradio_rx95_m0_k0_i3_mob3_d3_s43 eta 21.1 min
+[55/120] ok jradio_rx95_m0_k0_i3_mob3_d7_s42 eta 20.4 min
+[56/120] ok jradio_rx95_m0_k0_i3_mob3_d7_s43 eta 20.1 min
+[57/120] ok jradio_rx95_m0_k0_i3_mob3_d3_s44 eta 19.5 min
+[58/120] ok jradio_rx95_m0_k0_i3_mob3_d7_s44 eta 19.1 min
+[59/120] ok jradio_rx95_m0_k0_i3_mob3_d3_s45 eta 18.9 min
+[60/120] ok jradio_rx95_m0_k0_i3_mob3_d7_s45 eta 19.0 min
+[61/120] ok jradio_rx95_m3_k7_i3_mob0_d7_s42 eta 18.9 min
+[62/120] ok jradio_rx95_m3_k7_i3_mob0_d7_s41 eta 18.3 min
+[63/120] ok jradio_rx95_m3_k7_i3_mob0_d3_s41 eta 18.2 min
+[64/120] ok jradio_rx95_m3_k7_i3_mob0_d3_s42 eta 17.7 min
+[65/120] ok jradio_rx95_m3_k7_i3_mob0_d3_s43 eta 17.7 min
+[66/120] ok jradio_rx95_m3_k7_i3_mob0_d7_s43 eta 17.1 min
+[67/120] ok jradio_rx95_m3_k7_i3_mob0_d7_s44 eta 16.8 min
+[68/120] ok jradio_rx95_m3_k7_i3_mob0_d3_s44 eta 16.7 min
+[69/120] ok jradio_rx95_m3_k7_i3_mob0_d7_s45 eta 16.3 min
+[70/120] ok jradio_rx95_m3_k7_i3_mob0_d3_s45 eta 16.3 min
+[71/120] ok jradio_rx95_m3_k7_i3_mob3_d3_s42 eta 16.1 min
+[72/120] ok jradio_rx95_m3_k7_i3_mob3_d7_s42 eta 15.8 min
+[73/120] ok jradio_rx95_m3_k7_i3_mob3_d7_s41 eta 15.2 min
+[74/120] ok jradio_rx95_m3_k7_i3_mob3_d3_s41 eta 15.0 min
+[75/120] ok jradio_rx95_m3_k7_i3_mob3_d3_s43 eta 14.6 min
+[76/120] ok jradio_rx95_m3_k7_i3_mob3_d7_s43 eta 14.3 min
+[77/120] ok jradio_rx95_m3_k7_i3_mob3_d7_s44 eta 14.2 min
+[78/120] ok jradio_rx95_m3_k7_i3_mob3_d3_s44 eta 13.9 min
+[79/120] ok jradio_rx80_m0_k0_i3_mob0_d3_s41 eta 13.4 min
+[80/120] ok jradio_rx95_m3_k7_i3_mob3_d7_s45 eta 13.1 min
+[81/120] ok jradio_rx80_m0_k0_i3_mob0_d7_s41 eta 12.6 min
+[82/120] ok jradio_rx95_m3_k7_i3_mob3_d3_s45 eta 12.3 min
+[83/120] ok jradio_rx80_m0_k0_i3_mob0_d3_s42 eta 12.0 min
+[84/120] ok jradio_rx80_m0_k0_i3_mob0_d7_s42 eta 11.7 min
+[85/120] ok jradio_rx80_m0_k0_i3_mob0_d3_s43 eta 11.3 min
+[86/120] ok jradio_rx80_m0_k0_i3_mob0_d3_s44 eta 10.9 min
+[87/120] ok jradio_rx80_m0_k0_i3_mob0_d7_s43 eta 10.5 min
+[88/120] ok jradio_rx80_m0_k0_i3_mob0_d7_s44 eta 10.2 min
+[89/120] ok jradio_rx80_m0_k0_i3_mob0_d3_s45 eta 10.0 min
+[90/120] ok jradio_rx80_m0_k0_i3_mob0_d7_s45 eta 9.6 min
+[91/120] ok jradio_rx80_m0_k0_i3_mob3_d3_s41 eta 9.3 min
+[92/120] ok jradio_rx80_m0_k0_i3_mob3_d7_s41 eta 9.0 min
+[93/120] ok jradio_rx80_m0_k0_i3_mob3_d3_s42 eta 8.6 min
+[94/120] ok jradio_rx80_m0_k0_i3_mob3_d7_s42 eta 8.3 min
+[95/120] ok jradio_rx80_m0_k0_i3_mob3_d3_s43 eta 8.0 min
+[96/120] ok jradio_rx80_m0_k0_i3_mob3_d7_s43 eta 7.7 min
+[97/120] ok jradio_rx80_m0_k0_i3_mob3_d3_s44 eta 7.3 min
+[98/120] ok jradio_rx80_m0_k0_i3_mob3_d7_s44 eta 7.0 min
+[99/120] ok jradio_rx80_m0_k0_i3_mob3_d3_s45 eta 6.7 min
+[100/120] ok jradio_rx80_m0_k0_i3_mob3_d7_s45 eta 6.4 min
+[101/120] ok jradio_rx80_m3_k7_i3_mob0_d3_s41 eta 6.2 min
+[102/120] ok jradio_rx80_m3_k7_i3_mob0_d7_s42 eta 5.8 min
+[103/120] ok jradio_rx80_m3_k7_i3_mob0_d7_s41 eta 5.5 min
+[104/120] ok jradio_rx80_m3_k7_i3_mob0_d3_s42 eta 5.2 min
+[105/120] ok jradio_rx80_m3_k7_i3_mob0_d7_s43 eta 4.8 min
+[106/120] ok jradio_rx80_m3_k7_i3_mob0_d3_s43 eta 4.6 min
+[107/120] ok jradio_rx80_m3_k7_i3_mob0_d7_s44 eta 4.3 min
+[108/120] ok jradio_rx80_m3_k7_i3_mob0_d3_s44 eta 4.0 min
+[109/120] ok jradio_rx80_m3_k7_i3_mob0_d7_s45 eta 3.6 min
+[110/120] ok jradio_rx80_m3_k7_i3_mob3_d3_s41 eta 3.3 min
+[111/120] ok jradio_rx80_m3_k7_i3_mob0_d3_s45 eta 3.0 min
+[112/120] ok jradio_rx80_m3_k7_i3_mob3_d7_s41 eta 2.7 min
+[113/120] ok jradio_rx80_m3_k7_i3_mob3_d3_s42 eta 2.3 min
+[114/120] ok jradio_rx80_m3_k7_i3_mob3_d7_s42 eta 2.0 min
+[115/120] ok jradio_rx80_m3_k7_i3_mob3_d7_s43 eta 1.7 min
+[116/120] ok jradio_rx80_m3_k7_i3_mob3_d3_s43 eta 1.3 min
+[117/120] ok jradio_rx80_m3_k7_i3_mob3_d3_s44 eta 1.0 min
+[118/120] ok jradio_rx80_m3_k7_i3_mob3_d7_s44 eta 0.7 min
+[119/120] ok jradio_rx80_m3_k7_i3_mob3_d7_s45 eta 0.3 min
+[120/120] ok jradio_rx80_m3_k7_i3_mob3_d3_s45 eta 0.0 min
+analysis
+# Journal-extension experiment status
+
+Only completed runs contribute to numerical summaries. Partial cells are preliminary.
+
+| Experiment | Completed | Planned |
+|---|---:|---:|
+| ablation | 240 | 240 |
+| host_callback_cost | 60 | 60 |
+| radio_loss | 120 | 120 |
+| rate_robustness | 240 | 240 |
+| resilience_reference | 70 | 70 |
+| scale_feasibility | 1 | 8 |
+| timing_validation | 2 | 2 |
+scale_diagnostics
+8 runs in plan, 7 to do
+[1/7] ok jscale_dis10_m0_k0_i3_mob0_d0_s2_n500_t15_p60_r20 eta 68.0 min
+[2/7] ok jscale_dis10_m0_k0_i3_mob0_d0_s1_n1000_t15_p60_r20 eta 35.5 min
+[3/7] ok jscale_dis60_m0_k0_i3_mob0_d0_s1_n500_t15_p60_r20 eta 30.8 min
+[4/7] ok jscale_dis10_m0_k0_i3_mob0_d0_s2_n1000_t15_p60_r20 eta 19.4 min
+[5/7] ok jscale_dis60_m0_k0_i3_mob0_d0_s2_n500_t15_p60_r20 eta 13.2 min
+[6/7] ok jscale_dis60_m0_k0_i3_mob0_d0_s1_n1000_t15_p60_r20 eta 6.7 min
+[7/7] ok jscale_dis60_m0_k0_i3_mob0_d0_s2_n1000_t15_p60_r20 eta 0.0 min
+analysis
+# Journal-extension experiment status
+
+Only completed runs contribute to numerical summaries. Partial cells are preliminary.
+
+| Experiment | Completed | Planned |
+|---|---:|---:|
+| ablation | 240 | 240 |
+| host_callback_cost | 60 | 60 |
+| radio_loss | 120 | 120 |
+| rate_robustness | 240 | 240 |
+| resilience_reference | 70 | 70 |
+| scale_feasibility | 8 | 8 |
+| timing_validation | 2 | 2 |
+scale_geometry
+[
+  {
+    "run_id": "m3_k125_i3_mob0_d7_s1_n500_t15_p60",
+    "nodes": 500,
+    "geometrically_reachable": 500,
+    "maximum_shortest_hops": 17,
+    "mean_degree": 4.724,
+    "application_participants": 216,
+    "legitimate_nodes": 374,
+    "missing_participant_mean_hops": 12.069620253164556,
+    "participating_mean_hops": 6.796296296296297,
+    "terminal_reachable_nodes": "",
+    "delivery_up": 0.041176470588235294,
+    "pdr_up": 0.8369565217391305,
+    "pdr_down": 0.961038961038961,
+    "parent_changes": 36251,
+    "native_dis_interval_s": 10
+  },
+  {
+    "run_id": "m0_k0_i3_mob0_d0_s1_n500_t10_p60",
+    "nodes": 500,
+    "geometrically_reachable": 500,
+    "maximum_shortest_hops": 17,
+    "mean_degree": 4.724,
+    "application_participants": 293,
+    "legitimate_nodes": 499,
+    "missing_participant_mean_hops": 12.29611650485437,
+    "participating_mean_hops": 6.778156996587031,
+    "terminal_reachable_nodes": "",
+    "delivery_up": 0.034468937875751504,
+    "pdr_up": 1.0,
+    "pdr_down": 1.0,
+    "parent_changes": 12116,
+    "native_dis_interval_s": 10
+  },
+  {
+    "run_id": "m3_k125_i3_mob0_d7_s1_n500_t15_p60_r20",
+    "nodes": 500,
+    "geometrically_reachable": 500,
+    "maximum_shortest_hops": 17,
+    "mean_degree": 4.724,
+    "application_participants": 225,
+    "legitimate_nodes": 374,
+    "missing_participant_mean_hops": 12.261744966442953,
+    "participating_mean_hops": 6.88,
+    "terminal_reachable_nodes": "",
+    "delivery_up": 0.025668449197860963,
+    "pdr_up": 0.7218045112781954,
+    "pdr_down": 0.9479166666666666,
+    "parent_changes": 19722,
+    "native_dis_interval_s": 10
+  },
+  {
+    "run_id": "m3_k250_i3_mob0_d7_s1_n1000_t15_p60",
+    "nodes": 1000,
+    "geometrically_reachable": 1000,
+    "maximum_shortest_hops": 23,
+    "mean_degree": 4.926,
+    "application_participants": 243,
+    "legitimate_nodes": 749,
+    "missing_participant_mean_hops": 14.715415019762846,
+    "participating_mean_hops": 6.823045267489712,
+    "terminal_reachable_nodes": "",
+    "delivery_up": 0.013618157543391188,
+    "pdr_up": 0.8571428571428571,
+    "pdr_down": 0.9215686274509803,
+    "parent_changes": 11979,
+    "native_dis_interval_s": 10
+  },
+  {
+    "run_id": "m3_k250_i3_mob0_d7_s1_n1000_t15",
+    "nodes": 1000,
+    "geometrically_reachable": 1000,
+    "maximum_shortest_hops": 23,
+    "mean_degree": 4.926,
+    "application_participants": 116,
+    "legitimate_nodes": 749,
+    "missing_participant_mean_hops": 13.499210110584519,
+    "participating_mean_hops": 4.818965517241379,
+    "terminal_reachable_nodes": "",
+    "delivery_up": 0.0033822874944370272,
+    "pdr_up": 0.8306010928961749,
+    "pdr_down": 0.9605263157894737,
+    "parent_changes": 9377,
+    "native_dis_interval_s": 10
+  },
+  {
+    "run_id": "m3_k125_i3_mob0_d7_s1_n500_t15",
+    "nodes": 500,
+    "geometrically_reachable": 500,
+    "maximum_shortest_hops": 17,
+    "mean_degree": 4.724,
+    "application_participants": 98,
+    "legitimate_nodes": 374,
+    "missing_participant_mean_hops": 10.554347826086957,
+    "participating_mean_hops": 4.714285714285714,
+    "terminal_reachable_nodes": "",
+    "delivery_up": 0.005926916221033868,
+    "pdr_up": 0.8636363636363636,
+    "pdr_down": 0.9398496240601504,
+    "parent_changes": 9651,
+    "native_dis_interval_s": 10
+  },
+  {
+    "run_id": "m3_k250_i3_mob0_d7_s1_n1000_t15_p60_r20",
+    "nodes": 1000,
+    "geometrically_reachable": 1000,
+    "maximum_shortest_hops": 23,
+    "mean_degree": 4.926,
+    "application_participants": 256,
+    "legitimate_nodes": 749,
+    "missing_participant_mean_hops": 14.85395537525355,
+    "participating_mean_hops": 6.95703125,
+    "terminal_reachable_nodes": "",
+    "delivery_up": 0.04953271028037383,
+    "pdr_up": 0.8470319634703196,
+    "pdr_down": 0.8382749326145552,
+    "parent_changes": 19264,
+    "native_dis_interval_s": 10
+  },
+  {
+    "run_id": "m0_k0_i3_mob0_d0_s1_n500_t5",
+    "nodes": 500,
+    "geometrically_reachable": 500,
+    "maximum_shortest_hops": 17,
+    "mean_degree": 4.724,
+    "application_participants": 121,
+    "legitimate_nodes": 499,
+    "missing_participant_mean_hops": 10.542328042328043,
+    "participating_mean_hops": 4.413223140495868,
+    "terminal_reachable_nodes": "",
+    "delivery_up": NaN,
+    "pdr_up": NaN,
+    "pdr_down": NaN,
+    "parent_changes": 2647,
+    "native_dis_interval_s": 10
+  },
+  {
+    "run_id": "m0_k0_i3_mob0_d0_s1_n500_t10_p60_r20",
+    "nodes": 500,
+    "geometrically_reachable": 500,
+    "maximum_shortest_hops": 17,
+    "mean_degree": 4.724,
+    "application_participants": 300,
+    "legitimate_nodes": 499,
+    "missing_participant_mean_hops": 12.407035175879397,
+    "participating_mean_hops": 6.833333333333333,
+    "terminal_reachable_nodes": "",
+    "delivery_up": 0.04448897795591182,
+    "pdr_up": 0.9823008849557522,
+    "pdr_down": 0.990990990990991,
+    "parent_changes": 11001,
+    "native_dis_interval_s": 10
+  },
+  {
+    "run_id": "jscale_dis60_m0_k0_i3_mob0_d0_s1_n1000_t15_p60_r20",
+    "nodes": 1000,
+    "geometrically_reachable": 1000,
+    "maximum_shortest_hops": 23,
+    "mean_degree": 4.926,
+    "application_participants": 317,
+    "legitimate_nodes": 999,
+    "missing_participant_mean_hops": 14.719941348973608,
+    "participating_mean_hops": 6.82018927444795,
+    "terminal_reachable_nodes": 17,
+    "delivery_up": 0.035935935935935935,
+    "pdr_up": 0.758985200845666,
+    "pdr_down": 0.9526462395543176,
+    "parent_changes": 29668,
+    "native_dis_interval_s": 60
+  },
+  {
+    "run_id": "jscale_dis10_m0_k0_i3_mob0_d0_s2_n500_t15_p60_r20",
+    "nodes": 500,
+    "geometrically_reachable": 500,
+    "maximum_shortest_hops": 17,
+    "mean_degree": 4.848,
+    "application_participants": 285,
+    "legitimate_nodes": 499,
+    "missing_participant_mean_hops": 12.05607476635514,
+    "participating_mean_hops": 6.863157894736842,
+    "terminal_reachable_nodes": 25,
+    "delivery_up": 0.0813627254509018,
+    "pdr_up": 0.8202020202020202,
+    "pdr_down": 0.9556650246305419,
+    "parent_changes": 25895,
+    "native_dis_interval_s": 10
+  },
+  {
+    "run_id": "jscale_dis60_m0_k0_i3_mob0_d0_s2_n500_t15_p60_r20",
+    "nodes": 500,
+    "geometrically_reachable": 500,
+    "maximum_shortest_hops": 17,
+    "mean_degree": 4.848,
+    "application_participants": 309,
+    "legitimate_nodes": 499,
+    "missing_participant_mean_hops": 12.357894736842105,
+    "participating_mean_hops": 7.080906148867314,
+    "terminal_reachable_nodes": 37,
+    "delivery_up": 0.07254509018036072,
+    "pdr_up": 0.8283752860411899,
+    "pdr_down": 0.9281767955801105,
+    "parent_changes": 24333,
+    "native_dis_interval_s": 60
+  },
+  {
+    "run_id": "jscale_dis10_m0_k0_i3_mob0_d0_s1_n500_t15_p60_r20",
+    "nodes": 500,
+    "geometrically_reachable": 500,
+    "maximum_shortest_hops": 17,
+    "mean_degree": 4.724,
+    "application_participants": 303,
+    "legitimate_nodes": 499,
+    "missing_participant_mean_hops": 12.443877551020408,
+    "participating_mean_hops": 6.864686468646864,
+    "terminal_reachable_nodes": 26,
+    "delivery_up": 0.07454909819639279,
+    "pdr_up": 0.7782426778242678,
+    "pdr_down": 0.9650537634408602,
+    "parent_changes": 21675,
+    "native_dis_interval_s": 10
+  },
+  {
+    "run_id": "jscale_dis10_m0_k0_i3_mob0_d0_s2_n1000_t15_p60_r20",
+    "nodes": 1000,
+    "geometrically_reachable": 1000,
+    "maximum_shortest_hops": 23,
+    "mean_degree": 4.914,
+    "application_participants": 293,
+    "legitimate_nodes": 999,
+    "missing_participant_mean_hops": 15.026912181303116,
+    "participating_mean_hops": 6.8941979522184305,
+    "terminal_reachable_nodes": 8,
+    "delivery_up": 0.016216216216216217,
+    "pdr_up": 0.6778242677824268,
+    "pdr_down": 0.9753086419753086,
+    "parent_changes": 23579,
+    "native_dis_interval_s": 10
+  },
+  {
+    "run_id": "jscale_dis60_m0_k0_i3_mob0_d0_s2_n1000_t15_p60_r20",
+    "nodes": 1000,
+    "geometrically_reachable": 1000,
+    "maximum_shortest_hops": 23,
+    "mean_degree": 4.914,
+    "application_participants": 302,
+    "legitimate_nodes": 999,
+    "missing_participant_mean_hops": 15.098995695839312,
+    "participating_mean_hops": 6.970198675496689,
+    "terminal_reachable_nodes": 26,
+    "delivery_up": 0.022622622622622622,
+    "pdr_up": 0.7129337539432177,
+    "pdr_down": 0.9336283185840708,
+    "parent_changes": 24817,
+    "native_dis_interval_s": 60
+  },
+  {
+    "run_id": "jscale_dis60_m0_k0_i3_mob0_d0_s1_n500_t15_p60_r20",
+    "nodes": 500,
+    "geometrically_reachable": 500,
+    "maximum_shortest_hops": 17,
+    "mean_degree": 4.724,
+    "application_participants": 303,
+    "legitimate_nodes": 499,
+    "missing_participant_mean_hops": 12.448979591836734,
+    "participating_mean_hops": 6.861386138613861,
+    "terminal_reachable_nodes": 13,
+    "delivery_up": 0.07094188376753507,
+    "pdr_up": 0.7955056179775281,
+    "pdr_down": 0.9463276836158192,
+    "parent_changes": 21479,
+    "native_dis_interval_s": 60
+  },
+  {
+    "run_id": "jscale_dis10_m0_k0_i3_mob0_d0_s1_n1000_t15_p60_r20",
+    "nodes": 1000,
+    "geometrically_reachable": 1000,
+    "maximum_shortest_hops": 23,
+    "mean_degree": 4.926,
+    "application_participants": 329,
+    "legitimate_nodes": 999,
+    "missing_participant_mean_hops": 14.811940298507462,
+    "participating_mean_hops": 6.920972644376899,
+    "terminal_reachable_nodes": 17,
+    "delivery_up": 0.026126126126126126,
+    "pdr_up": 0.7073170731707317,
+    "pdr_down": 0.9808429118773946,
+    "parent_changes": 22144,
+    "native_dis_interval_s": 10
+  }
+]
+validation
+[
+  {
+    "check": "all_planned_manifests",
+    "status": "pass",
+    "detail": "740 valid configurations"
+  },
+  {
+    "check": "invalid_manifest_rejection",
+    "status": "pass",
+    "detail": "10 nonfinite/out-of-range cases rejected"
+  },
+  {
+    "check": "privileged_ground_truth_source_check",
+    "status": "pass",
+    "detail": "No references to scheduling/attacker-label symbols in defense.c or rl.c"
+  },
+  {
+    "check": "injection_trace_jtrace_m3_k7_i3_mob0_d7_s21_t10",
+    "status": "pass",
+    "detail": "Trace records injection attempts after the activation timer, not confirmed packet reception"
+  },
+  {
+    "check": "injection_trace_jtrace_m3_k7_i3_mob3_d7_s21_t10",
+    "status": "pass",
+    "detail": "Trace records injection attempts after the activation timer, not confirmed packet reception"
+  },
+  {
+    "check": "scale_feasibility",
+    "status": "not_established",
+    "detail": "8/8 completed; full scale comparisons require every matched pilot for a setting to pass"
+  }
+]
+scale_gate_release
+Full scale comparison remains gated: route feasibility not established.
+resource_sizes
+136 object measurements. Native code/storage, not target flash/RAM.
+figures
+Figures exported to /home/karim/Desktop/LAU/Fall_2026/Research_Methodology/twin-attack-rpl/output/experiments/journal_extension/figures
+validation
+[
+  {
+    "check": "all_planned_manifests",
+    "status": "pass",
+    "detail": "740 valid configurations"
+  },
+  {
+    "check": "invalid_manifest_rejection",
+    "status": "pass",
+    "detail": "10 nonfinite/out-of-range cases rejected"
+  },
+  {
+    "check": "privileged_ground_truth_source_check",
+    "status": "pass",
+    "detail": "No references to scheduling/attacker-label symbols in defense.c or rl.c"
+  },
+  {
+    "check": "injection_trace_jtrace_m3_k7_i3_mob0_d7_s21_t10",
+    "status": "pass",
+    "detail": "Trace records injection attempts after the activation timer, not confirmed packet reception"
+  },
+  {
+    "check": "injection_trace_jtrace_m3_k7_i3_mob3_d7_s21_t10",
+    "status": "pass",
+    "detail": "Trace records injection attempts after the activation timer, not confirmed packet reception"
+  },
+  {
+    "check": "scale_feasibility",
+    "status": "not_established",
+    "detail": "8/8 completed; full scale comparisons require every matched pilot for a setting to pass"
+  }
+]
+complete_analysis
+# Journal-extension experiment status
+
+Only completed runs contribute to numerical summaries. Partial cells are preliminary.
+
+| Experiment | Completed | Planned |
+|---|---:|---:|
+| ablation | 240 | 240 |
+| host_callback_cost | 60 | 60 |
+| radio_loss | 120 | 120 |
+| rate_robustness | 240 | 240 |
+| resilience_reference | 70 | 70 |
+| scale_feasibility | 8 | 8 |
+| timing_validation | 2 | 2 |
+provenance
+Recorded 47 actually selected binary variants
+log_reproduction
+Reparsed 740 compressed logs; core mismatches: 0
+MATCH per_run.csv
+MATCH attacker_events.csv
+MATCH summary.csv
+MATCH paired_comparisons.csv
+All completed core results and four numerical tables reproduce from stored logs.

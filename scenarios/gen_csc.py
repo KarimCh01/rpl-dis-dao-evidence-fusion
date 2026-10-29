@@ -3,10 +3,13 @@ import argparse
 import json
 import math
 import random
+import re
 from pathlib import Path
 
 PROJECT_IN_CONTAINER = "/home/user/project"
 AREA = 200.0
+BASE_NODES = 30
+MIN_SPACING = 27.0
 TX_RANGE = 50.0
 INTERFERENCE_RANGE = 100.0
 RX_RATIO = 1.0
@@ -127,20 +130,38 @@ def connected(points, rng):
     return len(seen) == n
 
 
+def area_for(n):
+    return AREA if n <= BASE_NODES else AREA * math.sqrt(n / BASE_NODES)
+
+
 def place_nodes(r, n):
-    while True:
-        pts = [(AREA / 2, AREA / 2)]
-        pts += [(r.uniform(0, AREA), r.uniform(0, AREA)) for _ in range(n - 1)]
-        if connected(pts, TX_RANGE * 0.9):
-            return pts
+    if n <= BASE_NODES:
+        while True:
+            pts = [(AREA / 2, AREA / 2)]
+            pts += [(r.uniform(0, AREA), r.uniform(0, AREA)) for _ in range(n - 1)]
+            if connected(pts, TX_RANGE * 0.9):
+                return pts
+    side = area_for(n)
+    link = TX_RANGE * 0.9
+    pts = [(side / 2, side / 2)]
+    grid = {(int(pts[0][0] // link), int(pts[0][1] // link)): [0]}
+    while len(pts) < n:
+        x, y = r.uniform(0, side), r.uniform(0, side)
+        gx, gy = int(x // link), int(y // link)
+        dists = [math.dist((x, y), pts[j]) for dx in (-1, 0, 1) for dy in (-1, 0, 1)
+                 for j in grid.get((gx + dx, gy + dy), ())]
+        if dists and MIN_SPACING <= min(dists) <= link:
+            grid.setdefault((gx, gy), []).append(len(pts))
+            pts.append((x, y))
+    return pts
 
 
-def waypoint_path(r, start, duration_s):
+def waypoint_path(r, start, duration_s, area=AREA):
     segs = []
     t = 0.0
     x, y = start
     while t < duration_s:
-        tx, ty = r.uniform(0, AREA), r.uniform(0, AREA)
+        tx, ty = r.uniform(0, area), r.uniform(0, area)
         speed = r.uniform(SPEED_MIN, SPEED_MAX)
         travel = math.dist((x, y), (tx, ty)) / speed
         segs.append([round(t, 2), round(t + travel, 2), round(x, 2), round(y, 2),
@@ -154,32 +175,89 @@ def waypoint_path(r, start, duration_s):
     return segs
 
 
-def variant_names(defense, attack_mode, dis_interval, window=10):
+def variant_names(defense, attack_mode, dis_interval, window=10, nodes=BASE_NODES, send_s=10):
     w = "" if window == 10 else f"_w{window}"
+    big = nodes > BASE_NODES
+    p = f"_p{send_s}" if send_s != 10 else ""
     return {
-        "root": f"v_root_d{defense}{w}",
-        "cli0": f"v_cli_d{defense}_m0{w}",
-        "cli1": f"v_cli_d{defense}_m1{w}",
-        "atk": f"v_atk_a{attack_mode}_i{dis_interval}",
+        "root": f"v_root_d{defense}{w}" + ("_big" if big else ""),
+        "cli0": f"v_cli_d{defense}_m0{w}{p}",
+        "cli1": f"v_cli_d{defense}_m1{w}{p}",
+        "atk": f"v_atk_a{attack_mode}_i{dis_interval}" + (f"_n{nodes}" if big else "") + p,
     }
 
 
+def validate_cfg(cfg):
+    for key in ("nodes", "attackers", "attack_mode", "dis_interval", "defense", "seed", "duration_min"):
+        value = cfg[key]
+        if isinstance(value, bool) or not isinstance(value, int):
+            raise ValueError(f"{key} must be a finite integer")
+    if cfg["nodes"] < 2 or not 0 <= cfg["attackers"] < cfg["nodes"]:
+        raise ValueError("invalid node or attacker count")
+    if cfg["duration_min"] <= 0 or cfg["dis_interval"] <= 0:
+        raise ValueError("duration and attack interval must be positive")
+    for key in ("send_s", "dao_interval", "rank_hops"):
+        if key in cfg and (isinstance(cfg[key], bool) or not isinstance(cfg[key], int) or cfg[key] <= 0):
+            raise ValueError(f"{key} must be a positive finite integer")
+    if "attack_start_s" in cfg:
+        value = cfg["attack_start_s"]
+        if not isinstance(value, (int, float)) or not math.isfinite(value) or value != 300:
+            raise ValueError("this firmware uses a fixed 300-second attack activation")
+    if cfg["attack_mode"] not in (0, 1, 2, 3) or cfg["defense"] not in range(8):
+        raise ValueError("unsupported attack or defense")
+    for key, default in (("mobile_frac", 0), ("rx_ratio", RX_RATIO)):
+        value = cfg.get(key, default)
+        if not isinstance(value, (int, float)) or not math.isfinite(value) or not 0 <= value <= 1:
+            raise ValueError(f"{key} must be finite and between zero and one")
+    if not re.fullmatch(r"[A-Za-z0-9_-]+", cfg["run_id"]):
+        raise ValueError("invalid run identifier")
+    overrides = cfg.get("variant_overrides", {})
+    if set(overrides) - {"root", "cli0", "cli1", "atk"}:
+        raise ValueError("unknown variant role")
+    if any(not re.fullmatch(r"[A-Za-z0-9_]+", name) for name in overrides.values()):
+        raise ValueError("invalid firmware variant identifier")
+
+
+def place_structured_grid(r, n):
+    """Declared alternative scale layout; original random placement is intact.
+
+    A 34 m lattice permits diagonal links under the 50 m radio range.
+    Small seeded jitter avoids coincident coordinates while keeping those links.
+    """
+    half = math.ceil(math.sqrt(n) / 2)
+    cells = [(x, y) for x in range(-half, half + 1)
+             for y in range(-half, half + 1) if (x, y) != (0, 0)]
+    cells.sort(key=lambda xy: (xy[0] ** 2 + xy[1] ** 2, xy))
+    cells = cells[:n - 1]
+    r.shuffle(cells)
+    center = area_for(n) / 2
+    return [(center, center)] + [
+        (center + 34 * x + r.uniform(-.25, .25),
+         center + 34 * y + r.uniform(-.25, .25)) for x, y in cells]
+
+
 def build(cfg):
+    validate_cfg(cfg)
     r = random.Random(cfg["seed"] * 1000003 + 17)
     n = cfg["nodes"]
-    pts = place_nodes(r, n)
+    topology = cfg.get("topology", "random_connected")
+    if topology not in ("random_connected", "structured_grid"):
+        raise ValueError("unsupported topology")
+    pts = place_structured_grid(r, n) if topology == "structured_grid" else place_nodes(r, n)
     others = list(range(2, n + 1))
-    attackers = sorted(r.sample(others, cfg["attackers"])) if cfg["attackers"] else []
+    chosen = sorted(r.sample(others, cfg["attackers"])) if cfg["attackers"] else []
+    attackers = chosen if cfg["attack_mode"] else []
     n_mobile = round((n - 1) * cfg["mobile_frac"])
     mobile = sorted(r.sample(others, n_mobile)) if n_mobile else []
     duration_s = cfg["duration_min"] * 60
 
     segments = {}
     for mid in mobile:
-        segments[str(mid)] = waypoint_path(r, pts[mid - 1], duration_s)
+        segments[str(mid)] = waypoint_path(r, pts[mid - 1], duration_s, area_for(n))
 
     v = variant_names(cfg["defense"], cfg["attack_mode"], cfg["dis_interval"],
-                      cfg.get("fdm_window", 10))
+                      cfg.get("fdm_window", 10), n, cfg.get("send_s", 10))
+    v.update(cfg.get("variant_overrides", {}))
     groups = {v["root"]: [1]}
     for nid in others:
         if nid in attackers:
@@ -200,9 +278,14 @@ def build(cfg):
     csc = SIM.format(title=cfg["run_id"], seed=cfg["seed"], tx=TX_RANGE,
                      intf=INTERFERENCE_RANGE, rx=cfg.get("rx_ratio", RX_RATIO), motetypes="".join(motetypes), script=script)
     meta = dict(cfg)
-    meta.update({"attacker_ids": attackers, "mobile_ids": mobile,
+    meta.update({"attacker_ids": attackers, "mobile_ids": mobile, "honest_chosen_ids": chosen if not attackers else [],
+                 "area_m": round(area_for(n), 1),
                  "positions": {str(i + 1): [round(p[0], 2), round(p[1], 2)] for i, p in enumerate(pts)},
                  "variants": sorted(groups.keys())})
+    record = Path(__file__).resolve().parents[1] / "build" / "variants.json"
+    if record.exists():
+        definitions = json.loads(record.read_text())["variants"]
+        meta["variant_definitions"] = {name: definitions.get(name) for name in groups}
     return csc, meta
 
 

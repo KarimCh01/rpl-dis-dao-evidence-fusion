@@ -1,0 +1,335 @@
+{
+ "delay": [
+  {
+   "eps": 0.1,
+   "k_star": 2,
+   "windows_needed": 3,
+   "lower_bound_s": 10,
+   "upper_bound_s": 40,
+   "min_delay_s": 20.001441973649143,
+   "max_delay_s": 29.99988660833543,
+   "holds": true
+  },
+  {
+   "eps": 0.25,
+   "k_star": 3,
+   "windows_needed": 4,
+   "lower_bound_s": 10,
+   "upper_bound_s": 50,
+   "min_delay_s": 30.000676897357486,
+   "max_delay_s": 39.999741562349456,
+   "holds": true
+  },
+  {
+   "eps": 0.5,
+   "k_star": 5,
+   "windows_needed": 6,
+   "lower_bound_s": 10,
+   "upper_bound_s": 70,
+   "min_delay_s": 50.00009154570843,
+   "max_delay_s": 59.99964090984086,
+   "holds": true
+  },
+  {
+   "eps": 0.75,
+   "k_star": 11,
+   "windows_needed": 12,
+   "lower_bound_s": 10,
+   "upper_bound_s": 130,
+   "min_delay_s": 110.00136916275679,
+   "max_delay_s": 119.99873730059656,
+   "holds": true
+  },
+  {
+   "eps": 0.9,
+   "k_star": 29,
+   "windows_needed": 30,
+   "lower_bound_s": 10,
+   "upper_bound_s": 310,
+   "min_delay_s": 290.00019666887016,
+   "max_delay_s": 299.9999922879162,
+   "holds": true
+  }
+ ],
+ "false_alarm": [
+  {
+   "eps": 0.5,
+   "q": 0.05,
+   "windows": 336,
+   "needed_in_a_row": 6,
+   "measured": 0.0,
+   "bound": 5.250000000000002e-06,
+   "holds": true
+  },
+  {
+   "eps": 0.5,
+   "q": 0.1,
+   "windows": 336,
+   "needed_in_a_row": 6,
+   "measured": 0.00015,
+   "bound": 0.00033600000000000014,
+   "holds": true
+  },
+  {
+   "eps": 0.5,
+   "q": 0.2,
+   "windows": 336,
+   "needed_in_a_row": 6,
+   "measured": 0.01685,
+   "bound": 0.02150400000000001,
+   "holds": true
+  },
+  {
+   "eps": 0.5,
+   "q": 0.3,
+   "windows": 336,
+   "needed_in_a_row": 6,
+   "measured": 0.1586,
+   "bound": 0.24494399999999994,
+   "holds": true
+  }
+ ],
+ "policy_gamma0": [
+  {
+   "p": 0.05,
+   "Q_accept": -0.176,
+   "Q_isolate": -1.918,
+   "learned": "accept",
+   "theory": "accept",
+   "conservative_near_threshold": false,
+   "holds": true
+  },
+  {
+   "p": 0.1,
+   "Q_accept": -0.106,
+   "Q_isolate": -1.808,
+   "learned": "accept",
+   "theory": "accept",
+   "conservative_near_threshold": false,
+   "holds": true
+  },
+  {
+   "p": 0.15,
+   "Q_accept": -0.225,
+   "Q_isolate": -1.648,
+   "learned": "accept",
+   "theory": "accept",
+   "conservative_near_threshold": false,
+   "holds": true
+  },
+  {
+   "p": 0.2,
+   "Q_accept": -0.196,
+   "Q_isolate": -1.65,
+   "learned": "accept",
+   "theory": "accept",
+   "conservative_near_threshold": false,
+   "holds": true
+  },
+  {
+   "p": 0.25,
+   "Q_accept": -0.235,
+   "Q_isolate": -0.916,
+   "learned": "accept",
+   "theory": "accept",
+   "conservative_near_threshold": false,
+   "holds": true
+  },
+  {
+   "p": 0.3,
+   "Q_accept": -0.312,
+   "Q_isolate": -1.119,
+   "learned": "accept",
+   "theory": "accept",
+   "conservative_near_threshold": false,
+   "holds": true
+  },
+  {
+   "p": 0.35,
+   "Q_accept": -0.165,
+   "Q_isolate": -0.801,
+   "learned": "accept",
+   "theory": "accept",
+   "conservative_near_threshold": false,
+   "holds": true
+  },
+  {
+   "p": 0.4,
+   "Q_accept": -0.361,
+   "Q_isolate": -0.865,
+   "learned": "accept",
+   "theory": "accept",
+   "conservative_near_threshold": false,
+   "holds": true
+  },
+  {
+   "p": 0.45,
+   "Q_accept": -0.285,
+   "Q_isolate": -0.691,
+   "learned": "accept",
+   "theory": "accept",
+   "conservative_near_threshold": false,
+   "holds": true
+  },
+  {
+   "p": 0.5,
+   "Q_accept": -0.462,
+   "Q_isolate": -0.683,
+   "learned": "accept",
+   "theory": "either",
+   "conservative_near_threshold": false,
+   "holds": true
+  },
+  {
+   "p": 0.55,
+   "Q_accept": -0.587,
+   "Q_isolate": -0.794,
+   "learned": "accept",
+   "theory": "isolate",
+   "conservative_near_threshold": true,
+   "holds": true
+  },
+  {
+   "p": 0.6,
+   "Q_accept": -0.788,
+   "Q_isolate": -0.517,
+   "learned": "isolate",
+   "theory": "isolate",
+   "conservative_near_threshold": false,
+   "holds": true
+  },
+  {
+   "p": 0.65,
+   "Q_accept": -0.738,
+   "Q_isolate": -0.224,
+   "learned": "isolate",
+   "theory": "isolate",
+   "conservative_near_threshold": false,
+   "holds": true
+  },
+  {
+   "p": 0.7,
+   "Q_accept": -0.758,
+   "Q_isolate": 0.139,
+   "learned": "isolate",
+   "theory": "isolate",
+   "conservative_near_threshold": false,
+   "holds": true
+  },
+  {
+   "p": 0.75,
+   "Q_accept": -0.842,
+   "Q_isolate": 0.229,
+   "learned": "isolate",
+   "theory": "isolate",
+   "conservative_near_threshold": false,
+   "holds": true
+  },
+  {
+   "p": 0.8,
+   "Q_accept": -0.789,
+   "Q_isolate": 0.685,
+   "learned": "isolate",
+   "theory": "isolate",
+   "conservative_near_threshold": false,
+   "holds": true
+  },
+  {
+   "p": 0.85,
+   "Q_accept": -0.816,
+   "Q_isolate": 0.703,
+   "learned": "isolate",
+   "theory": "isolate",
+   "conservative_near_threshold": false,
+   "holds": true
+  },
+  {
+   "p": 0.9,
+   "Q_accept": -0.865,
+   "Q_isolate": 0.622,
+   "learned": "isolate",
+   "theory": "isolate",
+   "conservative_near_threshold": false,
+   "holds": true
+  },
+  {
+   "p": 0.95,
+   "Q_accept": -0.969,
+   "Q_isolate": 0.982,
+   "learned": "isolate",
+   "theory": "isolate",
+   "conservative_near_threshold": false,
+   "holds": true
+  }
+ ],
+ "q_bound": [
+  {
+   "gamma": 0.0,
+   "fixed_point_q8_8": false,
+   "max_abs_Q": 2.0,
+   "bound": 2.0,
+   "holds": true,
+   "fits_int16": true
+  },
+  {
+   "gamma": 0.0,
+   "fixed_point_q8_8": true,
+   "max_abs_Q": 2.0,
+   "bound": 2.0,
+   "holds": true,
+   "fits_int16": true
+  },
+  {
+   "gamma": 0.5,
+   "fixed_point_q8_8": false,
+   "max_abs_Q": 2.5,
+   "bound": 4.0,
+   "holds": true,
+   "fits_int16": true
+  },
+  {
+   "gamma": 0.5,
+   "fixed_point_q8_8": true,
+   "max_abs_Q": 2.3477,
+   "bound": 4.0,
+   "holds": true,
+   "fits_int16": true
+  }
+ ],
+ "exploration": [
+  {
+   "minute": 0,
+   "epsilon": 0.1
+  },
+  {
+   "minute": 10,
+   "epsilon": 0.05
+  },
+  {
+   "minute": 20,
+   "epsilon": 0.025
+  },
+  {
+   "minute": 30,
+   "epsilon": 0.0125
+  },
+  {
+   "minute": 40,
+   "epsilon": 0.01
+  },
+  {
+   "minute": 50,
+   "epsilon": 0.01
+  },
+  {
+   "minute": 60,
+   "epsilon": 0.01
+  }
+ ],
+ "memory_bytes": {
+  "q_table": 384,
+  "visit_counts": 384,
+  "per_neighbor": 2
+ },
+ "all_hold": true
+}

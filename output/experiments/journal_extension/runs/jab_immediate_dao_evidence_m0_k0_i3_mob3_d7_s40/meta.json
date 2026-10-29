@@ -1,0 +1,170 @@
+{
+ "run_id": "jab_immediate_dao_evidence_m0_k0_i3_mob3_d7_s40",
+ "seed": 40,
+ "nodes": 30,
+ "attackers": 0,
+ "attack_mode": 0,
+ "dis_interval": 3,
+ "defense": 7,
+ "mobile_frac": 0.3,
+ "duration_min": 60,
+ "experiment": "ablation",
+ "ablation": "immediate_dao_evidence",
+ "dao_interval": 2,
+ "variant_overrides": {
+  "root": "v_jab_immediate_dao_evidence_root",
+  "cli0": "v_jab_immediate_dao_evidence_cli0",
+  "cli1": "v_jab_immediate_dao_evidence_cli1",
+  "atk": "v_journal_atk_dis3_dao2"
+ },
+ "attacker_ids": [],
+ "mobile_ids": [
+  2,
+  4,
+  6,
+  9,
+  10,
+  12,
+  14,
+  15,
+  25
+ ],
+ "honest_chosen_ids": [],
+ "area_m": 200.0,
+ "positions": {
+  "1": [
+   100.0,
+   100.0
+  ],
+  "2": [
+   47.42,
+   194.65
+  ],
+  "3": [
+   52.27,
+   112.2
+  ],
+  "4": [
+   140.16,
+   91.3
+  ],
+  "5": [
+   87.87,
+   187.43
+  ],
+  "6": [
+   53.91,
+   13.1
+  ],
+  "7": [
+   190.52,
+   68.19
+  ],
+  "8": [
+   174.08,
+   136.36
+  ],
+  "9": [
+   138.24,
+   133.82
+  ],
+  "10": [
+   136.52,
+   114.63
+  ],
+  "11": [
+   189.63,
+   70.83
+  ],
+  "12": [
+   118.51,
+   169.84
+  ],
+  "13": [
+   113.1,
+   33.56
+  ],
+  "14": [
+   134.74,
+   171.36
+  ],
+  "15": [
+   42.64,
+   34.89
+  ],
+  "16": [
+   107.88,
+   174.89
+  ],
+  "17": [
+   95.15,
+   41.52
+  ],
+  "18": [
+   18.75,
+   170.62
+  ],
+  "19": [
+   171.38,
+   158.38
+  ],
+  "20": [
+   129.94,
+   151.96
+  ],
+  "21": [
+   189.47,
+   132.36
+  ],
+  "22": [
+   170.53,
+   155.18
+  ],
+  "23": [
+   73.29,
+   70.36
+  ],
+  "24": [
+   52.44,
+   127.59
+  ],
+  "25": [
+   199.14,
+   116.06
+  ],
+  "26": [
+   39.84,
+   90.59
+  ],
+  "27": [
+   142.02,
+   15.67
+  ],
+  "28": [
+   131.32,
+   114.36
+  ],
+  "29": [
+   188.84,
+   93.2
+  ],
+  "30": [
+   70.44,
+   42.07
+  ]
+ },
+ "variants": [
+  "v_jab_immediate_dao_evidence_cli0",
+  "v_jab_immediate_dao_evidence_cli1",
+  "v_jab_immediate_dao_evidence_root"
+ ],
+ "variant_definitions": {
+  "v_jab_immediate_dao_evidence_root": "ROLE=0,DEFENSE=7,NODE_MOBILE=0,TR_STATIC_MS=9309,TR_MOBILE_MS=16476,AEF_DAO_PERSIST_WINDOWS=1",
+  "v_jab_immediate_dao_evidence_cli1": "ROLE=1,DEFENSE=7,NODE_MOBILE=1,TR_STATIC_MS=9309,TR_MOBILE_MS=16476,AEF_DAO_PERSIST_WINDOWS=1",
+  "v_jab_immediate_dao_evidence_cli0": "ROLE=1,DEFENSE=7,NODE_MOBILE=0,TR_STATIC_MS=9309,TR_MOBILE_MS=16476,AEF_DAO_PERSIST_WINDOWS=1"
+ },
+ "execution_environment": {
+  "docker_context": "default",
+  "docker_image": "sha256:0e20b334617f576a8e349262b796e5dc26b7b05f541d13e293637da7eaa3c3eb"
+ }
+}

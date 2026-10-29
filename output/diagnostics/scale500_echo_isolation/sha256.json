@@ -1,0 +1,10 @@
+{
+  "scripts/diagnose_500_echo.py": "62f2f40b1607c5cabfda25a0af61c323f31bb71bad7213465f4e5122e0606c83",
+  "scripts/diagnose_scale_load.py": "5b1bd73fd8b81669ef2047ff56ac73da9b092664d9ed3902d271ce06f7243592",
+  "firmware/node.c": "987f782aabcd44944831165ef1de74f99e79129de482cf183a62928942360cd7",
+  "firmware/project-conf.h": "310b6e15e8b3fff9e5795c588a73fda0b3162e4c28bfb90669679b73b731eed5",
+  "build/variants/v_500echo_echo_on_root/build/cooja/v_500echo_echo_on_root.cooja": "c24b0a41361b7f85e6168d4cd0b5f9d9ba077d39d258af4d5c5ae31f87d9a970",
+  "build/variants/v_500echo_echo_on_cli0/build/cooja/v_500echo_echo_on_cli0.cooja": "a2f58021dd68bf5c6be5f913a1466e412d29ef1a5235a7383bd2641863c895de",
+  "build/variants/v_500echo_up_only_root/build/cooja/v_500echo_up_only_root.cooja": "b960ce261dbe3e34d37204bfef1a7fe07ec4b7e0bb6dcfae2300706d273e02ab",
+  "build/variants/v_500echo_up_only_cli0/build/cooja/v_500echo_up_only_cli0.cooja": "a2f58021dd68bf5c6be5f913a1466e412d29ef1a5235a7383bd2641863c895de"
+}

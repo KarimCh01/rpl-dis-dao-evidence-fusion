@@ -6,3 +6,8 @@ output/runs/*/COOJA.testlog
 output/runs/*/cooja.out
 output/plan/*.log
 output/verify/
+output/repro/
+output/repro_journal_extension/
+/*.aux
+/*.log
+/*.out
