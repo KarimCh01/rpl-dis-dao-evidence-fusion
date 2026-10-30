@@ -1,4 +1,4 @@
-# For the supervisor: regenerate every result from the stored logs
+# Regenerate every result from the stored logs
 
 Every number, statistical test, table and figure in `manuscript_full.pdf` can be
 rebuilt from the raw simulation logs stored in this folder. No simulator, Docker
@@ -36,7 +36,7 @@ ALL 8 OUTPUT FILES MATCH
 
 Changing a single byte of any log makes this check fail and names the log.
 
-## 3. Regenerate the whole paper (about 15 minutes)
+## 3. Regenerate the whole paper (about 10 minutes)
 
 ```bash
 make reproduce-paper
@@ -53,8 +53,11 @@ Expected last line:
 COMPLETE: stored-log analysis and paper figures/tables regenerated. No simulations executed.
 ```
 
-Each step's log is in `output/paper_reproduction/`, and `report.json` records
-`"complete": true`. Then rebuild the PDF:
+The command writes one log per step and a `report.json` with the exit code and
+duration of each step into `output/paper_reproduction/`. These files are
+produced locally on each run (they contain local paths and timings) and are
+not tracked in the repository; `report.json` ends with `"complete": true`.
+Then rebuild the PDF:
 
 ```bash
 TEXINPUTS=tex: pdflatex manuscript_full.tex

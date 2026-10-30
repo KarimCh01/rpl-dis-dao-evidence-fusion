@@ -13,7 +13,9 @@ ALPHA = 1.0
 def main():
     static, mobile = [], []
     runs = 0
-    for f in sorted(glob.glob(str(ROOT / "output/runs/m0_k0_i3_mob*_d0_s*/result.json"))):
+    for f in sorted(
+        glob.glob(str(ROOT / "output/runs/m0_k0_i3_mob*_d0_s*/result.json"))
+    ):
         res = json.loads(Path(f).read_text())
         meta = json.loads((Path(f).parent / "meta.json").read_text())
         mob_ids = set(meta["mobile_ids"])
@@ -41,11 +43,16 @@ def main():
         tr_s = tr_s if tr_s > 0 else mu_s / 2
         tr_m = tr_m if tr_m > 0 else mu_m / 2
 
-    out = {"runs": runs, "settle_s": SETTLE_S, "alpha": ALPHA,
-           "static": {"n_intervals": len(static), "mu_s": mu_s, "sigma_s": sd_s},
-           "mobile": {"n_intervals": len(mobile), "mu_s": mu_m, "sigma_s": sd_m},
-           "rule": rule,
-           "tr_static_ms": int(round(tr_s * 1000)), "tr_mobile_ms": int(round(tr_m * 1000))}
+    out = {
+        "runs": runs,
+        "settle_s": SETTLE_S,
+        "alpha": ALPHA,
+        "static": {"n_intervals": len(static), "mu_s": mu_s, "sigma_s": sd_s},
+        "mobile": {"n_intervals": len(mobile), "mu_s": mu_m, "sigma_s": sd_m},
+        "rule": rule,
+        "tr_static_ms": int(round(tr_s * 1000)),
+        "tr_mobile_ms": int(round(tr_m * 1000)),
+    }
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "tr.json").write_text(json.dumps(out, indent=1))
     print(json.dumps(out, indent=1))

@@ -20,7 +20,7 @@ Multicast DIS flooding attacks in RPL-based IoT networks," Ad Hoc Networks 179
 | Docker image | `contiker/contiki-ng`, created 2026-07-10 (ID `b14d5afb0a2a` in Docker Desktop, `0e20b334617f` in the native engine; same layers) | Official Contiki-NG toolchain. Pinning the image fixes compiler, Java and libraries. |
 | Contiki-NG | commit `385d72a76` | Same OS family the paper states (Table 7: Contiki-NG/Cooja). |
 | Cooja | commit `fabff3ee`, run headless with `--no-gui` | Scripted, repeatable runs, as the proposal requires. |
-| Mote type | Cooja native motes | Fast enough to run about 1300 one-hour simulations on a laptop. |
+| Mote type | Cooja native motes | Fast enough to run about 2700 simulations, most of them one hour long, on a laptop. |
 | MAC layer | CSMA (Contiki-NG default) | See B.8 for why TSCH was tested and rejected. |
 | Routing | RPL-lite, non-storing mode (Contiki-NG default) | Default RPL implementation of Contiki-NG. |
 | Python | 3.12 with pandas, numpy, scipy, matplotlib (versions in `requirements.txt`) | Log parsing and statistics, as the proposal lists. |
@@ -108,7 +108,8 @@ the proposed defense are the same network.
 Each simulation file carries its seed in `<randomseed>`. Cooja with the same
 seed and the same firmware produces the same run. The node layout, attacker set
 and mobility come from Python's `random.Random(seed * 1000003 + 17)`. Seeds 1 to
-10 are used everywhere.
+10 are used for every cell of the main campaign; the later studies use fresh
+seeds 11 to 45 (Part L).
 
 ### B.7 Normal DIS interval
 
@@ -182,8 +183,11 @@ the "single malicious node executing both concurrently" of the proposal.
 ## Part D. Defenses (proposal steps 1 and 3)
 
 File: `firmware/defense.c`. The defense is chosen at compile time
-(`DEFENSE=0..4`). All legitimate nodes and the root run the same defense.
-Attackers run no defense.
+(`DEFENSE=0..7`, the `DEF_*` constants of `firmware/defense.h`): 0 none,
+1 Secure-RPL, 2 RPL-MRC, 3 DIS-FDM, 4 AEF-RPL with the fixed decision rule
+(AEF fixed), 5 Li-MSD, 6 the first learning version, 7 AEF-RPL as evaluated in
+the paper. All legitimate nodes and the root run the same defense. Attackers
+run no defense.
 
 ### D.1 Secure-RPL (Verma and Ranga 2020), DEFENSE=1
 
@@ -277,10 +281,11 @@ gives 0.4444 attack and 0.4444 non-attack (paper Table 5).
 **Mitigation.** An attacker is stored in the blacklist and its DIS messages are
 dropped from then on, so they no longer reset the Trickle timer.
 
-### D.4 Proposed defense: DIS-FDM plus a self-calibrated DAO-consistency evidence source, DEFENSE=4
+### D.4 AEF-RPL evidence model: DIS-FDM plus a self-calibrated DAO-consistency evidence source, with the fixed decision rule (AEF fixed), DEFENSE=4
 
 Everything in D.3 is kept unchanged. One new evidence source is added, and one
-new decision path uses it.
+new decision path uses it. Defense 4 keeps the fixed decision rule; the paper
+calls it AEF fixed and uses it as the learning-off ablation of AEF-RPL (D.6).
 
 **The observation.** A DAO travels hop by hop to the root. The first node that
 receives it is the sender's real parent. If a DAO arrives directly from the
@@ -363,11 +368,23 @@ hook; the counting and blacklisting are the same. The paper's attacker replays
 captured DAOs, while the DAO attacker here sends a forged DAO every 2 s, so it
 also exceeds the count.
 
-### D.6 AEF-RPL decision layer: on-node Q-learning, DEFENSE=6
+### D.6 AEF-RPL decision layer: on-node Q-learning, DEFENSE=6 and DEFENSE=7
 
 The full proposed algorithm. Everything in D.4 is kept (evidence, self-calibration,
 route repair); only the final decision changes. Defense 4 is the same algorithm with
 the fixed decision rule, and serves as the ablation with learning switched off.
+
+Two learning versions exist. Defense 6 is the first version, which follows the
+proposal's learner exactly. Defense 7 is the final AEF-RPL, the one evaluated in
+the paper; it adds two rules that the runs of the first version showed to be
+necessary: a random exploratory action is drawn only for a neighbor that has DIS
+or DAO evidence or is already isolated, so that exploration never isolates a
+neighbor about which nothing is known, and an isolated neighbor is released only
+after two consecutive calm windows (`RL_CALM_RELEASE` in `defense.c`). The 200
+runs of defense 6 (plan `learning.jsonl`) are kept for traceability and are not
+in the paper's tables. In the firmware the two versions are the macros
+`DEF_AEF_RL` (6) and `DEF_AEF_RL2` (7); the names are the ones the firmware was
+built with and stay unchanged because the run provenance hashes the source.
 
 **Math first.** Before any simulation, `analysis/check_theory.py` checks the
 proposal's claims numerically: the detection-delay bounds (every simulated delay
@@ -391,22 +408,30 @@ DIS or DAO evidence, or is isolated):
    was above `T_DTL` or an inconsistent DAO arrived in this window. Then update
    `Q(s,a) += (r + Q_max(s')/2 - Q(s,a)) / n`, with `n` the visit count capped at 16.
 3. Choose the action: Isolate if `c = 5`, Accept if the state is fully benign,
-   otherwise epsilon-greedy (0.10 at 240 s, halved every 10 minutes, at least 0.01).
-   When both actions have the same value, the fixed rule's action is taken, so an
-   empty table behaves exactly like defense 4.
+   otherwise epsilon-greedy (0.10 at 240 s, halved every 10 minutes, at least 0.01;
+   in defense 7 the random draw is made only for neighbors with evidence or already
+   isolated). When both actions have the same value, the fixed rule's action is
+   taken, so an empty table behaves exactly like defense 4.
 4. Isolate prints `#D` and applies the D.4 mitigation; Accept on an isolated
-   neighbor releases it and prints `#U`. Isolation is therefore reversible.
+   neighbor releases it and prints `#U` (in defense 7 only after two consecutive
+   calm windows). Isolation is therefore reversible.
 
 Q values are 16-bit fixed point (8 fractional bits). The table and visit counts take
-768 bytes, plus 2 bytes per neighbor. Every 600 s the node prints `#G` with the
-number of states that changed their greedy action, which measures how fast the
-policy settles. The code is in `firmware/rl.c`; it was also compiled on the host
+768 bytes, plus 12 bytes of greedy-action bits (780 bytes in all) and 3 bytes per
+neighbor (last state, last action, calm counter). Every 600 s the node prints `#G`
+with the number of states that changed their greedy action, which measures how fast
+the policy settles. The code is in `firmware/rl.c`; it was also compiled on the host
 and tested against the same theory (60 of 61 test states learned as predicted, the
 remaining one is the near-threshold case above).
 
 ---
 
-## Part D2. Scaling to 500 and 1000 nodes (RQ5)
+## Part D2. Support for 500 and 1000 nodes (RQ5, not completed)
+
+The proposal planned the comparison at 500 and 1000 nodes as well. The firmware
+and the scenario generator were extended for it as described below, but the
+attack-free pilots at those sizes never formed stable bidirectional routes, so
+the comparison was not run and every reported result is at 30 nodes (Part L.5).
 
 **Node identifiers.** Cooja gives node `n` the link-layer address made of the
 bytes `n >> 8` and `n & 0xff` repeated, and the IPv6 interface identifier is that
@@ -445,26 +470,37 @@ DIS-FDM, AEF-RPL learning off; static and mobile; attackers forging DAOs) were
 re-run with the new firmware into `output/verify/` and compared metric by metric
 with the published results.
 
-**Runs.** `timing.jsonl` holds one 15-minute run at 500 and at 1000 nodes to
-measure wall time and memory first. `scale.jsonl` holds the combined attack with
-25% attackers: at 500 nodes, static and mobile, no defense, DIS-FDM, AEF-RPL
-learning off, Li-MSD and AEF-RPL, plus an exact reference run, 8 seeds; at 1000
-nodes, static, DIS-FDM and AEF-RPL plus the reference, 3 seeds. Run names end in
+**Planned runs.** `scripts/plan.py` writes `timing.jsonl` (one 15-minute run at
+500 and at 1000 nodes) and `scale.jsonl` (the combined attack with 25%
+attackers: at 500 nodes, static and mobile, no defense, DIS-FDM, AEF fixed,
+Li-MSD and AEF-RPL plus an exact reference run, 8 seeds; at 1000 nodes, static,
+DIS-FDM and AEF-RPL plus the reference, 6 seeds; 114 runs). Run names end in
 `_n500` or `_n1000` (and `_t15` for 15-minute runs). The 30-node analysis in
-`aggregate.py` reads only 30-node, 60-minute runs.
+`aggregate.py` reads only 30-node, 60-minute runs. `scale.jsonl` was never run.
 
-**Open issue found by the timing runs.** In the first 500- and 1000-node runs,
-only the nodes within about 7 hops of the root joined (98 of 374 honest nodes at
-500). A plain 500-node run with no attack and no defense showed the same limit,
-so it comes from the network, not from the defenses. Two changes were tried:
-sending data every 60 s instead of 10 s in the large networks (build option
-`SEND_INTERVAL_SEC`, run names ending in `_p60`), which raised joining to 293 of
-499 nodes and about 10 hops, and more 6LoWPAN reassembly buffers (`BIG_NET`),
-which changed nothing. Nodes 11 or more hops away join the DODAG and send DIOs,
-but none of their DAOs reaches the root, so they never become reachable. The
-cause is still being investigated; the checks are kept in
-`output/preliminary/scale_checks/`. The scale runs will start only once nodes at
-every depth can join.
+**What the pilots showed.** In the first 500- and 1000-node runs, only the nodes
+within about 7 hops of the root joined (98 of 374 honest nodes at 500). A plain
+500-node run with no attack and no defense showed the same limit, so it comes
+from the network, not from the defenses. Sending data every 60 s instead of 10 s
+(build option `SEND_INTERVAL_SEC`, run names ending in `_p60`) raised joining to
+293 of 499 nodes and about 10 hops; more 6LoWPAN reassembly buffers (`BIG_NET`)
+changed nothing. Nodes 11 or more hops away join the DODAG and send DIOs, but
+none of their DAOs reaches the root, so they never become reachable. These
+checks are in `output/preliminary/scale_checks/`.
+
+The second campaign then ran eight attack-free 15-minute pilots (500 and 1000
+nodes, seeds 1 and 2, native DIS periods of 10 and 60 s) against a predefined
+gate (95% participation, 80% expected upward delivery, 90% conditional downward
+delivery in every matched pilot). No setting passed, so the 114-run comparison
+was not released. Traces with the stack warnings retained identified three
+mechanisms: the source-routing header of long downward paths no longer fits the
+first 6LoWPAN fragment, the CSMA neighbor queues (two by default) overflow, and
+DAO retry exhaustion triggers local repairs that drop the routes
+(`docs/SCALE_FAILURE_DIAGNOSIS.md`). Follow-up diagnostics that enlarged the
+queues, bounded the DIO interval, separated upward from bidirectional traffic
+and tried a structured grid layout are in `output/diagnostics/` and the
+`docs/SCALE*.md` notes; none produced a validated bidirectional network at 500
+nodes. The tooling is indexed in `CODE_AND_DATA.md`, section 5.
 
 ---
 
@@ -518,8 +554,10 @@ These runs are kept out of the main analysis and reported separately in
 ## Part G. Build and run pipeline
 
 1. `scripts/plan.py` writes the matrix as JSON lines.
-2. `scripts/build_variants.py` compiles 28 firmware variants (7 root, 14 sensor,
-   7 attacker), each in its own folder, cleaned before every build, inside the
+2. `scripts/build_variants.py` compiles the firmware variants (8 root, 16 sensor
+   and 7 attacker variants for the 30-node study, 3 for the 30 s-window
+   sensitivity test, and the large-network variants used only by the scale
+   pilots), each in its own folder, cleaned before every build, inside the
    pinned Docker image.
 3. `scripts/run_matrix.py` runs 12 simulations in parallel. For each run it
    writes `sim.csc` and `meta.json`, runs Cooja headless in a container named
@@ -553,20 +591,29 @@ Measured on legitimate nodes over the attack phase (300 s to 3600 s):
 | FPR | legitimate nodes blacklisted by at least one node / all legitimate nodes |
 | Precision | attackers blacklisted / all nodes blacklisted |
 | Detection latency | mean over detected attackers of first blacklisting time minus 300 s |
+| Attack Resilience Index (ARI) | completed round trips of the legitimate nodes after 300 s, divided by the same count in the matched attack-free reference run with the same seed, layout and mobile nodes (`analysis/metrics.py`) |
+| Downward Recovery Time (DRT) | time from the first minute after 300 s in which the 3-minute trailing mean of completed round trips falls below 90% of its pre-attack level to the start of five consecutive minutes back above it; censored at the end of the run |
 
 ---
 
-## Part I. Statistics (proposal: Data Analysis Methods 3; RQ4)
+## Part I. Statistics (proposal: Data Analysis Methods 3; RQ5)
 
-* Every cell has 10 seeds. Tables report mean and standard deviation; CSV files
-  and figures also give 95% confidence intervals (t distribution).
+* Every cell of the main campaign has 10 seeds. Tables report mean and standard
+  deviation; CSV files and figures also give 95% confidence intervals
+  (t distribution).
 * Wilcoxon signed-rank test, paired by seed:
   * RQ2: combined attack against DIS-only and against DAO-only, no defense,
     one-sided (combined is worse).
-  * RQ3/RQ4: proposed defense against DIS-FDM, Secure-RPL and RPL-MRC, two-sided,
-    for every attack type, malicious ratio and topology.
+  * RQ3: AEF-RPL (defense 7) against DIS-FDM, Secure-RPL, RPL-MRC and Li-MSD,
+    two-sided, for every attack type, malicious ratio and topology.
+  * RQ4: AEF-RPL against AEF fixed (defense 4), two-sided.
 * Effect size: matched-pairs rank-biserial correlation.
-* Multiple comparisons: Holm correction within each family of tests.
+* Multiple comparisons: Holm correction within each family of tests (one
+  comparison and one metric across its six attacker-fraction and topology
+  conditions).
+* Second campaign (fresh seeds): paired mean differences with 95% bootstrap
+  intervals (10 000 resamples) and exact sign-flip tests, Holm-adjusted within
+  each study (`analysis/analyze_journal_extension.py`).
 
 ---
 
@@ -608,19 +655,40 @@ decisions only, not results.
   about 100% in every case.
 * `tsch/`: TSCH baseline broken without attack (B.8).
 * `mrc_check/`: one 20-minute run confirming the corrected RPL-MRC (D.2).
+* `scale_checks/`: the first 500- and 1000-node pilots (Part D2).
+* `learning_fp_extension/`: the 20 benign mobile runs on fresh seeds 11 to 20
+  (learning on and off) used for the false-isolation comparison of H4; these
+  are reported results, kept here because they were run outside the plan files
+  of the main campaign.
 
 ---
 
 ## Part L. Results
 
-All 1330 runs finished: 1280 unique runs from the calibration (20), reproduction
-(320) and main (1000) plans, where runs shared between plans were executed once,
-plus 50 sensitivity runs.
-Every run is complete and has the planned number of attackers and mobile nodes.
-Ten published runs drawn at random were re-run from scratch and all ten gave
-identical metrics. Full tables: `output/results/summary.md`; every number below
-comes from `output/results/summary_by_condition.csv` and the `stats_*.csv`
-files. Values are means over 10 seeds.
+The study comprises 2720 simulation runs in three groups:
+
+* the main campaign, 1960 runs on seeds 1 to 10 in `output/runs/`: 1280 unique
+  runs from the calibration (20), reproduction (320) and main (1000) plans,
+  where runs shared between plans were executed once, 50 sensitivity runs
+  (Part E2), 200 Li-MSD runs, 200 runs of the first learning version (defense
+  6), 200 runs of the final AEF-RPL (defense 7) and 30 exact reference runs for
+  the ARI in mobile networks;
+* 20 benign mobile runs on fresh seeds 11 to 20 (learning on and off) in
+  `output/preliminary/learning_fp_extension/`;
+* the second campaign, 740 runs on fresh seeds 21 to 45 in
+  `output/experiments/journal_extension/`: attack-rate robustness (240),
+  component ablations (240), matched attack-free references (70), reception
+  loss (120), host callback cost (60), two 10-minute injection-trace runs and
+  the eight attack-free 500- and 1000-node pilots of Part D2 (seeds 1 and 2).
+
+All runs except the eight pilots are 30-node networks, and all except the pilots
+and the two trace runs last 60 simulated minutes. Every run is complete and has
+the planned number of attackers and mobile nodes. Ten published runs drawn at
+random were re-run from scratch and all ten gave identical metrics. Full
+tables: `output/results/summary.md`; every number below comes from
+`output/results/summary_by_condition.csv`, `resilience.csv`, the `stats_*.csv`
+files and `output/hypotheses/evidence.json`. Values are means over 10 seeds.
+AEF-RPL below is defense 7; AEF fixed is defense 4.
 
 A note on mobility. With 30% of nodes moving, even the attack-free network
 delivers only about 70% of the packets nodes would send if always connected
@@ -672,76 +740,138 @@ One-sided Wilcoxon, Holm-corrected within each comparison and metric:
 * Combined is not worse than DAO-only on downward delivery, and not worse than
   DIS-only on DIO overhead.
 
-H2 is supported in a qualified form: the combined attack causes both kinds of
-damage at once, so it is significantly worse than each single attack on the
-kind of damage that attack does not cause. It does not amplify either kind of
-damage beyond what the corresponding single attack already causes.
+H2 is partly supported: the combined attack causes both kinds of damage at
+once, so it is significantly worse than each single attack on the kind of
+damage that attack does not cause (downward delivery and ARI against DIS-only
+in 6 of 6 conditions, DIO overhead against DAO-only in 5 of 6). It does not
+amplify either kind of damage beyond what the corresponding single attack
+already causes.
 
-### L.3 RQ3 and H3: proposed defense against DIS-FDM
+### L.3 RQ3 and H3: AEF-RPL against DIS-FDM
 
-| Condition | Metric | DIS-FDM | Proposed |
-|---|---|---|---|
-| Combined, 25%, static | downward delivery | 77.2% | 97.4% |
-| Combined, 25%, static | transmit power | 0.284 mW | 0.153 mW |
-| Combined, 25%, static | detection latency | 50 s | 33 s |
-| Combined, 25%, static | TPR / FPR | 97% / 9% | 97% / 8% |
-| Combined, 50%, static | downward delivery | 67.5% | 88.5% |
-| Combined, 25%, mobile | downward delivery | 80.8% | 98.1% |
-| DAO only, 25%, static | TPR | 11% | 96% |
-| DAO only, 25%, static | precision | 14% | 90% |
-| DAO only, 25%, static | downward delivery | 81.1% | 98.4% |
+| Condition | Metric | DIS-FDM | AEF fixed (4) | AEF-RPL (7) |
+|---|---|---|---|---|
+| Combined, 25%, static | downward delivery | 77.2% | 97.4% | 98.3% |
+| Combined, 25%, static | ARI | 0.71 | 0.92 | 0.92 |
+| Combined, 25%, static | transmit power | 0.284 mW | 0.153 mW | 0.154 mW |
+| Combined, 25%, static | detection latency | 50.2 s | 33.0 s | 26.4 s |
+| Combined, 25%, static | TPR / FPR | 97.1% / 8.6% | 97.1% / 7.7% | 97.1% / 16.8% |
+| Combined, 50%, static | downward delivery | 67.5% | 88.5% | 87.5% |
+| Combined, 50%, static | ARI | 0.44 | 0.73 | 0.76 |
+| Combined, 25%, mobile | downward delivery | 80.8% | 98.1% | 96.4% |
+| Combined, 25%, mobile | detection latency | 43.2 s | 32.9 s | 14.0 s |
+| DAO only, 25%, static | TPR | 11.4% | 95.7% | 92.9% |
+| DAO only, 25%, static | precision | 13.8% | 89.7% | 83.6% |
+| DAO only, 25%, static | downward delivery | 81.1% | 98.4% | 97.6% |
 
-Two-sided Wilcoxon, Holm-corrected within each attack and metric (6 conditions):
+Two-sided Wilcoxon, Holm-corrected within each comparison and metric
+(6 conditions), AEF-RPL against DIS-FDM:
 
-* Combined attack: the proposed defense is significantly better in downward
-  delivery (6 of 6), transmit power (6 of 6) and detection latency (6 of 6).
-  TPR, FPR and precision do not differ significantly, because DIS-FDM already
-  catches the combined attackers through their DIS flood.
-* DAO-only attack: significantly better TPR (4 of 6), precision (4 of 6),
-  downward delivery (6 of 6) and transmit power (6 of 6).
+* Combined attack: downward delivery and ARI are higher in 6 of 6 conditions,
+  all at the smallest attainable Holm-adjusted p of 0.012; ARI improved in every
+  seed of every condition. Downward delivery is also higher than Li-MSD's,
+  Secure-RPL's and RPL-MRC's in 6 of 6. TPR and precision are not higher in any
+  condition (0 of 6), and FPR is not significantly higher in any condition (0 of
+  6): DIS-FDM already catches the combined attackers through their DIS flood.
+* DAO-only attack: TPR is significantly higher in 4 of 6 conditions, and
+  downward delivery in 6 of 6; DIS-FDM has no DAO evidence at all.
 * DIS-only attack: no significant difference in any metric, as designed: with no
-  DAO evidence the proposed defense makes exactly DIS-FDM's decisions.
-* Cost: upward delivery is significantly lower in 3 of 6 combined conditions, by
-  about 1 to 1.6 percentage points (for example 98.2% against 99.8%). The cause
-  was not isolated.
+  DAO evidence the evidence model makes exactly DIS-FDM's decisions.
+* Detection latency is lower in 6 of 6 combined conditions (26.4 s against
+  50.2 s with 7 static attackers).
+* Cost: upward delivery is significantly lower in the three static combined
+  conditions (Holm p <= 0.02), by 0.7 to 1.1 percentage points (98.8% against
+  99.8% with 7 attackers), and not significantly in the mobile ones.
+* The component ablation on fresh seeds 31 to 40 locates the service gain:
+  switching off route repair while keeping detection and blacklisting lowers
+  downward delivery from 97.6% to 81.8% (static) and from 98.3% to 81.5%
+  (mobile), close to the unprotected level; switching off the fused DAO mass
+  changes delivery by less than one point; one-window instead of two-window DAO
+  evidence raises the static FPR from 11.8% to 20.5%.
 
-H3 as worded ("higher detection accuracy against the combined attack") is not
-supported for TPR and FPR, which are already near their limit for DIS-FDM. It is
-supported for detection speed and for the outcome of the defense (restored
-downward delivery, lower energy), and detection accuracy is clearly higher
-against DAO manipulation alone, which DIS-FDM cannot see.
+H3 as pre-specified ("higher detection accuracy against the combined attack",
+decided on TPR, precision and FPR) is not supported. Resilience is improved:
+downward delivery and ARI are higher in every condition, detection is faster,
+and detection accuracy is higher against DAO manipulation alone, which DIS-FDM
+cannot see. The gain comes mainly from the selective DAO repair that follows
+detection.
 
-### L.4 RQ4 and H4: consistency across seeds and topologies
+### L.4 RQ4 and H4: learning against the fixed rule
 
-* With 10 seeds the strongest possible Wilcoxon result is p = 0.00195 with all ten
-  seeds in favor (rank-biserial r = 1). The downward-delivery, transmit-power and
-  latency gains under the combined attack reach this in most conditions and stay
-  significant after correction in all six, static and mobile.
-* H4 is supported for these gains.
+AEF-RPL (defense 7) against AEF fixed (defense 4), same tests:
 
-### L.5 Further findings
+* Detection latency is lower in 6 of 6 combined-attack conditions (Holm p =
+  0.012), by 20 to 27% in static networks (26.4 s against 33.0 s with 7
+  attackers) and by 53 to 73% in mobile networks (14.0 s against 32.9 s).
+* ARI is not lower in any condition (0 of 6).
+* FPR is not lower in any of the 8 tested conditions (0 of 8); the mean FPR is
+  higher with learning in 7 of the 8, but no increase is significant. In the
+  20 benign mobile runs on fresh seeds, FPR is 42.41% with learning and 42.07%
+  without (p = 1.0), and in 9 of 10 seeds both versions flag the same number of
+  honest nodes. The blacklist lines show why: in attack-free mobile runs 74.8%
+  of the falsely isolated honest nodes are first isolated by a saturated DIS
+  counter and 23.6% by the DIS-FDM rule that combines the DIS and parent-change
+  counters (`output/hypotheses/false_isolation_reasons.csv`). A moving honest
+  node looks like a DIS flooder, and because the reward is computed from the
+  same indicators, the learner is rewarded for isolating it.
+* Policy stability (states whose greedy action changed per 10-minute report, in
+  the last 10 minutes): 0.28 of 96 states under the combined attack and 0 with
+  no attack in static networks; 1.9 and 1.7 in mobile networks.
+
+H4 ("learning lowers FPR without lowering ARI") is not supported. The latency
+reduction is the one significant gain of the learning layer.
+
+### L.5 RQ5 and H5: consistency across conditions
+
+* The service gain (downward delivery, ARI) and the latency gain are
+  significant in each of the three static and three mobile conditions of the
+  main campaign; with 10 seeds the strongest possible Wilcoxon result is
+  p = 0.00195 before correction and 0.012 after Holm correction over six
+  conditions, and these gains reach it.
+* On fresh seeds 21 to 30 at the default attack rate, AEF-RPL delivers 95.7%
+  (static) and 98.0% (mobile) downward against 78.7% and 82.8% for DIS-FDM,
+  paired differences of 17.0 and 15.2 points with bootstrap intervals above
+  zero, and every seed favors AEF-RPL.
+* Across attack rates and reception loss (12 cells), the paired difference with
+  DIS-FDM is positive with a bootstrap interval above zero in 10 of 12. The two
+  remaining cells use the slowest attack (DIS and DAO every 30 s), where every
+  configuration, including no defense, delivers 80 to 86% downward: AEF-RPL
+  still identifies the attackers, but detection no longer translates into
+  restored service.
+* 500 and 1000 nodes were not tested (Part D2).
+
+H5 is partly supported: the service and latency gains hold across seeds,
+attacker fractions, mobility, attack rates up to 10 s and reception loss at 30
+nodes; the larger networks remain untested.
+
+### L.6 Further findings
 
 * DIS-FDM raises many false alarms under mobility: with no attacker at all it
   blacklists 43.4% of legitimate nodes in the mobile topology (0% when static).
   A moving node that loses its parent keeps sending DIS and looks like a slow
-  flood. The proposed defense inherits this (42.4%). The paper evaluates
+  flood. AEF-RPL inherits this (42.4% with the fixed rule). The paper evaluates
   mobility but reports no false-positive rate, which is Gap 3 of the proposal.
 * Secure-RPL is strong against fast DIS floods: no false alarms anywhere and
-  faster detection (12 to 25 s) than DIS-FDM or the proposed defense. It does
+  faster detection (12 to 25 s) than DIS-FDM or AEF fixed. It does
   nothing against floods slower than its 5 s gap (6 s and above) and nothing
   against DAO manipulation.
 * RPL-MRC, implemented exactly as published, cuts overhead strongly, including
   under mobility (5326 against 9321 DIO with no attack), but it identifies no
   attacker and does not help against DAO manipulation.
 
-### L.6 Limitations
+### L.7 Limitations
 
 * The MAC layer: results use Contiki-NG's CSMA. The paper's delivery and power
   effects need a duty-cycled MAC it does not name; TSCH with the minimal
   schedule could not form a usable baseline.
 * Parameters the paper leaves open (Part F) influence DIS-FDM's absolute
   performance, as the window sensitivity test shows.
-* RPL-lite non-storing mode only; 30 nodes; 10 seeds per condition, which limits
-  the smallest attainable p-value to 0.00195.
+* RPL-lite non-storing mode only; 30 nodes, since the 500- and 1000-node
+  condition could not be run (Part D2); 10 seeds per condition in the main
+  campaign, which limits the smallest attainable p-value to 0.00195.
 * The DAO-consistency check relies on the first hop being an honest node; an
   attacker whose parent is also an attacker is not caught by it.
+* False isolation under mobility is inherited from DIS-FDM's DIS evidence and is
+  not reduced by the learning layer (L.4).
+* The host callback timings and compiled-object sizes are simulator-host
+  measurements, not mote runtime, flash, RAM or energy.

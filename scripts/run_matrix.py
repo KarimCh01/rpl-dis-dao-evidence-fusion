@@ -20,7 +20,9 @@ IMAGE = "contiker/contiki-ng"
 RUNS = ROOT / "output" / "runs"
 
 
-def run_one(cfg, runs_dir=RUNS, heap=None, timeout=None, docker_context=None, docker_image=IMAGE):
+def run_one(
+    cfg, runs_dir=RUNS, heap=None, timeout=None, docker_context=None, docker_image=IMAGE
+):
     rid = cfg["run_id"]
     d = runs_dir / rid
     rel = d.relative_to(ROOT).as_posix()
@@ -29,19 +31,30 @@ def run_one(cfg, runs_dir=RUNS, heap=None, timeout=None, docker_context=None, do
         return rid, "skip"
     d.mkdir(parents=True, exist_ok=True)
     csc, meta = gen_csc.build(cfg)
-    meta["execution_environment"] = {"docker_context": docker_context,
-                                     "docker_image": docker_image}
+    meta["execution_environment"] = {
+        "docker_context": docker_context,
+        "docker_image": docker_image,
+    }
     (d / "sim.csc").write_text(csc)
     (d / "meta.json").write_text(json.dumps(meta, indent=1))
     docker = ["docker"] + (["--context", docker_context] if docker_context else [])
-    cmd = docker + ["run", "--rm", "--name", f"twinrpl-{rid}",
-           "-v", f"{CONTIKI}:/home/user/contiki-ng",
-           "-v", f"{ROOT}:/home/user/project",
-           docker_image, "bash", "-c",
-           "cd /home/user/contiki-ng/tools/cooja && "
-           f"java {'-Xmx' + heap + ' ' if heap else ''}-jar build/libs/cooja-full.jar --no-gui "
-           f"--logdir=/home/user/project/{rel} "
-           f"/home/user/project/{rel}/sim.csc > /home/user/project/{rel}/cooja.out 2>&1"]
+    cmd = docker + [
+        "run",
+        "--rm",
+        "--name",
+        f"twinrpl-{rid}",
+        "-v",
+        f"{CONTIKI}:/home/user/contiki-ng",
+        "-v",
+        f"{ROOT}:/home/user/project",
+        docker_image,
+        "bash",
+        "-c",
+        "cd /home/user/contiki-ng/tools/cooja && "
+        f"java {'-Xmx' + heap + ' ' if heap else ''}-jar build/libs/cooja-full.jar --no-gui "
+        f"--logdir=/home/user/project/{rel} "
+        f"/home/user/project/{rel}/sim.csc > /home/user/project/{rel}/cooja.out 2>&1",
+    ]
     t0 = time.time()
     try:
         subprocess.run(cmd, timeout=timeout)
@@ -85,11 +98,24 @@ def main():
     ap.add_argument("plans", nargs="+")
     ap.add_argument("--workers", type=int, default=12)
     ap.add_argument("--heap", help="Java heap for each Cooja, for example 4g")
-    ap.add_argument("--timeout", type=float, help="seconds before a run is stopped and marked timeout")
-    ap.add_argument("--runs-dir", type=Path, default=RUNS,
-                    help="output directory inside the project (default: output/runs)")
-    ap.add_argument("--docker-context", help="explicit engine context without changing the global selection")
-    ap.add_argument("--docker-image", default=IMAGE, help="image name or immutable image ID")
+    ap.add_argument(
+        "--timeout",
+        type=float,
+        help="seconds before a run is stopped and marked timeout",
+    )
+    ap.add_argument(
+        "--runs-dir",
+        type=Path,
+        default=RUNS,
+        help="output directory inside the project (default: output/runs)",
+    )
+    ap.add_argument(
+        "--docker-context",
+        help="explicit engine context without changing the global selection",
+    )
+    ap.add_argument(
+        "--docker-image", default=IMAGE, help="image name or immutable image ID"
+    )
     a = ap.parse_args()
     runs_dir = a.runs_dir.resolve()
     runs_dir.relative_to(ROOT)
@@ -106,8 +132,18 @@ def main():
     t0 = time.time()
     failed = 0
     with ThreadPoolExecutor(max_workers=a.workers) as ex:
-        futs = {ex.submit(run_one, c, runs_dir, a.heap, a.timeout,
-                         a.docker_context, a.docker_image): c for c in todo}
+        futs = {
+            ex.submit(
+                run_one,
+                c,
+                runs_dir,
+                a.heap,
+                a.timeout,
+                a.docker_context,
+                a.docker_image,
+            ): c
+            for c in todo
+        }
         for fut in as_completed(futs):
             rid, status = fut.result()
             failed += status not in ("ok", "skip")
@@ -115,8 +151,10 @@ def main():
             if done % 5 == 0:
                 sweep_temp_libs()
             rate = (time.time() - t0) / done
-            print(f"[{done}/{len(todo)}] {status} {rid} eta {rate * (len(todo) - done) / 60:.1f} min",
-                  flush=True)
+            print(
+                f"[{done}/{len(todo)}] {status} {rid} eta {rate * (len(todo) - done) / 60:.1f} min",
+                flush=True,
+            )
     sweep_temp_libs()
     if failed:
         raise SystemExit(f"{failed} runs failed; inspect their cooja.out files")

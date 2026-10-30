@@ -177,33 +177,50 @@ If Docker Desktop stops responding (`docker info` hangs), restart it with
 `systemctl --user restart docker-desktop`, delete run folders that have no
 `result.json`, and start the runner again.
 
-### 4.10 Scale study (500 and 1000 nodes)
+### 4.10 Scale condition (500 and 1000 nodes): not part of the reported results
 
-The current `plan.py` generates large-network runs with a 60 s application
-interval, matching the large-network firmware, and plans six seeds at 1000
-nodes. The two corrected 15-minute pilot runs are in
-`output/preliminary/scale_checks/`. The initial combined-attack pilots joined
-216/374 and 243/749 legitimate nodes. Follow-up 20-hop diagnostics joined
-225/374 and 256/749; a matched no-attack 500-node control joined 300/499 and
-achieved only 4.45% of expected network-wide upward delivery. Increasing the
-maximum rank did not resolve reachability. **Do not start the 114-run scale
-matrix below until route coverage is fixed and validated.** The following commands
-are the run procedure after that gate is passed.
+The proposal planned the comparison at 500 and 1000 nodes as well. It was not
+completed: the attack-free pilots at those sizes never formed stable
+bidirectional routes, so no defense comparison exists at those sizes and every
+reported result is at 30 nodes. What exists:
 
-Measure first, with few workers and a larger Java heap:
+* Firmware and generator support (16-bit node IDs, sorted neighbor slots,
+  constant-density placement, enlarged root route table and queue) and the
+  large-network variants built by `scripts/build_variants.py`
+  (`v_root_d*_big`, `v_cli_d*_m*_p60`, `v_atk_a3_i3_n{500,1000}_p60`).
+* The plans written by `scripts/plan.py`: `output/plan/timing.jsonl` (one
+  15-minute run at 500 and at 1000 nodes) and `output/plan/scale.jsonl` (the
+  114-run comparison with a 60 s application interval). `scale.jsonl` was never
+  run.
+* The first pilots in `output/preliminary/scale_checks/` (216/374 and 243/749
+  legitimate nodes joined in the combined-attack pilots; a matched no-attack
+  500-node control joined 300/499 nodes and reached 4.45% of the expected
+  network-wide upward delivery).
+* The eight gated attack-free pilots of the second campaign
+  (`output/experiments/journal_extension/scale_diagnostics.jsonl`, seeds 1 and
+  2, native DIS periods 10 and 60 s) and their gate result
+  (`analysis/scale_gate.json`: no setting passed).
+* The traces and follow-up diagnostics in `output/diagnostics/`, documented in
+  `SCALE_FAILURE_DIAGNOSIS.md`, `SCALE_LOAD_SCREENING.md`,
+  `SCALE500_DIRECTION_SCREENING.md` and `SCALE500_ROUTING_REPAIR.md`, with the
+  scripts indexed in `CODE_AND_DATA.md`, section 5.
+
+To repeat the pilots, measure first with few workers and a larger Java heap:
 
 ```bash
 python3 scripts/run_matrix.py output/plan/timing.jsonl --workers 2 --heap 4g
 ```
 
-Then, with the number of workers chosen from the memory and time of the timing
-runs:
+The comparison itself would be:
 
 ```bash
 python3 scripts/run_matrix.py output/plan/scale.jsonl --workers 3 --heap 4g --timeout 43200
 ```
 
 A run that exceeds `--timeout` seconds is stopped and reported as `timeout`.
+Running `scale.jsonl` before the routing failure is resolved produces networks
+in which most nodes never become reachable, and its output would not be
+comparable with the 30-node results.
 
 ### 4.11 Analysis, tables and figures
 

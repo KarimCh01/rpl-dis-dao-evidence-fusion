@@ -28,7 +28,12 @@ def load_plans():
 
 
 def same(x, y):
-    if isinstance(x, float) and isinstance(y, float) and math.isnan(x) and math.isnan(y):
+    if (
+        isinstance(x, float)
+        and isinstance(y, float)
+        and math.isnan(x)
+        and math.isnan(y)
+    ):
         return True
     return x == y
 

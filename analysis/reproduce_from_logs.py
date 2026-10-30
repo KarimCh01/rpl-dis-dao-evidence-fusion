@@ -17,9 +17,16 @@ RUNS = ROOT / "output" / "runs"
 RESULTS = ROOT / "output" / "results"
 REPRO = ROOT / "output" / "repro"
 MANIFEST = ROOT / "output" / "MANIFEST.sha256"
-COMPARED = ["all_runs.csv", "summary_by_condition.csv", "stats_rq2_combined_vs_single.csv",
-            "stats_rq3_rq4_proposed_vs_baselines.csv", "reproduction_vs_paper.csv",
-            "sensitivity_fdm_window.csv", "resilience.csv", "summary.md"]
+COMPARED = [
+    "all_runs.csv",
+    "summary_by_condition.csv",
+    "stats_rq2_combined_vs_single.csv",
+    "stats_rq3_rq4_proposed_vs_baselines.csv",
+    "reproduction_vs_paper.csv",
+    "sensitivity_fdm_window.csv",
+    "resilience.csv",
+    "summary.md",
+]
 
 
 def sha256(path):
@@ -36,7 +43,10 @@ def logs():
 
 def manifest_lines():
     lines = [f"{sha256(f)}  {f.relative_to(ROOT).as_posix()}" for f in logs()]
-    lines += [f"{sha256(RESULTS / n)}  {(RESULTS / n).relative_to(ROOT).as_posix()}" for n in COMPARED]
+    lines += [
+        f"{sha256(RESULTS / n)}  {(RESULTS / n).relative_to(ROOT).as_posix()}"
+        for n in COMPARED
+    ]
     return lines
 
 
@@ -52,8 +62,11 @@ def reparse(log):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--write-manifest", action="store_true",
-                    help="record the hashes of the logs and of the published result files")
+    ap.add_argument(
+        "--write-manifest",
+        action="store_true",
+        help="record the hashes of the logs and of the published result files",
+    )
     ap.add_argument("--workers", type=int, default=4)
     a = ap.parse_args()
 
@@ -67,7 +80,9 @@ def main():
         digest, name = line.split("  ", 1)
         expected[name] = digest
 
-    bad_logs = [f for f in logs() if expected.get(f.relative_to(ROOT).as_posix()) != sha256(f)]
+    bad_logs = [
+        f for f in logs() if expected.get(f.relative_to(ROOT).as_posix()) != sha256(f)
+    ]
     print(f"input logs checked: {len(logs())}, changed or unknown: {len(bad_logs)}")
     for f in bad_logs[:10]:
         print(f"  {f.relative_to(ROOT)}")
@@ -79,11 +94,20 @@ def main():
         n = len(pool.map(reparse, logs(), chunksize=8))
     print(f"re-parsed {n} runs from their logs into {REPRO.relative_to(ROOT)}/runs")
 
-    env = dict(os.environ, AGG_RUNS=str(REPRO / "runs"), AGG_RESULTS=str(REPRO / "results"),
-               AGG_FIGURES=str(REPRO / "figures"))
+    env = dict(
+        os.environ,
+        AGG_RUNS=str(REPRO / "runs"),
+        AGG_RESULTS=str(REPRO / "results"),
+        AGG_FIGURES=str(REPRO / "figures"),
+    )
     for script in ("aggregate.py", "metrics.py"):
-        subprocess.run([sys.executable, str(ROOT / "analysis" / script)], env=env, check=True,
-                       cwd=ROOT, stdout=subprocess.DEVNULL)
+        subprocess.run(
+            [sys.executable, str(ROOT / "analysis" / script)],
+            env=env,
+            check=True,
+            cwd=ROOT,
+            stdout=subprocess.DEVNULL,
+        )
 
     matched = 0
     for name in COMPARED:

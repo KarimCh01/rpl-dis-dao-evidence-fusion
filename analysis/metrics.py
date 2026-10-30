@@ -18,9 +18,25 @@ PRE_FROM_S = 120
 SMOOTH_MIN = 3
 LEVEL = 0.9
 STABLE_MIN = 5
-FIELDS = ["run_id", "seed", "nodes", "attackers", "attack_mode", "dis_interval", "defense", "mobile_frac",
-          "fdm_window", "reference", "reference_exact", "e_attacked", "e_reference", "ari",
-          "pre_level", "drt_s", "drt_censored"]
+FIELDS = [
+    "run_id",
+    "seed",
+    "nodes",
+    "attackers",
+    "attack_mode",
+    "dis_interval",
+    "defense",
+    "mobile_frac",
+    "fdm_window",
+    "reference",
+    "reference_exact",
+    "e_attacked",
+    "e_reference",
+    "ari",
+    "pre_level",
+    "drt_s",
+    "drt_censored",
+]
 
 
 def round_trips(run_dir):
@@ -46,7 +62,9 @@ def round_trips(run_dir):
 
 
 def count(tx, echoed, nodes, t_from):
-    return sum(1 for k, t in tx.items() if k[0] in nodes and t >= t_from and k in echoed)
+    return sum(
+        1 for k, t in tx.items() if k[0] in nodes and t >= t_from and k in echoed
+    )
 
 
 def recovery(tx, echoed, nodes, duration_s, send_s=SEND_S):
@@ -57,9 +75,12 @@ def recovery(tx, echoed, nodes, duration_s, send_s=SEND_S):
             done[int(t // 60)] += 1
     expected = len(nodes) * 60 / send_s
     frac = [d / expected for d in done]
-    smooth = [sum(frac[max(0, m - SMOOTH_MIN + 1):m + 1]) / (m - max(0, m - SMOOTH_MIN + 1) + 1)
-              for m in range(minutes)]
-    pre = frac[PRE_FROM_S // 60:ATTACK_START_S // 60]
+    smooth = [
+        sum(frac[max(0, m - SMOOTH_MIN + 1) : m + 1])
+        / (m - max(0, m - SMOOTH_MIN + 1) + 1)
+        for m in range(minutes)
+    ]
+    pre = frac[PRE_FROM_S // 60 : ATTACK_START_S // 60]
     pre_level = sum(pre) / len(pre) if pre else float("nan")
     limit = LEVEL * pre_level
     start = ATTACK_START_S // 60
@@ -93,20 +114,38 @@ def evaluate(run_dir):
     legit = {i for i in range(2, meta["nodes"] + 1) if i not in attackers}
     e_att = count(tx, echoed, legit, ATTACK_START_S)
     e_ref = count(ref_tx, ref_echoed, legit, ATTACK_START_S)
-    pre_level, drt, censored = recovery(tx, echoed, legit, meta["duration_min"] * 60, meta.get("send_s", SEND_S))
-    exact = meta["mobile_frac"] == 0 or set(meta.get("mobile_ids", [])) == set(ref_meta.get("mobile_ids", []))
-    return {"run_id": meta["run_id"], "seed": meta["seed"], "nodes": meta["nodes"], "attackers": meta["attackers"],
-            "attack_mode": meta["attack_mode"], "dis_interval": meta["dis_interval"],
-            "defense": meta["defense"], "mobile_frac": round(meta["mobile_frac"], 1),
-            "fdm_window": meta.get("fdm_window", 10), "reference": ref_meta["run_id"],
-            "reference_exact": int(exact), "e_attacked": e_att, "e_reference": e_ref,
-            "ari": e_att / e_ref if e_ref else float("nan"),
-            "pre_level": round(pre_level, 4), "drt_s": drt, "drt_censored": int(censored)}
+    pre_level, drt, censored = recovery(
+        tx, echoed, legit, meta["duration_min"] * 60, meta.get("send_s", SEND_S)
+    )
+    exact = meta["mobile_frac"] == 0 or set(meta.get("mobile_ids", [])) == set(
+        ref_meta.get("mobile_ids", [])
+    )
+    return {
+        "run_id": meta["run_id"],
+        "seed": meta["seed"],
+        "nodes": meta["nodes"],
+        "attackers": meta["attackers"],
+        "attack_mode": meta["attack_mode"],
+        "dis_interval": meta["dis_interval"],
+        "defense": meta["defense"],
+        "mobile_frac": round(meta["mobile_frac"], 1),
+        "fdm_window": meta.get("fdm_window", 10),
+        "reference": ref_meta["run_id"],
+        "reference_exact": int(exact),
+        "e_attacked": e_att,
+        "e_reference": e_ref,
+        "ari": e_att / e_ref if e_ref else float("nan"),
+        "pre_level": round(pre_level, 4),
+        "drt_s": drt,
+        "drt_censored": int(censored),
+    }
 
 
 def main():
     runs = sorted(glob.glob(str(RUNS / "*" / "meta.json")))
-    dirs = [str(Path(r).parent) for r in runs if (Path(r).parent / "result.json").exists()]
+    dirs = [
+        str(Path(r).parent) for r in runs if (Path(r).parent / "result.json").exists()
+    ]
     workers = int(sys.argv[1]) if len(sys.argv) > 1 else 4
     with Pool(workers) as pool:
         rows = [r for r in pool.map(evaluate, dirs, chunksize=4) if r is not None]
@@ -116,8 +155,16 @@ def main():
         w = csv.DictWriter(f, fieldnames=FIELDS)
         w.writeheader()
         for r in rows:
-            w.writerow({k: (f"{r[k]:.6f}" if isinstance(r[k], float) and not math.isnan(r[k]) else r[k])
-                        for k in FIELDS})
+            w.writerow(
+                {
+                    k: (
+                        f"{r[k]:.6f}"
+                        if isinstance(r[k], float) and not math.isnan(r[k])
+                        else r[k]
+                    )
+                    for k in FIELDS
+                }
+            )
     print(f"{len(rows)} runs written to {OUT / 'resilience.csv'}")
 
 

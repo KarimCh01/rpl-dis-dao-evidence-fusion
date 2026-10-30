@@ -10,5 +10,3 @@
 | scale_feasibility | not_established | 8/8 completed; full scale comparisons require every matched pilot for a setting to pass |
 
 Attack activation is scheduled 300 seconds after each mote boots. Injection attempts occur later according to the DIS/DAO timer and route availability. Delay analysis uses the scheduled 300-second origin for consistency with the existing campaign; the traced attempts expose that distinction.
-
-Physical-twin agreement, MQTT maintenance delivery, and failed physical-control writes do not apply to this simulator. No physical-plant, fault-diagnosis, federation, or lifelong-forgetting validation is claimed.

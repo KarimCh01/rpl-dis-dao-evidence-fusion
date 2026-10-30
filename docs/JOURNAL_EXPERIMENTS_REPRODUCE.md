@@ -15,9 +15,9 @@ The completion service waits for the resumed robustness service, resumes any
 missing robustness runs, then executes the ablation, timing, profiling,
 radio-loss, and scale-diagnostic stages. Existing completed results are skipped.
 Analysis and status tables are regenerated after each stage. The service records
-failure explicitly; a failed stage is not marked complete. Simulations continue
-while this tool/chat session is closed, provided the computer remains awake and
-the user session/Docker remain available. These transient services do not promise
+failure explicitly; a failed stage is not marked complete. The services run
+unattended, provided the computer remains awake and the user's systemd instance
+and Docker remain available. These transient services do not promise
 automatic recovery after reboot; the saved results support manual resumption.
 
 Completed results are written atomically by the current runner. The first
@@ -86,8 +86,8 @@ replacing the archived logs. Completed runs in the selected directory are
 skipped, allowing interruption/resumption. Full reruns take hours; table/figure
 reproduction from saved logs does not require rerunning simulations.
 
-See `TWINGUARD_TO_AEF_RPL.md` for the scientific rationale and explicit boundaries
-on physical twins, federation, lifelong learning, and target-hardware claims.
+The design of each study, the analysis rules and the scale gate are summarized
+in `CODE_AND_DATA.md`, section 4.
 
 `PROVENANCE.json` records hashes and compile definitions of the selected
 prebuilt libraries, current source hashes, the Contiki commit and hook patch,

@@ -7,9 +7,9 @@ DIS flooding attacks in RPL-based IoT networks," Ad Hoc Networks 179 (2025)
 DAO-consistency evidence source, selective DAO repair, and an on-node tabular
 Q-learning decision layer.
 
-* Full paper: `manuscript_full.tex` / `manuscript_full.pdf` (IEEE two-column, 46 DOI-checked references)
+* Full paper: `manuscript_full.tex` / `manuscript_full.pdf` (IEEE two-column; 46 references, of which the 44 with a DOI were resolved against Crossref and the registered titles matched, see `docs/DOI_AUDIT.md`)
 * Introduction and literature review course submission: `manuscript.tex` / `manuscript.pdf`
-* For the supervisor: [`docs/SUPERVISOR_README.md`](docs/SUPERVISOR_README.md) (regenerate every result from the stored logs)
+* Regenerate every result from the stored logs: [`docs/REGENERATE_FROM_LOGS.md`](docs/REGENERATE_FROM_LOGS.md)
 * Proposal promises and where each is delivered: [`docs/PROPOSAL_CHECKLIST.md`](docs/PROPOSAL_CHECKLIST.md)
 * What was built and why: `docs/WALKTHROUGH.md`
 * Every source file, log line and data column: `docs/CODE_AND_DATA.md`
@@ -18,10 +18,10 @@ Q-learning decision layer.
 
 ## Study at a glance
 
-* 2720 simulation runs of 30-node networks (60 simulated minutes each, attack onset at 300 s), stored with their raw logs:
-  * 1960 runs in the main campaign (seeds 1 to 10);
-  * 20 benign mobile runs on fresh seeds (11 to 20);
-  * 740 runs in a second campaign on fresh seeds (21 to 45): attack rate, ablations, reception loss, CPU profiling.
+* 2720 simulation runs stored with their raw logs. 2712 of them are 30-node networks (2710 of 60 simulated minutes with attack onset at 300 s, plus two 10-minute injection-trace runs) and 8 are attack-free 15-minute feasibility pilots at 500 and 1000 nodes:
+  * 1960 runs in the main campaign (seeds 1 to 10), all 30 nodes;
+  * 20 benign mobile runs on fresh seeds (11 to 20), all 30 nodes;
+  * 740 runs in a second campaign on fresh seeds (21 to 45): attack rate, ablations, matched references, reception loss, CPU profiling and the two trace runs (732 runs at 30 nodes), plus the 8 scale pilots (seeds 1 and 2), which only served the scale gate and are not part of the reported comparison.
 * Hypothesis decisions, using the decision rules fixed in the proposal (`output/hypotheses/evidence.json`):
 
 | Hypothesis | Decision |
@@ -44,8 +44,10 @@ make theory             # numerical checks of the mathematical analysis
 
 `make reproduce` ends with `ALL 8 OUTPUT FILES MATCH`. `make reproduce-paper`
 ends with `COMPLETE` and writes `output/paper_reproduction/report.json`. Neither
-runs Cooja or Docker. Details and expected outputs are in
-[`docs/SUPERVISOR_README.md`](docs/SUPERVISOR_README.md).
+runs Cooja or Docker. `make reproduce-paper` also writes one log per step and
+`report.json` into `output/paper_reproduction/`; these are produced locally and
+are not tracked. Details and expected outputs are in
+[`docs/REGENERATE_FROM_LOGS.md`](docs/REGENERATE_FROM_LOGS.md).
 
 ## Research questions and where each one is answered
 
@@ -83,6 +85,20 @@ runs Cooja or Docker. Details and expected outputs are in
 | `output/experiments/journal_extension/` | Second campaign: runs, analysis, figures. |
 | `output/results/`, `output/hypotheses/`, `output/figures/` | Result tables, hypothesis evidence, figures. |
 | `output/diagnostics/`, `output/preliminary/` | Engineering checks and the 500/1000-node feasibility pilots (not part of the reported comparison). |
+
+### Firmware defense identifiers
+
+The defense is selected at compile time with `DEFENSE=0..7`, the `DEF_*`
+constants of `firmware/defense.h`. The two learning defenses are selected by
+the macros `DEF_AEF_RL` (defense 6, the first learning version) and
+`DEF_AEF_RL2` (defense 7, the final AEF-RPL evaluated in the paper). These are
+the names the firmware was built with. They are kept unchanged, rather than
+renamed to match the paper's terminology, because the provenance records of
+the stored runs (`output/experiments/journal_extension/PROVENANCE.json` with
+its `current_source_sha256` entries, the `source_snapshot/SHA256SUMS` of the
+second campaign and the hashes of the built variants) are computed over the
+firmware source, and a rename would break the link between the archived runs
+and the code that produced them.
 
 ## Experimental conditions
 

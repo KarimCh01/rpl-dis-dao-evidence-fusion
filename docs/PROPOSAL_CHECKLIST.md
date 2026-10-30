@@ -1,7 +1,7 @@
 # Proposal checklist: what was promised and where it is
 
 Each item from the research proposal (submitted 2026-10-08) and from the
-supervisor's feedback, with its status and the file or paper section that
+proposal's final revision, with its status and the file or paper section that
 shows it.
 
 ## Objectives
@@ -16,14 +16,14 @@ shows it.
 | O6 On-node Q-learning, math before simulation | Done. Two rules were added to the proposed learner (explore only with evidence; release after two calm windows), stated in paper Sec. IV-F; the proposal-exact version is kept as defense 6 | `firmware/rl.c`; `analysis/check_theory.py` (`make theory`: ALL HOLD); paper Sec. IV-F, V |
 | O7 Attack Resilience Index and recovery time; 30, 500 and 1000 nodes | ARI and DRT done at 30 nodes; 500 and 1000 nodes not done (see below) | `analysis/metrics.py`; `output/results/resilience.csv`; paper Sec. V-E |
 
-## Supervisor feedback (2026-10-09)
+## Items added in the proposal's final revision (2026-10-09)
 
-| Request | Status |
+| Item | Status |
 |---|---|
 | Intelligence on each node, math first then simulation | Done (O6) |
 | Our own metric | Done: ARI and DRT (O7) |
 | Fourth gap about intelligence | Done: Gap 4, paper Sec. II-E |
-| Analysis reproducible from logs with identical results | Done: `make reproduce` (ALL 8 OUTPUT FILES MATCH) and `make reproduce-paper` (COMPLETE); see `docs/SUPERVISOR_README.md` |
+| Analysis reproducible from logs with identical results | Done: `make reproduce` (ALL 8 OUTPUT FILES MATCH) and `make reproduce-paper` (COMPLETE); see `docs/REGENERATE_FROM_LOGS.md` |
 | Research questions that are not yes/no | Done: RQ1 to RQ5, paper Sec. I |
 | 500 to 1000 nodes | Not done. Attack-free pilots at 500 and 1000 nodes did not form stable bidirectional routes in the simulated stack, so the comparison was carried out at 30 nodes. Pilots are in `output/diagnostics/`, analysis in `docs/SCALE_FAILURE_DIAGNOSIS.md`. Stated in paper Sec. IX. |
 

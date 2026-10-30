@@ -53,4 +53,4 @@ compressed raw logs are retained. Re-running the driver skips saved results:
 
 Firmware traffic switches default to the existing behavior when omitted.
 Archived binaries and logs are not rebuilt or modified by this campaign.
-The computer must remain awake, with Docker and the user session available.
+The computer must remain awake, with Docker and the user's systemd instance available.

@@ -7,8 +7,18 @@ ROOT = Path(__file__).resolve().parents[1]
 PLANS = ROOT / "output" / "plan"
 
 
-def cfg(mode, attackers, interval, mobile, defense, seed, duration=60, nodes=30, send_s=10,
-        rank_hops=None):
+def cfg(
+    mode,
+    attackers,
+    interval,
+    mobile,
+    defense,
+    seed,
+    duration=60,
+    nodes=30,
+    send_s=10,
+    rank_hops=None,
+):
     rid = f"m{mode}_k{attackers}_i{interval}_mob{int(round(mobile * 10))}_d{defense}_s{seed}"
     if nodes != 30:
         rid += f"_n{nodes}"
@@ -18,9 +28,17 @@ def cfg(mode, attackers, interval, mobile, defense, seed, duration=60, nodes=30,
         rid += f"_p{send_s}"
     if rank_hops is not None:
         rid += f"_r{rank_hops}"
-    c = {"run_id": rid, "seed": seed, "nodes": nodes, "attackers": attackers,
-         "attack_mode": mode, "dis_interval": interval, "defense": defense,
-         "mobile_frac": mobile, "duration_min": duration}
+    c = {
+        "run_id": rid,
+        "seed": seed,
+        "nodes": nodes,
+        "attackers": attackers,
+        "attack_mode": mode,
+        "dis_interval": interval,
+        "defense": defense,
+        "mobile_frac": mobile,
+        "duration_min": duration,
+    }
     if send_s != 10:
         c["send_s"] = send_s
     if rank_hops is not None:
@@ -97,8 +115,21 @@ def scale_attackers(nodes):
 
 
 def timing():
-    return [cfg(3, scale_attackers(n), 3, 0.0, 7, 1, duration=15, nodes=n,
-                send_s=SCALE_SEND, rank_hops=SCALE_RANK_HOPS) for n in (500, 1000)]
+    return [
+        cfg(
+            3,
+            scale_attackers(n),
+            3,
+            0.0,
+            7,
+            1,
+            duration=15,
+            nodes=n,
+            send_s=SCALE_SEND,
+            rank_hops=SCALE_RANK_HOPS,
+        )
+        for n in (500, 1000)
+    ]
 
 
 def scale(seeds_500, seeds_1000):
@@ -106,23 +137,71 @@ def scale(seeds_500, seeds_1000):
     k = scale_attackers(500)
     for mob in (0.0, 0.3):
         for s in seeds_500:
-            out += [cfg(3, k, 3, mob, d, s, nodes=500, send_s=SCALE_SEND,
-                        rank_hops=SCALE_RANK_HOPS)
-                    for d in (0, 3, 4, 5, 7)]
-            out.append(cfg(0, k, 3, mob, 0, s, nodes=500, send_s=SCALE_SEND,
-                           rank_hops=SCALE_RANK_HOPS))
+            out += [
+                cfg(
+                    3,
+                    k,
+                    3,
+                    mob,
+                    d,
+                    s,
+                    nodes=500,
+                    send_s=SCALE_SEND,
+                    rank_hops=SCALE_RANK_HOPS,
+                )
+                for d in (0, 3, 4, 5, 7)
+            ]
+            out.append(
+                cfg(
+                    0,
+                    k,
+                    3,
+                    mob,
+                    0,
+                    s,
+                    nodes=500,
+                    send_s=SCALE_SEND,
+                    rank_hops=SCALE_RANK_HOPS,
+                )
+            )
     k = scale_attackers(1000)
     for s in seeds_1000:
-        out += [cfg(3, k, 3, 0.0, d, s, nodes=1000, send_s=SCALE_SEND,
-                    rank_hops=SCALE_RANK_HOPS)
-                for d in (3, 7)]
-        out.append(cfg(0, k, 3, 0.0, 0, s, nodes=1000, send_s=SCALE_SEND,
-                       rank_hops=SCALE_RANK_HOPS))
+        out += [
+            cfg(
+                3,
+                k,
+                3,
+                0.0,
+                d,
+                s,
+                nodes=1000,
+                send_s=SCALE_SEND,
+                rank_hops=SCALE_RANK_HOPS,
+            )
+            for d in (3, 7)
+        ]
+        out.append(
+            cfg(
+                0,
+                k,
+                3,
+                0.0,
+                0,
+                s,
+                nodes=1000,
+                send_s=SCALE_SEND,
+                rank_hops=SCALE_RANK_HOPS,
+            )
+        )
     return out
 
 
 def reference(seeds):
-    return [cfg(0, k, 3, 0.3, 0, s) for k in [attackers_for(p) for p in MALICIOUS_PCT] for s in seeds]
+    return [
+        cfg(0, k, 3, 0.3, 0, s)
+        for k in [attackers_for(p) for p in MALICIOUS_PCT]
+        for s in seeds
+    ]
 
 
 def sensitivity(seeds):

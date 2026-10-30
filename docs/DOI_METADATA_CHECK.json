@@ -1,287 +1,322 @@
 {
-  "checked_utc": "2026-10-20T10:12:49.873378+00:00",
+  "checked_utc": "2026-10-30T09:40:07+00:00",
+  "source": "full_paper/sections/references.tex",
+  "method": "Each DOI was resolved through the Crossref REST API (https://api.crossref.org/works/<doi>). The registered title was compared with the cited title by word overlap, and the registered year, volume, issue, pages and author list were compared with the entry.",
   "records": [
     {
+      "n": 1,
       "key": "rfc6550",
       "doi": "10.17487/RFC6550",
+      "kind": "rfc",
       "status": "metadata_retrieved",
+      "bib_title": "RPL: IPv6 Routing Protocol for Low-Power and Lossy Networks,",
+      "bib_year": 2012,
       "title": [
         "RPL: IPv6 Routing Protocol for Low-Power and Lossy Networks"
       ],
       "authors": [
         {
           "given": "A.",
-          "family": "Brandt",
-          "sequence": "additional",
-          "affiliation": [],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
+          "family": "Brandt"
         },
         {
           "given": "J.",
-          "family": "Hui",
-          "sequence": "additional",
-          "affiliation": [],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
+          "family": "Hui"
         },
         {
           "given": "R.",
-          "family": "Kelsey",
-          "sequence": "additional",
-          "affiliation": [],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
+          "family": "Kelsey"
         },
         {
           "given": "P.",
-          "family": "Levis",
-          "sequence": "additional",
-          "affiliation": [],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
+          "family": "Levis"
         },
         {
           "given": "K.",
-          "family": "Pister",
-          "sequence": "additional",
-          "affiliation": [],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
+          "family": "Pister"
         },
         {
           "given": "R.",
-          "family": "Struik",
-          "sequence": "additional",
-          "affiliation": [],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
+          "family": "Struik"
         },
         {
-          "name": "JP. Vasseur",
-          "sequence": "additional",
-          "affiliation": [],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
+          "name": "JP. Vasseur"
         },
         {
           "given": "R.",
-          "family": "Alexander",
-          "sequence": "additional",
-          "affiliation": [],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
+          "family": "Alexander"
         }
       ],
       "container": [],
+      "publisher": "RFC Editor",
+      "type": "report",
       "volume": null,
       "issue": null,
       "page": null,
       "article_number": null,
-      "published": {
+      "issued": {
         "date-parts": [
           [
             2012,
             3
           ]
         ]
-      }
+      },
+      "published_print": null,
+      "published_online": {
+        "date-parts": [
+          [
+            2012,
+            3
+          ]
+        ]
+      },
+      "title_overlap": 1.0,
+      "year_match": true
     },
     {
+      "n": 2,
       "key": "albinali2024",
       "doi": "10.1109/TNSM.2024.3386468",
+      "kind": "article",
       "status": "metadata_retrieved",
+      "bib_title": "Toward RPL attacks and mitigation taxonomy: Systematic literature review approach,",
+      "bib_year": 2024,
       "title": [
         "Toward RPL Attacks and Mitigation Taxonomy: Systematic Literature Review Approach"
       ],
       "authors": [
         {
-          "ORCID": "https://orcid.org/0000-0001-6752-6478",
-          "authenticated-orcid": false,
           "given": "Hussah",
-          "family": "Albinali",
-          "sequence": "first",
-          "affiliation": [
-            {
-              "name": "Information and Computer Science Department, King Fahd University of Petroleum and Minerals, Dhahran, Saudi Arabia"
-            }
-          ],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
+          "family": "Albinali"
         },
         {
-          "ORCID": "https://orcid.org/0000-0001-9712-439X",
-          "authenticated-orcid": false,
           "given": "Farag",
-          "family": "Azzedin",
-          "sequence": "additional",
-          "affiliation": [
-            {
-              "name": "Information and Computer Science Department and the Interdisciplinary Research Center for Intelligent Secure Systems, King Fahd University of Petroleum and Minerals, Dhahran, Saudi Arabia"
-            }
-          ],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
+          "family": "Azzedin"
         }
       ],
       "container": [
         "IEEE Transactions on Network and Service Management"
       ],
+      "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+      "type": "journal-article",
       "volume": "21",
       "issue": "5",
       "page": "5215-5238",
       "article_number": null,
-      "published": {
+      "issued": {
         "date-parts": [
           [
             2024,
             10
           ]
         ]
-      }
+      },
+      "published_print": {
+        "date-parts": [
+          [
+            2024,
+            10
+          ]
+        ]
+      },
+      "published_online": null,
+      "title_overlap": 1.0,
+      "year_match": true
     },
     {
+      "n": 3,
+      "key": "raoof2019",
+      "doi": "10.1109/COMST.2018.2885894",
+      "kind": "article",
+      "status": "metadata_retrieved",
+      "bib_title": "Routing attacks and mitigation methods for RPL-based Internet of Things,",
+      "bib_year": 2019,
+      "title": [
+        "Routing Attacks and Mitigation Methods for RPL-Based Internet of Things"
+      ],
+      "authors": [
+        {
+          "given": "Ahmed",
+          "family": "Raoof"
+        },
+        {
+          "given": "Ashraf",
+          "family": "Matrawy"
+        },
+        {
+          "given": "Chung-Horng",
+          "family": "Lung"
+        }
+      ],
+      "container": [
+        "IEEE Communications Surveys &amp; Tutorials"
+      ],
+      "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+      "type": "journal-article",
+      "volume": "21",
+      "issue": "2",
+      "page": "1582-1606",
+      "article_number": null,
+      "issued": {
+        "date-parts": [
+          [
+            2019
+          ]
+        ]
+      },
+      "published_print": {
+        "date-parts": [
+          [
+            2019
+          ]
+        ]
+      },
+      "published_online": null,
+      "title_overlap": 1.0,
+      "year_match": true
+    },
+    {
+      "n": 4,
+      "key": "rfc6206",
+      "doi": "10.17487/RFC6206",
+      "kind": "rfc",
+      "status": "metadata_retrieved",
+      "bib_title": "The Trickle algorithm,",
+      "bib_year": 2011,
+      "title": [
+        "The Trickle Algorithm"
+      ],
+      "authors": [
+        {
+          "given": "P.",
+          "family": "Levis"
+        },
+        {
+          "given": "T.",
+          "family": "Clausen"
+        },
+        {
+          "given": "J.",
+          "family": "Hui"
+        },
+        {
+          "given": "O.",
+          "family": "Gnawali"
+        },
+        {
+          "given": "J.",
+          "family": "Ko"
+        }
+      ],
+      "container": [],
+      "publisher": "RFC Editor",
+      "type": "report",
+      "volume": null,
+      "issue": null,
+      "page": null,
+      "article_number": null,
+      "issued": {
+        "date-parts": [
+          [
+            2011,
+            3
+          ]
+        ]
+      },
+      "published_print": null,
+      "published_online": {
+        "date-parts": [
+          [
+            2011,
+            3
+          ]
+        ]
+      },
+      "title_overlap": 1.0,
+      "year_match": true
+    },
+    {
+      "n": 5,
       "key": "rajasekar2022",
       "doi": "10.1016/j.micpro.2022.104675",
+      "kind": "article",
       "status": "metadata_retrieved",
+      "bib_title": "A study on impact of DIS flooding attack on RPL-based 6LowPAN network,",
+      "bib_year": 2022,
       "title": [
         "A Study on Impact of DIS flooding Attack on RPL-based 6LowPAN Network"
       ],
       "authors": [
         {
-          "ORCID": "https://orcid.org/0000-0002-6636-2974",
-          "authenticated-orcid": false,
           "given": "V.R.",
-          "family": "Rajasekar",
-          "sequence": "first",
-          "affiliation": [],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
+          "family": "Rajasekar"
         },
         {
           "given": "S.",
-          "family": "Rajkumar",
-          "sequence": "additional",
-          "affiliation": [],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
+          "family": "Rajkumar"
         }
       ],
       "container": [
         "Microprocessors and Microsystems"
       ],
+      "publisher": "Elsevier BV",
+      "type": "journal-article",
       "volume": "94",
       "issue": null,
       "page": "104675",
       "article_number": "104675",
-      "published": {
+      "issued": {
         "date-parts": [
           [
             2022,
             10
           ]
         ]
-      }
+      },
+      "published_print": {
+        "date-parts": [
+          [
+            2022,
+            10
+          ]
+        ]
+      },
+      "published_online": null,
+      "title_overlap": 1.0,
+      "year_match": true
     },
     {
+      "n": 6,
       "key": "vermaranga2020",
       "doi": "10.1002/ett.3802",
+      "kind": "article",
       "status": "metadata_retrieved",
+      "bib_title": "Mitigation of DIS flooding attacks in RPL-based 6LoWPAN networks,",
+      "bib_year": 2020,
       "title": [
-        "Mitigation of DIS flooding attacks in RPL\u2010based 6LoWPAN networks"
+        "Mitigation of DIS flooding attacks in RPL‐based 6LoWPAN networks"
       ],
       "authors": [
         {
-          "ORCID": "https://orcid.org/0000-0001-6687-4809",
-          "authenticated-orcid": false,
           "given": "Abhishek",
-          "family": "Verma",
-          "sequence": "first",
-          "affiliation": [
-            {
-              "name": "Department of Computer Engineering National Institute of Technology Kurukshetra  Haryana India"
-            }
-          ],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
+          "family": "Verma"
         },
         {
           "given": "Virender",
-          "family": "Ranga",
-          "sequence": "additional",
-          "affiliation": [
-            {
-              "name": "Department of Computer Engineering National Institute of Technology Kurukshetra  Haryana India"
-            }
-          ],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
+          "family": "Ranga"
         }
       ],
       "container": [
         "Transactions on Emerging Telecommunications Technologies"
       ],
+      "publisher": "Wiley",
+      "type": "journal-article",
       "volume": "31",
       "issue": "2",
       "page": null,
       "article_number": "e3802",
-      "published": {
+      "issued": {
         "date-parts": [
           [
             2019,
@@ -289,705 +324,848 @@
             13
           ]
         ]
-      }
+      },
+      "published_print": {
+        "date-parts": [
+          [
+            2020,
+            2
+          ]
+        ]
+      },
+      "published_online": {
+        "date-parts": [
+          [
+            2019,
+            12,
+            13
+          ]
+        ]
+      },
+      "title_overlap": 1.0,
+      "year_match": false
     },
     {
+      "n": 7,
       "key": "medjek2021",
       "doi": "10.1016/j.jisa.2021.102939",
+      "kind": "article",
       "status": "metadata_retrieved",
+      "bib_title": "Multicast DIS attack mitigation in RPL-based IoT-LLNs,",
+      "bib_year": 2021,
       "title": [
         "Multicast DIS attack mitigation in RPL-based IoT-LLNs"
       ],
       "authors": [
         {
-          "ORCID": "https://orcid.org/0000-0001-8581-0878",
-          "authenticated-orcid": false,
           "given": "Faiza",
-          "family": "Medjek",
-          "sequence": "first",
-          "affiliation": [],
-          "role": [
-            {
-              "role": "author",
-              "vocabulary": "crossref"
-            }
-          ]
+          "family": "Medjek"
         },
         {
           "given": "Djamel",
-          "family": "Tandjaoui",
-          "sequence": "additional",
-          "affiliation": [],
-          "role": [
-            {
-              "role": "author",
-              "vocabulary": "crossref"
-            }
-          ]
+          "family": "Tandjaoui"
         },
         {
           "given": "Nabil",
-          "family": "Djedjig",
-          "sequence": "additional",
-          "affiliation": [],
-          "role": [
-            {
-              "role": "author",
-              "vocabulary": "crossref"
-            }
-          ]
+          "family": "Djedjig"
         },
         {
           "given": "Imed",
-          "family": "Romdhani",
-          "sequence": "additional",
-          "affiliation": [],
-          "role": [
-            {
-              "role": "author",
-              "vocabulary": "crossref"
-            }
-          ]
+          "family": "Romdhani"
         }
       ],
       "container": [
         "Journal of Information Security and Applications"
       ],
+      "publisher": "Elsevier BV",
+      "type": "journal-article",
       "volume": "61",
       "issue": null,
       "page": "102939",
       "article_number": "102939",
-      "published": {
+      "issued": {
         "date-parts": [
           [
             2021,
             9
           ]
         ]
-      }
+      },
+      "published_print": {
+        "date-parts": [
+          [
+            2021,
+            9
+          ]
+        ]
+      },
+      "published_online": null,
+      "title_overlap": 1.0,
+      "year_match": true
     },
     {
+      "n": 8,
+      "key": "rfc6554",
+      "doi": "10.17487/RFC6554",
+      "kind": "rfc",
+      "status": "metadata_retrieved",
+      "bib_title": "An IPv6 routing header for source routes with the Routing Protocol for Low-Power and Lossy Networks (RPL),",
+      "bib_year": 2012,
+      "title": [
+        "An IPv6 Routing Header for Source Routes with the Routing Protocol for Low-Power and Lossy Networks (RPL)"
+      ],
+      "authors": [
+        {
+          "given": "J.",
+          "family": "Hui"
+        },
+        {
+          "name": "JP. Vasseur"
+        },
+        {
+          "given": "D.",
+          "family": "Culler"
+        },
+        {
+          "given": "V.",
+          "family": "Manral"
+        }
+      ],
+      "container": [],
+      "publisher": "RFC Editor",
+      "type": "report",
+      "volume": null,
+      "issue": null,
+      "page": null,
+      "article_number": null,
+      "issued": {
+        "date-parts": [
+          [
+            2012,
+            3
+          ]
+        ]
+      },
+      "published_print": null,
+      "published_online": {
+        "date-parts": [
+          [
+            2012,
+            3
+          ]
+        ]
+      },
+      "title_overlap": 1.0,
+      "year_match": true
+    },
+    {
+      "n": 9,
       "key": "pu2018",
       "doi": "10.1109/CCWC.2018.8301614",
+      "kind": "article",
       "status": "metadata_retrieved",
+      "bib_title": "Mitigating DAO inconsistency attack in RPL-based low power and lossy networks,",
+      "bib_year": 2018,
       "title": [
         "Mitigating DAO inconsistency attack in RPL-based low power and lossy networks"
       ],
       "authors": [
         {
           "given": "Cong",
-          "family": "Pu",
-          "sequence": "first",
-          "affiliation": [],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
+          "family": "Pu"
         }
       ],
       "container": [
         "2018 IEEE 8th Annual Computing and Communication Workshop and Conference (CCWC)"
       ],
+      "publisher": "IEEE",
+      "type": "proceedings-article",
       "volume": null,
       "issue": null,
       "page": "570-574",
       "article_number": null,
-      "published": {
+      "issued": {
         "date-parts": [
           [
             2018,
             1
           ]
         ]
-      }
+      },
+      "published_print": {
+        "date-parts": [
+          [
+            2018,
+            1
+          ]
+        ]
+      },
+      "published_online": null,
+      "title_overlap": 1.0,
+      "year_match": true
     },
     {
+      "n": 10,
+      "key": "ghaleb2019",
+      "doi": "10.1109/LCOMM.2018.2878151",
+      "kind": "article",
+      "status": "metadata_retrieved",
+      "bib_title": "Addressing the DAO insider attack in RPL's Internet of Things networks,",
+      "bib_year": 2019,
+      "title": [
+        "Addressing the DAO Insider Attack in RPL’s Internet of Things Networks"
+      ],
+      "authors": [
+        {
+          "given": "Baraq",
+          "family": "Ghaleb"
+        },
+        {
+          "given": "Ahmed",
+          "family": "Al-Dubai"
+        },
+        {
+          "given": "Elias",
+          "family": "Ekonomou"
+        },
+        {
+          "given": "Mamoun",
+          "family": "Qasem"
+        },
+        {
+          "given": "Imed",
+          "family": "Romdhani"
+        },
+        {
+          "given": "Lewis",
+          "family": "Mackenzie"
+        }
+      ],
+      "container": [
+        "IEEE Communications Letters"
+      ],
+      "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+      "type": "journal-article",
+      "volume": "23",
+      "issue": "1",
+      "page": "68-71",
+      "article_number": null,
+      "issued": {
+        "date-parts": [
+          [
+            2019,
+            1
+          ]
+        ]
+      },
+      "published_print": {
+        "date-parts": [
+          [
+            2019,
+            1
+          ]
+        ]
+      },
+      "published_online": null,
+      "title_overlap": 1.0,
+      "year_match": true
+    },
+    {
+      "n": 11,
       "key": "limsd2024",
       "doi": "10.1016/j.future.2024.05.032",
+      "kind": "article",
       "status": "metadata_retrieved",
+      "bib_title": "Li-MSD: A lightweight mitigation solution for DAO insider attack in RPL-based IoT,",
+      "bib_year": 2024,
       "title": [
         "Li-MSD: A lightweight mitigation solution for DAO insider attack in RPL-based IoT"
       ],
       "authors": [
         {
-          "ORCID": "https://orcid.org/0000-0001-6687-4809",
-          "authenticated-orcid": false,
           "given": "Abhishek",
-          "family": "Verma",
-          "sequence": "first",
-          "affiliation": [],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
+          "family": "Verma"
         },
         {
           "given": "Sachin Kumar",
-          "family": "Verma",
-          "sequence": "additional",
-          "affiliation": [],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
+          "family": "Verma"
         },
         {
-          "ORCID": "https://orcid.org/0000-0002-7831-4726",
-          "authenticated-orcid": false,
           "given": "Avinash Chandra",
-          "family": "Pandey",
-          "sequence": "additional",
-          "affiliation": [],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
+          "family": "Pandey"
         },
         {
-          "ORCID": "https://orcid.org/0000-0001-9717-0441",
-          "authenticated-orcid": false,
           "given": "Jyoti",
-          "family": "Grover",
-          "sequence": "additional",
-          "affiliation": [],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
+          "family": "Grover"
         },
         {
-          "ORCID": "https://orcid.org/0000-0001-6093-6052",
-          "authenticated-orcid": false,
           "given": "Girish",
-          "family": "Sharma",
-          "sequence": "additional",
-          "affiliation": [],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
+          "family": "Sharma"
         }
       ],
       "container": [
         "Future Generation Computer Systems"
       ],
+      "publisher": "Elsevier BV",
+      "type": "journal-article",
       "volume": "159",
       "issue": null,
       "page": "327-339",
       "article_number": null,
-      "published": {
+      "issued": {
         "date-parts": [
           [
             2024,
             10
           ]
         ]
-      }
+      },
+      "published_print": {
+        "date-parts": [
+          [
+            2024,
+            10
+          ]
+        ]
+      },
+      "published_online": null,
+      "title_overlap": 1.0,
+      "year_match": true
     },
     {
+      "n": 12,
       "key": "prajisha2025",
       "doi": "10.1016/j.adhoc.2025.104002",
+      "kind": "article",
       "status": "metadata_retrieved",
+      "bib_title": "Detection and mitigation of multicast DIS flooding attacks in RPL-based IoT networks,",
+      "bib_year": 2025,
       "title": [
         "Detection and mitigation of Multicast DIS flooding attacks in RPL-based IoT networks"
       ],
       "authors": [
         {
           "given": "Prajisha",
-          "family": "C.",
-          "sequence": "first",
-          "affiliation": [],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
+          "family": "C."
         },
         {
           "given": "Vasudevan",
-          "family": "A.R.",
-          "sequence": "additional",
-          "affiliation": [],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
+          "family": "A.R."
         }
       ],
       "container": [
         "Ad Hoc Networks"
       ],
+      "publisher": "Elsevier BV",
+      "type": "journal-article",
       "volume": "179",
       "issue": null,
       "page": "104002",
       "article_number": "104002",
-      "published": {
+      "issued": {
         "date-parts": [
           [
             2025,
             12
           ]
         ]
-      }
+      },
+      "published_print": {
+        "date-parts": [
+          [
+            2025,
+            12
+          ]
+        ]
+      },
+      "published_online": null,
+      "title_overlap": 1.0,
+      "year_match": true
     },
     {
-      "key": "garciaribera2022",
-      "doi": "10.3390/electronics11234041",
+      "n": 13,
+      "key": "josang2002",
+      "doi": null,
+      "kind": "article",
+      "status": "no_doi",
+      "bib_title": "The beta reputation system,",
+      "bib_year": 2002
+    },
+    {
+      "n": 14,
+      "key": "ganeriwal2008",
+      "doi": "10.1145/1362542.1362546",
+      "kind": "article",
       "status": "metadata_retrieved",
+      "bib_title": "Reputation-based framework for high integrity sensor networks,",
+      "bib_year": 2008,
       "title": [
-        "An Intrusion Detection System for RPL-Based IoT Networks"
+        "Reputation-based framework for high integrity sensor networks"
       ],
       "authors": [
         {
-          "given": "Eric",
-          "family": "Garcia Ribera",
-          "sequence": "first",
-          "affiliation": [
-            {
-              "name": "Department of Computer Science, University of York, York YO10 5GH, UK"
-            }
-          ],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
+          "given": "Saurabh",
+          "family": "Ganeriwal"
         },
         {
-          "given": "Brian",
-          "family": "Martinez Alvarez",
-          "sequence": "additional",
-          "affiliation": [
-            {
-              "name": "Department of Computer Science, University of York, York YO10 5GH, UK"
-            }
-          ],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
+          "given": "Laura K.",
+          "family": "Balzano"
         },
         {
-          "given": "Charisma",
-          "family": "Samuel",
-          "sequence": "additional",
-          "affiliation": [
-            {
-              "name": "Department of Computer Science, University of York, York YO10 5GH, UK"
-            }
-          ],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
-        },
-        {
-          "ORCID": "https://orcid.org/0000-0001-7436-4470",
-          "authenticated-orcid": false,
-          "given": "Philokypros P.",
-          "family": "Ioulianou",
-          "sequence": "additional",
-          "affiliation": [
-            {
-              "name": "Department of Computer Science, University of York, York YO10 5GH, UK"
-            }
-          ],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
-        },
-        {
-          "ORCID": "https://orcid.org/0000-0003-4902-8226",
-          "authenticated-orcid": false,
-          "given": "Vassilios G.",
-          "family": "Vassilakis",
-          "sequence": "additional",
-          "affiliation": [
-            {
-              "name": "Department of Computer Science, University of York, York YO10 5GH, UK"
-            }
-          ],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
+          "given": "Mani B.",
+          "family": "Srivastava"
         }
       ],
       "container": [
-        "Electronics"
+        "ACM Transactions on Sensor Networks"
       ],
-      "volume": "11",
-      "issue": "23",
-      "page": "4041",
+      "publisher": "Association for Computing Machinery (ACM)",
+      "type": "journal-article",
+      "volume": "4",
+      "issue": "3",
+      "page": "1-37",
       "article_number": null,
-      "published": {
+      "issued": {
         "date-parts": [
           [
-            2022,
-            12,
+            2008,
             5
           ]
         ]
-      }
+      },
+      "published_print": {
+        "date-parts": [
+          [
+            2008,
+            5
+          ]
+        ]
+      },
+      "published_online": {
+        "date-parts": [
+          [
+            2008,
+            6,
+            4
+          ]
+        ]
+      },
+      "title_overlap": 1.0,
+      "year_match": true
     },
     {
-      "key": "alsukayti2023",
-      "doi": "10.3390/app13084878",
+      "n": 15,
+      "key": "watkins1992",
+      "doi": "10.1007/BF00992698",
+      "kind": "article",
       "status": "metadata_retrieved",
+      "bib_title": "Q-learning,",
+      "bib_year": 1992,
       "title": [
-        "RPL-Based IoT Networks under Simple and Complex Routing Security Attacks: An Experimental Study"
+        "Q-learning"
       ],
       "authors": [
         {
-          "ORCID": "https://orcid.org/0000-0002-6925-598X",
-          "authenticated-orcid": false,
-          "given": "Ibrahim S.",
-          "family": "Alsukayti",
-          "sequence": "first",
-          "affiliation": [
-            {
-              "name": "Department of Computer Science, College of Computer, Qassim University, Buraydah 51452, Saudi Arabia"
-            }
-          ],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
+          "given": "Christopher J. C. H.",
+          "family": "Watkins"
         },
         {
-          "ORCID": "https://orcid.org/0000-0002-3066-6909",
-          "authenticated-orcid": false,
-          "given": "Mohammed",
-          "family": "Alreshoodi",
-          "sequence": "additional",
-          "affiliation": [
-            {
-              "name": "Unit of Scientific Research, Applied College, Qassim University, Buraydah 52571, Saudi Arabia"
-            }
-          ],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
+          "given": "Peter",
+          "family": "Dayan"
+        }
+      ],
+      "container": [
+        "Machine Learning"
+      ],
+      "publisher": "Springer Science and Business Media LLC",
+      "type": "journal-article",
+      "volume": "8",
+      "issue": "3-4",
+      "page": "279-292",
+      "article_number": null,
+      "issued": {
+        "date-parts": [
+          [
+            1992,
+            5
           ]
+        ]
+      },
+      "published_print": {
+        "date-parts": [
+          [
+            1992,
+            5
+          ]
+        ]
+      },
+      "published_online": null,
+      "title_overlap": 1.0,
+      "year_match": true
+    },
+    {
+      "n": 16,
+      "key": "khan2023",
+      "doi": "10.32604/cmc.2023.040756",
+      "kind": "article",
+      "status": "metadata_retrieved",
+      "bib_title": "Collaborative detection and prevention of Sybil attacks against RPL-based Internet of Things,",
+      "bib_year": 2023,
+      "title": [
+        "Collaborative Detection and Prevention of Sybil Attacks against RPL-Based Internet of Things"
+      ],
+      "authors": [
+        {
+          "given": "Muhammad Ali",
+          "family": "Khan"
+        },
+        {
+          "given": "Rao Naveed Bin",
+          "family": "Rais"
+        },
+        {
+          "given": "Osman",
+          "family": "Khalid"
+        }
+      ],
+      "container": [
+        "Computers, Materials &amp; Continua"
+      ],
+      "publisher": "Tech Science Press",
+      "type": "journal-article",
+      "volume": "77",
+      "issue": "1",
+      "page": "827-843",
+      "article_number": null,
+      "issued": {
+        "date-parts": [
+          [
+            2023
+          ]
+        ]
+      },
+      "published_print": {
+        "date-parts": [
+          [
+            2023
+          ]
+        ]
+      },
+      "published_online": {
+        "date-parts": [
+          [
+            2023
+          ]
+        ]
+      },
+      "title_overlap": 1.0,
+      "year_match": true
+    },
+    {
+      "n": 17,
+      "key": "sharma2022",
+      "doi": "10.1016/j.comcom.2022.04.003",
+      "kind": "article",
+      "status": "metadata_retrieved",
+      "bib_title": "Mitigation of black hole attacks in 6LoWPAN RPL-based wireless sensor network for cyber physical systems,",
+      "bib_year": 2022,
+      "title": [
+        "Mitigation of black hole attacks in 6LoWPAN RPL-based Wireless sensor network for cyber physical systems"
+      ],
+      "authors": [
+        {
+          "given": "Deepak Kumar",
+          "family": "Sharma"
+        },
+        {
+          "given": "Sanjay K.",
+          "family": "Dhurandher"
+        },
+        {
+          "given": "Shubham",
+          "family": "Kumaram"
+        },
+        {
+          "given": "Koyel",
+          "family": "Datta Gupta"
+        },
+        {
+          "given": "Pradip Kumar",
+          "family": "Sharma"
+        }
+      ],
+      "container": [
+        "Computer Communications"
+      ],
+      "publisher": "Elsevier BV",
+      "type": "journal-article",
+      "volume": "189",
+      "issue": null,
+      "page": "182-192",
+      "article_number": null,
+      "issued": {
+        "date-parts": [
+          [
+            2022,
+            5
+          ]
+        ]
+      },
+      "published_print": {
+        "date-parts": [
+          [
+            2022,
+            5
+          ]
+        ]
+      },
+      "published_online": null,
+      "title_overlap": 1.0,
+      "year_match": true
+    },
+    {
+      "n": 18,
+      "key": "ankam2023",
+      "doi": "10.1016/j.tcs.2022.08.018",
+      "kind": "article",
+      "status": "metadata_retrieved",
+      "bib_title": "A mechanism to detecting flooding attacks in quantum enabled cloud-based low-power and lossy networks,",
+      "bib_year": 2023,
+      "title": [
+        "A mechanism to detecting flooding attacks in quantum enabled cloud-based lowpower and lossy networks"
+      ],
+      "authors": [
+        {
+          "given": "Sreejyothsna",
+          "family": "Ankam"
+        },
+        {
+          "given": "Dr.N. Sudhakar",
+          "family": "Reddy"
+        }
+      ],
+      "container": [
+        "Theoretical Computer Science"
+      ],
+      "publisher": "Elsevier BV",
+      "type": "journal-article",
+      "volume": "941",
+      "issue": null,
+      "page": "29-38",
+      "article_number": null,
+      "issued": {
+        "date-parts": [
+          [
+            2023,
+            1
+          ]
+        ]
+      },
+      "published_print": {
+        "date-parts": [
+          [
+            2023,
+            1
+          ]
+        ]
+      },
+      "published_online": null,
+      "title_overlap": 0.933,
+      "year_match": true
+    },
+    {
+      "n": 19,
+      "key": "abhinaya2021",
+      "doi": "10.1007/s12652-020-02804-3",
+      "kind": "article",
+      "status": "metadata_retrieved",
+      "bib_title": "A secure routing protocol for low power and lossy networks based 6LoWPAN networks to mitigate DIS flooding attacks,",
+      "bib_year": 2021,
+      "title": [
+        "A secure routing protocol for low power and lossy networks based 6LoWPAN networks to mitigate DIS flooding attacks"
+      ],
+      "authors": [
+        {
+          "given": "E. V.",
+          "family": "Abhinaya"
+        },
+        {
+          "given": "B.",
+          "family": "Sudhakar"
+        }
+      ],
+      "container": [
+        "Journal of Ambient Intelligence and Humanized Computing"
+      ],
+      "publisher": "Springer Science and Business Media LLC",
+      "type": "journal-article",
+      "volume": null,
+      "issue": null,
+      "page": null,
+      "article_number": null,
+      "issued": {
+        "date-parts": [
+          [
+            2021,
+            1,
+            3
+          ]
+        ]
+      },
+      "published_print": null,
+      "published_online": {
+        "date-parts": [
+          [
+            2021,
+            1,
+            3
+          ]
+        ]
+      },
+      "title_overlap": 1.0,
+      "year_match": true
+    },
+    {
+      "n": 20,
+      "key": "nishanth2021",
+      "doi": "10.1109/TCCN.2021.3055503",
+      "kind": "article",
+      "status": "metadata_retrieved",
+      "bib_title": "Modeling and detection of flooding-based denial of service attacks in wireless ad hoc networks using uncertain reasoning,",
+      "bib_year": 2021,
+      "title": [
+        "Modeling and Detection of Flooding-Based Denial of Service Attacks in Wireless Ad Hoc Networks Using Uncertain Reasoning"
+      ],
+      "authors": [
+        {
+          "given": "N.",
+          "family": "Nishanth"
+        },
+        {
+          "given": "A.",
+          "family": "Mujeeb"
+        }
+      ],
+      "container": [
+        "IEEE Transactions on Cognitive Communications and Networking"
+      ],
+      "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+      "type": "journal-article",
+      "volume": "7",
+      "issue": "3",
+      "page": "893-904",
+      "article_number": null,
+      "issued": {
+        "date-parts": [
+          [
+            2021,
+            9
+          ]
+        ]
+      },
+      "published_print": {
+        "date-parts": [
+          [
+            2021,
+            9
+          ]
+        ]
+      },
+      "published_online": null,
+      "title_overlap": 1.0,
+      "year_match": true
+    },
+    {
+      "n": 21,
+      "key": "rouissat2023",
+      "doi": "10.3390/app131810366",
+      "kind": "article",
+      "status": "metadata_retrieved",
+      "bib_title": "A lightweight mitigation approach against a new inundation attack in RPL-based IoT networks,",
+      "bib_year": 2023,
+      "title": [
+        "A Lightweight Mitigation Approach against a New Inundation Attack in RPL-Based IoT Networks"
+      ],
+      "authors": [
+        {
+          "given": "Mehdi",
+          "family": "Rouissat"
+        },
+        {
+          "given": "Mohammed",
+          "family": "Belkheir"
+        },
+        {
+          "given": "Ibrahim S.",
+          "family": "Alsukayti"
+        },
+        {
+          "given": "Allel",
+          "family": "Mokaddem"
         }
       ],
       "container": [
         "Applied Sciences"
       ],
+      "publisher": "MDPI AG",
+      "type": "journal-article",
       "volume": "13",
-      "issue": "8",
-      "page": "4878",
+      "issue": "18",
+      "page": "10366",
       "article_number": null,
-      "published": {
+      "issued": {
         "date-parts": [
           [
             2023,
-            4,
-            13
+            9,
+            16
           ]
         ]
-      }
-    },
-    {
-      "key": "de2rarpl2024",
-      "doi": "10.1007/s11227-024-06256-w",
-      "status": "metadata_retrieved",
-      "title": [
-        "DE2RA-RPL: detection and elimination of resource-related attacks in IoT RPL-based protocol"
-      ],
-      "authors": [
-        {
-          "given": "Deepavathi",
-          "family": "Paganraj",
-          "sequence": "first",
-          "affiliation": [],
-          "role": [
-            {
-              "role": "author",
-              "vocabulary": "crossref"
-            }
-          ]
-        },
-        {
-          "given": "Mala",
-          "family": "Chelliah",
-          "sequence": "additional",
-          "affiliation": [],
-          "role": [
-            {
-              "role": "author",
-              "vocabulary": "crossref"
-            }
-          ]
-        }
-      ],
-      "container": [
-        "The Journal of Supercomputing"
-      ],
-      "volume": "80",
-      "issue": "15",
-      "page": "22397-22427",
-      "article_number": null,
-      "published": {
-        "date-parts": [
-          [
-            2024,
-            6,
-            23
-          ]
-        ]
-      }
-    },
-    {
-      "key": "abdulkareem2024",
-      "doi": "10.58496/MJCS/2024/026",
-      "status": "metadata_retrieved",
-      "title": [
-        "Collaborative Intrusion Detection System to Identify Joint Attacks in Routing Protocol for Low-Power and Lossy Networks Routing Protocol on the Internet of Everything"
-      ],
-      "authors": [
-        {
-          "given": "Omar A.",
-          "family": "Abdulkareem",
-          "sequence": "first",
-          "affiliation": [],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
-        },
-        {
-          "given": "Raja Kumar",
-          "family": "Kontham",
-          "sequence": "additional",
-          "affiliation": [],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
-        },
-        {
-          "given": "Farhad E.",
-          "family": "Mahmood",
-          "sequence": "additional",
-          "affiliation": [],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
-        }
-      ],
-      "container": [
-        "Mesopotamian Journal of CyberSecurity"
-      ],
-      "volume": "4",
-      "issue": "3",
-      "page": "251-277",
-      "article_number": null,
-      "published": {
-        "date-parts": [
-          [
-            2024,
-            12,
-            25
-          ]
-        ]
-      }
-    },
-    {
-      "key": "qsecrpl2023",
-      "doi": "10.1016/j.adhoc.2023.103118",
-      "status": "metadata_retrieved",
-      "title": [
-        "QSec-RPL: Detection of version number attacks in RPL based mobile IoT using Q-Learning"
-      ],
-      "authors": [
-        {
-          "ORCID": "https://orcid.org/0000-0001-6508-9438",
-          "authenticated-orcid": false,
-          "given": "Girish",
-          "family": "Sharma",
-          "sequence": "first",
-          "affiliation": [],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
-        },
-        {
-          "ORCID": "https://orcid.org/0000-0001-9717-0441",
-          "authenticated-orcid": false,
-          "given": "Jyoti",
-          "family": "Grover",
-          "sequence": "additional",
-          "affiliation": [],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
-        },
-        {
-          "ORCID": "https://orcid.org/0000-0001-6687-4809",
-          "authenticated-orcid": false,
-          "given": "Abhishek",
-          "family": "Verma",
-          "sequence": "additional",
-          "affiliation": [],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
-        }
-      ],
-      "container": [
-        "Ad Hoc Networks"
-      ],
-      "volume": "142",
-      "issue": null,
-      "page": "103118",
-      "article_number": "103118",
-      "published": {
+      },
+      "published_print": null,
+      "published_online": {
         "date-parts": [
           [
             2023,
-            4
+            9,
+            16
           ]
         ]
-      }
+      },
+      "title_overlap": 1.0,
+      "year_match": true
     },
     {
-      "key": "itrpl2024",
-      "doi": "10.1016/j.adhoc.2024.103586",
-      "status": "metadata_retrieved",
-      "title": [
-        "iTRPL: An intelligent and trusted RPL protocol based on Multi-Agent Reinforcement Learning"
-      ],
-      "authors": [
-        {
-          "given": "Debasmita",
-          "family": "Dey",
-          "sequence": "first",
-          "affiliation": [],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
-        },
-        {
-          "ORCID": "https://orcid.org/0000-0003-4079-8259",
-          "authenticated-orcid": false,
-          "given": "Nirnay",
-          "family": "Ghosh",
-          "sequence": "additional",
-          "affiliation": [],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
-        }
-      ],
-      "container": [
-        "Ad Hoc Networks"
-      ],
-      "volume": "163",
-      "issue": null,
-      "page": "103586",
-      "article_number": "103586",
-      "published": {
-        "date-parts": [
-          [
-            2024,
-            10
-          ]
-        ]
-      }
-    },
-    {
+      "n": 22,
       "key": "imdrpl2023",
       "doi": "10.1007/s12083-023-01539-0",
+      "kind": "article",
       "status": "metadata_retrieved",
+      "bib_title": "IMDRPL: Identifying and eliminating malicious devices using DIO and DAO ICMP control messages in RPL-based protocol,",
+      "bib_year": 2023,
       "title": [
         "IMDRPL: Identifying and eliminating malicious devices using DIO and DAO ICMP control messages in RPL-based protocol"
       ],
       "authors": [
         {
           "given": "P.",
-          "family": "Deepavathi",
-          "sequence": "first",
-          "affiliation": [],
-          "role": [
-            {
-              "role": "author",
-              "vocabulary": "crossref"
-            }
-          ]
+          "family": "Deepavathi"
         },
         {
           "given": "C.",
-          "family": "Mala",
-          "sequence": "additional",
-          "affiliation": [],
-          "role": [
-            {
-              "role": "author",
-              "vocabulary": "crossref"
-            }
-          ]
+          "family": "Mala"
         }
       ],
       "container": [
         "Peer-to-Peer Networking and Applications"
       ],
+      "publisher": "Springer Science and Business Media LLC",
+      "type": "journal-article",
       "volume": "16",
       "issue": "5",
       "page": "2380-2398",
       "article_number": null,
-      "published": {
+      "issued": {
         "date-parts": [
           [
             2023,
@@ -996,75 +1174,296 @@
           ]
         ]
       },
-      "abstract": null
+      "published_print": {
+        "date-parts": [
+          [
+            2023,
+            9
+          ]
+        ]
+      },
+      "published_online": {
+        "date-parts": [
+          [
+            2023,
+            8,
+            10
+          ]
+        ]
+      },
+      "title_overlap": 1.0,
+      "year_match": true
     },
     {
+      "n": 23,
+      "key": "alsukayti2023",
+      "doi": "10.3390/app13084878",
+      "kind": "article",
+      "status": "metadata_retrieved",
+      "bib_title": "RPL-based IoT networks under simple and complex routing security attacks: An experimental study,",
+      "bib_year": 2023,
+      "title": [
+        "RPL-Based IoT Networks under Simple and Complex Routing Security Attacks: An Experimental Study"
+      ],
+      "authors": [
+        {
+          "given": "Ibrahim S.",
+          "family": "Alsukayti"
+        },
+        {
+          "given": "Mohammed",
+          "family": "Alreshoodi"
+        }
+      ],
+      "container": [
+        "Applied Sciences"
+      ],
+      "publisher": "MDPI AG",
+      "type": "journal-article",
+      "volume": "13",
+      "issue": "8",
+      "page": "4878",
+      "article_number": null,
+      "issued": {
+        "date-parts": [
+          [
+            2023,
+            4,
+            13
+          ]
+        ]
+      },
+      "published_print": null,
+      "published_online": {
+        "date-parts": [
+          [
+            2023,
+            4,
+            13
+          ]
+        ]
+      },
+      "title_overlap": 1.0,
+      "year_match": true
+    },
+    {
+      "n": 24,
+      "key": "de2rarpl2024",
+      "doi": "10.1007/s11227-024-06256-w",
+      "kind": "article",
+      "status": "metadata_retrieved",
+      "bib_title": "DE2RA-RPL: Detection and elimination of resource-related attacks in IoT RPL-based protocol,",
+      "bib_year": 2024,
+      "title": [
+        "DE2RA-RPL: detection and elimination of resource-related attacks in IoT RPL-based protocol"
+      ],
+      "authors": [
+        {
+          "given": "Deepavathi",
+          "family": "Paganraj"
+        },
+        {
+          "given": "Mala",
+          "family": "Chelliah"
+        }
+      ],
+      "container": [
+        "The Journal of Supercomputing"
+      ],
+      "publisher": "Springer Science and Business Media LLC",
+      "type": "journal-article",
+      "volume": "80",
+      "issue": "15",
+      "page": "22397-22427",
+      "article_number": null,
+      "issued": {
+        "date-parts": [
+          [
+            2024,
+            6,
+            23
+          ]
+        ]
+      },
+      "published_print": {
+        "date-parts": [
+          [
+            2024,
+            10
+          ]
+        ]
+      },
+      "published_online": {
+        "date-parts": [
+          [
+            2024,
+            6,
+            23
+          ]
+        ]
+      },
+      "title_overlap": 1.0,
+      "year_match": true
+    },
+    {
+      "n": 25,
+      "key": "abdulkareem2024",
+      "doi": "10.58496/MJCS/2024/026",
+      "kind": "article",
+      "status": "metadata_retrieved",
+      "bib_title": "Collaborative intrusion detection system to identify joint attacks in routing protocol for low-power and lossy networks routing protocol on the Internet of Everything,",
+      "bib_year": 2024,
+      "title": [
+        "Collaborative Intrusion Detection System to Identify Joint Attacks in Routing Protocol for Low-Power and Lossy Networks Routing Protocol on the Internet of Everything"
+      ],
+      "authors": [
+        {
+          "given": "Omar A.",
+          "family": "Abdulkareem"
+        },
+        {
+          "given": "Raja Kumar",
+          "family": "Kontham"
+        },
+        {
+          "given": "Farhad E.",
+          "family": "Mahmood"
+        }
+      ],
+      "container": [
+        "Mesopotamian Journal of CyberSecurity"
+      ],
+      "publisher": "Mesopotamian Academic Press - DIGITAL COMMONS JOURNALS",
+      "type": "journal-article",
+      "volume": "4",
+      "issue": "3",
+      "page": "251-277",
+      "article_number": null,
+      "issued": {
+        "date-parts": [
+          [
+            2024,
+            12,
+            25
+          ]
+        ]
+      },
+      "published_print": null,
+      "published_online": {
+        "date-parts": [
+          [
+            2024,
+            12,
+            25
+          ]
+        ]
+      },
+      "title_overlap": 1.0,
+      "year_match": true
+    },
+    {
+      "n": 26,
+      "key": "garciaribera2022",
+      "doi": "10.3390/electronics11234041",
+      "kind": "article",
+      "status": "metadata_retrieved",
+      "bib_title": "An intrusion detection system for RPL-based IoT networks,",
+      "bib_year": 2022,
+      "title": [
+        "An Intrusion Detection System for RPL-Based IoT Networks"
+      ],
+      "authors": [
+        {
+          "given": "Eric",
+          "family": "Garcia Ribera"
+        },
+        {
+          "given": "Brian",
+          "family": "Martinez Alvarez"
+        },
+        {
+          "given": "Charisma",
+          "family": "Samuel"
+        },
+        {
+          "given": "Philokypros P.",
+          "family": "Ioulianou"
+        },
+        {
+          "given": "Vassilios G.",
+          "family": "Vassilakis"
+        }
+      ],
+      "container": [
+        "Electronics"
+      ],
+      "publisher": "MDPI AG",
+      "type": "journal-article",
+      "volume": "11",
+      "issue": "23",
+      "page": "4041",
+      "article_number": null,
+      "issued": {
+        "date-parts": [
+          [
+            2022,
+            12,
+            5
+          ]
+        ]
+      },
+      "published_print": null,
+      "published_online": {
+        "date-parts": [
+          [
+            2022,
+            12,
+            5
+          ]
+        ]
+      },
+      "title_overlap": 1.0,
+      "year_match": true
+    },
+    {
+      "n": 27,
       "key": "flsecrpl2024",
       "doi": "10.1186/s42400-024-00223-x",
+      "kind": "article",
       "status": "metadata_retrieved",
+      "bib_title": "FLSec-RPL: A fuzzy logic-based intrusion detection scheme for securing RPL-based IoT networks against DIO neighbor suppression attacks,",
+      "bib_year": 2024,
       "title": [
         "FLSec-RPL: a fuzzy logic-based intrusion detection scheme for securing RPL-based IoT networks against DIO neighbor suppression attacks"
       ],
       "authors": [
         {
           "given": "Chenset",
-          "family": "Kim",
-          "sequence": "first",
-          "affiliation": [],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
+          "family": "Kim"
         },
         {
           "given": "Chakchai",
-          "family": "So-In",
-          "sequence": "additional",
-          "affiliation": [],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
+          "family": "So-In"
         },
         {
           "given": "Yanika",
-          "family": "Kongsorot",
-          "sequence": "additional",
-          "affiliation": [],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
+          "family": "Kongsorot"
         },
         {
-          "ORCID": "https://orcid.org/0000-0001-5289-1149",
-          "authenticated-orcid": false,
           "given": "Phet",
-          "family": "Aimtongkham",
-          "sequence": "additional",
-          "affiliation": [],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
+          "family": "Aimtongkham"
         }
       ],
       "container": [
         "Cybersecurity"
       ],
+      "publisher": "Springer Science and Business Media LLC",
+      "type": "journal-article",
       "volume": "7",
       "issue": "1",
       "page": null,
       "article_number": "27",
-      "published": {
+      "issued": {
         "date-parts": [
           [
             2024,
@@ -1073,49 +1472,50 @@
           ]
         ]
       },
-      "abstract": "<jats:title>Abstract</jats:title><jats:p>The Internet of Things (IoT) has gained popularity and is widely used in modern society. The growth in the sizes of IoT networks with more internet-connected devices has led to concerns regarding privacy and security. In particular, related to the routing protocol for low-power and lossy networks (RPL), which lacks robust security functions, many IoT devices in RPL networks are resource-constrained, with limited computing power, bandwidth, memory, and battery life. This causes them to face various vulnerabilities and potential attacks, such as DIO neighbor suppression attacks. This type of attack specifically targets neighboring nodes through DIO messages and poses a significant security threat to RPL-based IoT networks. Recent studies have proposed methods for detecting and mitigating this attack; however, they produce high false-positive and false-negative rates in detection tasks and cannot fully protect RPL networks against this attack type. In this paper, we propose a novel fuzzy logic-based intrusion detection scheme to secure the RPL protocol (FLSec-RPL) to protect against this attack. Our method is built of three key phases consecutively: (1) it tracks attack activity variables to determine potential malicious behaviors; (2) it performs fuzzy logic-based intrusion detection to identify malicious neighbor nodes; and (3) it provides a detection validation and blocking mechanism to ensure that both malicious and suspected malicious nodes are accurately detected and blocked. To evaluate the effectiveness of our method, we conduct comprehensive experiments across diverse scenarios, including Static-RPL and Mobile-RPL networks. We compare the performance of our proposed method with that of the state-of-the-art methods. The results demonstrate that our method outperforms existing methods in terms of the detection accuracy, F1 score, power consumption, end-to-end delay, and packet delivery ratio metrics.</jats:p>"
+      "published_print": null,
+      "published_online": {
+        "date-parts": [
+          [
+            2024,
+            9,
+            3
+          ]
+        ]
+      },
+      "title_overlap": 1.0,
+      "year_match": true
     },
     {
+      "n": 28,
       "key": "dsatids2024",
       "doi": "10.1007/s10586-024-04564-7",
+      "kind": "article",
       "status": "metadata_retrieved",
+      "bib_title": "DSAT-IDS: Dissimilarity and adaptive threshold-based intrusion detection system to mitigate selective forwarding attack in the RPL-based 6LoWPAN,",
+      "bib_year": 2024,
       "title": [
         "DSAT-IDS: Dissimilarity and Adaptive Threshold-based Intrusion Detection system to mitigate selective forwarding attack in the RPL-based 6LoWPAN"
       ],
       "authors": [
         {
           "given": "V. R.",
-          "family": "Rajasekar",
-          "sequence": "first",
-          "affiliation": [],
-          "role": [
-            {
-              "role": "author",
-              "vocabulary": "crossref"
-            }
-          ]
+          "family": "Rajasekar"
         },
         {
           "given": "S.",
-          "family": "Rajkumar",
-          "sequence": "additional",
-          "affiliation": [],
-          "role": [
-            {
-              "role": "author",
-              "vocabulary": "crossref"
-            }
-          ]
+          "family": "Rajkumar"
         }
       ],
       "container": [
         "Cluster Computing"
       ],
+      "publisher": "Springer Science and Business Media LLC",
+      "type": "journal-article",
       "volume": "27",
       "issue": "9",
       "page": "12029-12068",
       "article_number": null,
-      "published": {
+      "issued": {
         "date-parts": [
           [
             2024,
@@ -1124,147 +1524,303 @@
           ]
         ]
       },
-      "abstract": null
+      "published_print": {
+        "date-parts": [
+          [
+            2024,
+            12
+          ]
+        ]
+      },
+      "published_online": {
+        "date-parts": [
+          [
+            2024,
+            6,
+            7
+          ]
+        ]
+      },
+      "title_overlap": 1.0,
+      "year_match": true
     },
     {
+      "n": 29,
+      "key": "azzaoui2024",
+      "doi": "10.1007/s11277-024-11009-2",
+      "kind": "article",
+      "status": "metadata_retrieved",
+      "bib_title": "A lightweight cooperative intrusion detection system for RPL-based IoT,",
+      "bib_year": 2024,
+      "title": [
+        "A Lightweight Cooperative Intrusion Detection System for RPL-based IoT"
+      ],
+      "authors": [
+        {
+          "given": "Hanane",
+          "family": "Azzaoui"
+        },
+        {
+          "given": "Akram Zine Eddine",
+          "family": "Boukhamla"
+        },
+        {
+          "given": "Pericle",
+          "family": "Perazzo"
+        },
+        {
+          "given": "Mamoun",
+          "family": "Alazab"
+        },
+        {
+          "given": "Vinayakumar",
+          "family": "Ravi"
+        }
+      ],
+      "container": [
+        "Wireless Personal Communications"
+      ],
+      "publisher": "Springer Science and Business Media LLC",
+      "type": "journal-article",
+      "volume": "134",
+      "issue": "4",
+      "page": "2235-2258",
+      "article_number": null,
+      "issued": {
+        "date-parts": [
+          [
+            2024,
+            2
+          ]
+        ]
+      },
+      "published_print": {
+        "date-parts": [
+          [
+            2024,
+            2
+          ]
+        ]
+      },
+      "published_online": {
+        "date-parts": [
+          [
+            2024,
+            4,
+            13
+          ]
+        ]
+      },
+      "title_overlap": 1.0,
+      "year_match": true
+    },
+    {
+      "n": 30,
+      "key": "monteiro2026",
+      "doi": "10.3390/iot7010004",
+      "kind": "article",
+      "status": "metadata_retrieved",
+      "bib_title": "Trust-aware distributed and hybrid intrusion detection for rank attacks in RPL IoT environments,",
+      "bib_year": 2026,
+      "title": [
+        "Trust-Aware Distributed and Hybrid Intrusion Detection for Rank Attacks in RPL IoT Environments"
+      ],
+      "authors": [
+        {
+          "given": "Bruno",
+          "family": "Monteiro"
+        },
+        {
+          "given": "Jorge",
+          "family": "Granjal"
+        }
+      ],
+      "container": [
+        "IoT"
+      ],
+      "publisher": "MDPI AG",
+      "type": "journal-article",
+      "volume": "7",
+      "issue": "1",
+      "page": "4",
+      "article_number": null,
+      "issued": {
+        "date-parts": [
+          [
+            2025,
+            12,
+            30
+          ]
+        ]
+      },
+      "published_print": null,
+      "published_online": {
+        "date-parts": [
+          [
+            2025,
+            12,
+            30
+          ]
+        ]
+      },
+      "title_overlap": 1.0,
+      "year_match": false
+    },
+    {
+      "n": 31,
+      "key": "qsecrpl2023",
+      "doi": "10.1016/j.adhoc.2023.103118",
+      "kind": "article",
+      "status": "metadata_retrieved",
+      "bib_title": "QSec-RPL: Detection of version number attacks in RPL based mobile IoT using Q-learning,",
+      "bib_year": 2023,
+      "title": [
+        "QSec-RPL: Detection of version number attacks in RPL based mobile IoT using Q-Learning"
+      ],
+      "authors": [
+        {
+          "given": "Girish",
+          "family": "Sharma"
+        },
+        {
+          "given": "Jyoti",
+          "family": "Grover"
+        },
+        {
+          "given": "Abhishek",
+          "family": "Verma"
+        }
+      ],
+      "container": [
+        "Ad Hoc Networks"
+      ],
+      "publisher": "Elsevier BV",
+      "type": "journal-article",
+      "volume": "142",
+      "issue": null,
+      "page": "103118",
+      "article_number": "103118",
+      "issued": {
+        "date-parts": [
+          [
+            2023,
+            4
+          ]
+        ]
+      },
+      "published_print": {
+        "date-parts": [
+          [
+            2023,
+            4
+          ]
+        ]
+      },
+      "published_online": null,
+      "title_overlap": 1.0,
+      "year_match": true
+    },
+    {
+      "n": 32,
+      "key": "itrpl2024",
+      "doi": "10.1016/j.adhoc.2024.103586",
+      "kind": "article",
+      "status": "metadata_retrieved",
+      "bib_title": "iTRPL: An intelligent and trusted RPL protocol based on multi-agent reinforcement learning,",
+      "bib_year": 2024,
+      "title": [
+        "iTRPL: An intelligent and trusted RPL protocol based on Multi-Agent Reinforcement Learning"
+      ],
+      "authors": [
+        {
+          "given": "Debasmita",
+          "family": "Dey"
+        },
+        {
+          "given": "Nirnay",
+          "family": "Ghosh"
+        }
+      ],
+      "container": [
+        "Ad Hoc Networks"
+      ],
+      "publisher": "Elsevier BV",
+      "type": "journal-article",
+      "volume": "163",
+      "issue": null,
+      "page": "103586",
+      "article_number": "103586",
+      "issued": {
+        "date-parts": [
+          [
+            2024,
+            10
+          ]
+        ]
+      },
+      "published_print": {
+        "date-parts": [
+          [
+            2024,
+            10
+          ]
+        ]
+      },
+      "published_online": null,
+      "title_overlap": 1.0,
+      "year_match": true
+    },
+    {
+      "n": 33,
       "key": "haqdad2026",
       "doi": "10.1109/JIOT.2025.3596097",
+      "kind": "article",
       "status": "metadata_retrieved",
+      "bib_title": "Intent-based networking with deep reinforcement learning for detecting decreased rank attacks in low-power and lossy IoT networks,",
+      "bib_year": 2026,
       "title": [
         "Intent-Based Networking With Deep Reinforcement Learning for Detecting Decreased Rank Attacks in Low-Power and Lossy IoT Networks"
       ],
       "authors": [
         {
           "given": "Muhammad",
-          "family": "Haqdad",
-          "sequence": "first",
-          "affiliation": [
-            {
-              "name": "Department of Computer Science and IT, University of Malakand, Chakdara, Pakistan"
-            }
-          ],
-          "role": [
-            {
-              "role": "author",
-              "vocabulary": "crossref"
-            }
-          ]
+          "family": "Haqdad"
         },
         {
-          "ORCID": "https://orcid.org/0000-0001-6383-2988",
-          "authenticated-orcid": false,
           "given": "Muhammad",
-          "family": "Fayaz",
-          "sequence": "additional",
-          "affiliation": [
-            {
-              "name": "Department of Computer Science and IT, University of Malakand, Chakdara, Pakistan"
-            }
-          ],
-          "role": [
-            {
-              "role": "author",
-              "vocabulary": "crossref"
-            }
-          ]
+          "family": "Fayaz"
         },
         {
           "given": "Pervez",
-          "family": "Khan",
-          "sequence": "additional",
-          "affiliation": [
-            {
-              "name": "Department of Computer Science and IT, University of Malakand, Chakdara, Pakistan"
-            }
-          ],
-          "role": [
-            {
-              "role": "author",
-              "vocabulary": "crossref"
-            }
-          ]
+          "family": "Khan"
         },
         {
-          "ORCID": "https://orcid.org/0000-0002-9420-1588",
-          "authenticated-orcid": false,
           "given": "Farman",
-          "family": "Ali",
-          "sequence": "additional",
-          "affiliation": [
-            {
-              "name": "Department of Applied AI, Sungkyunkwan University, Seoul, Republic of Korea"
-            }
-          ],
-          "role": [
-            {
-              "role": "author",
-              "vocabulary": "crossref"
-            }
-          ]
+          "family": "Ali"
         },
         {
-          "ORCID": "https://orcid.org/0000-0003-1822-1357",
-          "authenticated-orcid": false,
           "given": "Theyazan H. H.",
-          "family": "Aldhyani",
-          "sequence": "additional",
-          "affiliation": [
-            {
-              "name": "Applied College, King Faisal University, Al-Ahsa, Saudi Arabia"
-            }
-          ],
-          "role": [
-            {
-              "role": "author",
-              "vocabulary": "crossref"
-            }
-          ]
+          "family": "Aldhyani"
         },
         {
-          "ORCID": "https://orcid.org/0000-0003-2601-9327",
-          "authenticated-orcid": false,
           "given": "Ali Kashif",
-          "family": "Bashir",
-          "sequence": "additional",
-          "affiliation": [
-            {
-              "name": "Department of Computing and Mathematics, Manchester Metropolitan University, Manchester, U.K."
-            }
-          ],
-          "role": [
-            {
-              "role": "author",
-              "vocabulary": "crossref"
-            }
-          ]
+          "family": "Bashir"
         },
         {
-          "ORCID": "https://orcid.org/0000-0001-5614-0190",
-          "authenticated-orcid": false,
           "given": "Daehan",
-          "family": "Kwak",
-          "sequence": "additional",
-          "affiliation": [
-            {
-              "name": "Department of Computer Science and Technology, Kean University, Union, NJ, USA"
-            }
-          ],
-          "role": [
-            {
-              "role": "author",
-              "vocabulary": "crossref"
-            }
-          ]
+          "family": "Kwak"
         }
       ],
       "container": [
         "IEEE Internet of Things Journal"
       ],
+      "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+      "type": "journal-article",
       "volume": "13",
       "issue": "9",
       "page": "17802-17814",
       "article_number": null,
-      "published": {
+      "issued": {
         "date-parts": [
           [
             2026,
@@ -1273,206 +1829,109 @@
           ]
         ]
       },
-      "abstract": null
-    },
-    {
-      "key": "rouissat2023",
-      "doi": "10.3390/app131810366",
-      "status": "metadata_retrieved",
-      "title": [
-        "A Lightweight Mitigation Approach against a New Inundation Attack in RPL-Based IoT Networks"
-      ],
-      "authors": [
-        {
-          "ORCID": "https://orcid.org/0000-0002-4444-2754",
-          "authenticated-orcid": false,
-          "given": "Mehdi",
-          "family": "Rouissat",
-          "sequence": "first",
-          "affiliation": [
-            {
-              "name": "STIC Laboratory, Univeristy Center Nour Bachir El-Bayadh, University Aboubekr Belkaid, Tlemcen 13000, Algeria"
-            }
-          ],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
-        },
-        {
-          "given": "Mohammed",
-          "family": "Belkheir",
-          "sequence": "additional",
-          "affiliation": [
-            {
-              "name": "LIMA Laboratory, Univeristy Center Nour Bachir, El-Bayadh 32000, Algeria"
-            }
-          ],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
-        },
-        {
-          "ORCID": "https://orcid.org/0000-0002-6925-598X",
-          "authenticated-orcid": false,
-          "given": "Ibrahim S.",
-          "family": "Alsukayti",
-          "sequence": "additional",
-          "affiliation": [
-            {
-              "name": "Department of Computer Science, College of Computer, Qassim University, Buraydah 51452, Saudi Arabia"
-            }
-          ],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
-        },
-        {
-          "ORCID": "https://orcid.org/0000-0002-2874-5923",
-          "authenticated-orcid": false,
-          "given": "Allel",
-          "family": "Mokaddem",
-          "sequence": "additional",
-          "affiliation": [
-            {
-              "name": "LIMA Laboratory, Univeristy Center Nour Bachir, El-Bayadh 32000, Algeria"
-            }
-          ],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
-        }
-      ],
-      "container": [
-        "Applied Sciences"
-      ],
-      "volume": "13",
-      "issue": "18",
-      "page": "10366",
-      "article_number": null,
-      "published": {
+      "published_print": {
         "date-parts": [
           [
-            2023,
-            9,
-            16
+            2026,
+            5,
+            1
           ]
         ]
-      }
+      },
+      "published_online": null,
+      "title_overlap": 1.0,
+      "year_match": true
     },
     {
-      "key": "watkins1992",
-      "doi": "10.1007/BF00992698",
+      "n": 34,
+      "key": "ahmadi2026",
+      "doi": "10.1007/s11276-026-04207-2",
+      "kind": "article",
       "status": "metadata_retrieved",
+      "bib_title": "An intelligent distributed mitigation approach for multiple routing attacks in RPL-based IoT networks,",
+      "bib_year": 2026,
       "title": [
-        "Q-learning"
+        "An intelligent distributed mitigation approach for multiple routing attacks in RPL-based IoT networks"
       ],
       "authors": [
         {
-          "given": "Christopher J. C. H.",
-          "family": "Watkins",
-          "sequence": "first",
-          "affiliation": [],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
+          "given": "Khatereh",
+          "family": "Ahmadi"
         },
         {
-          "given": "Peter",
-          "family": "Dayan",
-          "sequence": "additional",
-          "affiliation": [],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
+          "given": "Reza",
+          "family": "Javidan"
         }
       ],
       "container": [
-        "Machine Learning"
+        "Wireless Networks"
       ],
-      "volume": "8",
-      "issue": "3-4",
-      "page": "279-292",
+      "publisher": "Springer Science and Business Media LLC",
+      "type": "journal-article",
+      "volume": "32",
+      "issue": "5",
+      "page": "2933-2957",
       "article_number": null,
-      "published": {
+      "issued": {
         "date-parts": [
           [
-            1992,
+            2026,
+            9,
             5
           ]
         ]
-      }
+      },
+      "published_print": {
+        "date-parts": [
+          [
+            2026,
+            10
+          ]
+        ]
+      },
+      "published_online": {
+        "date-parts": [
+          [
+            2026,
+            9,
+            5
+          ]
+        ]
+      },
+      "title_overlap": 1.0,
+      "year_match": true
     },
     {
+      "n": 35,
       "key": "panda2026",
       "doi": "10.3390/fi18010035",
+      "kind": "article",
       "status": "metadata_retrieved",
+      "bib_title": "A multiclass machine learning framework for detecting routing attacks in RPL-based IoT networks using a novel simulation-driven dataset,",
+      "bib_year": 2026,
       "title": [
         "A Multiclass Machine Learning Framework for Detecting Routing Attacks in RPL-Based IoT Networks Using a Novel Simulation-Driven Dataset"
       ],
       "authors": [
         {
-          "ORCID": "https://orcid.org/0009-0002-4829-5189",
-          "authenticated-orcid": false,
           "given": "Niharika",
-          "family": "Panda",
-          "sequence": "first",
-          "affiliation": [
-            {
-              "name": "Department of Computer Science and Engineering, Amrita School of Computing, Amrita Vishwa Vidyapeetham, Bengaluru 560035, India"
-            }
-          ],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
+          "family": "Panda"
         },
         {
-          "ORCID": "https://orcid.org/0000-0001-6147-7142",
-          "authenticated-orcid": false,
           "given": "Supriya",
-          "family": "Muthuraman",
-          "sequence": "additional",
-          "affiliation": [
-            {
-              "name": "Department of Computer Science and Engineering, Amrita School of Computing, Amrita Vishwa Vidyapeetham, Bengaluru 560035, India"
-            }
-          ],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
+          "family": "Muthuraman"
         }
       ],
       "container": [
         "Future Internet"
       ],
+      "publisher": "MDPI AG",
+      "type": "journal-article",
       "volume": "18",
       "issue": "1",
       "page": "35",
       "article_number": null,
-      "published": {
+      "issued": {
         "date-parts": [
           [
             2026,
@@ -1480,67 +1939,55 @@
             7
           ]
         ]
-      }
+      },
+      "published_print": null,
+      "published_online": {
+        "date-parts": [
+          [
+            2026,
+            1,
+            7
+          ]
+        ]
+      },
+      "title_overlap": 1.0,
+      "year_match": true
     },
     {
+      "n": 36,
       "key": "gyawali2021",
       "doi": "10.1109/TVT.2021.3079379",
+      "kind": "article",
       "status": "metadata_retrieved",
+      "bib_title": "Deep reinforcement learning based dynamic reputation policy in 5G based vehicular communication networks,",
+      "bib_year": 2021,
       "title": [
         "Deep Reinforcement Learning Based Dynamic Reputation Policy in 5G Based Vehicular Communication Networks"
       ],
       "authors": [
         {
-          "ORCID": "https://orcid.org/0000-0002-4947-478X",
-          "authenticated-orcid": false,
           "given": "Sohan",
-          "family": "Gyawali",
-          "sequence": "first",
-          "affiliation": [],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
+          "family": "Gyawali"
         },
         {
-          "ORCID": "https://orcid.org/0000-0001-5671-916X",
-          "authenticated-orcid": false,
           "given": "Yi",
-          "family": "Qian",
-          "sequence": "additional",
-          "affiliation": [],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
+          "family": "Qian"
         },
         {
-          "ORCID": "https://orcid.org/0000-0002-1571-3631",
-          "authenticated-orcid": false,
           "given": "Rose",
-          "family": "Hu",
-          "sequence": "additional",
-          "affiliation": [],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
+          "family": "Hu"
         }
       ],
       "container": [
         "IEEE Transactions on Vehicular Technology"
       ],
+      "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+      "type": "journal-article",
       "volume": "70",
       "issue": "6",
       "page": "6136-6146",
       "article_number": null,
-      "published": {
+      "issued": {
         "date-parts": [
           [
             2021,
@@ -1548,73 +1995,53 @@
           ]
         ]
       },
-      "abstract": null
+      "published_print": {
+        "date-parts": [
+          [
+            2021,
+            6
+          ]
+        ]
+      },
+      "published_online": null,
+      "title_overlap": 1.0,
+      "year_match": true
     },
     {
+      "n": 37,
       "key": "jasti2024",
       "doi": "10.1109/CCNC51664.2024.10454856",
+      "kind": "article",
       "status": "metadata_retrieved",
+      "bib_title": "A multi-level Dempster-Shafer and reinforcement learning-based reputation system for connected vehicle security,",
+      "bib_year": 2024,
       "title": [
         "A Multi-Level Dempster-Shafer and Reinforcement Learning-Based Reputation System for Connected Vehicle Security"
       ],
       "authors": [
         {
           "given": "Pranay Chowdary",
-          "family": "Jasti",
-          "sequence": "first",
-          "affiliation": [
-            {
-              "name": "Texas State University,Department of Computer Science,San Marcos,Texas"
-            }
-          ],
-          "role": [
-            {
-              "role": "author",
-              "vocabulary": "crossref"
-            }
-          ]
+          "family": "Jasti"
         },
         {
           "given": "Henry",
-          "family": "Griffith",
-          "sequence": "additional",
-          "affiliation": [
-            {
-              "name": "San Antonio College,Department of Engineering,San Antonio,Texas"
-            }
-          ],
-          "role": [
-            {
-              "role": "author",
-              "vocabulary": "crossref"
-            }
-          ]
+          "family": "Griffith"
         },
         {
           "given": "Heena",
-          "family": "Rathore",
-          "sequence": "additional",
-          "affiliation": [
-            {
-              "name": "Texas State University,Department of Computer Science,San Marcos,Texas"
-            }
-          ],
-          "role": [
-            {
-              "role": "author",
-              "vocabulary": "crossref"
-            }
-          ]
+          "family": "Rathore"
         }
       ],
       "container": [
         "2024 IEEE 21st Consumer Communications &amp; Networking Conference (CCNC)"
       ],
+      "publisher": "IEEE",
+      "type": "proceedings-article",
       "volume": null,
       "issue": null,
       "page": "714-720",
       "article_number": null,
-      "published": {
+      "issued": {
         "date-parts": [
           [
             2024,
@@ -1623,7 +2050,479 @@
           ]
         ]
       },
-      "abstract": null
+      "published_print": {
+        "date-parts": [
+          [
+            2024,
+            1,
+            6
+          ]
+        ]
+      },
+      "published_online": null,
+      "title_overlap": 1.0,
+      "year_match": true
+    },
+    {
+      "n": 38,
+      "key": "sentz2002",
+      "doi": "10.2172/800792",
+      "kind": "tech_report",
+      "status": "metadata_retrieved",
+      "bib_title": "Combination of evidence in Dempster--Shafer theory,",
+      "bib_year": 2002,
+      "title": [
+        "Combination of Evidence in Dempster-Shafer Theory"
+      ],
+      "authors": [
+        {
+          "given": "KARI",
+          "family": "SENTZ"
+        },
+        {
+          "given": "SCOTT",
+          "family": "FERSON"
+        }
+      ],
+      "container": [],
+      "publisher": "Office of Scientific and Technical Information (OSTI)",
+      "type": "report",
+      "volume": null,
+      "issue": null,
+      "page": null,
+      "article_number": null,
+      "issued": {
+        "date-parts": [
+          [
+            2002,
+            4,
+            1
+          ]
+        ]
+      },
+      "published_print": {
+        "date-parts": [
+          [
+            2002,
+            4,
+            1
+          ]
+        ]
+      },
+      "published_online": null,
+      "title_overlap": 1.0,
+      "year_match": true
+    },
+    {
+      "n": 39,
+      "key": "sterbenz2013",
+      "doi": "10.1007/s11235-011-9573-6",
+      "kind": "article",
+      "status": "metadata_retrieved",
+      "bib_title": "Evaluation of network resilience, survivability, and disruption tolerance: Analysis, topology generation, simulation, and experimentation,",
+      "bib_year": 2013,
+      "title": [
+        "Evaluation of network resilience, survivability, and disruption tolerance: analysis, topology generation, simulation, and experimentation"
+      ],
+      "authors": [
+        {
+          "given": "James P. G.",
+          "family": "Sterbenz"
+        },
+        {
+          "given": "Egemen K.",
+          "family": "Çetinkaya"
+        },
+        {
+          "given": "Mahmood A.",
+          "family": "Hameed"
+        },
+        {
+          "given": "Abdul",
+          "family": "Jabbar"
+        },
+        {
+          "given": "Shi",
+          "family": "Qian"
+        },
+        {
+          "given": "Justin P.",
+          "family": "Rohrer"
+        }
+      ],
+      "container": [
+        "Telecommunication Systems"
+      ],
+      "publisher": "Springer Science and Business Media LLC",
+      "type": "journal-article",
+      "volume": null,
+      "issue": null,
+      "page": null,
+      "article_number": null,
+      "issued": {
+        "date-parts": [
+          [
+            2011,
+            12,
+            7
+          ]
+        ]
+      },
+      "published_print": null,
+      "published_online": {
+        "date-parts": [
+          [
+            2011,
+            12,
+            7
+          ]
+        ]
+      },
+      "title_overlap": 1.0,
+      "year_match": false
+    },
+    {
+      "n": 40,
+      "key": "contiking2022",
+      "doi": "10.1016/j.softx.2022.101089",
+      "kind": "article",
+      "status": "metadata_retrieved",
+      "bib_title": "The Contiki-NG open source operating system for next generation IoT devices,",
+      "bib_year": 2022,
+      "title": [
+        "The Contiki-NG open source operating system for next generation IoT devices"
+      ],
+      "authors": [
+        {
+          "given": "George",
+          "family": "Oikonomou"
+        },
+        {
+          "given": "Simon",
+          "family": "Duquennoy"
+        },
+        {
+          "given": "Atis",
+          "family": "Elsts"
+        },
+        {
+          "given": "Joakim",
+          "family": "Eriksson"
+        },
+        {
+          "given": "Yasuyuki",
+          "family": "Tanaka"
+        },
+        {
+          "given": "Nicolas",
+          "family": "Tsiftes"
+        }
+      ],
+      "container": [
+        "SoftwareX"
+      ],
+      "publisher": "Elsevier BV",
+      "type": "journal-article",
+      "volume": "18",
+      "issue": null,
+      "page": "101089",
+      "article_number": "101089",
+      "issued": {
+        "date-parts": [
+          [
+            2022,
+            6
+          ]
+        ]
+      },
+      "published_print": {
+        "date-parts": [
+          [
+            2022,
+            6
+          ]
+        ]
+      },
+      "published_online": null,
+      "title_overlap": 1.0,
+      "year_match": true
+    },
+    {
+      "n": 41,
+      "key": "cooja2006",
+      "doi": "10.1109/LCN.2006.322172",
+      "kind": "article",
+      "status": "metadata_retrieved",
+      "bib_title": "Cross-level sensor network simulation with COOJA,",
+      "bib_year": 2006,
+      "title": [
+        "Cross-Level Sensor Network Simulation with COOJA"
+      ],
+      "authors": [
+        {
+          "given": "Fredrik",
+          "family": "Osterlind"
+        },
+        {
+          "given": "Adam",
+          "family": "Dunkels"
+        },
+        {
+          "given": "Joakim",
+          "family": "Eriksson"
+        },
+        {
+          "given": "Niclas",
+          "family": "Finne"
+        },
+        {
+          "given": "Thiemo",
+          "family": "Voigt"
+        }
+      ],
+      "container": [
+        "Proceedings. 2006 31st IEEE Conference on Local Computer Networks"
+      ],
+      "publisher": "IEEE",
+      "type": "proceedings-article",
+      "volume": null,
+      "issue": null,
+      "page": "641-648",
+      "article_number": null,
+      "issued": {
+        "date-parts": [
+          [
+            2006,
+            11
+          ]
+        ]
+      },
+      "published_print": {
+        "date-parts": [
+          [
+            2006,
+            11
+          ]
+        ]
+      },
+      "published_online": null,
+      "title_overlap": 1.0,
+      "year_match": true
+    },
+    {
+      "n": 42,
+      "key": "rfc6719",
+      "doi": "10.17487/RFC6719",
+      "kind": "rfc",
+      "status": "metadata_retrieved",
+      "bib_title": "The minimum rank with hysteresis objective function,",
+      "bib_year": 2012,
+      "title": [
+        "The Minimum Rank with Hysteresis Objective Function"
+      ],
+      "authors": [
+        {
+          "given": "O.",
+          "family": "Gnawali"
+        },
+        {
+          "given": "P.",
+          "family": "Levis"
+        }
+      ],
+      "container": [],
+      "publisher": "RFC Editor",
+      "type": "report",
+      "volume": null,
+      "issue": null,
+      "page": null,
+      "article_number": null,
+      "issued": {
+        "date-parts": [
+          [
+            2012,
+            9
+          ]
+        ]
+      },
+      "published_print": null,
+      "published_online": {
+        "date-parts": [
+          [
+            2012,
+            9
+          ]
+        ]
+      },
+      "title_overlap": 1.0,
+      "year_match": true
+    },
+    {
+      "n": 43,
+      "key": "camp2002",
+      "doi": "10.1002/wcm.72",
+      "kind": "article",
+      "status": "metadata_retrieved",
+      "bib_title": "A survey of mobility models for ad hoc network research,",
+      "bib_year": 2002,
+      "title": [
+        "A survey of mobility models for ad hoc network research"
+      ],
+      "authors": [
+        {
+          "given": "Tracy",
+          "family": "Camp"
+        },
+        {
+          "given": "Jeff",
+          "family": "Boleng"
+        },
+        {
+          "given": "Vanessa",
+          "family": "Davies"
+        }
+      ],
+      "container": [
+        "Wireless Communications and Mobile Computing"
+      ],
+      "publisher": "Wiley",
+      "type": "journal-article",
+      "volume": "2",
+      "issue": "5",
+      "page": "483-502",
+      "article_number": null,
+      "issued": {
+        "date-parts": [
+          [
+            2002,
+            8
+          ]
+        ]
+      },
+      "published_print": {
+        "date-parts": [
+          [
+            2002,
+            8
+          ]
+        ]
+      },
+      "published_online": {
+        "date-parts": [
+          [
+            2002,
+            9,
+            11
+          ]
+        ]
+      },
+      "title_overlap": 1.0,
+      "year_match": true
+    },
+    {
+      "n": 44,
+      "key": "wilcoxon1945",
+      "doi": "10.2307/3001968",
+      "kind": "article",
+      "status": "metadata_retrieved",
+      "bib_title": "Individual comparisons by ranking methods,",
+      "bib_year": 1945,
+      "title": [
+        "Individual Comparisons by Ranking Methods"
+      ],
+      "authors": [
+        {
+          "given": "Frank",
+          "family": "Wilcoxon"
+        }
+      ],
+      "container": [
+        "Biometrics Bulletin"
+      ],
+      "publisher": "JSTOR",
+      "type": "journal-article",
+      "volume": "1",
+      "issue": "6",
+      "page": "80",
+      "article_number": null,
+      "issued": {
+        "date-parts": [
+          [
+            1945,
+            12
+          ]
+        ]
+      },
+      "published_print": {
+        "date-parts": [
+          [
+            1945,
+            12
+          ]
+        ]
+      },
+      "published_online": null,
+      "title_overlap": 1.0,
+      "year_match": true
+    },
+    {
+      "n": 45,
+      "key": "holm1979",
+      "doi": null,
+      "kind": "article",
+      "status": "no_doi",
+      "bib_title": "A simple sequentially rejective multiple test procedure,",
+      "bib_year": 1979
+    },
+    {
+      "n": 46,
+      "key": "efron1994",
+      "doi": "10.1201/9780429246593",
+      "kind": "book",
+      "status": "metadata_retrieved",
+      "bib_title": "An Introduction to the Bootstrap",
+      "bib_year": 1994,
+      "title": [
+        "An Introduction to the Bootstrap"
+      ],
+      "authors": [
+        {
+          "given": "Bradley",
+          "family": "Efron"
+        },
+        {
+          "given": "R.J.",
+          "family": "Tibshirani"
+        }
+      ],
+      "container": [],
+      "publisher": "Chapman and Hall/CRC",
+      "type": "book",
+      "volume": null,
+      "issue": null,
+      "page": null,
+      "article_number": null,
+      "issued": {
+        "date-parts": [
+          [
+            1994,
+            5,
+            15
+          ]
+        ]
+      },
+      "published_print": null,
+      "published_online": {
+        "date-parts": [
+          [
+            1994,
+            5,
+            15
+          ]
+        ]
+      },
+      "title_overlap": 1.0,
+      "year_match": true
     }
   ]
 }

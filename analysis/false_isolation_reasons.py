@@ -7,6 +7,7 @@ main-campaign logs for DIS-FDM (defense 3) and AEF-RPL with learning off
 honest node that was isolated at least once, it records the rule of its first
 isolation in each run. Output: output/hypotheses/false_isolation_reasons.csv.
 """
+
 import gzip
 import json
 import re
@@ -18,8 +19,12 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[1]
 RUNS = ROOT / "output" / "runs"
 OUT = ROOT / "output" / "hypotheses"
-RULES = {2: "DIS counter saturated", 3: "DIS-FDM counter rule (DIS and parent changes)",
-         4: "DIS-FDM fused rule", 5: "DAO belief rule"}
+RULES = {
+    2: "DIS counter saturated",
+    3: "DIS-FDM counter rule (DIS and parent changes)",
+    4: "DIS-FDM fused rule",
+    5: "DAO belief rule",
+}
 LINE = re.compile(r"#D (\d+) (\d+) ")
 
 
@@ -44,7 +49,9 @@ def main():
             for mob in (0.0, 0.3):
                 counts = Counter()
                 runs = 0
-                for run in sorted(RUNS.glob(f"m{mode}_k*_i3_mob{int(mob * 10)}_d{defense}_s*")):
+                for run in sorted(
+                    RUNS.glob(f"m{mode}_k*_i3_mob{int(mob * 10)}_d{defense}_s*")
+                ):
                     meta, reasons = first_reasons(run)
                     if meta["dis_interval"] != 3:
                         continue
@@ -52,9 +59,17 @@ def main():
                     counts.update(reasons)
                 total = sum(counts.values())
                 for code, name in RULES.items():
-                    rows.append({"defense": defense, "attack_mode": mode, "mobile_frac": mob, "runs": runs,
-                                 "rule": name, "honest_nodes_isolated": counts[code],
-                                 "share": counts[code] / total if total else float("nan")})
+                    rows.append(
+                        {
+                            "defense": defense,
+                            "attack_mode": mode,
+                            "mobile_frac": mob,
+                            "runs": runs,
+                            "rule": name,
+                            "honest_nodes_isolated": counts[code],
+                            "share": counts[code] / total if total else float("nan"),
+                        }
+                    )
     OUT.mkdir(parents=True, exist_ok=True)
     df = pd.DataFrame(rows)
     df.to_csv(OUT / "false_isolation_reasons.csv", index=False, float_format="%.6g")

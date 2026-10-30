@@ -30,7 +30,9 @@ def at(series, t):
 def main():
     counts = {"static": [], "mobile": []}
     runs = 0
-    for f in sorted(glob.glob(str(ROOT / "output/runs/m0_k0_i3_mob*_d0_s*/COOJA.testlog.gz"))):
+    for f in sorted(
+        glob.glob(str(ROOT / "output/runs/m0_k0_i3_mob*_d0_s*/COOJA.testlog.gz"))
+    ):
         d = Path(f).parent
         meta = json.loads((d / "meta.json").read_text())
         mob_ids = set(meta["mobile_ids"])
@@ -57,14 +59,24 @@ def main():
                 counts["mobile" if nid in mob_ids else "static"].append(n)
 
     allc = counts["static"] + counts["mobile"]
-    out = {"runs": runs, "start_s": START_S, "period_s": PERIOD_S,
-           "rule": "beta = largest number of DAOs any node originated in one reset period "
-                   "in the attack-free runs, so no honest node in the calibration data exceeds it",
-           "static": {"n": len(counts["static"]), "max": max(counts["static"]),
-                      "mean": sum(counts["static"]) / len(counts["static"])},
-           "mobile": {"n": len(counts["mobile"]), "max": max(counts["mobile"]),
-                      "mean": sum(counts["mobile"]) / len(counts["mobile"])},
-           "beta": max(allc)}
+    out = {
+        "runs": runs,
+        "start_s": START_S,
+        "period_s": PERIOD_S,
+        "rule": "beta = largest number of DAOs any node originated in one reset period "
+        "in the attack-free runs, so no honest node in the calibration data exceeds it",
+        "static": {
+            "n": len(counts["static"]),
+            "max": max(counts["static"]),
+            "mean": sum(counts["static"]) / len(counts["static"]),
+        },
+        "mobile": {
+            "n": len(counts["mobile"]),
+            "max": max(counts["mobile"]),
+            "mean": sum(counts["mobile"]) / len(counts["mobile"]),
+        },
+        "beta": max(allc),
+    }
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "limsd.json").write_text(json.dumps(out, indent=1))
     print(json.dumps(out, indent=1))

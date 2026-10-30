@@ -74,6 +74,26 @@
    0,
    6
   ],
+  "dio_vs_dis": [
+   0,
+   6
+  ],
+  "power_vs_dis": [
+   6,
+   6
+  ],
+  "power_vs_dao": [
+   1,
+   6
+  ],
+  "delay_vs_dis": [
+   3,
+   6
+  ],
+  "delay_vs_dao": [
+   0,
+   6
+  ],
   "ari_vs_dis": [
    6,
    6
@@ -124,6 +144,14 @@
  "H4": {
   "fpr_lower": [
    0,
+   8
+  ],
+  "fpr_higher": [
+   0,
+   8
+  ],
+  "fpr_mean_higher": [
+   7,
    8
   ],
   "ari_lower": [

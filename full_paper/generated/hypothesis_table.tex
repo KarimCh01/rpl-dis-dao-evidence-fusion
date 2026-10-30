@@ -1,11 +1,11 @@
-\begin{tabularx}{\textwidth}{@{}l>{\raggedright}p{0.24\textwidth}X>{\raggedright\arraybackslash}p{0.17\textwidth}@{}}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright}p{0.17\textwidth}>{\raggedright}p{0.2\textwidth}X>{\raggedright\arraybackslash}p{0.13\textwidth}@{}}
 \toprule
-Hyp. & Alternative hypothesis ($H_1$) & Evidence (significant conditions / tested, Holm $p<.05$) & Decision\\
+Hyp. & Alternative hypothesis ($H_1$) & Pre-specified decision rule & Evidence (significant conditions / tested, Holm $p_H<0.05$) & Decision\\
 \midrule
-H1 & DIS-FDM's published trends are reproduced & 4/8 effect directions & Partly supported \\
-H2 & Combined attack is worse than each single attack & Down PDR vs DIS 6/6; DIO vs DAO 5/6; ARI vs DIS 6/6, vs DAO 0/6 & Partly supported \\
-H3 & AEF-RPL has higher detection accuracy than DIS-FDM against the combined attack & TPR higher 0/6; precision higher 0/6; FPR higher 0/6. RQ3 resilience: down PDR 6/6, ARI 6/6; DAO-only TPR 4/6 & Not supported for detection; resilience improved \\
-H4 & Learning lowers FPR without lowering ARI & FPR lower 0/8; ARI lower 0/6; latency lower 6/6 & Not supported (FPR); latency gain \\
-H5 & The improvements hold across seeds in static and mobile networks, and at 500 and 1000 nodes & Service gain static 3/3, mobile 3/3; rate and loss cells with CI $>0$ 10/12; 500 and 1000 nodes not tested & Partly supported (service gain, 30 nodes) \\
+H1 & DIS-FDM's published trends are reproduced & Same direction as published for every checked effect; no test & 4/8 effect directions & Partly supported \\
+H2 & Combined attack is worse than each single attack & One-sided Wilcoxon, Holm, $p_H<0.05$ against each single attack & Down PDR vs DIS 6/6, vs DAO 0/6; DIO vs DIS 0/6, vs DAO 5/6; Tx power vs DIS 6/6, vs DAO 1/6; delay vs DIS 3/6, vs DAO 0/6; ARI vs DIS 6/6, vs DAO 0/6 & Partly supported \\
+H3 & AEF-RPL has higher detection accuracy than DIS-FDM against the combined attack & Two-sided Wilcoxon, Holm; TPR or precision higher and FPR not higher & TPR higher 0/6; precision higher 0/6; FPR higher 0/6. RQ3 resilience: down PDR 6/6, ARI 6/6; DAO-only TPR 4/6 & Not supported for detection; resilience improved \\
+H4 & Learning lowers FPR without lowering ARI & Two-sided Wilcoxon, Holm; FPR lower and ARI not lower & FPR lower 0/8 (mean FPR higher in 7/8, significant 0/8); ARI lower 0/6; latency lower 6/6 & Not supported (FPR); latency gain \\
+H5 & The improvements hold across seeds in static and mobile networks, and at 500 and 1000 nodes & H3 and H4 effects significant in static and in mobile networks; direction kept at 500 and 1000 nodes & Service gain static 3/3, mobile 3/3; rate and loss cells with CI $>0$ 10/12; 500 and 1000 nodes not tested & Partly supported (service gain, 30 nodes) \\
 \bottomrule
 \end{tabularx}

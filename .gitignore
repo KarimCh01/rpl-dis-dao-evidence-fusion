@@ -2,12 +2,15 @@
 build/
 __pycache__/
 *.pyc
+runner.pid
 output/runs/*/COOJA.testlog
 output/runs/*/cooja.out
 output/plan/*.log
 output/verify/
 output/repro/
 output/repro_journal_extension/
+output/paper_reproduction/*.log
+output/paper_reproduction/report.json
 /*.aux
 /*.log
 /*.out

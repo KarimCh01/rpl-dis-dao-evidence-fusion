@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Paired analysis of fresh no-attack/mobile learning false-positive runs."""
+
 import csv
 import json
 import random
@@ -24,9 +25,11 @@ for seed in SEEDS:
             raise SystemExit(f"missing completed run: {run_id}")
         saved = json.loads(p.read_text())
         d = parse_run.parse(p.parent)
-        canonical = lambda value: json.dumps({k:v for k,v in value.items() if k != 'wall_s'}, sort_keys=True)
+        canonical = lambda value: json.dumps(
+            {k: v for k, v in value.items() if k != "wall_s"}, sort_keys=True
+        )
         if canonical(d) != canonical(saved):
-            raise SystemExit(f'raw-log replay mismatch: {run_id}')
+            raise SystemExit(f"raw-log replay mismatch: {run_id}")
         flags = d.get("_flags", {})
         first_reasons = []
         events = 0
@@ -47,7 +50,7 @@ mean_diff = statistics.mean(diffs)
 rng = random.Random(20261020)
 boot = [statistics.mean(rng.choices(diffs, k=len(diffs))) for _ in range(20000)]
 boot.sort()
-lo, hi = boot[int(.025 * len(boot))], boot[int(.975 * len(boot))]
+lo, hi = boot[int(0.025 * len(boot))], boot[int(0.975 * len(boot))]
 try:
     p_value = float(wilcoxon(diffs, alternative="two-sided", method="exact").pvalue)
 except ValueError:
@@ -56,14 +59,23 @@ except ValueError:
 rows = []
 for seed in seeds:
     a, b = pairs[seed][4], pairs[seed][7]
-    rows.append({"seed": seed, "fixed_fpr_pct": a["fpr_pct"], "learning_fpr_pct": b["fpr_pct"],
-                 "paired_difference_pp_learning_minus_fixed": b["fpr_pct"] - a["fpr_pct"],
-                 "fixed_unique_fp_nodes": a["unique_fp_nodes"], "learning_unique_fp_nodes": b["unique_fp_nodes"],
-                 "fixed_blacklist_events": a["blacklist_events"], "learning_blacklist_events": b["blacklist_events"],
-                 "learning_first_q_flags": b["q_first_flags"]})
+    rows.append(
+        {
+            "seed": seed,
+            "fixed_fpr_pct": a["fpr_pct"],
+            "learning_fpr_pct": b["fpr_pct"],
+            "paired_difference_pp_learning_minus_fixed": b["fpr_pct"] - a["fpr_pct"],
+            "fixed_unique_fp_nodes": a["unique_fp_nodes"],
+            "learning_unique_fp_nodes": b["unique_fp_nodes"],
+            "fixed_blacklist_events": a["blacklist_events"],
+            "learning_blacklist_events": b["blacklist_events"],
+            "learning_first_q_flags": b["q_first_flags"],
+        }
+    )
 with (OUT / "learning_fp_extension_paired.csv").open("w", newline="") as f:
     w = csv.DictWriter(f, fieldnames=list(rows[0]))
-    w.writeheader(); w.writerows(rows)
+    w.writeheader()
+    w.writerows(rows)
 
 summary = {
     "seeds": len(seeds),
@@ -73,12 +85,17 @@ summary = {
     "paired_difference_bootstrap_95ci_low_pp": lo,
     "paired_difference_bootstrap_95ci_high_pp": hi,
     "wilcoxon_two_sided_p": p_value,
-    "fixed_mean_blacklist_events": statistics.mean(pairs[s][4]["blacklist_events"] for s in seeds),
-    "learning_mean_blacklist_events": statistics.mean(pairs[s][7]["blacklist_events"] for s in seeds),
+    "fixed_mean_blacklist_events": statistics.mean(
+        pairs[s][4]["blacklist_events"] for s in seeds
+    ),
+    "learning_mean_blacklist_events": statistics.mean(
+        pairs[s][7]["blacklist_events"] for s in seeds
+    ),
     "learning_first_q_flags_total": sum(pairs[s][7]["q_first_flags"] for s in seeds),
     "learning_unique_flags_total": sum(pairs[s][7]["unique_fp_nodes"] for s in seeds),
 }
 with (OUT / "learning_fp_extension_summary.csv").open("w", newline="") as f:
     w = csv.DictWriter(f, fieldnames=list(summary))
-    w.writeheader(); w.writerow(summary)
+    w.writeheader()
+    w.writerow(summary)
 print(json.dumps(summary, indent=2))

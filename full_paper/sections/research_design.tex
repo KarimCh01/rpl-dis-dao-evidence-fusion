@@ -4,11 +4,11 @@ The study pursued seven objectives derived from the research questions:
 \begin{enumerate}
 \item[O1:] Reproduce DIS-FDM's method and its reported performance trends in an independent Contiki-NG/Cooja implementation, to validate the environment before extending it.
 \item[O2:] Implement an attack model in which the same node executes multicast DIS flooding and false-parent DAO manipulation concurrently.
-\item[O3:] Extend DIS-FDM's evidence fusion with a self-calibrated DAO-consistency source, calibrate the DIS threshold on each node, and derive the parent-change thresholds from attack-free runs instead of fixing them by hand.
-\item[O4:] Evaluate the extension against DIS-FDM, Secure-RPL, RPL-MRC, and Li-MSD in detection, service, and cost, including robustness to attack rate and reception loss.
+\item[O3:] Extend DIS-FDM's Dempster--Shafer evidence fusion with a third, self-calibrated DAO-consistency evidence source, and make the DIS evidence self-calibrating so that it remains reliable when nodes move. In this study the DIS threshold is calibrated on each node and the parent-change thresholds are derived from attack-free runs, whereas the per-node discount of the belief masses planned for mobility was not implemented (Section~\ref{sec:limitations}).
+\item[O4:] Evaluate the extended framework's network performance and detection accuracy against the combined attack, benchmarked against unmodified DIS-FDM, the DIS defenses RPL-MRC and Secure-RPL, and the DAO defense Li-MSD, and assess its cost, scalability, and robustness. Scalability could not be assessed beyond 30 nodes (Section~\ref{sec:limitations}), and robustness was assessed against attack rate and reception loss.
 \item[O5:] Validate every comparison statistically across independent paired seeds in static and mobile networks.
 \item[O6:] Give each node a tabular Q-learning decision layer, specified and analyzed mathematically before simulation.
-\item[O7:] Define the Attack Resilience Index and the Downward Recovery Time, and evaluate all defenses on them.
+\item[O7:] Define a resilience metric, the Attack Resilience Index, and evaluate all defenses in networks of 30, 500, and 1000 nodes. The Downward Recovery Time was added as a second service measure, and the 500- and 1000-node evaluation was not completed (Section~\ref{sec:limitations}).
 \end{enumerate}
 
 Table~\ref{tab:chain} links each gap to the questions, objectives, hypotheses, and contributions that address it, so that every result in Section~\ref{sec:results} can be traced back to the gap it answers.
@@ -21,7 +21,7 @@ Table~\ref{tab:chain} links each gap to the questions, objectives, hypotheses, a
 \toprule
 Gap & RQ & Objectives & Hypothesis and contribution \\
 \midrule
-3 (no accuracy evidence) & RQ1 & O1, O5 & H1; reproduction with TPR, FPR, and tests (C4, C5) \\
+3 (no accuracy evidence) & RQ1 & O1, O5 & H1; reproduction with detection rates and tests (C4, C5) \\
 1 (single vector) & RQ2 & O2, O7 & H2; combined threat model, ARI and DRT (C3, C4) \\
 1, 2 (fixed evidence) & RQ3 & O3, O4, O7 & H3; calibrated DAO evidence and repair (C1, C4) \\
 4 (no on-node learning) & RQ4 & O6 & H4; Q-learning layer and analysis (C1, C2) \\
@@ -31,7 +31,7 @@ Gap & RQ & Objectives & Hypothesis and contribution \\
 \end{table}
 
 \subsection{Hypotheses and Their Development}
-Each hypothesis, its measurement, and its decision rule were fixed in the research proposal before the main experiments, and they are decided here exactly as stated there. Each is written as a null ($H_0$) and alternative ($H_1$) pair after the reasoning that led to it. Where the evaluation adds a measurement that the proposal did not tie to a hypothesis (ARI in H2 and H3, attack rate and reception loss in H5), it is reported next to the hypothesis as additional evidence and does not change the decision.
+Each hypothesis, its measurement, and its decision rule were fixed in the pre-specified protocol before the main experiments, and they are decided here exactly as stated there; Section~\ref{sec:results} repeats each rule next to its decision. Detection is measured by the true-positive rate (TPR), the false-positive rate (FPR), and precision, and service by the packet delivery ratio (PDR) and ARI. Each hypothesis is written as a null ($H_0$) and alternative ($H_1$) pair after the reasoning that led to it. Where the evaluation adds a measurement that the protocol did not tie to a hypothesis (ARI in H2 and H3, attack rate and reception loss in H5), it is reported next to the hypothesis as additional evidence and does not change the decision.
 
 DIS-FDM reduced DIO overhead by blacklisting flooders, so that their DIS messages no longer trigger DIO responses \cite{prajisha2025}. When the same rules run in the same simulator family, the direction of these effects should be reproduced, even though absolute values may differ because some settings were not reported. $H1_0$: the reproduced effects differ in direction from the published ones. $H1_1$: they have the same direction and the defenses rank in the same order.
 
@@ -46,7 +46,7 @@ Gains that come from the protocol mechanism, and not from a particular topology,
 For H2 the expected direction is known (the combined attack should be worse), so its tests are one-sided. H3 and H4 are tested two-sided, since an added mechanism might also degrade detection.
 
 \subsection{Conceptual Framework}
-In the framework of Fig.~\ref{fig:framework}, the independent variable is the defense configuration, which differs in three respects: the evidence sources, the decision layer, and the treatment of DAOs. Detection, service, and cost form the dependent variables, and four moderators change the difficulty of the attack. Seed, layout, traffic, duration, and radio parameters are identical in both runs of a pair. An ablation that alters a single respect of the defense therefore shows the effect of that respect alone.
+In the framework of Fig.~\ref{fig:framework}, the independent variable is the defense configuration, which differs in three respects: the evidence sources, the decision layer, and the treatment of DAOs. Detection, service, and cost form the dependent variables, and four moderators change the difficulty of the attack. Seed, layout, traffic, duration, radio parameters, and the medium access control (MAC) layer are identical in both runs of a pair. An ablation that alters a single respect of the defense therefore shows the effect of that respect alone.
 
 \begin{figure}[t]
 \centering
@@ -56,9 +56,9 @@ In the framework of Fig.~\ref{fig:framework}, the independent variable is the de
   arr/.style={-{Stealth[length=2mm]},thick}]
 \node[box] (iv) {\textbf{Independent: defense}\\ Evidence sources (DIS, parent, energy, DAO)\\ Decision layer (fixed, Q-learning)\\ DAO handling (drop, repair)};
 \node[box,right=1.9cm of iv,text width=2.6cm] (dv) {\textbf{Dependent}\\ Detection: TPR, FPR, precision, latency\\ Service: downward PDR, ARI, DRT\\ Cost: DIO, radio power, CPU time};
-\node[mod,above=0.45cm of $(iv.north)!0.5!(dv.north)$] (mo) {\textbf{Moderators:} attacker fraction (10, 25, 50\%), mobility (0, 30\%), attack interval (3 to 30\,s), reception success (1.0, .95, .8)};
+\node[mod,above=0.45cm of $(iv.north)!0.5!(dv.north)$] (mo) {\textbf{Moderators:} attacker fraction (10, 25, 50\%), mobility (0, 30\%), attack interval (3 to 30\,s), reception success (1.0, 0.95, 0.8)};
 \node[mod,draw=gray,fill=gray!6,below=0.45cm of $(iv.south)!0.5!(dv.south)$] (co) {\textbf{Controls:} paired seed (layout, attackers, mobility), traffic, 60\,min duration, onset at 300\,s, radio ranges, MAC};
-\draw[arr] (iv) -- node[pos=.27,above]{H2--H4} (dv);
+\draw[arr] (iv) -- node[pos=0.27,above]{H2--H4} (dv);
 \coordinate (hit) at ($(iv.east)!0.72!(dv.west)$);
 \draw[arr,orange!70!black] (mo.south -| hit) -- node[right]{H5} ($(hit)+(0,0.08)$);
 \draw[arr,gray] (co.north -| hit) -- ($(hit)-(0,0.08)$);

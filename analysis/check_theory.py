@@ -37,11 +37,22 @@ def delay_bounds(eps_values, rng, trials=20000):
         upper = (ks + 2) * T_W
         offset = rng.uniform(0, T_W, trials)
         delays = (T_W - offset) + (windows_to_detect(eps) - 1) * T_W
-        rows.append({"eps": eps, "k_star": ks, "windows_needed": windows_to_detect(eps),
-                     "lower_bound_s": T_W, "upper_bound_s": upper,
-                     "min_delay_s": float(delays.min()), "max_delay_s": float(delays.max()),
-                     "holds": bool(delays.min() > 0 and delays.max() <= upper
-                                   and windows_to_detect(eps) >= 2)})
+        rows.append(
+            {
+                "eps": eps,
+                "k_star": ks,
+                "windows_needed": windows_to_detect(eps),
+                "lower_bound_s": T_W,
+                "upper_bound_s": upper,
+                "min_delay_s": float(delays.min()),
+                "max_delay_s": float(delays.max()),
+                "holds": bool(
+                    delays.min() > 0
+                    and delays.max() <= upper
+                    and windows_to_detect(eps) >= 2
+                ),
+            }
+        )
     return rows
 
 
@@ -55,10 +66,19 @@ def false_alarms(eps, q_values, horizon, rng, runs=20000):
         for t in range(horizon):
             streak = np.where(bad[:, t], streak + 1, 0)
             alarm |= streak >= need
-        bound = min(1.0, (horizon - need + 1) * q ** need)
+        bound = min(1.0, (horizon - need + 1) * q**need)
         rate = float(alarm.mean())
-        rows.append({"eps": eps, "q": q, "windows": horizon, "needed_in_a_row": need,
-                     "measured": rate, "bound": bound, "holds": bool(rate <= bound + 3 * math.sqrt(bound / runs))})
+        rows.append(
+            {
+                "eps": eps,
+                "q": q,
+                "windows": horizon,
+                "needed_in_a_row": need,
+                "measured": rate,
+                "bound": bound,
+                "holds": bool(rate <= bound + 3 * math.sqrt(bound / runs)),
+            }
+        )
     return rows
 
 
@@ -102,10 +122,20 @@ def policy_check(rng):
     for i, pi in enumerate(p):
         learned = "isolate" if q[i, 1] > q[i, 0] else "accept"
         expect = "isolate" if pi > 0.5 else ("either" if pi == 0.5 else "accept")
-        conservative = expect == "isolate" and learned == "accept" and pi - 0.5 <= NEAR_BAND + 1e-9
-        rows.append({"p": float(pi), "Q_accept": round(float(q[i, 0]), 3), "Q_isolate": round(float(q[i, 1]), 3),
-                     "learned": learned, "theory": expect, "conservative_near_threshold": bool(conservative),
-                     "holds": bool(expect == "either" or learned == expect or conservative)})
+        conservative = (
+            expect == "isolate" and learned == "accept" and pi - 0.5 <= NEAR_BAND + 1e-9
+        )
+        rows.append(
+            {
+                "p": float(pi),
+                "Q_accept": round(float(q[i, 0]), 3),
+                "Q_isolate": round(float(q[i, 1]), 3),
+                "learned": learned,
+                "theory": expect,
+                "conservative_near_threshold": bool(conservative),
+                "holds": bool(expect == "either" or learned == expect or conservative),
+            }
+        )
     return rows
 
 
@@ -116,14 +146,24 @@ def bound_check(rng):
             p = rng.random(96)
             _, _, q_max = q_learning(p, gamma, 200000, rng, fixed_point=fixed)
             bound = 2.0 / (1 - gamma)
-            out.append({"gamma": gamma, "fixed_point_q8_8": fixed, "max_abs_Q": round(float(q_max), 4),
-                        "bound": bound, "holds": bool(q_max <= bound),
-                        "fits_int16": bool(q_max * (1 << Q_FRAC_BITS) < 32767)})
+            out.append(
+                {
+                    "gamma": gamma,
+                    "fixed_point_q8_8": fixed,
+                    "max_abs_Q": round(float(q_max), 4),
+                    "bound": bound,
+                    "holds": bool(q_max <= bound),
+                    "fits_int16": bool(q_max * (1 << Q_FRAC_BITS) < 32767),
+                }
+            )
     return out
 
 
 def exploration_schedule():
-    return [{"minute": m, "epsilon": eps_greedy(m * 60)} for m in (0, 10, 20, 30, 40, 50, 60)]
+    return [
+        {"minute": m, "epsilon": eps_greedy(m * 60)}
+        for m in (0, 10, 20, 30, 40, 50, 60)
+    ]
 
 
 def main():
@@ -134,31 +174,53 @@ def main():
         "policy_gamma0": policy_check(rng),
         "q_bound": bound_check(rng),
         "exploration": exploration_schedule(),
-        "memory_bytes": {"q_table": 96 * 2 * 2, "visit_counts": 96 * 2 * 2, "per_neighbor": 2},
+        "memory_bytes": {
+            "q_table": 96 * 2 * 2,
+            "visit_counts": 96 * 2 * 2,
+            "per_neighbor": 2,
+        },
     }
-    res["all_hold"] = all(r["holds"] for key in ("delay", "false_alarm", "policy_gamma0", "q_bound")
-                          for r in res[key])
+    res["all_hold"] = all(
+        r["holds"]
+        for key in ("delay", "false_alarm", "policy_gamma0", "q_bound")
+        for r in res[key]
+    )
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "theory_check.json").write_text(json.dumps(res, indent=1))
 
     print("Detection delay (T_w = 10 s, tau = 0.95)")
     for r in res["delay"]:
-        print(f"  eps={r['eps']:<5} k*={r['k_star']:<3} windows={r['windows_needed']:<3} "
-              f"bounds ({r['lower_bound_s']}, {r['upper_bound_s']}] s  "
-              f"simulated [{r['min_delay_s']:.1f}, {r['max_delay_s']:.1f}] s  {'OK' if r['holds'] else 'FAIL'}")
+        print(
+            f"  eps={r['eps']:<5} k*={r['k_star']:<3} windows={r['windows_needed']:<3} "
+            f"bounds ({r['lower_bound_s']}, {r['upper_bound_s']}] s  "
+            f"simulated [{r['min_delay_s']:.1f}, {r['max_delay_s']:.1f}] s  {'OK' if r['holds'] else 'FAIL'}"
+        )
     print("False alarm over 56 minutes (eps = 0.5)")
     for r in res["false_alarm"]:
-        print(f"  q={r['q']:<5} measured={r['measured']:.4f} bound={r['bound']:.4f}  {'OK' if r['holds'] else 'FAIL'}")
+        print(
+            f"  q={r['q']:<5} measured={r['measured']:.4f} bound={r['bound']:.4f}  {'OK' if r['holds'] else 'FAIL'}"
+        )
     print("Learned policy with gamma = 0 (theory: isolate iff p > 0.5)")
     for r in res["policy_gamma0"]:
-        tag = "OK, accepts near threshold" if r["conservative_near_threshold"] else ("OK" if r["holds"] else "FAIL")
-        print(f"  p={r['p']:<5} Q(accept)={r['Q_accept']:>7} Q(isolate)={r['Q_isolate']:>7} "
-              f"learned={r['learned']:<8} theory={r['theory']:<8} {tag}")
+        tag = (
+            "OK, accepts near threshold"
+            if r["conservative_near_threshold"]
+            else ("OK" if r["holds"] else "FAIL")
+        )
+        print(
+            f"  p={r['p']:<5} Q(accept)={r['Q_accept']:>7} Q(isolate)={r['Q_isolate']:>7} "
+            f"learned={r['learned']:<8} theory={r['theory']:<8} {tag}"
+        )
     print("Q-value bound")
     for r in res["q_bound"]:
-        print(f"  gamma={r['gamma']} fixed_point={r['fixed_point_q8_8']!s:<5} max|Q|={r['max_abs_Q']:<7} "
-              f"bound={r['bound']}  {'OK' if r['holds'] else 'FAIL'}")
-    print("Exploration rate:", ", ".join(f"{r['minute']} min {r['epsilon']:.4f}" for r in res["exploration"]))
+        print(
+            f"  gamma={r['gamma']} fixed_point={r['fixed_point_q8_8']!s:<5} max|Q|={r['max_abs_Q']:<7} "
+            f"bound={r['bound']}  {'OK' if r['holds'] else 'FAIL'}"
+        )
+    print(
+        "Exploration rate:",
+        ", ".join(f"{r['minute']} min {r['epsilon']:.4f}" for r in res["exploration"]),
+    )
     print("Memory:", res["memory_bytes"])
     print("ALL HOLD" if res["all_hold"] else "SOME CHECK FAILED")
 

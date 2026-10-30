@@ -79,8 +79,20 @@ def parse(run_dir):
             elif tag == "#B":
                 energest_second = int(args[4])
 
-    res = {k: meta[k] for k in ("run_id", "seed", "nodes", "attackers", "attack_mode", "dis_interval",
-                                "defense", "mobile_frac", "duration_min")}
+    res = {
+        k: meta[k]
+        for k in (
+            "run_id",
+            "seed",
+            "nodes",
+            "attackers",
+            "attack_mode",
+            "dis_interval",
+            "defense",
+            "mobile_frac",
+            "duration_min",
+        )
+    }
     res["fdm_window"] = meta.get("fdm_window", 10)
 
     def pdr_window(t_from):
@@ -93,7 +105,11 @@ def parse(run_dir):
     delays = [rx[k] - v for k, v in sent if k in rx]
     res["delay_up_ms"] = 1000 * sum(delays) / len(delays) if delays else float("nan")
     reached = [k for k, _ in sent if k in rx]
-    res["pdr_down"] = (sum(1 for k in reached if k in echo) / len(reached)) if reached else float("nan")
+    res["pdr_down"] = (
+        (sum(1 for k in reached if k in echo) / len(reached))
+        if reached
+        else float("nan")
+    )
     expected = len(legit) * (duration_s - ATTACK_START_S) / meta.get("send_s", 10)
     res["delivery_up"] = got / expected if expected else float("nan")
     rtt = [echo[k] - tx[k] for k in reached if k in echo]
@@ -116,7 +132,9 @@ def parse(run_dir):
     res["dis_attack_phase"] = total_phase(1)
     res["dao_attack_phase"] = total_phase(2) + total_phase(9)
     res["parent_switches"] = total(7, stats_last)
-    res["parent_switches_legit"] = sum(stats_last[i][1][7] for i in legit if i in stats_last)
+    res["parent_switches_legit"] = sum(
+        stats_last[i][1][7] for i in legit if i in stats_last
+    )
 
     tx_s = []
     rx_s = []
@@ -149,14 +167,32 @@ def parse(run_dir):
         res["fpr"] = fp / len(legit) if legit else float("nan")
         res["precision"] = tp / (tp + fp) if (tp + fp) else float("nan")
         firsts = [min(r[0] for r in flags[a]) for a in attackers if a in flags]
-        res["detect_latency_s"] = (sum(firsts) / len(firsts) - ATTACK_START_S) if firsts else float("nan")
-        res["fp_before_attack"] = sum(1 for i in legit if i in flags and
-                                      min(r[0] for r in flags[i]) < ATTACK_START_S)
+        res["detect_latency_s"] = (
+            (sum(firsts) / len(firsts) - ATTACK_START_S) if firsts else float("nan")
+        )
+        res["fp_before_attack"] = sum(
+            1
+            for i in legit
+            if i in flags and min(r[0] for r in flags[i]) < ATTACK_START_S
+        )
         res["blacklist_entries_legit"] = sum(len(flags[i]) for i in legit if i in flags)
-        res["blacklist_entries_attacker"] = sum(len(flags[a]) for a in attackers if a in flags)
+        res["blacklist_entries_attacker"] = sum(
+            len(flags[a]) for a in attackers if a in flags
+        )
     else:
-        for k in ("tp", "fn", "fp", "tn", "tpr", "fpr", "precision", "detect_latency_s", "fp_before_attack",
-                  "blacklist_entries_legit", "blacklist_entries_attacker"):
+        for k in (
+            "tp",
+            "fn",
+            "fp",
+            "tn",
+            "tpr",
+            "fpr",
+            "precision",
+            "detect_latency_s",
+            "fp_before_attack",
+            "blacklist_entries_legit",
+            "blacklist_entries_attacker",
+        ):
             res[k] = float("nan")
 
     def isolated_frac(node):
@@ -164,8 +200,10 @@ def parse(run_dir):
         span = duration_s - start
         if span <= 0:
             return 0.0
-        events = sorted([(t, d, 1) for t, d, _ in flags.get(node, [])] +
-                        [(t, d, -1) for t, d in releases.get(node, [])])
+        events = sorted(
+            [(t, d, 1) for t, d, _ in flags.get(node, [])]
+            + [(t, d, -1) for t, d in releases.get(node, [])]
+        )
         holders = set()
         since = None
         total = 0.0
@@ -183,16 +221,23 @@ def parse(run_dir):
         return total / span
 
     if meta["defense"] in (1, 3, 4, 5, 6, 7):
-        res["legit_isolated_frac"] = sum(isolated_frac(i) for i in legit) / len(legit) if legit else float("nan")
-        res["attacker_isolated_frac"] = (sum(isolated_frac(a) for a in attackers) / len(attackers)
-                                         if attackers else float("nan"))
+        res["legit_isolated_frac"] = (
+            sum(isolated_frac(i) for i in legit) / len(legit) if legit else float("nan")
+        )
+        res["attacker_isolated_frac"] = (
+            sum(isolated_frac(a) for a in attackers) / len(attackers)
+            if attackers
+            else float("nan")
+        )
     else:
         res["legit_isolated_frac"] = res["attacker_isolated_frac"] = float("nan")
     if policy:
         by_report = {}
         for t, nid, iso, changed in policy:
             by_report.setdefault(round(t / 600), []).append(changed)
-        res["policy_changes_last"] = sum(by_report[max(by_report)]) / len(by_report[max(by_report)])
+        res["policy_changes_last"] = sum(by_report[max(by_report)]) / len(
+            by_report[max(by_report)]
+        )
     res["_psw"] = {str(k): v for k, v in psw_times.items()}
     res["_calib"] = {str(k): v for k, v in calib.items()}
     res["_flags"] = {str(k): v for k, v in flags.items()}

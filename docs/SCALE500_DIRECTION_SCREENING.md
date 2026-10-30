@@ -1,7 +1,7 @@
 # 500-node application-direction diagnostic
 
 Started 28 October 2026 after the 12 load-isolation controls completed.
-This campaign focuses exclusively on 500 nodes, as requested by the author.
+This campaign is restricted to 500 nodes, the smaller of the two planned sizes.
 
 ## Evidence motivating the test
 
