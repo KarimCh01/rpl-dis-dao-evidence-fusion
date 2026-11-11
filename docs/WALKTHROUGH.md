@@ -590,7 +590,7 @@ Measured on legitimate nodes over the attack phase (300 s to 3600 s):
 | TPR (recall) | attackers blacklisted by at least one legitimate node / all attackers |
 | FPR | legitimate nodes blacklisted by at least one node / all legitimate nodes |
 | Precision | attackers blacklisted / all nodes blacklisted |
-| Detection latency | mean over detected attackers of first blacklisting time minus 300 s |
+| Detection latency | mean over detected attackers of the first blacklisting time at or after 300 s, minus 300 s |
 | Attack Resilience Index (ARI) | completed round trips of the legitimate nodes after 300 s, divided by the same count in the matched attack-free reference run with the same seed, layout and mobile nodes (`analysis/metrics.py`) |
 | Downward Recovery Time (DRT) | time from the first minute after 300 s in which the 3-minute trailing mean of completed round trips falls below 90% of its pre-attack level to the start of five consecutive minutes back above it; censored at the end of the run |
 
@@ -759,7 +759,7 @@ already causes.
 | Combined, 50%, static | downward delivery | 67.5% | 88.5% | 87.5% |
 | Combined, 50%, static | ARI | 0.44 | 0.73 | 0.76 |
 | Combined, 25%, mobile | downward delivery | 80.8% | 98.1% | 96.4% |
-| Combined, 25%, mobile | detection latency | 43.2 s | 32.9 s | 14.0 s |
+| Combined, 25%, mobile | detection latency | 45.2 s | 34.9 s | 21.0 s |
 | DAO only, 25%, static | TPR | 11.4% | 95.7% | 92.9% |
 | DAO only, 25%, static | precision | 13.8% | 89.7% | 83.6% |
 | DAO only, 25%, static | downward delivery | 81.1% | 98.4% | 97.6% |
@@ -800,9 +800,11 @@ detection.
 
 AEF-RPL (defense 7) against AEF fixed (defense 4), same tests:
 
-* Detection latency is lower in 6 of 6 combined-attack conditions (Holm p =
-  0.012), by 20 to 27% in static networks (26.4 s against 33.0 s with 7
-  attackers) and by 53 to 73% in mobile networks (14.0 s against 32.9 s).
+* Mean detection latency is lower in 6 of 6 combined-attack conditions and
+  significantly so in 5 of them (Holm p at most 0.023), by 20 to 27% in static
+  networks (26.4 s against 33.0 s with 7 attackers) and by 31 to 49% in mobile
+  networks (21.0 s against 34.9 s with 7 attackers). With 14 mobile attackers
+  the 31% reduction has Holm p = 0.064.
 * ARI is not lower in any condition (0 of 6).
 * FPR is not lower in any of the 8 tested conditions (0 of 8); the mean FPR is
   higher with learning in 7 of the 8, but no increase is significant. In the
@@ -819,15 +821,17 @@ AEF-RPL (defense 7) against AEF fixed (defense 4), same tests:
   no attack in static networks; 1.9 and 1.7 in mobile networks.
 
 H4 ("learning lowers FPR without lowering ARI") is not supported. The latency
-reduction is the one significant gain of the learning layer.
+reduction, significant in 5 of 6 conditions, is the one gain of the learning
+layer.
 
 ### L.5 RQ5 and H5: consistency across conditions
 
-* The service gain (downward delivery, ARI) and the latency gain are
-  significant in each of the three static and three mobile conditions of the
-  main campaign; with 10 seeds the strongest possible Wilcoxon result is
-  p = 0.00195 before correction and 0.012 after Holm correction over six
-  conditions, and these gains reach it.
+* The service gain (downward delivery, ARI) is significant in each of the
+  three static and three mobile conditions of the main campaign; with 10 seeds
+  the strongest possible Wilcoxon result is p = 0.00195 before correction and
+  0.012 after Holm correction over six conditions, and this gain reaches it.
+  The latency gain is significant in 5 of the 6 conditions (not with 14 mobile
+  attackers).
 * On fresh seeds 21 to 30 at the default attack rate, AEF-RPL delivers 95.7%
   (static) and 98.0% (mobile) downward against 78.7% and 82.8% for DIS-FDM,
   paired differences of 17.0 and 15.2 points with bootstrap intervals above
@@ -840,9 +844,9 @@ reduction is the one significant gain of the learning layer.
   restored service.
 * 500 and 1000 nodes were not tested (Part D2).
 
-H5 is partly supported: the service and latency gains hold across seeds,
-attacker fractions, mobility, attack rates up to 10 s and reception loss at 30
-nodes; the larger networks remain untested.
+H5 is partly supported: the service gain holds across seeds, attacker
+fractions, mobility, attack rates up to 10 s and reception loss at 30 nodes,
+and the latency gain in 5 of 6 conditions; the larger networks remain untested.
 
 ### L.6 Further findings
 

@@ -26,7 +26,7 @@ QSec-RPL applies Q-learning to detect version-number attacks in mobile RPL \cite
 \toprule
 Method & Threat & Mechanism & Limitation for the combined threat & How this study differs \\
 \midrule
-DIS-FDM \cite{prajisha2025} & Multicast DIS flooding & Local Dempster--Shafer fusion of DIS, parent-change, and energy evidence & Blind to DAO; fixed belief masses; no accuracy or statistics reported & Adds self-calibrated DAO evidence and repair; reports detection rates and paired tests \\
+DIS-FDM \cite{prajisha2025} & Multicast DIS flooding & Local Dempster--Shafer fusion of DIS, parent-change, and energy evidence & Does not inspect DAOs; fixed belief masses; no accuracy or statistics reported & Adds self-calibrated DAO evidence and repair; reports detection rates and paired tests \\
 Secure-RPL \cite{vermaranga2020}, RPL-MRC \cite{medjek2021} & DIS flooding & Rejects early DIS arrivals; delays DIO responses & No DAO view & Both evaluated as baselines under the combined attack \\
 Li-MSD \cite{limsd2024} & DAO insider (volume) & DAO counting and blacklisting & Misses a well-formed DAO with a false parent & Checks DAO content (parent) instead of volume \\
 Garcia Ribera et al.\ \cite{garciaribera2022} & Several attacks, concurrent flooding & Hybrid distributed and central IDS & One attack per node; central component & Same node runs both attacks; fully local decisions \\

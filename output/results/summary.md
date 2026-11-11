@@ -39,26 +39,26 @@ Tables report mean ± standard deviation over 10 seeds per cell. 95% confidence 
 | DIS flooding | Secure-RPL | 98.9 ± 0.5 | 88.3 ± 6.4 | 65.2 ± 11.3 | 9952 ± 1595 | 0.161 ± 0.017 | 100.0 ± 0.0 | 0.0 ± 0.0 | 100.0 ± 0.0 | 12.0 ± 1.6 |
 | DIS flooding | RPL-MRC | 99.1 ± 0.3 | 91.0 ± 3.7 | 65.5 ± 11.0 | 7602 ± 2761 | 0.164 ± 0.026 | n/a | n/a | n/a | n/a |
 | DIS flooding | Li-MSD | 98.9 ± 0.5 | 89.6 ± 5.5 | 66.2 ± 9.5 | 10849 ± 1718 | 0.160 ± 0.020 | 3.3 ± 10.5 | 0.8 ± 1.6 | 25.0 ± 35.4 | 3077.3 |
-| DIS flooding | DIS-FDM | 99.0 ± 0.5 | 89.8 ± 5.2 | 65.7 ± 10.7 | 7933 ± 1450 | 0.149 ± 0.019 | 100.0 ± 0.0 | 53.1 ± 14.4 | 18.7 ± 4.3 | 35.4 ± 13.9 |
-| DIS flooding | AEF-RPL, learning off | 98.9 ± 0.4 | 90.1 ± 4.6 | 64.5 ± 12.0 | 7191 ± 748 | 0.141 ± 0.018 | 100.0 ± 0.0 | 53.5 ± 14.7 | 18.6 ± 4.3 | 35.4 ± 13.9 |
-| DIS flooding | AEF-RPL, first learning version | 98.9 ± 0.5 | 89.6 ± 4.8 | 64.9 ± 11.1 | 8904 ± 1308 | 0.152 ± 0.018 | 100.0 ± 0.0 | 53.5 ± 14.7 | 18.6 ± 4.3 | 11.4 ± 18.6 |
-| DIS flooding | AEF-RPL | 98.9 ± 0.3 | 87.0 ± 7.2 | 65.2 ± 11.4 | 7693 ± 783 | 0.150 ± 0.020 | 100.0 ± 0.0 | 53.5 ± 14.7 | 18.6 ± 4.3 | 9.7 ± 19.0 |
+| DIS flooding | DIS-FDM | 99.0 ± 0.5 | 89.8 ± 5.2 | 65.7 ± 10.7 | 7933 ± 1450 | 0.149 ± 0.019 | 100.0 ± 0.0 | 53.1 ± 14.4 | 18.7 ± 4.3 | 42.3 ± 6.1 |
+| DIS flooding | AEF-RPL, learning off | 98.9 ± 0.4 | 90.1 ± 4.6 | 64.5 ± 12.0 | 7191 ± 748 | 0.141 ± 0.018 | 100.0 ± 0.0 | 53.5 ± 14.7 | 18.6 ± 4.3 | 42.3 ± 6.1 |
+| DIS flooding | AEF-RPL, first learning version | 98.9 ± 0.5 | 89.6 ± 4.8 | 64.9 ± 11.1 | 8904 ± 1308 | 0.152 ± 0.018 | 100.0 ± 0.0 | 53.5 ± 14.7 | 18.6 ± 4.3 | 20.7 ± 10.8 |
+| DIS flooding | AEF-RPL | 98.9 ± 0.3 | 87.0 ± 7.2 | 65.2 ± 11.4 | 7693 ± 783 | 0.150 ± 0.020 | 100.0 ± 0.0 | 53.5 ± 14.7 | 18.6 ± 4.3 | 19.4 ± 11.2 |
 | DAO manipulation | RPL (no defense) | 93.4 ± 6.5 | 89.9 ± 5.8 | 69.0 ± 12.0 | 9671 ± 1130 | 0.204 ± 0.026 | n/a | n/a | n/a | n/a |
 | DAO manipulation | Secure-RPL | 93.6 ± 6.6 | 89.6 ± 5.8 | 68.8 ± 12.0 | 9243 ± 1123 | 0.198 ± 0.035 | 0.0 ± 0.0 | 0.0 ± 0.0 | n/a | n/a |
 | DAO manipulation | RPL-MRC | 92.8 ± 8.2 | 91.3 ± 3.1 | 68.9 ± 11.7 | 6400 ± 2277 | 0.196 ± 0.042 | n/a | n/a | n/a | n/a |
 | DAO manipulation | Li-MSD | 94.7 ± 7.1 | 89.3 ± 6.3 | 66.4 ± 11.2 | 9385 ± 1814 | 0.184 ± 0.019 | 96.7 ± 10.5 | 1.9 ± 2.7 | 88.5 ± 15.5 | 607.3 ± 429.4 |
-| DAO manipulation | DIS-FDM | 94.1 ± 5.6 | 90.0 ± 6.7 | 69.1 ± 11.4 | 7591 ± 1017 | 0.196 ± 0.036 | 53.3 ± 39.1 | 55.8 ± 19.8 | 8.9 ± 6.1 | 180.5 ± 120.2 |
-| DAO manipulation | AEF-RPL, learning off | 99.0 ± 0.4 | 89.3 ± 5.9 | 64.0 ± 13.0 | 6823 ± 629 | 0.144 ± 0.024 | 100.0 ± 0.0 | 54.2 ± 15.0 | 18.4 ± 4.3 | 49.1 ± 57.4 |
-| DAO manipulation | AEF-RPL, first learning version | 98.5 ± 0.6 | 89.1 ± 5.7 | 68.6 ± 10.6 | 8336 ± 407 | 0.161 ± 0.021 | 100.0 ± 0.0 | 53.8 ± 14.2 | 18.4 ± 4.1 | 14.1 ± 19.7 |
-| DAO manipulation | AEF-RPL | 98.8 ± 0.3 | 89.6 ± 5.7 | 67.1 ± 11.1 | 7523 ± 617 | 0.156 ± 0.018 | 100.0 ± 0.0 | 54.2 ± 14.2 | 18.4 ± 4.2 | 15.1 ± 20.0 |
+| DAO manipulation | DIS-FDM | 94.1 ± 5.6 | 90.0 ± 6.7 | 69.1 ± 11.4 | 7591 ± 1017 | 0.196 ± 0.036 | 53.3 ± 39.1 | 55.8 ± 19.8 | 8.9 ± 6.1 | 212.2 ± 84.0 |
+| DAO manipulation | AEF-RPL, learning off | 99.0 ± 0.4 | 89.3 ± 5.9 | 64.0 ± 13.0 | 6823 ± 629 | 0.144 ± 0.024 | 100.0 ± 0.0 | 54.2 ± 15.0 | 18.4 ± 4.3 | 56.7 ± 61.5 |
+| DAO manipulation | AEF-RPL, first learning version | 98.5 ± 0.6 | 89.1 ± 5.7 | 68.6 ± 10.6 | 8336 ± 407 | 0.161 ± 0.021 | 100.0 ± 0.0 | 53.8 ± 14.2 | 18.4 ± 4.1 | 23.8 ± 9.2 |
+| DAO manipulation | AEF-RPL | 98.8 ± 0.3 | 89.6 ± 5.7 | 67.1 ± 11.1 | 7523 ± 617 | 0.156 ± 0.018 | 100.0 ± 0.0 | 54.2 ± 14.2 | 18.4 ± 4.2 | 25.1 ± 8.9 |
 | Combined DIS + DAO | RPL (no defense) | 93.1 ± 7.5 | 90.3 ± 5.3 | 70.1 ± 10.5 | 11062 ± 1555 | 0.205 ± 0.036 | n/a | n/a | n/a | n/a |
 | Combined DIS + DAO | Secure-RPL | 93.4 ± 7.8 | 89.5 ± 5.8 | 73.3 ± 18.4 | 9087 ± 1307 | 0.199 ± 0.041 | 100.0 ± 0.0 | 0.0 ± 0.0 | 100.0 ± 0.0 | 13.5 ± 2.5 |
 | Combined DIS + DAO | RPL-MRC | 94.1 ± 7.1 | 91.0 ± 3.7 | 70.0 ± 11.4 | 6706 ± 2306 | 0.198 ± 0.044 | n/a | n/a | n/a | n/a |
 | Combined DIS + DAO | Li-MSD | 93.7 ± 6.7 | 89.1 ± 7.9 | 66.6 ± 12.5 | 10462 ± 1593 | 0.182 ± 0.030 | 83.3 ± 28.3 | 0.4 ± 1.2 | 97.5 ± 7.9 | 429.9 ± 368.0 |
-| Combined DIS + DAO | DIS-FDM | 93.6 ± 7.3 | 91.6 ± 4.2 | 69.6 ± 10.8 | 8373 ± 1909 | 0.198 ± 0.035 | 100.0 ± 0.0 | 53.1 ± 14.4 | 18.7 ± 4.3 | 36.1 ± 14.2 |
-| Combined DIS + DAO | AEF-RPL, learning off | 98.9 ± 0.5 | 88.7 ± 6.9 | 65.9 ± 11.6 | 7018 ± 652 | 0.143 ± 0.021 | 100.0 ± 0.0 | 52.7 ± 14.2 | 18.8 ± 4.2 | 25.7 ± 10.2 |
-| Combined DIS + DAO | AEF-RPL, first learning version | 98.6 ± 0.7 | 88.7 ± 6.5 | 66.1 ± 11.8 | 8506 ± 1246 | 0.161 ± 0.022 | 100.0 ± 0.0 | 53.5 ± 14.7 | 18.6 ± 4.3 | 6.7 ± 15.6 |
-| Combined DIS + DAO | AEF-RPL | 98.9 ± 0.3 | 88.4 ± 5.9 | 65.9 ± 10.9 | 8043 ± 1190 | 0.158 ± 0.020 | 100.0 ± 0.0 | 53.5 ± 14.4 | 18.6 ± 4.3 | 7.1 ± 15.8 |
+| Combined DIS + DAO | DIS-FDM | 93.6 ± 7.3 | 91.6 ± 4.2 | 69.6 ± 10.8 | 8373 ± 1909 | 0.198 ± 0.035 | 100.0 ± 0.0 | 53.1 ± 14.4 | 18.7 ± 4.3 | 43.1 ± 5.7 |
+| Combined DIS + DAO | AEF-RPL, learning off | 98.9 ± 0.5 | 88.7 ± 6.9 | 65.9 ± 11.6 | 7018 ± 652 | 0.143 ± 0.021 | 100.0 ± 0.0 | 52.7 ± 14.2 | 18.8 ± 4.2 | 32.7 ± 3.1 |
+| Combined DIS + DAO | AEF-RPL, first learning version | 98.6 ± 0.7 | 88.7 ± 6.5 | 66.1 ± 11.8 | 8506 ± 1246 | 0.161 ± 0.022 | 100.0 ± 0.0 | 53.5 ± 14.7 | 18.6 ± 4.3 | 16.1 ± 5.2 |
+| Combined DIS + DAO | AEF-RPL | 98.9 ± 0.3 | 88.4 ± 5.9 | 65.9 ± 10.9 | 8043 ± 1190 | 0.158 ± 0.020 | 100.0 ± 0.0 | 53.5 ± 14.4 | 18.6 ± 4.3 | 16.7 ± 6.9 |
 
 ## Main matrix: 25% malicious (7 of 29 sensor nodes), static
 
@@ -97,26 +97,26 @@ Tables report mean ± standard deviation over 10 seeds per cell. 95% confidence 
 | DIS flooding | Secure-RPL | 99.0 ± 0.4 | 91.5 ± 4.0 | 78.6 ± 33.4 | 9142 ± 1017 | 0.180 ± 0.051 | 100.0 ± 0.0 | 0.0 ± 0.0 | 100.0 ± 0.0 | 13.8 ± 2.6 |
 | DIS flooding | RPL-MRC | 98.8 ± 1.0 | 91.4 ± 3.7 | 76.4 ± 28.2 | 7754 ± 1747 | 0.170 ± 0.037 | n/a | n/a | n/a | n/a |
 | DIS flooding | Li-MSD | 98.9 ± 0.4 | 91.4 ± 3.5 | 79.4 ± 30.3 | 13150 ± 1139 | 0.193 ± 0.042 | 5.7 ± 10.0 | 1.8 ± 3.2 | 45.8 ± 41.7 | 1916.3 ± 999.4 |
-| DIS flooding | DIS-FDM | 99.1 ± 0.4 | 91.9 ± 3.9 | 78.2 ± 29.6 | 8303 ± 964 | 0.173 ± 0.039 | 100.0 ± 0.0 | 47.7 ± 15.6 | 41.7 ± 9.6 | 43.3 ± 6.0 |
-| DIS flooding | AEF-RPL, learning off | 98.8 ± 0.8 | 92.5 ± 2.8 | 78.5 ± 31.0 | 8070 ± 915 | 0.167 ± 0.043 | 100.0 ± 0.0 | 48.2 ± 15.2 | 41.3 ± 9.3 | 43.2 ± 5.7 |
-| DIS flooding | AEF-RPL, first learning version | 99.0 ± 0.3 | 91.8 ± 3.8 | 78.5 ± 33.1 | 9175 ± 813 | 0.179 ± 0.047 | 100.0 ± 0.0 | 48.2 ± 15.2 | 41.3 ± 9.3 | 15.6 ± 10.6 |
-| DIS flooding | AEF-RPL | 99.1 ± 0.3 | 91.4 ± 3.6 | 77.3 ± 30.4 | 8879 ± 1228 | 0.177 ± 0.039 | 100.0 ± 0.0 | 48.2 ± 15.2 | 41.3 ± 9.3 | 15.2 ± 10.7 |
+| DIS flooding | DIS-FDM | 99.1 ± 0.4 | 91.9 ± 3.9 | 78.2 ± 29.6 | 8303 ± 964 | 0.173 ± 0.039 | 100.0 ± 0.0 | 47.7 ± 15.6 | 41.7 ± 9.6 | 45.3 ± 6.6 |
+| DIS flooding | AEF-RPL, learning off | 98.8 ± 0.8 | 92.5 ± 2.8 | 78.5 ± 31.0 | 8070 ± 915 | 0.167 ± 0.043 | 100.0 ± 0.0 | 48.2 ± 15.2 | 41.3 ± 9.3 | 45.2 ± 6.4 |
+| DIS flooding | AEF-RPL, first learning version | 99.0 ± 0.3 | 91.8 ± 3.8 | 78.5 ± 33.1 | 9175 ± 813 | 0.179 ± 0.047 | 100.0 ± 0.0 | 48.2 ± 15.2 | 41.3 ± 9.3 | 21.9 ± 5.4 |
+| DIS flooding | AEF-RPL | 99.1 ± 0.3 | 91.4 ± 3.6 | 77.3 ± 30.4 | 8879 ± 1228 | 0.177 ± 0.039 | 100.0 ± 0.0 | 48.2 ± 15.2 | 41.3 ± 9.3 | 22.5 ± 4.6 |
 | DAO manipulation | RPL (no defense) | 83.4 ± 15.5 | 90.6 ± 6.2 | 84.3 ± 30.3 | 10434 ± 2197 | 0.286 ± 0.057 | n/a | n/a | n/a | n/a |
 | DAO manipulation | Secure-RPL | 84.5 ± 15.2 | 90.6 ± 6.1 | 83.6 ± 27.9 | 10327 ± 1839 | 0.287 ± 0.053 | 0.0 ± 0.0 | 0.0 ± 0.0 | n/a | n/a |
 | DAO manipulation | RPL-MRC | 84.0 ± 13.2 | 91.1 ± 5.0 | 72.8 ± 15.1 | 7783 ± 2221 | 0.257 ± 0.053 | n/a | n/a | n/a | n/a |
 | DAO manipulation | Li-MSD | 85.8 ± 15.5 | 92.5 ± 4.1 | 73.0 ± 24.3 | 8860 ± 1038 | 0.236 ± 0.043 | 71.4 ± 21.3 | 1.4 ± 4.3 | 95.0 ± 15.8 | 784.3 ± 377.4 |
-| DAO manipulation | DIS-FDM | 82.2 ± 17.6 | 92.3 ± 4.1 | 85.8 ± 31.4 | 10726 ± 3214 | 0.288 ± 0.049 | 82.9 ± 17.6 | 72.7 ± 22.5 | 27.3 ± 4.5 | 542.8 ± 523.5 |
-| DAO manipulation | AEF-RPL, learning off | 97.6 ± 2.4 | 91.4 ± 3.7 | 75.4 ± 29.5 | 6892 ± 590 | 0.181 ± 0.049 | 94.3 ± 7.4 | 55.9 ± 16.2 | 35.9 ± 6.3 | 49.1 ± 28.9 |
-| DAO manipulation | AEF-RPL, first learning version | 96.6 ± 3.7 | 92.9 ± 2.5 | 81.1 ± 35.1 | 8562 ± 1493 | 0.214 ± 0.067 | 97.1 ± 6.0 | 56.4 ± 19.4 | 37.4 ± 10.9 | 54.2 ± 74.9 |
-| DAO manipulation | AEF-RPL | 96.1 ± 5.4 | 91.9 ± 2.9 | 79.8 ± 27.3 | 8395 ± 1520 | 0.207 ± 0.042 | 97.1 ± 6.0 | 59.5 ± 17.2 | 35.6 ± 9.2 | 65.3 ± 83.1 |
+| DAO manipulation | DIS-FDM | 82.2 ± 17.6 | 92.3 ± 4.1 | 85.8 ± 31.4 | 10726 ± 3214 | 0.288 ± 0.049 | 82.9 ± 17.6 | 72.7 ± 22.5 | 27.3 ± 4.5 | 548.1 ± 526.8 |
+| DAO manipulation | AEF-RPL, learning off | 97.6 ± 2.4 | 91.4 ± 3.7 | 75.4 ± 29.5 | 6892 ± 590 | 0.181 ± 0.049 | 94.3 ± 7.4 | 55.9 ± 16.2 | 35.9 ± 6.3 | 51.3 ± 28.3 |
+| DAO manipulation | AEF-RPL, first learning version | 96.6 ± 3.7 | 92.9 ± 2.5 | 81.1 ± 35.1 | 8562 ± 1493 | 0.214 ± 0.067 | 97.1 ± 6.0 | 56.4 ± 19.4 | 37.4 ± 10.9 | 62.2 ± 72.8 |
+| DAO manipulation | AEF-RPL | 96.1 ± 5.4 | 91.9 ± 2.9 | 79.8 ± 27.3 | 8395 ± 1520 | 0.207 ± 0.042 | 97.1 ± 6.0 | 59.5 ± 17.2 | 35.6 ± 9.2 | 74.1 ± 83.0 |
 | Combined DIS + DAO | RPL (no defense) | 82.6 ± 16.8 | 93.3 ± 3.2 | 83.9 ± 32.6 | 12512 ± 2403 | 0.294 ± 0.061 | n/a | n/a | n/a | n/a |
 | Combined DIS + DAO | Secure-RPL | 80.8 ± 15.5 | 89.7 ± 8.2 | 84.5 ± 23.6 | 12932 ± 5448 | 0.303 ± 0.055 | 100.0 ± 0.0 | 0.0 ± 0.0 | 100.0 ± 0.0 | 17.3 ± 5.3 |
 | Combined DIS + DAO | RPL-MRC | 82.1 ± 16.3 | 92.2 ± 3.9 | 82.6 ± 23.0 | 8723 ± 2971 | 0.288 ± 0.061 | n/a | n/a | n/a | n/a |
 | Combined DIS + DAO | Li-MSD | 85.7 ± 15.7 | 92.5 ± 3.0 | 74.5 ± 27.8 | 11289 ± 1650 | 0.247 ± 0.048 | 65.7 ± 21.5 | 2.7 ± 3.2 | 88.4 ± 14.8 | 508.4 ± 369.0 |
-| Combined DIS + DAO | DIS-FDM | 80.8 ± 15.8 | 91.5 ± 4.7 | 81.1 ± 26.9 | 10492 ± 4560 | 0.296 ± 0.050 | 100.0 ± 0.0 | 69.5 ± 24.2 | 33.1 ± 8.4 | 43.2 ± 6.0 |
-| Combined DIS + DAO | AEF-RPL, learning off | 98.1 ± 1.9 | 89.9 ± 4.4 | 73.7 ± 23.6 | 7301 ± 920 | 0.178 ± 0.044 | 100.0 ± 0.0 | 54.5 ± 16.6 | 38.5 ± 9.9 | 32.9 ± 4.4 |
-| Combined DIS + DAO | AEF-RPL, first learning version | 97.1 ± 3.8 | 91.8 ± 3.5 | 78.3 ± 31.8 | 9026 ± 1066 | 0.200 ± 0.054 | 100.0 ± 0.0 | 55.0 ± 21.7 | 39.0 ± 10.9 | 13.4 ± 10.8 |
-| Combined DIS + DAO | AEF-RPL | 96.4 ± 5.3 | 91.4 ± 3.4 | 76.1 ± 23.5 | 8102 ± 922 | 0.187 ± 0.042 | 100.0 ± 0.0 | 55.0 ± 17.6 | 38.4 ± 10.0 | 14.0 ± 9.2 |
+| Combined DIS + DAO | DIS-FDM | 80.8 ± 15.8 | 91.5 ± 4.7 | 81.1 ± 26.9 | 10492 ± 4560 | 0.296 ± 0.050 | 100.0 ± 0.0 | 69.5 ± 24.2 | 33.1 ± 8.4 | 45.2 ± 6.3 |
+| Combined DIS + DAO | AEF-RPL, learning off | 98.1 ± 1.9 | 89.9 ± 4.4 | 73.7 ± 23.6 | 7301 ± 920 | 0.178 ± 0.044 | 100.0 ± 0.0 | 54.5 ± 16.6 | 38.5 ± 9.9 | 34.9 ± 5.5 |
+| Combined DIS + DAO | AEF-RPL, first learning version | 97.1 ± 3.8 | 91.8 ± 3.5 | 78.3 ± 31.8 | 9026 ± 1066 | 0.200 ± 0.054 | 100.0 ± 0.0 | 55.0 ± 21.7 | 39.0 ± 10.9 | 19.9 ± 4.1 |
+| Combined DIS + DAO | AEF-RPL | 96.4 ± 5.3 | 91.4 ± 3.4 | 76.1 ± 23.5 | 8102 ± 922 | 0.187 ± 0.042 | 100.0 ± 0.0 | 55.0 ± 17.6 | 38.4 ± 10.0 | 21.0 ± 3.3 |
 
 ## Main matrix: 50% malicious (14 of 29 sensor nodes), static
 
@@ -155,26 +155,26 @@ Tables report mean ± standard deviation over 10 seeds per cell. 95% confidence 
 | DIS flooding | Secure-RPL | 99.0 ± 0.4 | 89.7 ± 7.2 | 67.3 ± 13.2 | 10562 ± 833 | 0.160 ± 0.031 | 100.0 ± 0.0 | 0.0 ± 0.0 | 100.0 ± 0.0 | 21.6 ± 17.6 |
 | DIS flooding | RPL-MRC | 99.0 ± 0.5 | 91.1 ± 3.6 | 66.4 ± 12.1 | 9017 ± 934 | 0.147 ± 0.028 | n/a | n/a | n/a | n/a |
 | DIS flooding | Li-MSD | 98.8 ± 0.5 | 89.2 ± 9.0 | 65.9 ± 11.8 | 13558 ± 1677 | 0.164 ± 0.021 | 0.7 ± 2.3 | 0.0 ± 0.0 | 100.0 | 1607.8 |
-| DIS flooding | DIS-FDM | 99.0 ± 0.4 | 88.2 ± 10.9 | 66.3 ± 12.8 | 9298 ± 1444 | 0.147 ± 0.018 | 100.0 ± 0.0 | 47.3 ± 13.1 | 66.9 ± 6.3 | 70.3 ± 46.7 |
-| DIS flooding | AEF-RPL, learning off | 99.1 ± 0.3 | 89.4 ± 6.0 | 65.0 ± 12.3 | 9196 ± 1721 | 0.138 ± 0.021 | 100.0 ± 0.0 | 46.7 ± 13.7 | 67.2 ± 6.6 | 69.6 ± 46.0 |
-| DIS flooding | AEF-RPL, first learning version | 99.0 ± 0.4 | 89.0 ± 7.7 | 65.3 ± 12.5 | 10610 ± 1368 | 0.151 ± 0.021 | 100.0 ± 0.0 | 50.0 ± 14.8 | 65.8 ± 6.9 | 28.4 ± 27.7 |
-| DIS flooding | AEF-RPL | 99.0 ± 0.4 | 89.3 ± 5.9 | 64.9 ± 12.4 | 9995 ± 1398 | 0.148 ± 0.015 | 100.0 ± 0.0 | 49.3 ± 13.8 | 66.0 ± 6.6 | 31.9 ± 32.8 |
+| DIS flooding | DIS-FDM | 99.0 ± 0.4 | 88.2 ± 10.9 | 66.3 ± 12.8 | 9298 ± 1444 | 0.147 ± 0.018 | 100.0 ± 0.0 | 47.3 ± 13.1 | 66.9 ± 6.3 | 73.4 ± 46.3 |
+| DIS flooding | AEF-RPL, learning off | 99.1 ± 0.3 | 89.4 ± 6.0 | 65.0 ± 12.3 | 9196 ± 1721 | 0.138 ± 0.021 | 100.0 ± 0.0 | 46.7 ± 13.7 | 67.2 ± 6.6 | 73.7 ± 45.5 |
+| DIS flooding | AEF-RPL, first learning version | 99.0 ± 0.4 | 89.0 ± 7.7 | 65.3 ± 12.5 | 10610 ± 1368 | 0.151 ± 0.021 | 100.0 ± 0.0 | 50.0 ± 14.8 | 65.8 ± 6.9 | 35.5 ± 21.3 |
+| DIS flooding | AEF-RPL | 99.0 ± 0.4 | 89.3 ± 5.9 | 64.9 ± 12.4 | 9995 ± 1398 | 0.148 ± 0.015 | 100.0 ± 0.0 | 49.3 ± 13.8 | 66.0 ± 6.6 | 45.7 ± 27.9 |
 | DAO manipulation | RPL (no defense) | 71.3 ± 20.9 | 93.4 ± 3.9 | 81.2 ± 21.5 | 10865 ± 5803 | 0.363 ± 0.099 | n/a | n/a | n/a | n/a |
 | DAO manipulation | Secure-RPL | 72.2 ± 20.6 | 94.6 ± 1.8 | 78.2 ± 16.6 | 8929 ± 2012 | 0.355 ± 0.094 | 0.0 ± 0.0 | 0.0 ± 0.0 | n/a | n/a |
 | DAO manipulation | RPL-MRC | 72.8 ± 20.7 | 93.6 ± 3.9 | 78.8 ± 16.3 | 9662 ± 5344 | 0.350 ± 0.115 | n/a | n/a | n/a | n/a |
 | DAO manipulation | Li-MSD | 76.7 ± 17.0 | 94.1 ± 2.8 | 72.3 ± 16.0 | 8745 ± 1502 | 0.307 ± 0.066 | 57.9 ± 10.4 | 2.0 ± 4.5 | 97.1 ± 6.7 | 936.8 ± 388.8 |
-| DAO manipulation | DIS-FDM | 73.0 ± 20.9 | 94.3 ± 3.4 | 78.9 ± 13.9 | 9991 ± 4984 | 0.366 ± 0.089 | 79.3 ± 21.4 | 80.0 ± 18.6 | 47.7 ± 5.6 | 662.9 ± 615.9 |
-| DAO manipulation | AEF-RPL, learning off | 89.8 ± 14.8 | 91.8 ± 4.9 | 71.3 ± 15.6 | 6669 ± 813 | 0.201 ± 0.046 | 92.1 ± 7.1 | 60.0 ± 17.8 | 59.6 ± 6.0 | 162.4 ± 90.6 |
-| DAO manipulation | AEF-RPL, first learning version | 87.6 ± 14.5 | 89.5 ± 5.9 | 76.0 ± 14.9 | 8427 ± 1267 | 0.252 ± 0.043 | 97.9 ± 3.5 | 75.3 ± 25.0 | 56.0 ± 8.7 | 156.3 ± 135.6 |
-| DAO manipulation | AEF-RPL | 88.0 ± 14.6 | 89.6 ± 8.9 | 79.6 ± 14.0 | 9340 ± 2928 | 0.240 ± 0.051 | 96.4 ± 6.1 | 74.0 ± 26.4 | 56.2 ± 9.5 | 151.4 ± 125.7 |
+| DAO manipulation | DIS-FDM | 73.0 ± 20.9 | 94.3 ± 3.4 | 78.9 ± 13.9 | 9991 ± 4984 | 0.366 ± 0.089 | 79.3 ± 21.4 | 80.0 ± 18.6 | 47.7 ± 5.6 | 679.7 ± 603.9 |
+| DAO manipulation | AEF-RPL, learning off | 89.8 ± 14.8 | 91.8 ± 4.9 | 71.3 ± 15.6 | 6669 ± 813 | 0.201 ± 0.046 | 92.1 ± 7.1 | 60.0 ± 17.8 | 59.6 ± 6.0 | 185.4 ± 92.3 |
+| DAO manipulation | AEF-RPL, first learning version | 87.6 ± 14.5 | 89.5 ± 5.9 | 76.0 ± 14.9 | 8427 ± 1267 | 0.252 ± 0.043 | 97.9 ± 3.5 | 75.3 ± 25.0 | 56.0 ± 8.7 | 166.5 ± 129.8 |
+| DAO manipulation | AEF-RPL | 88.0 ± 14.6 | 89.6 ± 8.9 | 79.6 ± 14.0 | 9340 ± 2928 | 0.240 ± 0.051 | 96.4 ± 6.1 | 74.0 ± 26.4 | 56.2 ± 9.5 | 162.7 ± 119.7 |
 | Combined DIS + DAO | RPL (no defense) | 71.8 ± 17.9 | 93.9 ± 3.1 | 76.0 ± 15.3 | 11142 ± 849 | 0.366 ± 0.108 | n/a | n/a | n/a | n/a |
 | Combined DIS + DAO | Secure-RPL | 74.3 ± 20.4 | 91.0 ± 5.0 | 81.1 ± 14.9 | 9711 ± 2141 | 0.331 ± 0.095 | 100.0 ± 0.0 | 0.0 ± 0.0 | 100.0 ± 0.0 | 24.6 ± 17.7 |
 | Combined DIS + DAO | RPL-MRC | 75.5 ± 19.6 | 95.6 ± 1.2 | 77.3 ± 19.3 | 7316 ± 1430 | 0.345 ± 0.104 | n/a | n/a | n/a | n/a |
 | Combined DIS + DAO | Li-MSD | 78.3 ± 17.3 | 93.4 ± 3.4 | 72.8 ± 11.9 | 11517 ± 2057 | 0.318 ± 0.057 | 59.3 ± 13.1 | 2.0 ± 4.5 | 97.7 ± 5.1 | 972.6 ± 492.0 |
-| Combined DIS + DAO | DIS-FDM | 77.6 ± 13.9 | 94.1 ± 3.6 | 72.4 ± 13.0 | 8707 ± 2004 | 0.332 ± 0.095 | 100.0 ± 0.0 | 64.7 ± 22.9 | 60.2 ± 8.4 | 69.0 ± 47.1 |
-| Combined DIS + DAO | AEF-RPL, learning off | 93.2 ± 9.0 | 92.1 ± 3.8 | 71.8 ± 19.8 | 7250 ± 1039 | 0.199 ± 0.057 | 100.0 ± 0.0 | 59.3 ± 20.2 | 62.0 ± 7.7 | 58.6 ± 45.8 |
-| Combined DIS + DAO | AEF-RPL, first learning version | 88.3 ± 17.6 | 91.4 ± 3.8 | 71.3 ± 13.0 | 9892 ± 1829 | 0.227 ± 0.046 | 100.0 ± 0.0 | 71.3 ± 24.8 | 57.9 ± 9.1 | 28.3 ± 29.2 |
-| Combined DIS + DAO | AEF-RPL | 92.3 ± 7.3 | 91.9 ± 3.5 | 72.5 ± 12.5 | 8912 ± 1373 | 0.224 ± 0.037 | 100.0 ± 0.0 | 69.3 ± 18.9 | 58.0 ± 6.4 | 27.4 ± 29.8 |
+| Combined DIS + DAO | DIS-FDM | 77.6 ± 13.9 | 94.1 ± 3.6 | 72.4 ± 13.0 | 8707 ± 2004 | 0.332 ± 0.095 | 100.0 ± 0.0 | 64.7 ± 22.9 | 60.2 ± 8.4 | 73.9 ± 47.3 |
+| Combined DIS + DAO | AEF-RPL, learning off | 93.2 ± 9.0 | 92.1 ± 3.8 | 71.8 ± 19.8 | 7250 ± 1039 | 0.199 ± 0.057 | 100.0 ± 0.0 | 59.3 ± 20.2 | 62.0 ± 7.7 | 61.0 ± 45.3 |
+| Combined DIS + DAO | AEF-RPL, first learning version | 88.3 ± 17.6 | 91.4 ± 3.8 | 71.3 ± 13.0 | 9892 ± 1829 | 0.227 ± 0.046 | 100.0 ± 0.0 | 71.3 ± 24.8 | 57.9 ± 9.1 | 35.6 ± 23.1 |
+| Combined DIS + DAO | AEF-RPL | 92.3 ± 7.3 | 91.9 ± 3.5 | 72.5 ± 12.5 | 8912 ± 1373 | 0.224 ± 0.037 | 100.0 ± 0.0 | 69.3 ± 18.9 | 58.0 ± 6.4 | 42.0 ± 26.4 |
 
 ## False positives with no attacker present
 
@@ -314,25 +314,25 @@ Tables report mean ± standard deviation over 10 seeds per cell. 95% confidence 
 |---|---|---|---|---|---|---|---|---|---|
 | DIS-FDM | DIS flooding | 10% | static | detect_latency_s | 35.77 ± 8.2 | 50.22 ± 0.13 | -14.89 | 0.0117 | -1.00 |
 | DIS-FDM | DIS flooding | 10% | static | pdr_down | 0.9987 ± 0.00033 | 0.9978 ± 0.00049 | 0.0008161 | 0.0234 | 0.96 |
-| DIS-FDM | DIS flooding | 10% | 30% mobile | detect_latency_s | 9.712 ± 19 | 35.35 ± 14 | -26.52 | 0.0117 | -1.00 |
+| DIS-FDM | DIS flooding | 10% | 30% mobile | detect_latency_s | 19.38 ± 11 | 42.34 ± 6.1 | -26.52 | 0.0117 | -1.00 |
 | DIS-FDM | DIS flooding | 25% | static | detect_latency_s | 34.53 ± 4.5 | 50.24 ± 0.08 | -16.98 | 0.0117 | -1.00 |
-| DIS-FDM | DIS flooding | 25% | 30% mobile | detect_latency_s | 15.19 ± 11 | 43.3 ± 6 | -25.7 | 0.0117 | -1.00 |
+| DIS-FDM | DIS flooding | 25% | 30% mobile | detect_latency_s | 22.49 ± 4.6 | 45.29 ± 6.6 | -20.69 | 0.0117 | -1.00 |
 | DIS-FDM | DIS flooding | 50% | static | detect_latency_s | 38.06 ± 4.6 | 50.42 ± 0.51 | -12.96 | 0.0117 | -1.00 |
-| DIS-FDM | DIS flooding | 50% | 30% mobile | detect_latency_s | 31.95 ± 33 | 70.3 ± 47 | -25.37 | 0.0117 | -1.00 |
+| DIS-FDM | DIS flooding | 50% | 30% mobile | detect_latency_s | 45.72 ± 28 | 73.44 ± 46 | -21.07 | 0.0117 | -1.00 |
 | DIS-FDM | DIS flooding | 50% | 30% mobile | dio_total | 9995 ± 1.4e+03 | 9298 ± 1.4e+03 | 795.5 | 0.0352 | 0.93 |
 | DIS-FDM | DAO manipulation | 10% | static | tpr | 1 ± 0 | 0.06667 ± 0.21 | 1 | 0.0117 | 1.00 |
 | DIS-FDM | DAO manipulation | 10% | static | pdr_down | 0.9902 ± 0.018 | 0.8943 ± 0.071 | 0.07209 | 0.0117 | 1.00 |
 | DIS-FDM | DAO manipulation | 10% | static | tx_power_mw | 0.1347 ± 0.024 | 0.1813 ± 0.027 | -0.04731 | 0.0117 | -1.00 |
 | DIS-FDM | DAO manipulation | 10% | 30% mobile | tpr | 1 ± 0 | 0.5333 ± 0.39 | 0.5 | 0.0469 | 1.00 |
 | DIS-FDM | DAO manipulation | 10% | 30% mobile | precision | 0.1835 ± 0.042 | 0.08926 ± 0.061 | 0.06772 | 0.0391 | 1.00 |
-| DIS-FDM | DAO manipulation | 10% | 30% mobile | detect_latency_s | 15.11 ± 20 | 180.5 ± 1.2e+02 | -168.1 | 0.0469 | -0.94 |
+| DIS-FDM | DAO manipulation | 10% | 30% mobile | detect_latency_s | 25.11 ± 8.9 | 212.2 ± 84 | -168.1 | 0.0234 | -1.00 |
 | DIS-FDM | DAO manipulation | 10% | 30% mobile | pdr_down | 0.9878 ± 0.0033 | 0.9413 ± 0.056 | 0.008714 | 0.0156 | 0.96 |
 | DIS-FDM | DAO manipulation | 10% | 30% mobile | tx_power_mw | 0.1558 ± 0.018 | 0.1957 ± 0.036 | -0.03981 | 0.0117 | -0.96 |
 | DIS-FDM | DAO manipulation | 25% | static | tpr | 0.9286 ± 0.12 | 0.1143 ± 0.25 | 0.9286 | 0.0117 | 1.00 |
 | DIS-FDM | DAO manipulation | 25% | static | pdr_down | 0.9761 ± 0.042 | 0.8107 ± 0.14 | 0.1429 | 0.0117 | 1.00 |
 | DIS-FDM | DAO manipulation | 25% | static | pdr_up | 0.9968 ± 0.004 | 0.9986 ± 0.0014 | -0.001073 | 0.0234 | -0.96 |
 | DIS-FDM | DAO manipulation | 25% | 30% mobile | precision | 0.356 ± 0.092 | 0.2729 ± 0.045 | 0.07946 | 0.0117 | 1.00 |
-| DIS-FDM | DAO manipulation | 25% | 30% mobile | detect_latency_s | 65.28 ± 83 | 542.8 ± 5.2e+02 | -329.2 | 0.0234 | -0.96 |
+| DIS-FDM | DAO manipulation | 25% | 30% mobile | detect_latency_s | 74.13 ± 83 | 548.1 ± 5.3e+02 | -324.9 | 0.0234 | -0.96 |
 | DIS-FDM | DAO manipulation | 25% | 30% mobile | pdr_down | 0.961 ± 0.054 | 0.8224 ± 0.18 | 0.1112 | 0.0156 | 0.85 |
 | DIS-FDM | DAO manipulation | 25% | 30% mobile | tx_power_mw | 0.2073 ± 0.042 | 0.2875 ± 0.049 | -0.08368 | 0.0117 | -0.96 |
 | DIS-FDM | DAO manipulation | 50% | static | tpr | 0.8643 ± 0.098 | 0.3786 ± 0.28 | 0.6071 | 0.0156 | 1.00 |
@@ -340,28 +340,28 @@ Tables report mean ± standard deviation over 10 seeds per cell. 95% confidence 
 | DIS-FDM | DAO manipulation | 50% | static | pdr_down | 0.8915 ± 0.067 | 0.6356 ± 0.15 | 0.269 | 0.0156 | 0.96 |
 | DIS-FDM | DAO manipulation | 50% | static | tx_power_mw | 0.2729 ± 0.051 | 0.4511 ± 0.082 | -0.2157 | 0.0117 | -1.00 |
 | DIS-FDM | DAO manipulation | 50% | 30% mobile | precision | 0.562 ± 0.095 | 0.4772 ± 0.056 | 0.09435 | 0.0469 | 0.91 |
-| DIS-FDM | DAO manipulation | 50% | 30% mobile | detect_latency_s | 151.4 ± 1.3e+02 | 662.9 ± 6.2e+02 | -228.4 | 0.0234 | -0.96 |
+| DIS-FDM | DAO manipulation | 50% | 30% mobile | detect_latency_s | 162.7 ± 1.2e+02 | 679.7 ± 6e+02 | -240.5 | 0.0234 | -0.96 |
 | DIS-FDM | DAO manipulation | 50% | 30% mobile | pdr_down | 0.8803 ± 0.15 | 0.7297 ± 0.21 | 0.1609 | 0.0156 | 0.96 |
 | DIS-FDM | DAO manipulation | 50% | 30% mobile | tx_power_mw | 0.2399 ± 0.051 | 0.3663 ± 0.089 | -0.1412 | 0.0117 | -1.00 |
 | DIS-FDM | Combined DIS + DAO | 10% | static | detect_latency_s | 25.5 ± 4.8 | 50.22 ± 0.13 | -26.42 | 0.0117 | -1.00 |
 | DIS-FDM | Combined DIS + DAO | 10% | static | pdr_down | 0.9928 ± 0.0095 | 0.8873 ± 0.075 | 0.1106 | 0.0117 | 1.00 |
 | DIS-FDM | Combined DIS + DAO | 10% | static | pdr_up | 0.9926 ± 0.0073 | 0.9996 ± 0.00046 | -0.005116 | 0.0195 | -1.00 |
 | DIS-FDM | Combined DIS + DAO | 10% | static | tx_power_mw | 0.1263 ± 0.018 | 0.1817 ± 0.027 | -0.05641 | 0.0117 | -1.00 |
-| DIS-FDM | Combined DIS + DAO | 10% | 30% mobile | detect_latency_s | 7.057 ± 16 | 36.06 ± 14 | -28.53 | 0.0117 | -1.00 |
+| DIS-FDM | Combined DIS + DAO | 10% | 30% mobile | detect_latency_s | 16.72 ± 6.9 | 43.06 ± 5.7 | -26.89 | 0.0117 | -1.00 |
 | DIS-FDM | Combined DIS + DAO | 10% | 30% mobile | pdr_down | 0.9892 ± 0.0035 | 0.9361 ± 0.073 | 0.02507 | 0.0117 | 0.96 |
 | DIS-FDM | Combined DIS + DAO | 10% | 30% mobile | tx_power_mw | 0.1583 ± 0.02 | 0.1979 ± 0.035 | -0.04264 | 0.0117 | -0.93 |
 | DIS-FDM | Combined DIS + DAO | 25% | static | detect_latency_s | 26.37 ± 3.9 | 50.24 ± 0.078 | -24.7 | 0.0117 | -1.00 |
 | DIS-FDM | Combined DIS + DAO | 25% | static | pdr_down | 0.9831 ± 0.022 | 0.7718 ± 0.16 | 0.1851 | 0.0117 | 1.00 |
 | DIS-FDM | Combined DIS + DAO | 25% | static | pdr_up | 0.9879 ± 0.012 | 0.9985 ± 0.0013 | -0.007608 | 0.0117 | -1.00 |
 | DIS-FDM | Combined DIS + DAO | 25% | static | tx_power_mw | 0.1541 ± 0.021 | 0.2837 ± 0.036 | -0.1306 | 0.0117 | -1.00 |
-| DIS-FDM | Combined DIS + DAO | 25% | 30% mobile | detect_latency_s | 14.02 ± 9.2 | 43.18 ± 6 | -23.39 | 0.0117 | -1.00 |
+| DIS-FDM | Combined DIS + DAO | 25% | 30% mobile | detect_latency_s | 21.03 ± 3.3 | 45.17 ± 6.3 | -22.64 | 0.0117 | -1.00 |
 | DIS-FDM | Combined DIS + DAO | 25% | 30% mobile | pdr_down | 0.9637 ± 0.053 | 0.8083 ± 0.16 | 0.07975 | 0.0117 | 1.00 |
 | DIS-FDM | Combined DIS + DAO | 25% | 30% mobile | tx_power_mw | 0.1875 ± 0.042 | 0.2955 ± 0.05 | -0.08674 | 0.0117 | -1.00 |
 | DIS-FDM | Combined DIS + DAO | 50% | static | detect_latency_s | 30.14 ± 3.9 | 51.59 ± 3.2 | -22.54 | 0.0117 | -1.00 |
 | DIS-FDM | Combined DIS + DAO | 50% | static | pdr_down | 0.8752 ± 0.07 | 0.6747 ± 0.17 | 0.1409 | 0.0117 | 1.00 |
 | DIS-FDM | Combined DIS + DAO | 50% | static | pdr_up | 0.9832 ± 0.0099 | 0.9926 ± 0.0091 | -0.004956 | 0.0195 | -0.96 |
 | DIS-FDM | Combined DIS + DAO | 50% | static | tx_power_mw | 0.2603 ± 0.046 | 0.4594 ± 0.099 | -0.187 | 0.0117 | -1.00 |
-| DIS-FDM | Combined DIS + DAO | 50% | 30% mobile | detect_latency_s | 27.41 ± 30 | 69.03 ± 47 | -31.67 | 0.0117 | -1.00 |
+| DIS-FDM | Combined DIS + DAO | 50% | 30% mobile | detect_latency_s | 42.04 ± 26 | 73.88 ± 47 | -25.94 | 0.0117 | -1.00 |
 | DIS-FDM | Combined DIS + DAO | 50% | 30% mobile | pdr_down | 0.9228 ± 0.073 | 0.7756 ± 0.14 | 0.154 | 0.0117 | 0.96 |
 | DIS-FDM | Combined DIS + DAO | 50% | 30% mobile | tx_power_mw | 0.2238 ± 0.037 | 0.332 ± 0.095 | -0.1021 | 0.0117 | -0.96 |
 | Secure-RPL | DIS flooding | 10% | static | detect_latency_s | 35.77 ± 8.2 | 12.65 ± 0.72 | 21.81 | 0.0117 | 1.00 |
@@ -374,11 +374,13 @@ Tables report mean ± standard deviation over 10 seeds per cell. 95% confidence 
 | Secure-RPL | DIS flooding | 25% | static | dio_total | 3568 ± 7.9e+02 | 3466 ± 8e+02 | 107 | 0.0117 | 1.00 |
 | Secure-RPL | DIS flooding | 25% | 30% mobile | fpr | 0.4818 ± 0.15 | 0 ± 0 | 0.4773 | 0.0117 | 1.00 |
 | Secure-RPL | DIS flooding | 25% | 30% mobile | precision | 0.4132 ± 0.093 | 1 ± 0 | -0.5997 | 0.0117 | -1.00 |
+| Secure-RPL | DIS flooding | 25% | 30% mobile | detect_latency_s | 22.49 ± 4.6 | 13.81 ± 2.6 | 9.736 | 0.0117 | 0.93 |
 | Secure-RPL | DIS flooding | 50% | static | detect_latency_s | 38.06 ± 4.6 | 13.25 ± 0.54 | 24.22 | 0.0117 | 1.00 |
 | Secure-RPL | DIS flooding | 50% | static | dio_total | 7900 ± 4.4e+02 | 7749 ± 4.2e+02 | 102.5 | 0.0117 | 1.00 |
 | Secure-RPL | DIS flooding | 50% | static | tx_power_mw | 0.1097 ± 0.025 | 0.1085 ± 0.024 | 0.0006922 | 0.0234 | 0.96 |
 | Secure-RPL | DIS flooding | 50% | 30% mobile | fpr | 0.4933 ± 0.14 | 0 ± 0 | 0.5333 | 0.0117 | 1.00 |
 | Secure-RPL | DIS flooding | 50% | 30% mobile | precision | 0.6599 ± 0.066 | 1 ± 0 | -0.3636 | 0.0117 | -1.00 |
+| Secure-RPL | DIS flooding | 50% | 30% mobile | detect_latency_s | 45.72 ± 28 | 21.6 ± 18 | 21.05 | 0.0117 | 1.00 |
 | Secure-RPL | DAO manipulation | 10% | static | tpr | 1 ± 0 | 0 ± 0 | 1 | 0.0117 | 1.00 |
 | Secure-RPL | DAO manipulation | 10% | static | pdr_down | 0.9902 ± 0.018 | 0.8941 ± 0.071 | 0.07209 | 0.0117 | 1.00 |
 | Secure-RPL | DAO manipulation | 10% | static | tx_power_mw | 0.1347 ± 0.024 | 0.1813 ± 0.028 | -0.04731 | 0.0117 | -1.00 |
@@ -426,6 +428,7 @@ Tables report mean ± standard deviation over 10 seeds per cell. 95% confidence 
 | Secure-RPL | Combined DIS + DAO | 50% | static | tx_power_mw | 0.2603 ± 0.046 | 0.4659 ± 0.13 | -0.1872 | 0.0117 | -1.00 |
 | Secure-RPL | Combined DIS + DAO | 50% | 30% mobile | fpr | 0.6933 ± 0.19 | 0 ± 0 | 0.6333 | 0.0117 | 1.00 |
 | Secure-RPL | Combined DIS + DAO | 50% | 30% mobile | precision | 0.5804 ± 0.064 | 1 ± 0 | -0.404 | 0.0117 | -1.00 |
+| Secure-RPL | Combined DIS + DAO | 50% | 30% mobile | detect_latency_s | 42.04 ± 26 | 24.6 ± 18 | 11.63 | 0.0117 | 1.00 |
 | Secure-RPL | Combined DIS + DAO | 50% | 30% mobile | pdr_down | 0.9228 ± 0.073 | 0.7432 ± 0.2 | 0.1743 | 0.0117 | 1.00 |
 | Secure-RPL | Combined DIS + DAO | 50% | 30% mobile | tx_power_mw | 0.2238 ± 0.037 | 0.331 ± 0.095 | -0.08645 | 0.0117 | -0.96 |
 | Secure-RPL | No attack | 0% | 30% mobile | fpr | 0.4517 ± 0.13 | 0 ± 0 | 0.4483 | 0.00391 | 1.00 |
@@ -494,7 +497,7 @@ Tables report mean ± standard deviation over 10 seeds per cell. 95% confidence 
 | Li-MSD | DAO manipulation | 10% | static | tx_power_mw | 0.1347 ± 0.024 | 0.1584 ± 0.016 | -0.02327 | 0.0195 | -0.96 |
 | Li-MSD | DAO manipulation | 10% | 30% mobile | fpr | 0.5423 ± 0.14 | 0.01923 ± 0.027 | 0.5192 | 0.0117 | 1.00 |
 | Li-MSD | DAO manipulation | 10% | 30% mobile | precision | 0.1835 ± 0.042 | 0.885 ± 0.15 | -0.75 | 0.0117 | -1.00 |
-| Li-MSD | DAO manipulation | 10% | 30% mobile | detect_latency_s | 15.11 ± 20 | 607.3 ± 4.3e+02 | -501.8 | 0.0117 | -1.00 |
+| Li-MSD | DAO manipulation | 10% | 30% mobile | detect_latency_s | 25.11 ± 8.9 | 607.3 ± 4.3e+02 | -496.7 | 0.0117 | -1.00 |
 | Li-MSD | DAO manipulation | 10% | 30% mobile | pdr_down | 0.9878 ± 0.0033 | 0.947 ± 0.071 | 0.00974 | 0.0195 | 0.93 |
 | Li-MSD | DAO manipulation | 10% | 30% mobile | dio_total | 7523 ± 6.2e+02 | 9385 ± 1.8e+03 | -1492 | 0.0234 | -0.96 |
 | Li-MSD | DAO manipulation | 10% | 30% mobile | tx_power_mw | 0.1558 ± 0.018 | 0.1837 ± 0.019 | -0.02651 | 0.0117 | -1.00 |
@@ -504,7 +507,7 @@ Tables report mean ± standard deviation over 10 seeds per cell. 95% confidence 
 | Li-MSD | DAO manipulation | 25% | 30% mobile | tpr | 0.9714 ± 0.06 | 0.7143 ± 0.21 | 0.1429 | 0.0195 | 1.00 |
 | Li-MSD | DAO manipulation | 25% | 30% mobile | fpr | 0.5955 ± 0.17 | 0.01364 ± 0.043 | 0.5909 | 0.0117 | 1.00 |
 | Li-MSD | DAO manipulation | 25% | 30% mobile | precision | 0.356 ± 0.092 | 0.95 ± 0.16 | -0.6408 | 0.0117 | -1.00 |
-| Li-MSD | DAO manipulation | 25% | 30% mobile | detect_latency_s | 65.28 ± 83 | 784.3 ± 3.8e+02 | -761.3 | 0.0117 | -1.00 |
+| Li-MSD | DAO manipulation | 25% | 30% mobile | detect_latency_s | 74.13 ± 83 | 784.3 ± 3.8e+02 | -758.4 | 0.0117 | -1.00 |
 | Li-MSD | DAO manipulation | 25% | 30% mobile | pdr_down | 0.961 ± 0.054 | 0.8578 ± 0.16 | 0.05167 | 0.0273 | 0.78 |
 | Li-MSD | DAO manipulation | 50% | static | fpr | 0.3733 ± 0.4 | 0.02 ± 0.032 | 0.2333 | 0.0469 | 1.00 |
 | Li-MSD | DAO manipulation | 50% | static | precision | 0.7512 ± 0.21 | 0.9745 ± 0.042 | -0.2183 | 0.0469 | -0.94 |
@@ -512,7 +515,7 @@ Tables report mean ± standard deviation over 10 seeds per cell. 95% confidence 
 | Li-MSD | DAO manipulation | 50% | 30% mobile | tpr | 0.9643 ± 0.061 | 0.5786 ± 0.1 | 0.3571 | 0.0117 | 1.00 |
 | Li-MSD | DAO manipulation | 50% | 30% mobile | fpr | 0.74 ± 0.26 | 0.02 ± 0.045 | 0.7333 | 0.0117 | 1.00 |
 | Li-MSD | DAO manipulation | 50% | 30% mobile | precision | 0.562 ± 0.095 | 0.9709 ± 0.067 | -0.4543 | 0.0117 | -1.00 |
-| Li-MSD | DAO manipulation | 50% | 30% mobile | detect_latency_s | 151.4 ± 1.3e+02 | 936.8 ± 3.9e+02 | -811.1 | 0.0156 | -0.96 |
+| Li-MSD | DAO manipulation | 50% | 30% mobile | detect_latency_s | 162.7 ± 1.2e+02 | 936.8 ± 3.9e+02 | -805.5 | 0.0156 | -0.96 |
 | Li-MSD | DAO manipulation | 50% | 30% mobile | pdr_down | 0.8803 ± 0.15 | 0.7672 ± 0.17 | 0.1045 | 0.0195 | 0.96 |
 | Li-MSD | DAO manipulation | 50% | 30% mobile | tx_power_mw | 0.2399 ± 0.051 | 0.3066 ± 0.066 | -0.06862 | 0.0195 | -0.96 |
 | Li-MSD | Combined DIS + DAO | 10% | static | detect_latency_s | 25.5 ± 4.8 | 246.1 ± 1.7e+02 | -166 | 0.0117 | -1.00 |
@@ -522,7 +525,7 @@ Tables report mean ± standard deviation over 10 seeds per cell. 95% confidence 
 | Li-MSD | Combined DIS + DAO | 10% | static | tx_power_mw | 0.1263 ± 0.018 | 0.165 ± 0.015 | -0.03962 | 0.0117 | -1.00 |
 | Li-MSD | Combined DIS + DAO | 10% | 30% mobile | fpr | 0.5346 ± 0.14 | 0.003846 ± 0.012 | 0.5 | 0.0117 | 1.00 |
 | Li-MSD | Combined DIS + DAO | 10% | 30% mobile | precision | 0.1859 ± 0.043 | 0.975 ± 0.079 | -0.8063 | 0.0117 | -1.00 |
-| Li-MSD | Combined DIS + DAO | 10% | 30% mobile | detect_latency_s | 7.057 ± 16 | 429.9 ± 3.7e+02 | -269.1 | 0.0117 | -1.00 |
+| Li-MSD | Combined DIS + DAO | 10% | 30% mobile | detect_latency_s | 16.72 ± 6.9 | 429.9 ± 3.7e+02 | -259.1 | 0.0117 | -1.00 |
 | Li-MSD | Combined DIS + DAO | 10% | 30% mobile | pdr_down | 0.9892 ± 0.0035 | 0.9371 ± 0.067 | 0.01546 | 0.0117 | 1.00 |
 | Li-MSD | Combined DIS + DAO | 10% | 30% mobile | dio_total | 8043 ± 1.2e+03 | 1.046e+04 ± 1.6e+03 | -3011 | 0.0117 | -0.96 |
 | Li-MSD | Combined DIS + DAO | 10% | 30% mobile | tx_power_mw | 0.1583 ± 0.02 | 0.1821 ± 0.03 | -0.02368 | 0.0117 | -0.93 |
@@ -534,7 +537,7 @@ Tables report mean ± standard deviation over 10 seeds per cell. 95% confidence 
 | Li-MSD | Combined DIS + DAO | 25% | 30% mobile | tpr | 1 ± 0 | 0.6571 ± 0.22 | 0.2857 | 0.0117 | 1.00 |
 | Li-MSD | Combined DIS + DAO | 25% | 30% mobile | fpr | 0.55 ± 0.18 | 0.02727 ± 0.032 | 0.5682 | 0.0117 | 1.00 |
 | Li-MSD | Combined DIS + DAO | 25% | 30% mobile | precision | 0.3841 ± 0.1 | 0.8838 ± 0.15 | -0.5432 | 0.0117 | -1.00 |
-| Li-MSD | Combined DIS + DAO | 25% | 30% mobile | detect_latency_s | 14.02 ± 9.2 | 508.4 ± 3.7e+02 | -405.5 | 0.0117 | -1.00 |
+| Li-MSD | Combined DIS + DAO | 25% | 30% mobile | detect_latency_s | 21.03 ± 3.3 | 508.4 ± 3.7e+02 | -391.1 | 0.0117 | -1.00 |
 | Li-MSD | Combined DIS + DAO | 25% | 30% mobile | pdr_down | 0.9637 ± 0.053 | 0.8571 ± 0.16 | 0.04932 | 0.0117 | 1.00 |
 | Li-MSD | Combined DIS + DAO | 25% | 30% mobile | dio_total | 8102 ± 9.2e+02 | 1.129e+04 ± 1.6e+03 | -2879 | 0.0117 | -1.00 |
 | Li-MSD | Combined DIS + DAO | 25% | 30% mobile | tx_power_mw | 0.1875 ± 0.042 | 0.2466 ± 0.048 | -0.05386 | 0.0117 | -1.00 |
@@ -548,34 +551,33 @@ Tables report mean ± standard deviation over 10 seeds per cell. 95% confidence 
 | Li-MSD | Combined DIS + DAO | 50% | 30% mobile | tpr | 1 ± 0 | 0.5929 ± 0.13 | 0.4286 | 0.0117 | 1.00 |
 | Li-MSD | Combined DIS + DAO | 50% | 30% mobile | fpr | 0.6933 ± 0.19 | 0.02 ± 0.045 | 0.6 | 0.0117 | 1.00 |
 | Li-MSD | Combined DIS + DAO | 50% | 30% mobile | precision | 0.5804 ± 0.064 | 0.9766 ± 0.051 | -0.3775 | 0.0117 | -1.00 |
-| Li-MSD | Combined DIS + DAO | 50% | 30% mobile | detect_latency_s | 27.41 ± 30 | 972.6 ± 4.9e+02 | -904.3 | 0.0117 | -1.00 |
+| Li-MSD | Combined DIS + DAO | 50% | 30% mobile | detect_latency_s | 42.04 ± 26 | 972.6 ± 4.9e+02 | -897.2 | 0.0117 | -1.00 |
 | Li-MSD | Combined DIS + DAO | 50% | 30% mobile | pdr_down | 0.9228 ± 0.073 | 0.7831 ± 0.17 | 0.09601 | 0.0117 | 1.00 |
 | Li-MSD | Combined DIS + DAO | 50% | 30% mobile | dio_total | 8912 ± 1.4e+03 | 1.152e+04 ± 2.1e+03 | -2999 | 0.0195 | -0.82 |
 | Li-MSD | Combined DIS + DAO | 50% | 30% mobile | tx_power_mw | 0.2238 ± 0.037 | 0.3181 ± 0.057 | -0.08422 | 0.0117 | -1.00 |
 | Li-MSD | No attack | 0% | 30% mobile | fpr | 0.4517 ± 0.13 | 0.01379 ± 0.033 | 0.4483 | 0.00391 | 1.00 |
 | AEF-RPL, learning off | DIS flooding | 10% | static | detect_latency_s | 35.77 ± 8.2 | 50.22 ± 0.13 | -14.89 | 0.0117 | -1.00 |
 | AEF-RPL, learning off | DIS flooding | 10% | static | pdr_down | 0.9987 ± 0.00033 | 0.9978 ± 0.00049 | 0.0008161 | 0.0234 | 0.96 |
-| AEF-RPL, learning off | DIS flooding | 10% | 30% mobile | detect_latency_s | 9.712 ± 19 | 35.35 ± 14 | -26.52 | 0.0117 | -1.00 |
+| AEF-RPL, learning off | DIS flooding | 10% | 30% mobile | detect_latency_s | 19.38 ± 11 | 42.34 ± 6.1 | -26.52 | 0.0117 | -1.00 |
 | AEF-RPL, learning off | DIS flooding | 25% | static | detect_latency_s | 34.53 ± 4.5 | 50.24 ± 0.08 | -16.98 | 0.0117 | -1.00 |
-| AEF-RPL, learning off | DIS flooding | 25% | 30% mobile | detect_latency_s | 15.19 ± 11 | 43.16 ± 5.7 | -25.7 | 0.0117 | -1.00 |
+| AEF-RPL, learning off | DIS flooding | 25% | 30% mobile | detect_latency_s | 22.49 ± 4.6 | 45.15 ± 6.4 | -20.69 | 0.0117 | -1.00 |
 | AEF-RPL, learning off | DIS flooding | 25% | 30% mobile | dio_total | 8879 ± 1.2e+03 | 8070 ± 9.2e+02 | 745 | 0.0488 | 0.89 |
 | AEF-RPL, learning off | DIS flooding | 25% | 30% mobile | tx_power_mw | 0.1772 ± 0.039 | 0.1672 ± 0.043 | 0.009107 | 0.0117 | 1.00 |
 | AEF-RPL, learning off | DIS flooding | 50% | static | detect_latency_s | 38.06 ± 4.6 | 50.42 ± 0.51 | -12.96 | 0.0117 | -1.00 |
-| AEF-RPL, learning off | DIS flooding | 50% | 30% mobile | detect_latency_s | 31.95 ± 33 | 69.6 ± 46 | -25.42 | 0.0117 | -1.00 |
+| AEF-RPL, learning off | DIS flooding | 50% | 30% mobile | detect_latency_s | 45.72 ± 28 | 73.67 ± 46 | -20.66 | 0.0117 | -1.00 |
 | AEF-RPL, learning off | DIS flooding | 50% | 30% mobile | dio_total | 9995 ± 1.4e+03 | 9196 ± 1.7e+03 | 822.5 | 0.0234 | 0.96 |
 | AEF-RPL, learning off | DIS flooding | 50% | 30% mobile | tx_power_mw | 0.1482 ± 0.015 | 0.1376 ± 0.021 | 0.007926 | 0.0195 | 0.96 |
 | AEF-RPL, learning off | DAO manipulation | 25% | 30% mobile | dio_total | 8395 ± 1.5e+03 | 6892 ± 5.9e+02 | 1184 | 0.0293 | 0.93 |
 | AEF-RPL, learning off | DAO manipulation | 25% | 30% mobile | tx_power_mw | 0.2073 ± 0.042 | 0.1813 ± 0.049 | 0.01859 | 0.0117 | 1.00 |
 | AEF-RPL, learning off | DAO manipulation | 50% | 30% mobile | dio_total | 9340 ± 2.9e+03 | 6669 ± 8.1e+02 | 1602 | 0.0117 | 1.00 |
 | AEF-RPL, learning off | DAO manipulation | 50% | 30% mobile | tx_power_mw | 0.2399 ± 0.051 | 0.2013 ± 0.046 | 0.03216 | 0.0117 | 1.00 |
-| AEF-RPL, learning off | Combined DIS + DAO | 10% | static | detect_latency_s | 25.5 ± 4.8 | 32.13 ± 2.8 | -6.667 | 0.0117 | -0.91 |
-| AEF-RPL, learning off | Combined DIS + DAO | 10% | 30% mobile | detect_latency_s | 7.057 ± 16 | 25.75 ± 10 | -15.04 | 0.0117 | -1.00 |
+| AEF-RPL, learning off | Combined DIS + DAO | 10% | static | detect_latency_s | 25.5 ± 4.8 | 32.13 ± 2.8 | -6.667 | 0.0234 | -0.91 |
+| AEF-RPL, learning off | Combined DIS + DAO | 10% | 30% mobile | detect_latency_s | 16.72 ± 6.9 | 32.74 ± 3.1 | -13.64 | 0.0117 | -1.00 |
 | AEF-RPL, learning off | Combined DIS + DAO | 10% | 30% mobile | tx_power_mw | 0.1583 ± 0.02 | 0.1434 ± 0.021 | 0.007537 | 0.0234 | 0.96 |
 | AEF-RPL, learning off | Combined DIS + DAO | 25% | static | detect_latency_s | 26.37 ± 3.9 | 33.03 ± 2.5 | -6.48 | 0.0117 | -1.00 |
-| AEF-RPL, learning off | Combined DIS + DAO | 25% | 30% mobile | detect_latency_s | 14.02 ± 9.2 | 32.86 ± 4.4 | -14.18 | 0.0117 | -1.00 |
+| AEF-RPL, learning off | Combined DIS + DAO | 25% | 30% mobile | detect_latency_s | 21.03 ± 3.3 | 34.86 ± 5.5 | -13.43 | 0.0117 | -1.00 |
 | AEF-RPL, learning off | Combined DIS + DAO | 25% | 30% mobile | dio_total | 8102 ± 9.2e+02 | 7301 ± 9.2e+02 | 923 | 0.0488 | 0.89 |
 | AEF-RPL, learning off | Combined DIS + DAO | 50% | static | detect_latency_s | 30.14 ± 3.9 | 41.47 ± 11 | -10.35 | 0.0117 | -1.00 |
-| AEF-RPL, learning off | Combined DIS + DAO | 50% | 30% mobile | detect_latency_s | 27.41 ± 30 | 58.6 ± 46 | -24.94 | 0.0117 | -1.00 |
 | AEF-RPL, learning off | Combined DIS + DAO | 50% | 30% mobile | dio_total | 8912 ± 1.4e+03 | 7250 ± 1e+03 | 1288 | 0.0234 | 0.96 |
 | AEF-RPL, first learning version | DIS flooding | 10% | 30% mobile | dio_total | 7693 ± 7.8e+02 | 8904 ± 1.3e+03 | -959.5 | 0.0117 | -1.00 |
 | AEF-RPL, first learning version | DIS flooding | 50% | 30% mobile | dio_total | 9995 ± 1.4e+03 | 1.061e+04 ± 1.4e+03 | -578 | 0.0488 | -0.89 |

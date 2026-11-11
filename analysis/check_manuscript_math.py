@@ -121,12 +121,12 @@ def main():
     )
     axes[0].legend(fontsize=7)
     q = np.linspace(0.005, 0.4, 100)
-    bound = np.minimum(1, 331 * q**6)
+    bound = np.minimum(1, 332 * q**6)
     axes[1].semilogy(q, bound, color="#32638e")
     axes[1].set(
         xlabel="Independent benign hit probability q",
         ylabel="DAO-channel union bound",
-        title="336 windows; required hit run = 6",
+        title="337 windows; required hit run = 6",
     )
     fig.tight_layout()
     for suffix in ("pdf", "png"):

@@ -207,7 +207,7 @@ Each line is `<time in microseconds> <node ID> <tag> <values>`:
 | `legit_joined`, `legit_total` | legitimate nodes that ever sent data, and all legitimate nodes |
 | `tp`, `fn`, `fp`, `tn` | attackers flagged, missed; legitimate nodes flagged, not flagged |
 | `tpr`, `fpr`, `precision` | detection rates (empty for defenses that do not detect) |
-| `detect_latency_s` | mean time from 300 s to the first flag of each detected attacker |
+| `detect_latency_s` | mean time from 300 s to the first flag raised at or after 300 s against each detected attacker |
 | `fp_before_attack` | legitimate nodes flagged before the attack started |
 | `blacklist_entries_legit`, `blacklist_entries_attacker` | how many node pairs flagged legitimate nodes and attackers |
 | `wall_s` | real time the simulation took (not a result, ignored by verification) |

@@ -28,4 +28,4 @@ for dis, dao in ((3, 2), (10, 10), (30, 30)):
                 rows.append(row)
 (OUT / "variants.json").write_text(json.dumps(variants, indent=2))
 (OUT / "robustness.jsonl").write_text("".join(json.dumps(r) + "\n" for r in rows))
-print(f"Frozen {len(rows)} paired robustness runs, seeds 21–30; 60 minutes each")
+print(f"Frozen {len(rows)} paired robustness runs, seeds 21 to 30; 60 minutes each")

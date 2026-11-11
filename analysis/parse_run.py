@@ -166,7 +166,11 @@ def parse(run_dir):
         res["tpr"] = tp / len(attackers) if attackers else float("nan")
         res["fpr"] = fp / len(legit) if legit else float("nan")
         res["precision"] = tp / (tp + fp) if (tp + fp) else float("nan")
-        firsts = [min(r[0] for r in flags[a]) for a in attackers if a in flags]
+        firsts = []
+        for a in attackers:
+            after = [r[0] for r in flags.get(a, ()) if r[0] >= ATTACK_START_S]
+            if after:
+                firsts.append(min(after))
         res["detect_latency_s"] = (
             (sum(firsts) / len(firsts) - ATTACK_START_S) if firsts else float("nan")
         )

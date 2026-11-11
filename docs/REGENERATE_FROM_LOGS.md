@@ -78,9 +78,9 @@ Section V, without simulation.
 
 | Paper item | File |
 |---|---|
-| Table V (seven-attacker comparison) | `full_paper/generated/main_table.tex` from `output/results/all_runs.csv` |
-| Table VI (tests in all six conditions) | `full_paper/generated/primary_tests_table.tex` |
-| Table VIII (hypothesis decisions) | `full_paper/generated/hypothesis_table.tex`; evidence in `output/hypotheses/evidence.json` |
+| Table IV (seven-attacker comparison) | `full_paper/generated/main_table.tex` from `output/results/all_runs.csv` |
+| Table V (tests in all six conditions) | `full_paper/generated/primary_tests_table.tex` |
+| Table VII (hypothesis decisions) | `full_paper/generated/hypothesis_table.tex`; evidence in `output/hypotheses/evidence.json` |
 | Wilcoxon and Holm results | `output/results/stats_rq2_combined_vs_single.csv`, `output/results/stats_rq3_rq4_proposed_vs_baselines.csv`, `output/hypotheses/ari_tests.csv` |
 | ARI and recovery time per run | `output/results/resilience.csv` |
 | Fresh-seed replication, ablations, rate and reception loss | `output/experiments/journal_extension/analysis/summary.csv`, `paired_comparisons.csv` |

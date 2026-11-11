@@ -10,8 +10,9 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def main():
+    base = Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT / "output" / "runs"
     n = 0
-    for res_file in sorted((ROOT / "output" / "runs").glob("*/result.json")):
+    for res_file in sorted(base.glob("*/result.json")):
         old = json.loads(res_file.read_text())
         new = parse_run.parse(res_file.parent)
         new["wall_s"] = old.get("wall_s")

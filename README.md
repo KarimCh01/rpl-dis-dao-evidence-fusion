@@ -1,6 +1,6 @@
 # Detecting Coordinated DIS Flooding and DAO Manipulation Attacks in RPL-Based IoT Networks via Adaptive Evidence Fusion
 
-Implementation, data and analysis for the AEF-RPL study (CSC 689, LAU). The base
+Implementation, data and analysis for the AEF-RPL study. The base
 paper is Prajisha C. and Vasudevan A.R., "Detection and mitigation of Multicast
 DIS flooding attacks in RPL-based IoT networks," Ad Hoc Networks 179 (2025)
 104002, which proposes DIS-FDM. AEF-RPL extends DIS-FDM with a self-calibrated
@@ -8,7 +8,7 @@ DAO-consistency evidence source, selective DAO repair, and an on-node tabular
 Q-learning decision layer.
 
 * Full paper: `manuscript_full.tex` / `manuscript_full.pdf` (IEEE two-column; 46 references, of which the 44 with a DOI were resolved against Crossref and the registered titles matched, see `docs/DOI_AUDIT.md`)
-* Introduction and literature review course submission: `manuscript.tex` / `manuscript.pdf`
+* Introduction and literature review (earlier draft): `manuscript.tex` / `manuscript.pdf`
 * Regenerate every result from the stored logs: [`docs/REGENERATE_FROM_LOGS.md`](docs/REGENERATE_FROM_LOGS.md)
 * Proposal promises and where each is delivered: [`docs/PROPOSAL_CHECKLIST.md`](docs/PROPOSAL_CHECKLIST.md)
 * What was built and why: `docs/WALKTHROUGH.md`
@@ -29,8 +29,8 @@ Q-learning decision layer.
 | H1 reproduction of DIS-FDM | Partly supported: overhead trends reproduced; delivery losses not (always-on MAC) |
 | H2 combined attack worse than each single attack | Partly supported: damage is additive (DIS overhead plus DAO route loss) |
 | H3 AEF-RPL has higher detection accuracy than DIS-FDM | Not supported: TPR and precision equal (0/6). For RQ3, downward PDR and ARI are higher in 6/6 conditions (Holm p = .012) |
-| H4 learning vs fixed rule | Not supported for FPR; detection latency 20 to 73% lower in 6/6 conditions |
-| H5 consistency (static, mobile, 500 and 1000 nodes) | Partly supported: service and latency gains hold in static and mobile networks, attack rates and reception loss at 30 nodes; 500 and 1000 nodes not tested |
+| H4 learning vs fixed rule | Not supported for FPR; mean detection latency 20 to 49% lower, significant in 5/6 conditions |
+| H5 consistency (static, mobile, 500 and 1000 nodes) | Partly supported: the service gain holds in static and mobile networks, attack rates and reception loss at 30 nodes, and the latency gain in 5/6 conditions; 500 and 1000 nodes not tested |
 
 ## Regenerate everything from the logs (no simulation)
 

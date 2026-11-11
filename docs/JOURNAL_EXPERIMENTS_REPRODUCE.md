@@ -117,5 +117,5 @@ records and timing comparisons are in `ENGINE_MIGRATION.json`. The fixed image
 and explicit context are recorded in `execution_engine.json` and in new run
 metadata. Completed virtual-time results were retained. Interrupted logs were
 archived before restarting. The two earlier Desktop CPU-cost pilots were
-preserved under `environment_comparison/desktop_profile_pilots/` and will be
-rerun on the native engine to keep the final timing comparison consistent.
+preserved under `environment_comparison/desktop_profile_pilots/`; the CPU-cost
+runs reported in the paper were executed on the native engine.

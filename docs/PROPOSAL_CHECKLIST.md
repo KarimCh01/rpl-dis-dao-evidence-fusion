@@ -34,7 +34,7 @@ shows it.
 | H1 | Partly supported | 4 of 8 effect directions |
 | H2 | Partly supported | Downward PDR and ARI vs DIS 6/6; DIO vs DAO 5/6 |
 | H3 | Not supported for detection accuracy; resilience improved (RQ3) | TPR higher 0/6, precision higher 0/6, FPR higher 0/6; downward PDR 6/6, ARI 6/6 |
-| H4 | Not supported (FPR did not decrease) | FPR lower 0/8; ARI lower 0/6; latency lower 6/6; policy stabilization (greedy-action changes per 10 min) reported in paper Sec. VII-D |
-| H5 | Partly supported | Service and latency gains 6/6 conditions; 10 of 12 rate and loss cells; 500 and 1000 nodes not tested |
+| H4 | Not supported (FPR did not decrease) | FPR lower 0/8; ARI lower 0/6; latency lower 5/6; policy stabilization (greedy-action changes per 10 min) reported in paper Sec. VII-D |
+| H5 | Partly supported | Service gain 6/6 conditions, latency gain 5/6; 10 of 12 rate and loss cells; 500 and 1000 nodes not tested |
 
 All counts are in `output/hypotheses/evidence.json`, written by `analysis/test_hypotheses.py`.

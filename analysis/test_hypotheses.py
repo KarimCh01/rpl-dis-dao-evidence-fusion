@@ -107,7 +107,7 @@ def main():
     comb = "Combined DIS + DAO"
     ev = {}
 
-    # H1: reproduction of DIS-FDM trends (direction of each effect, interval 3 s, 10 attackers).
+    # H1: reproduction of DIS-FDM trends (direction of each effect, interval 3 s, 5 attackers).
     def val(exp, x, cond, metric, col):
         q = rep[
             (rep.experiment == exp)
@@ -352,7 +352,7 @@ def main():
         (
             "H1",
             "DIS-FDM's published trends are reproduced",
-            "Same direction as published for every checked effect; no test",
+            "Same direction as published, with a change above 1\\%, for every checked effect; no test",
             f"{ev['H1']['reproduced']}/{ev['H1']['total']} effect directions",
             "Partly supported",
         ),
