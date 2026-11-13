@@ -53,6 +53,19 @@ Expected last line:
 COMPLETE: stored-log analysis and paper figures/tables regenerated. No simulations executed.
 ```
 
+The 20 benign logs are checked against
+`output/preliminary/learning_fp_extension/MANIFEST.sha256` before they are
+parsed, in the same way as the main campaign. The second campaign keeps the
+hashes of its 740 logs, plans, provenance record and analysis tables in
+`output/experiments/journal_extension/MANIFEST.sha256`. To check them, run from
+the `twin-attack-rpl/` folder:
+
+```bash
+sha256sum -c --quiet output/experiments/journal_extension/MANIFEST.sha256
+```
+
+It prints nothing when every file matches, and names each file that differs.
+
 The command writes one log per step and a `report.json` with the exit code and
 duration of each step into `output/paper_reproduction/`. These files are
 produced locally on each run (they contain local paths and timings) and are

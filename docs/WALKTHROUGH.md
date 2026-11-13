@@ -659,7 +659,8 @@ decisions only, not results.
 * `learning_fp_extension/`: the 20 benign mobile runs on fresh seeds 11 to 20
   (learning on and off) used for the false-isolation comparison of H4; these
   are reported results, kept here because they were run outside the plan files
-  of the main campaign.
+  of the main campaign. `MANIFEST.sha256` in that folder lists the hash of each
+  of the 20 logs, and the analysis script checks them before parsing.
 
 ---
 
@@ -817,7 +818,7 @@ AEF-RPL (defense 7) against AEF fixed (defense 4), same tests:
   node looks like a DIS flooder, and because the reward is computed from the
   same indicators, the learner is rewarded for isolating it.
 * Policy stability (states whose greedy action changed per 10-minute report, in
-  the last 10 minutes): 0.28 of 96 states under the combined attack and 0 with
+  the last report, 2640 to 3240 s): 0.28 of 96 states under the combined attack and 0 with
   no attack in static networks; 1.9 and 1.7 in mobile networks.
 
 H4 ("learning lowers FPR without lowering ARI") is not supported. The latency

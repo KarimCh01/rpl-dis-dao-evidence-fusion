@@ -41,7 +41,7 @@ In the component ablation on fresh seeds 31--40 (Fig.~\ref{fig:ablation}), disab
 \end{figure}
 
 \begin{figure*}[t]
-\centering\includegraphics[width=0.78\textwidth]{output/experiments/journal_extension/figures/component_ablation.pdf}
+\centering\includegraphics[width=0.772\textwidth]{output/experiments/journal_extension/figures/component_ablation.pdf}
 \caption{Component ablations under the combined attack (seeds 31--40): downward PDR (top) and macro-F1 (bottom) with 95\% intervals. ``No DAO evidence'' disables only the fused DAO mass; ``no route repair'' keeps detection and isolation but drops the repair step.}\label{fig:ablation}
 \end{figure*}
 
@@ -56,7 +56,7 @@ In the attack-free runs of the main matrix, the nodes of a mobile network sent 2
 Of the H3 and H4 improvements, only the service gain and the latency gain were significant, the first in all six conditions of the main campaign and the second in all but the mobile networks with 14 attackers (Table~\ref{tab:primary}). On the fresh seeds, which played no part in designing AEF-RPL, the default-rate runs gave AEF-RPL 95.7\% downward PDR in static and 98.0\% in mobile networks against 78.7\% and 82.8\% for DIS-FDM, paired differences of 17.0 points (bootstrap interval 13.2--21.2) and 15.2 points (7.2--23.7). ARI followed the same pattern (Table~\ref{tab:extension}). Every seed favored AEF-RPL in these cells (exact sign-flip $p=0.002$). With Holm adjustment over all tests of the rate study, $p_H=0.172$. The H5 decision rests on the pre-specified main-campaign tests, and the fresh seeds replicate the direction and size of the effect.
 
 \begin{table}[t]
-\caption{Fresh-seed replication at the default rate (seven attackers, seeds 21--30). New recall: fraction of attackers newly flagged after onset.}\label{tab:extension}
+\caption{Fresh-seed replication at the default rate (seven attackers, seeds 21--30). New recall is the fraction of attackers newly flagged after onset.}\label{tab:extension}
 \centering\footnotesize\input{full_paper/generated/extension_table.tex}
 \end{table}
 
@@ -73,7 +73,7 @@ Across attack rates and reception loss (Figs.~\ref{fig:rates} and~\ref{fig:radio
 \end{figure}
 
 \subsection{Cost}
-On the host, the median per-window callback time averaged 2.57~$\mu$s for AEF-RPL against 2.02~$\mu$s for DIS-FDM in static attacked runs, and 5.15 against 3.51~$\mu$s in mobile runs; the 95th percentiles were 7.06 against 5.26~$\mu$s and 10.28 against 7.06~$\mu$s. AEF-RPL also lowered the estimated transmit power of the attacked network (0.126~mW against 0.182~mW for DIS-FDM with three static attackers). The learning state adds 780~bytes per node.
+On the host, the median per-window callback time averaged 2.57~$\mu$s for AEF-RPL against 2.02~$\mu$s for DIS-FDM in static attacked runs, and 5.15 against 3.51~$\mu$s in mobile runs; the 95th percentiles were 7.06 against 5.26~$\mu$s and 10.28 against 7.06~$\mu$s. AEF-RPL also lowered the estimated transmit power of the attacked network (0.126~mW against 0.182~mW for DIS-FDM with three static attackers). The learning tables add 780~bytes per node.
 
 \begin{table*}[t]
 \caption{Hypothesis decisions. Evidence counts the conditions in which the effect was significant ($p_H<0.05$) out of those tested, unless noted.}\label{tab:hypotheses}

@@ -374,8 +374,10 @@ def main():
         lw=1.3,
         label="Exploration rate $\\varepsilon$",
     )
-    ax.text(1500, 0.072, "Attack activation: 300 s", fontsize=7)
-    ax.text(1500, 0.060, "10 s decision windows; no ground-truth feedback", fontsize=6)
+    ax.text(1500, 0.064, "Attack activation: 300 s", fontsize=7)
+    ax.text(
+        1500, 0.046, "10 s decision windows;\nno ground-truth feedback", fontsize=6
+    )
     ax.set(
         xticks=[0, 300, 1800, 3600],
         yticks=[0, 0.01, 0.05, 0.10],

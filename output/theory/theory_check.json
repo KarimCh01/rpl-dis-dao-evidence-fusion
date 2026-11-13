@@ -55,45 +55,45 @@
   {
    "eps": 0.5,
    "q": 0.05,
-   "windows": 337,
+   "windows": 336,
    "needed_in_a_row": 6,
    "measured": 0.0,
-   "bound": 5.187500000000002e-06,
+   "bound": 5.171875000000002e-06,
    "holds": true
   },
   {
    "eps": 0.5,
    "q": 0.1,
-   "windows": 337,
+   "windows": 336,
    "needed_in_a_row": 6,
    "measured": 0.00015,
-   "bound": 0.0003320000000000001,
+   "bound": 0.00033100000000000013,
    "holds": true
   },
   {
    "eps": 0.5,
    "q": 0.2,
-   "windows": 337,
+   "windows": 336,
    "needed_in_a_row": 6,
-   "measured": 0.0173,
-   "bound": 0.021248000000000006,
+   "measured": 0.01685,
+   "bound": 0.02118400000000001,
    "holds": true
   },
   {
    "eps": 0.5,
    "q": 0.3,
-   "windows": 337,
+   "windows": 336,
    "needed_in_a_row": 6,
-   "measured": 0.15955,
-   "bound": 0.24202799999999994,
+   "measured": 0.1586,
+   "bound": 0.24129899999999993,
    "holds": true
   }
  ],
  "policy_gamma0": [
   {
    "p": 0.05,
-   "Q_accept": -0.083,
-   "Q_isolate": -1.948,
+   "Q_accept": -0.176,
+   "Q_isolate": -1.918,
    "learned": "accept",
    "theory": "accept",
    "conservative_near_threshold": false,
@@ -101,8 +101,8 @@
   },
   {
    "p": 0.1,
-   "Q_accept": -0.06,
-   "Q_isolate": -1.877,
+   "Q_accept": -0.106,
+   "Q_isolate": -1.808,
    "learned": "accept",
    "theory": "accept",
    "conservative_near_threshold": false,
@@ -110,8 +110,8 @@
   },
   {
    "p": 0.15,
-   "Q_accept": -0.14,
-   "Q_isolate": -1.79,
+   "Q_accept": -0.225,
+   "Q_isolate": -1.648,
    "learned": "accept",
    "theory": "accept",
    "conservative_near_threshold": false,
@@ -119,8 +119,8 @@
   },
   {
    "p": 0.2,
-   "Q_accept": -0.191,
-   "Q_isolate": -1.211,
+   "Q_accept": -0.196,
+   "Q_isolate": -1.65,
    "learned": "accept",
    "theory": "accept",
    "conservative_near_threshold": false,
@@ -128,8 +128,8 @@
   },
   {
    "p": 0.25,
-   "Q_accept": -0.304,
-   "Q_isolate": -1.11,
+   "Q_accept": -0.235,
+   "Q_isolate": -0.916,
    "learned": "accept",
    "theory": "accept",
    "conservative_near_threshold": false,
@@ -137,8 +137,8 @@
   },
   {
    "p": 0.3,
-   "Q_accept": -0.32,
-   "Q_isolate": -1.158,
+   "Q_accept": -0.312,
+   "Q_isolate": -1.119,
    "learned": "accept",
    "theory": "accept",
    "conservative_near_threshold": false,
@@ -146,8 +146,8 @@
   },
   {
    "p": 0.35,
-   "Q_accept": -0.246,
-   "Q_isolate": -0.946,
+   "Q_accept": -0.165,
+   "Q_isolate": -0.801,
    "learned": "accept",
    "theory": "accept",
    "conservative_near_threshold": false,
@@ -155,8 +155,8 @@
   },
   {
    "p": 0.4,
-   "Q_accept": -0.413,
-   "Q_isolate": -0.937,
+   "Q_accept": -0.361,
+   "Q_isolate": -0.865,
    "learned": "accept",
    "theory": "accept",
    "conservative_near_threshold": false,
@@ -164,8 +164,8 @@
   },
   {
    "p": 0.45,
-   "Q_accept": -0.318,
-   "Q_isolate": -0.798,
+   "Q_accept": -0.285,
+   "Q_isolate": -0.691,
    "learned": "accept",
    "theory": "accept",
    "conservative_near_threshold": false,
@@ -173,8 +173,8 @@
   },
   {
    "p": 0.5,
-   "Q_accept": -0.356,
-   "Q_isolate": -0.807,
+   "Q_accept": -0.462,
+   "Q_isolate": -0.683,
    "learned": "accept",
    "theory": "either",
    "conservative_near_threshold": false,
@@ -182,8 +182,8 @@
   },
   {
    "p": 0.55,
-   "Q_accept": -0.49,
-   "Q_isolate": -0.969,
+   "Q_accept": -0.587,
+   "Q_isolate": -0.794,
    "learned": "accept",
    "theory": "isolate",
    "conservative_near_threshold": true,
@@ -191,17 +191,17 @@
   },
   {
    "p": 0.6,
-   "Q_accept": -0.531,
-   "Q_isolate": -0.988,
-   "learned": "accept",
+   "Q_accept": -0.788,
+   "Q_isolate": -0.517,
+   "learned": "isolate",
    "theory": "isolate",
-   "conservative_near_threshold": true,
+   "conservative_near_threshold": false,
    "holds": true
   },
   {
    "p": 0.65,
-   "Q_accept": -0.777,
-   "Q_isolate": -0.561,
+   "Q_accept": -0.738,
+   "Q_isolate": -0.224,
    "learned": "isolate",
    "theory": "isolate",
    "conservative_near_threshold": false,
@@ -209,8 +209,8 @@
   },
   {
    "p": 0.7,
-   "Q_accept": -0.687,
-   "Q_isolate": -0.14,
+   "Q_accept": -0.758,
+   "Q_isolate": 0.139,
    "learned": "isolate",
    "theory": "isolate",
    "conservative_near_threshold": false,
@@ -218,8 +218,8 @@
   },
   {
    "p": 0.75,
-   "Q_accept": -0.788,
-   "Q_isolate": 0.164,
+   "Q_accept": -0.842,
+   "Q_isolate": 0.229,
    "learned": "isolate",
    "theory": "isolate",
    "conservative_near_threshold": false,
@@ -227,8 +227,8 @@
   },
   {
    "p": 0.8,
-   "Q_accept": -0.874,
-   "Q_isolate": 0.743,
+   "Q_accept": -0.789,
+   "Q_isolate": 0.685,
    "learned": "isolate",
    "theory": "isolate",
    "conservative_near_threshold": false,
@@ -236,8 +236,8 @@
   },
   {
    "p": 0.85,
-   "Q_accept": -0.867,
-   "Q_isolate": 0.719,
+   "Q_accept": -0.816,
+   "Q_isolate": 0.703,
    "learned": "isolate",
    "theory": "isolate",
    "conservative_near_threshold": false,
@@ -245,8 +245,8 @@
   },
   {
    "p": 0.9,
-   "Q_accept": -0.903,
-   "Q_isolate": 0.565,
+   "Q_accept": -0.865,
+   "Q_isolate": 0.622,
    "learned": "isolate",
    "theory": "isolate",
    "conservative_near_threshold": false,
@@ -254,8 +254,8 @@
   },
   {
    "p": 0.95,
-   "Q_accept": -0.979,
-   "Q_isolate": 0.805,
+   "Q_accept": -0.969,
+   "Q_isolate": 0.982,
    "learned": "isolate",
    "theory": "isolate",
    "conservative_near_threshold": false,
@@ -290,7 +290,7 @@
   {
    "gamma": 0.5,
    "fixed_point_q8_8": true,
-   "max_abs_Q": 2.5,
+   "max_abs_Q": 2.3477,
    "bound": 4.0,
    "holds": true,
    "fits_int16": true
@@ -329,7 +329,7 @@
  "memory_bytes": {
   "q_table": 384,
   "visit_counts": 384,
-  "per_neighbor": 2
+  "per_neighbor": 3
  },
  "all_hold": true
 }

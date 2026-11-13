@@ -2,9 +2,11 @@
 """Paired analysis of fresh no-attack/mobile learning false-positive runs."""
 
 import csv
+import hashlib
 import json
 import random
 import statistics
+import sys
 from pathlib import Path
 from scipy.stats import wilcoxon
 import parse_run
@@ -12,7 +14,36 @@ import parse_run
 ROOT = Path(__file__).resolve().parents[1]
 RUNS = ROOT / "output" / "runs"
 OUT = ROOT / "output" / "preliminary"
+MANIFEST = OUT / "learning_fp_extension" / "MANIFEST.sha256"
 SEEDS = range(11, 21)
+
+
+def sha256(path):
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        for block in iter(lambda: f.read(1 << 20), b""):
+            h.update(block)
+    return h.hexdigest()
+
+
+logs = sorted(MANIFEST.parent.glob("*/COOJA.testlog.gz"))
+if "--write-manifest" in sys.argv:
+    MANIFEST.write_text(
+        "".join(f"{sha256(f)}  {f.relative_to(ROOT).as_posix()}\n" for f in logs)
+    )
+    raise SystemExit(f"wrote {MANIFEST.relative_to(ROOT)}")
+expected = {}
+for line in MANIFEST.read_text().splitlines():
+    digest, name = line.split("  ", 1)
+    expected[name] = digest
+changed = [
+    f for f in logs if expected.get(f.relative_to(ROOT).as_posix()) != sha256(f)
+]
+print(f"input logs checked: {len(logs)}, changed or unknown: {len(changed)}")
+if changed or len(logs) != len(expected):
+    for f in changed[:10]:
+        print(f"  {f.relative_to(ROOT)}")
+    raise SystemExit(1)
 
 pairs = {}
 for seed in SEEDS:

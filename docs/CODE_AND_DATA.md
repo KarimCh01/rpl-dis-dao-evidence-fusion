@@ -312,7 +312,7 @@ comparison was not run. The reported results are all at 30 nodes.
 | `scripts/journal_status.py` | read-only progress summary |
 | `scripts/record_journal_provenance.py` | writes `PROVENANCE.json` |
 | `analysis/analyze_journal_extension.py` | per-cell means with Student-t intervals, paired bootstrap differences (10 000 resamples), exact sign-flip p-values, Holm correction within each study; writes `analysis/per_run.csv`, `summary.csv`, `paired_comparisons.csv`, `attacker_events.csv`, `completion.csv` and `STATUS.md`. Node-level detection metrics and post-onset event metrics use different observation rules and are reported separately; latency is averaged over detected events and the missed-event count is reported next to it |
-| `analysis/analyze_learning_fp_extension.py` | paired comparison of the 20 benign mobile runs (seeds 11 to 20, learning on and off) in `output/preliminary/learning_fp_extension/` |
+| `analysis/analyze_learning_fp_extension.py` | paired comparison of the 20 benign mobile runs (seeds 11 to 20, learning on and off) in `output/preliminary/learning_fp_extension/`. It first checks the 20 logs against the `MANIFEST.sha256` of that folder and stops, naming the log, if one differs; `--write-manifest` rewrites that file |
 | `analysis/plot_journal_extension.py` | the campaign figures in `figures/` |
 | `analysis/profile_native_resources.py` | native object section sizes from the compiled variants |
 | `analysis/validate_journal_protocol.py` | manifest bounds, rejection of nonfinite settings, source check that `defense.c` and `rl.c` reference no attacker-label or schedule symbol, injection timing, scale gate; writes `analysis/PROTOCOL_VALIDATION.md` |

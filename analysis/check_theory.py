@@ -170,14 +170,14 @@ def main():
     rng = np.random.default_rng(1)
     res = {
         "delay": delay_bounds([0.1, 0.25, 0.5, 0.75, 0.9], rng),
-        "false_alarm": false_alarms(0.5, [0.05, 0.1, 0.2, 0.3], 337, rng),
+        "false_alarm": false_alarms(0.5, [0.05, 0.1, 0.2, 0.3], 336, rng),
         "policy_gamma0": policy_check(rng),
         "q_bound": bound_check(rng),
         "exploration": exploration_schedule(),
         "memory_bytes": {
             "q_table": 96 * 2 * 2,
             "visit_counts": 96 * 2 * 2,
-            "per_neighbor": 2,
+            "per_neighbor": 3,
         },
     }
     res["all_hold"] = all(
