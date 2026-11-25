@@ -34,17 +34,68 @@ Q-learning decision layer.
 
 ## Regenerate everything from the logs (no simulation)
 
-```bash
-python3 -m venv .venv
-.venv/bin/pip install -r requirements.txt
-make reproduce          # main campaign: checks 1960 log hashes, rebuilds 8 result files, compares byte for byte
-make reproduce-paper    # everything: both campaigns, hypothesis tests, every paper table and figure
-make theory             # numerical checks of the mathematical analysis
-```
+This folder holds everything that is needed: the code, the raw logs of all 2720
+runs and their checksums. It comes either as the zip package
+`AEF-RPL_reproduction.zip` or from the repository, with the same content. The
+steps below were tested on Ubuntu 24.04 with Python 3.12 and GNU Make. They
+take about 15 minutes, need about 2.5 GB of free disk space, and need an
+internet connection for step 2 only. On a fresh Ubuntu, first run
+`sudo apt install python3-venv make unzip`. On Windows, open an Ubuntu terminal
+(WSL) and use the same commands.
 
-`make reproduce` ends with `ALL 8 OUTPUT FILES MATCH`. `make reproduce-paper`
-ends with `COMPLETE` and writes `output/paper_reproduction/report.json`. Neither
-runs Cooja or Docker. `make reproduce-paper` also writes one log per step and
+1. Get the folder, from the zip package
+
+   ```bash
+   unzip AEF-RPL_reproduction.zip
+   cd twin-attack-rpl
+   ```
+
+   or from the repository
+
+   ```bash
+   git clone https://github.com/KarimCh01/rpl-dis-dao-evidence-fusion.git twin-attack-rpl
+   cd twin-attack-rpl
+   ```
+
+2. Install the Python packages (once)
+
+   ```bash
+   python3 -m venv .venv
+   .venv/bin/pip install -r requirements.txt
+   ```
+
+3. Check the main campaign
+
+   ```bash
+   make reproduce
+   ```
+
+   This checks the 1960 raw logs against their recorded hashes, rebuilds 8
+   result files from them and compares each one byte for byte with the
+   published file. Expected last line: `ALL 8 OUTPUT FILES MATCH`.
+
+4. Regenerate the whole paper
+
+   ```bash
+   make reproduce-paper
+   ```
+
+   This reparses both campaigns, decides hypotheses H1 to H5 and rebuilds every
+   table and figure of the paper. Expected last line:
+   `COMPLETE: stored-log analysis and paper figures/tables regenerated. No simulations executed.`
+
+5. Check the mathematical analysis
+
+   ```bash
+   make theory
+   ```
+
+   Expected last line: `ALL HOLD`.
+
+None of these commands runs Cooja or Docker. Afterwards the result tables are in
+`output/results/summary.md`, the hypothesis decisions in
+`output/hypotheses/evidence.json`, and the tables and figures of the paper in
+`full_paper/generated/`. `make reproduce-paper` also writes one log per step and
 `report.json` into `output/paper_reproduction/`; these are produced locally and
 are not tracked. Details and expected outputs are in
 [`docs/REGENERATE_FROM_LOGS.md`](docs/REGENERATE_FROM_LOGS.md).

@@ -8,14 +8,33 @@ What the proposal promised and where each item is delivered:
 
 ## 1. Setup (once)
 
-From the `twin-attack-rpl/` folder, with Python 3.12:
+Get the `twin-attack-rpl/` folder, from the zip package
+
+```bash
+unzip AEF-RPL_reproduction.zip
+cd twin-attack-rpl
+```
+
+or from the repository
+
+```bash
+git clone https://github.com/KarimCh01/rpl-dis-dao-evidence-fusion.git twin-attack-rpl
+cd twin-attack-rpl
+```
+
+Both give the same content. Then, with Python 3.12 and GNU Make:
 
 ```bash
 python3 -m venv .venv
 .venv/bin/pip install -r requirements.txt
 ```
 
-Copy the whole `twin-attack-rpl/` folder, including `output/`. The logs are in
+The steps were tested on Ubuntu 24.04. On a fresh Ubuntu, first run
+`sudo apt install python3-venv make unzip`. On Windows, use an Ubuntu terminal
+(WSL). About 2.5 GB of free disk space is needed, and an internet connection
+for the `pip install` step only.
+
+The folder must be complete, including `output/`. The logs are in
 `output/runs/*/COOJA.testlog.gz` (main campaign) and
 `output/experiments/journal_extension/` (second campaign).
 
@@ -103,8 +122,11 @@ Section V, without simulation.
 
 ## Notes
 
-* Numerical outputs match exactly. Figure files can differ by a few bytes
-  between Matplotlib or LaTeX versions; their numbers do not.
+* Numerical outputs match exactly: after `make reproduce-paper`, every table
+  and data file is byte for byte equal to the stored one. Each regenerated PDF
+  figure carries a new creation date, so those files differ from the stored
+  ones in a few bytes; the drawings and their numbers do not. Figure files can
+  also differ between Matplotlib or LaTeX versions.
 * The stored CPU-time values are measurements from the original host; they are
   reparsed, not re-measured.
 * Rerunning the simulations themselves takes about 235 run-hours and needs
