@@ -684,15 +684,6 @@
     },
     {
       "n": 13,
-      "key": "josang2002",
-      "doi": null,
-      "kind": "article",
-      "status": "no_doi",
-      "bib_title": "The beta reputation system,",
-      "bib_year": 2002
-    },
-    {
-      "n": 14,
       "key": "ganeriwal2008",
       "doi": "10.1145/1362542.1362546",
       "kind": "article",
@@ -754,7 +745,7 @@
       "year_match": true
     },
     {
-      "n": 15,
+      "n": 14,
       "key": "watkins1992",
       "doi": "10.1007/BF00992698",
       "kind": "article",
@@ -804,7 +795,7 @@
       "year_match": true
     },
     {
-      "n": 16,
+      "n": 15,
       "key": "khan2023",
       "doi": "10.32604/cmc.2023.040756",
       "kind": "article",
@@ -862,7 +853,7 @@
       "year_match": true
     },
     {
-      "n": 17,
+      "n": 16,
       "key": "sharma2022",
       "doi": "10.1016/j.comcom.2022.04.003",
       "kind": "article",
@@ -924,7 +915,7 @@
       "year_match": true
     },
     {
-      "n": 18,
+      "n": 17,
       "key": "ankam2023",
       "doi": "10.1016/j.tcs.2022.08.018",
       "kind": "article",
@@ -974,7 +965,7 @@
       "year_match": true
     },
     {
-      "n": 19,
+      "n": 18,
       "key": "abhinaya2021",
       "doi": "10.1007/s12652-020-02804-3",
       "kind": "article",
@@ -1026,7 +1017,7 @@
       "year_match": true
     },
     {
-      "n": 20,
+      "n": 19,
       "key": "nishanth2021",
       "doi": "10.1109/TCCN.2021.3055503",
       "kind": "article",
@@ -1076,7 +1067,7 @@
       "year_match": true
     },
     {
-      "n": 21,
+      "n": 20,
       "key": "rouissat2023",
       "doi": "10.3390/app131810366",
       "kind": "article",
@@ -1136,7 +1127,7 @@
       "year_match": true
     },
     {
-      "n": 22,
+      "n": 21,
       "key": "imdrpl2023",
       "doi": "10.1007/s12083-023-01539-0",
       "kind": "article",
@@ -1195,7 +1186,7 @@
       "year_match": true
     },
     {
-      "n": 23,
+      "n": 22,
       "key": "alsukayti2023",
       "doi": "10.3390/app13084878",
       "kind": "article",
@@ -1247,7 +1238,7 @@
       "year_match": true
     },
     {
-      "n": 24,
+      "n": 23,
       "key": "de2rarpl2024",
       "doi": "10.1007/s11227-024-06256-w",
       "kind": "article",
@@ -1306,7 +1297,7 @@
       "year_match": true
     },
     {
-      "n": 25,
+      "n": 24,
       "key": "abdulkareem2024",
       "doi": "10.58496/MJCS/2024/026",
       "kind": "article",
@@ -1362,7 +1353,7 @@
       "year_match": true
     },
     {
-      "n": 26,
+      "n": 25,
       "key": "garciaribera2022",
       "doi": "10.3390/electronics11234041",
       "kind": "article",
@@ -1426,7 +1417,7 @@
       "year_match": true
     },
     {
-      "n": 27,
+      "n": 26,
       "key": "flsecrpl2024",
       "doi": "10.1186/s42400-024-00223-x",
       "kind": "article",
@@ -1486,7 +1477,7 @@
       "year_match": true
     },
     {
-      "n": 28,
+      "n": 27,
       "key": "dsatids2024",
       "doi": "10.1007/s10586-024-04564-7",
       "kind": "article",
@@ -1545,7 +1536,7 @@
       "year_match": true
     },
     {
-      "n": 29,
+      "n": 28,
       "key": "azzaoui2024",
       "doi": "10.1007/s11277-024-11009-2",
       "kind": "article",
@@ -1615,7 +1606,7 @@
       "year_match": true
     },
     {
-      "n": 30,
+      "n": 29,
       "key": "monteiro2026",
       "doi": "10.3390/iot7010004",
       "kind": "article",
@@ -1667,7 +1658,7 @@
       "year_match": false
     },
     {
-      "n": 31,
+      "n": 30,
       "key": "qsecrpl2023",
       "doi": "10.1016/j.adhoc.2023.103118",
       "kind": "article",
@@ -1721,7 +1712,7 @@
       "year_match": true
     },
     {
-      "n": 32,
+      "n": 31,
       "key": "itrpl2024",
       "doi": "10.1016/j.adhoc.2024.103586",
       "kind": "article",
@@ -1771,7 +1762,7 @@
       "year_match": true
     },
     {
-      "n": 33,
+      "n": 32,
       "key": "haqdad2026",
       "doi": "10.1109/JIOT.2025.3596097",
       "kind": "article",
@@ -1843,7 +1834,7 @@
       "year_match": true
     },
     {
-      "n": 34,
+      "n": 33,
       "key": "ahmadi2026",
       "doi": "10.1007/s11276-026-04207-2",
       "kind": "article",
@@ -1902,7 +1893,7 @@
       "year_match": true
     },
     {
-      "n": 35,
+      "n": 34,
       "key": "panda2026",
       "doi": "10.3390/fi18010035",
       "kind": "article",
@@ -1954,7 +1945,7 @@
       "year_match": true
     },
     {
-      "n": 36,
+      "n": 35,
       "key": "gyawali2021",
       "doi": "10.1109/TVT.2021.3079379",
       "kind": "article",
@@ -2008,7 +1999,7 @@
       "year_match": true
     },
     {
-      "n": 37,
+      "n": 36,
       "key": "jasti2024",
       "doi": "10.1109/CCNC51664.2024.10454856",
       "kind": "article",
@@ -2064,7 +2055,7 @@
       "year_match": true
     },
     {
-      "n": 38,
+      "n": 37,
       "key": "sentz2002",
       "doi": "10.2172/800792",
       "kind": "tech_report",
@@ -2114,7 +2105,7 @@
       "year_match": true
     },
     {
-      "n": 39,
+      "n": 38,
       "key": "sterbenz2013",
       "doi": "10.1007/s11235-011-9573-6",
       "kind": "article",
@@ -2182,7 +2173,7 @@
       "year_match": false
     },
     {
-      "n": 40,
+      "n": 39,
       "key": "contiking2022",
       "doi": "10.1016/j.softx.2022.101089",
       "kind": "article",
@@ -2248,7 +2239,7 @@
       "year_match": true
     },
     {
-      "n": 41,
+      "n": 40,
       "key": "cooja2006",
       "doi": "10.1109/LCN.2006.322172",
       "kind": "article",
@@ -2310,7 +2301,7 @@
       "year_match": true
     },
     {
-      "n": 42,
+      "n": 41,
       "key": "rfc6719",
       "doi": "10.17487/RFC6719",
       "kind": "rfc",
@@ -2358,7 +2349,7 @@
       "year_match": true
     },
     {
-      "n": 43,
+      "n": 42,
       "key": "camp2002",
       "doi": "10.1002/wcm.72",
       "kind": "article",
@@ -2420,7 +2411,7 @@
       "year_match": true
     },
     {
-      "n": 44,
+      "n": 43,
       "key": "wilcoxon1945",
       "doi": "10.2307/3001968",
       "kind": "article",
@@ -2466,16 +2457,7 @@
       "year_match": true
     },
     {
-      "n": 45,
-      "key": "holm1979",
-      "doi": null,
-      "kind": "article",
-      "status": "no_doi",
-      "bib_title": "A simple sequentially rejective multiple test procedure,",
-      "bib_year": 1979
-    },
-    {
-      "n": 46,
+      "n": 44,
       "key": "efron1994",
       "doi": "10.1201/9780429246593",
       "kind": "book",
