@@ -1,6 +1,6 @@
 # DOI audit of the paper bibliography
 
-Checked 2026-10-30 and again on 2026-11-26 against `full_paper/sections/references.tex`, the bibliography of `manuscript_full.tex`. The bibliography has 44 entries and every entry carries a DOI (4 of them IETF RFCs with their registered RFC DOIs). Every DOI was resolved through the Crossref REST API. For each resolved record the registered title was compared with the cited title (word overlap, 1.00 = every word of the registered title appears in the entry), and the registered year, volume, issue, pages and author list were compared with the entry. All 44 DOIs resolved and every registered title matched the cited one. The machine-readable capture is `DOI_METADATA_CHECK.json` (one record per entry with the Crossref title, authors, container, volume, issue, pages and dates).
+Checked 2026-10-30 and again on 2026-11-26 and 2026-11-27 against `full_paper/sections/references.tex`, the bibliography of `manuscript_full.tex`. The bibliography has 45 entries and every entry carries a DOI (4 of them IETF RFCs with their registered RFC DOIs). Every DOI was resolved through the Crossref REST API. For each resolved record the registered title was compared with the cited title (word overlap, 1.00 = every word of the registered title appears in the entry), and the registered year, volume, issue, pages and author list were compared with the entry. All 45 DOIs resolved and every registered title matched the cited one. The machine-readable capture is `DOI_METADATA_CHECK.json` (one record per entry with the Crossref title, authors, container, volume, issue, pages and dates).
 
 Status values: `checked` means the DOI resolved and the registered title matches the entry; `RFC` means the same for an IETF RFC.
 
@@ -49,7 +49,8 @@ Status values: `checked` means the DOI resolved and the registered title matches
 | 41 | `rfc6719` | [10.17487/RFC6719](https://doi.org/10.17487/RFC6719) | RFC | 1.00 | 2012 |
 | 42 | `camp2002` | [10.1002/wcm.72](https://doi.org/10.1002/wcm.72) | checked | 1.00 | 2002 |
 | 43 | `wilcoxon1945` | [10.2307/3001968](https://doi.org/10.2307/3001968) | checked | 1.00 | 1945 |
-| 44 | `efron1994` | [10.1201/9780429246593](https://doi.org/10.1201/9780429246593) | checked | 1.00 | 1994 |
+| 44 | `aickin1996` | [10.2105/AJPH.86.5.726](https://doi.org/10.2105/AJPH.86.5.726) | checked | 1.00 | 1996 |
+| 45 | `efron1994` | [10.1201/9780429246593](https://doi.org/10.1201/9780429246593) | checked | 1.00 | 1994 |
 
 ## Notes
 

@@ -1,5 +1,5 @@
 {
-  "checked_utc": "2026-10-30T09:40:07+00:00",
+  "checked_utc": "2026-11-27T06:39:07+00:00",
   "source": "full_paper/sections/references.tex",
   "method": "Each DOI was resolved through the Crossref REST API (https://api.crossref.org/works/<doi>). The registered title was compared with the cited title by word overlap, and the registered year, volume, issue, pages and author list were compared with the entry.",
   "records": [
@@ -2458,6 +2458,56 @@
     },
     {
       "n": 44,
+      "key": "aickin1996",
+      "doi": "10.2105/AJPH.86.5.726",
+      "kind": "article",
+      "status": "metadata_retrieved",
+      "bib_title": "Adjusting for multiple testing when reporting research results: The Bonferroni vs Holm methods,",
+      "bib_year": 1996,
+      "title": [
+        "Adjusting for multiple testing when reporting research results: the Bonferroni vs Holm methods."
+      ],
+      "authors": [
+        {
+          "given": "M",
+          "family": "Aickin"
+        },
+        {
+          "given": "H",
+          "family": "Gensler"
+        }
+      ],
+      "container": [
+        "American Journal of Public Health"
+      ],
+      "publisher": "American Public Health Association",
+      "type": "journal-article",
+      "volume": "86",
+      "issue": "5",
+      "page": "726-728",
+      "article_number": null,
+      "issued": {
+        "date-parts": [
+          [
+            1996,
+            5
+          ]
+        ]
+      },
+      "published_print": {
+        "date-parts": [
+          [
+            1996,
+            5
+          ]
+        ]
+      },
+      "published_online": null,
+      "title_overlap": 1.0,
+      "year_match": true
+    },
+    {
+      "n": 45,
       "key": "efron1994",
       "doi": "10.1201/9780429246593",
       "kind": "book",

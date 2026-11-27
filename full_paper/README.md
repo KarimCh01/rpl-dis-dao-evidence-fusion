@@ -11,7 +11,7 @@ these files.
 - `sections/`: abstract, introduction, related work, research design (objectives,
   hypotheses, conceptual framework), proposed approach, mathematical analysis,
   experimental methodology, results, discussion with limitations and conclusion,
-  references (44 entries, DOIs checked against Crossref).
+  references (45 entries, DOIs checked against Crossref).
 - `generated/`: tables and figures produced from the stored results by
   `scripts/build_full_paper_assets.py`, `analysis/test_hypotheses.py` and
   `analysis/check_manuscript_math.py`. Do not edit these by hand.

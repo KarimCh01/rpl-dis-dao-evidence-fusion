@@ -7,7 +7,7 @@ DIS flooding attacks in RPL-based IoT networks," Ad Hoc Networks 179 (2025)
 DAO-consistency evidence source, selective DAO repair, and an on-node tabular
 Q-learning decision layer.
 
-* Full paper: `manuscript_full.tex` / `manuscript_full.pdf` (IEEE two-column; 44 references, each with a DOI that was resolved against Crossref with a matching registered title, see `docs/DOI_AUDIT.md`)
+* Full paper: `manuscript_full.tex` / `manuscript_full.pdf` (IEEE two-column; 45 references, each with a DOI that was resolved against Crossref with a matching registered title, see `docs/DOI_AUDIT.md`)
 * Introduction and literature review (earlier draft): `manuscript.tex` / `manuscript.pdf`
 * Regenerate every result from the stored logs: [`docs/REGENERATE_FROM_LOGS.md`](docs/REGENERATE_FROM_LOGS.md)
 * Proposal promises and where each is delivered: [`docs/PROPOSAL_CHECKLIST.md`](docs/PROPOSAL_CHECKLIST.md)
